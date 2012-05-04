@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -41,17 +45,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraForm1.Designer.cs">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -60,7 +68,14 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraForm1.resx">
+      <DependentUpon>XtraForm1.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -70,6 +85,94 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\arrow.png" />
+    <Content Include="Resources\capnhat.png" />
+    <Content Include="Resources\cauhinhketnoi.png" />
+    <Content Include="Resources\chuyenlop.png" />
+    <Content Include="Resources\chuyenlop_lai.png" />
+    <Content Include="Resources\chuyenlop_large.png" />
+    <Content Include="Resources\chuyenlop_small.png" />
+    <Content Include="Resources\dangnhap.png" />
+    <Content Include="Resources\dangnhap_small.png" />
+    <Content Include="Resources\dangxuat.png" />
+    <Content Include="Resources\dangxuatcontext.png" />
+    <Content Include="Resources\database.png" />
+    <Content Include="Resources\database_down.ico" />
+    <Content Include="Resources\database_up.ico" />
+    <Content Include="Resources\doimatkhau.png" />
+    <Content Include="Resources\dsgiaovien.png" />
+    <Content Include="Resources\dshocsinh.png" />
+    <Content Include="Resources\dslophoc.png" />
+    <Content Include="Resources\excel.png" />
+    <Content Include="Resources\giaovien.png" />
+    <Content Include="Resources\giupdo.png" />
+    <Content Include="Resources\hanhkiem.png" />
+    <Content Include="Resources\hocky.png" />
+    <Content Include="Resources\hocluc.png" />
+    <Content Include="Resources\hocsinh.png" />
+    <Content Include="Resources\home.png" />
+    <Content Include="Resources\huongdan.png" />
+    <Content Include="Resources\icon.ico" />
+    <Content Include="Resources\ketnoi_database.png" />
+    <Content Include="Resources\ketqua.png" />
+    <Content Include="Resources\khaibao_namhoc.png" />
+    <Content Include="Resources\khenthuong_kyluat.png" />
+    <Content Include="Resources\khoa.png" />
+    <Content Include="Resources\khoahoc.png" />
+    <Content Include="Resources\khoilop.png" />
+    <Content Include="Resources\kqcnamtheolop.png" />
+    <Content Include="Resources\kqcnamtheomon.png" />
+    <Content Include="Resources\kqhockytheolop.png" />
+    <Content Include="Resources\kqhockytheomon.png" />
+    <Content Include="Resources\login.png" />
+    <Content Include="Resources\login2.png" />
+    <Content Include="Resources\loginimage.png" />
+    <Content Include="Resources\lophoc.png" />
+    <Content Include="Resources\luuchuyenlop.png" />
+    <Content Include="Resources\monhoc.png" />
+    <Content Include="Resources\namhoc.png" />
+    <Content Include="Resources\narrow_down.png" />
+    <Content Include="Resources\narrow_up.png" />
+    <Content Include="Resources\next.png" />
+    <Content Include="Resources\nghenghiep.png" />
+    <Content Include="Resources\nhomnguoidung_small.png" />
+    <Content Include="Resources\nienkhoa.png" />
+    <Content Include="Resources\phancong.png" />
+    <Content Include="Resources\phancong_giaovien.png" />
+    <Content Include="Resources\phanlop.png" />
+    <Content Include="Resources\phuchoidulieu.png" />
+    <Content Include="Resources\print.png" />
+    <Content Include="Resources\pupils.png" />
+    <Content Include="Resources\qddotuoi.png" />
+    <Content Include="Resources\qdsiso.png" />
+    <Content Include="Resources\qdthangdiem.png" />
+    <Content Include="Resources\quanlynguoidung.png" />
+    <Content Include="Resources\quaylai_small.png" />
+    <Content Include="Resources\quydinh_diemcan.png" />
+    <Content Include="Resources\saoluudulieu.png" />
+    <Content Include="Resources\sapxep.png" />
+    <Content Include="Resources\thangdiem_small.png" />
+    <Content Include="Resources\them_medium.png" />
+    <Content Include="Resources\them_medium2.png" />
+    <Content Include="Resources\them_small.png" />
+    <Content Include="Resources\thoat_small.png" />
+    <Content Include="Resources\thongtinphanmem.png" />
+    <Content Include="Resources\timkiem.png" />
+    <Content Include="Resources\tracuugiaovien.png" />
+    <Content Include="Resources\tracuuhocsinh.png" />
+    <Content Include="Resources\tttruonghoc.png" />
+    <Content Include="Resources\xemdiem.png" />
+    <Content Include="Resources\xeploai.png" />
+    <Content Include="Resources\xoa_hs.png" />
+    <Content Include="Resources\xoa_large.png" />
+    <Content Include="Resources\xoa_medium.png" />
+    <Content Include="Resources\xoa_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utilities\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
