@@ -15,6 +15,9 @@ namespace QLHS_THPT
         {  
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            DevExpress.Skins.SkinManager.EnableFormSkins();
+            DevExpress.Skins.SkinManager.EnableMdiFormSkins();
             Application.Run(new frmMain());
         }
     }
