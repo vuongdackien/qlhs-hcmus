@@ -17,39 +17,51 @@ namespace QLHS_THPT
             InitializeComponent();
         }
 
+        #region Function Show MDI Child Form
+
+        private Dictionary<Type, Form> openForms = new Dictionary<Type, Form>();
+        /// <summary>
+        /// Sử dụng để hiển thị MDI Children form
+        /// </summary>
+        /// <typeparam name="T">Tên form</typeparam>
+        public void ShowMDIChildForm<T>() where T : Form, new()
+        {
+            Form instance;
+            openForms.TryGetValue(typeof(T), out instance);
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new T();
+                openForms[typeof(T)] = instance;
+                instance.MdiParent = this;
+                instance.Show();
+            }
+            else
+            {
+                instance.Activate();
+            }
+        }
+        #endregion
+
+
+
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
-            XtraForm1 f = new XtraForm1();
-            f.MdiParent = this;
-            f.Show();
+            ShowMDIChildForm<frmHocSinh>();
         }
-
+        
         private void frmMain_Load(object sender, EventArgs e)
         {
-            /*
-              // Create a BarManager that will display a bar of commands at the top of the main form.
-            BarManager barManager = new BarManager();
-            barManager.Form = this;
-            // Create a bar with a New button.
-            barManager.BeginUpdate();
-            Bar bar = new Bar(barManager, "My Bar");
-            bar.DockStyle = BarDockStyle.Top;
-            barManager.MainMenu = bar;
-            BarItem barItem = new BarButtonItem(barManager, "New");
-            barItem.ItemClick += new ItemClickEventHandler(barItem_ItemClick);
-            bar.ItemLinks.Add(barItem);
-            barManager.EndUpdate();
-            // Create an XtraTabbedMdiManager that will manage MDI child windows.
+            
+        }
+        
+        private void barBtnHoSoHocSinh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmHocSinh>();
         }
 
-        int ctr = 0;
-        void barItem_ItemClick(object sender, ItemClickEventArgs e) {
-            // Create an MDI child form.
-            XtraForm1 f = new XtraForm1();
-            f.Text = "Child Form " + (++ctr).ToString();
-            f.MdiParent = this;
-            f.Show();
-        }*/
+        private void barBtnTimKiemHocSinh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+          
         }
     }
 }
