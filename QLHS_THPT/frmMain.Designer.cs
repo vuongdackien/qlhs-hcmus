@@ -124,7 +124,7 @@
             this.ribbonPageHeThong,
             this.ribbonPageGiupDo});
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(862, 144);
+            this.ribbon.Size = new System.Drawing.Size(862, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             // 
@@ -336,14 +336,14 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 439);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 441);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(862, 25);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(862, 23);
             // 
             // defaultLookAndFeel
             // 
-            this.defaultLookAndFeel.LookAndFeel.SkinName = "Caramel";
+            this.defaultLookAndFeel.LookAndFeel.SkinName = "Money Twins";
             // 
             // xtraTabbedMdiManager
             // 

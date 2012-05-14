@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QLHS_THPT</RootNamespace>
     <AssemblyName>QLHS_THPT</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -97,7 +97,9 @@
     <EmbeddedResource Include="frmHocSinh.resx">
       <DependentUpon>frmHocSinh.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -110,6 +112,9 @@
     <None Include="Resources\Thumbs.db" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Databases\QLHS.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\arrow.png" />
     <Content Include="Resources\capnhat.png" />
     <Content Include="Resources\cauhinhketnoi.png" />
@@ -194,7 +199,6 @@
     <Content Include="Resources\xoa_small.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Databases\" />
     <Folder Include="Utilities\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
