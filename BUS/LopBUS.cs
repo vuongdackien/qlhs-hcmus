@@ -9,5 +9,15 @@ namespace QLHS.BUS
 {
     public class LopBUS
     {
+        LopDAL _LopDAL;
+        public LopBUS()
+        {
+            _LopDAL = new LopDAL();
+        }
+
+        public DataTable LayDTLop_MaNam_MaKhoi(string MaNamHoc, string MaKhoi)
+        {
+            return _LopDAL.LayDTLop_MaNam_MaKhoi(MaNamHoc, MaKhoi);
+        }
     }
 }

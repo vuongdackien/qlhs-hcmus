@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="BangDiemBUS.cs" />
     <Compile Include="ChuyenLopBUS.cs" />
+    <Compile Include="KhoiBUS.cs" />
     <Compile Include="GiaoVienBUS.cs" />
     <Compile Include="HocSinhBUS.cs" />
     <Compile Include="LoaiNguoiDungBUS.cs" />
