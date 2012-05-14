@@ -7,7 +7,7 @@ using QLHS.DAL;
 
 namespace QLHS.BUS
 {
-    class BangDiemBUS
+    public class BangDiemBUS
     {
     }
 }

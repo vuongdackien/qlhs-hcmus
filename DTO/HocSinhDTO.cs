@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QLHS.DTO
 {
-    class HocSinhDTO
+    public class HocSinhDTO
     {
         public string MaHocSinh { get; set; }
         public string TenHocSinh { get; set; }

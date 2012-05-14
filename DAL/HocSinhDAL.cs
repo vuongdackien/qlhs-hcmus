@@ -7,7 +7,7 @@ using QLHS.DTO;
 
 namespace QLHS.DAL
 {
-    class HocSinhDAL : ConnectData
+    public class HocSinhDAL : ConnectData
     {
         
     }

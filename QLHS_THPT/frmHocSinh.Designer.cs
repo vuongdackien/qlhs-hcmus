@@ -30,24 +30,27 @@
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.lookUpEditNamHoc = new DevExpress.XtraEditors.LookUpEdit();
+            this.comboBoxEditLop = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.comboBoxEditKhoi = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.ddbChonNamHoc = new DevExpress.XtraEditors.DropDownButton();
-            this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
-            this.dropDownButton2 = new DevExpress.XtraEditors.DropDownButton();
-            this.listBoxControl1 = new DevExpress.XtraEditors.ListBoxControl();
+            this.listBoxControlHocSinh = new DevExpress.XtraEditors.ListBoxControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditNamHoc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditLop.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditKhoi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxControlHocSinh)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.panelControl2);
-            this.panelControl1.Controls.Add(this.listBoxControl1);
+            this.panelControl1.Controls.Add(this.listBoxControlHocSinh);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
@@ -56,21 +59,48 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.lookUpEditNamHoc);
+            this.panelControl2.Controls.Add(this.comboBoxEditLop);
+            this.panelControl2.Controls.Add(this.comboBoxEditKhoi);
             this.panelControl2.Controls.Add(this.labelControl2);
             this.panelControl2.Controls.Add(this.labelControl3);
             this.panelControl2.Controls.Add(this.labelControl1);
-            this.panelControl2.Controls.Add(this.ddbChonNamHoc);
-            this.panelControl2.Controls.Add(this.dropDownButton1);
-            this.panelControl2.Controls.Add(this.dropDownButton2);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(2, 2);
+            this.panelControl2.Location = new System.Drawing.Point(3, 3);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(196, 165);
+            this.panelControl2.Size = new System.Drawing.Size(194, 144);
             this.panelControl2.TabIndex = 3;
+            // 
+            // lookUpEditNamHoc
+            // 
+            this.lookUpEditNamHoc.Location = new System.Drawing.Point(19, 22);
+            this.lookUpEditNamHoc.Name = "lookUpEditNamHoc";
+            this.lookUpEditNamHoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditNamHoc.Size = new System.Drawing.Size(150, 20);
+            this.lookUpEditNamHoc.TabIndex = 7;
+            // 
+            // comboBoxEditLop
+            // 
+            this.comboBoxEditLop.Location = new System.Drawing.Point(19, 111);
+            this.comboBoxEditLop.Name = "comboBoxEditLop";
+            this.comboBoxEditLop.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditLop.Size = new System.Drawing.Size(150, 20);
+            this.comboBoxEditLop.TabIndex = 6;
+            // 
+            // comboBoxEditKhoi
+            // 
+            this.comboBoxEditKhoi.Location = new System.Drawing.Point(19, 66);
+            this.comboBoxEditKhoi.Name = "comboBoxEditKhoi";
+            this.comboBoxEditKhoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditKhoi.Size = new System.Drawing.Size(150, 20);
+            this.comboBoxEditKhoi.TabIndex = 5;
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(19, 102);
+            this.labelControl2.Location = new System.Drawing.Point(19, 92);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(46, 13);
             this.labelControl2.TabIndex = 3;
@@ -86,43 +116,19 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(19, 54);
+            this.labelControl1.Location = new System.Drawing.Point(19, 48);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(51, 13);
             this.labelControl1.TabIndex = 3;
             this.labelControl1.Text = "Chọn khối:";
             // 
-            // ddbChonNamHoc
+            // listBoxControlHocSinh
             // 
-            this.ddbChonNamHoc.Location = new System.Drawing.Point(19, 24);
-            this.ddbChonNamHoc.Name = "ddbChonNamHoc";
-            this.ddbChonNamHoc.Size = new System.Drawing.Size(150, 23);
-            this.ddbChonNamHoc.TabIndex = 2;
-            this.ddbChonNamHoc.Text = "Chọn năm học";
-            // 
-            // dropDownButton1
-            // 
-            this.dropDownButton1.Location = new System.Drawing.Point(19, 122);
-            this.dropDownButton1.Name = "dropDownButton1";
-            this.dropDownButton1.Size = new System.Drawing.Size(150, 23);
-            this.dropDownButton1.TabIndex = 1;
-            this.dropDownButton1.Text = "Chọn lớp:";
-            // 
-            // dropDownButton2
-            // 
-            this.dropDownButton2.Location = new System.Drawing.Point(19, 73);
-            this.dropDownButton2.Name = "dropDownButton2";
-            this.dropDownButton2.Size = new System.Drawing.Size(150, 23);
-            this.dropDownButton2.TabIndex = 2;
-            this.dropDownButton2.Text = "Chọn khối:";
-            // 
-            // listBoxControl1
-            // 
-            this.listBoxControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxControl1.Location = new System.Drawing.Point(2, 2);
-            this.listBoxControl1.Name = "listBoxControl1";
-            this.listBoxControl1.Size = new System.Drawing.Size(196, 441);
-            this.listBoxControl1.TabIndex = 0;
+            this.listBoxControlHocSinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxControlHocSinh.Location = new System.Drawing.Point(3, 3);
+            this.listBoxControlHocSinh.Name = "listBoxControlHocSinh";
+            this.listBoxControlHocSinh.Size = new System.Drawing.Size(194, 439);
+            this.listBoxControlHocSinh.TabIndex = 0;
             // 
             // frmHocSinh
             // 
@@ -134,12 +140,16 @@
             this.Name = "frmHocSinh";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Tiếp nhận học sinh";
+            this.Load += new System.EventHandler(this.frmHocSinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listBoxControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditNamHoc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditLop.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditKhoi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxControlHocSinh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,14 +157,14 @@
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.ListBoxControl listBoxControl1;
+        private DevExpress.XtraEditors.ListBoxControl listBoxControlHocSinh;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.DropDownButton ddbChonNamHoc;
-        private DevExpress.XtraEditors.DropDownButton dropDownButton1;
-        private DevExpress.XtraEditors.DropDownButton dropDownButton2;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditLop;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditKhoi;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditNamHoc;
 
     }
 }

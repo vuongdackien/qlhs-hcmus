@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QLHS.DTO
 {
-    class MonHocDTO
+    public class MonHocDTO
     {
     }
 }

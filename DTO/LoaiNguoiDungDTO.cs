@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QLHS.DTO
 {
-    class LoaiNguoiDungDTO
+    public class LoaiNguoiDungDTO
     {
     }
 }

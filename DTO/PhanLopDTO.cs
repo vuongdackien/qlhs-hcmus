@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QLHS.DTO
 {
-    class PhanLopDTO
+    public class PhanLopDTO
     {
     }
 }

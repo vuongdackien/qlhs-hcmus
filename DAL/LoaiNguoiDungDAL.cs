@@ -6,7 +6,7 @@ using QLHS.DTO;
 
 namespace QLHS.DAL
 {
-    class LoaiNguoiDungDAL : ConnectData
+    public class LoaiNguoiDungDAL : ConnectData
     {
     }
 }

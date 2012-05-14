@@ -7,7 +7,7 @@ using QLHS.DAL;
 
 namespace QLHS.BUS
 {
-    class GiaoVienBUS
+    public class GiaoVienBUS
     {
     }
 }

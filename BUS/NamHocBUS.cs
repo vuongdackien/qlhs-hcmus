@@ -7,7 +7,18 @@ using QLHS.DAL;
 
 namespace QLHS.BUS
 {
-    class NamHocBUS
+    public class NamHocBUS
     {
+        private NamHocDAL _NamHocDAL;
+
+        public NamHocBUS()
+        {
+            _NamHocDAL = new NamHocDAL();
+        }
+
+        public List<NamHocDTO> LayListNamHoc()
+        {
+            return _NamHocDAL.LayListNamHoc();
+        }
     }
 }
