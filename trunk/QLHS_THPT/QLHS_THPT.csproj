@@ -96,8 +96,9 @@
     </EmbeddedResource>
     <Compile Include="Utilities\ComboboxEditUtilities.cs" />
     <Compile Include="Utilities\MessageboxUtilities.cs" />
-    <Compile Include="Utilities\Utilities_Control.cs" />
+    <Compile Include="Utilities\LookUpEditUtilities.cs" />
     <Compile Include="Utilities\Utilities.cs" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
