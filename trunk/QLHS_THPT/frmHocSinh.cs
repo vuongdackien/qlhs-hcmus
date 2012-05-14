@@ -21,8 +21,8 @@ namespace QLHS_THPT
 
         private void frmHocSinh_Load(object sender, EventArgs e)
         {
-            List<NamHocDTO> listNamHoc = _NamHocBUS.LayListNamHoc();
-            comboBoxEditKhoi.Properties.Items.Add(listNamHoc);
+            ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc, _NamHocBUS.LayDTNamHoc(),
+                                                "MaNamHoc", "TenNamHoc", "all", "Tất cả");
         }
 
 

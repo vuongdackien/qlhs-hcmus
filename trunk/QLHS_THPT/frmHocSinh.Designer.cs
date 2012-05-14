@@ -30,21 +30,21 @@
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.lookUpEditNamHoc = new DevExpress.XtraEditors.LookUpEdit();
             this.comboBoxEditLop = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comboBoxEditKhoi = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.listBoxControlHocSinh = new DevExpress.XtraEditors.ListBoxControl();
+            this.comboBoxEditNamHoc = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditNamHoc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditLop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditKhoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControlHocSinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditNamHoc.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -59,26 +59,17 @@
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.lookUpEditNamHoc);
+            this.panelControl2.Controls.Add(this.comboBoxEditNamHoc);
             this.panelControl2.Controls.Add(this.comboBoxEditLop);
             this.panelControl2.Controls.Add(this.comboBoxEditKhoi);
             this.panelControl2.Controls.Add(this.labelControl2);
             this.panelControl2.Controls.Add(this.labelControl3);
             this.panelControl2.Controls.Add(this.labelControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(3, 3);
+            this.panelControl2.Location = new System.Drawing.Point(2, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(194, 144);
+            this.panelControl2.Size = new System.Drawing.Size(196, 144);
             this.panelControl2.TabIndex = 3;
-            // 
-            // lookUpEditNamHoc
-            // 
-            this.lookUpEditNamHoc.Location = new System.Drawing.Point(19, 22);
-            this.lookUpEditNamHoc.Name = "lookUpEditNamHoc";
-            this.lookUpEditNamHoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lookUpEditNamHoc.Size = new System.Drawing.Size(150, 20);
-            this.lookUpEditNamHoc.TabIndex = 7;
             // 
             // comboBoxEditLop
             // 
@@ -125,10 +116,19 @@
             // listBoxControlHocSinh
             // 
             this.listBoxControlHocSinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxControlHocSinh.Location = new System.Drawing.Point(3, 3);
+            this.listBoxControlHocSinh.Location = new System.Drawing.Point(2, 2);
             this.listBoxControlHocSinh.Name = "listBoxControlHocSinh";
-            this.listBoxControlHocSinh.Size = new System.Drawing.Size(194, 439);
+            this.listBoxControlHocSinh.Size = new System.Drawing.Size(196, 441);
             this.listBoxControlHocSinh.TabIndex = 0;
+            // 
+            // comboBoxEditNamHoc
+            // 
+            this.comboBoxEditNamHoc.Location = new System.Drawing.Point(19, 22);
+            this.comboBoxEditNamHoc.Name = "comboBoxEditNamHoc";
+            this.comboBoxEditNamHoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditNamHoc.Size = new System.Drawing.Size(150, 20);
+            this.comboBoxEditNamHoc.TabIndex = 7;
             // 
             // frmHocSinh
             // 
@@ -146,10 +146,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditNamHoc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditLop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditKhoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxControlHocSinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditNamHoc.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -164,7 +164,7 @@
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditLop;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditKhoi;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.LookUpEdit lookUpEditNamHoc;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditNamHoc;
 
     }
 }

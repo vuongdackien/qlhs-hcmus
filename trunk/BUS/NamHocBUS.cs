@@ -15,10 +15,21 @@ namespace QLHS.BUS
         {
             _NamHocDAL = new NamHocDAL();
         }
-
+        /// <summary>
+        /// Lấy list năm học
+        /// </summary>
+        /// <returns>List</returns>
         public List<NamHocDTO> LayListNamHoc()
         {
             return _NamHocDAL.LayListNamHoc();
+        }
+        /// <summary>
+        /// Lấy DataTable năm học
+        /// </summary>
+        /// <returns>DataTable</returns>
+        public DataTable LayDTNamHoc()
+        {
+            return _NamHocDAL.LayDTNamHoc();
         }
     }
 }

@@ -80,6 +80,8 @@
     <Compile Include="frmHocSinh.Designer.cs">
       <DependentUpon>frmHocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\ComboboxEditUtilities.cs" />
+    <Compile Include="Utilities\MessageboxUtilities.cs" />
     <Compile Include="Utilities\Utilities_Control.cs" />
     <Compile Include="Utilities\Utilities.cs" />
     <EmbeddedResource Include="Properties\licenses.licx" />
