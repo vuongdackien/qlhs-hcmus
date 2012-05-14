@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using QLHS.DTO;
+using QLHS.DAL;
 
-
-namespace QLHS.DAL
+namespace QLHS.BUS
 {
-    class HocSinhDAL : ConnectData
+    class ChuyenLopBUS
     {
-        
     }
 }

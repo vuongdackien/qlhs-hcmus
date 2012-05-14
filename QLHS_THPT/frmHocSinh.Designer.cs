@@ -63,9 +63,9 @@
             this.panelControl2.Controls.Add(this.dropDownButton1);
             this.panelControl2.Controls.Add(this.dropDownButton2);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(3, 3);
+            this.panelControl2.Location = new System.Drawing.Point(2, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(194, 165);
+            this.panelControl2.Size = new System.Drawing.Size(196, 165);
             this.panelControl2.TabIndex = 3;
             // 
             // labelControl2
@@ -119,9 +119,9 @@
             // listBoxControl1
             // 
             this.listBoxControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxControl1.Location = new System.Drawing.Point(3, 3);
+            this.listBoxControl1.Location = new System.Drawing.Point(2, 2);
             this.listBoxControl1.Name = "listBoxControl1";
-            this.listBoxControl1.Size = new System.Drawing.Size(194, 439);
+            this.listBoxControl1.Size = new System.Drawing.Size(196, 441);
             this.listBoxControl1.TabIndex = 0;
             // 
             // frmHocSinh
