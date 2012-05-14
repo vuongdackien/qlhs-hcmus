@@ -6,5 +6,6 @@ namespace DAL
 {
     class LopDAL
     {
+
     }
 }
