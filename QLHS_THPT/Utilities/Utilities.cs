@@ -118,6 +118,77 @@ namespace QLHS_THPT
         }
         #endregion
 
+        /// <summary>
+        /// Hàm chuyển đổi chuỗi có dấu thành không dấu
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static string ConvertToUnSign(string text, char ReplaceSpecialChar)
+        {
+            for (int i = 32; i < 48; i++)
+            {
+                text = text.Replace(((char)i).ToString(), ReplaceSpecialChar.ToString());
+            }
+            text = text.Replace(".", ReplaceSpecialChar.ToString());
+            text = text.Replace(" ", ReplaceSpecialChar.ToString());
+            text = text.Replace(",", ReplaceSpecialChar.ToString());
+            text = text.Replace(";", ReplaceSpecialChar.ToString());
+            text = text.Replace(":", ReplaceSpecialChar.ToString());
+            Regex regex = new Regex(@"\p{IsCombiningDiacriticalMarks}+");
+            string strFormD = text.Normalize(System.Text.NormalizationForm.FormD);
+            return regex.Replace(strFormD, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
+        }
+        /// <summary>
+        /// Tách họ tên
+        /// </summary>
+        /// <param name="hoten">String: Họ tên</param>
+        /// <returns>string[]: firstname, midname, lastname</returns>
+        public static string[] LayHoTen(string hoten)
+        {
+            string firstname = "";
+            string midname = "";
+            string lastname = "";
+            hoten = hoten.Trim();
+            string[] arrHoTen = hoten.Split(' ');
+            int i = 0;
+            foreach (string s in arrHoTen)
+            {
+                if (i == 0)
+                    firstname = s;
+                lastname = s;
+                i++;
+            }
+            if (i == 1)
+                firstname = "";
+            int j = 0;
+            foreach (string s in arrHoTen)
+            {
+                if (j != 0)
+                    if (j != (i - 1))
+                        midname += s + " ";
+                j++;
+            }
+            midname = midname.TrimEnd();
+            return new string[] { firstname, midname, lastname };
+        }
+  
+        /// <summary>
+        /// Mã hóa 1 chuỗi text bằng MD5
+        /// </summary>
+        /// <param name="text">String: Chuỗi cần mã hóa</param>
+        /// <returns>String: Chuỗi đã mã hóa</returns>
+        public static string MaHoaMD5(string text)
+        {
+            MD5CryptoServiceProvider _md5Hasher = new MD5CryptoServiceProvider();
+            byte[] bs = Encoding.UTF8.GetBytes(text);
+            bs = _md5Hasher.ComputeHash(bs);
+            StringBuilder s = new StringBuilder();
+            foreach (byte b in bs)
+            {
+                s.Append(b.ToString("x2"));
+            }
+            return s.ToString();
+        }
      
     }
 }
