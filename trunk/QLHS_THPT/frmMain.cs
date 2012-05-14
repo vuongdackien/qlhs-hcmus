@@ -41,7 +41,7 @@ namespace QLHS_THPT
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmHocSinh>();
+            //ShowMDIChildForm<frmHocSinh>();
         }
         
         private void frmMain_Load(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace QLHS_THPT
 
         private void barBtnTimKiemHocSinh_ItemClick(object sender, ItemClickEventArgs e)
         {
-          
+            ShowMDIChildForm<frmSearchHocSinh>();
         }
     }
 }
