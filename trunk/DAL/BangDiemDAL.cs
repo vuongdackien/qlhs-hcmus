@@ -4,11 +4,10 @@ using System.Text;
 using System.Data;
 using QLHS.DTO;
 
-
 namespace QLHS.DAL
 {
-    class HocSinhDAL : ConnectData
+    class BangDiemDAL : ConnectData
     {
-        
+
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.OleDb;
 
-namespace DAL
+namespace QLHS.DAL
 {
     class ConnectData
     {
