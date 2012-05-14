@@ -6,7 +6,7 @@ using QLHS.DTO;
 
 namespace QLHS.DAL
 {
-    class PhanLopDAL : ConnectData
+    public class PhanLopDAL : ConnectData
     {
     }
 }

@@ -6,7 +6,7 @@ using QLHS.DTO;
 
 namespace QLHS.DAL
 {
-    class BangDiemDAL : ConnectData
+    public class BangDiemDAL : ConnectData
     {
 
     }

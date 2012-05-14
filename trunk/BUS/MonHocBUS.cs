@@ -7,7 +7,7 @@ using QLHS.DAL;
 
 namespace QLHS.BUS
 {
-    class MonHocBUS
+    public class MonHocBUS
     {
     }
 }

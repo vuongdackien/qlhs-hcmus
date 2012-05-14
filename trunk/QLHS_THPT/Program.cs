@@ -18,7 +18,7 @@ namespace QLHS_THPT
 
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.Skins.SkinManager.EnableMdiFormSkins();
-            Application.Run(new frmMain());
+            Application.Run(new frmHocSinh());
         }
     }
 }

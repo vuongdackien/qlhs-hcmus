@@ -7,7 +7,7 @@ using QLHS.DAL;
 
 namespace QLHS.BUS
 {
-    class QuyDinhBUS
+    public class QuyDinhBUS
     {
     }
 }

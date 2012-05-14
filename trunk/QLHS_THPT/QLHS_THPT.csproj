@@ -80,6 +80,8 @@
     <Compile Include="frmHocSinh.Designer.cs">
       <DependentUpon>frmHocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\Utilities_Control.cs" />
+    <Compile Include="Utilities\Utilities.cs" />
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -198,13 +200,15 @@
     <Content Include="Resources\xoa_medium.png" />
     <Content Include="Resources\xoa_small.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utilities\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BUS\QLHS.BUS.csproj">
       <Project>{699FBDC9-69B0-4B93-9D50-2385009A5465}</Project>
       <Name>QLHS.BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\QLHS.DTO.csproj">
+      <Project>{051D3B9C-A8C0-40E3-B5B3-F33D4789F859}</Project>
+      <Name>QLHS.DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

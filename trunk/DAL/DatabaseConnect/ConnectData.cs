@@ -3,7 +3,7 @@ using System.Data.OleDb;
 
 namespace QLHS.DAL
 {
-    class ConnectData
+    public class ConnectData
     {
         protected OleDbConnection m_Connect = null;
         public OleDbDataAdapter m_DataApdater = null;
@@ -32,14 +32,14 @@ namespace QLHS.DAL
             try
             {
                 m_Connect = new OleDbConnection(_strConnect);
-                this.Open();
+                this.OpenConnect();
             }
             catch(OleDbException ex)
             {
-                this.Close();
+                this.CloseConnect();
                 return ex.ErrorCode;
             }
-            this.Close();
+            this.CloseConnect();
             return 1;
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace QLHS.DAL
         /// <summary>
         /// Mở kết nối
         /// </summary>
-        public void Open()
+        public void OpenConnect()
         {
             try
             {
@@ -76,7 +76,7 @@ namespace QLHS.DAL
         /// <summary>
         /// Đóng kết nối
         /// </summary>
-        public void Close()
+        public void CloseConnect()
         {
             if (m_Connect != null)
                 if (m_Connect.State == ConnectionState.Open)
@@ -161,7 +161,7 @@ namespace QLHS.DAL
             try
             {
                 // Mở kết nối
-                this.Open();
+                this.OpenConnect();
                 // Mở Transaction
                 sqlTran = m_Connect.BeginTransaction();
                 m_DataApdater.SelectCommand.Transaction = sqlTran;
@@ -176,9 +176,9 @@ namespace QLHS.DAL
                 if (sqlTran != null)
                     sqlTran.Rollback();
                 // Đóng kết nối
-                this.Close();
+                this.CloseConnect();
             }
-            this.Close();
+            this.CloseConnect();
             // Trả về số record thực thi
             return numRecords;
         }
@@ -198,7 +198,7 @@ namespace QLHS.DAL
             try
             {
                 // Mở kết nối
-                this.Open();
+                this.OpenConnect();
                 // Mở Transaction
                 sqlTran = m_Connect.BeginTransaction();
                 OleDbCommand sqlComm = new OleDbCommand(sql, m_Connect);
@@ -213,9 +213,9 @@ namespace QLHS.DAL
                 if (sqlTran != null)
                     sqlTran.Rollback();
                 // Đóng kn
-                this.Close();
+                this.CloseConnect();
             }
-            this.Close();
+            this.CloseConnect();
             // Trả về số record thực thi
             return numRecords;
         }
@@ -225,27 +225,33 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="m_Command">OleDbCommand: Giá trị OleDbCommand</param>
         /// <returns>Bool: Thực hiện thành công true/false</returns>
-        protected bool ExecuteOleDbCommand(OleDbCommand m_Command)
+        protected bool ExecuteCommand(OleDbCommand m_Command)
         {
             try
             {
-                this.Open();
+                this.OpenConnect();
                 m_Command.Connection = m_Connect;
                 if (m_Command.ExecuteNonQuery() > 0)
                 {
-                    this.Close();
+                    this.CloseConnect();
                     return true;
                 }
-                this.Close();
+                this.CloseConnect();
                 return false;
 
             }
             catch
             {
-                this.Close();
+                this.CloseConnect();
                 return false;
             }
 
+        }
+
+        protected OleDbDataReader ExecuteReader(string sql)
+        {
+            OleDbCommand command = new OleDbCommand(sql,this.m_Connect);
+            return command.ExecuteReader();
         }
 
         /// <summary>
@@ -257,15 +263,15 @@ namespace QLHS.DAL
         {
             try
             {
-                this.Open();
+                this.OpenConnect();
                 m_Command = new OleDbCommand(sql, m_Connect);
                 object result = m_Command.ExecuteScalar();
-                this.Close();
+                this.CloseConnect();
                 return result;
             }
             catch
             {
-                this.Close();
+                this.CloseConnect();
             }
             return null;
 

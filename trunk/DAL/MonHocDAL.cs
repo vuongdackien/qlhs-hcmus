@@ -6,7 +6,7 @@ using QLHS.DTO;
 
 namespace QLHS.DAL
 {
-    class MonHocDAL : ConnectData
+    public class MonHocDAL : ConnectData
     {
     }
 }

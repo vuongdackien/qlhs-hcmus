@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QLHS.DTO
 {
-    class BangDiemDTO
+    public class BangDiemDTO
     {
         private HocSinhDTO _HocSinhDTO = new HocSinhDTO();
 

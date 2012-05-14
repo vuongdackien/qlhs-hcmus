@@ -6,7 +6,11 @@ using QLHS.DTO;
 
 namespace QLHS.DAL
 {
-    class NguoiDungDAL : ConnectData
+     class NguoiDungDAL : ConnectData
     {
+        public NguoiDungDAL()
+        {
+
+        }
     }
 }
