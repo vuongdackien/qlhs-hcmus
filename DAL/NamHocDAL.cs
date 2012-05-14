@@ -9,6 +9,10 @@ namespace QLHS.DAL
 {
     public class NamHocDAL : ConnectData
     {
+        /// <summary>
+        /// Lấy list năm học
+        /// </summary>
+        /// <returns>List: NamHocDTO</returns>
         public List<NamHocDTO> LayListNamHoc()
         {
             string sql = "SELECT MaNamHoc, TenNamHoc FROM NAMHOC";
@@ -26,6 +30,15 @@ namespace QLHS.DAL
             CloseConnect();
 
             return listNamHoc;
+        }
+        /// <summary>
+        /// Lấy DataTable năm học
+        /// </summary>
+        /// <returns>DataTable</returns>
+        public DataTable LayDTNamHoc()
+        {
+            string sql = "SELECT MaNamHoc, TenNamHoc FROM NAMHOC";
+            return GetTable(sql);
         }
     }
 }

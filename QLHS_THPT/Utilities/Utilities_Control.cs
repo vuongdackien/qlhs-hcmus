@@ -12,7 +12,7 @@ using System.Text.RegularExpressions;
 using QLHS.DTO;
 using DevExpress.XtraEditors;
 
-namespace QuanLyHS
+namespace QLHS_THPT
 {
 
     public static partial class Utilities
@@ -20,11 +20,11 @@ namespace QuanLyHS
 
         #region Hàm thêm 1 row vào combobox
         public static void AddDataSource_LookUpEdit
-                (LookUpEdit lockUpEdit, DataTable tb, string nameValue, string nameDisplay)
+                (LookUpEdit lookUpEdit, DataTable tb, string nameValue, string nameDisplay)
         {
-            lockUpEdit.Properties.DataSource = tb;
-            lockUpEdit.Properties.DisplayMember = nameDisplay;
-            lockUpEdit.Properties.ValueMember =  nameValue;
+            lookUpEdit.Properties.DataSource = tb;
+            lookUpEdit.Properties.DisplayMember = nameDisplay;
+            lookUpEdit.Properties.ValueMember = nameValue;
       }
         #endregion
 

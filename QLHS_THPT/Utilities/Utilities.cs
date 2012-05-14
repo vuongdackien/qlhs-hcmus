@@ -11,7 +11,7 @@ using System.Diagnostics;
 using System.Text.RegularExpressions;
 using QLHS.DTO;
 
-namespace QuanLyHS
+namespace QLHS_THPT
 {
     public class XepLoaiHS
     {
