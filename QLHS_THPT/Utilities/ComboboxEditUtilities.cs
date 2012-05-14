@@ -57,7 +57,7 @@ namespace QLHS_THPT
         /// <param name="display_all">String: Value member dòng đầu tiên</param>
         /// <param name="selected_index">Int: Chọn dòng</param>
         public static void SetDataSource(ComboBoxEdit comb, DataTable dt, string value, string display, 
-                string value_all, string display_all, int selected_index = 0)
+                string value_all = "all", string display_all = "Tất cả", int selected_index = 0)
         {
 
            comb.Properties.Items.Add(new ComboboxEditUtilities(value_all, display_all));
@@ -88,20 +88,7 @@ namespace QLHS_THPT
         /// <param name="svalue">String: Giá trị chọn valuemember</param>
         public static void SelectedItem(ComboBoxEdit comb, string svalue) 
         {
-
-            int idx = 0;
-            foreach (object obj in comb.Properties.Items) 
-            {
-                if (string.Equals(((ComboboxEditUtilities)obj).sDisplay, svalue.Trim()))
-                    break;
-                idx++;
-            }
-
-            if (idx >= comb.Properties.Items.Count)
-                throw new Exception("Invalid value: " + svalue);
-            else
-                comb.SelectedIndex = idx;
-
+            comb.EditValue = svalue;
         }
     }
 
