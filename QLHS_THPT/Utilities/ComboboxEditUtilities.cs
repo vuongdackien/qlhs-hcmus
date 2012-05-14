@@ -35,7 +35,9 @@ namespace QLHS_THPT
         public static void SetDataSource(ComboBoxEdit comb, DataTable dt, string value, string display,
             int selected_index = 0)
         {
-
+            if (dt == null)
+                return;
+            comb.Properties.Items.Clear();
             foreach (DataRow dr in dt.Rows)
             {
                 comb.Properties.Items.Add(
@@ -59,8 +61,12 @@ namespace QLHS_THPT
         public static void SetDataSource(ComboBoxEdit comb, DataTable dt, string value, string display, 
                 string value_all = "all", string display_all = "Tất cả", int selected_index = 0)
         {
+           if (dt == null)
+                return;
+           comb.Properties.Items.Clear();
 
            comb.Properties.Items.Add(new ComboboxEditUtilities(value_all, display_all));
+         
             foreach (DataRow dr in dt.Rows)
             {
                 comb.Properties.Items.Add(
@@ -89,6 +95,11 @@ namespace QLHS_THPT
         public static void SelectedItem(ComboBoxEdit comb, string svalue) 
         {
             comb.EditValue = svalue;
+        }
+
+        public static bool CheckSelectedNull(ComboBoxEdit comb)
+        {
+            return comb.SelectedItem == null;
         }
     }
 
