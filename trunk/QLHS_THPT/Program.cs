@@ -18,7 +18,7 @@ namespace QLHS
 
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.Skins.SkinManager.EnableMdiFormSkins();
-            Application.Run(new frmTongKetHocKy());
+            Application.Run(new frmSearchHocSinh());
         }
     }
 }

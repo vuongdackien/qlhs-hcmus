@@ -84,6 +84,8 @@ namespace Utilities
         /// <returns>string: giá trị valuemember</returns>
         public static string GetValueItem(ComboBoxEdit comb) 
         {
+            if (comb.SelectedItem == null)
+                return null;
             return ((ComboboxEditUtilities)comb.SelectedItem).Value;
         }
 
