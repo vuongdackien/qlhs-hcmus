@@ -179,6 +179,7 @@
             this.gridColumnDTB});
             this.gridView1.GridControl = this.gridControlTongKetHocKy;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumnSTT
             // 
@@ -193,14 +194,13 @@
             this.gridColumnSTT.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumnSTT.OptionsColumn.AllowMove = false;
             this.gridColumnSTT.OptionsColumn.AllowShowHide = false;
-            this.gridColumnSTT.OptionsColumn.AllowSize = false;
             this.gridColumnSTT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumnSTT.OptionsColumn.ReadOnly = true;
             this.gridColumnSTT.OptionsFilter.AllowAutoFilter = false;
             this.gridColumnSTT.OptionsFilter.AllowFilter = false;
             this.gridColumnSTT.Visible = true;
             this.gridColumnSTT.VisibleIndex = 0;
-            this.gridColumnSTT.Width = 30;
+            this.gridColumnSTT.Width = 49;
             // 
             // gridColumnMaHocSinh
             // 
@@ -214,7 +214,6 @@
             this.gridColumnMaHocSinh.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumnMaHocSinh.OptionsColumn.AllowMove = false;
             this.gridColumnMaHocSinh.OptionsColumn.AllowShowHide = false;
-            this.gridColumnMaHocSinh.OptionsColumn.AllowSize = false;
             this.gridColumnMaHocSinh.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumnMaHocSinh.OptionsColumn.ReadOnly = true;
             this.gridColumnMaHocSinh.OptionsFilter.AllowAutoFilter = false;
@@ -234,13 +233,13 @@
             this.gridColumnHo.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnHo.OptionsColumn.AllowMove = false;
             this.gridColumnHo.OptionsColumn.AllowShowHide = false;
-            this.gridColumnHo.OptionsColumn.AllowSize = false;
-            this.gridColumnHo.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnHo.OptionsColumn.FixedWidth = true;
+            this.gridColumnHo.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumnHo.OptionsColumn.ReadOnly = true;
+            this.gridColumnHo.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumnHo.OptionsFilter.AllowFilter = false;
             this.gridColumnHo.Visible = true;
             this.gridColumnHo.VisibleIndex = 1;
-            this.gridColumnHo.Width = 100;
+            this.gridColumnHo.Width = 135;
             // 
             // gridColumnTenHocSinh
             // 
@@ -248,90 +247,186 @@
             this.gridColumnTenHocSinh.FieldName = "TenHocSinh";
             this.gridColumnTenHocSinh.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.gridColumnTenHocSinh.Name = "gridColumnTenHocSinh";
+            this.gridColumnTenHocSinh.OptionsColumn.AllowEdit = false;
+            this.gridColumnTenHocSinh.OptionsColumn.AllowFocus = false;
+            this.gridColumnTenHocSinh.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnTenHocSinh.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnTenHocSinh.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnTenHocSinh.OptionsColumn.AllowMove = false;
+            this.gridColumnTenHocSinh.OptionsColumn.AllowShowHide = false;
+            this.gridColumnTenHocSinh.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumnTenHocSinh.OptionsColumn.ReadOnly = true;
+            this.gridColumnTenHocSinh.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumnTenHocSinh.OptionsFilter.AllowFilter = false;
             this.gridColumnTenHocSinh.Visible = true;
             this.gridColumnTenHocSinh.VisibleIndex = 2;
-            this.gridColumnTenHocSinh.Width = 60;
+            this.gridColumnTenHocSinh.Width = 77;
             // 
             // gridColumnMH001
             // 
             this.gridColumnMH001.Caption = "Toán";
             this.gridColumnMH001.FieldName = "MH001";
             this.gridColumnMH001.Name = "gridColumnMH001";
+            this.gridColumnMH001.OptionsColumn.AllowEdit = false;
+            this.gridColumnMH001.OptionsColumn.AllowFocus = false;
+            this.gridColumnMH001.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH001.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnMH001.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH001.OptionsColumn.AllowMove = false;
+            this.gridColumnMH001.OptionsColumn.AllowShowHide = false;
+            this.gridColumnMH001.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumnMH001.OptionsColumn.ReadOnly = true;
+            this.gridColumnMH001.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumnMH001.OptionsFilter.AllowFilter = false;
             this.gridColumnMH001.Visible = true;
             this.gridColumnMH001.VisibleIndex = 3;
-            this.gridColumnMH001.Width = 45;
+            this.gridColumnMH001.Width = 47;
             // 
             // gridColumnMH002
             // 
             this.gridColumnMH002.Caption = "Lý";
             this.gridColumnMH002.FieldName = "MH002";
             this.gridColumnMH002.Name = "gridColumnMH002";
+            this.gridColumnMH002.OptionsColumn.AllowEdit = false;
+            this.gridColumnMH002.OptionsColumn.AllowFocus = false;
+            this.gridColumnMH002.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH002.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnMH002.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH002.OptionsColumn.AllowMove = false;
+            this.gridColumnMH002.OptionsColumn.AllowShowHide = false;
+            this.gridColumnMH002.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumnMH002.OptionsColumn.ReadOnly = true;
             this.gridColumnMH002.Visible = true;
             this.gridColumnMH002.VisibleIndex = 4;
-            this.gridColumnMH002.Width = 45;
+            this.gridColumnMH002.Width = 47;
             // 
             // gridColumnMH003
             // 
             this.gridColumnMH003.Caption = "Hóa";
             this.gridColumnMH003.FieldName = "MH003";
             this.gridColumnMH003.Name = "gridColumnMH003";
+            this.gridColumnMH003.OptionsColumn.AllowEdit = false;
+            this.gridColumnMH003.OptionsColumn.AllowFocus = false;
+            this.gridColumnMH003.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH003.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnMH003.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH003.OptionsColumn.AllowMove = false;
+            this.gridColumnMH003.OptionsColumn.AllowShowHide = false;
+            this.gridColumnMH003.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumnMH003.OptionsColumn.ReadOnly = true;
             this.gridColumnMH003.Visible = true;
             this.gridColumnMH003.VisibleIndex = 5;
-            this.gridColumnMH003.Width = 45;
+            this.gridColumnMH003.Width = 51;
             // 
             // gridColumnMH004
             // 
             this.gridColumnMH004.Caption = "Sinh";
             this.gridColumnMH004.FieldName = "MH004";
             this.gridColumnMH004.Name = "gridColumnMH004";
+            this.gridColumnMH004.OptionsColumn.AllowEdit = false;
+            this.gridColumnMH004.OptionsColumn.AllowFocus = false;
+            this.gridColumnMH004.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH004.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnMH004.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH004.OptionsColumn.AllowMove = false;
+            this.gridColumnMH004.OptionsColumn.AllowShowHide = false;
+            this.gridColumnMH004.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumnMH004.OptionsColumn.ReadOnly = true;
             this.gridColumnMH004.Visible = true;
             this.gridColumnMH004.VisibleIndex = 6;
-            this.gridColumnMH004.Width = 45;
+            this.gridColumnMH004.Width = 48;
             // 
             // gridColumnMH005
             // 
             this.gridColumnMH005.Caption = "Sử";
             this.gridColumnMH005.FieldName = "MH005";
             this.gridColumnMH005.Name = "gridColumnMH005";
+            this.gridColumnMH005.OptionsColumn.AllowEdit = false;
+            this.gridColumnMH005.OptionsColumn.AllowFocus = false;
+            this.gridColumnMH005.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH005.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnMH005.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH005.OptionsColumn.AllowMove = false;
+            this.gridColumnMH005.OptionsColumn.AllowShowHide = false;
+            this.gridColumnMH005.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumnMH005.OptionsColumn.ReadOnly = true;
             this.gridColumnMH005.Visible = true;
             this.gridColumnMH005.VisibleIndex = 7;
-            this.gridColumnMH005.Width = 45;
+            this.gridColumnMH005.Width = 49;
             // 
             // gridColumnMH006
             // 
             this.gridColumnMH006.Caption = "Địa";
             this.gridColumnMH006.FieldName = "MH006";
             this.gridColumnMH006.Name = "gridColumnMH006";
+            this.gridColumnMH006.OptionsColumn.AllowEdit = false;
+            this.gridColumnMH006.OptionsColumn.AllowFocus = false;
+            this.gridColumnMH006.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH006.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnMH006.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH006.OptionsColumn.AllowMove = false;
+            this.gridColumnMH006.OptionsColumn.AllowShowHide = false;
+            this.gridColumnMH006.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumnMH006.OptionsColumn.ReadOnly = true;
             this.gridColumnMH006.Visible = true;
             this.gridColumnMH006.VisibleIndex = 8;
-            this.gridColumnMH006.Width = 45;
+            this.gridColumnMH006.Width = 49;
             // 
             // gridColumnMH007
             // 
             this.gridColumnMH007.Caption = "Văn";
             this.gridColumnMH007.FieldName = "MH007";
             this.gridColumnMH007.Name = "gridColumnMH007";
+            this.gridColumnMH007.OptionsColumn.AllowEdit = false;
+            this.gridColumnMH007.OptionsColumn.AllowFocus = false;
+            this.gridColumnMH007.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH007.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnMH007.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH007.OptionsColumn.AllowMove = false;
+            this.gridColumnMH007.OptionsColumn.AllowShowHide = false;
+            this.gridColumnMH007.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumnMH007.OptionsColumn.ReadOnly = true;
             this.gridColumnMH007.Visible = true;
             this.gridColumnMH007.VisibleIndex = 9;
-            this.gridColumnMH007.Width = 45;
+            this.gridColumnMH007.Width = 49;
             // 
             // gridColumnMH008
             // 
             this.gridColumnMH008.Caption = "GDCD";
             this.gridColumnMH008.FieldName = "MH008";
             this.gridColumnMH008.Name = "gridColumnMH008";
+            this.gridColumnMH008.OptionsColumn.AllowEdit = false;
+            this.gridColumnMH008.OptionsColumn.AllowFocus = false;
+            this.gridColumnMH008.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH008.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnMH008.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH008.OptionsColumn.AllowMove = false;
+            this.gridColumnMH008.OptionsColumn.AllowShowHide = false;
+            this.gridColumnMH008.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumnMH008.OptionsColumn.ReadOnly = true;
             this.gridColumnMH008.Visible = true;
             this.gridColumnMH008.VisibleIndex = 10;
-            this.gridColumnMH008.Width = 45;
+            this.gridColumnMH008.Width = 51;
             // 
             // gridColumnMH009
             // 
             this.gridColumnMH009.Caption = "Thể dục";
             this.gridColumnMH009.FieldName = "MH009";
             this.gridColumnMH009.Name = "gridColumnMH009";
+            this.gridColumnMH009.OptionsColumn.AllowEdit = false;
+            this.gridColumnMH009.OptionsColumn.AllowFocus = false;
+            this.gridColumnMH009.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH009.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnMH009.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMH009.OptionsColumn.AllowMove = false;
+            this.gridColumnMH009.OptionsColumn.AllowShowHide = false;
+            this.gridColumnMH009.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumnMH009.OptionsColumn.ReadOnly = true;
+            this.gridColumnMH009.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumnMH009.OptionsFilter.AllowFilter = false;
             this.gridColumnMH009.Visible = true;
             this.gridColumnMH009.VisibleIndex = 11;
-            this.gridColumnMH009.Width = 45;
+            this.gridColumnMH009.Width = 62;
             // 
             // gridColumnDTB
             // 
@@ -339,9 +434,20 @@
             this.gridColumnDTB.FieldName = "DTB";
             this.gridColumnDTB.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.gridColumnDTB.Name = "gridColumnDTB";
+            this.gridColumnDTB.OptionsColumn.AllowEdit = false;
+            this.gridColumnDTB.OptionsColumn.AllowFocus = false;
+            this.gridColumnDTB.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnDTB.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnDTB.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnDTB.OptionsColumn.AllowMove = false;
+            this.gridColumnDTB.OptionsColumn.AllowShowHide = false;
+            this.gridColumnDTB.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumnDTB.OptionsColumn.ReadOnly = true;
+            this.gridColumnDTB.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumnDTB.OptionsFilter.AllowFilter = false;
             this.gridColumnDTB.Visible = true;
             this.gridColumnDTB.VisibleIndex = 12;
-            this.gridColumnDTB.Width = 45;
+            this.gridColumnDTB.Width = 68;
             // 
             // panelControlTopRight
             // 
