@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridControlDSHocSinh = new DevExpress.XtraGrid.GridControl();
+            this.gridViewDSHocSinh = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumnSTT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnTenHocSinh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnMaHocSinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.comboBoxEditNamHoc = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comboBoxEditLop = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -47,28 +51,26 @@
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.dateEditNgaySinh = new DevExpress.XtraEditors.DateEdit();
+            this.textEditDiaChi = new DevExpress.XtraEditors.TextEdit();
+            this.textEditNoiSinh = new DevExpress.XtraEditors.TextEdit();
+            this.textEditEmail = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
+            this.radioGroupGioiTinh = new DevExpress.XtraEditors.RadioGroup();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.spinEditSTTSoDiem = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.textEditTenHocSinh = new DevExpress.XtraEditors.TextEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.textEditmaHocSinh = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.TenHocSinh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.STT = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDSHocSinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewDSHocSinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditNamHoc.Properties)).BeginInit();
@@ -80,21 +82,20 @@
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditNoiSinh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupGioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditSTTSoDiem.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditTenHocSinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditmaHocSinh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.gridControl1);
+            this.panelControl1.Controls.Add(this.gridControlDSHocSinh);
             this.panelControl1.Controls.Add(this.panelControl2);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
@@ -102,16 +103,54 @@
             this.panelControl1.Size = new System.Drawing.Size(200, 445);
             this.panelControl1.TabIndex = 0;
             // 
-            // gridControl1
+            // gridControlDSHocSinh
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 140);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(196, 303);
-            this.gridControl1.TabIndex = 4;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridControlDSHocSinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlDSHocSinh.Location = new System.Drawing.Point(2, 140);
+            this.gridControlDSHocSinh.MainView = this.gridViewDSHocSinh;
+            this.gridControlDSHocSinh.Name = "gridControlDSHocSinh";
+            this.gridControlDSHocSinh.Size = new System.Drawing.Size(196, 303);
+            this.gridControlDSHocSinh.TabIndex = 4;
+            this.gridControlDSHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewDSHocSinh});
+            // 
+            // gridViewDSHocSinh
+            // 
+            this.gridViewDSHocSinh.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumnSTT,
+            this.gridColumnTenHocSinh,
+            this.gridColumnMaHocSinh});
+            this.gridViewDSHocSinh.GridControl = this.gridControlDSHocSinh;
+            this.gridViewDSHocSinh.Name = "gridViewDSHocSinh";
+            this.gridViewDSHocSinh.OptionsBehavior.AutoSelectAllInEditor = false;
+            this.gridViewDSHocSinh.OptionsBehavior.Editable = false;
+            this.gridViewDSHocSinh.OptionsView.ShowGroupPanel = false;
+            this.gridViewDSHocSinh.OptionsView.ShowIndicator = false;
+            this.gridViewDSHocSinh.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewDSHocSinh_FocusedRowChanged);
+            // 
+            // gridColumnSTT
+            // 
+            this.gridColumnSTT.Caption = "STT";
+            this.gridColumnSTT.FieldName = "STT";
+            this.gridColumnSTT.Name = "gridColumnSTT";
+            this.gridColumnSTT.Visible = true;
+            this.gridColumnSTT.VisibleIndex = 0;
+            this.gridColumnSTT.Width = 33;
+            // 
+            // gridColumnTenHocSinh
+            // 
+            this.gridColumnTenHocSinh.Caption = "Họ Tên";
+            this.gridColumnTenHocSinh.FieldName = "TenHocSinh";
+            this.gridColumnTenHocSinh.Name = "gridColumnTenHocSinh";
+            this.gridColumnTenHocSinh.Visible = true;
+            this.gridColumnTenHocSinh.VisibleIndex = 1;
+            this.gridColumnTenHocSinh.Width = 161;
+            // 
+            // gridColumnMaHocSinh
+            // 
+            this.gridColumnMaHocSinh.Caption = "gridColumn1";
+            this.gridColumnMaHocSinh.FieldName = "MaHocSinh";
+            this.gridColumnMaHocSinh.Name = "gridColumnMaHocSinh";
             // 
             // panelControl2
             // 
@@ -135,7 +174,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditNamHoc.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditNamHoc.Size = new System.Drawing.Size(150, 20);
-            this.comboBoxEditNamHoc.TabIndex = 7;
+            this.comboBoxEditNamHoc.TabIndex = 1;
             this.comboBoxEditNamHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHoc_SelectedIndexChanged);
             // 
             // comboBoxEditLop
@@ -146,7 +185,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditLop.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditLop.Size = new System.Drawing.Size(150, 20);
-            this.comboBoxEditLop.TabIndex = 6;
+            this.comboBoxEditLop.TabIndex = 3;
             this.comboBoxEditLop.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditLop_SelectedIndexChanged);
             // 
             // comboBoxEditKhoi
@@ -157,7 +196,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditKhoi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditKhoi.Size = new System.Drawing.Size(150, 20);
-            this.comboBoxEditKhoi.TabIndex = 5;
+            this.comboBoxEditKhoi.TabIndex = 2;
             this.comboBoxEditKhoi.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditKhoi_SelectedIndexChanged);
             // 
             // labelControl2
@@ -201,7 +240,7 @@
             this.simpleButton4.Location = new System.Drawing.Point(307, 12);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(128, 35);
-            this.simpleButton4.TabIndex = 1;
+            this.simpleButton4.TabIndex = 17;
             this.simpleButton4.Text = "Chuyển lớp (Alt+&C)";
             // 
             // simpleButton5
@@ -210,7 +249,7 @@
             this.simpleButton5.Location = new System.Drawing.Point(441, 12);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(109, 35);
-            this.simpleButton5.TabIndex = 1;
+            this.simpleButton5.TabIndex = 18;
             this.simpleButton5.Text = "In hồ sơ (Alt+&P)";
             // 
             // labelControl4
@@ -242,7 +281,7 @@
             this.simpleButton6.Location = new System.Drawing.Point(441, 15);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(109, 35);
-            this.simpleButton6.TabIndex = 1;
+            this.simpleButton6.TabIndex = 16;
             this.simpleButton6.Text = "Đóng (Alt+&X)";
             // 
             // simpleButton3
@@ -251,7 +290,7 @@
             this.simpleButton3.Location = new System.Drawing.Point(307, 15);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(113, 35);
-            this.simpleButton3.TabIndex = 1;
+            this.simpleButton3.TabIndex = 15;
             this.simpleButton3.Text = "Xóa (Alt+&D)";
             // 
             // simpleButton2
@@ -260,7 +299,7 @@
             this.simpleButton2.Location = new System.Drawing.Point(165, 15);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(116, 35);
-            this.simpleButton2.TabIndex = 1;
+            this.simpleButton2.TabIndex = 14;
             this.simpleButton2.Text = "Ghi dữ liệu (Enter)";
             // 
             // simpleButton1
@@ -269,22 +308,22 @@
             this.simpleButton1.Location = new System.Drawing.Point(25, 15);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(117, 35);
-            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.TabIndex = 13;
             this.simpleButton1.Text = "Thêm mới (Alt+&N)";
             // 
             // panelControl5
             // 
-            this.panelControl5.Controls.Add(this.dateEdit1);
-            this.panelControl5.Controls.Add(this.textEdit4);
-            this.panelControl5.Controls.Add(this.textEdit3);
-            this.panelControl5.Controls.Add(this.textEdit2);
+            this.panelControl5.Controls.Add(this.dateEditNgaySinh);
+            this.panelControl5.Controls.Add(this.textEditDiaChi);
+            this.panelControl5.Controls.Add(this.textEditNoiSinh);
+            this.panelControl5.Controls.Add(this.textEditEmail);
             this.panelControl5.Controls.Add(this.labelControl12);
             this.panelControl5.Controls.Add(this.labelControl11);
-            this.panelControl5.Controls.Add(this.radioGroup1);
+            this.panelControl5.Controls.Add(this.radioGroupGioiTinh);
             this.panelControl5.Controls.Add(this.labelControl10);
             this.panelControl5.Controls.Add(this.spinEditSTTSoDiem);
             this.panelControl5.Controls.Add(this.labelControl9);
-            this.panelControl5.Controls.Add(this.textEdit1);
+            this.panelControl5.Controls.Add(this.textEditTenHocSinh);
             this.panelControl5.Controls.Add(this.labelControl8);
             this.panelControl5.Controls.Add(this.textEditmaHocSinh);
             this.panelControl5.Controls.Add(this.labelControl7);
@@ -296,38 +335,38 @@
             this.panelControl5.Size = new System.Drawing.Size(627, 323);
             this.panelControl5.TabIndex = 3;
             // 
-            // dateEdit1
+            // dateEditNgaySinh
             // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(83, 140);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateEditNgaySinh.EditValue = null;
+            this.dateEditNgaySinh.Location = new System.Drawing.Point(83, 140);
+            this.dateEditNgaySinh.Name = "dateEditNgaySinh";
+            this.dateEditNgaySinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.dateEditNgaySinh.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateEdit1.Size = new System.Drawing.Size(136, 20);
-            this.dateEdit1.TabIndex = 6;
+            this.dateEditNgaySinh.Size = new System.Drawing.Size(136, 20);
+            this.dateEditNgaySinh.TabIndex = 9;
             // 
-            // textEdit4
+            // textEditDiaChi
             // 
-            this.textEdit4.Location = new System.Drawing.Point(82, 229);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(206, 20);
-            this.textEdit4.TabIndex = 5;
+            this.textEditDiaChi.Location = new System.Drawing.Point(82, 229);
+            this.textEditDiaChi.Name = "textEditDiaChi";
+            this.textEditDiaChi.Size = new System.Drawing.Size(206, 20);
+            this.textEditDiaChi.TabIndex = 12;
             // 
-            // textEdit3
+            // textEditNoiSinh
             // 
-            this.textEdit3.Location = new System.Drawing.Point(82, 197);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(206, 20);
-            this.textEdit3.TabIndex = 5;
+            this.textEditNoiSinh.Location = new System.Drawing.Point(82, 197);
+            this.textEditNoiSinh.Name = "textEditNoiSinh";
+            this.textEditNoiSinh.Size = new System.Drawing.Size(206, 20);
+            this.textEditNoiSinh.TabIndex = 11;
             // 
-            // textEdit2
+            // textEditEmail
             // 
-            this.textEdit2.Location = new System.Drawing.Point(82, 167);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(206, 20);
-            this.textEdit2.TabIndex = 5;
+            this.textEditEmail.Location = new System.Drawing.Point(82, 167);
+            this.textEditEmail.Name = "textEditEmail";
+            this.textEditEmail.Size = new System.Drawing.Size(206, 20);
+            this.textEditEmail.TabIndex = 10;
             // 
             // labelControl12
             // 
@@ -345,16 +384,16 @@
             this.labelControl11.TabIndex = 0;
             this.labelControl11.Text = "Nơi sinh:";
             // 
-            // radioGroup1
+            // radioGroupGioiTinh
             // 
-            this.radioGroup1.EditValue = ((byte)(0));
-            this.radioGroup1.Location = new System.Drawing.Point(82, 106);
-            this.radioGroup1.Name = "radioGroup1";
-            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            this.radioGroupGioiTinh.EditValue = ((byte)(0));
+            this.radioGroupGioiTinh.Location = new System.Drawing.Point(82, 106);
+            this.radioGroupGioiTinh.Name = "radioGroupGioiTinh";
+            this.radioGroupGioiTinh.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(0)), "Nam"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(1)), "Nữ")});
-            this.radioGroup1.Size = new System.Drawing.Size(137, 22);
-            this.radioGroup1.TabIndex = 3;
+            this.radioGroupGioiTinh.Size = new System.Drawing.Size(137, 22);
+            this.radioGroupGioiTinh.TabIndex = 8;
             // 
             // labelControl10
             // 
@@ -367,7 +406,7 @@
             // spinEditSTTSoDiem
             // 
             this.spinEditSTTSoDiem.EditValue = new decimal(new int[] {
-            0,
+            1,
             0,
             0,
             0});
@@ -375,8 +414,24 @@
             this.spinEditSTTSoDiem.Name = "spinEditSTTSoDiem";
             this.spinEditSTTSoDiem.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.spinEditSTTSoDiem.Properties.EditValueChangedDelay = 1;
+            this.spinEditSTTSoDiem.Properties.IsFloatValue = false;
+            this.spinEditSTTSoDiem.Properties.Mask.BeepOnError = true;
+            this.spinEditSTTSoDiem.Properties.Mask.EditMask = "\\d{1,2}";
+            this.spinEditSTTSoDiem.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.spinEditSTTSoDiem.Properties.MaxLength = 2;
+            this.spinEditSTTSoDiem.Properties.MaxValue = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.spinEditSTTSoDiem.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.spinEditSTTSoDiem.Size = new System.Drawing.Size(78, 20);
-            this.spinEditSTTSoDiem.TabIndex = 2;
+            this.spinEditSTTSoDiem.TabIndex = 6;
             // 
             // labelControl9
             // 
@@ -386,12 +441,12 @@
             this.labelControl9.TabIndex = 0;
             this.labelControl9.Text = "Ngày sinh:";
             // 
-            // textEdit1
+            // textEditTenHocSinh
             // 
-            this.textEdit1.Location = new System.Drawing.Point(25, 75);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(263, 20);
-            this.textEdit1.TabIndex = 1;
+            this.textEditTenHocSinh.Location = new System.Drawing.Point(25, 75);
+            this.textEditTenHocSinh.Name = "textEditTenHocSinh";
+            this.textEditTenHocSinh.Size = new System.Drawing.Size(263, 20);
+            this.textEditTenHocSinh.TabIndex = 7;
             // 
             // labelControl8
             // 
@@ -403,10 +458,11 @@
             // 
             // textEditmaHocSinh
             // 
+            this.textEditmaHocSinh.Enabled = false;
             this.textEditmaHocSinh.Location = new System.Drawing.Point(25, 27);
             this.textEditmaHocSinh.Name = "textEditmaHocSinh";
             this.textEditmaHocSinh.Size = new System.Drawing.Size(141, 20);
-            this.textEditmaHocSinh.TabIndex = 1;
+            this.textEditmaHocSinh.TabIndex = 5;
             // 
             // labelControl7
             // 
@@ -432,32 +488,6 @@
             this.labelControl5.TabIndex = 0;
             this.labelControl5.Text = "Mã học sinh:";
             // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.STT,
-            this.TenHocSinh});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.OptionsView.ShowIndicator = false;
-            // 
-            // TenHocSinh
-            // 
-            this.TenHocSinh.Caption = "Họ Tên";
-            this.TenHocSinh.Name = "TenHocSinh";
-            this.TenHocSinh.Visible = true;
-            this.TenHocSinh.VisibleIndex = 1;
-            this.TenHocSinh.Width = 157;
-            // 
-            // STT
-            // 
-            this.STT.Caption = "STT";
-            this.STT.Name = "STT";
-            this.STT.Visible = true;
-            this.STT.VisibleIndex = 0;
-            this.STT.Width = 37;
-            // 
             // frmHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -473,7 +503,8 @@
             this.Load += new System.EventHandler(this.frmHocSinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDSHocSinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewDSHocSinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
@@ -488,16 +519,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditNoiSinh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupGioiTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditSTTSoDiem.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditTenHocSinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditmaHocSinh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -520,28 +550,29 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.SpinEdit spinEditSTTSoDiem;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit textEditTenHocSinh;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.RadioGroup radioGroup1;
+        private DevExpress.XtraEditors.RadioGroup radioGroupGioiTinh;
         private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.TextEdit textEditDiaChi;
+        private DevExpress.XtraEditors.TextEdit textEditNoiSinh;
+        private DevExpress.XtraEditors.TextEdit textEditEmail;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.DateEdit dateEditNgaySinh;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn STT;
-        private DevExpress.XtraGrid.Columns.GridColumn TenHocSinh;
+        private DevExpress.XtraGrid.GridControl gridControlDSHocSinh;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewDSHocSinh;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnSTT;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnTenHocSinh;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnMaHocSinh;
 
     }
 }

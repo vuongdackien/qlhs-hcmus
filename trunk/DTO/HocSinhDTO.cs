@@ -6,6 +6,7 @@ namespace QLHS.DTO
 {
     public class HocSinhDTO
     {
+        public int STT { get; set; }
         public string MaHocSinh { get; set; }
         public string TenHocSinh { get; set; }
         public string Email { get; set; }
