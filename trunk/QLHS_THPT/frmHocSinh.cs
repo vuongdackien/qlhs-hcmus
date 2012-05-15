@@ -144,6 +144,7 @@ namespace QLHS
             textEditEmail.Text = "";
             textEditNoiSinh.Text = "";
             dateEditNgaySinh.Properties.MinValue = new DateTime(_QuyDinhBUS.LayNamCanDuoi(),1,1);
+            dateEditNgaySinh.Properties.MaxValue = new DateTime(_QuyDinhBUS.LayNamCanTren(), 1, 1);
            
         }
 
