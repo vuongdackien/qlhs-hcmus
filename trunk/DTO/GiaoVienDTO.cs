@@ -6,7 +6,14 @@ namespace QLHS.DTO
 {
     public class GiaoVienDTO
     {
-      
+        public GiaoVienDTO()
+        { }
+        public GiaoVienDTO(string MaGiaovien, string TenGiaoVien)
+        {
+            this.MaGV = MaGiaoVien;
+            this.TenGV=TenGiaoVien;
+        }
+       
         private string  MaGiaoVien;
 
         public string MaGV
