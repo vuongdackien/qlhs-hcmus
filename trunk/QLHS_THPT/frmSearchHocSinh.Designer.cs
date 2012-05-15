@@ -139,10 +139,10 @@
             // xtraTabControlDieuKien
             // 
             this.xtraTabControlDieuKien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControlDieuKien.Location = new System.Drawing.Point(2, 2);
+            this.xtraTabControlDieuKien.Location = new System.Drawing.Point(3, 3);
             this.xtraTabControlDieuKien.Name = "xtraTabControlDieuKien";
             this.xtraTabControlDieuKien.SelectedTabPage = this.xtraTabPageDieuKien;
-            this.xtraTabControlDieuKien.Size = new System.Drawing.Size(746, 236);
+            this.xtraTabControlDieuKien.Size = new System.Drawing.Size(744, 234);
             this.xtraTabControlDieuKien.TabIndex = 0;
             this.xtraTabControlDieuKien.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageDieuKien});
@@ -151,7 +151,7 @@
             // 
             this.xtraTabPageDieuKien.Controls.Add(this.panelControlDKienTim);
             this.xtraTabPageDieuKien.Name = "xtraTabPageDieuKien";
-            this.xtraTabPageDieuKien.Size = new System.Drawing.Size(744, 214);
+            this.xtraTabPageDieuKien.Size = new System.Drawing.Size(742, 212);
             this.xtraTabPageDieuKien.Text = "Diều kiện về hồ sơ học sinh";
             // 
             // panelControlDKienTim
@@ -162,7 +162,7 @@
             this.panelControlDKienTim.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlDKienTim.Location = new System.Drawing.Point(0, 0);
             this.panelControlDKienTim.Name = "panelControlDKienTim";
-            this.panelControlDKienTim.Size = new System.Drawing.Size(744, 214);
+            this.panelControlDKienTim.Size = new System.Drawing.Size(742, 212);
             this.panelControlDKienTim.TabIndex = 0;
             // 
             // panelControlNDungDKien
@@ -189,7 +189,7 @@
             this.panelControlNDungDKien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlNDungDKien.Location = new System.Drawing.Point(0, 0);
             this.panelControlNDungDKien.Name = "panelControlNDungDKien";
-            this.panelControlNDungDKien.Size = new System.Drawing.Size(744, 154);
+            this.panelControlNDungDKien.Size = new System.Drawing.Size(742, 152);
             this.panelControlNDungDKien.TabIndex = 1;
             // 
             // radioGroup1
@@ -349,9 +349,9 @@
             this.panelControlButtonTim.Controls.Add(this.checkButton3);
             this.panelControlButtonTim.Controls.Add(this.checkEditTimGanDung);
             this.panelControlButtonTim.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControlButtonTim.Location = new System.Drawing.Point(0, 154);
+            this.panelControlButtonTim.Location = new System.Drawing.Point(0, 152);
             this.panelControlButtonTim.Name = "panelControlButtonTim";
-            this.panelControlButtonTim.Size = new System.Drawing.Size(744, 60);
+            this.panelControlButtonTim.Size = new System.Drawing.Size(742, 60);
             this.panelControlButtonTim.TabIndex = 0;
             // 
             // checkButton5
