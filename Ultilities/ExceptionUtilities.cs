@@ -6,5 +6,9 @@ namespace Utilities
 {
     class ExceptionUtilities
     {
+        public ExceptionUtilities()
+        {
+
+        }
     }
 }
