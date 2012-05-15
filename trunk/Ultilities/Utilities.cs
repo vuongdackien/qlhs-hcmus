@@ -14,7 +14,7 @@ namespace Utilities
         public static string Yeu = "HS Yếu";
         public static string Kem = "HS Kém";
     }
-    public static partial class Utilities
+    public static partial class StringUtilities
     {
         public static NguoiDungDTO user = null;
 
