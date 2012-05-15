@@ -1,4 +1,4 @@
-﻿namespace QLHS_THPT
+﻿namespace QLHS
 {
     partial class frmSearchHocSinh
     {

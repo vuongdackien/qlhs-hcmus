@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DevExpress.XtraEditors;
-using System.Windows.Forms;
+﻿using DevExpress.XtraEditors;
 using System.Data.OleDb;
-using System.Data.SqlClient;
+using System.Windows.Forms;
 
-namespace QLHS_THPT
+namespace Utilities
 {
 
     class CustomErrorSQL

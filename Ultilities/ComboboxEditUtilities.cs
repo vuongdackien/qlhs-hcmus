@@ -4,7 +4,7 @@ using System.Text;
 using System.Data;
 using DevExpress.XtraEditors;
 
-namespace QLHS_THPT
+namespace Utilities
 {
     public class ComboboxEditUtilities
     {

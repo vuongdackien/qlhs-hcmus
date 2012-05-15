@@ -6,7 +6,7 @@ using QLHS.BUS;
 using QLHS.DTO;
 
 
-namespace QLHS_THPT
+namespace QLHS
 {
     public partial class frmHocSinh : DevExpress.XtraEditors.XtraForm
     {
@@ -27,9 +27,9 @@ namespace QLHS_THPT
 
         private void frmHocSinh_Load(object sender, EventArgs e)
         {
-            ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc, _NamHocBUS.LayDTNamHoc(),
+            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc, _NamHocBUS.LayDTNamHoc(),
                                                 "MaNamHoc", "TenNamHoc",0);
-            ComboboxEditUtilities.SetDataSource(comboBoxEditKhoi, _KhoiBUS.LayDTKhoi(),
+            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoi, _KhoiBUS.LayDTKhoi(),
                                                 "MaKhoi", "TenKhoi",0);
         }
 
@@ -38,55 +38,59 @@ namespace QLHS_THPT
         /// </summary>
         private void LoadComboboxLopHoc(object sender, EventArgs e)
         {
-            ComboboxEditUtilities.SetDataSource(comboBoxEditLop, _LopBUS.LayDTLop_MaNam_MaKhoi(
-                        ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc),
-                         ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi)
+            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditLop, _LopBUS.LayDTLop_MaNam_MaKhoi(
+                       Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc),
+                         Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi)
                     ), "MaLop", "TenLop", 0);
             comboBoxEditLop_SelectedIndexChanged(sender,e);
+            this.HienThiHoSoHocSinh(gridViewDSHocSinh.GetRowCellValue(0, "MaHocSinh"));
+            
         }
         private void comboBoxEditNamHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ComboboxEditUtilities.CheckSelectedNull(comboBoxEditKhoi) ||
-                ComboboxEditUtilities.CheckSelectedNull(comboBoxEditNamHoc))
+            if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditKhoi) ||
+                Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditNamHoc))
                 return;
             this.LoadComboboxLopHoc(sender, e);
         }
 
         private void comboBoxEditKhoi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ComboboxEditUtilities.CheckSelectedNull(comboBoxEditNamHoc))
+            if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditNamHoc))
                 return;
             this.LoadComboboxLopHoc(sender, e);
         }
 
         private void comboBoxEditLop_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ComboboxEditUtilities.CheckSelectedNull(comboBoxEditLop))
+            if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditLop))
             {
                 gridControlDSHocSinh.DataSource = null;
                 return;
             }
             gridControlDSHocSinh.DataSource = _HocSinhBUS.LayDTHocSinh_LopHoc(
-                 ComboboxEditUtilities.GetValueItem(comboBoxEditLop)
+                 Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop)
             );
         }
-
-        void EditingControl(bool is_editing = true)
-        {
-            spinEditSTTSoDiem.Enabled = is_editing;
-            dateEditNgaySinh.Enabled = is_editing;
-            textEditDiaChi.Enabled = is_editing;
-            textEditEmail.Enabled = is_editing;
-           // textEditmaHocSinh.Enabled = is
-        }
+      
 
         /// <summary>
         /// Hiển thị chi tiết hồ sơ học sinh
         /// </summary>
         /// <param name="MaHS">String: MaHS</param>
-        private void HienThiHoSoHocSinh(string MaHocSinh)
+        private void HienThiHoSoHocSinh(object MaHocSinh = null)
         {
-            HocSinhDTO hocSinhDTO = _HocSinhBUS.LayHoSoHocSinh(MaHocSinh);
+            HocSinhDTO hocSinhDTO;
+            if (MaHocSinh == null)
+            {
+                hocSinhDTO = new HocSinhDTO();
+                panelControlChiTietHoSo.Enabled = false;
+            }
+            else
+            {
+                hocSinhDTO = _HocSinhBUS.LayHoSoHocSinh(MaHocSinh.ToString());
+                panelControlChiTietHoSo.Enabled = true;
+            }
             spinEditSTTSoDiem.Value = hocSinhDTO.STT;
             dateEditNgaySinh.EditValue = hocSinhDTO.NgaySinh;
             textEditmaHocSinh.Text = hocSinhDTO.MaHocSinh;
@@ -100,11 +104,27 @@ namespace QLHS_THPT
 
         private void gridViewDSHocSinh_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            string MaHocSinh = this.gridViewDSHocSinh.GetRowCellValue(e.FocusedRowHandle, "MaHocSinh").ToString();
-            if (!MaHocSinh.Equals(""))
-            {
-                HienThiHoSoHocSinh(MaHocSinh);
-            }
+            object MaHocSinh = this.gridViewDSHocSinh.GetRowCellValue(e.FocusedRowHandle, "MaHocSinh").ToString();
+            HienThiHoSoHocSinh(MaHocSinh);
+        }
+
+        private void simpleButtonDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void simpleButtonGhiDuLieu_Click(object sender, EventArgs e)
+        {
+            HocSinhDTO hocSinhDTO  = new HocSinhDTO();
+            hocSinhDTO.STT = Convert.ToInt32(spinEditSTTSoDiem.Value);
+            hocSinhDTO.NgaySinh = Convert.ToDateTime(dateEditNgaySinh.EditValue);
+            hocSinhDTO.MaHocSinh = textEditmaHocSinh.Text;
+            hocSinhDTO.TenHocSinh = textEditTenHocSinh.Text;
+            hocSinhDTO.GioiTinh = radioGroupGioiTinh.SelectedIndex;
+            hocSinhDTO.NoiSinh = textEditNoiSinh.Text;
+            hocSinhDTO.DiaChi = textEditDiaChi.Text;
+            hocSinhDTO.Email = textEditEmail.Text;
+            
         }
   
     }

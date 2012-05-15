@@ -1,4 +1,4 @@
-﻿namespace QLHS_THPT
+﻿namespace QLHS
 {
     partial class frmHocSinh
     {
@@ -42,15 +42,15 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonChuyenLop = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonInHoSo = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonGhiDuLieu = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonThemMoi = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControlChiTietHoSo = new DevExpress.XtraEditors.PanelControl();
             this.dateEditNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.textEditDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.textEditNoiSinh = new DevExpress.XtraEditors.TextEdit();
@@ -80,8 +80,8 @@
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlChiTietHoSo)).BeginInit();
+            this.panelControlChiTietHoSo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).BeginInit();
@@ -225,8 +225,8 @@
             // 
             // panelControl3
             // 
-            this.panelControl3.Controls.Add(this.simpleButton4);
-            this.panelControl3.Controls.Add(this.simpleButton5);
+            this.panelControl3.Controls.Add(this.simpleButtonChuyenLop);
+            this.panelControl3.Controls.Add(this.simpleButtonInHoSo);
             this.panelControl3.Controls.Add(this.labelControl4);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3.Location = new System.Drawing.Point(200, 0);
@@ -234,23 +234,23 @@
             this.panelControl3.Size = new System.Drawing.Size(627, 60);
             this.panelControl3.TabIndex = 1;
             // 
-            // simpleButton4
+            // simpleButtonChuyenLop
             // 
-            this.simpleButton4.Image = global::QLHS_THPT.Properties.Resources.chuyenlop_small;
-            this.simpleButton4.Location = new System.Drawing.Point(307, 12);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(128, 35);
-            this.simpleButton4.TabIndex = 17;
-            this.simpleButton4.Text = "Chuyển lớp (Alt+&C)";
+            this.simpleButtonChuyenLop.Image = global::QLHS.Properties.Resources.chuyenlop_small;
+            this.simpleButtonChuyenLop.Location = new System.Drawing.Point(307, 12);
+            this.simpleButtonChuyenLop.Name = "simpleButtonChuyenLop";
+            this.simpleButtonChuyenLop.Size = new System.Drawing.Size(128, 35);
+            this.simpleButtonChuyenLop.TabIndex = 17;
+            this.simpleButtonChuyenLop.Text = "Chuyển lớp (Alt+&C)";
             // 
-            // simpleButton5
+            // simpleButtonInHoSo
             // 
-            this.simpleButton5.Image = global::QLHS_THPT.Properties.Resources.print;
-            this.simpleButton5.Location = new System.Drawing.Point(441, 12);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(109, 35);
-            this.simpleButton5.TabIndex = 18;
-            this.simpleButton5.Text = "In hồ sơ (Alt+&P)";
+            this.simpleButtonInHoSo.Image = global::QLHS.Properties.Resources.print;
+            this.simpleButtonInHoSo.Location = new System.Drawing.Point(441, 12);
+            this.simpleButtonInHoSo.Name = "simpleButtonInHoSo";
+            this.simpleButtonInHoSo.Size = new System.Drawing.Size(109, 35);
+            this.simpleButtonInHoSo.TabIndex = 18;
+            this.simpleButtonInHoSo.Text = "In hồ sơ (Alt+&P)";
             // 
             // labelControl4
             // 
@@ -264,76 +264,78 @@
             // 
             // panelControl4
             // 
-            this.panelControl4.Controls.Add(this.simpleButton6);
-            this.panelControl4.Controls.Add(this.simpleButton3);
-            this.panelControl4.Controls.Add(this.simpleButton2);
-            this.panelControl4.Controls.Add(this.simpleButton1);
+            this.panelControl4.Controls.Add(this.simpleButtonDong);
+            this.panelControl4.Controls.Add(this.simpleButtonXoa);
+            this.panelControl4.Controls.Add(this.simpleButtonGhiDuLieu);
+            this.panelControl4.Controls.Add(this.simpleButtonThemMoi);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl4.Location = new System.Drawing.Point(200, 383);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(627, 62);
             this.panelControl4.TabIndex = 2;
             // 
-            // simpleButton6
+            // simpleButtonDong
             // 
-            this.simpleButton6.Image = global::QLHS_THPT.Properties.Resources.thoat_small;
-            this.simpleButton6.ImageIndex = 0;
-            this.simpleButton6.Location = new System.Drawing.Point(441, 15);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(109, 35);
-            this.simpleButton6.TabIndex = 16;
-            this.simpleButton6.Text = "Đóng (Alt+&X)";
+            this.simpleButtonDong.Image = global::QLHS.Properties.Resources.thoat_small;
+            this.simpleButtonDong.ImageIndex = 0;
+            this.simpleButtonDong.Location = new System.Drawing.Point(441, 15);
+            this.simpleButtonDong.Name = "simpleButtonDong";
+            this.simpleButtonDong.Size = new System.Drawing.Size(109, 35);
+            this.simpleButtonDong.TabIndex = 16;
+            this.simpleButtonDong.Text = "Đóng (Alt+&X)";
+            this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
             // 
-            // simpleButton3
+            // simpleButtonXoa
             // 
-            this.simpleButton3.Image = global::QLHS_THPT.Properties.Resources.xoa_small;
-            this.simpleButton3.Location = new System.Drawing.Point(307, 15);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(113, 35);
-            this.simpleButton3.TabIndex = 15;
-            this.simpleButton3.Text = "Xóa (Alt+&D)";
+            this.simpleButtonXoa.Image = global::QLHS.Properties.Resources.xoa_small;
+            this.simpleButtonXoa.Location = new System.Drawing.Point(307, 15);
+            this.simpleButtonXoa.Name = "simpleButtonXoa";
+            this.simpleButtonXoa.Size = new System.Drawing.Size(113, 35);
+            this.simpleButtonXoa.TabIndex = 15;
+            this.simpleButtonXoa.Text = "Xóa (Alt+&D)";
             // 
-            // simpleButton2
+            // simpleButtonGhiDuLieu
             // 
-            this.simpleButton2.Image = global::QLHS_THPT.Properties.Resources.them_small;
-            this.simpleButton2.Location = new System.Drawing.Point(165, 15);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(116, 35);
-            this.simpleButton2.TabIndex = 14;
-            this.simpleButton2.Text = "Ghi dữ liệu (Enter)";
+            this.simpleButtonGhiDuLieu.Image = global::QLHS.Properties.Resources.them_small;
+            this.simpleButtonGhiDuLieu.Location = new System.Drawing.Point(165, 15);
+            this.simpleButtonGhiDuLieu.Name = "simpleButtonGhiDuLieu";
+            this.simpleButtonGhiDuLieu.Size = new System.Drawing.Size(116, 35);
+            this.simpleButtonGhiDuLieu.TabIndex = 14;
+            this.simpleButtonGhiDuLieu.Text = "Ghi dữ liệu (Enter)";
+            this.simpleButtonGhiDuLieu.Click += new System.EventHandler(this.simpleButtonGhiDuLieu_Click);
             // 
-            // simpleButton1
+            // simpleButtonThemMoi
             // 
-            this.simpleButton1.Image = global::QLHS_THPT.Properties.Resources.them_small;
-            this.simpleButton1.Location = new System.Drawing.Point(25, 15);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(117, 35);
-            this.simpleButton1.TabIndex = 13;
-            this.simpleButton1.Text = "Thêm mới (Alt+&N)";
+            this.simpleButtonThemMoi.Image = global::QLHS.Properties.Resources.them_small;
+            this.simpleButtonThemMoi.Location = new System.Drawing.Point(25, 15);
+            this.simpleButtonThemMoi.Name = "simpleButtonThemMoi";
+            this.simpleButtonThemMoi.Size = new System.Drawing.Size(117, 35);
+            this.simpleButtonThemMoi.TabIndex = 13;
+            this.simpleButtonThemMoi.Text = "Thêm mới (Alt+&N)";
             // 
-            // panelControl5
+            // panelControlChiTietHoSo
             // 
-            this.panelControl5.Controls.Add(this.dateEditNgaySinh);
-            this.panelControl5.Controls.Add(this.textEditDiaChi);
-            this.panelControl5.Controls.Add(this.textEditNoiSinh);
-            this.panelControl5.Controls.Add(this.textEditEmail);
-            this.panelControl5.Controls.Add(this.labelControl12);
-            this.panelControl5.Controls.Add(this.labelControl11);
-            this.panelControl5.Controls.Add(this.radioGroupGioiTinh);
-            this.panelControl5.Controls.Add(this.labelControl10);
-            this.panelControl5.Controls.Add(this.spinEditSTTSoDiem);
-            this.panelControl5.Controls.Add(this.labelControl9);
-            this.panelControl5.Controls.Add(this.textEditTenHocSinh);
-            this.panelControl5.Controls.Add(this.labelControl8);
-            this.panelControl5.Controls.Add(this.textEditmaHocSinh);
-            this.panelControl5.Controls.Add(this.labelControl7);
-            this.panelControl5.Controls.Add(this.labelControl6);
-            this.panelControl5.Controls.Add(this.labelControl5);
-            this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl5.Location = new System.Drawing.Point(200, 60);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(627, 323);
-            this.panelControl5.TabIndex = 3;
+            this.panelControlChiTietHoSo.Controls.Add(this.dateEditNgaySinh);
+            this.panelControlChiTietHoSo.Controls.Add(this.textEditDiaChi);
+            this.panelControlChiTietHoSo.Controls.Add(this.textEditNoiSinh);
+            this.panelControlChiTietHoSo.Controls.Add(this.textEditEmail);
+            this.panelControlChiTietHoSo.Controls.Add(this.labelControl12);
+            this.panelControlChiTietHoSo.Controls.Add(this.labelControl11);
+            this.panelControlChiTietHoSo.Controls.Add(this.radioGroupGioiTinh);
+            this.panelControlChiTietHoSo.Controls.Add(this.labelControl10);
+            this.panelControlChiTietHoSo.Controls.Add(this.spinEditSTTSoDiem);
+            this.panelControlChiTietHoSo.Controls.Add(this.labelControl9);
+            this.panelControlChiTietHoSo.Controls.Add(this.textEditTenHocSinh);
+            this.panelControlChiTietHoSo.Controls.Add(this.labelControl8);
+            this.panelControlChiTietHoSo.Controls.Add(this.textEditmaHocSinh);
+            this.panelControlChiTietHoSo.Controls.Add(this.labelControl7);
+            this.panelControlChiTietHoSo.Controls.Add(this.labelControl6);
+            this.panelControlChiTietHoSo.Controls.Add(this.labelControl5);
+            this.panelControlChiTietHoSo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControlChiTietHoSo.Location = new System.Drawing.Point(200, 60);
+            this.panelControlChiTietHoSo.Name = "panelControlChiTietHoSo";
+            this.panelControlChiTietHoSo.Size = new System.Drawing.Size(627, 323);
+            this.panelControlChiTietHoSo.TabIndex = 3;
             // 
             // dateEditNgaySinh
             // 
@@ -493,7 +495,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 445);
-            this.Controls.Add(this.panelControl5);
+            this.Controls.Add(this.panelControlChiTietHoSo);
             this.Controls.Add(this.panelControl4);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl1);
@@ -516,9 +518,9 @@
             this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
-            this.panelControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlChiTietHoSo)).EndInit();
+            this.panelControlChiTietHoSo.ResumeLayout(false);
+            this.panelControlChiTietHoSo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).EndInit();
@@ -544,7 +546,7 @@
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditNamHoc;
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.PanelControl panelControl4;
-        private DevExpress.XtraEditors.PanelControl panelControl5;
+        private DevExpress.XtraEditors.PanelControl panelControlChiTietHoSo;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit textEditmaHocSinh;
         private DevExpress.XtraEditors.LabelControl labelControl6;
@@ -562,12 +564,12 @@
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.DateEdit dateEditNgaySinh;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonThemMoi;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonXoa;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonGhiDuLieu;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonChuyenLop;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonInHoSo;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonDong;
         private DevExpress.XtraGrid.GridControl gridControlDSHocSinh;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewDSHocSinh;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnSTT;

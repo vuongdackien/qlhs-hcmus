@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Data.Common;
 
-namespace QLHS_THPT
+namespace QLHS
 {
     static class Program
     {

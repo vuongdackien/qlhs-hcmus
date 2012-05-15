@@ -49,5 +49,46 @@ namespace QLHS.DAL
 
             return hocSinhDTO;
         }
+
+        /// <summary>
+        /// Sửa hồ sơ học sinh
+        /// </summary>
+        /// <param name="hocsinhDTO">HocSinhDTO</param>
+        /// <returns>Bool: Thành công/Không</returns>
+        public bool SuaHoSoHocSinh(HocSinhDTO hocsinhDTO)
+        {
+            string sql = string.Format("UPDATE HOCSINH SET TenHocSinh = N'{1}', Email = '{1}', NgaySinh = '{3}',"
+                         +"GioiTinh = {4}, NoiSinh = N'{5}', DiaChi = N'{6}' "
+                         +"WHERE MaHocSinh = '{0}'",hocsinhDTO.MaHocSinh,hocsinhDTO.TenHocSinh,
+                           hocsinhDTO.Email, hocsinhDTO.NgaySinh, hocsinhDTO.GioiTinh, hocsinhDTO.DiaChi);
+            sql += string.Format("\nUPDATE PHANLOP SET STT = {1} WHERE MaHocSinh = '{0}'", hocsinhDTO.MaHocSinh,
+                                    hocsinhDTO.STT);
+            return ExecuteQuery(sql) > 0;
+        }
+        /// <summary>
+        /// Thêm hồ sơ học sinh
+        /// </summary>
+        /// <param name="hocsinhDTO">HocSinhDTO</param>
+        /// <returns>Bool: Thành công/Không</returns>
+        public bool ThemHoSoHocSinh(HocSinhDTO hocsinhDTO)
+        {
+            string sql = string.Format("INSERT INTO HOCSINH (MaHocSinh, TenHocSinh , Email, NgaySinh, GioiTinh, NoiSinh, DiaChi) "
+                         +"VALUES ('{0}',N'{1}','{1}','{3}',{4},N'{5}',N'{6}' ", hocsinhDTO.MaHocSinh, hocsinhDTO.TenHocSinh,
+                           hocsinhDTO.Email, hocsinhDTO.NgaySinh, hocsinhDTO.GioiTinh, hocsinhDTO.DiaChi);
+            sql += string.Format("\nUPDATE PHANLOP SET STT = {1} WHERE MaHocSinh = '{0}'", hocsinhDTO.MaHocSinh,
+                                    hocsinhDTO.STT);
+            return ExecuteQuery(sql) > 0;
+        }
+        /// <summary>
+        /// Kiểm tra tồn tại của 1 hồ sơ học sinh qua Mã học sinh
+        /// </summary>
+        /// <param name="MaHocSinh">String: Mã học sinh</param>
+        /// <returns>Bool</returns>
+        public bool KiemTraTonTai_MaHocSinh(string MaHocSinh)
+        {
+            string sql = string.Format("SELECT count(*) as SL FROM HOCSINH WHERE MaHocSinh = '{0}'",MaHocSinh);
+            return (int)ExecuteScalar(sql) == 1;
+        }
+
     }
 }
