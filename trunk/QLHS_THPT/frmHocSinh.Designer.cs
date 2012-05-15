@@ -42,6 +42,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControlTitle = new DevExpress.XtraEditors.LabelControl();
             this.simpleButtonChuyenLop = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonInHoSo = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
@@ -66,7 +67,6 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControlTitle = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDSHocSinh)).BeginInit();
@@ -234,6 +234,16 @@
             this.panelControl3.Size = new System.Drawing.Size(627, 60);
             this.panelControl3.TabIndex = 1;
             // 
+            // labelControlTitle
+            // 
+            this.labelControlTitle.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControlTitle.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.labelControlTitle.Location = new System.Drawing.Point(25, 20);
+            this.labelControlTitle.Name = "labelControlTitle";
+            this.labelControlTitle.Size = new System.Drawing.Size(170, 23);
+            this.labelControlTitle.TabIndex = 19;
+            this.labelControlTitle.Text = "HỒ SƠ HỌC SINH";
+            // 
             // simpleButtonChuyenLop
             // 
             this.simpleButtonChuyenLop.Image = global::QLHS.Properties.Resources.chuyenlop_small;
@@ -302,6 +312,7 @@
             this.simpleButtonThemMoi.Size = new System.Drawing.Size(117, 35);
             this.simpleButtonThemMoi.TabIndex = 13;
             this.simpleButtonThemMoi.Text = "Thêm mới (Alt+&N)";
+            this.simpleButtonThemMoi.Click += new System.EventHandler(this.simpleButtonThemMoi_Click);
             // 
             // panelControlChiTietHoSo
             // 
@@ -334,31 +345,42 @@
             this.dateEditNgaySinh.Name = "dateEditNgaySinh";
             this.dateEditNgaySinh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEditNgaySinh.Properties.MinValue = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.dateEditNgaySinh.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateEditNgaySinh.Size = new System.Drawing.Size(136, 20);
             this.dateEditNgaySinh.TabIndex = 9;
+            this.dateEditNgaySinh.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.dateEditNgaySinh_InvalidValue);
             // 
             // textEditDiaChi
             // 
+            this.textEditDiaChi.EditValue = "";
             this.textEditDiaChi.Location = new System.Drawing.Point(82, 229);
             this.textEditDiaChi.Name = "textEditDiaChi";
+            this.textEditDiaChi.Properties.NullText = "Địa chỉ có thể bỏ trống";
             this.textEditDiaChi.Size = new System.Drawing.Size(206, 20);
             this.textEditDiaChi.TabIndex = 12;
             // 
             // textEditNoiSinh
             // 
+            this.textEditNoiSinh.EditValue = "";
             this.textEditNoiSinh.Location = new System.Drawing.Point(82, 197);
             this.textEditNoiSinh.Name = "textEditNoiSinh";
+            this.textEditNoiSinh.Properties.NullText = "Nơi sinh có thể bỏ trống";
             this.textEditNoiSinh.Size = new System.Drawing.Size(206, 20);
             this.textEditNoiSinh.TabIndex = 11;
             // 
             // textEditEmail
             // 
+            this.textEditEmail.EditValue = "";
             this.textEditEmail.Location = new System.Drawing.Point(82, 167);
             this.textEditEmail.Name = "textEditEmail";
+            this.textEditEmail.Properties.Mask.EditMask = "[a-z0-9._%-]+@[a-z0-9.-]+\\.[a-z]{2,4}";
+            this.textEditEmail.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.textEditEmail.Properties.NullText = "Email có thể bỏ trống";
             this.textEditEmail.Size = new System.Drawing.Size(206, 20);
             this.textEditEmail.TabIndex = 10;
+            this.textEditEmail.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.textEditEmail_InvalidValue);
             // 
             // labelControl12
             // 
@@ -479,16 +501,6 @@
             this.labelControl5.Size = new System.Drawing.Size(60, 13);
             this.labelControl5.TabIndex = 0;
             this.labelControl5.Text = "Mã học sinh:";
-            // 
-            // labelControlTitle
-            // 
-            this.labelControlTitle.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControlTitle.Appearance.ForeColor = System.Drawing.Color.Navy;
-            this.labelControlTitle.Location = new System.Drawing.Point(25, 20);
-            this.labelControlTitle.Name = "labelControlTitle";
-            this.labelControlTitle.Size = new System.Drawing.Size(170, 23);
-            this.labelControlTitle.TabIndex = 19;
-            this.labelControlTitle.Text = "HỒ SƠ HỌC SINH";
             // 
             // frmHocSinh
             // 
