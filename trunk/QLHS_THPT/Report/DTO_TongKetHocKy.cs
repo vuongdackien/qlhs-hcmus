@@ -8,25 +8,12 @@ namespace QLHS
     public class DTO_TongKetHocKy
     {
 
-        
-        private HocSinhDTO _HocSinhDTO = new HocSinhDTO();
-
-        public HocSinhDTO HocSinh
-        {
-            get { return _HocSinhDTO; }
-            set { _HocSinhDTO = value; }
-        }
-
-        private MonHocDTO _MonHocDTO = new MonHocDTO();
-
-        public MonHocDTO MonHoc
-        {
-            get { return _MonHocDTO; }
-            set { _MonHocDTO = value; }
-        }
-
+        public int MaHocKy { get; set; }
+        public string MaHocSinh { get; set; }
+        public string TenHocSinh { get; set; }
+        public string TenMonHoc { get; set; }
         public int STT { get; set; }
-
+        public string NgaySinh { get; set; }
         public double DM_1 { get; set; }
         public double DM_2 { get; set; }
         public double D15_1 { get; set; }
