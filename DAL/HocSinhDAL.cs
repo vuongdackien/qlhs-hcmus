@@ -29,24 +29,20 @@ namespace QLHS.DAL
         /// <returns>HocSinhDTO</returns>
         public HocSinhDTO LayHoSoHocSinh(string MaHocSinh)
         {
+ 
             string sql = string.Format("SELECT pl.STT, pl.MaHocSinh, TenHocSinh , Email, NgaySinh, GioiTinh, NoiSinh, DiaChi "
                         + "FROM HOCSINH hs LEFT JOIN PHANLOP pl ON  pl.MaHocSinh = hs.MaHocSinh WHERE hs.MaHocSinh = '{0}'", MaHocSinh);
             HocSinhDTO hocSinhDTO = new HocSinhDTO();
-            OpenConnect();
-            var dr = ExecuteReader(sql);
-            while (dr.Read())
-            {
-                hocSinhDTO.STT = Convert.ToInt32(dr["STT"]);
-                hocSinhDTO.MaHocSinh = Convert.ToString(dr["MaHocSinh"]);
-                hocSinhDTO.TenHocSinh = Convert.ToString(dr["TenHocSinh"]);
-                hocSinhDTO.Email = Convert.ToString(dr["Email"]);
-                hocSinhDTO.GioiTinh = Convert.ToInt16(dr["GioiTinh"]);
-                hocSinhDTO.NgaySinh = Convert.ToDateTime(dr["NgaySinh"]);
-                hocSinhDTO.NoiSinh = Convert.ToString(dr["NoiSinh"]);
-                hocSinhDTO.DiaChi = Convert.ToString(dr["DiaChi"]);
-            }
-            CloseConnect();
 
+            DataRow dr = GetFirstDataRow(sql);
+            hocSinhDTO.STT = Convert.ToInt32(dr["STT"]);
+            hocSinhDTO.MaHocSinh = Convert.ToString(dr["MaHocSinh"]);
+            hocSinhDTO.TenHocSinh = Convert.ToString(dr["TenHocSinh"]);
+            hocSinhDTO.Email = Convert.ToString(dr["Email"]);
+            hocSinhDTO.GioiTinh = Convert.ToInt16(dr["GioiTinh"]);
+            hocSinhDTO.NgaySinh = Convert.ToDateTime(dr["NgaySinh"]);
+            hocSinhDTO.NoiSinh = Convert.ToString(dr["NoiSinh"]);
+            hocSinhDTO.DiaChi = Convert.ToString(dr["DiaChi"]);            
             return hocSinhDTO;
         }
 
@@ -60,7 +56,7 @@ namespace QLHS.DAL
             string sql = string.Format("UPDATE HOCSINH SET TenHocSinh = N'{1}', Email = '{1}', NgaySinh = '{3}',"
                          +"GioiTinh = {4}, NoiSinh = N'{5}', DiaChi = N'{6}' "
                          +"WHERE MaHocSinh = '{0}'",hocsinhDTO.MaHocSinh,hocsinhDTO.TenHocSinh,
-                           hocsinhDTO.Email, hocsinhDTO.NgaySinh, hocsinhDTO.GioiTinh, hocsinhDTO.DiaChi);
+                           hocsinhDTO.Email, hocsinhDTO.NgaySinh, hocsinhDTO.GioiTinh, hocsinhDTO.NoiSinh, hocsinhDTO.DiaChi);
             sql += string.Format("\nUPDATE PHANLOP SET STT = {1} WHERE MaHocSinh = '{0}'", hocsinhDTO.MaHocSinh,
                                     hocsinhDTO.STT);
             return ExecuteQuery(sql) > 0;
@@ -73,8 +69,8 @@ namespace QLHS.DAL
         public bool ThemHoSoHocSinh(HocSinhDTO hocsinhDTO)
         {
             string sql = string.Format("INSERT INTO HOCSINH (MaHocSinh, TenHocSinh , Email, NgaySinh, GioiTinh, NoiSinh, DiaChi) "
-                         +"VALUES ('{0}',N'{1}','{1}','{3}',{4},N'{5}',N'{6}' ", hocsinhDTO.MaHocSinh, hocsinhDTO.TenHocSinh,
-                           hocsinhDTO.Email, hocsinhDTO.NgaySinh, hocsinhDTO.GioiTinh, hocsinhDTO.DiaChi);
+                         +"VALUES ('{0}',N'{1}','{2}','{3}',{4},N'{5}',N'{6}' ", hocsinhDTO.MaHocSinh, hocsinhDTO.TenHocSinh,
+                           hocsinhDTO.Email, hocsinhDTO.NgaySinh, hocsinhDTO.GioiTinh, hocsinhDTO.NoiSinh, hocsinhDTO.DiaChi);
             sql += string.Format("\nUPDATE PHANLOP SET STT = {1} WHERE MaHocSinh = '{0}'", hocsinhDTO.MaHocSinh,
                                     hocsinhDTO.STT);
             return ExecuteQuery(sql) > 0;
@@ -83,11 +79,19 @@ namespace QLHS.DAL
         /// Kiểm tra tồn tại của 1 hồ sơ học sinh qua Mã học sinh
         /// </summary>
         /// <param name="MaHocSinh">String: Mã học sinh</param>
-        /// <returns>Bool</returns>
+        /// <returns>Bpol: Tồn tại/Không</returns>
         public bool KiemTraTonTai_MaHocSinh(string MaHocSinh)
         {
             string sql = string.Format("SELECT count(*) as SL FROM HOCSINH WHERE MaHocSinh = '{0}'",MaHocSinh);
             return (int)ExecuteScalar(sql) == 1;
+        }
+        /// <summary>
+        /// Lấy mã cuối cùng (MaHocSinh) - Bảng HOCSINH
+        /// </summary>
+        /// <returns>String: Mã cuối cùng</returns>
+        public string LayMaCuoiCung()
+        {
+            return GetLastID("HOCSINH", "MaHocSinh");
         }
 
     }

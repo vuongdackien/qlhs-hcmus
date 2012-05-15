@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComboboxEditUtilities.cs" />
+    <Compile Include="ExceptionUtilities.cs" />
     <Compile Include="LookUpEditUtilities.cs" />
     <Compile Include="MessageboxUtilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -14,6 +14,7 @@ namespace QLHS
         private KhoiBUS _KhoiBUS;
         private LopBUS _LopBUS;
         private HocSinhBUS _HocSinhBUS;
+        private QuyDinhBUS _QuyDinhBUS;
 
         public frmHocSinh()
         {
@@ -22,12 +23,12 @@ namespace QLHS
             _KhoiBUS = new KhoiBUS();
             _LopBUS = new LopBUS();
             _HocSinhBUS = new HocSinhBUS();
-          
+            _QuyDinhBUS = new QuyDinhBUS();
         }
 
         private void frmHocSinh_Load(object sender, EventArgs e)
         {
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc, _NamHocBUS.LayDTNamHoc(),
+            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,_NamHocBUS.LayDTNamHoc(),
                                                 "MaNamHoc", "TenNamHoc",0);
             Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoi, _KhoiBUS.LayDTKhoi(),
                                                 "MaKhoi", "TenKhoi",0);
@@ -124,7 +125,36 @@ namespace QLHS
             hocSinhDTO.NoiSinh = textEditNoiSinh.Text;
             hocSinhDTO.DiaChi = textEditDiaChi.Text;
             hocSinhDTO.Email = textEditEmail.Text;
+
+            if (hocSinhDTO.TenHocSinh.Length < 3 || !hocSinhDTO.TenHocSinh.Contains(" "))
+            {
+                Utilities.MessageboxUtilities.MessageError("Họ tên học sinh không hợp lệ hoặc nhỏ hơn 3 ký tự!");
+                return;
+            }
+
+            _HocSinhBUS.LuuHoSoHocSinh(hocSinhDTO);
             
+        }
+
+        private void simpleButtonThemMoi_Click(object sender, EventArgs e)
+        {
+            textEditmaHocSinh.Text = "";
+            textEditTenHocSinh.Text = "";
+            textEditDiaChi.Text = "";
+            textEditEmail.Text = "";
+            textEditNoiSinh.Text = "";
+            dateEditNgaySinh.Properties.MinValue = new DateTime(_QuyDinhBUS.LayNamCanDuoi(),1,1);
+           
+        }
+
+        private void dateEditNgaySinh_InvalidValue(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
+        {
+            e.ErrorText = "Ngày sinh không hợp lệ";
+        }
+
+        private void textEditEmail_InvalidValue(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
+        {
+            e.ErrorText = "Email không hợp lệ! (Ấn ESC để trở lại)";
         }
   
     }

@@ -6,6 +6,7 @@ namespace QLHS.DTO
 {
     public class BangDiemDTO
     {
+
         private HocSinhDTO _HocSinhDTO = new HocSinhDTO();
 
         public HocSinhDTO HocSinh

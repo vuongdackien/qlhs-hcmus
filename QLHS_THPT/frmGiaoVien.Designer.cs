@@ -29,13 +29,10 @@
         private void InitializeComponent()
         {
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.panelControlChiTietHoSo = new DevExpress.XtraEditors.PanelControl();
             this.dateEditNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.textEditDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.textEditNoiSinh = new DevExpress.XtraEditors.TextEdit();
-            this.panelControlChiTietHoSo = new DevExpress.XtraEditors.PanelControl();
             this.textEditEmail = new DevExpress.XtraEditors.TextEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
@@ -49,25 +46,28 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnMaGiaoVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumntenGiaoVien = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlChiTietHoSo)).BeginInit();
+            this.panelControlChiTietHoSo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNoiSinh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlChiTietHoSo)).BeginInit();
-            this.panelControlChiTietHoSo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEditEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupGioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditSTTSoDiem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTenHocSinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditmaHocSinh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
+            this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl3
@@ -79,34 +79,29 @@
             this.panelControl3.Size = new System.Drawing.Size(773, 144);
             this.panelControl3.TabIndex = 1;
             // 
-            // panelControl5
+            // panelControlChiTietHoSo
             // 
-            this.panelControl5.Controls.Add(this.gridControl1);
-            this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl5.Location = new System.Drawing.Point(0, 144);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(773, 266);
-            this.panelControl5.TabIndex = 3;
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(3, 3);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(767, 260);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumnMaGiaoVien,
-            this.gridColumntenGiaoVien});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.panelControlChiTietHoSo.Controls.Add(this.dateEditNgaySinh);
+            this.panelControlChiTietHoSo.Controls.Add(this.textEditDiaChi);
+            this.panelControlChiTietHoSo.Controls.Add(this.textEditNoiSinh);
+            this.panelControlChiTietHoSo.Controls.Add(this.textEditEmail);
+            this.panelControlChiTietHoSo.Controls.Add(this.labelControl12);
+            this.panelControlChiTietHoSo.Controls.Add(this.labelControl11);
+            this.panelControlChiTietHoSo.Controls.Add(this.radioGroupGioiTinh);
+            this.panelControlChiTietHoSo.Controls.Add(this.labelControl10);
+            this.panelControlChiTietHoSo.Controls.Add(this.spinEditSTTSoDiem);
+            this.panelControlChiTietHoSo.Controls.Add(this.labelControl9);
+            this.panelControlChiTietHoSo.Controls.Add(this.textEditTenHocSinh);
+            this.panelControlChiTietHoSo.Controls.Add(this.labelControl8);
+            this.panelControlChiTietHoSo.Controls.Add(this.textEditmaHocSinh);
+            this.panelControlChiTietHoSo.Controls.Add(this.labelControl7);
+            this.panelControlChiTietHoSo.Controls.Add(this.labelControl6);
+            this.panelControlChiTietHoSo.Controls.Add(this.labelControl5);
+            this.panelControlChiTietHoSo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControlChiTietHoSo.Location = new System.Drawing.Point(3, 3);
+            this.panelControlChiTietHoSo.Name = "panelControlChiTietHoSo";
+            this.panelControlChiTietHoSo.Size = new System.Drawing.Size(767, 138);
+            this.panelControlChiTietHoSo.TabIndex = 4;
             // 
             // dateEditNgaySinh
             // 
@@ -138,30 +133,6 @@
             this.textEditNoiSinh.Properties.NullText = "Nơi sinh có thể bỏ trống";
             this.textEditNoiSinh.Size = new System.Drawing.Size(206, 20);
             this.textEditNoiSinh.TabIndex = 11;
-            // 
-            // panelControlChiTietHoSo
-            // 
-            this.panelControlChiTietHoSo.Controls.Add(this.dateEditNgaySinh);
-            this.panelControlChiTietHoSo.Controls.Add(this.textEditDiaChi);
-            this.panelControlChiTietHoSo.Controls.Add(this.textEditNoiSinh);
-            this.panelControlChiTietHoSo.Controls.Add(this.textEditEmail);
-            this.panelControlChiTietHoSo.Controls.Add(this.labelControl12);
-            this.panelControlChiTietHoSo.Controls.Add(this.labelControl11);
-            this.panelControlChiTietHoSo.Controls.Add(this.radioGroupGioiTinh);
-            this.panelControlChiTietHoSo.Controls.Add(this.labelControl10);
-            this.panelControlChiTietHoSo.Controls.Add(this.spinEditSTTSoDiem);
-            this.panelControlChiTietHoSo.Controls.Add(this.labelControl9);
-            this.panelControlChiTietHoSo.Controls.Add(this.textEditTenHocSinh);
-            this.panelControlChiTietHoSo.Controls.Add(this.labelControl8);
-            this.panelControlChiTietHoSo.Controls.Add(this.textEditmaHocSinh);
-            this.panelControlChiTietHoSo.Controls.Add(this.labelControl7);
-            this.panelControlChiTietHoSo.Controls.Add(this.labelControl6);
-            this.panelControlChiTietHoSo.Controls.Add(this.labelControl5);
-            this.panelControlChiTietHoSo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControlChiTietHoSo.Location = new System.Drawing.Point(3, 3);
-            this.panelControlChiTietHoSo.Name = "panelControlChiTietHoSo";
-            this.panelControlChiTietHoSo.Size = new System.Drawing.Size(767, 138);
-            this.panelControlChiTietHoSo.TabIndex = 4;
             // 
             // textEditEmail
             // 
@@ -294,6 +265,35 @@
             this.labelControl5.TabIndex = 0;
             this.labelControl5.Text = "Mã học sinh:";
             // 
+            // panelControl5
+            // 
+            this.panelControl5.Controls.Add(this.gridControl1);
+            this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl5.Location = new System.Drawing.Point(0, 144);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Size = new System.Drawing.Size(773, 266);
+            this.panelControl5.TabIndex = 3;
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(3, 3);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(767, 260);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumnMaGiaoVien,
+            this.gridColumntenGiaoVien});
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
             // gridColumnMaGiaoVien
             // 
             this.gridColumnMaGiaoVien.Caption = "Mã giáo viên";
@@ -323,22 +323,22 @@
             this.Text = "Quản lý giáo viên";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlChiTietHoSo)).EndInit();
+            this.panelControlChiTietHoSo.ResumeLayout(false);
+            this.panelControlChiTietHoSo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditNgaySinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNoiSinh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlChiTietHoSo)).EndInit();
-            this.panelControlChiTietHoSo.ResumeLayout(false);
-            this.panelControlChiTietHoSo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEditEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupGioiTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEditSTTSoDiem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTenHocSinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditmaHocSinh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
