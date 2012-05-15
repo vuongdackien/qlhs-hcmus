@@ -61,6 +61,8 @@
             this.checkEditTimGanDung = new DevExpress.XtraEditors.CheckEdit();
             this.panelControlNamHoc = new DevExpress.XtraEditors.PanelControl();
             this.treeListSearch = new DevExpress.XtraTreeList.TreeList();
+            this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.panelControlChooseYear = new DevExpress.XtraEditors.PanelControl();
             this.comboBoxEditNamHoc = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControlNamHoc = new DevExpress.XtraEditors.LabelControl();
@@ -77,10 +79,6 @@
             this.gridColumnLopHocHT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnGVCN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlSearchHocSinh = new DevExpress.XtraGrid.GridControl();
-            this.treeListColumnMaKhoi = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamDKien)).BeginInit();
             this.panelControlNamDKien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlDieuKien)).BeginInit();
@@ -111,13 +109,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamHoc)).BeginInit();
             this.panelControlNamHoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeListSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlChooseYear)).BeginInit();
             this.panelControlChooseYear.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditNamHoc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditToanBoCacNam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearchHocSinh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControlNamDKien
@@ -415,17 +413,34 @@
             // treeListSearch
             // 
             this.treeListSearch.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
-            this.treeListColumnMaKhoi,
-            this.treeListColumn1,
             this.treeListColumn2});
             this.treeListSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeListSearch.Location = new System.Drawing.Point(0, 84);
             this.treeListSearch.Name = "treeListSearch";
-            this.treeListSearch.ParentFieldName = "MaKhoi";
+            this.treeListSearch.OptionsView.EnableAppearanceEvenRow = true;
+            this.treeListSearch.OptionsView.EnableAppearanceOddRow = true;
+            this.treeListSearch.OptionsView.ShowCheckBoxes = true;
+            this.treeListSearch.OptionsView.ShowColumns = false;
+            this.treeListSearch.OptionsView.ShowIndicator = false;
+            this.treeListSearch.ParentFieldName = "";
             this.treeListSearch.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
             this.treeListSearch.Size = new System.Drawing.Size(245, 156);
             this.treeListSearch.TabIndex = 1;
+            // 
+            // treeListColumn2
+            // 
+            this.treeListColumn2.Caption = "Tên khối";
+            this.treeListColumn2.FieldName = "TenKhoi";
+            this.treeListColumn2.MinWidth = 32;
+            this.treeListColumn2.Name = "treeListColumn2";
+            this.treeListColumn2.Visible = true;
+            this.treeListColumn2.VisibleIndex = 0;
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
             // panelControlChooseYear
             // 
@@ -448,6 +463,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditNamHoc.Size = new System.Drawing.Size(100, 20);
             this.comboBoxEditNamHoc.TabIndex = 3;
+            this.comboBoxEditNamHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHoc_SelectedIndexChanged);
             // 
             // labelControlNamHoc
             // 
@@ -695,36 +711,6 @@
             this.gridControlSearchHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // treeListColumnMaKhoi
-            // 
-            this.treeListColumnMaKhoi.Caption = "Mã khối";
-            this.treeListColumnMaKhoi.FieldName = "MaKhoi";
-            this.treeListColumnMaKhoi.Name = "treeListColumnMaKhoi";
-            // 
-            // treeListColumn1
-            // 
-            this.treeListColumn1.Caption = "Chọn";
-            this.treeListColumn1.ColumnEdit = this.repositoryItemCheckEdit1;
-            this.treeListColumn1.FieldName = "Chọn";
-            this.treeListColumn1.Name = "treeListColumn1";
-            this.treeListColumn1.Visible = true;
-            this.treeListColumn1.VisibleIndex = 0;
-            this.treeListColumn1.Width = 38;
-            // 
-            // treeListColumn2
-            // 
-            this.treeListColumn2.Caption = "Lớp";
-            this.treeListColumn2.FieldName = "Lớp";
-            this.treeListColumn2.Name = "treeListColumn2";
-            this.treeListColumn2.Visible = true;
-            this.treeListColumn2.VisibleIndex = 1;
-            this.treeListColumn2.Width = 189;
-            // 
-            // repositoryItemCheckEdit1
-            // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
-            // 
             // frmSearchHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -766,6 +752,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamHoc)).EndInit();
             this.panelControlNamHoc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.treeListSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlChooseYear)).EndInit();
             this.panelControlChooseYear.ResumeLayout(false);
             this.panelControlChooseYear.PerformLayout();
@@ -773,7 +760,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEditToanBoCacNam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearchHocSinh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -829,8 +815,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnLopHocHT;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnGVCN;
         private DevExpress.XtraEditors.RadioGroup radioGroup1;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumnMaKhoi;
-        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
 

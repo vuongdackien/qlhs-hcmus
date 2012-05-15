@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraTreeList.Nodes;
 using QLHS.DTO;
 using QLHS.BUS;
 
@@ -15,23 +16,51 @@ namespace QLHS
     {
         private KhoiBUS _KhoiBUS;
         private LopBUS _LopBUS;
+        private NamHocBUS _NamHocBUS;
         public frmSearchHocSinh()
         {
             InitializeComponent();
             _KhoiBUS = new KhoiBUS();
             _LopBUS = new LopBUS();
+            _NamHocBUS = new NamHocBUS();
+        }
+
+
+        private void CapNhatListLop()
+        {
+            List<LopDTO> list_LopNode;
+            foreach (TreeListNode item in treeListSearch.Nodes)
+            {
+                item.Nodes.Clear();
+                list_LopNode = _LopBUS.LayListLop_MaNam_MaKhoi(
+                                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc),
+                                    item.GetValue("MaKhoi").ToString()
+                               );
+
+                foreach (LopDTO lopNode in list_LopNode)
+                {
+                    this.treeListSearch.AppendNode(new object[] { lopNode.MaLop, lopNode.TenLop }, item);
+                }
+
+            }
         }
 
         private void frmSearchHocSinh_Load(object sender, EventArgs e)
         {
-            DataTable khoilop = _KhoiBUS.LayDTKhoi();
-            treeListSearch.DataSource = khoilop;
+            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
+                                                          _NamHocBUS.LayDTNamHoc(),
+                                                          "MaNamHoc", "TenNamHoc",
+                                                          "all", "Tất cả", 0);
+            treeListSearch.ParentFieldName = "MaKhoi";
+            treeListSearch.PreviewFieldName = "TenKhoi";
+            treeListSearch.DataSource = _KhoiBUS.LayDTKhoi();
+           
+            CapNhatListLop();
+        }
 
-            foreach (DevExpress.XtraTreeList.Nodes.TreeListNode item in treeListSearch.Nodes)
-            {
-                treeListSearch.AppendNode(khoilop.Rows[0], item);
-                treeListSearch.AppendNode(khoilop.Rows[0], item);
-            }
+        private void comboBoxEditNamHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CapNhatListLop();
         }
     }
 }

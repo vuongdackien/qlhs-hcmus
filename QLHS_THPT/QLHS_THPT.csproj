@@ -105,6 +105,7 @@
     <Compile Include="frmTongKetNamHoc.Designer.cs">
       <DependentUpon>frmTongKetNamHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Report\DTO_TongKetHocKy.cs" />
     <Compile Include="Report\frmReportView_TongKetHK.cs">
       <SubType>Form</SubType>
@@ -112,7 +113,6 @@
     <Compile Include="Report\frmReportView_TongKetHK.designer.cs">
       <DependentUpon>frmReportView_TongKetHK.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -162,9 +162,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptTongKetHocKy.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

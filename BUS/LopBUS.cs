@@ -14,10 +14,25 @@ namespace QLHS.BUS
         {
             _LopDAL = new LopDAL();
         }
-
+         /// <summary>
+        /// Lấy DataTable Lớp từ mã năm và khối
+        /// </summary>
+        /// <param name="MaNamHoc">String: Mã năm học</param>
+        /// <param name="MaKhoi">String: mã khối</param>
+        /// <returns>DataTable:</returns>
         public DataTable LayDTLop_MaNam_MaKhoi(string MaNamHoc, string MaKhoi)
         {
             return _LopDAL.LayDTLop_MaNam_MaKhoi(MaNamHoc, MaKhoi);
+        }
+        /// <summary>
+        /// Lấy list Lớp từ mã năm và khối
+        /// </summary>
+        /// <param name="MaNamHoc">String: Mã năm học</param>
+        /// <param name="MaKhoi">String: mã khối</param>
+        /// <returns>List:</returns>
+        public List<LopDTO> LayListLop_MaNam_MaKhoi(string MaNamHoc, string MaKhoi)
+        {
+            return _LopDAL.LayListLop_MaNam_MaKhoi(MaNamHoc, MaKhoi);
         }
     }
 }
