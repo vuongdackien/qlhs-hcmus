@@ -56,7 +56,7 @@ namespace QLHS
 
         private void barBtnTimKiemHocSinh_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmSearchHocSinh>();
+            ShowMDIChildForm<frmBangDiemHocKy>();
         }
     }
 }
