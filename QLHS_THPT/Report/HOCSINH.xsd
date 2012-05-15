@@ -379,8 +379,8 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="HOCSINHBANGDIEM" msdata:parent="HOCSINH" msdata:child="BANGDIEM" msdata:parentkey="MaHocSinh" msdata:childkey="MaHocSinh" msprop:Generator_UserChildTable="BANGDIEM" msprop:Generator_ChildPropName="GetBANGDIEMRows" msprop:Generator_ParentPropName="HOCSINHRow" msprop:Generator_UserRelationName="HOCSINHBANGDIEM" msprop:Generator_RelationVarName="relationHOCSINHBANGDIEM" msprop:Generator_UserParentTable="HOCSINH" />
-      <msdata:Relationship name="HOCSINHPHANLOP" msdata:parent="HOCSINH" msdata:child="PHANLOP" msdata:parentkey="MaHocSinh" msdata:childkey="MaHocSinh" msprop:Generator_UserChildTable="PHANLOP" msprop:Generator_ChildPropName="GetPHANLOPRows" msprop:Generator_ParentPropName="HOCSINHRow" msprop:Generator_UserRelationName="HOCSINHPHANLOP" msprop:Generator_RelationVarName="relationHOCSINHPHANLOP" msprop:Generator_UserParentTable="HOCSINH" />
+      <msdata:Relationship name="HOCSINHBANGDIEM" msdata:parent="HOCSINH" msdata:child="BANGDIEM" msdata:parentkey="MaHocSinh" msdata:childkey="MaHocSinh" msprop:Generator_UserChildTable="BANGDIEM" msprop:Generator_ChildPropName="GetBANGDIEMRows" msprop:Generator_UserParentTable="HOCSINH" msprop:Generator_UserRelationName="HOCSINHBANGDIEM" msprop:Generator_RelationVarName="relationHOCSINHBANGDIEM" msprop:Generator_ParentPropName="HOCSINHRow" />
+      <msdata:Relationship name="HOCSINHPHANLOP" msdata:parent="HOCSINH" msdata:child="PHANLOP" msdata:parentkey="MaHocSinh" msdata:childkey="MaHocSinh" msprop:Generator_UserChildTable="PHANLOP" msprop:Generator_ChildPropName="GetPHANLOPRows" msprop:Generator_UserParentTable="HOCSINH" msprop:Generator_UserRelationName="HOCSINHPHANLOP" msprop:Generator_RelationVarName="relationHOCSINHPHANLOP" msprop:Generator_ParentPropName="HOCSINHRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
