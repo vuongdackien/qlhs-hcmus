@@ -34,9 +34,6 @@
             this.xtraTabPageDieuKien = new DevExpress.XtraTab.XtraTabPage();
             this.panelControlDKienTim = new DevExpress.XtraEditors.PanelControl();
             this.panelControlNDungDKien = new DevExpress.XtraEditors.PanelControl();
-            this.checkEditNu = new DevExpress.XtraEditors.CheckEdit();
-            this.checkEditNam = new DevExpress.XtraEditors.CheckEdit();
-            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
             this.textEditNamSinhDen = new DevExpress.XtraEditors.TextEdit();
             this.textEditNamSinhTu = new DevExpress.XtraEditors.TextEdit();
             this.textEditDiaChi = new DevExpress.XtraEditors.TextEdit();
@@ -79,6 +76,7 @@
             this.gridColumnLopHocHT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnGVCN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlSearchHocSinh = new DevExpress.XtraGrid.GridControl();
+            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamDKien)).BeginInit();
             this.panelControlNamDKien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlDieuKien)).BeginInit();
@@ -90,9 +88,6 @@
             this.panelControlDKienTim.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNDungDKien)).BeginInit();
             this.panelControlNDungDKien.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditNu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditNam.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhDen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhTu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).BeginInit();
@@ -117,6 +112,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEditToanBoCacNam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearchHocSinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControlNamDKien
@@ -171,8 +167,6 @@
             // 
             // panelControlNDungDKien
             // 
-            this.panelControlNDungDKien.Controls.Add(this.checkEditNu);
-            this.panelControlNDungDKien.Controls.Add(this.checkEditNam);
             this.panelControlNDungDKien.Controls.Add(this.radioGroup1);
             this.panelControlNDungDKien.Controls.Add(this.textEditNamSinhDen);
             this.panelControlNDungDKien.Controls.Add(this.textEditNamSinhTu);
@@ -197,33 +191,6 @@
             this.panelControlNDungDKien.Name = "panelControlNDungDKien";
             this.panelControlNDungDKien.Size = new System.Drawing.Size(742, 152);
             this.panelControlNDungDKien.TabIndex = 1;
-            // 
-            // checkEditNu
-            // 
-            this.checkEditNu.Location = new System.Drawing.Point(230, 84);
-            this.checkEditNu.Name = "checkEditNu";
-            this.checkEditNu.Properties.Caption = "Nữ";
-            this.checkEditNu.Properties.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
-            this.checkEditNu.Size = new System.Drawing.Size(49, 19);
-            this.checkEditNu.TabIndex = 4;
-            // 
-            // checkEditNam
-            // 
-            this.checkEditNam.Location = new System.Drawing.Point(151, 84);
-            this.checkEditNam.Name = "checkEditNam";
-            this.checkEditNam.Properties.Caption = "Nam";
-            this.checkEditNam.Properties.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
-            this.checkEditNam.Size = new System.Drawing.Size(49, 19);
-            this.checkEditNam.TabIndex = 4;
-            // 
-            // radioGroup1
-            // 
-            this.radioGroup1.Location = new System.Drawing.Point(149, 80);
-            this.radioGroup1.Name = "radioGroup1";
-            this.radioGroup1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.radioGroup1.Properties.Appearance.Options.UseBackColor = true;
-            this.radioGroup1.Size = new System.Drawing.Size(152, 27);
-            this.radioGroup1.TabIndex = 3;
             // 
             // textEditNamSinhDen
             // 
@@ -705,6 +672,17 @@
             this.gridControlSearchHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // radioGroup1
+            // 
+            this.radioGroup1.EditValue = ((byte)(0));
+            this.radioGroup1.Location = new System.Drawing.Point(149, 82);
+            this.radioGroup1.Name = "radioGroup1";
+            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(0)), "Nam"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(1)), "Nữ")});
+            this.radioGroup1.Size = new System.Drawing.Size(152, 26);
+            this.radioGroup1.TabIndex = 3;
+            // 
             // frmSearchHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -726,9 +704,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNDungDKien)).EndInit();
             this.panelControlNDungDKien.ResumeLayout(false);
             this.panelControlNDungDKien.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditNu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditNam.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhDen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhTu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).EndInit();
@@ -754,6 +729,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEditToanBoCacNam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearchHocSinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -806,11 +782,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnNoiSinh;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnEmail;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnDiaChi;
-        private DevExpress.XtraEditors.CheckEdit checkEditNu;
-        private DevExpress.XtraEditors.CheckEdit checkEditNam;
-        private DevExpress.XtraEditors.RadioGroup radioGroup1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnLopHocHT;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnGVCN;
+        private DevExpress.XtraEditors.RadioGroup radioGroup1;
 
     }
 }
