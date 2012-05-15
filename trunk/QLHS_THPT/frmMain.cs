@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
 
-namespace QLHS_THPT
+namespace QLHS
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {

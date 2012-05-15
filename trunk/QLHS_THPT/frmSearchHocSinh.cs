@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
-namespace QLHS_THPT
+namespace QLHS
 {
     public partial class frmSearchHocSinh : DevExpress.XtraEditors.XtraForm
     {

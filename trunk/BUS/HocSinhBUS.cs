@@ -32,5 +32,11 @@ namespace QLHS.BUS
         {
             return _HocSinhDAL.LayHoSoHocSinh(MaHocSinh);
         }
+        public bool LuuHoSoHocSinh(HocSinhDTO hocsinh)
+        {
+            if (_HocSinhDAL.KiemTraTonTai_MaHocSinh(hocsinh.MaHocSinh))
+                return _HocSinhDAL.SuaHoSoHocSinh(hocsinh);
+            return _HocSinhDAL.ThemHoSoHocSinh(hocsinh);
+        }
     }
 }

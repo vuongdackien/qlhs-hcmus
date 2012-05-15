@@ -1,4 +1,4 @@
-﻿namespace QLHS_THPT
+﻿namespace QLHS
 {
     partial class frmMain
     {
@@ -86,7 +86,7 @@
             // ribbon
             // 
             this.ribbon.ApplicationButtonText = null;
-            this.ribbon.ApplicationIcon = global::QLHS_THPT.Properties.Resources.home;
+            this.ribbon.ApplicationIcon = global::QLHS.Properties.Resources.home;
             // 
             // 
             // 
@@ -144,7 +144,7 @@
             // 
             this.barBtnHoSoHocSinh.Caption = "Hồ Sơ Học Sinh";
             this.barBtnHoSoHocSinh.Id = 13;
-            this.barBtnHoSoHocSinh.LargeGlyph = global::QLHS_THPT.Properties.Resources.hocsinh;
+            this.barBtnHoSoHocSinh.LargeGlyph = global::QLHS.Properties.Resources.hocsinh;
             this.barBtnHoSoHocSinh.Name = "barBtnHoSoHocSinh";
             toolTipItem1.Text = "Tiếp nhận, cập nhật hồ sơ học sinh.";
             superToolTip1.Items.Add(toolTipItem1);
@@ -155,7 +155,7 @@
             // 
             this.barBtnKhaiBaoNamHoc.Caption = "Khai Báo Năm Học";
             this.barBtnKhaiBaoNamHoc.Id = 14;
-            this.barBtnKhaiBaoNamHoc.LargeGlyph = global::QLHS_THPT.Properties.Resources.khaibao_namhoc;
+            this.barBtnKhaiBaoNamHoc.LargeGlyph = global::QLHS.Properties.Resources.khaibao_namhoc;
             this.barBtnKhaiBaoNamHoc.Name = "barBtnKhaiBaoNamHoc";
             toolTipItem2.Text = "Khai báo các thông tin của năm học mới.";
             superToolTip2.Items.Add(toolTipItem2);
@@ -165,7 +165,7 @@
             // 
             this.barBtnQuanLyNamHoc.Caption = "Quản Lý Năm Học";
             this.barBtnQuanLyNamHoc.Id = 15;
-            this.barBtnQuanLyNamHoc.LargeGlyph = global::QLHS_THPT.Properties.Resources.namhoc;
+            this.barBtnQuanLyNamHoc.LargeGlyph = global::QLHS.Properties.Resources.namhoc;
             this.barBtnQuanLyNamHoc.Name = "barBtnQuanLyNamHoc";
             toolTipItem3.Text = "Quản lý hồ sơ các năm học.";
             superToolTip3.Items.Add(toolTipItem3);
@@ -175,7 +175,7 @@
             // 
             this.barBtnTimKiemHocSinh.Caption = "Tìm Kiếm Học Sinh";
             this.barBtnTimKiemHocSinh.Id = 16;
-            this.barBtnTimKiemHocSinh.LargeGlyph = global::QLHS_THPT.Properties.Resources.tracuuhocsinh;
+            this.barBtnTimKiemHocSinh.LargeGlyph = global::QLHS.Properties.Resources.tracuuhocsinh;
             this.barBtnTimKiemHocSinh.Name = "barBtnTimKiemHocSinh";
             toolTipItem4.Text = "Tìm kiếm thông tin học sinh.";
             superToolTip4.Items.Add(toolTipItem4);
@@ -186,7 +186,7 @@
             // 
             this.barBtnHoSoGiaoVien.Caption = "Hồ Sơ Giáo Viên";
             this.barBtnHoSoGiaoVien.Id = 19;
-            this.barBtnHoSoGiaoVien.LargeGlyph = global::QLHS_THPT.Properties.Resources.giaovien;
+            this.barBtnHoSoGiaoVien.LargeGlyph = global::QLHS.Properties.Resources.giaovien;
             this.barBtnHoSoGiaoVien.Name = "barBtnHoSoGiaoVien";
             toolTipItem5.Text = "Quản lý hồ sơ giáo viên.";
             superToolTip5.Items.Add(toolTipItem5);
@@ -196,7 +196,7 @@
             // 
             this.barBtnTimKiemGiaoVien.Caption = "Tìm Kiếm Giáo Viên";
             this.barBtnTimKiemGiaoVien.Id = 20;
-            this.barBtnTimKiemGiaoVien.LargeGlyph = global::QLHS_THPT.Properties.Resources.tracuugiaovien;
+            this.barBtnTimKiemGiaoVien.LargeGlyph = global::QLHS.Properties.Resources.tracuugiaovien;
             this.barBtnTimKiemGiaoVien.Name = "barBtnTimKiemGiaoVien";
             toolTipItem6.Text = "Tìm kiếm thông tin giáo viên.";
             superToolTip6.Items.Add(toolTipItem6);
@@ -206,7 +206,7 @@
             // 
             this.barBtnPhanCongChuyenMon.Caption = "Phân Công Chuyên Môn";
             this.barBtnPhanCongChuyenMon.Id = 21;
-            this.barBtnPhanCongChuyenMon.LargeGlyph = global::QLHS_THPT.Properties.Resources.quydinh_diemcan;
+            this.barBtnPhanCongChuyenMon.LargeGlyph = global::QLHS.Properties.Resources.quydinh_diemcan;
             this.barBtnPhanCongChuyenMon.Name = "barBtnPhanCongChuyenMon";
             toolTipItem7.Text = "Phân công chuyên môn giảng dạy cho giáo viên.";
             superToolTip7.Items.Add(toolTipItem7);
@@ -216,7 +216,7 @@
             // 
             this.barBtnPhanLopHocSinh.Caption = "Phân Lớp Học Sinh";
             this.barBtnPhanLopHocSinh.Id = 22;
-            this.barBtnPhanLopHocSinh.LargeGlyph = global::QLHS_THPT.Properties.Resources.khoahoc;
+            this.barBtnPhanLopHocSinh.LargeGlyph = global::QLHS.Properties.Resources.khoahoc;
             this.barBtnPhanLopHocSinh.Name = "barBtnPhanLopHocSinh";
             toolTipItem8.Text = "Phân lớp cho học sinh lưu ban, chuyển lớp,...";
             superToolTip8.Items.Add(toolTipItem8);
@@ -226,7 +226,7 @@
             // 
             this.barBtnHeSoMonHoc.Caption = "Hệ Số Môn Học";
             this.barBtnHeSoMonHoc.Id = 24;
-            this.barBtnHeSoMonHoc.LargeGlyph = global::QLHS_THPT.Properties.Resources.monhoc;
+            this.barBtnHeSoMonHoc.LargeGlyph = global::QLHS.Properties.Resources.monhoc;
             this.barBtnHeSoMonHoc.Name = "barBtnHeSoMonHoc";
             toolTipItem9.Text = "Quy định các hệ số điểm từng học kỳ của các môn học.";
             superToolTip9.Items.Add(toolTipItem9);
@@ -236,7 +236,7 @@
             // 
             this.barButtonItem3.Caption = "Đăng Nhập";
             this.barButtonItem3.Id = 25;
-            this.barButtonItem3.LargeGlyph = global::QLHS_THPT.Properties.Resources.dangnhap;
+            this.barButtonItem3.LargeGlyph = global::QLHS.Properties.Resources.dangnhap;
             this.barButtonItem3.Name = "barButtonItem3";
             // 
             // barButtonItem4

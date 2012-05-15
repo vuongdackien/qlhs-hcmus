@@ -1,17 +1,10 @@
 ﻿using System;
 using System.Text;
-using System.Windows.Forms;
-using System.Xml;
-using System.Data;
-using System.Data.SqlClient;
 using System.Security.Cryptography;
-using System.Collections;
-using System.IO;
-using System.Diagnostics;
 using System.Text.RegularExpressions;
 using QLHS.DTO;
 
-namespace QLHS_THPT
+namespace Utilities
 {
     public class XepLoaiHS
     {

@@ -60,6 +60,10 @@
       <Project>{051D3B9C-A8C0-40E3-B5B3-F33D4789F859}</Project>
       <Name>QLHS.DTO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ultilities\Utilities.csproj">
+      <Project>{5CD784F5-349E-4732-B31A-E68500B85C5B}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

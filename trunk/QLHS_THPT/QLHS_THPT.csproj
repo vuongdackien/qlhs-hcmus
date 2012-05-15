@@ -8,7 +8,7 @@
     <ProjectGuid>{B9C917B0-D84F-41D6-838E-E8AB4119F8C1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QLHS_THPT</RootNamespace>
+    <RootNamespace>QLHS</RootNamespace>
     <AssemblyName>QLHS_THPT</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -94,10 +94,6 @@
     <EmbeddedResource Include="frmSearchHocSinh.resx">
       <DependentUpon>frmSearchHocSinh.cs</DependentUpon>
     </EmbeddedResource>
-    <Compile Include="Utilities\ComboboxEditUtilities.cs" />
-    <Compile Include="Utilities\MessageboxUtilities.cs" />
-    <Compile Include="Utilities\LookUpEditUtilities.cs" />
-    <Compile Include="Utilities\Utilities.cs" />
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -222,6 +218,10 @@
     <ProjectReference Include="..\DTO\QLHS.DTO.csproj">
       <Project>{051D3B9C-A8C0-40E3-B5B3-F33D4789F859}</Project>
       <Name>QLHS.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ultilities\Utilities.csproj">
+      <Project>{5CD784F5-349E-4732-B31A-E68500B85C5B}</Project>
+      <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
