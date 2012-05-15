@@ -34,6 +34,9 @@
             this.xtraTabPageDieuKien = new DevExpress.XtraTab.XtraTabPage();
             this.panelControlDKienTim = new DevExpress.XtraEditors.PanelControl();
             this.panelControlNDungDKien = new DevExpress.XtraEditors.PanelControl();
+            this.checkEditNu = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEditNam = new DevExpress.XtraEditors.CheckEdit();
+            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
             this.textEditNamSinhDen = new DevExpress.XtraEditors.TextEdit();
             this.textEditNamSinhTu = new DevExpress.XtraEditors.TextEdit();
             this.textEditDiaChi = new DevExpress.XtraEditors.TextEdit();
@@ -47,8 +50,6 @@
             this.labelControlEmail = new DevExpress.XtraEditors.LabelControl();
             this.labelControlMaHocSinh = new DevExpress.XtraEditors.LabelControl();
             this.checkEditNamSinh = new DevExpress.XtraEditors.CheckEdit();
-            this.checkEditNu = new DevExpress.XtraEditors.CheckEdit();
-            this.checkEditNam = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditGioiTinh = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditDiaChi = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditHoTen = new DevExpress.XtraEditors.CheckEdit();
@@ -69,13 +70,15 @@
             this.labelControlPhamVi = new DevExpress.XtraEditors.LabelControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnMaHocSinh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridControlSearchHocSinh = new DevExpress.XtraGrid.GridControl();
             this.gridColumnHoTen = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnGioiTinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnNgaySinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnNoiSinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnDiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControlSearchHocSinh = new DevExpress.XtraGrid.GridControl();
+            this.gridColumnLopHocHT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnGVCN = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamDKien)).BeginInit();
             this.panelControlNamDKien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlDieuKien)).BeginInit();
@@ -87,6 +90,9 @@
             this.panelControlDKienTim.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNDungDKien)).BeginInit();
             this.panelControlNDungDKien.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditNu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditNam.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhDen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhTu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).BeginInit();
@@ -94,8 +100,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditHoTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMaHocSinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditNamSinh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditNu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditNam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditGioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditHoTen.Properties)).BeginInit();
@@ -167,6 +171,9 @@
             // 
             // panelControlNDungDKien
             // 
+            this.panelControlNDungDKien.Controls.Add(this.checkEditNu);
+            this.panelControlNDungDKien.Controls.Add(this.checkEditNam);
+            this.panelControlNDungDKien.Controls.Add(this.radioGroup1);
             this.panelControlNDungDKien.Controls.Add(this.textEditNamSinhDen);
             this.panelControlNDungDKien.Controls.Add(this.textEditNamSinhTu);
             this.panelControlNDungDKien.Controls.Add(this.textEditDiaChi);
@@ -180,8 +187,6 @@
             this.panelControlNDungDKien.Controls.Add(this.labelControlEmail);
             this.panelControlNDungDKien.Controls.Add(this.labelControlMaHocSinh);
             this.panelControlNDungDKien.Controls.Add(this.checkEditNamSinh);
-            this.panelControlNDungDKien.Controls.Add(this.checkEditNu);
-            this.panelControlNDungDKien.Controls.Add(this.checkEditNam);
             this.panelControlNDungDKien.Controls.Add(this.checkEditGioiTinh);
             this.panelControlNDungDKien.Controls.Add(this.checkEditDiaChi);
             this.panelControlNDungDKien.Controls.Add(this.checkEditHoTen);
@@ -192,6 +197,33 @@
             this.panelControlNDungDKien.Name = "panelControlNDungDKien";
             this.panelControlNDungDKien.Size = new System.Drawing.Size(742, 152);
             this.panelControlNDungDKien.TabIndex = 1;
+            // 
+            // checkEditNu
+            // 
+            this.checkEditNu.Location = new System.Drawing.Point(230, 84);
+            this.checkEditNu.Name = "checkEditNu";
+            this.checkEditNu.Properties.Caption = "Nữ";
+            this.checkEditNu.Properties.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
+            this.checkEditNu.Size = new System.Drawing.Size(49, 19);
+            this.checkEditNu.TabIndex = 4;
+            // 
+            // checkEditNam
+            // 
+            this.checkEditNam.Location = new System.Drawing.Point(151, 84);
+            this.checkEditNam.Name = "checkEditNam";
+            this.checkEditNam.Properties.Caption = "Nam";
+            this.checkEditNam.Properties.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
+            this.checkEditNam.Size = new System.Drawing.Size(49, 19);
+            this.checkEditNam.TabIndex = 4;
+            // 
+            // radioGroup1
+            // 
+            this.radioGroup1.Location = new System.Drawing.Point(149, 80);
+            this.radioGroup1.Name = "radioGroup1";
+            this.radioGroup1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.radioGroup1.Properties.Appearance.Options.UseBackColor = true;
+            this.radioGroup1.Size = new System.Drawing.Size(152, 27);
+            this.radioGroup1.TabIndex = 3;
             // 
             // textEditNamSinhDen
             // 
@@ -290,24 +322,6 @@
             this.checkEditNamSinh.Properties.Caption = "";
             this.checkEditNamSinh.Size = new System.Drawing.Size(19, 19);
             this.checkEditNamSinh.TabIndex = 0;
-            // 
-            // checkEditNu
-            // 
-            this.checkEditNu.Location = new System.Drawing.Point(230, 83);
-            this.checkEditNu.Name = "checkEditNu";
-            this.checkEditNu.Properties.Caption = "Nữ";
-            this.checkEditNu.Properties.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
-            this.checkEditNu.Size = new System.Drawing.Size(71, 19);
-            this.checkEditNu.TabIndex = 0;
-            // 
-            // checkEditNam
-            // 
-            this.checkEditNam.Location = new System.Drawing.Point(147, 84);
-            this.checkEditNam.Name = "checkEditNam";
-            this.checkEditNam.Properties.Caption = "Nam";
-            this.checkEditNam.Properties.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
-            this.checkEditNam.Size = new System.Drawing.Size(71, 19);
-            this.checkEditNam.TabIndex = 0;
             // 
             // checkEditGioiTinh
             // 
@@ -478,16 +492,165 @@
             this.gridColumnNgaySinh,
             this.gridColumnNoiSinh,
             this.gridColumnEmail,
-            this.gridColumnDiaChi});
+            this.gridColumnDiaChi,
+            this.gridColumnLopHocHT,
+            this.gridColumnGVCN});
             this.gridView1.GridControl = this.gridControlSearchHocSinh;
             this.gridView1.Name = "gridView1";
             // 
             // gridColumnMaHocSinh
             // 
             this.gridColumnMaHocSinh.Caption = "Mã học sinh";
+            this.gridColumnMaHocSinh.FieldName = "MaHocSinh";
             this.gridColumnMaHocSinh.Name = "gridColumnMaHocSinh";
+            this.gridColumnMaHocSinh.OptionsColumn.AllowEdit = false;
+            this.gridColumnMaHocSinh.OptionsColumn.AllowFocus = false;
+            this.gridColumnMaHocSinh.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMaHocSinh.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnMaHocSinh.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMaHocSinh.OptionsColumn.AllowMove = false;
+            this.gridColumnMaHocSinh.OptionsColumn.AllowShowHide = false;
+            this.gridColumnMaHocSinh.OptionsColumn.AllowSize = false;
+            this.gridColumnMaHocSinh.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnMaHocSinh.OptionsColumn.FixedWidth = true;
+            this.gridColumnMaHocSinh.OptionsColumn.ReadOnly = true;
+            this.gridColumnMaHocSinh.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumnMaHocSinh.OptionsFilter.AllowFilter = false;
             this.gridColumnMaHocSinh.Visible = true;
             this.gridColumnMaHocSinh.VisibleIndex = 0;
+            this.gridColumnMaHocSinh.Width = 50;
+            // 
+            // gridColumnHoTen
+            // 
+            this.gridColumnHoTen.Caption = "Họ tên học sinh";
+            this.gridColumnHoTen.FieldName = "HoTen";
+            this.gridColumnHoTen.Name = "gridColumnHoTen";
+            this.gridColumnHoTen.OptionsColumn.AllowEdit = false;
+            this.gridColumnHoTen.OptionsColumn.AllowFocus = false;
+            this.gridColumnHoTen.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnHoTen.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnHoTen.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnHoTen.OptionsColumn.AllowMove = false;
+            this.gridColumnHoTen.OptionsColumn.AllowShowHide = false;
+            this.gridColumnHoTen.OptionsColumn.AllowSize = false;
+            this.gridColumnHoTen.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnHoTen.OptionsColumn.FixedWidth = true;
+            this.gridColumnHoTen.OptionsColumn.ReadOnly = true;
+            this.gridColumnHoTen.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumnHoTen.OptionsFilter.AllowFilter = false;
+            this.gridColumnHoTen.Visible = true;
+            this.gridColumnHoTen.VisibleIndex = 1;
+            this.gridColumnHoTen.Width = 180;
+            // 
+            // gridColumnGioiTinh
+            // 
+            this.gridColumnGioiTinh.Caption = "Giới tính";
+            this.gridColumnGioiTinh.FieldName = "GioiTinh";
+            this.gridColumnGioiTinh.Name = "gridColumnGioiTinh";
+            this.gridColumnGioiTinh.OptionsColumn.AllowEdit = false;
+            this.gridColumnGioiTinh.OptionsColumn.AllowFocus = false;
+            this.gridColumnGioiTinh.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnGioiTinh.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnGioiTinh.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnGioiTinh.OptionsColumn.AllowMove = false;
+            this.gridColumnGioiTinh.OptionsColumn.AllowShowHide = false;
+            this.gridColumnGioiTinh.OptionsColumn.AllowSize = false;
+            this.gridColumnGioiTinh.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnGioiTinh.OptionsColumn.FixedWidth = true;
+            this.gridColumnGioiTinh.OptionsColumn.ReadOnly = true;
+            this.gridColumnGioiTinh.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumnGioiTinh.OptionsFilter.AllowFilter = false;
+            this.gridColumnGioiTinh.Visible = true;
+            this.gridColumnGioiTinh.VisibleIndex = 2;
+            this.gridColumnGioiTinh.Width = 80;
+            // 
+            // gridColumnNgaySinh
+            // 
+            this.gridColumnNgaySinh.Caption = "Ngày sinh";
+            this.gridColumnNgaySinh.FieldName = "NgaySinh";
+            this.gridColumnNgaySinh.Name = "gridColumnNgaySinh";
+            this.gridColumnNgaySinh.OptionsColumn.AllowEdit = false;
+            this.gridColumnNgaySinh.OptionsColumn.AllowFocus = false;
+            this.gridColumnNgaySinh.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnNgaySinh.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnNgaySinh.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnNgaySinh.OptionsColumn.AllowMove = false;
+            this.gridColumnNgaySinh.OptionsColumn.AllowShowHide = false;
+            this.gridColumnNgaySinh.OptionsColumn.AllowSize = false;
+            this.gridColumnNgaySinh.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnNgaySinh.OptionsColumn.FixedWidth = true;
+            this.gridColumnNgaySinh.OptionsColumn.ReadOnly = true;
+            this.gridColumnNgaySinh.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumnNgaySinh.OptionsFilter.AllowFilter = false;
+            this.gridColumnNgaySinh.Visible = true;
+            this.gridColumnNgaySinh.VisibleIndex = 3;
+            this.gridColumnNgaySinh.Width = 80;
+            // 
+            // gridColumnNoiSinh
+            // 
+            this.gridColumnNoiSinh.Caption = "Nơi sinh";
+            this.gridColumnNoiSinh.FieldName = "NoiSinh";
+            this.gridColumnNoiSinh.Name = "gridColumnNoiSinh";
+            this.gridColumnNoiSinh.OptionsColumn.AllowEdit = false;
+            this.gridColumnNoiSinh.OptionsColumn.AllowFocus = false;
+            this.gridColumnNoiSinh.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnNoiSinh.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnNoiSinh.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnNoiSinh.OptionsColumn.AllowMove = false;
+            this.gridColumnNoiSinh.OptionsColumn.AllowShowHide = false;
+            this.gridColumnNoiSinh.OptionsColumn.AllowSize = false;
+            this.gridColumnNoiSinh.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnNoiSinh.OptionsColumn.FixedWidth = true;
+            this.gridColumnNoiSinh.OptionsColumn.ReadOnly = true;
+            this.gridColumnNoiSinh.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumnNoiSinh.OptionsFilter.AllowFilter = false;
+            this.gridColumnNoiSinh.Visible = true;
+            this.gridColumnNoiSinh.VisibleIndex = 4;
+            this.gridColumnNoiSinh.Width = 180;
+            // 
+            // gridColumnEmail
+            // 
+            this.gridColumnEmail.Caption = "Email";
+            this.gridColumnEmail.FieldName = "Email";
+            this.gridColumnEmail.Name = "gridColumnEmail";
+            this.gridColumnEmail.OptionsColumn.AllowEdit = false;
+            this.gridColumnEmail.OptionsColumn.AllowFocus = false;
+            this.gridColumnEmail.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnEmail.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnEmail.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnEmail.OptionsColumn.AllowMove = false;
+            this.gridColumnEmail.OptionsColumn.AllowShowHide = false;
+            this.gridColumnEmail.OptionsColumn.AllowSize = false;
+            this.gridColumnEmail.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnEmail.OptionsColumn.FixedWidth = true;
+            this.gridColumnEmail.OptionsColumn.ReadOnly = true;
+            this.gridColumnEmail.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumnEmail.OptionsFilter.AllowFilter = false;
+            this.gridColumnEmail.Visible = true;
+            this.gridColumnEmail.VisibleIndex = 5;
+            this.gridColumnEmail.Width = 190;
+            // 
+            // gridColumnDiaChi
+            // 
+            this.gridColumnDiaChi.Caption = "Địa chỉ";
+            this.gridColumnDiaChi.FieldName = "DiaChi";
+            this.gridColumnDiaChi.Name = "gridColumnDiaChi";
+            this.gridColumnDiaChi.OptionsColumn.AllowEdit = false;
+            this.gridColumnDiaChi.OptionsColumn.AllowFocus = false;
+            this.gridColumnDiaChi.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnDiaChi.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnDiaChi.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnDiaChi.OptionsColumn.AllowMove = false;
+            this.gridColumnDiaChi.OptionsColumn.AllowShowHide = false;
+            this.gridColumnDiaChi.OptionsColumn.AllowSize = false;
+            this.gridColumnDiaChi.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnDiaChi.OptionsColumn.FixedWidth = true;
+            this.gridColumnDiaChi.OptionsColumn.ReadOnly = true;
+            this.gridColumnDiaChi.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumnDiaChi.OptionsFilter.AllowFilter = false;
+            this.gridColumnDiaChi.Visible = true;
+            this.gridColumnDiaChi.VisibleIndex = 6;
+            this.gridColumnDiaChi.Width = 214;
             // 
             // gridControlSearchHocSinh
             // 
@@ -500,47 +663,47 @@
             this.gridControlSearchHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // gridColumnHoTen
+            // gridColumnLopHocHT
             // 
-            this.gridColumnHoTen.Caption = "Họ tên";
-            this.gridColumnHoTen.Name = "gridColumnHoTen";
-            this.gridColumnHoTen.Visible = true;
-            this.gridColumnHoTen.VisibleIndex = 1;
+            this.gridColumnLopHocHT.Caption = "Lớp hiện tại";
+            this.gridColumnLopHocHT.FieldName = "LopHoc";
+            this.gridColumnLopHocHT.Name = "gridColumnLopHocHT";
+            this.gridColumnLopHocHT.OptionsColumn.AllowEdit = false;
+            this.gridColumnLopHocHT.OptionsColumn.AllowFocus = false;
+            this.gridColumnLopHocHT.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnLopHocHT.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnLopHocHT.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnLopHocHT.OptionsColumn.AllowMove = false;
+            this.gridColumnLopHocHT.OptionsColumn.AllowShowHide = false;
+            this.gridColumnLopHocHT.OptionsColumn.AllowSize = false;
+            this.gridColumnLopHocHT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnLopHocHT.OptionsColumn.FixedWidth = true;
+            this.gridColumnLopHocHT.OptionsColumn.ReadOnly = true;
+            this.gridColumnLopHocHT.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumnLopHocHT.OptionsFilter.AllowFilter = false;
+            this.gridColumnLopHocHT.Visible = true;
+            this.gridColumnLopHocHT.VisibleIndex = 7;
             // 
-            // gridColumnGioiTinh
+            // gridColumnGVCN
             // 
-            this.gridColumnGioiTinh.Caption = "Giới tính";
-            this.gridColumnGioiTinh.Name = "gridColumnGioiTinh";
-            this.gridColumnGioiTinh.Visible = true;
-            this.gridColumnGioiTinh.VisibleIndex = 2;
-            // 
-            // gridColumnNgaySinh
-            // 
-            this.gridColumnNgaySinh.Caption = "Ngày sinh";
-            this.gridColumnNgaySinh.Name = "gridColumnNgaySinh";
-            this.gridColumnNgaySinh.Visible = true;
-            this.gridColumnNgaySinh.VisibleIndex = 3;
-            // 
-            // gridColumnNoiSinh
-            // 
-            this.gridColumnNoiSinh.Caption = "Nơi sinh";
-            this.gridColumnNoiSinh.Name = "gridColumnNoiSinh";
-            this.gridColumnNoiSinh.Visible = true;
-            this.gridColumnNoiSinh.VisibleIndex = 4;
-            // 
-            // gridColumnEmail
-            // 
-            this.gridColumnEmail.Caption = "Email";
-            this.gridColumnEmail.Name = "gridColumnEmail";
-            this.gridColumnEmail.Visible = true;
-            this.gridColumnEmail.VisibleIndex = 5;
-            // 
-            // gridColumnDiaChi
-            // 
-            this.gridColumnDiaChi.Caption = "Địa chỉ";
-            this.gridColumnDiaChi.Name = "gridColumnDiaChi";
-            this.gridColumnDiaChi.Visible = true;
-            this.gridColumnDiaChi.VisibleIndex = 6;
+            this.gridColumnGVCN.Caption = "GV chủ nhiệm";
+            this.gridColumnGVCN.FieldName = "TenGiaoVien";
+            this.gridColumnGVCN.Name = "gridColumnGVCN";
+            this.gridColumnGVCN.OptionsColumn.AllowEdit = false;
+            this.gridColumnGVCN.OptionsColumn.AllowFocus = false;
+            this.gridColumnGVCN.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnGVCN.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumnGVCN.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnGVCN.OptionsColumn.AllowMove = false;
+            this.gridColumnGVCN.OptionsColumn.AllowShowHide = false;
+            this.gridColumnGVCN.OptionsColumn.AllowSize = false;
+            this.gridColumnGVCN.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumnGVCN.OptionsColumn.FixedWidth = true;
+            this.gridColumnGVCN.OptionsColumn.ReadOnly = true;
+            this.gridColumnGVCN.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumnGVCN.OptionsFilter.AllowFilter = false;
+            this.gridColumnGVCN.Visible = true;
+            this.gridColumnGVCN.VisibleIndex = 8;
             // 
             // frmSearchHocSinh
             // 
@@ -563,6 +726,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNDungDKien)).EndInit();
             this.panelControlNDungDKien.ResumeLayout(false);
             this.panelControlNDungDKien.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditNu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditNam.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhDen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhTu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).EndInit();
@@ -570,8 +736,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditHoTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMaHocSinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditNamSinh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditNu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditNam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditGioiTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditHoTen.Properties)).EndInit();
@@ -628,8 +792,6 @@
         private DevExpress.XtraEditors.TextEdit textEditDiaChi;
         private DevExpress.XtraEditors.TextEdit textEditEmail;
         private DevExpress.XtraEditors.TextEdit textEditNamSinhDen;
-        private DevExpress.XtraEditors.CheckEdit checkEditNu;
-        private DevExpress.XtraEditors.CheckEdit checkEditNam;
         private DevExpress.XtraEditors.CheckButton checkButton5;
         private DevExpress.XtraEditors.CheckButton checkButton4;
         private DevExpress.XtraEditors.CheckButton checkButton2;
@@ -644,6 +806,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnNoiSinh;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnEmail;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnDiaChi;
+        private DevExpress.XtraEditors.CheckEdit checkEditNu;
+        private DevExpress.XtraEditors.CheckEdit checkEditNam;
+        private DevExpress.XtraEditors.RadioGroup radioGroup1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnLopHocHT;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnGVCN;
 
     }
 }
