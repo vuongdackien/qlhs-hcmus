@@ -28,7 +28,7 @@ namespace QLHS_THPT
         private void frmHocSinh_Load(object sender, EventArgs e)
         {
             ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc, _NamHocBUS.LayDTNamHoc(),
-                                                "MaNamHoc", "TenNamHoc", "all", "Tất cả",0);
+                                                "MaNamHoc", "TenNamHoc",0);
             ComboboxEditUtilities.SetDataSource(comboBoxEditKhoi, _KhoiBUS.LayDTKhoi(),
                                                 "MaKhoi", "TenKhoi",0);
         }
@@ -36,46 +36,76 @@ namespace QLHS_THPT
         /// <summary>
         /// Load lại combobox lớp học theo năm và khối
         /// </summary>
-        private void LoadComboboxLopHoc()
+        private void LoadComboboxLopHoc(object sender, EventArgs e)
         {
             ComboboxEditUtilities.SetDataSource(comboBoxEditLop, _LopBUS.LayDTLop_MaNam_MaKhoi(
                         ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc),
                          ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi)
                     ), "MaLop", "TenLop", 0);
+            comboBoxEditLop_SelectedIndexChanged(sender,e);
         }
         private void comboBoxEditNamHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ComboboxEditUtilities.CheckSelectedNull(comboBoxEditKhoi) ||
                 ComboboxEditUtilities.CheckSelectedNull(comboBoxEditNamHoc))
                 return;
-            this.LoadComboboxLopHoc();
+            this.LoadComboboxLopHoc(sender, e);
         }
 
         private void comboBoxEditKhoi_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ComboboxEditUtilities.CheckSelectedNull(comboBoxEditNamHoc))
                 return;
-            this.LoadComboboxLopHoc();
+            this.LoadComboboxLopHoc(sender, e);
         }
 
         private void comboBoxEditLop_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ComboboxEditUtilities.CheckSelectedNull(comboBoxEditLop))
+            {
+                gridControlDSHocSinh.DataSource = null;
                 return;
-            gridControl1.DataSource = _HocSinhBUS.LayDTHocSinh_LopHoc(
+            }
+            gridControlDSHocSinh.DataSource = _HocSinhBUS.LayDTHocSinh_LopHoc(
                  ComboboxEditUtilities.GetValueItem(comboBoxEditLop)
             );
-           // listBoxControlHocSinh.DisplayMember = "TenHocSinh";
-          //  listBoxControlHocSinh.ValueMember = "MaHocSinh";
-          //  listBoxControlHocSinh.DataSource = _
-           
         }
 
+        void EditingControl(bool is_editing = true)
+        {
+            spinEditSTTSoDiem.Enabled = is_editing;
+            dateEditNgaySinh.Enabled = is_editing;
+            textEditDiaChi.Enabled = is_editing;
+            textEditEmail.Enabled = is_editing;
+           // textEditmaHocSinh.Enabled = is
+        }
 
+        /// <summary>
+        /// Hiển thị chi tiết hồ sơ học sinh
+        /// </summary>
+        /// <param name="MaHS">String: MaHS</param>
+        private void HienThiHoSoHocSinh(string MaHocSinh)
+        {
+            HocSinhDTO hocSinhDTO = _HocSinhBUS.LayHoSoHocSinh(MaHocSinh);
+            spinEditSTTSoDiem.Value = hocSinhDTO.STT;
+            dateEditNgaySinh.EditValue = hocSinhDTO.NgaySinh;
+            textEditmaHocSinh.Text = hocSinhDTO.MaHocSinh;
+            textEditTenHocSinh.Text = hocSinhDTO.TenHocSinh;
+            radioGroupGioiTinh.SelectedIndex = hocSinhDTO.GioiTinh;
+            textEditNoiSinh.Text = hocSinhDTO.NoiSinh;
+            textEditDiaChi.Text = hocSinhDTO.DiaChi;
+            textEditEmail.Text = hocSinhDTO.Email;
+            
+        }
 
-
-
-
+        private void gridViewDSHocSinh_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            string MaHocSinh = this.gridViewDSHocSinh.GetRowCellValue(e.FocusedRowHandle, "MaHocSinh").ToString();
+            if (!MaHocSinh.Equals(""))
+            {
+                HienThiHoSoHocSinh(MaHocSinh);
+            }
+        }
   
     }
 }

@@ -23,6 +23,14 @@ namespace QLHS.BUS
         {
             return _HocSinhDAL.LayDTHocSinh_LopHoc(MaLop);
         }
-       
+         /// <summary>
+        /// Lấy hồ sơ học sinh từ Mã học sinh
+        /// </summary>
+        /// <param name="MaHocSinh">string: Mã học sinh</param>
+        /// <returns>HocSinhDTO</returns>
+        public HocSinhDTO LayHoSoHocSinh(string MaHocSinh)
+        {
+            return _HocSinhDAL.LayHoSoHocSinh(MaHocSinh);
+        }
     }
 }
