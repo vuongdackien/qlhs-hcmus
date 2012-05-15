@@ -77,6 +77,10 @@
             this.gridColumnLopHocHT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnGVCN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlSearchHocSinh = new DevExpress.XtraGrid.GridControl();
+            this.treeListColumnMaKhoi = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamDKien)).BeginInit();
             this.panelControlNamDKien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlDieuKien)).BeginInit();
@@ -113,6 +117,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEditToanBoCacNam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearchHocSinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControlNamDKien
@@ -139,10 +144,10 @@
             // xtraTabControlDieuKien
             // 
             this.xtraTabControlDieuKien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControlDieuKien.Location = new System.Drawing.Point(3, 3);
+            this.xtraTabControlDieuKien.Location = new System.Drawing.Point(2, 2);
             this.xtraTabControlDieuKien.Name = "xtraTabControlDieuKien";
             this.xtraTabControlDieuKien.SelectedTabPage = this.xtraTabPageDieuKien;
-            this.xtraTabControlDieuKien.Size = new System.Drawing.Size(744, 234);
+            this.xtraTabControlDieuKien.Size = new System.Drawing.Size(746, 236);
             this.xtraTabControlDieuKien.TabIndex = 0;
             this.xtraTabControlDieuKien.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageDieuKien});
@@ -151,7 +156,7 @@
             // 
             this.xtraTabPageDieuKien.Controls.Add(this.panelControlDKienTim);
             this.xtraTabPageDieuKien.Name = "xtraTabPageDieuKien";
-            this.xtraTabPageDieuKien.Size = new System.Drawing.Size(742, 212);
+            this.xtraTabPageDieuKien.Size = new System.Drawing.Size(740, 210);
             this.xtraTabPageDieuKien.Text = "Diều kiện về hồ sơ học sinh";
             // 
             // panelControlDKienTim
@@ -162,7 +167,7 @@
             this.panelControlDKienTim.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlDKienTim.Location = new System.Drawing.Point(0, 0);
             this.panelControlDKienTim.Name = "panelControlDKienTim";
-            this.panelControlDKienTim.Size = new System.Drawing.Size(742, 212);
+            this.panelControlDKienTim.Size = new System.Drawing.Size(740, 210);
             this.panelControlDKienTim.TabIndex = 0;
             // 
             // panelControlNDungDKien
@@ -189,7 +194,7 @@
             this.panelControlNDungDKien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlNDungDKien.Location = new System.Drawing.Point(0, 0);
             this.panelControlNDungDKien.Name = "panelControlNDungDKien";
-            this.panelControlNDungDKien.Size = new System.Drawing.Size(742, 152);
+            this.panelControlNDungDKien.Size = new System.Drawing.Size(740, 150);
             this.panelControlNDungDKien.TabIndex = 1;
             // 
             // radioGroup1
@@ -349,9 +354,9 @@
             this.panelControlButtonTim.Controls.Add(this.checkButton3);
             this.panelControlButtonTim.Controls.Add(this.checkEditTimGanDung);
             this.panelControlButtonTim.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControlButtonTim.Location = new System.Drawing.Point(0, 152);
+            this.panelControlButtonTim.Location = new System.Drawing.Point(0, 150);
             this.panelControlButtonTim.Name = "panelControlButtonTim";
-            this.panelControlButtonTim.Size = new System.Drawing.Size(742, 60);
+            this.panelControlButtonTim.Size = new System.Drawing.Size(740, 60);
             this.panelControlButtonTim.TabIndex = 0;
             // 
             // checkButton5
@@ -409,9 +414,16 @@
             // 
             // treeListSearch
             // 
+            this.treeListSearch.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.treeListColumnMaKhoi,
+            this.treeListColumn1,
+            this.treeListColumn2});
             this.treeListSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeListSearch.Location = new System.Drawing.Point(0, 84);
             this.treeListSearch.Name = "treeListSearch";
+            this.treeListSearch.ParentFieldName = "MaKhoi";
+            this.treeListSearch.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit1});
             this.treeListSearch.Size = new System.Drawing.Size(245, 156);
             this.treeListSearch.TabIndex = 1;
             // 
@@ -683,6 +695,36 @@
             this.gridControlSearchHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // treeListColumnMaKhoi
+            // 
+            this.treeListColumnMaKhoi.Caption = "Mã khối";
+            this.treeListColumnMaKhoi.FieldName = "MaKhoi";
+            this.treeListColumnMaKhoi.Name = "treeListColumnMaKhoi";
+            // 
+            // treeListColumn1
+            // 
+            this.treeListColumn1.Caption = "Chọn";
+            this.treeListColumn1.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.treeListColumn1.FieldName = "Chọn";
+            this.treeListColumn1.Name = "treeListColumn1";
+            this.treeListColumn1.Visible = true;
+            this.treeListColumn1.VisibleIndex = 0;
+            this.treeListColumn1.Width = 38;
+            // 
+            // treeListColumn2
+            // 
+            this.treeListColumn2.Caption = "Lớp";
+            this.treeListColumn2.FieldName = "Lớp";
+            this.treeListColumn2.Name = "treeListColumn2";
+            this.treeListColumn2.Visible = true;
+            this.treeListColumn2.VisibleIndex = 1;
+            this.treeListColumn2.Width = 189;
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            // 
             // frmSearchHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -692,6 +734,7 @@
             this.Controls.Add(this.panelControlNamDKien);
             this.Name = "frmSearchHocSinh";
             this.Text = "Tìm kiếm học sinh";
+            this.Load += new System.EventHandler(this.frmSearchHocSinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamDKien)).EndInit();
             this.panelControlNamDKien.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlDieuKien)).EndInit();
@@ -730,6 +773,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEditToanBoCacNam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearchHocSinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -785,6 +829,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnLopHocHT;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnGVCN;
         private DevExpress.XtraEditors.RadioGroup radioGroup1;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumnMaKhoi;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
 
     }
 }
