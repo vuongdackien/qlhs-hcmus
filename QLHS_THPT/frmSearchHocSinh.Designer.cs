@@ -34,6 +34,7 @@
             this.xtraTabPageDieuKien = new DevExpress.XtraTab.XtraTabPage();
             this.panelControlDKienTim = new DevExpress.XtraEditors.PanelControl();
             this.panelControlNDungDKien = new DevExpress.XtraEditors.PanelControl();
+            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
             this.textEditNamSinhDen = new DevExpress.XtraEditors.TextEdit();
             this.textEditNamSinhTu = new DevExpress.XtraEditors.TextEdit();
             this.textEditDiaChi = new DevExpress.XtraEditors.TextEdit();
@@ -76,7 +77,6 @@
             this.gridColumnLopHocHT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnGVCN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlSearchHocSinh = new DevExpress.XtraGrid.GridControl();
-            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamDKien)).BeginInit();
             this.panelControlNamDKien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlDieuKien)).BeginInit();
@@ -88,6 +88,7 @@
             this.panelControlDKienTim.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNDungDKien)).BeginInit();
             this.panelControlNDungDKien.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhDen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhTu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).BeginInit();
@@ -112,7 +113,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEditToanBoCacNam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearchHocSinh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControlNamDKien
@@ -139,10 +139,10 @@
             // xtraTabControlDieuKien
             // 
             this.xtraTabControlDieuKien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControlDieuKien.Location = new System.Drawing.Point(3, 3);
+            this.xtraTabControlDieuKien.Location = new System.Drawing.Point(2, 2);
             this.xtraTabControlDieuKien.Name = "xtraTabControlDieuKien";
             this.xtraTabControlDieuKien.SelectedTabPage = this.xtraTabPageDieuKien;
-            this.xtraTabControlDieuKien.Size = new System.Drawing.Size(744, 234);
+            this.xtraTabControlDieuKien.Size = new System.Drawing.Size(746, 236);
             this.xtraTabControlDieuKien.TabIndex = 0;
             this.xtraTabControlDieuKien.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageDieuKien});
@@ -151,7 +151,7 @@
             // 
             this.xtraTabPageDieuKien.Controls.Add(this.panelControlDKienTim);
             this.xtraTabPageDieuKien.Name = "xtraTabPageDieuKien";
-            this.xtraTabPageDieuKien.Size = new System.Drawing.Size(742, 212);
+            this.xtraTabPageDieuKien.Size = new System.Drawing.Size(744, 214);
             this.xtraTabPageDieuKien.Text = "Diều kiện về hồ sơ học sinh";
             // 
             // panelControlDKienTim
@@ -162,7 +162,7 @@
             this.panelControlDKienTim.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlDKienTim.Location = new System.Drawing.Point(0, 0);
             this.panelControlDKienTim.Name = "panelControlDKienTim";
-            this.panelControlDKienTim.Size = new System.Drawing.Size(742, 212);
+            this.panelControlDKienTim.Size = new System.Drawing.Size(744, 214);
             this.panelControlDKienTim.TabIndex = 0;
             // 
             // panelControlNDungDKien
@@ -189,8 +189,19 @@
             this.panelControlNDungDKien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlNDungDKien.Location = new System.Drawing.Point(0, 0);
             this.panelControlNDungDKien.Name = "panelControlNDungDKien";
-            this.panelControlNDungDKien.Size = new System.Drawing.Size(742, 152);
+            this.panelControlNDungDKien.Size = new System.Drawing.Size(744, 154);
             this.panelControlNDungDKien.TabIndex = 1;
+            // 
+            // radioGroup1
+            // 
+            this.radioGroup1.EditValue = ((byte)(0));
+            this.radioGroup1.Location = new System.Drawing.Point(149, 82);
+            this.radioGroup1.Name = "radioGroup1";
+            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(0)), "Nam"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(1)), "Nữ")});
+            this.radioGroup1.Size = new System.Drawing.Size(152, 26);
+            this.radioGroup1.TabIndex = 3;
             // 
             // textEditNamSinhDen
             // 
@@ -236,7 +247,7 @@
             // 
             // labelControlNamSinh
             // 
-            this.labelControlNamSinh.Location = new System.Drawing.Point(78, 122);
+            this.labelControlNamSinh.Location = new System.Drawing.Point(79, 123);
             this.labelControlNamSinh.Name = "labelControlNamSinh";
             this.labelControlNamSinh.Size = new System.Drawing.Size(47, 13);
             this.labelControlNamSinh.TabIndex = 1;
@@ -244,7 +255,7 @@
             // 
             // labelControlGioiTinh
             // 
-            this.labelControlGioiTinh.Location = new System.Drawing.Point(78, 90);
+            this.labelControlGioiTinh.Location = new System.Drawing.Point(79, 91);
             this.labelControlGioiTinh.Name = "labelControlGioiTinh";
             this.labelControlGioiTinh.Size = new System.Drawing.Size(42, 13);
             this.labelControlGioiTinh.TabIndex = 1;
@@ -252,7 +263,7 @@
             // 
             // labelControlDiaChi
             // 
-            this.labelControlDiaChi.Location = new System.Drawing.Point(457, 49);
+            this.labelControlDiaChi.Location = new System.Drawing.Point(458, 50);
             this.labelControlDiaChi.Name = "labelControlDiaChi";
             this.labelControlDiaChi.Size = new System.Drawing.Size(36, 13);
             this.labelControlDiaChi.TabIndex = 1;
@@ -260,7 +271,7 @@
             // 
             // labelControlHoTen
             // 
-            this.labelControlHoTen.Location = new System.Drawing.Point(78, 51);
+            this.labelControlHoTen.Location = new System.Drawing.Point(79, 52);
             this.labelControlHoTen.Name = "labelControlHoTen";
             this.labelControlHoTen.Size = new System.Drawing.Size(36, 13);
             this.labelControlHoTen.TabIndex = 1;
@@ -268,7 +279,7 @@
             // 
             // labelControlEmail
             // 
-            this.labelControlEmail.Location = new System.Drawing.Point(457, 17);
+            this.labelControlEmail.Location = new System.Drawing.Point(458, 18);
             this.labelControlEmail.Name = "labelControlEmail";
             this.labelControlEmail.Size = new System.Drawing.Size(28, 13);
             this.labelControlEmail.TabIndex = 1;
@@ -276,7 +287,7 @@
             // 
             // labelControlMaHocSinh
             // 
-            this.labelControlMaHocSinh.Location = new System.Drawing.Point(78, 19);
+            this.labelControlMaHocSinh.Location = new System.Drawing.Point(79, 20);
             this.labelControlMaHocSinh.Name = "labelControlMaHocSinh";
             this.labelControlMaHocSinh.Size = new System.Drawing.Size(60, 13);
             this.labelControlMaHocSinh.TabIndex = 1;
@@ -338,9 +349,9 @@
             this.panelControlButtonTim.Controls.Add(this.checkButton3);
             this.panelControlButtonTim.Controls.Add(this.checkEditTimGanDung);
             this.panelControlButtonTim.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControlButtonTim.Location = new System.Drawing.Point(0, 152);
+            this.panelControlButtonTim.Location = new System.Drawing.Point(0, 154);
             this.panelControlButtonTim.Name = "panelControlButtonTim";
-            this.panelControlButtonTim.Size = new System.Drawing.Size(742, 60);
+            this.panelControlButtonTim.Size = new System.Drawing.Size(744, 60);
             this.panelControlButtonTim.TabIndex = 0;
             // 
             // checkButton5
@@ -672,17 +683,6 @@
             this.gridControlSearchHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // radioGroup1
-            // 
-            this.radioGroup1.EditValue = ((byte)(0));
-            this.radioGroup1.Location = new System.Drawing.Point(149, 82);
-            this.radioGroup1.Name = "radioGroup1";
-            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(0)), "Nam"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(1)), "Nữ")});
-            this.radioGroup1.Size = new System.Drawing.Size(152, 26);
-            this.radioGroup1.TabIndex = 3;
-            // 
             // frmSearchHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -704,6 +704,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNDungDKien)).EndInit();
             this.panelControlNDungDKien.ResumeLayout(false);
             this.panelControlNDungDKien.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhDen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhTu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).EndInit();
@@ -729,7 +730,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEditToanBoCacNam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearchHocSinh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

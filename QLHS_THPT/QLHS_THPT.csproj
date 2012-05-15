@@ -93,11 +93,11 @@
     <Compile Include="frmSearchHocSinh.Designer.cs">
       <DependentUpon>frmSearchHocSinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBangDiemHocKy.cs">
+    <Compile Include="frmTongKetHocKy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBangDiemHocKy.Designer.cs">
-      <DependentUpon>frmBangDiemHocKy.cs</DependentUpon>
+    <Compile Include="frmTongKetHocKy.Designer.cs">
+      <DependentUpon>frmTongKetHocKy.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTongKetNamHoc.cs">
       <SubType>Form</SubType>
@@ -112,11 +112,6 @@
       <DependentUpon>frmReportView_TongKetHK.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\HOCSINH.Designer.cs" />
-    <Compile Include="Report\HOCSINH1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HOCSINH.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Report\rptBangDiem.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -131,12 +126,6 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Report\XtraForm1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Report\XtraForm1.Designer.cs">
-      <DependentUpon>XtraForm1.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmGiaoVien.resx">
       <DependentUpon>frmGiaoVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -146,8 +135,8 @@
     <EmbeddedResource Include="frmSearchHocSinh.resx">
       <DependentUpon>frmSearchHocSinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBangDiemHocKy.resx">
-      <DependentUpon>frmBangDiemHocKy.cs</DependentUpon>
+    <EmbeddedResource Include="frmTongKetHocKy.resx">
+      <DependentUpon>frmTongKetHocKy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTongKetNamHoc.resx">
       <DependentUpon>frmTongKetNamHoc.cs</DependentUpon>
@@ -169,22 +158,8 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\XtraForm1.resx">
-      <DependentUpon>XtraForm1.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Report\HOCSINH.xsc">
-      <DependentUpon>HOCSINH.xsd</DependentUpon>
-    </None>
-    <None Include="Report\HOCSINH.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HOCSINH1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Report\HOCSINH.xss">
-      <DependentUpon>HOCSINH.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
