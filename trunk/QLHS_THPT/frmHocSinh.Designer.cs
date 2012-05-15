@@ -44,7 +44,6 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButtonChuyenLop = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonInHoSo = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonXoa = new DevExpress.XtraEditors.SimpleButton();
@@ -67,6 +66,7 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControlTitle = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDSHocSinh)).BeginInit();
@@ -225,9 +225,9 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.labelControlTitle);
             this.panelControl3.Controls.Add(this.simpleButtonChuyenLop);
             this.panelControl3.Controls.Add(this.simpleButtonInHoSo);
-            this.panelControl3.Controls.Add(this.labelControl4);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3.Location = new System.Drawing.Point(200, 0);
             this.panelControl3.Name = "panelControl3";
@@ -251,16 +251,6 @@
             this.simpleButtonInHoSo.Size = new System.Drawing.Size(109, 35);
             this.simpleButtonInHoSo.TabIndex = 18;
             this.simpleButtonInHoSo.Text = "In hồ sơ (Alt+&P)";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 17F);
-            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.labelControl4.Location = new System.Drawing.Point(16, 16);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(182, 28);
-            this.labelControl4.TabIndex = 0;
-            this.labelControl4.Text = "HỒ SƠ HỌC SINH";
             // 
             // panelControl4
             // 
@@ -490,6 +480,16 @@
             this.labelControl5.TabIndex = 0;
             this.labelControl5.Text = "Mã học sinh:";
             // 
+            // labelControlTitle
+            // 
+            this.labelControlTitle.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControlTitle.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.labelControlTitle.Location = new System.Drawing.Point(25, 20);
+            this.labelControlTitle.Name = "labelControlTitle";
+            this.labelControlTitle.Size = new System.Drawing.Size(170, 23);
+            this.labelControlTitle.TabIndex = 19;
+            this.labelControlTitle.Text = "HỒ SƠ HỌC SINH";
+            // 
             // frmHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -547,7 +547,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.PanelControl panelControlChiTietHoSo;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.TextEdit textEditmaHocSinh;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl5;
@@ -575,6 +574,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnSTT;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnTenHocSinh;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnMaHocSinh;
+        private DevExpress.XtraEditors.LabelControl labelControlTitle;
 
     }
 }

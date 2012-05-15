@@ -76,9 +76,9 @@
             this.gridColumnNoiSinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnDiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridControlSearchHocSinh = new DevExpress.XtraGrid.GridControl();
             this.gridColumnLopHocHT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnGVCN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControlSearchHocSinh = new DevExpress.XtraGrid.GridControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamDKien)).BeginInit();
             this.panelControlNamDKien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlDieuKien)).BeginInit();
@@ -269,7 +269,7 @@
             // 
             // labelControlNamSinh
             // 
-            this.labelControlNamSinh.Location = new System.Drawing.Point(77, 121);
+            this.labelControlNamSinh.Location = new System.Drawing.Point(78, 122);
             this.labelControlNamSinh.Name = "labelControlNamSinh";
             this.labelControlNamSinh.Size = new System.Drawing.Size(47, 13);
             this.labelControlNamSinh.TabIndex = 1;
@@ -277,7 +277,7 @@
             // 
             // labelControlGioiTinh
             // 
-            this.labelControlGioiTinh.Location = new System.Drawing.Point(77, 89);
+            this.labelControlGioiTinh.Location = new System.Drawing.Point(78, 90);
             this.labelControlGioiTinh.Name = "labelControlGioiTinh";
             this.labelControlGioiTinh.Size = new System.Drawing.Size(42, 13);
             this.labelControlGioiTinh.TabIndex = 1;
@@ -285,7 +285,7 @@
             // 
             // labelControlDiaChi
             // 
-            this.labelControlDiaChi.Location = new System.Drawing.Point(456, 48);
+            this.labelControlDiaChi.Location = new System.Drawing.Point(457, 49);
             this.labelControlDiaChi.Name = "labelControlDiaChi";
             this.labelControlDiaChi.Size = new System.Drawing.Size(36, 13);
             this.labelControlDiaChi.TabIndex = 1;
@@ -293,7 +293,7 @@
             // 
             // labelControlHoTen
             // 
-            this.labelControlHoTen.Location = new System.Drawing.Point(77, 50);
+            this.labelControlHoTen.Location = new System.Drawing.Point(78, 51);
             this.labelControlHoTen.Name = "labelControlHoTen";
             this.labelControlHoTen.Size = new System.Drawing.Size(36, 13);
             this.labelControlHoTen.TabIndex = 1;
@@ -301,7 +301,7 @@
             // 
             // labelControlEmail
             // 
-            this.labelControlEmail.Location = new System.Drawing.Point(456, 16);
+            this.labelControlEmail.Location = new System.Drawing.Point(457, 17);
             this.labelControlEmail.Name = "labelControlEmail";
             this.labelControlEmail.Size = new System.Drawing.Size(28, 13);
             this.labelControlEmail.TabIndex = 1;
@@ -309,7 +309,7 @@
             // 
             // labelControlMaHocSinh
             // 
-            this.labelControlMaHocSinh.Location = new System.Drawing.Point(77, 18);
+            this.labelControlMaHocSinh.Location = new System.Drawing.Point(78, 19);
             this.labelControlMaHocSinh.Name = "labelControlMaHocSinh";
             this.labelControlMaHocSinh.Size = new System.Drawing.Size(60, 13);
             this.labelControlMaHocSinh.TabIndex = 1;
@@ -652,17 +652,6 @@
             this.gridColumnDiaChi.VisibleIndex = 6;
             this.gridColumnDiaChi.Width = 214;
             // 
-            // gridControlSearchHocSinh
-            // 
-            this.gridControlSearchHocSinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlSearchHocSinh.Location = new System.Drawing.Point(0, 240);
-            this.gridControlSearchHocSinh.MainView = this.gridView1;
-            this.gridControlSearchHocSinh.Name = "gridControlSearchHocSinh";
-            this.gridControlSearchHocSinh.Size = new System.Drawing.Size(995, 183);
-            this.gridControlSearchHocSinh.TabIndex = 1;
-            this.gridControlSearchHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
             // gridColumnLopHocHT
             // 
             this.gridColumnLopHocHT.Caption = "Lớp hiện tại";
@@ -704,6 +693,17 @@
             this.gridColumnGVCN.OptionsFilter.AllowFilter = false;
             this.gridColumnGVCN.Visible = true;
             this.gridColumnGVCN.VisibleIndex = 8;
+            // 
+            // gridControlSearchHocSinh
+            // 
+            this.gridControlSearchHocSinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlSearchHocSinh.Location = new System.Drawing.Point(0, 240);
+            this.gridControlSearchHocSinh.MainView = this.gridView1;
+            this.gridControlSearchHocSinh.Name = "gridControlSearchHocSinh";
+            this.gridControlSearchHocSinh.Size = new System.Drawing.Size(995, 183);
+            this.gridControlSearchHocSinh.TabIndex = 1;
+            this.gridControlSearchHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
             // 
             // frmSearchHocSinh
             // 
