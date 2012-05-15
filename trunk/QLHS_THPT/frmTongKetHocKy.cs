@@ -23,7 +23,7 @@ namespace QLHS
         private void simpleButtonXuatBD_Click(object sender, EventArgs e)
         {
             var ds = _BangDiemBUS.LayDTDiem_HocKy_Lop("10A01NH1112", "1");
-            var rp = new rptBangDiem();
+            var rp = new rptTongKetHocKy();
             rp.SetDataSource(ds);
 
             frmReportView_TongKetHK _frmReportView_TongKetHK = new frmReportView_TongKetHK();
