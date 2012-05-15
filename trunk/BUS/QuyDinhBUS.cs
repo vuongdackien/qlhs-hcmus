@@ -20,11 +20,7 @@ namespace QLHS.BUS
         /// <returns>Int</returns>
         public int LayTuoiCanDuoi()
         {
-            return (int)_QuyDinhDAL.LayGiaTri("TuoiCanDuoi");
-        }
-        public int LayNamCanDuoi()
-        {
-            return DateTime.Now.Year - this.LayTuoiCanDuoi();
+            return Convert.ToInt32(_QuyDinhDAL.LayGiaTri("TuoiCanDuoi"));
         }
         /// <summary>
         /// Lấy tuổi cận trên
@@ -32,8 +28,25 @@ namespace QLHS.BUS
         /// <returns>Int</returns>
         public int LayTuoiCanTren()
         {
-            return (int)_QuyDinhDAL.LayGiaTri("TuoiCanTren");
+            return Convert.ToInt32(_QuyDinhDAL.LayGiaTri("TuoiCanTren"));
         }
+        /// <summary>
+        /// Lấy năm tuổi cận dưới
+        /// </summary>
+        /// <returns>Int: Năm</returns>
+        public int LayNamCanDuoi()
+        {
+            return DateTime.Now.Year - this.LayTuoiCanTren();
+        }
+        /// <summary>
+        /// Lấy năm tuổi cận trên
+        /// </summary>
+        /// <returns>Int: Năm</returns>
+        public int LayNamCanTren()
+        {
+            return DateTime.Now.Year - this.LayTuoiCanDuoi();
+        }
+       
         /// <summary>
         /// Lấy sỉ số cận dưới
         /// </summary>

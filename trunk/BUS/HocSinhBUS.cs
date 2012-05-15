@@ -54,8 +54,9 @@ namespace QLHS.BUS
         {
             int TuoiCanDuoi = _QuyDinhBUS.LayTuoiCanDuoi(),
                 TuoiCanTren = _QuyDinhBUS.LayTuoiCanTren();
-            //if(TuoiCanDuoi <= 
-            return true;
+            if(TuoiCanDuoi <= namSinh && namSinh <= TuoiCanTren)
+                return true;
+            return false;
         }
     }
 }
