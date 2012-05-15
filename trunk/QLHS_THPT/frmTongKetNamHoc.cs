@@ -15,5 +15,10 @@ namespace QLHS
         {
             InitializeComponent();
         }
+
+        private void simpleButtonXuatBD_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
