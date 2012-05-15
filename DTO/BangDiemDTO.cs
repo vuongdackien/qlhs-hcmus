@@ -22,7 +22,7 @@ namespace QLHS.DTO
             get { return _MonHocDTO ; }
             set { _MonHocDTO = value; }
         }
-        
+         
         public double DM_1 { get; set; }
         public double DM_2 { get; set; }
         public double D15_1 { get; set; }
