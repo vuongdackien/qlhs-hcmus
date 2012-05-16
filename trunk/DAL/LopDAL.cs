@@ -41,6 +41,7 @@ namespace QLHS.DAL
                 lopDTO.TenLop = Convert.ToString(dr["TenLop"]);
                 listLopDTO.Add(lopDTO);
             }
+            CloseConnect();
             return listLopDTO;
         }
 
