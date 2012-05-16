@@ -15,7 +15,8 @@ namespace QLHS
         private LopBUS _LopBUS;
         private HocSinhBUS _HocSinhBUS;
         private QuyDinhBUS _QuyDinhBUS;
-
+        private PhanLopBUS _PhanLopBUS;
+        private HocSinhDTO _hocSinhDTO;
         public frmHocSinh()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace QLHS
             _LopBUS = new LopBUS();
             _HocSinhBUS = new HocSinhBUS();
             _QuyDinhBUS = new QuyDinhBUS();
+            _PhanLopBUS = new PhanLopBUS();
         }
 
         private void frmHocSinh_Load(object sender, EventArgs e)
@@ -81,25 +83,24 @@ namespace QLHS
         /// <param name="MaHS">String: MaHS</param>
         private void HienThiHoSoHocSinh(object MaHocSinh = null)
         {
-            HocSinhDTO hocSinhDTO;
             if (MaHocSinh == null)
             {
-                hocSinhDTO = new HocSinhDTO();
+                _hocSinhDTO = new HocSinhDTO();
                 panelControlChiTietHoSo.Enabled = false;
             }
             else
             {
-                hocSinhDTO = _HocSinhBUS.LayHoSoHocSinh(MaHocSinh.ToString());
+                _hocSinhDTO = _HocSinhBUS.LayHoSoHocSinh(MaHocSinh.ToString());
                 panelControlChiTietHoSo.Enabled = true;
             }
-            spinEditSTTSoDiem.Value = hocSinhDTO.STT;
-            dateEditNgaySinh.EditValue = hocSinhDTO.NgaySinh;
-            textEditmaHocSinh.Text = hocSinhDTO.MaHocSinh;
-            textEditTenHocSinh.Text = hocSinhDTO.TenHocSinh;
-            radioGroupGioiTinh.SelectedIndex = hocSinhDTO.GioiTinh;
-            textEditNoiSinh.Text = hocSinhDTO.NoiSinh;
-            textEditDiaChi.Text = hocSinhDTO.DiaChi;
-            textEditEmail.Text = hocSinhDTO.Email;
+            spinEditSTTSoDiem.Value = _hocSinhDTO.STT;
+            dateEditNgaySinh.EditValue = _hocSinhDTO.NgaySinh;
+            textEditmaHocSinh.Text = _hocSinhDTO.MaHocSinh;
+            textEditTenHocSinh.Text = _hocSinhDTO.TenHocSinh;
+            radioGroupGioiTinh.SelectedIndex = _hocSinhDTO.GioiTinh;
+            textEditNoiSinh.Text = _hocSinhDTO.NoiSinh;
+            textEditDiaChi.Text = _hocSinhDTO.DiaChi;
+            textEditEmail.Text = _hocSinhDTO.Email;
             
         }
 
@@ -125,20 +126,38 @@ namespace QLHS
             hocSinhDTO.NoiSinh = textEditNoiSinh.Text;
             hocSinhDTO.DiaChi = textEditDiaChi.Text;
             hocSinhDTO.Email = textEditEmail.Text;
-
+            string MaLop = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop);
             if (hocSinhDTO.TenHocSinh.Length < 3 || !hocSinhDTO.TenHocSinh.Contains(" "))
             {
                 Utilities.MessageboxUtilities.MessageError("Họ tên học sinh không hợp lệ hoặc nhỏ hơn 3 ký tự!");
                 return;
             }
-
-            _HocSinhBUS.LuuHoSoHocSinh(hocSinhDTO);
-            
+            try
+            {
+                if (_HocSinhBUS.LuuHoSoHocSinh(hocSinhDTO, MaLop))
+                    Utilities.MessageboxUtilities.MessageSuccess("Lưu hồ sơ học sinh " + hocSinhDTO.TenHocSinh + " thành công!");
+                else
+                    Utilities.MessageboxUtilities.MessageError();
+            }
+            catch (Exception ex)
+            {
+                Utilities.MessageboxUtilities.MessageError(ex);
+                return;
+            }
         }
 
         private void simpleButtonThemMoi_Click(object sender, EventArgs e)
         {
-           
+            string MaLop = (Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop));
+            int SiSoCanTren =  _QuyDinhBUS.LaySiSoCanTren();
+            if(_PhanLopBUS.Dem_SiSo_Lop(MaLop) >= SiSoCanTren)
+            { 
+                Utilities.MessageboxUtilities.MessageError("Lớp "+Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditLop)
+                                                            +" đã đủ học sinh theo quy định "
+                                                            +" ("+SiSoCanTren+" học sinh / 1 lớp)!");
+                return;                                                                        
+            }
+            spinEditSTTSoDiem.Value = _PhanLopBUS.Lay_STT_TiepTheo(MaLop);
             textEditmaHocSinh.Text = "";
             textEditTenHocSinh.Text = "";
             textEditDiaChi.Text = "";

@@ -51,13 +51,14 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="hocsinhDTO">HocSinhDTO</param>
         /// <returns>Bool: Thành công/Không</returns>
-        public bool SuaHoSoHocSinh(HocSinhDTO hocsinhDTO)
+        public bool SuaHoSoHocSinh(HocSinhDTO hocsinhDTO,string MaLop)
         {
             string sql = string.Format("UPDATE HOCSINH SET TenHocSinh = N'{1}', Email = '{1}', NgaySinh = '{3}',"
                          +"GioiTinh = {4}, NoiSinh = N'{5}', DiaChi = N'{6}' "
                          +"WHERE MaHocSinh = '{0}'",hocsinhDTO.MaHocSinh,hocsinhDTO.TenHocSinh,
                            hocsinhDTO.Email, hocsinhDTO.NgaySinh, hocsinhDTO.GioiTinh, hocsinhDTO.NoiSinh, hocsinhDTO.DiaChi);
-            sql += string.Format("\nUPDATE PHANLOP SET STT = {1} WHERE MaHocSinh = '{0}'", hocsinhDTO.MaHocSinh,
+            sql += string.Format("\nUPDATE PHANLOP SET STT = {2} WHERE MaHocSinh = '{0}' AND MaLop = '{1}'", hocsinhDTO.MaHocSinh,
+                                    MaLop,
                                     hocsinhDTO.STT);
             return ExecuteQuery(sql) > 0;
         }
@@ -66,13 +67,13 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="hocsinhDTO">HocSinhDTO</param>
         /// <returns>Bool: Thành công/Không</returns>
-        public bool ThemHoSoHocSinh(HocSinhDTO hocsinhDTO)
+        public bool ThemHoSoHocSinh(HocSinhDTO hocsinhDTO,string MaLop)
         {
             string sql = string.Format("INSERT INTO HOCSINH (MaHocSinh, TenHocSinh , Email, NgaySinh, GioiTinh, NoiSinh, DiaChi) "
                          +"VALUES ('{0}',N'{1}','{2}','{3}',{4},N'{5}',N'{6}' ", hocsinhDTO.MaHocSinh, hocsinhDTO.TenHocSinh,
                            hocsinhDTO.Email, hocsinhDTO.NgaySinh, hocsinhDTO.GioiTinh, hocsinhDTO.NoiSinh, hocsinhDTO.DiaChi);
-            sql += string.Format("\nUPDATE PHANLOP SET STT = {1} WHERE MaHocSinh = '{0}'", hocsinhDTO.MaHocSinh,
-                                    hocsinhDTO.STT);
+            sql += string.Format("\nINSERT INTO PHANLOP (STT,MaHocSinh,MaLop) VALUES ({0},'{1}','{2})", 
+                        hocsinhDTO.STT,  hocsinhDTO.MaHocSinh, MaLop);
             return ExecuteQuery(sql) > 0;
         }
         /// <summary>

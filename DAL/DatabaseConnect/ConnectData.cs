@@ -26,21 +26,24 @@ namespace QLHS.DAL
         /// <summary>
         /// Hàm kết nối CSDL
         /// </summary>
-        /// <returns>return 1: nếu kết nối thành công || return > 1: mã lỗi </returns>
-        public int Connect()
+        /// <returns>Bool</returns>
+        public bool Connect()
         {
             try
             {
                 m_Connect = new OleDbConnection(_strConnect);
                 this.OpenConnect();
+                return true;
             }
-            catch(OleDbException ex)
+            catch (OleDbException ex)
             {
-                this.CloseConnect();
-                return ex.ErrorCode;
+                Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
+                return false;
             }
-            this.CloseConnect();
-            return 1;
+            finally
+            { 
+                 this.CloseConnect();
+            }
         }
         /// <summary>
         /// Kiểm tra kết nối với Database
@@ -51,9 +54,7 @@ namespace QLHS.DAL
         {
             if (strConnect != "")
                 this._strConnect = strConnect;
-            if(this.Connect() == 1)
-                return true;
-            return false;
+            return this.Connect();
         }
 
 
@@ -113,11 +114,11 @@ namespace QLHS.DAL
                     return tb;
                 }
             }
-            catch
+            catch (OleDbException ex)
             {
+                Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
                 return null;
             }
-
         }
         /// <summary>
         /// Truy vấn lấy dòng đầu tiên
@@ -170,15 +171,18 @@ namespace QLHS.DAL
                 // Thực thi
                 sqlTran.Commit();
             }
-            catch
+            catch (OleDbException ex)
             {
                 // Roolback data
                 if (sqlTran != null)
                     sqlTran.Rollback();
+                Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
+            }
+            finally
+            { 
                 // Đóng kết nối
                 this.CloseConnect();
             }
-            this.CloseConnect();
             // Trả về số record thực thi
             return numRecords;
         }
@@ -207,15 +211,18 @@ namespace QLHS.DAL
                 // Thực thi
                 sqlTran.Commit();
             }
-            catch
+            catch (OleDbException ex)
             {
                 // Roolback data
                 if (sqlTran != null)
                     sqlTran.Rollback();
+                Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
+            }
+            finally
+            { 
                 // Đóng kn
                 this.CloseConnect();
             }
-            this.CloseConnect();
             // Trả về số record thực thi
             return numRecords;
         }
@@ -231,27 +238,32 @@ namespace QLHS.DAL
             {
                 this.OpenConnect();
                 m_Command.Connection = m_Connect;
-                if (m_Command.ExecuteNonQuery() > 0)
-                {
-                    this.CloseConnect();
-                    return true;
-                }
-                this.CloseConnect();
-                return false;
-
+                m_Command.ExecuteNonQuery();
+                return true;
             }
-            catch
+            catch (OleDbException ex)
+            {
+                Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
+                return false;
+            }
+            finally
             {
                 this.CloseConnect();
-                return false;
             }
-
         }
 
         protected OleDbDataReader ExecuteReader(string sql)
         {
-            OleDbCommand command = new OleDbCommand(sql,this.m_Connect);
-            return command.ExecuteReader();
+            try
+            {
+                OleDbCommand command = new OleDbCommand(sql, this.m_Connect);
+                return command.ExecuteReader();
+            }
+            catch (OleDbException ex)
+            {
+                Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
+                return null;
+            }
         }
 
         /// <summary>
@@ -260,21 +272,22 @@ namespace QLHS.DAL
         /// <param name="sql">String: Chuỗi truy vấn</param>
         /// <returns>Object: có thể ép kiểu lại.</returns>
         protected object ExecuteScalar(string sql)
-        {
+        { 
             try
             {
                 this.OpenConnect();
                 m_Command = new OleDbCommand(sql, m_Connect);
-                object result = m_Command.ExecuteScalar();
-                this.CloseConnect();
-                return result;
+                return m_Command.ExecuteScalar();
             }
-            catch
+            catch (OleDbException ex)
             {
-                this.CloseConnect();
+                Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
+                return null;
             }
-            return null;
-
+            finally
+            { 
+                 this.CloseConnect();
+            }
         }
 
         /// <summary>

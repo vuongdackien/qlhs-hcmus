@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using System.Data.OleDb;
 using System.Windows.Forms;
+using System;
 
 namespace Utilities
 {
@@ -31,6 +32,11 @@ namespace Utilities
         public static DialogResult MessageError(OleDbException ex)
         {
             return XtraMessageBox.Show(CustomErrorSQL.GetMessageError(ex),
+                "LỖI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        public static DialogResult MessageError(Exception ex)
+        {
+            return XtraMessageBox.Show(ex.Message,
                 "LỖI", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         public static DialogResult MessageError()
