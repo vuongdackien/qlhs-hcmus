@@ -61,7 +61,7 @@ namespace QLHS.BUS
         /// <returns>Int</returns>
         public int LaySiSoCanTren()
         {
-            return (int)_QuyDinhDAL.LayGiaTri("SiSoCanTren");
+            return Convert.ToInt32(_QuyDinhDAL.LayGiaTri("SiSoCanTren"));
         }
         /// <summary>
         /// Lấy điểm chuẩn

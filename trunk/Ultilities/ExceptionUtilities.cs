@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Utilities
 {
-    class ExceptionUtilities
+    public static class ExceptionUtilities
     {
-        public ExceptionUtilities()
+        public static void Throw(string msg)
         {
-
+            throw new Exception(msg);
         }
     }
 }

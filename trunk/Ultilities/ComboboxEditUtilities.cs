@@ -78,7 +78,7 @@ namespace Utilities
         }
 
         /// <summary>
-        /// Lấy giá trị selected của ComboboxEdit
+        /// Lấy giá trị trả về selected của ComboboxEdit
         /// </summary>
         /// <param name="comb">ComboBoxEdit</param>
         /// <returns>string: giá trị valuemember</returns>
@@ -87,6 +87,17 @@ namespace Utilities
             if (comb.SelectedItem == null)
                 return null;
             return ((ComboboxEditUtilities)comb.SelectedItem).Value;
+        }
+        /// <summary>
+        /// Lấy giá trị hiển thị selected của ComboboxEdit
+        /// </summary>
+        /// <param name="comb">ComboBoxEdit</param>
+        /// <returns>string: giá trị valuemember</returns>
+        public static string GetDisplayItem(ComboBoxEdit comb)
+        {
+            if (comb.SelectedItem == null)
+                return null;
+            return ((ComboboxEditUtilities)comb.SelectedItem).sDisplay;
         }
 
         /// <summary>

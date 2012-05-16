@@ -24,5 +24,33 @@ namespace QLHS.BUS
         {
             return _PhanLopDAL.KiemTra_STT_TonTai(STT, MaLop);
         }
+        /// <summary>
+        /// Lấy Số thứ tự tiếp theo trong bảng điểm
+        /// </summary>
+        /// <param name="MaLop">String: mã lớp</param>
+        /// <returns>Int</returns>
+        public int Lay_STT_TiepTheo(string MaLop)
+        {
+            return _PhanLopDAL.Lay_STT_TiepTheo(MaLop);
+        }
+        /// <summary>
+        /// Lấy STT hiện tại của 1 học sinh
+        /// </summary>
+        /// <param name="MaHocSinh">String: Mã học sinh</param>
+        /// <param name="MaLop">String: Mã lớp</param>
+        /// <returns>Int</returns>
+        public int Lay_STT_HienTai(string MaHocSinh, string MaLop)
+        {
+            return _PhanLopDAL.Lay_STT_HienTai(MaHocSinh, MaLop);
+        }
+        /// <summary>
+        /// Đếm sỉ số của 1 lớp
+        /// </summary>
+        /// <param name="MaLop">String: Mã lớp</param>
+        /// <returns>Int</returns>
+        public int Dem_SiSo_Lop(string MaLop)
+        {
+            return _PhanLopDAL.Dem_SiSo_Lop(MaLop);
+        }
     }
 }

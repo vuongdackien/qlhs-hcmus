@@ -106,10 +106,10 @@
             // gridControlDSHocSinh
             // 
             this.gridControlDSHocSinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlDSHocSinh.Location = new System.Drawing.Point(3, 141);
+            this.gridControlDSHocSinh.Location = new System.Drawing.Point(2, 140);
             this.gridControlDSHocSinh.MainView = this.gridViewDSHocSinh;
             this.gridControlDSHocSinh.Name = "gridControlDSHocSinh";
-            this.gridControlDSHocSinh.Size = new System.Drawing.Size(194, 301);
+            this.gridControlDSHocSinh.Size = new System.Drawing.Size(196, 303);
             this.gridControlDSHocSinh.TabIndex = 4;
             this.gridControlDSHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDSHocSinh});
@@ -161,9 +161,9 @@
             this.panelControl2.Controls.Add(this.labelControl3);
             this.panelControl2.Controls.Add(this.labelControl1);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(3, 3);
+            this.panelControl2.Location = new System.Drawing.Point(2, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(194, 138);
+            this.panelControl2.Size = new System.Drawing.Size(196, 138);
             this.panelControl2.TabIndex = 3;
             // 
             // comboBoxEditNamHoc
@@ -357,6 +357,7 @@
             this.textEditDiaChi.EditValue = "";
             this.textEditDiaChi.Location = new System.Drawing.Point(82, 229);
             this.textEditDiaChi.Name = "textEditDiaChi";
+            this.textEditDiaChi.Properties.MaxLength = 150;
             this.textEditDiaChi.Properties.NullText = "Địa chỉ có thể bỏ trống";
             this.textEditDiaChi.Size = new System.Drawing.Size(206, 20);
             this.textEditDiaChi.TabIndex = 12;
@@ -366,6 +367,7 @@
             this.textEditNoiSinh.EditValue = "";
             this.textEditNoiSinh.Location = new System.Drawing.Point(82, 197);
             this.textEditNoiSinh.Name = "textEditNoiSinh";
+            this.textEditNoiSinh.Properties.MaxLength = 150;
             this.textEditNoiSinh.Properties.NullText = "Nơi sinh có thể bỏ trống";
             this.textEditNoiSinh.Size = new System.Drawing.Size(206, 20);
             this.textEditNoiSinh.TabIndex = 11;
@@ -377,6 +379,7 @@
             this.textEditEmail.Name = "textEditEmail";
             this.textEditEmail.Properties.Mask.EditMask = "[a-z0-9._%-]+@[a-z0-9.-]+\\.[a-z]{2,4}";
             this.textEditEmail.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.textEditEmail.Properties.MaxLength = 30;
             this.textEditEmail.Properties.NullText = "Email có thể bỏ trống";
             this.textEditEmail.Size = new System.Drawing.Size(206, 20);
             this.textEditEmail.TabIndex = 10;
@@ -459,7 +462,8 @@
             // 
             this.textEditTenHocSinh.Location = new System.Drawing.Point(25, 75);
             this.textEditTenHocSinh.Name = "textEditTenHocSinh";
-            this.textEditTenHocSinh.Size = new System.Drawing.Size(263, 20);
+            this.textEditTenHocSinh.Properties.MaxLength = 40;
+            this.textEditTenHocSinh.Size = new System.Drawing.Size(194, 20);
             this.textEditTenHocSinh.TabIndex = 7;
             // 
             // labelControl8

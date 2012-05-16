@@ -37,19 +37,47 @@ namespace QLHS.BUS
             return _HocSinhDAL.LayHoSoHocSinh(MaHocSinh);
         }
         /// <summary>
-        /// Lưu hồ sơ học sinh (Add/Edit)
+        /// Kiểm tra tồn tại của 1 hồ sơ học sinh qua Mã học sinh
+        /// </summary>
+        /// <param name="MaHocSinh">String: Mã học sinh</param>
+        /// <returns>Bpol: Tồn tại/Không</returns>
+        public bool KiemTraTonTai_MaHocSinh(HocSinhDTO hocsinh)
+        {
+            return _HocSinhDAL.KiemTraTonTai_MaHocSinh(hocsinh.MaHocSinh);
+        }
+        /// <summary>
+        /// Lưu hồ sơ học sinh 
         /// </summary>
         /// <param name="hocsinh">HocSinhDTO</param>
+        /// <param name="MaLop">String: Mã lớp</param>
         /// <returns>Bool</returns>
-        public bool LuuHoSoHocSinh(HocSinhDTO hocsinh)
+        public bool LuuHoSoHocSinh(HocSinhDTO hocsinh, string MaLop)
         {
+            // Sửa hồ sơ học sinh
             if (_HocSinhDAL.KiemTraTonTai_MaHocSinh(hocsinh.MaHocSinh))
-                return _HocSinhDAL.SuaHoSoHocSinh(hocsinh);
-
-            string lastMaHocSinh = _HocSinhDAL.LayMaCuoiCung();
-            lastMaHocSinh = lastMaHocSinh.Equals("") ? "HS00000000" : lastMaHocSinh;
-            hocsinh.MaHocSinh = Utilities.StringUtilities.NextID(lastMaHocSinh, "HS");
-            return _HocSinhDAL.ThemHoSoHocSinh(hocsinh);
+            {
+                // Nếu có sửa STT
+                if (hocsinh.STT != _PhanLopBUS.Lay_STT_HienTai(hocsinh.MaHocSinh,MaLop)
+                   && _PhanLopBUS.KiemTra_STT_TonTai(hocsinh.STT, MaLop)) // STT mới này đã tồn tại
+                {
+                    Utilities.ExceptionUtilities.Throw("Số thứ tự " + hocsinh.STT + " đã tồn tại trong lớp "+MaLop+"."
+                                         + "\nBạn có thể sử dụng chức năng \"Tự động sắp xếp số thứ tự\" theo alpha.");
+                    return false;
+                }
+                return _HocSinhDAL.SuaHoSoHocSinh(hocsinh, MaLop);
+            }
+            else // Thêm mới hồ sơ học sinh
+            {
+                if (_PhanLopBUS.KiemTra_STT_TonTai(hocsinh.STT, MaLop))
+                {
+                    Utilities.ExceptionUtilities.Throw("Số thứ tự " + hocsinh.STT + " đã tồn tại trong lớp."
+                                                                + "\nChương trình sẽ tự động tạo số thứ tự tiếp theo trong bảng điểm"
+                                                                + "\nBạn có thể sử dụng chức năng \"Tự động sắp xếp số thứ tự\" theo alpha.");
+                    return false;
+                }
+                return _HocSinhDAL.ThemHoSoHocSinh(hocsinh, MaLop);
+            }
+           
         }
         public bool KiemTraNamSinhHopLe(int namSinh)
         {
