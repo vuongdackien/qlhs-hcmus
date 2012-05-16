@@ -53,13 +53,13 @@ namespace QLHS.DAL
         /// <returns>Bool: Thành công/Không</returns>
         public bool SuaHoSoHocSinh(HocSinhDTO hocsinhDTO,string MaLop)
         {
-            string sql = string.Format("UPDATE HOCSINH SET TenHocSinh = N'{1}', Email = '{1}', NgaySinh = '{3}',"
-                         +"GioiTinh = {4}, NoiSinh = N'{5}', DiaChi = N'{6}' "
-                         +"WHERE MaHocSinh = '{0}'",hocsinhDTO.MaHocSinh,hocsinhDTO.TenHocSinh,
-                           hocsinhDTO.Email, hocsinhDTO.NgaySinh, hocsinhDTO.GioiTinh, hocsinhDTO.NoiSinh, hocsinhDTO.DiaChi);
-            sql += string.Format("\nUPDATE PHANLOP SET STT = {2} WHERE MaHocSinh = '{0}' AND MaLop = '{1}'", hocsinhDTO.MaHocSinh,
-                                    MaLop,
-                                    hocsinhDTO.STT);
+            string sql = string.Format("UPDATE HOCSINH SET TenHocSinh = '{1}', Email = '{2}', NgaySinh = '{3}', "
+                         +"GioiTinh = {4}, NoiSinh = '{5}', DiaChi = '{6}' "
+                         +"WHERE MaHocSinh = '{0}'",hocsinhDTO.MaHocSinh,hocsinhDTO.TenHocSinh,hocsinhDTO.Email,
+                           hocsinhDTO.NgaySinh, hocsinhDTO.GioiTinh, hocsinhDTO.NoiSinh, hocsinhDTO.DiaChi);
+          //  sql += string.Format("\nUPDATE PHANLOP SET STT = {2} WHERE MaHocSinh = '{0}' AND MaLop = '{1}'", hocsinhDTO.MaHocSinh,
+                                //    MaLop,
+                                 //   hocsinhDTO.STT);
             return ExecuteQuery(sql) > 0;
         }
         /// <summary>

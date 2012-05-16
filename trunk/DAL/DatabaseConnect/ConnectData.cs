@@ -9,7 +9,7 @@ namespace QLHS.DAL
         public OleDbDataAdapter m_DataApdater = null;
         public DataTable m_Table = null;
         protected OleDbCommand m_Command = null;
-        private string _strConnect = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\Databases\QLHS.mdb;Persist Security Info=True";
+        private string _strConnect = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|Databases\QLHS.mdb;Persist Security Info=True";
 
 
         public ConnectData()
