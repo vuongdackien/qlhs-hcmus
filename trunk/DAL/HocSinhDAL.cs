@@ -108,11 +108,11 @@ namespace QLHS.DAL
             List<HocSinhDTO> hsResult = new List<HocSinhDTO>();
             string oper = " LIKE ";
             string per = "%";
-            string sql = "SELECT HS.MaHocSinh, TenHocSinh, GioiTinh, NgaySinh, NoiSinh, "
+            string sql = "SELECT hsinh.MaHocSinh, TenHocSinh, GioiTinh, NgaySinh, NoiSinh, "
                           + " Email, DiaChi, TenLop, TenGiaoVien "
-                          + " FROM HOCSINH AS HS, GIAOVIEN AS GV, LOP AS L, PHANLOP AS PL"
-                          + " WHERE L.MaGiaoVien=GV.MaGiaoVien AND L.MaLop=PL.MaLop AND"
-                          + " PL.MaHocSinh=HS.MaHocSinh ";
+                          + " FROM HOCSINH hsinh, GIAOVIEN gvien, LOP lop, PHANLOP plop"
+                          + " WHERE lop.MaGiaoVien=gvien.MaGiaoVien AND lop.MaLop=plop.MaLop AND"
+                          + " plop.MaHocSinh=hsinh.MaHocSinh ";
             string where = "";
                         
             // Mã học sinh
@@ -125,6 +125,12 @@ namespace QLHS.DAL
             if (!hs.TenHocSinh.Equals(""))
             {
                 where += " AND TenHocSinh " + oper + "'" + per + hs.TenHocSinh + per + "' "; 
+            }
+
+            //giới tính
+            if (!hs.GioiTinh.Equals(-1))
+            {
+                where += "AND GioiTinh = " + hs.GioiTinh + " ";
             }
 
             //năm sinh từ
@@ -144,9 +150,22 @@ namespace QLHS.DAL
             {
                 where += " AND DiaChi " + oper + "'" + per + hs.DiaChi + per + "' ";            
             }
-            sql += where;
-            // Nếu tìm trong trong các lớp
            
+            // Nếu tìm trong trong các lớp
+            if (DS_MaLop!=null)
+            {
+                string MaLop = "";
+                for (int i = 0; i < DS_MaLop.Count; i++)
+                {
+                    string comma = "";
+                    if (i != (DS_MaLop.Count - 1))
+                        comma = "','";
+                    MaLop += DS_MaLop[i] + comma;
+                }
+                where += "AND MaHocSinh in (SELECT DISTINCT MaHocSinh FROM PHANLOP WHERE MaLop in ('" + MaLop + "')) ";
+                where += "AND MaLop in('" + MaLop + "')";
+            }
+            sql += where;
             // thực hiện query
             return GetTable(sql);
         }
