@@ -134,8 +134,7 @@ namespace QLHS
             //lấy giá trị của radioGioiTinh
             if (checkEditGioiTinh.Checked)
             {
-                object selectedValue = radioGroupGioiTinh.Properties.Items[radioGroupGioiTinh.SelectedIndex].Value;
-                hsTimKiemDTO.GioiTinh=(int)selectedValue;
+                hsTimKiemDTO.GioiTinh = radioGroupGioiTinh.SelectedIndex;
             }
             hsTimKiemDTO.NamSinhTu = textEditNamSinhTu.Text;
             hsTimKiemDTO.NamSinhDen = textEditNamSinhDen.Text;
