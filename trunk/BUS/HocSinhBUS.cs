@@ -96,7 +96,7 @@ namespace QLHS.BUS
         /// <returns>DataTable HocSinh</returns>
         public DataTable TimKiem_HocSinh(HocSinhTimKiemDTO hs, List<string> DS_MaLop = null)
         {
-            return _HocSinhDAL.TimKiem_HocSinh(hs);
+            return _HocSinhDAL.TimKiem_HocSinh(hs,DS_MaLop);
         }
     }
 }
