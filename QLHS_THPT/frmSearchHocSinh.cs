@@ -41,7 +41,7 @@ namespace QLHS
 
                 foreach (LopDTO lopNode in list_LopNode)
                 {
-                    this.treeListSearch.AppendNode(new object[] { lopNode.MaLop, lopNode.TenLop }, item);
+                    this.treeListSearch.AppendNode(new object[] { lopNode.MaLop, lopNode.TenLop}, item);
                 }
             }
             treeListSearch.ExpandAll(); // Expand all nodes
