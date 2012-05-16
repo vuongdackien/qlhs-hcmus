@@ -94,7 +94,7 @@ namespace QLHS.BUS
         /// <param name="hs">Object: HocSinhTimKiem - Thông tin học sinh tìm kiếm</param>
         /// <param name="DS_MaLop">Default: NULL (Tìm tất cả các năm) || Tìm trong các lớp</param>
         /// <returns>DataTable HocSinh</returns>
-        public DataTable TimKiem_HocSinh(HocSinhDTO hs, List<string> DS_MaLop = null)
+        public DataTable TimKiem_HocSinh(HocSinhTimKiemDTO hs, List<string> DS_MaLop = null)
         {
             return _HocSinhDAL.TimKiem_HocSinh(hs);
         }

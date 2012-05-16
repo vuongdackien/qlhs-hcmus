@@ -63,8 +63,7 @@ namespace QLHS
 
             CapNhatListLop();
             // Disable controls search
-            DisableControls(false);            
-            comboBoxEditNamHoc.Enabled = false;
+            DisableControls(false);                        
         }
 
         private void comboBoxEditNamHoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,7 +128,7 @@ namespace QLHS
         private void simpleButtonSearch_Click(object sender, EventArgs e)
         {
             DataTable kq_TimKiemDS = null;
-            HocSinhDTO hsTimKiemDTO = new HocSinhDTO();
+            HocSinhTimKiemDTO hsTimKiemDTO = new HocSinhTimKiemDTO();
             hsTimKiemDTO.MaHocSinh = textEditMaHocSinh.Text;
             hsTimKiemDTO.TenHocSinh = textEditHoTen.Text;
             //lấy giá trị của radioGioiTinh
@@ -138,8 +137,8 @@ namespace QLHS
                 object selectedValue = radioGroupGioiTinh.Properties.Items[radioGroupGioiTinh.SelectedIndex].Value;
                 hsTimKiemDTO.GioiTinh=(int)selectedValue;
             }
-            //HSTimKiem.NamSinhTu = textEditNamSinhTu.Text;
-            //HSTimKiem.NamSinhDen = textEditNamSinhDen.Text;
+            hsTimKiemDTO.NamSinhTu = textEditNamSinhTu.Text;
+            hsTimKiemDTO.NamSinhDen = textEditNamSinhDen.Text;
             hsTimKiemDTO.Email = textEditEmail.Text;
             hsTimKiemDTO.DiaChi = textEditDiaChi.Text;
 
@@ -174,9 +173,8 @@ namespace QLHS
 
             gridControlSearchHocSinh.DataSource = kq_TimKiemDS;               
         }
-        /// <summary>
-        /// Ẩn/hiện các control
-        /// </summary>
+
+        #region Ẩn hiện các control khi load form
         bool Check;
         private void DisableControls(bool show = true)
         {
@@ -206,14 +204,16 @@ namespace QLHS
         {
             if (checkEdit.Checked)
                 Check = true;
+            else
+            {
+                Check = false;
+            }
             radioGroup.Properties.ReadOnly = !Check;
             radioGroup.Enabled = Check;            
         }
-        /// <summary>
-        /// Ẩn/hiện textEdit khi checked (không checked) checkEdit
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        #endregion
+
+        #region Ẩn/hiện textEdit khi checked (không checked) checkEdit
         private void checkEditMaHocSinh_CheckedChanged(object sender, EventArgs e)
         {
             EnableControl(checkEditMaHocSinh, textEditMaHocSinh);
@@ -244,5 +244,6 @@ namespace QLHS
         {
             EnableControl(checkEditDiaChi, textEditDiaChi);
         }
+        #endregion
     }
 }
