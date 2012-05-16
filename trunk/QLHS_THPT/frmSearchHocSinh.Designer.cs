@@ -54,19 +54,19 @@
             this.checkEditEmail = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditMaHS = new DevExpress.XtraEditors.CheckEdit();
             this.panelControlButtonTim = new DevExpress.XtraEditors.PanelControl();
+            this.radioGroupTim = new DevExpress.XtraEditors.RadioGroup();
             this.checkButton5 = new DevExpress.XtraEditors.CheckButton();
             this.checkButton4 = new DevExpress.XtraEditors.CheckButton();
             this.checkButton2 = new DevExpress.XtraEditors.CheckButton();
             this.checkButton3 = new DevExpress.XtraEditors.CheckButton();
-            this.checkEditTimGanDung = new DevExpress.XtraEditors.CheckEdit();
             this.panelControlNamHoc = new DevExpress.XtraEditors.PanelControl();
             this.treeListSearch = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.panelControlChooseYear = new DevExpress.XtraEditors.PanelControl();
+            this.checkEditTatCaNam = new DevExpress.XtraEditors.CheckEdit();
             this.comboBoxEditNamHoc = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControlNamHoc = new DevExpress.XtraEditors.LabelControl();
-            this.checkEditToanBoCacNam = new DevExpress.XtraEditors.CheckEdit();
             this.labelControlPhamVi = new DevExpress.XtraEditors.LabelControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnMaHocSinh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -105,15 +105,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEditMaHS.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlButtonTim)).BeginInit();
             this.panelControlButtonTim.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditTimGanDung.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupTim.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamHoc)).BeginInit();
             this.panelControlNamHoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeListSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlChooseYear)).BeginInit();
             this.panelControlChooseYear.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditTatCaNam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditNamHoc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditToanBoCacNam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearchHocSinh)).BeginInit();
             this.SuspendLayout();
@@ -155,7 +155,7 @@
             this.xtraTabPageDieuKien.Controls.Add(this.panelControlDKienTim);
             this.xtraTabPageDieuKien.Name = "xtraTabPageDieuKien";
             this.xtraTabPageDieuKien.Size = new System.Drawing.Size(740, 210);
-            this.xtraTabPageDieuKien.Text = "Diều kiện về hồ sơ học sinh";
+            this.xtraTabPageDieuKien.Text = "Điều kiện về hồ sơ học sinh";
             // 
             // panelControlDKienTim
             // 
@@ -346,20 +346,33 @@
             // 
             // panelControlButtonTim
             // 
+            this.panelControlButtonTim.Controls.Add(this.radioGroupTim);
             this.panelControlButtonTim.Controls.Add(this.checkButton5);
             this.panelControlButtonTim.Controls.Add(this.checkButton4);
             this.panelControlButtonTim.Controls.Add(this.checkButton2);
             this.panelControlButtonTim.Controls.Add(this.checkButton3);
-            this.panelControlButtonTim.Controls.Add(this.checkEditTimGanDung);
             this.panelControlButtonTim.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControlButtonTim.Location = new System.Drawing.Point(0, 150);
             this.panelControlButtonTim.Name = "panelControlButtonTim";
             this.panelControlButtonTim.Size = new System.Drawing.Size(740, 60);
             this.panelControlButtonTim.TabIndex = 0;
             // 
+            // radioGroupTim
+            // 
+            this.radioGroupTim.EditValue = ((short)(0));
+            this.radioGroupTim.Location = new System.Drawing.Point(11, 16);
+            this.radioGroupTim.Name = "radioGroupTim";
+            this.radioGroupTim.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.radioGroupTim.Properties.Appearance.Options.UseFont = true;
+            this.radioGroupTim.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(0)), "Tìm gần đúng"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Tìm chính xác")});
+            this.radioGroupTim.Size = new System.Drawing.Size(213, 29);
+            this.radioGroupTim.TabIndex = 1;
+            // 
             // checkButton5
             // 
-            this.checkButton5.Location = new System.Drawing.Point(587, 15);
+            this.checkButton5.Location = new System.Drawing.Point(608, 15);
             this.checkButton5.Name = "checkButton5";
             this.checkButton5.Size = new System.Drawing.Size(104, 30);
             this.checkButton5.TabIndex = 0;
@@ -367,7 +380,7 @@
             // 
             // checkButton4
             // 
-            this.checkButton4.Location = new System.Drawing.Point(449, 15);
+            this.checkButton4.Location = new System.Drawing.Point(479, 15);
             this.checkButton4.Name = "checkButton4";
             this.checkButton4.Size = new System.Drawing.Size(104, 30);
             this.checkButton4.TabIndex = 0;
@@ -375,7 +388,7 @@
             // 
             // checkButton2
             // 
-            this.checkButton2.Location = new System.Drawing.Point(177, 15);
+            this.checkButton2.Location = new System.Drawing.Point(236, 15);
             this.checkButton2.Name = "checkButton2";
             this.checkButton2.Size = new System.Drawing.Size(104, 30);
             this.checkButton2.TabIndex = 0;
@@ -383,20 +396,11 @@
             // 
             // checkButton3
             // 
-            this.checkButton3.Location = new System.Drawing.Point(313, 15);
+            this.checkButton3.Location = new System.Drawing.Point(356, 15);
             this.checkButton3.Name = "checkButton3";
             this.checkButton3.Size = new System.Drawing.Size(104, 30);
             this.checkButton3.TabIndex = 0;
             this.checkButton3.Text = "Xóa điều kiện";
-            // 
-            // checkEditTimGanDung
-            // 
-            this.checkEditTimGanDung.Location = new System.Drawing.Point(54, 23);
-            this.checkEditTimGanDung.Name = "checkEditTimGanDung";
-            this.checkEditTimGanDung.Properties.Caption = "Tìm gần đúng";
-            this.checkEditTimGanDung.Properties.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
-            this.checkEditTimGanDung.Size = new System.Drawing.Size(91, 19);
-            this.checkEditTimGanDung.TabIndex = 0;
             // 
             // panelControlNamHoc
             // 
@@ -415,8 +419,9 @@
             this.treeListSearch.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.treeListColumn2});
             this.treeListSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeListSearch.Location = new System.Drawing.Point(0, 84);
+            this.treeListSearch.Location = new System.Drawing.Point(0, 91);
             this.treeListSearch.Name = "treeListSearch";
+            this.treeListSearch.OptionsSelection.MultiSelect = true;
             this.treeListSearch.OptionsView.EnableAppearanceEvenRow = true;
             this.treeListSearch.OptionsView.EnableAppearanceOddRow = true;
             this.treeListSearch.OptionsView.ShowCheckBoxes = true;
@@ -425,15 +430,24 @@
             this.treeListSearch.ParentFieldName = "";
             this.treeListSearch.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.treeListSearch.Size = new System.Drawing.Size(245, 156);
+            this.treeListSearch.Size = new System.Drawing.Size(245, 149);
             this.treeListSearch.TabIndex = 1;
+            this.treeListSearch.TreeLineStyle = DevExpress.XtraTreeList.LineStyle.Large;
+            this.treeListSearch.AfterCheckNode += new DevExpress.XtraTreeList.NodeEventHandler(this.treeListSearch_AfterCheckNode);
             // 
             // treeListColumn2
             // 
             this.treeListColumn2.Caption = "Tên khối";
             this.treeListColumn2.FieldName = "TenKhoi";
-            this.treeListColumn2.MinWidth = 32;
+            this.treeListColumn2.MinWidth = 65;
             this.treeListColumn2.Name = "treeListColumn2";
+            this.treeListColumn2.OptionsColumn.AllowEdit = false;
+            this.treeListColumn2.OptionsColumn.AllowMove = false;
+            this.treeListColumn2.OptionsColumn.AllowMoveToCustomizationForm = false;
+            this.treeListColumn2.OptionsColumn.AllowSize = false;
+            this.treeListColumn2.OptionsColumn.AllowSort = false;
+            this.treeListColumn2.OptionsColumn.ReadOnly = true;
+            this.treeListColumn2.OptionsColumn.ShowInCustomizationForm = false;
             this.treeListColumn2.Visible = true;
             this.treeListColumn2.VisibleIndex = 0;
             // 
@@ -444,46 +458,47 @@
             // 
             // panelControlChooseYear
             // 
+            this.panelControlChooseYear.Controls.Add(this.checkEditTatCaNam);
             this.panelControlChooseYear.Controls.Add(this.comboBoxEditNamHoc);
             this.panelControlChooseYear.Controls.Add(this.labelControlNamHoc);
-            this.panelControlChooseYear.Controls.Add(this.checkEditToanBoCacNam);
             this.panelControlChooseYear.Controls.Add(this.labelControlPhamVi);
             this.panelControlChooseYear.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControlChooseYear.Location = new System.Drawing.Point(0, 0);
             this.panelControlChooseYear.Margin = new System.Windows.Forms.Padding(0);
             this.panelControlChooseYear.Name = "panelControlChooseYear";
-            this.panelControlChooseYear.Size = new System.Drawing.Size(245, 84);
+            this.panelControlChooseYear.Size = new System.Drawing.Size(245, 91);
             this.panelControlChooseYear.TabIndex = 0;
+            // 
+            // checkEditTatCaNam
+            // 
+            this.checkEditTatCaNam.Location = new System.Drawing.Point(15, 31);
+            this.checkEditTatCaNam.Name = "checkEditTatCaNam";
+            this.checkEditTatCaNam.Properties.Caption = "Tìm tất cả các năm";
+            this.checkEditTatCaNam.Size = new System.Drawing.Size(133, 19);
+            this.checkEditTatCaNam.TabIndex = 4;
+            this.checkEditTatCaNam.CheckedChanged += new System.EventHandler(this.checkEditTatCaNam_CheckedChanged);
             // 
             // comboBoxEditNamHoc
             // 
-            this.comboBoxEditNamHoc.Location = new System.Drawing.Point(87, 58);
+            this.comboBoxEditNamHoc.Location = new System.Drawing.Point(66, 56);
             this.comboBoxEditNamHoc.Name = "comboBoxEditNamHoc";
             this.comboBoxEditNamHoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEditNamHoc.Size = new System.Drawing.Size(100, 20);
+            this.comboBoxEditNamHoc.Size = new System.Drawing.Size(137, 20);
             this.comboBoxEditNamHoc.TabIndex = 3;
             this.comboBoxEditNamHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHoc_SelectedIndexChanged);
             // 
             // labelControlNamHoc
             // 
-            this.labelControlNamHoc.Location = new System.Drawing.Point(27, 61);
+            this.labelControlNamHoc.Location = new System.Drawing.Point(15, 59);
             this.labelControlNamHoc.Name = "labelControlNamHoc";
             this.labelControlNamHoc.Size = new System.Drawing.Size(45, 13);
             this.labelControlNamHoc.TabIndex = 2;
             this.labelControlNamHoc.Text = "Năm học:";
             // 
-            // checkEditToanBoCacNam
-            // 
-            this.checkEditToanBoCacNam.Location = new System.Drawing.Point(25, 31);
-            this.checkEditToanBoCacNam.Name = "checkEditToanBoCacNam";
-            this.checkEditToanBoCacNam.Properties.Caption = "Tìm toàn bộ các năm";
-            this.checkEditToanBoCacNam.Size = new System.Drawing.Size(128, 19);
-            this.checkEditToanBoCacNam.TabIndex = 1;
-            // 
             // labelControlPhamVi
             // 
-            this.labelControlPhamVi.Location = new System.Drawing.Point(27, 9);
+            this.labelControlPhamVi.Location = new System.Drawing.Point(17, 12);
             this.labelControlPhamVi.Name = "labelControlPhamVi";
             this.labelControlPhamVi.Size = new System.Drawing.Size(110, 13);
             this.labelControlPhamVi.TabIndex = 0;
@@ -503,6 +518,7 @@
             this.gridColumnGVCN});
             this.gridView1.GridControl = this.gridControlSearchHocSinh;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumnMaHocSinh
             // 
@@ -748,7 +764,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEditMaHS.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlButtonTim)).EndInit();
             this.panelControlButtonTim.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditTimGanDung.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupTim.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamHoc)).EndInit();
             this.panelControlNamHoc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.treeListSearch)).EndInit();
@@ -756,8 +772,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControlChooseYear)).EndInit();
             this.panelControlChooseYear.ResumeLayout(false);
             this.panelControlChooseYear.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditTatCaNam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditNamHoc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditToanBoCacNam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearchHocSinh)).EndInit();
             this.ResumeLayout(false);
@@ -778,7 +794,6 @@
         private DevExpress.XtraEditors.PanelControl panelControlNDungDKien;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditNamHoc;
         private DevExpress.XtraEditors.LabelControl labelControlNamHoc;
-        private DevExpress.XtraEditors.CheckEdit checkEditToanBoCacNam;
         private DevExpress.XtraEditors.LabelControl labelControlPhamVi;
         private DevExpress.XtraEditors.CheckEdit checkEditNamSinh;
         private DevExpress.XtraEditors.CheckEdit checkEditGioiTinh;
@@ -802,7 +817,6 @@
         private DevExpress.XtraEditors.CheckButton checkButton4;
         private DevExpress.XtraEditors.CheckButton checkButton2;
         private DevExpress.XtraEditors.CheckButton checkButton3;
-        private DevExpress.XtraEditors.CheckEdit checkEditTimGanDung;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnMaHocSinh;
         private DevExpress.XtraGrid.GridControl gridControlSearchHocSinh;
@@ -817,6 +831,8 @@
         private DevExpress.XtraEditors.RadioGroup radioGroup1;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
+        private DevExpress.XtraEditors.RadioGroup radioGroupTim;
+        private DevExpress.XtraEditors.CheckEdit checkEditTatCaNam;
 
     }
 }
