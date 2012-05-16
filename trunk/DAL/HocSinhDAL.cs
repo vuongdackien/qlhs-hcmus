@@ -93,6 +93,5 @@ namespace QLHS.DAL
         {
             return GetLastID("HOCSINH", "MaHocSinh");
         }
-
     }
 }

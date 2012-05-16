@@ -11,10 +11,12 @@ namespace QLHS.BUS
     {
         private HocSinhDAL _HocSinhDAL;
         private QuyDinhBUS _QuyDinhBUS;
+        private PhanLopBUS _PhanLopBUS;
         public HocSinhBUS()
         {
             _HocSinhDAL = new HocSinhDAL();
             _QuyDinhBUS = new QuyDinhBUS();
+            _PhanLopBUS = new PhanLopBUS();
         }
         /// <summary>
         /// Lấy DataTable học sinh từ Lớp học
@@ -41,7 +43,6 @@ namespace QLHS.BUS
         /// <returns>Bool</returns>
         public bool LuuHoSoHocSinh(HocSinhDTO hocsinh)
         {
-           
             if (_HocSinhDAL.KiemTraTonTai_MaHocSinh(hocsinh.MaHocSinh))
                 return _HocSinhDAL.SuaHoSoHocSinh(hocsinh);
 

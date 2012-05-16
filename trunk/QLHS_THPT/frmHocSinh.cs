@@ -138,6 +138,7 @@ namespace QLHS
 
         private void simpleButtonThemMoi_Click(object sender, EventArgs e)
         {
+           
             textEditmaHocSinh.Text = "";
             textEditTenHocSinh.Text = "";
             textEditDiaChi.Text = "";
