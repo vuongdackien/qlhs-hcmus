@@ -103,7 +103,7 @@ namespace QLHS.DAL
         /// <param name="hs">Object: HocSinhTimKiem - Thông tin học sinh tìm kiếm</param>
         /// <param name="DS_MaLop">Default: NULL (Tìm tất cả các năm) || Tìm trong các lớp</param>
         /// <returns>DataTable HocSinh</returns>
-        public DataTable TimKiem_HocSinh(HocSinhDTO hs, List<string> DS_MaLop = null)
+        public DataTable TimKiem_HocSinh(HocSinhTimKiemDTO hs, List<string> DS_MaLop = null)
         {
             List<HocSinhDTO> hsResult = new List<HocSinhDTO>();
             string oper = " LIKE ";
@@ -120,11 +120,25 @@ namespace QLHS.DAL
             {
                 where += " AND MaHocSinh " + oper + "'" + per + hs.MaHocSinh + per + "' ";
             }
+
             //tên học sinh
             if (!hs.TenHocSinh.Equals(""))
             {
                 where += " AND TenHocSinh " + oper + "'" + per + hs.TenHocSinh + per + "' "; 
             }
+
+            //năm sinh từ
+            if (!hs.NamSinhTu.Equals(""))
+            {
+                where += "AND YEAR(NgaySinh)  >='" + hs.NamSinhTu + "' ";
+            }
+
+            //năm sinh đến
+            if (!hs.NamSinhDen.Equals(""))
+            {
+                where += "AND YEAR(NgaySinh)  <='" + hs.NamSinhDen + "' ";
+            }
+            
             //địa chỉ
             if (!hs.DiaChi.Equals(""))
             {

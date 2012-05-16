@@ -537,6 +537,8 @@
             // gridColumnNgaySinh
             // 
             this.gridColumnNgaySinh.Caption = "Ngày sinh";
+            this.gridColumnNgaySinh.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.gridColumnNgaySinh.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumnNgaySinh.FieldName = "NgaySinh";
             this.gridColumnNgaySinh.Name = "gridColumnNgaySinh";
             this.gridColumnNgaySinh.OptionsColumn.AllowEdit = false;
