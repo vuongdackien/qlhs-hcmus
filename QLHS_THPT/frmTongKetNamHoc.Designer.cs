@@ -370,7 +370,7 @@
             // 
             // gridColumnMH008
             // 
-            this.gridColumnMH008.Caption = "GDCD";
+            this.gridColumnMH008.Caption = "Đạo đức";
             this.gridColumnMH008.FieldName = "MH008";
             this.gridColumnMH008.Name = "gridColumnMH008";
             this.gridColumnMH008.OptionsColumn.AllowEdit = false;

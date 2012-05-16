@@ -46,6 +46,8 @@
             this.gridColumnMH004 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControlGVCNTT = new DevExpress.XtraEditors.LabelControl();
             this.panelControlTopRight = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButtonXuatBD = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
             this.labelControlHocKyTT = new DevExpress.XtraEditors.LabelControl();
             this.labelControlLopTT = new DevExpress.XtraEditors.LabelControl();
             this.labelControlNamHocTT = new DevExpress.XtraEditors.LabelControl();
@@ -58,8 +60,6 @@
             this.labelControlHocKy = new DevExpress.XtraEditors.LabelControl();
             this.panelControlRight = new DevExpress.XtraEditors.PanelControl();
             this.panelControlLeft = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonXuatBD = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTongKetNamHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTopRight)).BeginInit();
@@ -136,7 +136,7 @@
             // 
             // gridColumnMH008
             // 
-            this.gridColumnMH008.Caption = "GDCD";
+            this.gridColumnMH008.Caption = "Đạo đức";
             this.gridColumnMH008.FieldName = "MH008";
             this.gridColumnMH008.Name = "gridColumnMH008";
             this.gridColumnMH008.OptionsColumn.AllowEdit = false;
@@ -398,6 +398,25 @@
             this.panelControlTopRight.Size = new System.Drawing.Size(807, 80);
             this.panelControlTopRight.TabIndex = 0;
             // 
+            // simpleButtonXuatBD
+            // 
+            this.simpleButtonXuatBD.Image = global::QLHS.Properties.Resources.chuyenlop_small;
+            this.simpleButtonXuatBD.Location = new System.Drawing.Point(488, 21);
+            this.simpleButtonXuatBD.Name = "simpleButtonXuatBD";
+            this.simpleButtonXuatBD.Size = new System.Drawing.Size(128, 35);
+            this.simpleButtonXuatBD.TabIndex = 18;
+            this.simpleButtonXuatBD.Text = "Xuất bảng điểm";
+            this.simpleButtonXuatBD.Click += new System.EventHandler(this.simpleButtonXuatBD_Click);
+            // 
+            // simpleButtonDong
+            // 
+            this.simpleButtonDong.Image = global::QLHS.Properties.Resources.chuyenlop_small;
+            this.simpleButtonDong.Location = new System.Drawing.Point(651, 21);
+            this.simpleButtonDong.Name = "simpleButtonDong";
+            this.simpleButtonDong.Size = new System.Drawing.Size(128, 35);
+            this.simpleButtonDong.TabIndex = 18;
+            this.simpleButtonDong.Text = "Đóng";
+            // 
             // labelControlHocKyTT
             // 
             this.labelControlHocKyTT.Location = new System.Drawing.Point(300, 35);
@@ -505,25 +524,6 @@
             this.panelControlLeft.Name = "panelControlLeft";
             this.panelControlLeft.Size = new System.Drawing.Size(182, 392);
             this.panelControlLeft.TabIndex = 2;
-            // 
-            // simpleButtonDong
-            // 
-            this.simpleButtonDong.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonDong.Location = new System.Drawing.Point(651, 21);
-            this.simpleButtonDong.Name = "simpleButtonDong";
-            this.simpleButtonDong.Size = new System.Drawing.Size(128, 35);
-            this.simpleButtonDong.TabIndex = 18;
-            this.simpleButtonDong.Text = "Đóng";
-            // 
-            // simpleButtonXuatBD
-            // 
-            this.simpleButtonXuatBD.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonXuatBD.Location = new System.Drawing.Point(488, 21);
-            this.simpleButtonXuatBD.Name = "simpleButtonXuatBD";
-            this.simpleButtonXuatBD.Size = new System.Drawing.Size(128, 35);
-            this.simpleButtonXuatBD.TabIndex = 18;
-            this.simpleButtonXuatBD.Text = "Xuất bảng điểm";
-            this.simpleButtonXuatBD.Click += new System.EventHandler(this.simpleButtonXuatBD_Click);
             // 
             // frmTongKetHocKy
             // 

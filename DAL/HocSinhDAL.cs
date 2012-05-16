@@ -94,5 +94,48 @@ namespace QLHS.DAL
         {
             return GetLastID("HOCSINH", "MaHocSinh");
         }
+
+
+        #region Các hàm tìm kiếm học sinh
+        /// <summary>
+        /// Tìm kiếm học sinh 
+        /// </summary>
+        /// <param name="hs">Object: HocSinhTimKiem - Thông tin học sinh tìm kiếm</param>
+        /// <param name="DS_MaLop">Default: NULL (Tìm tất cả các năm) || Tìm trong các lớp</param>
+        /// <returns>DataTable HocSinh</returns>
+        public DataTable TimKiem_HocSinh(HocSinhDTO hs, List<string> DS_MaLop = null)
+        {
+            List<HocSinhDTO> hsResult = new List<HocSinhDTO>();
+            string oper = " LIKE ";
+            string per = "%";
+            string sql = "SELECT HS.MaHocSinh, TenHocSinh, GioiTinh, NgaySinh, NoiSinh, "
+                          + " Email, DiaChi, TenLop, TenGiaoVien "
+                          + " FROM HOCSINH AS HS, GIAOVIEN AS GV, LOP AS L, PHANLOP AS PL"
+                          + " WHERE L.MaGiaoVien=GV.MaGiaoVien AND L.MaLop=PL.MaLop AND"
+                          + " PL.MaHocSinh=HS.MaHocSinh ";
+            string where = "";
+                        
+            // Mã học sinh
+            if (!hs.MaHocSinh.Equals(""))
+            {
+                where += " AND MaHocSinh " + oper + "'" + per + hs.MaHocSinh + per + "' ";
+            }
+            //tên học sinh
+            if (!hs.TenHocSinh.Equals(""))
+            {
+                where += " AND TenHocSinh " + oper + "'" + per + hs.TenHocSinh + per + "' "; 
+            }
+            //địa chỉ
+            if (!hs.DiaChi.Equals(""))
+            {
+                where += " AND DiaChi " + oper + "'" + per + hs.DiaChi + per + "' ";            
+            }
+            sql += where;
+            // Nếu tìm trong trong các lớp
+           
+            // thực hiện query
+            return GetTable(sql);
+        }
+        #endregion
     }
 }

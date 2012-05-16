@@ -87,5 +87,16 @@ namespace QLHS.BUS
                 return true;
             return false;
         }
+
+        /// <summary>
+        /// Tìm kiếm học sinh 
+        /// </summary>
+        /// <param name="hs">Object: HocSinhTimKiem - Thông tin học sinh tìm kiếm</param>
+        /// <param name="DS_MaLop">Default: NULL (Tìm tất cả các năm) || Tìm trong các lớp</param>
+        /// <returns>DataTable HocSinh</returns>
+        public DataTable TimKiem_HocSinh(HocSinhDTO hs, List<string> DS_MaLop = null)
+        {
+            return _HocSinhDAL.TimKiem_HocSinh(hs);
+        }
     }
 }

@@ -34,31 +34,25 @@
             this.xtraTabPageDieuKien = new DevExpress.XtraTab.XtraTabPage();
             this.panelControlDKienTim = new DevExpress.XtraEditors.PanelControl();
             this.panelControlNDungDKien = new DevExpress.XtraEditors.PanelControl();
-            this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
+            this.radioGroupGioiTinh = new DevExpress.XtraEditors.RadioGroup();
             this.textEditNamSinhDen = new DevExpress.XtraEditors.TextEdit();
             this.textEditNamSinhTu = new DevExpress.XtraEditors.TextEdit();
             this.textEditDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.textEditEmail = new DevExpress.XtraEditors.TextEdit();
             this.textEditHoTen = new DevExpress.XtraEditors.TextEdit();
             this.textEditMaHocSinh = new DevExpress.XtraEditors.TextEdit();
-            this.labelControlNamSinh = new DevExpress.XtraEditors.LabelControl();
-            this.labelControlGioiTinh = new DevExpress.XtraEditors.LabelControl();
-            this.labelControlDiaChi = new DevExpress.XtraEditors.LabelControl();
-            this.labelControlHoTen = new DevExpress.XtraEditors.LabelControl();
-            this.labelControlEmail = new DevExpress.XtraEditors.LabelControl();
-            this.labelControlMaHocSinh = new DevExpress.XtraEditors.LabelControl();
             this.checkEditNamSinh = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditGioiTinh = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditDiaChi = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditHoTen = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditEmail = new DevExpress.XtraEditors.CheckEdit();
-            this.checkEditMaHS = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEditMaHocSinh = new DevExpress.XtraEditors.CheckEdit();
             this.panelControlButtonTim = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonXuatBaoCao = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonXoaDK = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonSearch = new DevExpress.XtraEditors.SimpleButton();
             this.radioGroupTim = new DevExpress.XtraEditors.RadioGroup();
-            this.checkButton5 = new DevExpress.XtraEditors.CheckButton();
-            this.checkButton4 = new DevExpress.XtraEditors.CheckButton();
-            this.checkButton2 = new DevExpress.XtraEditors.CheckButton();
-            this.checkButton3 = new DevExpress.XtraEditors.CheckButton();
             this.panelControlNamHoc = new DevExpress.XtraEditors.PanelControl();
             this.treeListSearch = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -90,7 +84,7 @@
             this.panelControlDKienTim.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNDungDKien)).BeginInit();
             this.panelControlNDungDKien.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupGioiTinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhDen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhTu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).BeginInit();
@@ -102,7 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEditDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditHoTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditEmail.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditMaHS.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditMaHocSinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlButtonTim)).BeginInit();
             this.panelControlButtonTim.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupTim.Properties)).BeginInit();
@@ -142,10 +136,10 @@
             // xtraTabControlDieuKien
             // 
             this.xtraTabControlDieuKien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControlDieuKien.Location = new System.Drawing.Point(2, 2);
+            this.xtraTabControlDieuKien.Location = new System.Drawing.Point(3, 3);
             this.xtraTabControlDieuKien.Name = "xtraTabControlDieuKien";
             this.xtraTabControlDieuKien.SelectedTabPage = this.xtraTabPageDieuKien;
-            this.xtraTabControlDieuKien.Size = new System.Drawing.Size(746, 236);
+            this.xtraTabControlDieuKien.Size = new System.Drawing.Size(744, 234);
             this.xtraTabControlDieuKien.TabIndex = 0;
             this.xtraTabControlDieuKien.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageDieuKien});
@@ -154,7 +148,7 @@
             // 
             this.xtraTabPageDieuKien.Controls.Add(this.panelControlDKienTim);
             this.xtraTabPageDieuKien.Name = "xtraTabPageDieuKien";
-            this.xtraTabPageDieuKien.Size = new System.Drawing.Size(740, 210);
+            this.xtraTabPageDieuKien.Size = new System.Drawing.Size(742, 212);
             this.xtraTabPageDieuKien.Text = "Điều kiện về hồ sơ học sinh";
             // 
             // panelControlDKienTim
@@ -165,46 +159,40 @@
             this.panelControlDKienTim.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlDKienTim.Location = new System.Drawing.Point(0, 0);
             this.panelControlDKienTim.Name = "panelControlDKienTim";
-            this.panelControlDKienTim.Size = new System.Drawing.Size(740, 210);
+            this.panelControlDKienTim.Size = new System.Drawing.Size(742, 212);
             this.panelControlDKienTim.TabIndex = 0;
             // 
             // panelControlNDungDKien
             // 
-            this.panelControlNDungDKien.Controls.Add(this.radioGroup1);
+            this.panelControlNDungDKien.Controls.Add(this.radioGroupGioiTinh);
             this.panelControlNDungDKien.Controls.Add(this.textEditNamSinhDen);
             this.panelControlNDungDKien.Controls.Add(this.textEditNamSinhTu);
             this.panelControlNDungDKien.Controls.Add(this.textEditDiaChi);
             this.panelControlNDungDKien.Controls.Add(this.textEditEmail);
             this.panelControlNDungDKien.Controls.Add(this.textEditHoTen);
             this.panelControlNDungDKien.Controls.Add(this.textEditMaHocSinh);
-            this.panelControlNDungDKien.Controls.Add(this.labelControlNamSinh);
-            this.panelControlNDungDKien.Controls.Add(this.labelControlGioiTinh);
-            this.panelControlNDungDKien.Controls.Add(this.labelControlDiaChi);
-            this.panelControlNDungDKien.Controls.Add(this.labelControlHoTen);
-            this.panelControlNDungDKien.Controls.Add(this.labelControlEmail);
-            this.panelControlNDungDKien.Controls.Add(this.labelControlMaHocSinh);
             this.panelControlNDungDKien.Controls.Add(this.checkEditNamSinh);
             this.panelControlNDungDKien.Controls.Add(this.checkEditGioiTinh);
             this.panelControlNDungDKien.Controls.Add(this.checkEditDiaChi);
             this.panelControlNDungDKien.Controls.Add(this.checkEditHoTen);
             this.panelControlNDungDKien.Controls.Add(this.checkEditEmail);
-            this.panelControlNDungDKien.Controls.Add(this.checkEditMaHS);
+            this.panelControlNDungDKien.Controls.Add(this.checkEditMaHocSinh);
             this.panelControlNDungDKien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlNDungDKien.Location = new System.Drawing.Point(0, 0);
             this.panelControlNDungDKien.Name = "panelControlNDungDKien";
-            this.panelControlNDungDKien.Size = new System.Drawing.Size(740, 150);
+            this.panelControlNDungDKien.Size = new System.Drawing.Size(742, 152);
             this.panelControlNDungDKien.TabIndex = 1;
             // 
-            // radioGroup1
+            // radioGroupGioiTinh
             // 
-            this.radioGroup1.EditValue = ((byte)(0));
-            this.radioGroup1.Location = new System.Drawing.Point(149, 82);
-            this.radioGroup1.Name = "radioGroup1";
-            this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            this.radioGroupGioiTinh.EditValue = ((byte)(0));
+            this.radioGroupGioiTinh.Location = new System.Drawing.Point(149, 82);
+            this.radioGroupGioiTinh.Name = "radioGroupGioiTinh";
+            this.radioGroupGioiTinh.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(0)), "Nam"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(1)), "Nữ")});
-            this.radioGroup1.Size = new System.Drawing.Size(152, 26);
-            this.radioGroup1.TabIndex = 3;
+            this.radioGroupGioiTinh.Size = new System.Drawing.Size(152, 26);
+            this.radioGroupGioiTinh.TabIndex = 3;
             // 
             // textEditNamSinhDen
             // 
@@ -248,159 +236,122 @@
             this.textEditMaHocSinh.Size = new System.Drawing.Size(152, 20);
             this.textEditMaHocSinh.TabIndex = 2;
             // 
-            // labelControlNamSinh
-            // 
-            this.labelControlNamSinh.Location = new System.Drawing.Point(79, 123);
-            this.labelControlNamSinh.Name = "labelControlNamSinh";
-            this.labelControlNamSinh.Size = new System.Drawing.Size(47, 13);
-            this.labelControlNamSinh.TabIndex = 1;
-            this.labelControlNamSinh.Text = "Năm sinh:";
-            // 
-            // labelControlGioiTinh
-            // 
-            this.labelControlGioiTinh.Location = new System.Drawing.Point(79, 91);
-            this.labelControlGioiTinh.Name = "labelControlGioiTinh";
-            this.labelControlGioiTinh.Size = new System.Drawing.Size(42, 13);
-            this.labelControlGioiTinh.TabIndex = 1;
-            this.labelControlGioiTinh.Text = "Giới tính:";
-            // 
-            // labelControlDiaChi
-            // 
-            this.labelControlDiaChi.Location = new System.Drawing.Point(458, 50);
-            this.labelControlDiaChi.Name = "labelControlDiaChi";
-            this.labelControlDiaChi.Size = new System.Drawing.Size(36, 13);
-            this.labelControlDiaChi.TabIndex = 1;
-            this.labelControlDiaChi.Text = "Địa chỉ:";
-            // 
-            // labelControlHoTen
-            // 
-            this.labelControlHoTen.Location = new System.Drawing.Point(79, 52);
-            this.labelControlHoTen.Name = "labelControlHoTen";
-            this.labelControlHoTen.Size = new System.Drawing.Size(36, 13);
-            this.labelControlHoTen.TabIndex = 1;
-            this.labelControlHoTen.Text = "Họ tên:";
-            // 
-            // labelControlEmail
-            // 
-            this.labelControlEmail.Location = new System.Drawing.Point(458, 18);
-            this.labelControlEmail.Name = "labelControlEmail";
-            this.labelControlEmail.Size = new System.Drawing.Size(28, 13);
-            this.labelControlEmail.TabIndex = 1;
-            this.labelControlEmail.Text = "Email:";
-            // 
-            // labelControlMaHocSinh
-            // 
-            this.labelControlMaHocSinh.Location = new System.Drawing.Point(79, 20);
-            this.labelControlMaHocSinh.Name = "labelControlMaHocSinh";
-            this.labelControlMaHocSinh.Size = new System.Drawing.Size(60, 13);
-            this.labelControlMaHocSinh.TabIndex = 1;
-            this.labelControlMaHocSinh.Text = "Mã học sinh:";
-            // 
             // checkEditNamSinh
             // 
             this.checkEditNamSinh.Location = new System.Drawing.Point(52, 119);
             this.checkEditNamSinh.Name = "checkEditNamSinh";
-            this.checkEditNamSinh.Properties.Caption = "";
-            this.checkEditNamSinh.Size = new System.Drawing.Size(19, 19);
+            this.checkEditNamSinh.Properties.Caption = "Năm sinh:";
+            this.checkEditNamSinh.Size = new System.Drawing.Size(91, 19);
             this.checkEditNamSinh.TabIndex = 0;
+            this.checkEditNamSinh.CheckedChanged += new System.EventHandler(this.checkEditNamSinh_CheckedChanged);
             // 
             // checkEditGioiTinh
             // 
-            this.checkEditGioiTinh.Location = new System.Drawing.Point(52, 84);
+            this.checkEditGioiTinh.Location = new System.Drawing.Point(52, 85);
             this.checkEditGioiTinh.Name = "checkEditGioiTinh";
-            this.checkEditGioiTinh.Properties.Caption = "";
-            this.checkEditGioiTinh.Size = new System.Drawing.Size(19, 19);
+            this.checkEditGioiTinh.Properties.Caption = "Giới tính:";
+            this.checkEditGioiTinh.Size = new System.Drawing.Size(91, 19);
             this.checkEditGioiTinh.TabIndex = 0;
+            this.checkEditGioiTinh.CheckedChanged += new System.EventHandler(this.checkEditGioiTinh_CheckedChanged);
             // 
             // checkEditDiaChi
             // 
             this.checkEditDiaChi.Location = new System.Drawing.Point(431, 47);
             this.checkEditDiaChi.Name = "checkEditDiaChi";
-            this.checkEditDiaChi.Properties.Caption = "";
-            this.checkEditDiaChi.Size = new System.Drawing.Size(19, 19);
+            this.checkEditDiaChi.Properties.Caption = "Địa chỉ:";
+            this.checkEditDiaChi.Size = new System.Drawing.Size(93, 19);
             this.checkEditDiaChi.TabIndex = 0;
+            this.checkEditDiaChi.CheckedChanged += new System.EventHandler(this.checkEditDiaChi_CheckedChanged);
             // 
             // checkEditHoTen
             // 
             this.checkEditHoTen.Location = new System.Drawing.Point(52, 48);
             this.checkEditHoTen.Name = "checkEditHoTen";
-            this.checkEditHoTen.Properties.Caption = "";
-            this.checkEditHoTen.Size = new System.Drawing.Size(19, 19);
+            this.checkEditHoTen.Properties.Caption = "Họ tên:";
+            this.checkEditHoTen.Size = new System.Drawing.Size(91, 19);
             this.checkEditHoTen.TabIndex = 0;
+            this.checkEditHoTen.CheckedChanged += new System.EventHandler(this.checkEditHoTen_CheckedChanged);
             // 
             // checkEditEmail
             // 
             this.checkEditEmail.Location = new System.Drawing.Point(431, 14);
             this.checkEditEmail.Name = "checkEditEmail";
-            this.checkEditEmail.Properties.Caption = "";
-            this.checkEditEmail.Size = new System.Drawing.Size(19, 19);
+            this.checkEditEmail.Properties.Caption = "Email";
+            this.checkEditEmail.Size = new System.Drawing.Size(93, 19);
             this.checkEditEmail.TabIndex = 0;
+            this.checkEditEmail.CheckedChanged += new System.EventHandler(this.checkEditEmail_CheckedChanged);
             // 
-            // checkEditMaHS
+            // checkEditMaHocSinh
             // 
-            this.checkEditMaHS.Location = new System.Drawing.Point(52, 15);
-            this.checkEditMaHS.Name = "checkEditMaHS";
-            this.checkEditMaHS.Properties.Caption = "";
-            this.checkEditMaHS.Size = new System.Drawing.Size(19, 19);
-            this.checkEditMaHS.TabIndex = 0;
+            this.checkEditMaHocSinh.Location = new System.Drawing.Point(52, 15);
+            this.checkEditMaHocSinh.Name = "checkEditMaHocSinh";
+            this.checkEditMaHocSinh.Properties.Caption = "Mã học sinh:";
+            this.checkEditMaHocSinh.Size = new System.Drawing.Size(91, 19);
+            this.checkEditMaHocSinh.TabIndex = 0;
+            this.checkEditMaHocSinh.CheckedChanged += new System.EventHandler(this.checkEditMaHocSinh_CheckedChanged);
             // 
             // panelControlButtonTim
             // 
+            this.panelControlButtonTim.Controls.Add(this.simpleButtonDong);
+            this.panelControlButtonTim.Controls.Add(this.simpleButtonXuatBaoCao);
+            this.panelControlButtonTim.Controls.Add(this.simpleButtonXoaDK);
+            this.panelControlButtonTim.Controls.Add(this.simpleButtonSearch);
             this.panelControlButtonTim.Controls.Add(this.radioGroupTim);
-            this.panelControlButtonTim.Controls.Add(this.checkButton5);
-            this.panelControlButtonTim.Controls.Add(this.checkButton4);
-            this.panelControlButtonTim.Controls.Add(this.checkButton2);
-            this.panelControlButtonTim.Controls.Add(this.checkButton3);
             this.panelControlButtonTim.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControlButtonTim.Location = new System.Drawing.Point(0, 150);
+            this.panelControlButtonTim.Location = new System.Drawing.Point(0, 152);
             this.panelControlButtonTim.Name = "panelControlButtonTim";
-            this.panelControlButtonTim.Size = new System.Drawing.Size(740, 60);
+            this.panelControlButtonTim.Size = new System.Drawing.Size(742, 60);
             this.panelControlButtonTim.TabIndex = 0;
+            // 
+            // simpleButtonDong
+            // 
+            this.simpleButtonDong.Image = global::QLHS.Properties.Resources.chuyenlop_small;
+            this.simpleButtonDong.Location = new System.Drawing.Point(623, 13);
+            this.simpleButtonDong.Name = "simpleButtonDong";
+            this.simpleButtonDong.Size = new System.Drawing.Size(104, 35);
+            this.simpleButtonDong.TabIndex = 21;
+            this.simpleButtonDong.Text = "Đóng";
+            // 
+            // simpleButtonXuatBaoCao
+            // 
+            this.simpleButtonXuatBaoCao.Image = global::QLHS.Properties.Resources.chuyenlop_small;
+            this.simpleButtonXuatBaoCao.Location = new System.Drawing.Point(496, 13);
+            this.simpleButtonXuatBaoCao.Name = "simpleButtonXuatBaoCao";
+            this.simpleButtonXuatBaoCao.Size = new System.Drawing.Size(104, 35);
+            this.simpleButtonXuatBaoCao.TabIndex = 21;
+            this.simpleButtonXuatBaoCao.Text = "Xuất báo cáo";
+            // 
+            // simpleButtonXoaDK
+            // 
+            this.simpleButtonXoaDK.Image = global::QLHS.Properties.Resources.chuyenlop_small;
+            this.simpleButtonXoaDK.Location = new System.Drawing.Point(369, 13);
+            this.simpleButtonXoaDK.Name = "simpleButtonXoaDK";
+            this.simpleButtonXoaDK.Size = new System.Drawing.Size(104, 35);
+            this.simpleButtonXoaDK.TabIndex = 21;
+            this.simpleButtonXoaDK.Text = "Xóa điều kiện";
+            // 
+            // simpleButtonSearch
+            // 
+            this.simpleButtonSearch.Image = global::QLHS.Properties.Resources.chuyenlop_small;
+            this.simpleButtonSearch.Location = new System.Drawing.Point(245, 13);
+            this.simpleButtonSearch.Name = "simpleButtonSearch";
+            this.simpleButtonSearch.Size = new System.Drawing.Size(104, 35);
+            this.simpleButtonSearch.TabIndex = 21;
+            this.simpleButtonSearch.Text = "Tìm kiếm";
+            this.simpleButtonSearch.Click += new System.EventHandler(this.simpleButtonSearch_Click);
             // 
             // radioGroupTim
             // 
             this.radioGroupTim.EditValue = ((short)(0));
-            this.radioGroupTim.Location = new System.Drawing.Point(11, 16);
+            this.radioGroupTim.Location = new System.Drawing.Point(15, 13);
             this.radioGroupTim.Name = "radioGroupTim";
             this.radioGroupTim.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.radioGroupTim.Properties.Appearance.Options.UseFont = true;
             this.radioGroupTim.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(0)), "Tìm gần đúng"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Tìm chính xác")});
-            this.radioGroupTim.Size = new System.Drawing.Size(213, 29);
+            this.radioGroupTim.Size = new System.Drawing.Size(213, 34);
             this.radioGroupTim.TabIndex = 1;
-            // 
-            // checkButton5
-            // 
-            this.checkButton5.Location = new System.Drawing.Point(608, 15);
-            this.checkButton5.Name = "checkButton5";
-            this.checkButton5.Size = new System.Drawing.Size(104, 30);
-            this.checkButton5.TabIndex = 0;
-            this.checkButton5.Text = "Đóng";
-            // 
-            // checkButton4
-            // 
-            this.checkButton4.Location = new System.Drawing.Point(479, 15);
-            this.checkButton4.Name = "checkButton4";
-            this.checkButton4.Size = new System.Drawing.Size(104, 30);
-            this.checkButton4.TabIndex = 0;
-            this.checkButton4.Text = "Xuất báo cáo";
-            // 
-            // checkButton2
-            // 
-            this.checkButton2.Location = new System.Drawing.Point(236, 15);
-            this.checkButton2.Name = "checkButton2";
-            this.checkButton2.Size = new System.Drawing.Size(104, 30);
-            this.checkButton2.TabIndex = 0;
-            this.checkButton2.Text = "Tìm kiếm";
-            // 
-            // checkButton3
-            // 
-            this.checkButton3.Location = new System.Drawing.Point(356, 15);
-            this.checkButton3.Name = "checkButton3";
-            this.checkButton3.Size = new System.Drawing.Size(104, 30);
-            this.checkButton3.TabIndex = 0;
-            this.checkButton3.Text = "Xóa điều kiện";
             // 
             // panelControlNamHoc
             // 
@@ -532,7 +483,6 @@
             this.gridColumnMaHocSinh.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnMaHocSinh.OptionsColumn.AllowMove = false;
             this.gridColumnMaHocSinh.OptionsColumn.AllowShowHide = false;
-            this.gridColumnMaHocSinh.OptionsColumn.AllowSize = false;
             this.gridColumnMaHocSinh.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnMaHocSinh.OptionsColumn.FixedWidth = true;
             this.gridColumnMaHocSinh.OptionsColumn.ReadOnly = true;
@@ -545,7 +495,7 @@
             // gridColumnHoTen
             // 
             this.gridColumnHoTen.Caption = "Họ tên học sinh";
-            this.gridColumnHoTen.FieldName = "HoTen";
+            this.gridColumnHoTen.FieldName = "TenHocSinh";
             this.gridColumnHoTen.Name = "gridColumnHoTen";
             this.gridColumnHoTen.OptionsColumn.AllowEdit = false;
             this.gridColumnHoTen.OptionsColumn.AllowFocus = false;
@@ -554,7 +504,6 @@
             this.gridColumnHoTen.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnHoTen.OptionsColumn.AllowMove = false;
             this.gridColumnHoTen.OptionsColumn.AllowShowHide = false;
-            this.gridColumnHoTen.OptionsColumn.AllowSize = false;
             this.gridColumnHoTen.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnHoTen.OptionsColumn.FixedWidth = true;
             this.gridColumnHoTen.OptionsColumn.ReadOnly = true;
@@ -576,7 +525,6 @@
             this.gridColumnGioiTinh.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnGioiTinh.OptionsColumn.AllowMove = false;
             this.gridColumnGioiTinh.OptionsColumn.AllowShowHide = false;
-            this.gridColumnGioiTinh.OptionsColumn.AllowSize = false;
             this.gridColumnGioiTinh.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnGioiTinh.OptionsColumn.FixedWidth = true;
             this.gridColumnGioiTinh.OptionsColumn.ReadOnly = true;
@@ -598,7 +546,6 @@
             this.gridColumnNgaySinh.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnNgaySinh.OptionsColumn.AllowMove = false;
             this.gridColumnNgaySinh.OptionsColumn.AllowShowHide = false;
-            this.gridColumnNgaySinh.OptionsColumn.AllowSize = false;
             this.gridColumnNgaySinh.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnNgaySinh.OptionsColumn.FixedWidth = true;
             this.gridColumnNgaySinh.OptionsColumn.ReadOnly = true;
@@ -620,7 +567,6 @@
             this.gridColumnNoiSinh.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnNoiSinh.OptionsColumn.AllowMove = false;
             this.gridColumnNoiSinh.OptionsColumn.AllowShowHide = false;
-            this.gridColumnNoiSinh.OptionsColumn.AllowSize = false;
             this.gridColumnNoiSinh.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnNoiSinh.OptionsColumn.FixedWidth = true;
             this.gridColumnNoiSinh.OptionsColumn.ReadOnly = true;
@@ -642,7 +588,6 @@
             this.gridColumnEmail.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnEmail.OptionsColumn.AllowMove = false;
             this.gridColumnEmail.OptionsColumn.AllowShowHide = false;
-            this.gridColumnEmail.OptionsColumn.AllowSize = false;
             this.gridColumnEmail.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnEmail.OptionsColumn.FixedWidth = true;
             this.gridColumnEmail.OptionsColumn.ReadOnly = true;
@@ -664,7 +609,6 @@
             this.gridColumnDiaChi.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnDiaChi.OptionsColumn.AllowMove = false;
             this.gridColumnDiaChi.OptionsColumn.AllowShowHide = false;
-            this.gridColumnDiaChi.OptionsColumn.AllowSize = false;
             this.gridColumnDiaChi.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnDiaChi.OptionsColumn.FixedWidth = true;
             this.gridColumnDiaChi.OptionsColumn.ReadOnly = true;
@@ -677,7 +621,7 @@
             // gridColumnLopHocHT
             // 
             this.gridColumnLopHocHT.Caption = "Lớp hiện tại";
-            this.gridColumnLopHocHT.FieldName = "LopHoc";
+            this.gridColumnLopHocHT.FieldName = "TenLop";
             this.gridColumnLopHocHT.Name = "gridColumnLopHocHT";
             this.gridColumnLopHocHT.OptionsColumn.AllowEdit = false;
             this.gridColumnLopHocHT.OptionsColumn.AllowFocus = false;
@@ -686,7 +630,6 @@
             this.gridColumnLopHocHT.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnLopHocHT.OptionsColumn.AllowMove = false;
             this.gridColumnLopHocHT.OptionsColumn.AllowShowHide = false;
-            this.gridColumnLopHocHT.OptionsColumn.AllowSize = false;
             this.gridColumnLopHocHT.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnLopHocHT.OptionsColumn.FixedWidth = true;
             this.gridColumnLopHocHT.OptionsColumn.ReadOnly = true;
@@ -707,7 +650,6 @@
             this.gridColumnGVCN.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnGVCN.OptionsColumn.AllowMove = false;
             this.gridColumnGVCN.OptionsColumn.AllowShowHide = false;
-            this.gridColumnGVCN.OptionsColumn.AllowSize = false;
             this.gridColumnGVCN.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumnGVCN.OptionsColumn.FixedWidth = true;
             this.gridColumnGVCN.OptionsColumn.ReadOnly = true;
@@ -729,6 +671,7 @@
             // 
             // frmSearchHocSinh
             // 
+            this.AcceptButton = this.simpleButtonSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 423);
@@ -748,8 +691,7 @@
             this.panelControlDKienTim.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNDungDKien)).EndInit();
             this.panelControlNDungDKien.ResumeLayout(false);
-            this.panelControlNDungDKien.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupGioiTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhDen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhTu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).EndInit();
@@ -761,7 +703,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEditDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditHoTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditEmail.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditMaHS.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditMaHocSinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlButtonTim)).EndInit();
             this.panelControlButtonTim.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupTim.Properties)).EndInit();
@@ -798,25 +740,15 @@
         private DevExpress.XtraEditors.CheckEdit checkEditNamSinh;
         private DevExpress.XtraEditors.CheckEdit checkEditGioiTinh;
         private DevExpress.XtraEditors.CheckEdit checkEditHoTen;
-        private DevExpress.XtraEditors.CheckEdit checkEditMaHS;
+        private DevExpress.XtraEditors.CheckEdit checkEditMaHocSinh;
         private DevExpress.XtraEditors.TextEdit textEditNamSinhTu;
         private DevExpress.XtraEditors.TextEdit textEditHoTen;
         private DevExpress.XtraEditors.TextEdit textEditMaHocSinh;
-        private DevExpress.XtraEditors.LabelControl labelControlNamSinh;
-        private DevExpress.XtraEditors.LabelControl labelControlGioiTinh;
-        private DevExpress.XtraEditors.LabelControl labelControlDiaChi;
-        private DevExpress.XtraEditors.LabelControl labelControlHoTen;
-        private DevExpress.XtraEditors.LabelControl labelControlEmail;
-        private DevExpress.XtraEditors.LabelControl labelControlMaHocSinh;
         private DevExpress.XtraEditors.CheckEdit checkEditDiaChi;
         private DevExpress.XtraEditors.CheckEdit checkEditEmail;
         private DevExpress.XtraEditors.TextEdit textEditDiaChi;
         private DevExpress.XtraEditors.TextEdit textEditEmail;
         private DevExpress.XtraEditors.TextEdit textEditNamSinhDen;
-        private DevExpress.XtraEditors.CheckButton checkButton5;
-        private DevExpress.XtraEditors.CheckButton checkButton4;
-        private DevExpress.XtraEditors.CheckButton checkButton2;
-        private DevExpress.XtraEditors.CheckButton checkButton3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnMaHocSinh;
         private DevExpress.XtraGrid.GridControl gridControlSearchHocSinh;
@@ -828,11 +760,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnDiaChi;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnLopHocHT;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnGVCN;
-        private DevExpress.XtraEditors.RadioGroup radioGroup1;
+        private DevExpress.XtraEditors.RadioGroup radioGroupGioiTinh;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
         private DevExpress.XtraEditors.RadioGroup radioGroupTim;
         private DevExpress.XtraEditors.CheckEdit checkEditTatCaNam;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonDong;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonXuatBaoCao;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonXoaDK;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonSearch;
 
     }
 }
