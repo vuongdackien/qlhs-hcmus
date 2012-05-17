@@ -93,7 +93,7 @@ GO
 --11. Create table and its columns
 CREATE TABLE [dbo].[QUYDINH] (
 	[Khoa]			[varchar](50) NOT NULL,
-	[GiaTri]		[int]	      NOT NULL);
+	[GiaTri]		[nvarchar](250)	NOT NULL);
 GO
 
 ----------------------------------------------------------
@@ -336,7 +336,7 @@ INSERT INTO LOP ([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien])
 	VALUES	('12A01NH1112',	'12A1',	12,	'NH1112', 40, 'GV004')
 
 
---NAMHOC
+-- Phan lop
 GO	
 INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
 	VALUES	('HS00000001',	'10A01NH1112')
@@ -385,3 +385,19 @@ INSERT INTO PHANLOP ([MaHocSinh],[MaLop])
 GO	
 INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
 	VALUES	('HS00000016',	'12A01NH1112')
+
+-- Quy Dinh
+
+INSERT INTO QUYDINH (Khoa,GiaTri) VALUES 
+('DiaChiTruong','Q9 - TP.HCM'),
+('DiemChuan','8'),
+('SiSoCanDuoi','30'),
+('SiSoCanTren','45'),
+('SoLuongLop','20'),
+('TenTruong',N'THPT Nguyễn Huệ'),
+('SoMonHoc','15'),
+('TuoiCanDuoi','15'),
+('TuoiCanTren','18')
+
+
+
