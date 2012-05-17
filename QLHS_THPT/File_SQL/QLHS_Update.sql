@@ -1,6 +1,10 @@
 ﻿----------------------------------------------------------
 --drop database QLHS
-
+USE master;
+GO
+DROP DATABASE QLHS;
+GO
+CREATE DATABASE QLHS;
 GO
 USE QLHS
 ----------------------------------------------------------
