@@ -7,8 +7,8 @@ namespace QLHS.DAL
     public class ConnectData
     {
         protected SqlConnection m_Connect = null;
-        public SqlDataAdapter m_DataApdater = null;
-        public DataTable m_Table = null;
+        protected SqlDataAdapter m_DataApdater = null;
+        protected DataTable m_Table = null;
         protected SqlCommand m_Command = null;
         private string _strConnect = "";
 
@@ -28,7 +28,7 @@ namespace QLHS.DAL
             Connect();
         }
 
-        public ConnectData(bool testConnect)
+        protected ConnectData(bool testConnect)
         {
             if (testConnect)
                 TestConnect();
@@ -38,7 +38,7 @@ namespace QLHS.DAL
         /// Hàm kết nối CSDL
         /// </summary>
         /// <returns>Bool</returns>
-        public bool Connect()
+        protected bool Connect()
         {
             try
             {
@@ -61,7 +61,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="strConnect">String: Chuỗi kết nối</param>
         /// <returns></returns>
-        public bool TestConnect(string strConnect = "")
+        protected bool TestConnect(string strConnect = "")
         {
             if (strConnect != "")
                 this._strConnect = strConnect;
@@ -72,7 +72,7 @@ namespace QLHS.DAL
         /// <summary>
         /// Mở kết nối
         /// </summary>
-        public void OpenConnect()
+        protected void OpenConnect()
         {
             try
             {
@@ -88,7 +88,7 @@ namespace QLHS.DAL
         /// <summary>
         /// Đóng kết nối
         /// </summary>
-        public void CloseConnect()
+        protected void CloseConnect()
         {
             if (m_Connect != null)
                 if (m_Connect.State == ConnectionState.Open)
@@ -165,7 +165,7 @@ namespace QLHS.DAL
         /// Hàm cập nhật tất cả thay đổi trong dataTable được set properties = TRUE (Sử dụng trên DataTable của GridView)
         /// </summary>
         /// <returns>Int: Số dòng được thay đổi</returns>
-        public int UpdateAllDataTable()
+        protected int UpdateAllDataTable()
         {
             int numRecords = 0;
             // Transaction dùng để rollback data khi gặp lỗi trong quá trình Save
