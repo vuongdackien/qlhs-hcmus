@@ -21,5 +21,20 @@ namespace QLHS.DAL
                                         + " BD.MaHocKy = {1} ", MaLop, MaHocKy);
             return GetTable(sql);
         }
+        /// <summary>
+        /// Lấy bảng điểm môn học theo học kỳ của lớp
+        /// </summary>
+        /// <param name="MaLop">String: Mã lớp</param>
+        /// <param name="MaHocKy">String: Mã học kỳ</param>
+        /// <param name="MaMonHoc">String: Mã môn học</param>
+        /// <returns></returns>
+        public DataTable LayBangDiem(string MaLop, string MaHocKy, string MaMonHoc)
+        {
+            string sql = "SELECT bd.*, pl.STT, hs.TenHocSinh "
+                    + "FROM BANGDIEM bd, PHANLOP pl, HOCSINH hs WHERE hs.MaHocSinh = pl.MaHocSinh AND bd.MaHocSinh = pl.MaHocSinh "
+                    + "AND bd.MaLop = '" + MaLop + "' AND bd.MaHocKy='" + MaHocKy + "' AND bd.MaMonHoc = '" + MaMonHoc + "' "
+                    + "ORDER BY pl.STT ASC";
+            return GetTable(sql);
+        }
     }
 }

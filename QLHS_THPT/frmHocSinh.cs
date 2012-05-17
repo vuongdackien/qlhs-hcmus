@@ -195,7 +195,7 @@ namespace QLHS
             textEditNoiSinh.Text = "";
             dateEditNgaySinh.Properties.MinValue = new DateTime(_QuyDinhBUS.LayNamCanDuoi(),1,1);
             dateEditNgaySinh.Properties.MaxValue = new DateTime(_QuyDinhBUS.LayNamCanTren(), 1, 1);
-           
+            textEditTenHocSinh.Focus();
         }
 
         private void dateEditNgaySinh_InvalidValue(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
