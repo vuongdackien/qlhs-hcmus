@@ -1,4 +1,4 @@
-----------------------------------------------------------
+﻿----------------------------------------------------------
 --drop database QLHS
 
 GO
@@ -10,48 +10,48 @@ CREATE TABLE [dbo].[NAMHOC] (
 GO
 --2. Create table and its columns
 CREATE TABLE [dbo].[MONHOC] (
-	[MaMonHoc]		[varchar](6) NOT NULL,
-	[TenMonHoc]		[nvarchar](30) NOT NULL,
+	[MaMonHoc]		[varchar](10) NOT NULL,
+	[TenMonHoc]		[nvarchar](50) NOT NULL,
 	[SoTiet]		[int] NOT NULL,
 	[HeSo]			[int] NOT NULL);
 GO
 
 --3. Create table and its columns
 CREATE TABLE [dbo].[GIAOVIEN] (
-	[MaGiaoVien]	[varchar](6) NOT NULL,
-	[TenGiaoVien]	[nvarchar](30) NOT NULL);	
+	[MaGiaoVien]	[varchar](10) NOT NULL,
+	[TenGiaoVien]	[nvarchar](50) NOT NULL);	
 GO
 
 --4. Create table and its columns
 CREATE TABLE [dbo].[LOP] (
 	[MaLop]			[varchar](15) NOT NULL,
-	[TenLop]		[nvarchar](30) NOT NULL,
+	[TenLop]		[nvarchar](50) NOT NULL,
 	[MaKhoiLop]		[tinyint] NOT NULL,
 	[MaNamHoc]		[varchar](6) NOT NULL,
 	[SiSo]			[int] NOT NULL,
-	[MaGiaoVien]	[varchar](6) NOT NULL);
+	[MaGiaoVien]	[varchar](10) NOT NULL);
 GO
 
 --5. Create table and its columns
 CREATE TABLE [dbo].[HOCSINH] (
-	[MaHocSinh]		[varchar](7) NOT NULL,
-	[TenHocSinh]	[nvarchar](30) NULL,
+	[MaHocSinh]		[varchar](10) NOT NULL,
+	[TenHocSinh]	[nvarchar](50) NULL,
 	[Email]			[nvarchar](50) NULL,
 	[GioiTinh]		[bit] NULL,                  
 	[NgaySinh]		[datetime] NULL,
-	[NoiSinh]		[nvarchar](50) NULL,	
+	[NoiSinh]		[nvarchar](100) NULL,	
 	[DiaChi]		[nvarchar](100) NULL);
 GO
 
 --6. Create table and its columns
 CREATE TABLE [dbo].[PHANLOP] (
-	[MaHocSinh]		[varchar](7) NOT NULL,
+	[MaHocSinh]		[varchar](10) NOT NULL,
 	[MaLop]			[varchar](15) NOT NULL);
 GO
 --7. Create table and its columns
 CREATE TABLE [dbo].[BANGDIEM] (
-	[MaHocSinh]		[varchar](7) NOT NULL,
-	[MaMonHoc]		[varchar](6) NOT NULL,	
+	[MaHocSinh]		[varchar](10) NOT NULL,
+	[MaMonHoc]		[varchar](10) NOT NULL,	
 	[DM_1]			[real] NULL,
 	[DM_2]			[real] NULL,
 	[D15_1]			[real] NULL,
@@ -61,7 +61,8 @@ CREATE TABLE [dbo].[BANGDIEM] (
 	[D1T_1]			[real] NULL,
 	[D1T_2]			[real] NULL,
 	[DThi]			[real] NULL,
-	[MaHocKy]		[varchar](3) NOT NULL);
+	[MaLop]			[varchar](15) NOT NULL,
+	[MaHocKy]		[varchar](10) NOT NULL);
 GO
 --8. Create table and its columns
 CREATE TABLE [dbo].[CHUYENLOP] (	
@@ -70,19 +71,19 @@ CREATE TABLE [dbo].[CHUYENLOP] (
 	[NgayChuyen]	[datetime] NOT NULL,
 	[LyDoChuyen]	[nvarchar](250) NULL,
 	[ChuyenBangDiem] [bit] NULL,
-	[MaHocSinh]		[varchar](7) NOT NULL);
+	[MaHocSinh]		[varchar](10) NOT NULL);
 GO
 
 --9. Create table and its columns
 CREATE TABLE [dbo].[LOAINGUOIDUNG] (
-	[MaLoaiND]		[varchar](6) NOT NULL,
+	[MaLoaiND]		[varchar](10) NOT NULL,
 	[TenLoaiND]		[nvarchar](30) NOT NULL);
 GO
 
 --10. Create table and its columns
 CREATE TABLE [dbo].[NGUOIDUNG] (
-	[MaND]			[varchar](6) NOT NULL,
-	[MaLoaiND]		[varchar](6) NOT NULL,
+	[MaND]			[varchar](10) NOT NULL,
+	[MaLoaiND]		[varchar](10) NOT NULL,
 	[TenDNhap]		[varchar](30) NOT NULL,
 	[MatKhau]		[varchar](35) NOT NULL,
 	[TrangThai]		[bit] NOT NULL CONSTRAINT [DF_NGUOIDUNG_TrangThai] DEFAULT ((1)));
@@ -121,7 +122,7 @@ ALTER TABLE [dbo].[PHANLOP] ADD CONSTRAINT [PK_PHAN] PRIMARY KEY ([MaHocSinh],[M
 GO
 
 --7. Primary key BANGDIEM
-ALTER TABLE [dbo].[BANGDIEM] ADD CONSTRAINT [PK_BANGDIEM] PRIMARY KEY ([MaHocSinh],[MaHocKy],[MaMonHoc]) 
+ALTER TABLE [dbo].[BANGDIEM] ADD CONSTRAINT [PK_BANGDIEM] PRIMARY KEY ([MaHocSinh],[MaHocKy],[MaMonHoc], [MaLop]) 
 GO
 
 --8. Primary key CHUYENLOP
@@ -151,14 +152,6 @@ GO
 	ALTER TABLE [dbo].[LOP] CHECK CONSTRAINT [FK_LOP_NAMHOC]
 	GO
 
---2. 7_2-Foreign key BANGDIEM_MONHOC
-	ALTER TABLE [dbo].[BANGDIEM]  WITH CHECK ADD  CONSTRAINT [FK_BANGDIEM_MONHOC] FOREIGN KEY([MaMonHoc])
-	REFERENCES [dbo].[MONHOC] ([MaMonHoc])
-	GO
-
-	ALTER TABLE [dbo].[BANGDIEM] CHECK CONSTRAINT [FK_BANGDIEM_MONHOC]
-	GO
-
 --3. 4_3-Foreign key LOP_GIAOVIEN
 	ALTER TABLE [dbo].[LOP]  WITH CHECK ADD  CONSTRAINT [FK_LOP_GIAOVIEN] FOREIGN KEY([MaGiaoVien])
 	REFERENCES [dbo].[GIAOVIEN] ([MaGiaoVien])
@@ -167,12 +160,44 @@ GO
 	ALTER TABLE [dbo].[LOP] CHECK CONSTRAINT [FK_LOP_GIAOVIEN]
 	GO
 
+--2. 7_2-Foreign key BANGDIEM_MONHOC
+	ALTER TABLE [dbo].[BANGDIEM]  WITH CHECK ADD  CONSTRAINT [FK_BANGDIEM_MONHOC] FOREIGN KEY([MaMonHoc])
+	REFERENCES [dbo].[MONHOC] ([MaMonHoc])
+	GO
+
+	ALTER TABLE [dbo].[BANGDIEM] CHECK CONSTRAINT [FK_BANGDIEM_MONHOC]
+	GO
+
+--8. 7_5-Foreign key BANGDIEM_HOCSINH
+	ALTER TABLE [dbo].[BANGDIEM]  WITH CHECK ADD  CONSTRAINT [FK_BANGDIEM_HOCSINH] FOREIGN KEY([MaHocSinh])
+	REFERENCES [dbo].[HOCSINH] ([MaHocSinh])
+	GO
+
+	ALTER TABLE [dbo].[BANGDIEM] CHECK CONSTRAINT [FK_BANGDIEM_HOCSINH]
+	GO
+
+--8. 7_5-Foreign key BANGDIEM_LOP
+	ALTER TABLE [dbo].[BANGDIEM]  WITH CHECK ADD  CONSTRAINT [FK_BANGDIEM_LOP] FOREIGN KEY([MaLop])
+	REFERENCES [dbo].[LOP] ([MaLop])
+	GO
+
+	ALTER TABLE [dbo].[BANGDIEM] CHECK CONSTRAINT [FK_BANGDIEM_LOP]
+	GO
+
 --4. 6_4-Foreign key PHANLOP_LOP
 	ALTER TABLE [dbo].[PHANLOP]  WITH CHECK ADD  CONSTRAINT [FK_PHANLOP_LOP] FOREIGN KEY([MaLop])
 	REFERENCES [dbo].[LOP] ([MaLop])
 	GO
 
 	ALTER TABLE [dbo].[PHANLOP] CHECK CONSTRAINT [FK_PHANLOP_LOP]
+	GO
+
+--7. 6_5-Foreign key PHANLOP_HOCSINH
+	ALTER TABLE [dbo].[PHANLOP]  WITH CHECK ADD  CONSTRAINT [FK_PHANLOP_HOCSINH] FOREIGN KEY([MaHocSinh])
+	REFERENCES [dbo].[HOCSINH] ([MaHocSinh])
+	GO
+
+	ALTER TABLE [dbo].[PHANLOP] CHECK CONSTRAINT [FK_PHANLOP_HOCSINH]
 	GO
 
 --5. 8_4-Foreign key CHUYENLOP_LOP (TuLop)
@@ -192,36 +217,12 @@ GO
 	ALTER TABLE [dbo].[CHUYENLOP] CHECK CONSTRAINT [FK_CHUYENLOP_LOP2]
 	GO
 
---7. 6_5-Foreign key PHANLOP_HOCSINH
-	ALTER TABLE [dbo].[PHANLOP]  WITH CHECK ADD  CONSTRAINT [FK_PHANLOP_HOCSINH] FOREIGN KEY([MaHocSinh])
-	REFERENCES [dbo].[HOCSINH] ([MaHocSinh])
-	GO
-
-	ALTER TABLE [dbo].[PHANLOP] CHECK CONSTRAINT [FK_PHANLOP_HOCSINH]
-	GO
-
---8. 7_5-Foreign key BANGDIEM_HOCSINH
-	ALTER TABLE [dbo].[BANGDIEM]  WITH CHECK ADD  CONSTRAINT [FK_BANGDIEM_HOCSINH] FOREIGN KEY([MaHocSinh])
-	REFERENCES [dbo].[HOCSINH] ([MaHocSinh])
-	GO
-
-	ALTER TABLE [dbo].[BANGDIEM] CHECK CONSTRAINT [FK_BANGDIEM_HOCSINH]
-	GO
-
 --9. 8_5-Foreign key CHUYENLOP_HOCSINH
 	ALTER TABLE [dbo].[CHUYENLOP]  WITH CHECK ADD  CONSTRAINT [FK_CHUYENLOP_HOCSINH] FOREIGN KEY([MaHocSinh])
 	REFERENCES [dbo].[HOCSINH] ([MaHocSinh])
 	GO
 
 	ALTER TABLE [dbo].[CHUYENLOP] CHECK CONSTRAINT [FK_CHUYENLOP_HOCSINH]
-	GO
-
---10. 10_9-Foreign key NGUOIDUNG_LOAINGUOIDUNG
-	ALTER TABLE [dbo].[NGUOIDUNG]  WITH CHECK ADD  CONSTRAINT [FK_NGUOIDUNG_LOAINGUOIDUNG] FOREIGN KEY([MaLoaiND])
-	REFERENCES [dbo].[LOAINGUOIDUNG] ([MaLoaiND])
-	GO
-
-	ALTER TABLE [dbo].[NGUOIDUNG] CHECK CONSTRAINT [FK_NGUOIDUNG_LOAINGUOIDUNG]
 	GO
 
 --11. 10_3-Foreign key GIAOVIEN_NGUOIDUNG
@@ -232,7 +233,68 @@ GO
 	ALTER TABLE [dbo].[GIAOVIEN] CHECK CONSTRAINT [FK_GIAOVIEN_NGUOIDUNG]
 	GO
 
+--10. 10_9-Foreign key NGUOIDUNG_LOAINGUOIDUNG
+	ALTER TABLE [dbo].[NGUOIDUNG]  WITH CHECK ADD  CONSTRAINT [FK_NGUOIDUNG_LOAINGUOIDUNG] FOREIGN KEY([MaLoaiND])
+	REFERENCES [dbo].[LOAINGUOIDUNG] ([MaLoaiND])
+	GO
 
+	ALTER TABLE [dbo].[NGUOIDUNG] CHECK CONSTRAINT [FK_NGUOIDUNG_LOAINGUOIDUNG]
+	GO
+
+------------------------------------------------------------------------------
+					/*Insert CSDL*/
+------------------------------------------------------------------------------
+
+--Table HOCSINH
+set dateformat dmy
+GO
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
+	VALUES	('HS00001',  N'Nguyễn Hồng Phú', 'hongphu8790@gmail.com', 0,  '08-07-1990',	N'TP.HCM', N'Q.9')
+GO
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
+	VALUES	('HS00002',	N'Nguyễn Duy Hà', 'duyha@gmail.com', 0,	'01-01-1990', N'TP.HCM', N'Q.9')
+GO
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
+	VALUES	('HS00003',	N'Nguyễn Thị Mỷ Diện', 'mydien2009@gmail.com', 1, '20-09-1990',	N'Vĩnh Long', N'Vũng Liêm')
+GO
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
+	VALUES	('HS00004',	N'Nguyễn Văn Đại', 'vandai@gmail.com', 0, '01-01-1990',	N'Hải Dương', N'Không Biết')
+GO
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
+	VALUES	('HS00005',	N'Nguyễn Văn An', 'vanan@gmail.com', 0,	'08-07-1991', N'TP.HCM', N'Q.9')
+GO
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
+	VALUES	('HS00006',	N'Nguyễn Bình Minh', 'binhminh@gmail.com', 0, '01-01-1992',	N'TP.HCM', N'Q.9')
+GO
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
+	VALUES	('HS00007',	N'Nguyễn Thị Lan Anh', 'lananh@gmail.com', 1, '20-09-1991', N'Vĩnh Long', N'Vũng Liêm')
+GO
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
+	VALUES	('HS00008',	N'Lê Thị Thu Hà', 'thuha@gmail.com', 1,	'01-01-1992', N'Hải Dương',	N'Không Biết')
+GO
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
+	VALUES	('HS00009',	N'Nguyễn Thị Thanh Trúc', 'thanhtruc@gmail.com', 1,	'08-07-1993', N'TP.HCM', N'Q.9')
+GO
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
+	VALUES	('HS00010',	N'Trần Duy Khoa', 'duykhoa@gmail.com', 0, '01-01-1991',	N'TP.HCM', N'Q.9')
+GO
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
+	VALUES	('HS00011',	N'Nguyễn Thị Thùy Dương', 'thuyduong@gmail.com', 1,	'20-09-1992', N'Vĩnh Long',	N'Vũng Liêm')
+GO
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
+	VALUES	('HS00012',	N'Nguyễn Thị Bảo Ngọc', 'baongoc@gmail.com', 1,	'01-01-1991', N'Hải Dương',	N'Không Biết')
+GO
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
+	VALUES	('HS00013',	N'Nguyễn Văn Tân', 'vanTan@gmail.com', 0, '08-07-1993', N'TP.HCM', N'Q.9')
+GO
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
+	VALUES	('HS00014',	N'Nguyễn Bình Minh', 'binhminh@gmail.com', 0, '01-01-1992',	N'TP.HCM', N'Q.9')
+GO
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
+	VALUES	('HS00015',	N'Huỳnh Thanh Tùng', 'lananh@gmail.com', 0,	'20-09-1993', N'Vĩnh Long', N'Vũng Liêm')
+GO
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
+	VALUES	('HS00016',	N'Lê Thị Ngọc Thu', 'thuha@gmail.com', 1, '01-01-1992', N'Hải Dương', N'Không Biết')
 
 
 
