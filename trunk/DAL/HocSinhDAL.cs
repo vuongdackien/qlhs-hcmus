@@ -162,8 +162,8 @@ namespace QLHS.DAL
                         comma = "','";
                     MaLop += DS_MaLop[i] + comma;
                 }
-                where += "AND MaHocSinh in (SELECT DISTINCT MaHocSinh FROM PHANLOP WHERE MaLop in ('" + MaLop + "')) ";
-                where += "AND MaLop in('" + MaLop + "')";
+                where += "AND hsinh.MaHocSinh in (SELECT DISTINCT plop2.MaHocSinh FROM PHANLOP plop2 WHERE plop2.MaLop in ('" + MaLop + "')) ";
+                where += "AND plop.MaLop in('" + MaLop + "')";
             }
             sql += where;
             // thực hiện query
