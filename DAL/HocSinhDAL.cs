@@ -18,7 +18,7 @@ namespace QLHS.DAL
         {
             string sql = string.Format("SELECT pl.STT, hs.MaHocSinh, hs.TenHocSinh "
                                        +"FROM PHANLOP pl LEFT JOIN HOCSINH hs ON pl.MaHocSinh = hs.MaHocSinh "
-                                       +"WHERE pl.MaLop = '{0}'",MaLop);
+                                       +"WHERE pl.MaLop = '{0}' ORDER BY pl.STT ASC",MaLop);
             return GetTable(sql);
         }
 
@@ -53,11 +53,12 @@ namespace QLHS.DAL
         /// <returns>Bool: Thành công/Không</returns>
         public bool SuaHoSoHocSinh(HocSinhDTO hocsinhDTO,string MaLop)
         {
-            string sql = string.Format("UPDATE HOCSINH SET TenHocSinh = '{1}', Email = '{2}', NgaySinh = '{3}', "
-                         +"GioiTinh = {4}, NoiSinh = '{5}', DiaChi = '{6}' "
-                         +"WHERE MaHocSinh = '{0}';",hocsinhDTO.MaHocSinh,hocsinhDTO.TenHocSinh,hocsinhDTO.Email,
+            string sql = "set dateformat dmy\n";
+             sql += string.Format("UPDATE HOCSINH SET TenHocSinh = N'{1}', Email = '{2}', NgaySinh = '{3:dd-MM-yyyy}', "
+                         +"GioiTinh = {4}, NoiSinh = N'{5}', DiaChi = N'{6}' "
+                         +"WHERE MaHocSinh = '{0}'",hocsinhDTO.MaHocSinh,hocsinhDTO.TenHocSinh,hocsinhDTO.Email,
                            hocsinhDTO.NgaySinh, hocsinhDTO.GioiTinh, hocsinhDTO.NoiSinh, hocsinhDTO.DiaChi);
-            sql += string.Format("\nUPDATE PHANLOP SET STT = {2} WHERE MaHocSinh = '{0}' AND MaLop = '{1}';", hocsinhDTO.MaHocSinh,
+            sql += string.Format("\nUPDATE PHANLOP SET STT = {2} WHERE MaHocSinh = '{0}' AND MaLop = '{1}'", hocsinhDTO.MaHocSinh,
                                     MaLop,
                                     hocsinhDTO.STT);
             return ExecuteQuery(sql) > 0;
@@ -69,10 +70,11 @@ namespace QLHS.DAL
         /// <returns>Bool: Thành công/Không</returns>
         public bool ThemHoSoHocSinh(HocSinhDTO hocsinhDTO,string MaLop)
         {
-            string sql = string.Format("INSERT INTO HOCSINH (MaHocSinh, TenHocSinh , Email, NgaySinh, GioiTinh, NoiSinh, DiaChi) "
-                         +"VALUES ('{0}','{1}','{2}','{3}',{4},'{5}','{6}' ", hocsinhDTO.MaHocSinh, hocsinhDTO.TenHocSinh,
+            string sql = "set dateformat dmy\n";
+                  sql += string.Format("INSERT INTO HOCSINH (MaHocSinh, TenHocSinh , Email, NgaySinh, GioiTinh, NoiSinh, DiaChi) "
+                         +"VALUES ('{0}',N'{1}','{2}','{3:dd-MM-yyyy}',{4},N'{5}',N'{6}')", hocsinhDTO.MaHocSinh, hocsinhDTO.TenHocSinh,
                            hocsinhDTO.Email, hocsinhDTO.NgaySinh, hocsinhDTO.GioiTinh, hocsinhDTO.NoiSinh, hocsinhDTO.DiaChi);
-            sql += string.Format("\nINSERT INTO PHANLOP (STT,MaHocSinh,MaLop) VALUES ({0},'{1}','{2})", 
+            sql += string.Format("\nINSERT INTO PHANLOP (STT,MaHocSinh,MaLop) VALUES ({0},'{1}','{2}')", 
                         hocsinhDTO.STT,  hocsinhDTO.MaHocSinh, MaLop);
             return ExecuteQuery(sql) > 0;
         }
@@ -94,7 +96,19 @@ namespace QLHS.DAL
         {
             return GetLastID("HOCSINH", "MaHocSinh");
         }
-
+        /// <summary>
+        /// Xóa 1 hồ sơ học sinh
+        /// </summary>
+        /// <param name="MaHocSinh">String: Mã học sinh</param>
+        /// <returns>Bool</returns>
+        public bool Xoa_HoSo_HocSinh(string MaHocSinh)
+        {
+            string sql = "DELETE FROM PHANLOP WHERE MaHocSinh = '"+MaHocSinh+"'";
+            sql += "\nDELETE FROM BANGDIEM WHERE MaHocSinh = '"+MaHocSinh+"'";
+            sql += "\nDELETE FROM CHUYENLOP WHERE MaHocSinh = '" + MaHocSinh + "'";
+            sql += "\nDELETE FROM HOCSINH WHERE MaHocSinh = '" + MaHocSinh + "'";
+            return ExecuteQuery(sql) > 0;
+        }
 
         #region Các hàm tìm kiếm học sinh
         /// <summary>

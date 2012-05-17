@@ -191,6 +191,7 @@
             this.gridViewDSHocSinh.OptionsBehavior.Editable = false;
             this.gridViewDSHocSinh.OptionsView.ShowGroupPanel = false;
             this.gridViewDSHocSinh.OptionsView.ShowIndicator = false;
+            this.gridViewDSHocSinh.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewDSHocSinh_FocusedRowChanged);
             // 
             // gridColumnSTT
             // 
@@ -199,7 +200,7 @@
             this.gridColumnSTT.Name = "gridColumnSTT";
             this.gridColumnSTT.Visible = true;
             this.gridColumnSTT.VisibleIndex = 0;
-            this.gridColumnSTT.Width = 33;
+            this.gridColumnSTT.Width = 27;
             // 
             // gridColumnTenHocSinh
             // 
@@ -208,7 +209,7 @@
             this.gridColumnTenHocSinh.Name = "gridColumnTenHocSinh";
             this.gridColumnTenHocSinh.Visible = true;
             this.gridColumnTenHocSinh.VisibleIndex = 1;
-            this.gridColumnTenHocSinh.Width = 161;
+            this.gridColumnTenHocSinh.Width = 167;
             // 
             // gridColumnMaHocSinh
             // 
@@ -239,6 +240,7 @@
             this.comboBoxEditNamHoc.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditNamHoc.Size = new System.Drawing.Size(150, 20);
             this.comboBoxEditNamHoc.TabIndex = 1;
+            this.comboBoxEditNamHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHoc_SelectedIndexChanged);
             // 
             // comboBoxEditLop
             // 
@@ -249,6 +251,7 @@
             this.comboBoxEditLop.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditLop.Size = new System.Drawing.Size(150, 20);
             this.comboBoxEditLop.TabIndex = 3;
+            this.comboBoxEditLop.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditLop_SelectedIndexChanged);
             // 
             // comboBoxEditKhoi
             // 
@@ -259,6 +262,7 @@
             this.comboBoxEditKhoi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditKhoi.Size = new System.Drawing.Size(150, 20);
             this.comboBoxEditKhoi.TabIndex = 2;
+            this.comboBoxEditKhoi.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditKhoi_SelectedIndexChanged);
             // 
             // labelControl2
             // 
@@ -361,6 +365,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateEditNgaySinh.Size = new System.Drawing.Size(136, 20);
             this.dateEditNgaySinh.TabIndex = 9;
+            this.dateEditNgaySinh.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.dateEditNgaySinh_InvalidValue);
             // 
             // textEditDiaChi
             // 
@@ -393,6 +398,7 @@
             this.textEditEmail.Properties.NullText = "Email có thể bỏ trống";
             this.textEditEmail.Size = new System.Drawing.Size(206, 20);
             this.textEditEmail.TabIndex = 10;
+            this.textEditEmail.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.textEditEmail_InvalidValue);
             // 
             // labelControl12
             // 
