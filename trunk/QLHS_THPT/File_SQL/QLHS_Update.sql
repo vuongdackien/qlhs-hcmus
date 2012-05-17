@@ -46,11 +46,13 @@ GO
 
 --6. Create table and its columns
 CREATE TABLE [dbo].[PHANLOP] (
+	[STT]			[int] DEFAULT 1 NOT NULL,
 	[MaHocSinh]		[varchar](10) NOT NULL,
 	[MaLop]			[varchar](15) NOT NULL);
 GO
 --7. Create table and its columns
 CREATE TABLE [dbo].[BANGDIEM] (
+	[STT]			[int] DEFAULT 1 NOT NULL,
 	[MaHocSinh]		[varchar](10) NOT NULL,
 	[MaMonHoc]		[varchar](10) NOT NULL,	
 	[DM_1]			[real] NULL,
@@ -249,142 +251,68 @@ GO
 --Table HOCSINH
 set dateformat dmy
 GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
-	VALUES	('HS00000001',  N'Nguyễn Hồng Phú', 'hongphu8790@gmail.com', 0,  '08-07-1990',	N'TP.HCM', N'Q.9')
-GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
-	VALUES	('HS00000002',	N'Nguyễn Duy Hà', 'duyha@gmail.com', 0,	'01-01-1990', N'TP.HCM', N'Q.9')
-GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
-	VALUES	('HS00000003',	N'Nguyễn Thị Mỷ Diện', 'mydien2009@gmail.com', 1, '20-09-1990',	N'Vĩnh Long', N'Vũng Liêm')
-GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
-	VALUES	('HS00000004',	N'Nguyễn Văn Đại', 'vandai@gmail.com', 0, '01-01-1990',	N'Hải Dương', N'Không Biết')
-GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
-	VALUES	('HS00000005',	N'Nguyễn Văn An', 'vanan@gmail.com', 0,	'08-07-1991', N'TP.HCM', N'Q.9')
-GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
-	VALUES	('HS00000006',	N'Nguyễn Bình Minh', 'binhminh@gmail.com', 0, '01-01-1992',	N'TP.HCM', N'Q.9')
-GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
-	VALUES	('HS00000007',	N'Nguyễn Thị Lan Anh', 'lananh@gmail.com', 1, '20-09-1991', N'Vĩnh Long', N'Vũng Liêm')
-GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
-	VALUES	('HS00000008',	N'Lê Thị Thu Hà', 'thuha@gmail.com', 1,	'01-01-1992', N'Hải Dương',	N'Không Biết')
-GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
-	VALUES	('HS00000009',	N'Nguyễn Thị Thanh Trúc', 'thanhtruc@gmail.com', 1,	'08-07-1993', N'TP.HCM', N'Q.9')
-GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
-	VALUES	('HS00000010',	N'Trần Duy Khoa', 'duykhoa@gmail.com', 0, '01-01-1991',	N'TP.HCM', N'Q.9')
-GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
-	VALUES	('HS00000011',	N'Nguyễn Thị Thùy Dương', 'thuyduong@gmail.com', 1,	'20-09-1992', N'Vĩnh Long',	N'Vũng Liêm')
-GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
-	VALUES	('HS00000012',	N'Nguyễn Thị Bảo Ngọc', 'baongoc@gmail.com', 1,	'01-01-1991', N'Hải Dương',	N'Không Biết')
-GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
-	VALUES	('HS00000013',	N'Nguyễn Văn Tân', 'vanTan@gmail.com', 0, '08-07-1993', N'TP.HCM', N'Q.9')
-GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
-	VALUES	('HS00000014',	N'Nguyễn Bình Minh', 'binhminh@gmail.com', 0, '01-01-1992',	N'TP.HCM', N'Q.9')
-GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
-	VALUES	('HS00000015',	N'Huỳnh Thanh Tùng', 'lananh@gmail.com', 0,	'20-09-1993', N'Vĩnh Long', N'Vũng Liêm')
-GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
-	VALUES	('HS00000016',	N'Lê Thị Ngọc Thu', 'thuha@gmail.com', 1, '01-01-1992', N'Hải Dương', N'Không Biết')
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) VALUES	
+('HS00000001',  N'Nguyễn Hồng Phú', 'hongphu8790@gmail.com', 0,  '08-07-1990',	N'TP.HCM', N'Q.9'),
+('HS00000002',	N'Nguyễn Duy Hà', 'duyha@gmail.com', 0,	'01-01-1990', N'TP.HCM', N'Q.9'),
+('HS00000003',	N'Nguyễn Thị Mỷ Diện', 'mydien2009@gmail.com', 1, '20-09-1990',	N'Vĩnh Long', N'Vũng Liêm'),
+('HS00000004',	N'Nguyễn Văn Đại', 'vandai@gmail.com', 0, '01-01-1990',	N'Hải Dương', N'Không Biết'),
+('HS00000005',	N'Nguyễn Văn An', 'vanan@gmail.com', 0,	'08-07-1991', N'TP.HCM', N'Q.9'),
+('HS00000006',	N'Nguyễn Bình Minh', 'binhminh@gmail.com', 0, '01-01-1992',	N'TP.HCM', N'Q.9'),
+('HS00000007',	N'Nguyễn Thị Lan Anh', 'lananh@gmail.com', 1, '20-09-1991', N'Vĩnh Long', N'Vũng Liêm'),
+('HS00000008',	N'Lê Thị Thu Hà', 'thuha@gmail.com', 1,	'01-01-1992', N'Hải Dương',	N'Không Biết'),
+('HS00000009',	N'Nguyễn Thị Thanh Trúc', 'thanhtruc@gmail.com', 1,	'08-07-1993', N'TP.HCM', N'Q.9'),
+('HS00000010',	N'Trần Duy Khoa', 'duykhoa@gmail.com', 0, '01-01-1991',	N'TP.HCM', N'Q.9'),
+('HS00000011',	N'Nguyễn Thị Thùy Dương', 'thuyduong@gmail.com', 1,	'20-09-1992', N'Vĩnh Long',	N'Vũng Liêm'),
+('HS00000012',	N'Nguyễn Thị Bảo Ngọc', 'baongoc@gmail.com', 1,	'01-01-1991', N'Hải Dương',	N'Không Biết'),
+('HS00000013',	N'Nguyễn Văn Tân', 'vanTan@gmail.com', 0, '08-07-1993', N'TP.HCM', N'Q.9'),
+('HS00000014',	N'Nguyễn Bình Minh', 'binhminh@gmail.com', 0, '01-01-1992',	N'TP.HCM', N'Q.9'),
+('HS00000015',	N'Huỳnh Thanh Tùng', 'lananh@gmail.com', 0,	'20-09-1993', N'Vĩnh Long', N'Vũng Liêm'),
+('HS00000016',	N'Lê Thị Ngọc Thu', 'thuha@gmail.com', 1, '01-01-1992', N'Hải Dương', N'Không Biết')
 
 
 --Table GIAOVIEN
 GO
-INSERT INTO GIAOVIEN ([MaGiaoVien],[TenGiaoVien]) 
-	VALUES	('GV001',  N'Nguyễn Thị Thanh')
-GO
-INSERT INTO GIAOVIEN ([MaGiaoVien],[TenGiaoVien]) 
-	VALUES	('GV002',  N'Nguyễn Đăng Khoa')
-GO
-INSERT INTO GIAOVIEN ([MaGiaoVien],[TenGiaoVien]) 
-	VALUES	('GV003',  N'Nguyễn Ngọc Anh Thư')
-GO
-INSERT INTO GIAOVIEN ([MaGiaoVien],[TenGiaoVien]) 
-	VALUES	('GV004',  N'Phạm Thanh Huy')
+INSERT INTO GIAOVIEN ([MaGiaoVien],[TenGiaoVien]) VALUES
+('GV001',  N'Nguyễn Thị Thanh'),
+('GV002',  N'Nguyễn Đăng Khoa'),
+('GV003',  N'Nguyễn Ngọc Anh Thư'),
+('GV004',  N'Phạm Thanh Huy')
 
 
 --NAMHOC
 GO	
-INSERT INTO NAMHOC ([MaNamHoc],[TenNamHoc]) 
-	VALUES	('NH1112',	'2011 - 2012')
-GO
-INSERT INTO NAMHOC ([MaNamHoc],[TenNamHoc]) 
-	VALUES	('NH1213',	'2012 - 2013')
+INSERT INTO NAMHOC ([MaNamHoc],[TenNamHoc])  VALUES	
+('NH1112',	'2011 - 2012'),
+('NH1213',	'2012 - 2013')
 
 --Table LOP
 GO
-INSERT INTO LOP ([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien]) 
-	VALUES	('10A01NH1112',	'10A1',	10,	'NH1112', 40, 'GV001')
-GO
-INSERT INTO LOP ([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien]) 
-	VALUES	('10A02NH1112',	'10A2',	10,	'NH1112', 40, 'GV002')
-GO
-INSERT INTO LOP ([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien]) 
-	VALUES	('11A01NH1112',	'11A1',	11,	'NH1112', 40, 'GV003')
-GO
-INSERT INTO LOP ([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien]) 
-	VALUES	('12A01NH1112',	'12A1',	12,	'NH1112', 40, 'GV004')
+INSERT INTO LOP ([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien]) VALUES 
+('10A01NH1112',	'10A1',	10,	'NH1112', 40, 'GV001'),
+('10A02NH1112',	'10A2',	10,	'NH1112', 40, 'GV002'),
+('11A01NH1112',	'11A1',	11,	'NH1112', 40, 'GV003'),
+('12A01NH1112',	'12A1',	12,	'NH1112', 40, 'GV004')
 
 
 -- Phan lop
 GO	
-INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
-	VALUES	('HS00000001',	'10A01NH1112')
-GO	
-INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
-	VALUES	('HS00000002',	'10A01NH1112')
-GO	
-INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
-	VALUES	('HS00000003',	'10A01NH1112')
-GO	
-INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
-	VALUES	('HS00000004',	'10A01NH1112')
-GO	
-INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
-	VALUES	('HS00000005',	'10A02NH1112')
-GO	
-INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
-	VALUES	('HS00000006',	'10A02NH1112')
-GO	
-INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
-	VALUES	('HS00000007',	'10A02NH1112')
-GO	
-INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
-	VALUES	('HS00000008',	'10A02NH1112')
-GO	
-INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
-	VALUES	('HS00000009',	'11A01NH1112')
-GO	
-INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
-	VALUES	('HS00000010',	'11A01NH1112')
-GO	
-INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
-	VALUES	('HS00000011',	'11A01NH1112')
-GO	
-INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
-	VALUES	('HS00000012',	'11A01NH1112')
-GO	
-INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
-	VALUES	('HS00000013',	'12A01NH1112')
-GO	
-INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
-	VALUES	('HS00000014',	'12A01NH1112')
-GO	
-INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
-	VALUES	('HS00000015',	'12A01NH1112')
-GO	
-INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
-	VALUES	('HS00000016',	'12A01NH1112')
+INSERT INTO PHANLOP ([STT],[MaHocSinh],[MaLop]) VALUES
+(1,'HS00000001',	'10A01NH1112'),
+(2,'HS00000002',	'10A01NH1112'),
+(3,'HS00000003',	'10A01NH1112'),
+(4,'HS00000004',	'10A01NH1112'),
+(1,'HS00000005',	'10A02NH1112'),
+(2,'HS00000006',	'10A02NH1112'),
+(3,'HS00000007',	'10A02NH1112'),
+(4,'HS00000008',	'10A02NH1112'),
+(1,'HS00000009',	'11A01NH1112'),
+(2,'HS00000010',	'11A01NH1112'),
+(3,'HS00000011',	'11A01NH1112'),
+(4,'HS00000012',	'11A01NH1112'),
+(1,'HS00000013',	'12A01NH1112'),
+(2,'HS00000014',	'12A01NH1112'),
+(3,'HS00000015',	'12A01NH1112'),
+(4,'HS00000016',	'12A01NH1112')
 
 -- Quy Dinh
 
