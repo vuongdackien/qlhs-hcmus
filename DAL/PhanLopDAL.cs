@@ -33,5 +33,22 @@ namespace QLHS.DAL
             string sql = "SELECT count(*) FROM PHANLOP WHERE MaLop = '" + MaLop +"'";
             return Convert.ToInt32(ExecuteScalar(sql));
         }
+        /// <summary>
+        /// Cập nhật STT cho cả lớp
+        /// </summary>
+        /// <param name="MaLop">String: mã lớp</param>
+        /// <param name="arrayList">ArrayList: ArrayList HocSinhChuanHoaTenDTO</param>
+        /// <returns>Bool</returns>
+        public bool CapNhat_STT_Lop(string MaLop, System.Collections.ArrayList arrayList)
+        {
+            string sql = "";
+            foreach (HocSinhChuanHoaTenDTO hs in arrayList)
+            {
+                sql +=  "\nUPDATE PHANLOP SET STT = "+hs.STT+" WHERE MaHocSinh = '"+hs.MaHocSinh+"' AND MaLop = '"+MaLop+"'";
+            }
+            return ExecuteQuery(sql) > 0;
+        }
+
+       
     }
 }

@@ -177,6 +177,44 @@ namespace QLHS
         {
             e.ErrorText = "Email không hợp lệ! (Ấn ESC để trở lại)";
         }
+
+        private void simpleButtonChuyenLop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButtonInHoSo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButtonXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void simpleButtonSXLaiSTT_Click(object sender, EventArgs e)
+        {
+            if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditLop))
+            {
+                Utilities.MessageboxUtilities.MessageError("Bạn chưa chọn lớp để thực hiện");
+                return;
+            }
+            try
+            {
+                _PhanLopBUS.CapNhap_STT_HocSinh_Lop(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop));
+                Utilities.MessageboxUtilities.MessageSuccess("Cập nhật số thự tự cho lớp thành công!");
+                // Load lại gridcontrol học sinh
+                gridControlDSHocSinh.DataSource = _HocSinhBUS.LayDTHocSinh_LopHoc(
+                                Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop)
+                    );
+
+            }
+            catch(Exception ex)
+            {
+                Utilities.MessageboxUtilities.MessageError(ex);
+            }
+        }
   
     }
 }
