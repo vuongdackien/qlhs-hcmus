@@ -330,7 +330,7 @@ INSERT INTO LOP ([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien])
 	VALUES	('10A02NH1112',	'10A2',	10,	'NH1112', 40, 'GV002')
 GO
 INSERT INTO LOP ([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien]) 
-	VALUES	('11A01NH1112',	'11A1',	10,	'NH1112', 40, 'GV003')
+	VALUES	('11A01NH1112',	'11A1',	11,	'NH1112', 40, 'GV003')
 GO
 INSERT INTO LOP ([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien]) 
 	VALUES	('12A01NH1112',	'12A1',	12,	'NH1112', 40, 'GV004')
