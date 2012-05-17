@@ -1,20 +1,31 @@
 ﻿using System.Data;
-using System.Data.OleDb;
+using System.Data.Sql;
+using System.Data.SqlClient;
 
 namespace QLHS.DAL
 {
     public class ConnectData
     {
-        protected OleDbConnection m_Connect = null;
-        public OleDbDataAdapter m_DataApdater = null;
+        protected SqlConnection m_Connect = null;
+        public SqlDataAdapter m_DataApdater = null;
         public DataTable m_Table = null;
-        protected OleDbCommand m_Command = null;
-        private string _strConnect = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|Databases\QLHS.mdb;Persist Security Info=True";
+        protected SqlCommand m_Command = null;
+        private string _strConnect = "";
 
 
         public ConnectData()
         {
-             Connect();
+            _strConnect = DatabaseConnectionManagement.Properties.Settings.Default.ConnectString;
+            // Nếu không kết nối được
+            if (!DatabaseConnectionManagement.FrmAddConnection.TestConnect())
+            {
+                if (DatabaseConnectionManagement.FrmAddConnection.Show() == System.Windows.Forms.DialogResult.OK)
+                    _strConnect = DatabaseConnectionManagement.Properties.Settings.Default.ConnectString;
+                else
+                    System.Windows.Forms.Application.Exit();
+            }
+         
+            Connect();
         }
 
         public ConnectData(bool testConnect)
@@ -31,11 +42,11 @@ namespace QLHS.DAL
         {
             try
             {
-                m_Connect = new OleDbConnection(_strConnect);
+                m_Connect = new SqlConnection(_strConnect);
                 this.OpenConnect();
                 return true;
             }
-            catch (OleDbException ex)
+            catch (SqlException ex)
             {
                 Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
                 return false;
@@ -100,7 +111,7 @@ namespace QLHS.DAL
                 if (setPropertiesDataTable)
                 {
                     // Tạo dataApdapter vai trò như 1 ống hút thực hiện query đổ vào Datatable
-                    m_DataApdater = new OleDbDataAdapter(sql, m_Connect);
+                    m_DataApdater = new SqlDataAdapter(sql, m_Connect);
                     m_Table = new DataTable();
                     // Đổ vào database
                     m_DataApdater.Fill(m_Table);
@@ -108,13 +119,13 @@ namespace QLHS.DAL
                 }
                 else
                 {
-                    OleDbDataAdapter ap = new OleDbDataAdapter(sql, m_Connect);
+                    SqlDataAdapter ap = new SqlDataAdapter(sql, m_Connect);
                     DataTable tb = new DataTable();
                     ap.Fill(tb);
                     return tb;
                 }
             }
-            catch (OleDbException ex)
+            catch (SqlException ex)
             {
                 Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
                 return null;
@@ -158,7 +169,7 @@ namespace QLHS.DAL
         {
             int numRecords = 0;
             // Transaction dùng để rollback data khi gặp lỗi trong quá trình Save
-            OleDbTransaction sqlTran = null;
+            SqlTransaction sqlTran = null;
             try
             {
                 // Mở kết nối
@@ -166,12 +177,12 @@ namespace QLHS.DAL
                 // Mở Transaction
                 sqlTran = m_Connect.BeginTransaction();
                 m_DataApdater.SelectCommand.Transaction = sqlTran;
-                OleDbCommandBuilder cbo = new OleDbCommandBuilder(m_DataApdater);
+                SqlCommandBuilder cbo = new SqlCommandBuilder(m_DataApdater);
                 numRecords = m_DataApdater.Update(m_Table);
                 // Thực thi
                 sqlTran.Commit();
             }
-            catch (OleDbException ex)
+            catch (SqlException ex)
             {
                 // Roolback data
                 if (sqlTran != null)
@@ -198,20 +209,20 @@ namespace QLHS.DAL
         protected int ExecuteQuery(string sql)
         {
             int numRecords = 0;
-            OleDbTransaction sqlTran = null;
+            SqlTransaction sqlTran = null;
             try
             {
                 // Mở kết nối
                 this.OpenConnect();
                 // Mở Transaction
                 sqlTran = m_Connect.BeginTransaction();
-                OleDbCommand sqlComm = new OleDbCommand(sql, m_Connect);
+                SqlCommand sqlComm = new SqlCommand(sql, m_Connect);
                 sqlComm.Transaction = sqlTran;
                 numRecords = sqlComm.ExecuteNonQuery();
                 // Thực thi
                 sqlTran.Commit();
             }
-            catch (OleDbException ex)
+            catch (SqlException ex)
             {
                 // Roolback data
                 if (sqlTran != null)
@@ -228,11 +239,11 @@ namespace QLHS.DAL
         }
 
         /// <summary>
-        /// Thực hiện OleDbCommand truyền vào
+        /// Thực hiện SqlCommand truyền vào
         /// </summary>
-        /// <param name="m_Command">OleDbCommand: Giá trị OleDbCommand</param>
+        /// <param name="m_Command">SqlCommand: Giá trị SqlCommand</param>
         /// <returns>Bool: Thực hiện thành công true/false</returns>
-        protected bool ExecuteCommand(OleDbCommand m_Command)
+        protected bool ExecuteCommand(SqlCommand m_Command)
         {
             try
             {
@@ -241,7 +252,7 @@ namespace QLHS.DAL
                 m_Command.ExecuteNonQuery();
                 return true;
             }
-            catch (OleDbException ex)
+            catch (SqlException ex)
             {
                 Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
                 return false;
@@ -252,14 +263,14 @@ namespace QLHS.DAL
             }
         }
 
-        protected OleDbDataReader ExecuteReader(string sql)
+        protected SqlDataReader ExecuteReader(string sql)
         {
             try
             {
-                OleDbCommand command = new OleDbCommand(sql, this.m_Connect);
+                SqlCommand command = new SqlCommand(sql, this.m_Connect);
                 return command.ExecuteReader();
             }
-            catch (OleDbException ex)
+            catch (SqlException ex)
             {
                 Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
                 return null;
@@ -276,10 +287,10 @@ namespace QLHS.DAL
             try
             {
                 this.OpenConnect();
-                m_Command = new OleDbCommand(sql, m_Connect);
+                m_Command = new SqlCommand(sql, m_Connect);
                 return m_Command.ExecuteScalar();
             }
-            catch (OleDbException ex)
+            catch (SqlException ex)
             {
                 Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
                 return null;

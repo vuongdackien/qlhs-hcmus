@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QLHS.DAL</RootNamespace>
     <AssemblyName>QLHS.DAL</AssemblyName>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +53,10 @@
     <Compile Include="QuyDinhDAL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DatabaseConnectionManagement\DatabaseConnectionManagement.csproj">
+      <Project>{82C3749C-81E4-4B71-AED0-523D2A08D8D4}</Project>
+      <Name>DatabaseConnectionManagement</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO\QLHS.DTO.csproj">
       <Project>{051D3B9C-A8C0-40E3-B5B3-F33D4789F859}</Project>
       <Name>QLHS.DTO</Name>
