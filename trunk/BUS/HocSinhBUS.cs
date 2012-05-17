@@ -75,10 +75,16 @@ namespace QLHS.BUS
                                                                 + "\nBạn có thể sử dụng chức năng \"Tự động sắp xếp số thứ tự\" theo alpha.");
                     return false;
                 }
+                hocsinh.MaHocSinh = Utilities.StringUtilities.NextID(_HocSinhDAL.LayMaCuoiCung(), "HS",8);
                 return _HocSinhDAL.ThemHoSoHocSinh(hocsinh, MaLop);
             }
            
         }
+        /// <summary>
+        /// Kiểm tra năm sinh có đúng theo quy định (Tuổi cận dưới, cận trên)
+        /// </summary>
+        /// <param name="namSinh">int: Năm</param>
+        /// <returns>Bool</returns>
         public bool KiemTraNamSinhHopLe(int namSinh)
         {
             int TuoiCanDuoi = _QuyDinhBUS.LayTuoiCanDuoi(),
@@ -97,6 +103,15 @@ namespace QLHS.BUS
         public DataTable TimKiem_HocSinh(HocSinhTimKiemDTO hs, List<string> DS_MaLop = null)
         {
             return _HocSinhDAL.TimKiem_HocSinh(hs,DS_MaLop);
+        }
+        /// <summary>
+        /// Xóa 1 hồ sơ học sinh
+        /// </summary>
+        /// <param name="MaHocSinh">String: Mã học sinh</param>
+        /// <returns>Bool</returns>
+        public bool Xoa_HoSo_HocSinh(string MaHocSinh)
+        {
+            return _HocSinhDAL.Xoa_HoSo_HocSinh(MaHocSinh);
         }
     }
 }

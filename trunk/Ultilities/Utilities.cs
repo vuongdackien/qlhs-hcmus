@@ -19,11 +19,20 @@ namespace Utilities
         public static NguoiDungDTO user = null;
 
         #region Hàm lấy mã kế tiếp
-        public static string NextID(string lastID, string prefixID)
+        /// <summary>
+        /// Lấy mã kế tiếp từ chuỗi mã cuối cùng
+        /// </summary>
+        /// <param name="lastID">String: Mã cuối cùng (Dùng GetLastID() để lấy)</param>
+        /// <param name="prefixID">String: Tiền tố. VD: HS00001 => tiền tố là HS</param>
+        /// <param name="lengthNumerID">String: Số lượng phần số. VD: HS00001 => 5</param>
+        /// <returns></returns>
+        public static string NextID(string lastID, string prefixID, int lengthNumerID = 5)
         {
             lastID = lastID.Trim();
+            if (lastID == "")
+                lastID = prefixID + new String('0', lengthNumerID);
+
             int nextID = int.Parse(lastID.Remove(0, prefixID.Length)) + 1;
-            int lengthNumerID = lastID.Length - prefixID.Length;
             string zeroNumber = "";
             for (int i = 1; i <= lengthNumerID; i++)
             {

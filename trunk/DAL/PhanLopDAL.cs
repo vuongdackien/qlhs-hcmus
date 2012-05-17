@@ -16,7 +16,7 @@ namespace QLHS.DAL
         public int Lay_STT_TiepTheo(string MaLop)
         {
             string sql = "SELECT STT FROM PHANLOP WHERE MaLop = '"+MaLop+"' ORDER BY STT DESC";
-            return Convert.ToInt32(ExecuteScalar(sql));
+            return Convert.ToInt32(ExecuteScalar(sql)) + 1;
         }
         public int Lay_STT_HienTai(string MaHocSinh, string MaLop)
         {

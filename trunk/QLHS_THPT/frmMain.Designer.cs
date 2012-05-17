@@ -363,6 +363,7 @@
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Quản Lý Học Sinh Trung Học Phổ Thông";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).EndInit();

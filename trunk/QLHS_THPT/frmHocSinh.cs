@@ -71,9 +71,7 @@ namespace QLHS
                 gridControlDSHocSinh.DataSource = null;
                 return;
             }
-            gridControlDSHocSinh.DataSource = _HocSinhBUS.LayDTHocSinh_LopHoc(
-                 Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop)
-            );
+            this.LoadLai_GridControl_HocSinh();
         }
       
 
@@ -106,15 +104,25 @@ namespace QLHS
 
         private void gridViewDSHocSinh_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            object MaHocSinh = this.gridViewDSHocSinh.GetRowCellValue(e.FocusedRowHandle, "MaHocSinh").ToString();
-            HienThiHoSoHocSinh(MaHocSinh);
+            if (e.FocusedRowHandle < 0)
+                return;
+           object MaHocSinh = this.gridViewDSHocSinh.GetRowCellValue(e.FocusedRowHandle, "MaHocSinh").ToString();
+           HienThiHoSoHocSinh(MaHocSinh);
         }
 
         private void simpleButtonDong_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        /// <summary>
+        /// Load lại GridControl học sinh
+        /// </summary>
+        private void LoadLai_GridControl_HocSinh()
+        {
+            gridControlDSHocSinh.DataSource = _HocSinhBUS.LayDTHocSinh_LopHoc(
+                               Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop)
+                   );
+        }
         private void simpleButtonGhiDuLieu_Click(object sender, EventArgs e)
         {
             HocSinhDTO hocSinhDTO  = new HocSinhDTO();
@@ -129,15 +137,15 @@ namespace QLHS
             string MaLop = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop);
             if (hocSinhDTO.TenHocSinh.Length < 3 || !hocSinhDTO.TenHocSinh.Contains(" "))
             {
-                Utilities.MessageboxUtilities.MessageError("Họ tên học sinh không hợp lệ hoặc nhỏ hơn 3 ký tự!");
+                Utilities.MessageboxUtilities.MessageError("Họ tên học sinh không hợp lệ (không chứa khoảng trắng) hoặc nhỏ hơn 3 ký tự!");
                 return;
             }
             try
             {
-                if (_HocSinhBUS.LuuHoSoHocSinh(hocSinhDTO, MaLop))
-                    Utilities.MessageboxUtilities.MessageSuccess("Lưu hồ sơ học sinh " + hocSinhDTO.TenHocSinh + " thành công!");
-                else
-                    Utilities.MessageboxUtilities.MessageError();
+                _HocSinhBUS.LuuHoSoHocSinh(hocSinhDTO, MaLop);
+                Utilities.MessageboxUtilities.MessageSuccess("Lưu hồ sơ học sinh " + hocSinhDTO.TenHocSinh + " thành công!");
+                this.LoadLai_GridControl_HocSinh();
+                gridViewDSHocSinh.SelectRow(0);
             }
             catch (Exception ex)
             {
@@ -145,7 +153,29 @@ namespace QLHS
                 return;
             }
         }
-
+        private void simpleButtonXoa_Click(object sender, EventArgs e)
+        {
+            if(textEditmaHocSinh.Text == "")
+            {
+                Utilities.MessageboxUtilities.MessageError("Bạn chưa chọn học sinh để thực hiện xóa!");
+                return;
+            }
+            if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Bạn có chắc chắn muốn xóa toàn bộ hồ sơ học sinh \""+textEditTenHocSinh.Text+"\" hay không?") == System.Windows.Forms.DialogResult.No)
+            {
+                return;
+            }
+            try
+            {
+                _HocSinhBUS.Xoa_HoSo_HocSinh(textEditmaHocSinh.Text);
+                Utilities.MessageboxUtilities.MessageSuccess("Xóa hồ sơ học sinh thành công!");
+                LoadLai_GridControl_HocSinh();
+            }
+            catch(Exception ex)
+            {
+                Utilities.MessageboxUtilities.MessageError(ex);
+            }
+            
+        }
         private void simpleButtonThemMoi_Click(object sender, EventArgs e)
         {
             string MaLop = (Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop));
@@ -188,10 +218,7 @@ namespace QLHS
 
         }
 
-        private void simpleButtonXoa_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void simpleButtonSXLaiSTT_Click(object sender, EventArgs e)
         {
@@ -205,16 +232,14 @@ namespace QLHS
                 _PhanLopBUS.CapNhap_STT_HocSinh_Lop(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop));
                 Utilities.MessageboxUtilities.MessageSuccess("Cập nhật số thự tự cho lớp thành công!");
                 // Load lại gridcontrol học sinh
-                gridControlDSHocSinh.DataSource = _HocSinhBUS.LayDTHocSinh_LopHoc(
-                                Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop)
-                    );
-
+                this.LoadLai_GridControl_HocSinh();
             }
             catch(Exception ex)
             {
                 Utilities.MessageboxUtilities.MessageError(ex);
             }
         }
+
   
     }
 }
