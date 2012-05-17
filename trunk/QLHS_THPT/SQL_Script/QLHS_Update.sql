@@ -6,7 +6,8 @@ USE QLHS
 ----------------------------------------------------------
 --1. Create table and its columns
 CREATE TABLE [dbo].[NAMHOC] (
-	[MaNamHoc]		[varchar](6) NOT NULL);
+	[MaNamHoc]		[varchar](6) NOT NULL,
+	[TenNamHoc]		[nvarchar](30) NOT NULL);
 GO
 --2. Create table and its columns
 CREATE TABLE [dbo].[MONHOC] (
@@ -225,12 +226,12 @@ GO
 	ALTER TABLE [dbo].[CHUYENLOP] CHECK CONSTRAINT [FK_CHUYENLOP_HOCSINH]
 	GO
 
---11. 10_3-Foreign key GIAOVIEN_NGUOIDUNG
-	ALTER TABLE [dbo].[GIAOVIEN]  WITH CHECK ADD  CONSTRAINT [FK_GIAOVIEN_NGUOIDUNG] FOREIGN KEY([MaGiaoVien])
-	REFERENCES [dbo].[NGUOIDUNG] ([MaND])
+--11. 10_3-Foreign key NGUOIDUNG_GIAOVIEN
+	ALTER TABLE [dbo].[NGUOIDUNG]  WITH CHECK ADD  CONSTRAINT [FK_NGUOIDUNG_GIAOVIEN] FOREIGN KEY([MaND])
+	REFERENCES [dbo].[GIAOVIEN] ([MaGiaoVien])
 	GO
 
-	ALTER TABLE [dbo].[GIAOVIEN] CHECK CONSTRAINT [FK_GIAOVIEN_NGUOIDUNG]
+	ALTER TABLE [dbo].[NGUOIDUNG] CHECK CONSTRAINT [FK_NGUOIDUNG_GIAOVIEN]
 	GO
 
 --10. 10_9-Foreign key NGUOIDUNG_LOAINGUOIDUNG
@@ -297,5 +298,39 @@ INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[No
 	VALUES	('HS00016',	N'Lê Thị Ngọc Thu', 'thuha@gmail.com', 1, '01-01-1992', N'Hải Dương', N'Không Biết')
 
 
+--Table GIAOVIEN
+GO
+INSERT INTO GIAOVIEN ([MaGiaoVien],[TenGiaoVien]) 
+	VALUES	('GV001',  N'Nguyễn Thị Thanh')
+GO
+INSERT INTO GIAOVIEN ([MaGiaoVien],[TenGiaoVien]) 
+	VALUES	('GV002',  N'Nguyễn Đăng Khoa')
+GO
+INSERT INTO GIAOVIEN ([MaGiaoVien],[TenGiaoVien]) 
+	VALUES	('GV003',  N'Nguyễn Ngọc Anh Thư')
+GO
+INSERT INTO GIAOVIEN ([MaGiaoVien],[TenGiaoVien]) 
+	VALUES	('GV004',  N'Phạm Thanh Huy')
 
 
+--NAMHOC
+GO	
+INSERT INTO NAMHOC ([MaNamHoc],[TenNamHoc]) 
+	VALUES	('NH1112',	'2011 - 2012')
+GO
+INSERT INTO NAMHOC ([MaNamHoc],[TenNamHoc]) 
+	VALUES	('NH1213',	'2012 - 2013')
+
+--Table LOP
+GO
+INSERT INTO LOP ([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien]) 
+	VALUES	('10A01NH1112',	'10A1',	10,	'NH1112', 40, 'GV001')
+GO
+INSERT INTO LOP ([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien]) 
+	VALUES	('10A02NH1112',	'10A2',	10,	'NH1112', 40, 'GV002')
+GO
+INSERT INTO LOP ([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien]) 
+	VALUES	('11A01NH1112',	'11A1',	10,	'NH1112', 40, 'GV003')
+GO
+INSERT INTO LOP ([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien]) 
+	VALUES	('12A01NH1112',	'12A1',	12,	'NH1112', 40, 'GV004')
