@@ -27,7 +27,7 @@ CREATE TABLE [dbo].[GIAOVIEN] (
 	[TenGiaoVien]	[nvarchar](50) NOT NULL);	
 GO
 
---4. Create table and its columns
+--4. Create table and its columns 
 CREATE TABLE [dbo].[LOP] (
 	[MaLop]			[varchar](15) NOT NULL,
 	[TenLop]		[nvarchar](50) NOT NULL,
