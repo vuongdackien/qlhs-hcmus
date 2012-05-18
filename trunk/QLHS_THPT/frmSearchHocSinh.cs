@@ -51,7 +51,23 @@ namespace QLHS
             }
             treeListSearch.ExpandAll(); // Expand all nodes
         }
-
+        private AutoCompleteStringCollection Tao_Data_AutoComplete_Cbo_TenHocSinh()
+        {
+            DataTable tb = _HocSinhBUS.LayDTTenHocSinh();
+            AutoCompleteStringCollection cl = new AutoCompleteStringCollection();
+            foreach (DataRow rd in tb.Rows)
+            {
+                cl.Add(rd["TenHocSinh"].ToString());
+                string[] hoten = Utilities.StringUtilities.LayHoTen(rd["TenHocSinh"].ToString());
+                if (hoten[0] != "") 
+                    cl.Add(hoten[0]);
+                if (hoten[1] != "") 
+                    cl.Add(hoten[1]);
+                if (hoten[2] != "") 
+                    cl.Add(hoten[2]);
+            }
+            return cl;
+        }
         private void frmSearchHocSinh_Load(object sender, EventArgs e)
         {
             Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
@@ -59,7 +75,11 @@ namespace QLHS
                                                           "MaNamHoc", "TenNamHoc",0);
             treeListSearch.ParentFieldName = "MaKhoi";
             treeListSearch.PreviewFieldName = "TenKhoi";
-            treeListSearch.DataSource = _KhoiBUS.LayDTKhoi(); 
+            treeListSearch.DataSource = _KhoiBUS.LayDTKhoi();
+
+            textBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            textBox1.AutoCompleteCustomSource = Tao_Data_AutoComplete_Cbo_TenHocSinh();
 
             CapNhatListLop();
             // Disable controls search
@@ -99,6 +119,10 @@ namespace QLHS
             if (checkEditGioiTinh.Checked)
             {
                 hsTimKiemDTO.GioiTinh = radioGroupGioiTinh.SelectedIndex;
+            }
+            else
+            {
+                hsTimKiemDTO.GioiTinh = -1;
             }
             hsTimKiemDTO.NamSinhTu = textEditNamSinhTu.Text;
             hsTimKiemDTO.NamSinhDen = textEditNamSinhDen.Text;
@@ -185,6 +209,7 @@ namespace QLHS
         private void checkEditHoTen_CheckedChanged(object sender, EventArgs e)
         {
             EnableControl(checkEditHoTen, textEditHoTen);
+            textBox1.Enabled = true;
         }
 
         private void checkEditGioiTinh_CheckedChanged(object sender, EventArgs e)
@@ -208,5 +233,16 @@ namespace QLHS
             EnableControl(checkEditDiaChi, textEditDiaChi);
         }
         #endregion
+
+        private void simpleButtonXoaDK_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menucontextXemHoSo_Click(object sender, EventArgs e)
+        {
+            int dong = gridView1.FocusedRowHandle;
+
+        }
     }
 }

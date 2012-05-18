@@ -113,5 +113,10 @@ namespace QLHS.BUS
         {
             return _HocSinhDAL.Xoa_HoSo_HocSinh(MaHocSinh);
         }
+
+        public DataTable LayDTTenHocSinh()
+        {
+            return _HocSinhDAL.LayDTTenHocSinh();
+        }
     }
 }

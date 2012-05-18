@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelControlNamDKien = new DevExpress.XtraEditors.PanelControl();
             this.panelControlDieuKien = new DevExpress.XtraEditors.PanelControl();
             this.xtraTabControlDieuKien = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageDieuKien = new DevExpress.XtraTab.XtraTabPage();
             this.panelControlDKienTim = new DevExpress.XtraEditors.PanelControl();
             this.panelControlNDungDKien = new DevExpress.XtraEditors.PanelControl();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.radioGroupGioiTinh = new DevExpress.XtraEditors.RadioGroup();
             this.textEditNamSinhDen = new DevExpress.XtraEditors.TextEdit();
             this.textEditNamSinhTu = new DevExpress.XtraEditors.TextEdit();
@@ -52,7 +54,6 @@
             this.simpleButtonXuatBaoCao = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonXoaDK = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonSearch = new DevExpress.XtraEditors.SimpleButton();
-            this.radioGroupTim = new DevExpress.XtraEditors.RadioGroup();
             this.panelControlNamHoc = new DevExpress.XtraEditors.PanelControl();
             this.treeListSearch = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -73,6 +74,8 @@
             this.gridColumnLopHocHT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnGVCN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlSearchHocSinh = new DevExpress.XtraGrid.GridControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menucontextXemHoSo = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamDKien)).BeginInit();
             this.panelControlNamDKien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlDieuKien)).BeginInit();
@@ -99,7 +102,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEditMaHocSinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlButtonTim)).BeginInit();
             this.panelControlButtonTim.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroupTim.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamHoc)).BeginInit();
             this.panelControlNamHoc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeListSearch)).BeginInit();
@@ -110,6 +112,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditNamHoc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearchHocSinh)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControlNamDKien
@@ -164,6 +167,7 @@
             // 
             // panelControlNDungDKien
             // 
+            this.panelControlNDungDKien.Controls.Add(this.textBox1);
             this.panelControlNDungDKien.Controls.Add(this.radioGroupGioiTinh);
             this.panelControlNDungDKien.Controls.Add(this.textEditNamSinhDen);
             this.panelControlNDungDKien.Controls.Add(this.textEditNamSinhTu);
@@ -183,6 +187,13 @@
             this.panelControlNDungDKien.Size = new System.Drawing.Size(740, 150);
             this.panelControlNDungDKien.TabIndex = 1;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(308, 49);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 17;
+            // 
             // radioGroupGioiTinh
             // 
             this.radioGroupGioiTinh.EditValue = ((byte)(0));
@@ -192,49 +203,49 @@
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(0)), "Nam"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(1)), "Nữ")});
             this.radioGroupGioiTinh.Size = new System.Drawing.Size(152, 26);
-            this.radioGroupGioiTinh.TabIndex = 3;
+            this.radioGroupGioiTinh.TabIndex = 9;
             // 
             // textEditNamSinhDen
             // 
             this.textEditNamSinhDen.Location = new System.Drawing.Point(232, 119);
             this.textEditNamSinhDen.Name = "textEditNamSinhDen";
             this.textEditNamSinhDen.Size = new System.Drawing.Size(69, 20);
-            this.textEditNamSinhDen.TabIndex = 2;
+            this.textEditNamSinhDen.TabIndex = 12;
             // 
             // textEditNamSinhTu
             // 
             this.textEditNamSinhTu.Location = new System.Drawing.Point(149, 118);
             this.textEditNamSinhTu.Name = "textEditNamSinhTu";
             this.textEditNamSinhTu.Size = new System.Drawing.Size(69, 20);
-            this.textEditNamSinhTu.TabIndex = 2;
+            this.textEditNamSinhTu.TabIndex = 11;
             // 
             // textEditDiaChi
             // 
             this.textEditDiaChi.Location = new System.Drawing.Point(530, 46);
             this.textEditDiaChi.Name = "textEditDiaChi";
             this.textEditDiaChi.Size = new System.Drawing.Size(152, 20);
-            this.textEditDiaChi.TabIndex = 2;
+            this.textEditDiaChi.TabIndex = 16;
             // 
             // textEditEmail
             // 
             this.textEditEmail.Location = new System.Drawing.Point(530, 13);
             this.textEditEmail.Name = "textEditEmail";
             this.textEditEmail.Size = new System.Drawing.Size(152, 20);
-            this.textEditEmail.TabIndex = 2;
+            this.textEditEmail.TabIndex = 14;
             // 
             // textEditHoTen
             // 
             this.textEditHoTen.Location = new System.Drawing.Point(149, 48);
             this.textEditHoTen.Name = "textEditHoTen";
             this.textEditHoTen.Size = new System.Drawing.Size(152, 20);
-            this.textEditHoTen.TabIndex = 2;
+            this.textEditHoTen.TabIndex = 7;
             // 
             // textEditMaHocSinh
             // 
             this.textEditMaHocSinh.Location = new System.Drawing.Point(149, 15);
             this.textEditMaHocSinh.Name = "textEditMaHocSinh";
             this.textEditMaHocSinh.Size = new System.Drawing.Size(152, 20);
-            this.textEditMaHocSinh.TabIndex = 2;
+            this.textEditMaHocSinh.TabIndex = 5;
             // 
             // checkEditNamSinh
             // 
@@ -242,7 +253,7 @@
             this.checkEditNamSinh.Name = "checkEditNamSinh";
             this.checkEditNamSinh.Properties.Caption = "Năm sinh:";
             this.checkEditNamSinh.Size = new System.Drawing.Size(91, 19);
-            this.checkEditNamSinh.TabIndex = 0;
+            this.checkEditNamSinh.TabIndex = 10;
             this.checkEditNamSinh.CheckedChanged += new System.EventHandler(this.checkEditNamSinh_CheckedChanged);
             // 
             // checkEditGioiTinh
@@ -251,7 +262,7 @@
             this.checkEditGioiTinh.Name = "checkEditGioiTinh";
             this.checkEditGioiTinh.Properties.Caption = "Giới tính:";
             this.checkEditGioiTinh.Size = new System.Drawing.Size(91, 19);
-            this.checkEditGioiTinh.TabIndex = 0;
+            this.checkEditGioiTinh.TabIndex = 8;
             this.checkEditGioiTinh.CheckedChanged += new System.EventHandler(this.checkEditGioiTinh_CheckedChanged);
             // 
             // checkEditDiaChi
@@ -260,7 +271,7 @@
             this.checkEditDiaChi.Name = "checkEditDiaChi";
             this.checkEditDiaChi.Properties.Caption = "Địa chỉ:";
             this.checkEditDiaChi.Size = new System.Drawing.Size(93, 19);
-            this.checkEditDiaChi.TabIndex = 0;
+            this.checkEditDiaChi.TabIndex = 15;
             this.checkEditDiaChi.CheckedChanged += new System.EventHandler(this.checkEditDiaChi_CheckedChanged);
             // 
             // checkEditHoTen
@@ -269,7 +280,7 @@
             this.checkEditHoTen.Name = "checkEditHoTen";
             this.checkEditHoTen.Properties.Caption = "Họ tên:";
             this.checkEditHoTen.Size = new System.Drawing.Size(91, 19);
-            this.checkEditHoTen.TabIndex = 0;
+            this.checkEditHoTen.TabIndex = 6;
             this.checkEditHoTen.CheckedChanged += new System.EventHandler(this.checkEditHoTen_CheckedChanged);
             // 
             // checkEditEmail
@@ -278,7 +289,7 @@
             this.checkEditEmail.Name = "checkEditEmail";
             this.checkEditEmail.Properties.Caption = "Email";
             this.checkEditEmail.Size = new System.Drawing.Size(93, 19);
-            this.checkEditEmail.TabIndex = 0;
+            this.checkEditEmail.TabIndex = 13;
             this.checkEditEmail.CheckedChanged += new System.EventHandler(this.checkEditEmail_CheckedChanged);
             // 
             // checkEditMaHocSinh
@@ -287,7 +298,7 @@
             this.checkEditMaHocSinh.Name = "checkEditMaHocSinh";
             this.checkEditMaHocSinh.Properties.Caption = "Mã học sinh:";
             this.checkEditMaHocSinh.Size = new System.Drawing.Size(91, 19);
-            this.checkEditMaHocSinh.TabIndex = 0;
+            this.checkEditMaHocSinh.TabIndex = 4;
             this.checkEditMaHocSinh.CheckedChanged += new System.EventHandler(this.checkEditMaHocSinh_CheckedChanged);
             // 
             // panelControlButtonTim
@@ -296,7 +307,6 @@
             this.panelControlButtonTim.Controls.Add(this.simpleButtonXuatBaoCao);
             this.panelControlButtonTim.Controls.Add(this.simpleButtonXoaDK);
             this.panelControlButtonTim.Controls.Add(this.simpleButtonSearch);
-            this.panelControlButtonTim.Controls.Add(this.radioGroupTim);
             this.panelControlButtonTim.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControlButtonTim.Location = new System.Drawing.Point(0, 150);
             this.panelControlButtonTim.Name = "panelControlButtonTim";
@@ -306,52 +316,40 @@
             // simpleButtonDong
             // 
             this.simpleButtonDong.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonDong.Location = new System.Drawing.Point(623, 13);
+            this.simpleButtonDong.Location = new System.Drawing.Point(611, 13);
             this.simpleButtonDong.Name = "simpleButtonDong";
             this.simpleButtonDong.Size = new System.Drawing.Size(104, 35);
-            this.simpleButtonDong.TabIndex = 21;
+            this.simpleButtonDong.TabIndex = 20;
             this.simpleButtonDong.Text = "Đóng";
             // 
             // simpleButtonXuatBaoCao
             // 
             this.simpleButtonXuatBaoCao.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonXuatBaoCao.Location = new System.Drawing.Point(496, 13);
+            this.simpleButtonXuatBaoCao.Location = new System.Drawing.Point(479, 13);
             this.simpleButtonXuatBaoCao.Name = "simpleButtonXuatBaoCao";
             this.simpleButtonXuatBaoCao.Size = new System.Drawing.Size(104, 35);
-            this.simpleButtonXuatBaoCao.TabIndex = 21;
+            this.simpleButtonXuatBaoCao.TabIndex = 19;
             this.simpleButtonXuatBaoCao.Text = "Xuất báo cáo";
             // 
             // simpleButtonXoaDK
             // 
             this.simpleButtonXoaDK.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonXoaDK.Location = new System.Drawing.Point(369, 13);
+            this.simpleButtonXoaDK.Location = new System.Drawing.Point(347, 13);
             this.simpleButtonXoaDK.Name = "simpleButtonXoaDK";
             this.simpleButtonXoaDK.Size = new System.Drawing.Size(104, 35);
-            this.simpleButtonXoaDK.TabIndex = 21;
+            this.simpleButtonXoaDK.TabIndex = 18;
             this.simpleButtonXoaDK.Text = "Xóa điều kiện";
+            this.simpleButtonXoaDK.Click += new System.EventHandler(this.simpleButtonXoaDK_Click);
             // 
             // simpleButtonSearch
             // 
             this.simpleButtonSearch.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonSearch.Location = new System.Drawing.Point(245, 13);
+            this.simpleButtonSearch.Location = new System.Drawing.Point(218, 13);
             this.simpleButtonSearch.Name = "simpleButtonSearch";
             this.simpleButtonSearch.Size = new System.Drawing.Size(104, 35);
-            this.simpleButtonSearch.TabIndex = 21;
+            this.simpleButtonSearch.TabIndex = 17;
             this.simpleButtonSearch.Text = "Tìm kiếm";
             this.simpleButtonSearch.Click += new System.EventHandler(this.simpleButtonSearch_Click);
-            // 
-            // radioGroupTim
-            // 
-            this.radioGroupTim.EditValue = ((short)(0));
-            this.radioGroupTim.Location = new System.Drawing.Point(15, 13);
-            this.radioGroupTim.Name = "radioGroupTim";
-            this.radioGroupTim.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.radioGroupTim.Properties.Appearance.Options.UseFont = true;
-            this.radioGroupTim.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(0)), "Tìm gần đúng"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((short)(1)), "Tìm chính xác")});
-            this.radioGroupTim.Size = new System.Drawing.Size(213, 34);
-            this.radioGroupTim.TabIndex = 1;
             // 
             // panelControlNamHoc
             // 
@@ -382,7 +380,7 @@
             this.treeListSearch.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
             this.treeListSearch.Size = new System.Drawing.Size(245, 149);
-            this.treeListSearch.TabIndex = 1;
+            this.treeListSearch.TabIndex = 3;
             this.treeListSearch.TreeLineStyle = DevExpress.XtraTreeList.LineStyle.Large;
             this.treeListSearch.AfterCheckNode += new DevExpress.XtraTreeList.NodeEventHandler(this.treeListSearch_AfterCheckNode);
             // 
@@ -426,7 +424,7 @@
             this.checkEditTatCaNam.Name = "checkEditTatCaNam";
             this.checkEditTatCaNam.Properties.Caption = "Tìm tất cả các năm";
             this.checkEditTatCaNam.Size = new System.Drawing.Size(133, 19);
-            this.checkEditTatCaNam.TabIndex = 4;
+            this.checkEditTatCaNam.TabIndex = 1;
             this.checkEditTatCaNam.CheckedChanged += new System.EventHandler(this.checkEditTatCaNam_CheckedChanged);
             // 
             // comboBoxEditNamHoc
@@ -436,7 +434,7 @@
             this.comboBoxEditNamHoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditNamHoc.Size = new System.Drawing.Size(137, 20);
-            this.comboBoxEditNamHoc.TabIndex = 3;
+            this.comboBoxEditNamHoc.TabIndex = 2;
             this.comboBoxEditNamHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHoc_SelectedIndexChanged);
             // 
             // labelControlNamHoc
@@ -662,14 +660,29 @@
             // 
             // gridControlSearchHocSinh
             // 
+            this.gridControlSearchHocSinh.ContextMenuStrip = this.contextMenuStrip1;
             this.gridControlSearchHocSinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlSearchHocSinh.Location = new System.Drawing.Point(0, 240);
             this.gridControlSearchHocSinh.MainView = this.gridView1;
             this.gridControlSearchHocSinh.Name = "gridControlSearchHocSinh";
             this.gridControlSearchHocSinh.Size = new System.Drawing.Size(995, 183);
-            this.gridControlSearchHocSinh.TabIndex = 1;
+            this.gridControlSearchHocSinh.TabIndex = 21;
             this.gridControlSearchHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menucontextXemHoSo});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(179, 48);
+            // 
+            // menucontextXemHoSo
+            // 
+            this.menucontextXemHoSo.Name = "menucontextXemHoSo";
+            this.menucontextXemHoSo.Size = new System.Drawing.Size(178, 22);
+            this.menucontextXemHoSo.Text = "Xem hồ sơ học sinh";
+            this.menucontextXemHoSo.Click += new System.EventHandler(this.menucontextXemHoSo_Click);
             // 
             // frmSearchHocSinh
             // 
@@ -693,6 +706,7 @@
             this.panelControlDKienTim.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNDungDKien)).EndInit();
             this.panelControlNDungDKien.ResumeLayout(false);
+            this.panelControlNDungDKien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupGioiTinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhDen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhTu.Properties)).EndInit();
@@ -708,7 +722,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkEditMaHocSinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlButtonTim)).EndInit();
             this.panelControlButtonTim.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radioGroupTim.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamHoc)).EndInit();
             this.panelControlNamHoc.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.treeListSearch)).EndInit();
@@ -720,6 +733,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditNamHoc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearchHocSinh)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -765,12 +779,14 @@
         private DevExpress.XtraEditors.RadioGroup radioGroupGioiTinh;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
-        private DevExpress.XtraEditors.RadioGroup radioGroupTim;
         private DevExpress.XtraEditors.CheckEdit checkEditTatCaNam;
         private DevExpress.XtraEditors.SimpleButton simpleButtonDong;
         private DevExpress.XtraEditors.SimpleButton simpleButtonXuatBaoCao;
         private DevExpress.XtraEditors.SimpleButton simpleButtonXoaDK;
         private DevExpress.XtraEditors.SimpleButton simpleButtonSearch;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menucontextXemHoSo;
 
     }
 }

@@ -122,7 +122,10 @@ namespace QLHS.DAL
             List<HocSinhDTO> hsResult = new List<HocSinhDTO>();
             string oper = " LIKE ";
             string per = "%";
-            string sql = "SELECT hsinh.MaHocSinh, TenHocSinh, GioiTinh, NgaySinh, NoiSinh, "
+            string sql = "SELECT distinct hsinh.MaHocSinh, TenHocSinh, "
+                          + " GioiTinh = (CASE GioiTinh WHEN 0 THEN N'Nam' "
+                          + " WHEN 1 THEN N'Nữ' END), "
+                          + " NgaySinh, NoiSinh, "
                           + " Email, DiaChi, TenLop, TenGiaoVien "
                           + " FROM HOCSINH hsinh, GIAOVIEN gvien, LOP lop, PHANLOP plop"
                           + " WHERE lop.MaGiaoVien=gvien.MaGiaoVien AND lop.MaLop=plop.MaLop AND"
@@ -138,7 +141,8 @@ namespace QLHS.DAL
             //tên học sinh
             if (!hs.TenHocSinh.Equals(""))
             {
-                where += " AND TenHocSinh " + oper + "'" + per + hs.TenHocSinh + per + "' "; 
+                where += " AND (TenHocSinh " + oper + "N'" + per + hs.TenHocSinh + per + "' ";
+                where += "OR dbo.fnChuyenKhongDau(TenHocSinh) " + oper + "N'" + per + hs.TenHocSinh + per + "' )";
             }
 
             //giới tính
@@ -158,11 +162,18 @@ namespace QLHS.DAL
             {
                 where += "AND YEAR(NgaySinh)  <='" + hs.NamSinhDen + "' ";
             }
+
+            //email
+            if (!hs.Email.Equals(""))
+            {
+                where += " AND Email " + oper + "'" + per + hs.Email + per + "' ";
+            }
             
             //địa chỉ
             if (!hs.DiaChi.Equals(""))
             {
-                where += " AND DiaChi " + oper + "'" + per + hs.DiaChi + per + "' ";            
+                where += " AND (DiaChi " + oper + "'" + per + hs.DiaChi + per + "' ";
+                where += "OR dbo.fnChuyenKhongDau(DiaChi) " + oper + "N'" + per + hs.DiaChi + per + "') ";
             }
            
             // Nếu tìm trong trong các lớp
@@ -184,5 +195,12 @@ namespace QLHS.DAL
             return GetTable(sql);
         }
         #endregion
+
+        public DataTable LayDTTenHocSinh()
+        {
+            string sql = "SELECT TenHocSinh FROM HOCSINH";
+            return GetTable(sql);
+        }
+        
     }
 }

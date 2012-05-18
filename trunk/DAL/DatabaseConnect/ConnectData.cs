@@ -24,7 +24,7 @@ namespace QLHS.DAL
                 else
                     System.Windows.Forms.Application.Exit();
             }
-         
+
             Connect();
         }
 
