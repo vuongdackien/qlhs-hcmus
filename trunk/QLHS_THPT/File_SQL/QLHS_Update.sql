@@ -1,6 +1,10 @@
 ﻿----------------------------------------------------------
 --drop database QLHS
-
+use master
+GO
+drop database QLHS
+GO
+create database QLHS
 GO
 USE QLHS
 ----------------------------------------------------------
@@ -249,23 +253,24 @@ GO
 --Table HOCSINH
 set dateformat dmy
 GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) VALUES	
-('HS00000001',  N'Nguyễn Hồng Phú', 'hongphu8790@gmail.com', 0,  '08-07-1990',	N'TP.HCM', N'Q.9'),
-('HS00000002',	N'Nguyễn Duy Hà', 'duyha@gmail.com', 0,	'01-01-1990', N'TP.HCM', N'Q.9'),
-('HS00000003',	N'Nguyễn Thị Mỷ Diện', 'mydien2009@gmail.com', 1, '20-09-1990',	N'Vĩnh Long', N'Vũng Liêm'),
-('HS00000004',	N'Nguyễn Văn Đại', 'vandai@gmail.com', 0, '01-01-1990',	N'Hải Dương', N'Không Biết'),
-('HS00000005',	N'Nguyễn Văn An', 'vanan@gmail.com', 0,	'08-07-1991', N'TP.HCM', N'Q.9'),
-('HS00000006',	N'Nguyễn Bình Minh', 'binhminh@gmail.com', 0, '01-01-1992',	N'TP.HCM', N'Q.9'),
-('HS00000007',	N'Nguyễn Thị Lan Anh', 'lananh@gmail.com', 1, '20-09-1991', N'Vĩnh Long', N'Vũng Liêm'),
-('HS00000008',	N'Lê Thị Thu Hà', 'thuha@gmail.com', 1,	'01-01-1992', N'Hải Dương',	N'Không Biết'),
-('HS00000009',	N'Nguyễn Thị Thanh Trúc', 'thanhtruc@gmail.com', 1,	'08-07-1993', N'TP.HCM', N'Q.9'),
-('HS00000010',	N'Trần Duy Khoa', 'duykhoa@gmail.com', 0, '01-01-1991',	N'TP.HCM', N'Q.9'),
-('HS00000011',	N'Nguyễn Thị Thùy Dương', 'thuyduong@gmail.com', 1,	'20-09-1992', N'Vĩnh Long',	N'Vũng Liêm'),
-('HS00000012',	N'Nguyễn Thị Bảo Ngọc', 'baongoc@gmail.com', 1,	'01-01-1991', N'Hải Dương',	N'Không Biết'),
-('HS00000013',	N'Nguyễn Văn Tân', 'vanTan@gmail.com', 0, '08-07-1993', N'TP.HCM', N'Q.9'),
-('HS00000014',	N'Nguyễn Bình Minh', 'binhminh@gmail.com', 0, '01-01-1992',	N'TP.HCM', N'Q.9'),
-('HS00000015',	N'Huỳnh Thanh Tùng', 'lananh@gmail.com', 0,	'20-09-1993', N'Vĩnh Long', N'Vũng Liêm'),
-('HS00000016',	N'Lê Thị Ngọc Thu', 'thuha@gmail.com', 1, '01-01-1992', N'Hải Dương', N'Không Biết')
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
+SELECT	
+'HS00000001',   N'Nguyễn Hồng Phú', 'hongphu8790@gmail.com', 0,  '08-07-1990',	N'TP.HCM', N'Q.9' UNION SELECT 
+'HS00000002',	N'Nguyễn Duy Hà', 'duyha@gmail.com', 0,	'01-01-1990', N'TP.HCM', N'Q.9' UNION SELECT 
+'HS00000003',	N'Nguyễn Thị Mỷ Diện', 'mydien2009@gmail.com', 1, '20-09-1990',	N'Vĩnh Long', N'Vũng Liêm' UNION SELECT 
+'HS00000004',	N'Nguyễn Văn Đại', 'vandai@gmail.com', 0, '01-01-1990',	N'Hải Dương', N'Không Biết' UNION SELECT 
+'HS00000005',	N'Nguyễn Văn An', 'vanan@gmail.com', 0,	'08-07-1991', N'TP.HCM', N'Q.9' UNION SELECT 
+'HS00000006',	N'Nguyễn Bình Minh', 'binhminh@gmail.com', 0, '01-01-1992',	N'TP.HCM', N'Q.9' UNION SELECT 
+'HS00000007',	N'Nguyễn Thị Lan Anh', 'lananh@gmail.com', 1, '20-09-1991', N'Vĩnh Long', N'Vũng Liêm' UNION SELECT 
+'HS00000008',	N'Lê Thị Thu Hà', 'thuha@gmail.com', 1,	'01-01-1992', N'Hải Dương',	N'Không Biết' UNION SELECT 
+'HS00000009',	N'Nguyễn Thị Thanh Trúc', 'thanhtruc@gmail.com', 1,	'08-07-1993', N'TP.HCM', N'Q.9' UNION SELECT 
+'HS00000010',	N'Trần Duy Khoa', 'duykhoa@gmail.com', 0, '01-01-1991',	N'TP.HCM', N'Q.9' UNION SELECT 
+'HS00000011',	N'Nguyễn Thị Thùy Dương', 'thuyduong@gmail.com', 1,	'20-09-1992', N'Vĩnh Long',	N'Vũng Liêm' UNION SELECT 
+'HS00000012',	N'Nguyễn Thị Bảo Ngọc', 'baongoc@gmail.com', 1,	'01-01-1991', N'Hải Dương',	N'Không Biết' UNION SELECT 
+'HS00000013',	N'Nguyễn Văn Tân', 'vantan@gmail.com', 0, '08-07-1993', N'TP.HCM', N'Q.9' UNION SELECT 
+'HS00000014',	N'Nguyễn Bình Minh', 'binhminh@gmail.com', 0, '01-01-1992',	N'TP.HCM', N'Q.9' UNION SELECT 
+'HS00000015',	N'Huỳnh Thanh Tùng', 'lananh@gmail.com', 0,	'20-09-1993', N'Vĩnh Long', N'Vũng Liêm' UNION SELECT 
+'HS00000016',	N'Lê Thị Ngọc Thu', 'thuha@gmail.com', 1, '01-01-1992', N'Hải Dương', N'Không Biết'
 
 
 --Table GIAOVIEN
@@ -279,103 +284,101 @@ INSERT INTO GIAOVIEN ([MaGiaoVien],[TenGiaoVien]) VALUES
 
 --NAMHOC
 GO	
-INSERT INTO NAMHOC ([MaNamHoc],[TenNamHoc])  VALUES	
-('NH1112',	'2011 - 2012'),
-('NH1213',	'2012 - 2013')
+INSERT INTO NAMHOC ([MaNamHoc],[TenNamHoc]) 
+SELECT 'NH1112',	'2011 - 2012' UNION
+SELECT 'NH1213',	'2012 - 2013' UNION
 
 --Table LOP
 GO
-INSERT INTO LOP ([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien]) VALUES 
-('10A01NH1112',	'10A1',	10,	'NH1112', 40, 'GV001'),
-('10A02NH1112',	'10A2',	10,	'NH1112', 40, 'GV002'),
-('11A01NH1112',	'11A1',	11,	'NH1112', 40, 'GV003'),
-('12A01NH1112',	'12A1',	12,	'NH1112', 40, 'GV004')
-
+INSERT INTO LOP ([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien])  
+SELECT '10A01NH1112',	'10A1',	10,	'NH1112', 40, 'GV001' UNION 
+SELECT '10A02NH1112',	'10A2',	10,	'NH1112', 40, 'GV002' UNION 
+SELECT '11A01NH1112',	'11A1',	11,	'NH1112', 40, 'GV003' UNION 
+SELECT '12A01NH1112',	'12A1',	12,	'NH1112', 40, 'GV004'
 -- Mon hoc
 GO
-INSERT INTO MONHOC(MaMonHoc,TenMonHoc,SoTiet,HeSo) VALUES
-('daoduc',N'Đạo đức',45,1),
-('dia',N'Địa lý',45,1),
-('hoa',N'Hóa học',45,1),
-('ly',N'Vật lý',45,	1),
-('sinh',N'Sinh học',45,1),
-('su',N'Lịch sử',45,1),
-('theduc',N'Thể dục',45,1),
-('toan',N'Toán',60,2),
-('van',N'Văn học',60,2)
+INSERT INTO MONHOC(MaMonHoc,TenMonHoc,SoTiet,HeSo) 
+SELECT 'daoduc',N'Đạo đức',45,1 UNION 
+SELECT 'dia',N'Địa lý',45,1 UNION 
+SELECT 'hoa',N'Hóa học',45,1 UNION 
+SELECT 'ly',N'Vật lý',45,	1 UNION 
+SELECT 'sinh',N'Sinh học',45,1 UNION 
+SELECT 'su',N'Lịch sử',45,1 UNION 
+SELECT 'theduc',N'Thể dục',45,1 UNION 
+SELECT 'toan',N'Toán',60,2 UNION 
+SELECT 'van',N'Văn học',60,2
 
 -- Phan lop
 GO	
-INSERT INTO PHANLOP ([STT],[MaHocSinh],[MaLop]) VALUES
-(1,'HS00000001',	'10A01NH1112'),
-(2,'HS00000002',	'10A01NH1112'),
-(3,'HS00000003',	'10A01NH1112'),
-(4,'HS00000004',	'10A01NH1112'),
-(1,'HS00000005',	'10A02NH1112'),
-(2,'HS00000006',	'10A02NH1112'),
-(3,'HS00000007',	'10A02NH1112'),
-(4,'HS00000008',	'10A02NH1112'),
-(1,'HS00000009',	'11A01NH1112'),
-(2,'HS00000010',	'11A01NH1112'),
-(3,'HS00000011',	'11A01NH1112'),
-(4,'HS00000012',	'11A01NH1112'),
-(1,'HS00000013',	'12A01NH1112'),
-(2,'HS00000014',	'12A01NH1112'),
-(3,'HS00000015',	'12A01NH1112'),
-(4,'HS00000016',	'12A01NH1112')
+INSERT INTO PHANLOP ([STT],[MaHocSinh],[MaLop]) 
+SELECT 1,'HS00000001',	'10A01NH1112' UNION 
+SELECT 2,'HS00000002',	'10A01NH1112' UNION 
+SELECT 3,'HS00000003',	'10A01NH1112' UNION 
+SELECT 4,'HS00000004',	'10A01NH1112' UNION 
+SELECT 1,'HS00000005',	'10A02NH1112' UNION 
+SELECT 2,'HS00000006',	'10A02NH1112' UNION 
+SELECT 3,'HS00000007',	'10A02NH1112' UNION 
+SELECT 4,'HS00000008',	'10A02NH1112' UNION 
+SELECT 1,'HS00000009',	'11A01NH1112' UNION 
+SELECT 2,'HS00000010',	'11A01NH1112' UNION 
+SELECT 3,'HS00000011',	'11A01NH1112' UNION 
+SELECT 4,'HS00000012',	'11A01NH1112' UNION 
+SELECT 1,'HS00000013',	'12A01NH1112' UNION 
+SELECT 2,'HS00000014',	'12A01NH1112' UNION 
+SELECT 3,'HS00000015',	'12A01NH1112' UNION 
+SELECT 4,'HS00000016',	'12A01NH1112'
 
 -- Quy Dinh
-INSERT INTO QUYDINH (Khoa,GiaTri) VALUES 
-('DiaChiTruong','Q9 - TP.HCM'),
-('DiemChuan','8'),
-('SiSoCanDuoi','30'),
-('SiSoCanTren','45'),
-('SoLuongLop','20'),
-('TenTruong',N'THPT Nguyễn Huệ'),
-('SoMonHoc','15'),
-('TuoiCanDuoi','15'),
-('TuoiCanTren','18')
+INSERT INTO QUYDINH (Khoa,GiaTri)  
+SELECT 'DiaChiTruong','Q9 - TP.HCM' UNION 
+SELECT 'DiemChuan','8' UNION 
+SELECT 'SiSoCanDuoi','30' UNION 
+SELECT 'SiSoCanTren','45' UNION 
+SELECT 'SoLuongLop','20' UNION 
+SELECT 'TenTruong',N'THPT Nguyễn Huệ' UNION 
+SELECT 'SoMonHoc','15' UNION 
+SELECT 'TuoiCanDuoi','15' UNION 
+SELECT 'TuoiCanTren','18'
 
 -- Bảng điểm
 INSERT INTO BANGDIEM (MaHocSinh,MaMonHoc,DM_1,DM_2,D15_1,D15_2,D15_3,
 					D15_4,D1T_1.D1T_2,DThi,MaLop,MaHocKy)
-VALUES
-('HS00000001','daoduc',6,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000001','dia',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000001','hoa',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000001','ly',8,7,7,7.5,8,7,9,10,'10A01NH1112',1),
-('HS00000001','sinh',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000001','su',8,7,6.5,7.5,8,8,8,9,'10A01NH1112',1),
-('HS00000001','theduc',8,7,6.5,7.5,8,4,8,9,'10A01NH1112',1),
-('HS00000001','toan',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000001','van',8,7,6.5,7.5,8,4,8,9,'10A01NH1112',1),
-('HS00000002','daoduc',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000002','dia',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000002','hoa',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000002','ly',6,7,7,7.5,8,7,9,10,'10A01NH1112',1),
-('HS00000002','sinh',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000002','su',4,7,6.5,7.5,8,8,8,9,'10A01NH1112',1),
-('HS00000002','theduc',8,7,6.5,7.5,8,9,8,9,'10A01NH1112',1),
-('HS00000002','toan',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000002','van',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000003','daoduc',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000003','dia',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000003','hoa',4,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000003','ly',8,7,7,7.5,8,7,9,10,'10A01NH1112',1),
-('HS00000003','sinh',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000003','su',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000003','theduc',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000003','toan',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000003','van',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000004','daoduc',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000004','dia',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000004','hoa',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000004','ly',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000004','sinh',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000004','su',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000004','theduc',9,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000004','toan',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1),
-('HS00000004','van',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1)
+SELECT 'HS00000001','daoduc',6,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000001','dia',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000001','hoa',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000001','ly',8,7,7,7.5,8,7,9,10,'10A01NH1112',1 UNION 
+SELECT 'HS00000001','sinh',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000001','su',8,7,6.5,7.5,8,8,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000001','theduc',8,7,6.5,7.5,8,4,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000001','toan',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000001','van',8,7,6.5,7.5,8,4,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000002','daoduc',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000002','dia',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000002','hoa',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000002','ly',6,7,7,7.5,8,7,9,10,'10A01NH1112',1 UNION 
+SELECT 'HS00000002','sinh',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000002','su',4,7,6.5,7.5,8,8,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000002','theduc',8,7,6.5,7.5,8,9,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000002','toan',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000002','van',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000003','daoduc',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000003','dia',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000003','hoa',4,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000003','ly',8,7,7,7.5,8,7,9,10,'10A01NH1112',1 UNION 
+SELECT 'HS00000003','sinh',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000003','su',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000003','theduc',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000003','toan',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000003','van',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000004','daoduc',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000004','dia',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000004','hoa',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000004','ly',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000004','sinh',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000004','su',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000004','theduc',9,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000004','toan',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1 UNION 
+SELECT 'HS00000004','van',8,7,6.5,7.5,8,7,8,9,'10A01NH1112',1
 
 --Function chuyển có dấu thành không dấu
 GO
