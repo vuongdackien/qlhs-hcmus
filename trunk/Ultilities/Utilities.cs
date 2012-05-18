@@ -14,7 +14,7 @@ namespace Utilities
         public static string Yeu = "HS Yếu";
         public static string Kem = "HS Kém";
     }
-    public static partial class StringUtilities
+    public static partial class ObjectUtilities
     {
         public static NguoiDungDTO user = null;
 
@@ -191,6 +191,15 @@ namespace Utilities
             }
             return s.ToString();
         }
-     
+        /// <summary>
+        /// Hàm làm tròn 
+        /// </summary>
+        /// <param name="so"></param>
+        /// <param name="coutDevide"></param>
+        /// <returns></returns>
+        public static double LamTron(double so, int coutDevide = 4)
+        {
+            return Math.Round(so * coutDevide, MidpointRounding.ToEven) / coutDevide;
+        }
     }
 }

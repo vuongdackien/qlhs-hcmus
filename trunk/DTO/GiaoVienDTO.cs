@@ -16,9 +16,6 @@ namespace QLHS.DTO
 
         public string MaGiaoVien { get; set; }
         public string TenGiaoVien { get; set; }
-        
-	
-        
 
     }
 }

@@ -116,7 +116,6 @@
             this.treeListLopHoc.OptionsView.ShowIndicator = false;
             this.treeListLopHoc.Size = new System.Drawing.Size(178, 259);
             this.treeListLopHoc.TabIndex = 1;
-            this.treeListLopHoc.BeforeFocusNode += new DevExpress.XtraTreeList.BeforeFocusNodeEventHandler(this.treeListLopHoc_BeforeFocusNode);
             this.treeListLopHoc.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeListLopHoc_FocusedNodeChanged);
             // 
             // panelControlChooseYear
@@ -153,7 +152,6 @@
             this.comboBoxEditMonHoc.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditMonHoc.Size = new System.Drawing.Size(150, 20);
             this.comboBoxEditMonHoc.TabIndex = 8;
-            this.comboBoxEditMonHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditMonHoc_SelectedIndexChanged);
             // 
             // comboBoxEditHocKy
             // 
@@ -372,7 +370,6 @@
             this.advBandedGridView1.OptionsView.EnableAppearanceOddRow = true;
             this.advBandedGridView1.OptionsView.ShowGroupPanel = false;
             this.advBandedGridView1.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
-            this.advBandedGridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.advBandedGridView1_CellValueChanged);
             this.advBandedGridView1.InvalidRowException += new DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventHandler(this.advBandedGridView1_InvalidRowException);
             this.advBandedGridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.advBandedGridView1_ValidateRow);
             this.advBandedGridView1.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.advBandedGridView1_ValidatingEditor);

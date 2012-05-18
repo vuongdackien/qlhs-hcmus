@@ -10,7 +10,7 @@ namespace QLHS.DAL
 { 
     public class GiaoVienDAL : ConnectData
     {
-       GiaoVienDTO GV;
+        GiaoVienDTO GV;
         GiaoVienDAL Gvdal=new GiaoVienDAL() ;
 
         public void ThemGiaoVien(GiaoVienDTO GV)

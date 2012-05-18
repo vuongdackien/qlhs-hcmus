@@ -22,7 +22,17 @@ namespace QLHS.DTO
             get { return _MonHocDTO ; }
             set { _MonHocDTO = value; }
         }
-         
+
+        private LopDTO _LopDTO = new LopDTO();
+
+        public LopDTO LopDTO
+        {
+            get { return _LopDTO; }
+            set { _LopDTO = value; }
+        }
+
+        public int MaHocKy { get; set; }
+        
         public double DM_1 { get; set; }
         public double DM_2 { get; set; }
         public double D15_1 { get; set; }
@@ -32,5 +42,7 @@ namespace QLHS.DTO
         public double D1T_1 { get; set; }
         public double D1T_2 { get; set; }
         public double DThi { get; set; }
+
+        public double DTB { get; set; }
     }
 }
