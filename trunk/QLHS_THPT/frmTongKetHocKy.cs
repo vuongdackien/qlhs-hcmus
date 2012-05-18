@@ -14,7 +14,7 @@ namespace QLHS
 {
     public partial class frmTongKetHocKy : DevExpress.XtraEditors.XtraForm
     {
-        private BangDiemBUS _BangDiemBUS = new BangDiemBUS();
+        private BangDiemBUS _bangDiemBUS = new BangDiemBUS();
         public frmTongKetHocKy()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace QLHS
 
         private void simpleButtonXuatBD_Click(object sender, EventArgs e)
         {
-            var ds = _BangDiemBUS.LayDTDiem_HocKy_Lop("10A01NH1112", "1");
+            var ds = _bangDiemBUS.LayDTDiem_HocKy_Lop("10A01NH1112", "1");
             var rp = new rptTongKetHocKy();
             rp.SetDataSource(ds);
 

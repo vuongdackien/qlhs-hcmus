@@ -16,15 +16,15 @@ namespace QLHS
     public partial class frmBangDiemMonHoc : DevExpress.XtraEditors.XtraForm
     {
 
-        private KhoiBUS _KhoiBUS;
-        private LopBUS _LopBUS;
-        private NamHocBUS _NamHocBUS;
-        private HocSinhBUS _HocSinhBUS;
-        private BangDiemBUS _BangDiemBUS;
-        private HocKyBUS _HocKyBUS;
-        private MonHocBUS _MonHocBUS;
+        private KhoiBUS _khoiBUS;
+        private LopBUS _lopBUS;
+        private NamHocBUS _namHocBUS;
+        private HocSinhBUS _hocSinhBUS;
+        private BangDiemBUS _bangDiemBUS;
+        private HocKyBUS _hocKyBUS;
+        private MonHocBUS _monHocBUS;
         private bool _has_edit_bangdiem; // Ghi nhận có chỉnh sửa bảng điểm
-        private int _index_monhoc, _index_hocky;
+        private int _indexMonhoc, _indexHocky;
 
 
 
@@ -32,13 +32,13 @@ namespace QLHS
         {
             InitializeComponent();
 
-            _KhoiBUS = new KhoiBUS();
-            _LopBUS = new LopBUS();
-            _NamHocBUS = new NamHocBUS();
-            _HocSinhBUS = new HocSinhBUS();
-            _BangDiemBUS = new BangDiemBUS();
-            _HocKyBUS = new HocKyBUS();
-            _MonHocBUS = new MonHocBUS();
+            _khoiBUS = new KhoiBUS();
+            _lopBUS = new LopBUS();
+            _namHocBUS = new NamHocBUS();
+            _hocSinhBUS = new HocSinhBUS();
+            _bangDiemBUS = new BangDiemBUS();
+            _hocKyBUS = new HocKyBUS();
+            _monHocBUS = new MonHocBUS();
             _has_edit_bangdiem = false;
         }
 
@@ -53,7 +53,7 @@ namespace QLHS
             {
 
                 item.Nodes.Clear();
-                list_LopNode = _LopBUS.LayListLop_MaNam_MaKhoi(
+                list_LopNode = _lopBUS.LayListLop_MaNam_MaKhoi(
                                     Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc),
                                     item.GetValue("MaKhoi").ToString()
                                );
@@ -77,10 +77,10 @@ namespace QLHS
                 gridControlTongKetNamHoc.DataSource = null;
                 return;
             }
-            _index_monhoc = comboBoxEditMonHoc.SelectedIndex;
-            _index_hocky = comboBoxEditHocKy.SelectedIndex;
+            _indexMonhoc = comboBoxEditMonHoc.SelectedIndex;
+            _indexHocky = comboBoxEditHocKy.SelectedIndex;
             gridControlTongKetNamHoc.DataSource =
-               _BangDiemBUS.LayBangDiem(treeListLopHoc.FocusedNode.GetValue("MaKhoi").ToString(),
+            _bangDiemBUS.LayBangDiem(treeListLopHoc.FocusedNode.GetValue("MaKhoi").ToString(),
                                                 Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy),
                                                 Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditMonHoc));
        
@@ -89,16 +89,16 @@ namespace QLHS
         {
             treeListLopHoc.ParentFieldName = "MaKhoi";
             treeListLopHoc.PreviewFieldName = "TenKhoi";
-            treeListLopHoc.DataSource = _KhoiBUS.LayDTKhoi();
+            treeListLopHoc.DataSource = _khoiBUS.LayDTKhoi();
 
             Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
-                                                         _NamHocBUS.LayDTNamHoc(),
+                                                         _namHocBUS.LayDTNamHoc(),
                                                         "MaNamHoc", "TenNamHoc", 0);
             Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditHocKy,
-                                                        _HocKyBUS.LayDTHocKy(),
+                                                        _hocKyBUS.LayDTHocKy(),
                                                         "MaHocKy", "TenHocKy", 0);
             Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditMonHoc,
-                                                        _MonHocBUS.LayDT_DanhSach_MonHoc(),
+                                                        _monHocBUS.LayDT_DanhSach_MonHoc(),
                                                         "MaMonHoc", "TenMonHoc", 0);
             
            this.CapNhatListLop();
@@ -125,7 +125,7 @@ namespace QLHS
                 {
                     // Ngừng event change comboBoxEditHocKy
                     comboBoxEditHocKy.SelectedIndexChanged -= new EventHandler(comboBoxEditHocKy_SelectedIndexChanged);
-                    comboBoxEditHocKy.SelectedIndex = _index_monhoc; // Phục hồi lại selectindex
+                    comboBoxEditHocKy.SelectedIndex = _indexMonhoc; // Phục hồi lại selectindex
                     // Tiếp tục event change comboBoxEditHocKy
                     comboBoxEditHocKy.SelectedIndexChanged += new EventHandler(comboBoxEditHocKy_SelectedIndexChanged);
                     return;
@@ -150,7 +150,7 @@ namespace QLHS
                 {
                     // Ngừng event change comboBoxEditMonHoc
                     comboBoxEditMonHoc.SelectedIndexChanged -= new EventHandler(comboBoxEditMonHoc_SelectedIndexChanged);
-                    comboBoxEditMonHoc.SelectedIndex = _index_monhoc; // Phục hồi lại selectindex
+                    comboBoxEditMonHoc.SelectedIndex = _indexMonhoc; // Phục hồi lại selectindex
                     // Tiếp tục event change comboBoxEditMonHoc
                     comboBoxEditMonHoc.SelectedIndexChanged += new EventHandler(comboBoxEditMonHoc_SelectedIndexChanged);
                     return;
@@ -196,31 +196,55 @@ namespace QLHS
         private void advBandedGridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
             DataRow dr = advBandedGridView1.GetDataRow(e.RowHandle);
-            string msg = "";
-            if (dr["DM_1"] is DBNull && dr["DM_2"] is DBNull)
-                msg =  "miệng";
-            else if (dr["D15_1"] is DBNull && dr["D15_2"] is DBNull
-                    && dr["D15_3"] is DBNull && dr["D15_4"] is DBNull)
-                msg = "15 phút";
-            else if (dr["D1T_1"] is DBNull && dr["D1T_2"] is DBNull)
-                msg = "1 tiết";
-            else if (dr["DThi"] is DBNull)
-                msg = "cuối kỳ";
-            if (!msg.Equals(""))
-                msg = "Bạn chưa nhập cột điểm " + msg +" cho học sinh "
-                       +dr["TenHocSinh"]+" ("+dr["MaHocSinh"]+")."
-                       +"\nBạn có muốn bỏ dòng này và nhập lại lần sau hay không?";
+            BangDiemDTO bangDiem = new BangDiemDTO();
+            bangDiem.HocSinh.MaHocSinh = dr["MaHocSinh"].ToString();
+            bangDiem.HocSinh.TenHocSinh = dr["TenHocSinh"].ToString();
+            bangDiem.MonHoc.MaMonHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditMonHoc);
+            bangDiem.LopDTO.MaLop = treeListLopHoc.FocusedNode.GetValue("MaKhoi").ToString();
+            bangDiem.D15_1 = dr["DM_1"] is DBNull ? -1 : Convert.ToDouble(dr["DM_1"]); 
+            bangDiem.DM_2 = dr["DM_2"] is DBNull ? -1 : Convert.ToDouble(dr["DM_2"]); 
+            bangDiem.D15_1 = dr["D15_1"] is DBNull ? -1 : Convert.ToDouble(dr["D15_1"]);
+            bangDiem.D15_2 = dr["D15_2"] is DBNull ? -1 : Convert.ToDouble(dr["D15_2"]); 
+            bangDiem.D15_3 = dr["D15_3"] is DBNull ? -1 : Convert.ToDouble(dr["D15_3"]); 
+            bangDiem.D15_4 = dr["D15_4"] is DBNull ? -1 : Convert.ToDouble(dr["D15_4"]); 
+            bangDiem.D1T_1 = dr["D1T_1"] is DBNull ? -1 : Convert.ToDouble(dr["D1T_1"]); 
+            bangDiem.D1T_2 = dr["D1T_2"] is DBNull ? -1 : Convert.ToDouble(dr["D1T_2"]);
+            bangDiem.DThi = dr["DThi"] is DBNull ? -1 : Convert.ToDouble(dr["DThi"]);
 
-
-            if (!msg.Equals(""))
+ 
+            try
             {
-                if (Utilities.MessageboxUtilities.MessageQuestionYesNo(msg) == DialogResult.No)
+                // Kiểm tra điểm hợp lệ trên 1 dòng
+                _bangDiemBUS.KiemTraHopLe_TrenDong_BangDiem(bangDiem);
+                // Tính điểm trung bình
+                double dTB_bangdiem = _bangDiemBUS.TinhDiem_TB_Mon_TrenDong(bangDiem);
+                // Gán và hiển thị cột DTB
+                advBandedGridView1.SetRowCellValue(e.RowHandle, "DTB",dTB_bangdiem);
+                // Lưu vào CSDL
+                
+            }
+            catch (Exception ex)
+            {
+                if (Utilities.MessageboxUtilities.MessageQuestionYesNo(ex.Message
+                            + "\nBạn có muốn bỏ dòng này và nhập lại lần sau hay không?") == DialogResult.No)
                 {
                     e.Valid = false;
                 }
+                else
+                {
+                    // Xóa tất cả các cột điểm
+                    advBandedGridView1.SetRowCellValue(e.RowHandle, "DM_1", null);
+                    advBandedGridView1.SetRowCellValue(e.RowHandle, "DM_2", null);
+                    advBandedGridView1.SetRowCellValue(e.RowHandle, "D15_1", null);
+                    advBandedGridView1.SetRowCellValue(e.RowHandle, "D15_2", null);
+                    advBandedGridView1.SetRowCellValue(e.RowHandle, "D15_3", null);
+                    advBandedGridView1.SetRowCellValue(e.RowHandle, "D15_4", null);
+                    advBandedGridView1.SetRowCellValue(e.RowHandle, "D1T_1", null);
+                    advBandedGridView1.SetRowCellValue(e.RowHandle, "D1T_2", null);
+                    advBandedGridView1.SetRowCellValue(e.RowHandle, "DThi", null);
+                    advBandedGridView1.SetRowCellValue(e.RowHandle, "DTB", null);
+                }
             }
-           
-
         }
 
         private void advBandedGridView1_InvalidRowException(object sender, DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventArgs e)
