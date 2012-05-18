@@ -10,29 +10,30 @@ namespace QLHS
 {
     public partial class frmHocSinh : DevExpress.XtraEditors.XtraForm
     {
-        private NamHocBUS _NamHocBUS;
-        private KhoiBUS _KhoiBUS;
-        private LopBUS _LopBUS;
-        private HocSinhBUS _HocSinhBUS;
-        private QuyDinhBUS _QuyDinhBUS;
-        private PhanLopBUS _PhanLopBUS;
+        private NamHocBUS _namHocBUS;
+        private KhoiBUS _khoiBUS;
+        private LopBUS _lopBUS;
+        private HocSinhBUS _hocSinhBUS;
+        private QuyDinhBUS _quyDinhBUS;
+        private PhanLopBUS _phanLopBUS;
         private HocSinhDTO _hocSinhDTO;
+       
         public frmHocSinh()
         {
             InitializeComponent();
-            _NamHocBUS = new NamHocBUS();
-            _KhoiBUS = new KhoiBUS();
-            _LopBUS = new LopBUS();
-            _HocSinhBUS = new HocSinhBUS();
-            _QuyDinhBUS = new QuyDinhBUS();
-            _PhanLopBUS = new PhanLopBUS();
+            _namHocBUS = new NamHocBUS();
+            _khoiBUS = new KhoiBUS();
+            _lopBUS = new LopBUS();
+            _hocSinhBUS = new HocSinhBUS();
+            _quyDinhBUS = new QuyDinhBUS();
+            _phanLopBUS = new PhanLopBUS();
         }
 
         private void frmHocSinh_Load(object sender, EventArgs e)
         {
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,_NamHocBUS.LayDTNamHoc(),
+            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,_namHocBUS.LayDTNamHoc(),
                                                 "MaNamHoc", "TenNamHoc",0);
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoi, _KhoiBUS.LayDTKhoi(),
+            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoi, _khoiBUS.LayDTKhoi(),
                                                 "MaKhoi", "TenKhoi",0);
         }
 
@@ -41,7 +42,7 @@ namespace QLHS
         /// </summary>
         private void LoadComboboxLopHoc(object sender, EventArgs e)
         {
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditLop, _LopBUS.LayDTLop_MaNam_MaKhoi(
+            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditLop, _lopBUS.LayDTLop_MaNam_MaKhoi(
                        Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc),
                          Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi)
                     ), "MaLop", "TenLop", 0);
@@ -88,7 +89,7 @@ namespace QLHS
             }
             else
             {
-                _hocSinhDTO = _HocSinhBUS.LayHoSoHocSinh(MaHocSinh.ToString());
+                _hocSinhDTO = _hocSinhBUS.LayHoSoHocSinh(MaHocSinh.ToString());
                 panelControlChiTietHoSo.Enabled = true;
             }
             spinEditSTTSoDiem.Value = _hocSinhDTO.STT;
@@ -119,7 +120,7 @@ namespace QLHS
         /// </summary>
         private void LoadLai_GridControl_HocSinh()
         {
-            gridControlDSHocSinh.DataSource = _HocSinhBUS.LayDTHocSinh_LopHoc(
+            gridControlDSHocSinh.DataSource = _hocSinhBUS.LayDTHocSinh_LopHoc(
                                Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop)
                    );
         }
@@ -142,7 +143,7 @@ namespace QLHS
             }
             try
             {
-                _HocSinhBUS.LuuHoSoHocSinh(hocSinhDTO, MaLop);
+                _hocSinhBUS.LuuHoSoHocSinh(hocSinhDTO, MaLop);
                 Utilities.MessageboxUtilities.MessageSuccess("Lưu hồ sơ học sinh " + hocSinhDTO.TenHocSinh + " thành công!");
                 this.LoadLai_GridControl_HocSinh();
                 gridViewDSHocSinh.SelectRow(0);
@@ -166,7 +167,7 @@ namespace QLHS
             }
             try
             {
-                _HocSinhBUS.Xoa_HoSo_HocSinh(textEditmaHocSinh.Text);
+                _hocSinhBUS.Xoa_HoSo_HocSinh(textEditmaHocSinh.Text);
                 Utilities.MessageboxUtilities.MessageSuccess("Xóa hồ sơ học sinh thành công!");
                 LoadLai_GridControl_HocSinh();
             }
@@ -179,22 +180,22 @@ namespace QLHS
         private void simpleButtonThemMoi_Click(object sender, EventArgs e)
         {
             string MaLop = (Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop));
-            int SiSoCanTren =  _QuyDinhBUS.LaySiSoCanTren();
-            if(_PhanLopBUS.Dem_SiSo_Lop(MaLop) >= SiSoCanTren)
+            int SiSoCanTren =  _quyDinhBUS.LaySiSoCanTren();
+            if(_phanLopBUS.Dem_SiSo_Lop(MaLop) >= SiSoCanTren)
             { 
                 Utilities.MessageboxUtilities.MessageError("Lớp "+Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditLop)
                                                             +" đã đủ học sinh theo quy định "
                                                             +" ("+SiSoCanTren+" học sinh / 1 lớp)!");
                 return;                                                                        
             }
-            spinEditSTTSoDiem.Value = _PhanLopBUS.Lay_STT_TiepTheo(MaLop);
+            spinEditSTTSoDiem.Value = _phanLopBUS.Lay_STT_TiepTheo(MaLop);
             textEditmaHocSinh.Text = "";
             textEditTenHocSinh.Text = "";
             textEditDiaChi.Text = "";
             textEditEmail.Text = "";
             textEditNoiSinh.Text = "";
-            dateEditNgaySinh.Properties.MinValue = new DateTime(_QuyDinhBUS.LayNamCanDuoi(),1,1);
-            dateEditNgaySinh.Properties.MaxValue = new DateTime(_QuyDinhBUS.LayNamCanTren(), 1, 1);
+            dateEditNgaySinh.Properties.MinValue = new DateTime(_quyDinhBUS.LayNamCanDuoi(),1,1);
+            dateEditNgaySinh.Properties.MaxValue = new DateTime(_quyDinhBUS.LayNamCanTren(), 1, 1);
             textEditTenHocSinh.Focus();
         }
 
@@ -229,7 +230,7 @@ namespace QLHS
             }
             try
             {
-                _PhanLopBUS.CapNhap_STT_HocSinh_Lop(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop));
+                _phanLopBUS.CapNhap_STT_HocSinh_Lop(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop));
                 Utilities.MessageboxUtilities.MessageSuccess("Cập nhật số thự tự cho lớp thành công!");
                 // Load lại gridcontrol học sinh
                 this.LoadLai_GridControl_HocSinh();
