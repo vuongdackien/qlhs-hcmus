@@ -50,6 +50,7 @@ GO
 
 --6. Create table and its columns
 CREATE TABLE [dbo].[PHANLOP] (
+	[STT]			[int]	default 1 NOT NULL,
 	[MaHocSinh]		[varchar](10) NOT NULL,
 	[MaLop]			[varchar](15) NOT NULL);
 GO
@@ -97,7 +98,7 @@ GO
 --11. Create table and its columns
 CREATE TABLE [dbo].[QUYDINH] (
 	[Khoa]			[varchar](50) NOT NULL,
-	[GiaTri]		[int]	      NOT NULL);
+	[GiaTri]		[nvarchar]	(250)     NULL);
 GO
 
 ----------------------------------------------------------
@@ -275,18 +276,18 @@ SELECT
 
 --Table GIAOVIEN
 GO
-INSERT INTO GIAOVIEN ([MaGiaoVien],[TenGiaoVien]) VALUES
-('GV001',  N'Nguyễn Thị Thanh'),
-('GV002',  N'Nguyễn Đăng Khoa'),
-('GV003',  N'Nguyễn Ngọc Anh Thư'),
-('GV004',  N'Phạm Thanh Huy')
+INSERT INTO GIAOVIEN ([MaGiaoVien],[TenGiaoVien]) 
+SELECT 'GV001',  N'Nguyễn Thị Thanh' UNION
+SELECT 'GV002',  N'Nguyễn Đăng Khoa' UNION
+SELECT 'GV003',  N'Nguyễn Ngọc Anh Thư' UNION
+SELECT 'GV004',  N'Phạm Thanh Huy'
 
 
 --NAMHOC
 GO	
 INSERT INTO NAMHOC ([MaNamHoc],[TenNamHoc]) 
 SELECT 'NH1112',	'2011 - 2012' UNION
-SELECT 'NH1213',	'2012 - 2013' UNION
+SELECT 'NH1213',	'2012 - 2013' 
 
 --Table LOP
 GO
