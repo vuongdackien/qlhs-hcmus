@@ -87,9 +87,9 @@ namespace QLHS.BUS
         /// <returns>Bool</returns>
         public bool KiemTraNamSinhHopLe(int namSinh)
         {
-            int TuoiCanDuoi = _quyDinhBUS.LayTuoiCanDuoi(),
-                TuoiCanTren = _quyDinhBUS.LayTuoiCanTren();
-            if(TuoiCanDuoi <= namSinh && namSinh <= TuoiCanTren)
+            int tuoiCanDuoi = _quyDinhBUS.LayTuoiCanDuoi(),
+                tuoiCanTren = _quyDinhBUS.LayTuoiCanTren();
+            if(tuoiCanDuoi <= namSinh && namSinh <= tuoiCanTren)
                 return true;
             return false;
         }
