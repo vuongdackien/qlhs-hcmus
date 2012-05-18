@@ -14,18 +14,18 @@ namespace QLHS
 {
     public partial class frmSearchHocSinh : DevExpress.XtraEditors.XtraForm
     {
-        private KhoiBUS _KhoiBUS;
-        private LopBUS _LopBUS;
-        private NamHocBUS _NamHocBUS;
-        private HocSinhBUS _HocSinhBUS;
+        private KhoiBUS _khoiBUS;
+        private LopBUS _lopBUS;
+        private NamHocBUS _namHocBUS;
+        private HocSinhBUS _hocSinhBUS;
 
         public frmSearchHocSinh()
         {
             InitializeComponent();
-            _KhoiBUS = new KhoiBUS();
-            _LopBUS = new LopBUS();
-            _NamHocBUS = new NamHocBUS();
-            _HocSinhBUS = new HocSinhBUS();
+            _khoiBUS = new KhoiBUS();
+            _lopBUS = new LopBUS();
+            _namHocBUS = new NamHocBUS();
+            _hocSinhBUS = new HocSinhBUS();
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace QLHS
             {
 
                 item.Nodes.Clear();
-                list_LopNode = _LopBUS.LayListLop_MaNam_MaKhoi(
+                list_LopNode = _lopBUS.LayListLop_MaNam_MaKhoi(
                                     Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc),
                                     item.GetValue("MaKhoi").ToString()
                                );
@@ -53,12 +53,12 @@ namespace QLHS
         }
         private AutoCompleteStringCollection Tao_Data_AutoComplete_Cbo_TenHocSinh()
         {
-            DataTable tb = _HocSinhBUS.LayDTTenHocSinh();
+            DataTable tb = _hocSinhBUS.LayDTTenHocSinh();
             AutoCompleteStringCollection cl = new AutoCompleteStringCollection();
             foreach (DataRow rd in tb.Rows)
             {
                 cl.Add(rd["TenHocSinh"].ToString());
-                string[] hoten = Utilities.StringUtilities.LayHoTen(rd["TenHocSinh"].ToString());
+                string[] hoten = Utilities.ObjectUtilities.LayHoTen(rd["TenHocSinh"].ToString());
                 if (hoten[0] != "") 
                     cl.Add(hoten[0]);
                 if (hoten[1] != "") 
@@ -71,11 +71,11 @@ namespace QLHS
         private void frmSearchHocSinh_Load(object sender, EventArgs e)
         {
             Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
-                                                          _NamHocBUS.LayDTNamHoc(),
+                                                          _namHocBUS.LayDTNamHoc(),
                                                           "MaNamHoc", "TenNamHoc",0);
             treeListSearch.ParentFieldName = "MaKhoi";
             treeListSearch.PreviewFieldName = "TenKhoi";
-            treeListSearch.DataSource = _KhoiBUS.LayDTKhoi();
+            treeListSearch.DataSource = _khoiBUS.LayDTKhoi();
 
             textBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -145,11 +145,11 @@ namespace QLHS
                             }
                         }
                     }
-                    kq_TimKiemDS = _HocSinhBUS.TimKiem_HocSinh(hsTimKiemDTO, lopCheck);
+                    kq_TimKiemDS = _hocSinhBUS.TimKiem_HocSinh(hsTimKiemDTO, lopCheck);
                 }
                 else // Tìm trong tất cả các năm, các lớp
                 {
-                    kq_TimKiemDS = _HocSinhBUS.TimKiem_HocSinh(hsTimKiemDTO);
+                    kq_TimKiemDS = _hocSinhBUS.TimKiem_HocSinh(hsTimKiemDTO);
                 }
             }
             catch (Exception ex)
