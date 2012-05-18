@@ -385,3 +385,33 @@ INSERT INTO PHANLOP ([MaHocSinh],[MaLop])
 GO	
 INSERT INTO PHANLOP ([MaHocSinh],[MaLop]) 
 	VALUES	('HS00000016',	'12A01NH1112')
+
+
+
+--thêm bảng giáo viên
+GO
+INSERT INTO GIAOVIEN ([MaGiaoVien],[TenGiaoVien]) 
+	VALUES	('GV005',  N'Nguyễn Văn Sơn')
+GO
+INSERT INTO GIAOVIEN ([MaGiaoVien],[TenGiaoVien]) 
+	VALUES	('GV006',  N'Nguyễn Thị Mỹ Diện')
+GO
+INSERT INTO GIAOVIEN ([MaGiaoVien],[TenGiaoVien]) 
+	VALUES	('GV007',  N'Xinh Thị Đẹp')
+Go
+INSERT INTO GIAOVIEN ([MaGiaoVien],[TenGiaoVien]) 
+	VALUES	('GV008',  N'Nguyễn Duy Thiên')
+Go
+--Thêm bảng lớp
+Go
+INSERT INTO LOP([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien]) 
+	VALUES	('11A01NH1213',	'11A1',	11,	'NH1213', 40, 'GV005')
+Go
+INSERT INTO LOP([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien]) 
+	VALUES	('11A02NH1213',	'11A2',	11,	'NH1213', 40, 'GV008')
+Go
+INSERT INTO LOP([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien]) 
+	VALUES	('12A01NH1213',	'12A1',	12,	'NH1213', 40, 'GV006')
+Go
+INSERT INTO LOP([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien]) 
+	VALUES	('10A01NH1213',	'10A1',	10,	'NH1213', 40, 'GV007')
