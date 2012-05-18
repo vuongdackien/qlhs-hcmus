@@ -9,14 +9,14 @@ namespace QLHS.BUS
 {
     public class HocSinhBUS
     {
-        private HocSinhDAL _HocSinhDAL;
-        private QuyDinhBUS _QuyDinhBUS;
-        private PhanLopBUS _PhanLopBUS;
+        private HocSinhDAL _hocSinhDAL;
+        private QuyDinhBUS _quyDinhBUS;
+        private PhanLopBUS _phanLopBUS;
         public HocSinhBUS()
         {
-            _HocSinhDAL = new HocSinhDAL();
-            _QuyDinhBUS = new QuyDinhBUS();
-            _PhanLopBUS = new PhanLopBUS();
+            _hocSinhDAL = new HocSinhDAL();
+            _quyDinhBUS = new QuyDinhBUS();
+            _phanLopBUS = new PhanLopBUS();
         }
         /// <summary>
         /// Lấy DataTable học sinh từ Lớp học
@@ -25,7 +25,7 @@ namespace QLHS.BUS
         /// <returns>DataTable</returns>
         public DataTable LayDTHocSinh_LopHoc(string MaLop)
         {
-            return _HocSinhDAL.LayDTHocSinh_LopHoc(MaLop);
+            return _hocSinhDAL.LayDTHocSinh_LopHoc(MaLop);
         }
          /// <summary>
         /// Lấy hồ sơ học sinh từ Mã học sinh
@@ -34,7 +34,7 @@ namespace QLHS.BUS
         /// <returns>HocSinhDTO</returns>
         public HocSinhDTO LayHoSoHocSinh(string MaHocSinh)
         {
-            return _HocSinhDAL.LayHoSoHocSinh(MaHocSinh);
+            return _hocSinhDAL.LayHoSoHocSinh(MaHocSinh);
         }
         /// <summary>
         /// Kiểm tra tồn tại của 1 hồ sơ học sinh qua Mã học sinh
@@ -43,7 +43,7 @@ namespace QLHS.BUS
         /// <returns>Bpol: Tồn tại/Không</returns>
         public bool KiemTraTonTai_MaHocSinh(HocSinhDTO hocsinh)
         {
-            return _HocSinhDAL.KiemTraTonTai_MaHocSinh(hocsinh.MaHocSinh);
+            return _hocSinhDAL.KiemTraTonTai_MaHocSinh(hocsinh.MaHocSinh);
         }
         /// <summary>
         /// Lưu hồ sơ học sinh 
@@ -54,29 +54,29 @@ namespace QLHS.BUS
         public bool LuuHoSoHocSinh(HocSinhDTO hocsinh, string MaLop)
         {
             // Sửa hồ sơ học sinh
-            if (_HocSinhDAL.KiemTraTonTai_MaHocSinh(hocsinh.MaHocSinh))
+            if (_hocSinhDAL.KiemTraTonTai_MaHocSinh(hocsinh.MaHocSinh))
             {
                 // Nếu có sửa STT
-                if (hocsinh.STT != _PhanLopBUS.Lay_STT_HienTai(hocsinh.MaHocSinh,MaLop)
-                   && _PhanLopBUS.KiemTra_STT_TonTai(hocsinh.STT, MaLop)) // STT mới này đã tồn tại
+                if (hocsinh.STT != _phanLopBUS.Lay_STT_HienTai(hocsinh.MaHocSinh,MaLop)
+                   && _phanLopBUS.KiemTra_STT_TonTai(hocsinh.STT, MaLop)) // STT mới này đã tồn tại
                 {
                     Utilities.ExceptionUtilities.Throw("Số thứ tự " + hocsinh.STT + " đã tồn tại trong lớp "+MaLop+"."
                                          + "\nBạn có thể sử dụng chức năng \"Tự động sắp xếp số thứ tự\" theo alpha.");
                     return false;
                 }
-                return _HocSinhDAL.SuaHoSoHocSinh(hocsinh, MaLop);
+                return _hocSinhDAL.SuaHoSoHocSinh(hocsinh, MaLop);
             }
             else // Thêm mới hồ sơ học sinh
             {
-                if (_PhanLopBUS.KiemTra_STT_TonTai(hocsinh.STT, MaLop))
+                if (_phanLopBUS.KiemTra_STT_TonTai(hocsinh.STT, MaLop))
                 {
                     Utilities.ExceptionUtilities.Throw("Số thứ tự " + hocsinh.STT + " đã tồn tại trong lớp."
                                                                 + "\nChương trình sẽ tự động tạo số thứ tự tiếp theo trong bảng điểm"
                                                                 + "\nBạn có thể sử dụng chức năng \"Tự động sắp xếp số thứ tự\" theo alpha.");
                     return false;
                 }
-                hocsinh.MaHocSinh = Utilities.StringUtilities.NextID(_HocSinhDAL.LayMaCuoiCung(), "HS",8);
-                return _HocSinhDAL.ThemHoSoHocSinh(hocsinh, MaLop);
+                hocsinh.MaHocSinh = Utilities.ObjectUtilities.NextID(_hocSinhDAL.LayMaCuoiCung(), "HS",8);
+                return _hocSinhDAL.ThemHoSoHocSinh(hocsinh, MaLop);
             }
            
         }
@@ -87,8 +87,8 @@ namespace QLHS.BUS
         /// <returns>Bool</returns>
         public bool KiemTraNamSinhHopLe(int namSinh)
         {
-            int TuoiCanDuoi = _QuyDinhBUS.LayTuoiCanDuoi(),
-                TuoiCanTren = _QuyDinhBUS.LayTuoiCanTren();
+            int TuoiCanDuoi = _quyDinhBUS.LayTuoiCanDuoi(),
+                TuoiCanTren = _quyDinhBUS.LayTuoiCanTren();
             if(TuoiCanDuoi <= namSinh && namSinh <= TuoiCanTren)
                 return true;
             return false;
@@ -102,7 +102,7 @@ namespace QLHS.BUS
         /// <returns>DataTable HocSinh</returns>
         public DataTable TimKiem_HocSinh(HocSinhTimKiemDTO hs, List<string> DS_MaLop = null)
         {
-            return _HocSinhDAL.TimKiem_HocSinh(hs,DS_MaLop);
+            return _hocSinhDAL.TimKiem_HocSinh(hs,DS_MaLop);
         }
         /// <summary>
         /// Xóa 1 hồ sơ học sinh
@@ -111,12 +111,12 @@ namespace QLHS.BUS
         /// <returns>Bool</returns>
         public bool Xoa_HoSo_HocSinh(string MaHocSinh)
         {
-            return _HocSinhDAL.Xoa_HoSo_HocSinh(MaHocSinh);
+            return _hocSinhDAL.Xoa_HoSo_HocSinh(MaHocSinh);
         }
 
         public DataTable LayDTTenHocSinh()
         {
-            return _HocSinhDAL.LayDTTenHocSinh();
+            return _hocSinhDAL.LayDTTenHocSinh();
         }
     }
 }
