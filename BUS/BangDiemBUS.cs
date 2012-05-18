@@ -9,10 +9,10 @@ namespace QLHS.BUS
 {
     public class BangDiemBUS
     {
-        private BangDiemDAL _BangDiemDAL;
+        private BangDiemDAL _bangDiemDAL;
         public BangDiemBUS()
         {
-            _BangDiemDAL = new BangDiemDAL();
+            _bangDiemDAL = new BangDiemDAL();
         }
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace QLHS.BUS
         /// <returns>DataTable</returns>
         public DataTable LayDTDiem_HocKy_Lop(string MaLop, string MaHocKy)
         {
-            return _BangDiemDAL.LayDTDiem_HocKy_Lop(MaLop, MaHocKy);
+            return _bangDiemDAL.LayDTDiem_HocKy_Lop(MaLop, MaHocKy);
         }
          /// <summary>
         /// Lấy bảng điểm môn học theo học kỳ của lớp
@@ -33,7 +33,111 @@ namespace QLHS.BUS
         /// <returns></returns>
         public DataTable LayBangDiem(string MaLop, string MaHocKy, string MaMonHoc)
         {
-            return _BangDiemDAL.LayBangDiem(MaLop, MaHocKy, MaMonHoc);
+            return _bangDiemDAL.LayBangDiem(MaLop, MaHocKy, MaMonHoc);
+        }
+        /// <summary>
+        /// Kiểm tra hợp lệ các cột điểm trên 1 dòng của bảng điểm BangDiemDTO
+        /// </summary>
+        /// <param name="bd">BangDiemDTO</param>
+        /// <returns>Bool</returns>
+        public bool KiemTraHopLe_TrenDong_BangDiem(BangDiemDTO bd)
+        {
+            string msg = "";
+            if (bd.DM_1 == -1 && bd.DM_2 == -1)
+                msg = "miệng";
+            else if (bd.D15_1 == -1 && bd.D15_2 == -1 && bd.D15_3 == -1 && bd.D15_4 == -1)
+                msg = "15 phút";
+            else if (bd.D1T_1 == -1 && bd.D1T_2 == -1)
+                msg = "1 tiết";
+            else if (bd.DThi == -1)
+                msg = "cuối kỳ";
+            if (!msg.Equals(""))
+                msg = "Bạn chưa nhập cột điểm " + msg + " cho học sinh "
+                       + bd.HocSinh.TenHocSinh + " (" + bd.HocSinh.MaHocSinh+ ").";
+            if (msg != "")
+            {
+                Utilities.ExceptionUtilities.Throw(msg);
+                return false;
+            }
+            return true;
+        }
+        /// <summary>
+        /// Tính điểm trung bình môn trên 1 dòng bảng điểm
+        /// </summary>
+        /// <param name="bd">BangDiemDTO (Quy định: VỚi điểm == -1 xem như chưa nhập</param>
+        /// <returns>double: Điểm trung bình</returns>
+        public double TinhDiem_TB_Mon_TrenDong(BangDiemDTO bd)
+        {
+            int soCotM = 0, soCot15 = 0, soCot1T = 0;
+            double tongM = 0, tong15 = 0, tong1T = 0;
+            // Đếm cột miệng nhập
+            if (bd.DM_1 >= 0)
+            {
+                tongM += bd.DM_1;
+                soCotM++;
+            }
+            if (bd.DM_2 >= 0)
+            {
+                 tongM += bd.DM_2;
+                 soCotM++;
+            }
+            // Đếm cột 15' nhập
+            if (bd.D15_1 >= 0)
+            {
+                tong15 += bd.D15_1;
+                soCot15++;
+            }
+            if (bd.D15_2 >= 0)
+            {
+               tong15 += bd.D15_2;
+                soCot15++;
+            }
+            if (bd.D15_3 >= 0)
+            {
+               tong15 += bd.D15_3;
+                soCot15++;
+            }
+            if (bd.D15_4 >= 0)
+            {
+               tong15 += bd.D15_4;
+                soCot15++;
+            }
+            // Đếm số cột 1T
+            if (bd.D1T_1 >= 0)
+            {
+                 tong1T += bd.D1T_1;
+                 soCot1T++;
+            }
+            if (bd.D1T_2 >= 0)
+            {
+                tong1T += bd.D1T_2;
+                 soCot1T++;
+            }
+            double TongDiem =    (tong15 / soCot15) * 1   // 15' hệ số 1
+                               + (tongM / soCotM)   * 1   // M   hệ số 1
+                               + (tong1T / soCot1T) * 2 // 1T  hệ số 2
+                               +  bd.DThi           * 3;
+  
+            return Utilities.ObjectUtilities.LamTron(TongDiem / 7);
+
+        }
+         /// <summary>
+        /// Lưu bảng điểm 1 môn học / 1 học sinh / 1 học kỳ / 1 lớp / 1 năm học
+        /// </summary>
+        /// <param name="bd">BangDiemDTO</param>
+        /// <returns>Bool</returns>
+        public bool LuuBangDiem_Mon_Hoc_HocSinh(BangDiemDTO bd)
+        {
+            return _bangDiemDAL.LuuBangDiem_MonHoc_HocSinh_HocKy(bd);
+        }
+        /// <summary>
+        /// Xóa bảng điểm 1 môn học / 1 học sinh / 1 học kỳ / 1 lớp / 1 năm học
+        /// </summary>
+        /// <param name="bd">BangDiemDTO</param>
+        /// <returns>bool</returns>
+        public bool XoaBangDiem_MonHoc_HocSinh_HocKy(BangDiemDTO bd)
+        {
+            return _bangDiemDAL.XoaBangDiem_MonHoc_HocSinh_HocKy(bd);
         }
     }
 }
