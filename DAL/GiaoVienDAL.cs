@@ -15,18 +15,18 @@ namespace QLHS.DAL
 
         public void ThemGiaoVien(GiaoVienDTO GV)
         {
-            
-            string sql = string.Format("insert into  Giaovien values (n'{0}',n'{1}')",GV.MaGV,GV.TenGV);
+
+            string sql = string.Format("insert into  Giaovien values (n'{0}',n'{1}')", GV.MaGiaoVien, GV.TenGiaoVien);
             Gvdal.ExecuteQuery(sql);
         }
         public void XoaGiaoVien(GiaoVienDTO GV)
         {
-            string sql = string.Format("delete  Giaovien  where MaGiaoVien like n'%{0}%')", GV.MaGV);
+            string sql = string.Format("delete  Giaovien  where MaGiaoVien like n'%{0}%')", GV.MaGiaoVien);
             Gvdal.ExecuteQuery(sql);
         }
         public void CapNhatGiaoVien(GiaoVienDTO GV)
         {
-            string sql = string.Format("update GiaoVien set TenGiaoVien='{0}' where madv={1} ",GV.TenGV,GV.MaGV);
+            string sql = string.Format("update GiaoVien set TenGiaoVien='{0}' where madv={1} ", GV.TenGiaoVien, GV.MaGiaoVien);
             Gvdal.ExecuteQuery(sql);
         }
         #region Tạo bảng các giáo viên
@@ -54,7 +54,6 @@ namespace QLHS.DAL
             DataTable dt = new DataTable();
             dt = Gvdal.GetTable(sql, true);
             return dt;
-
         }
         
        #endregion 
@@ -68,17 +67,13 @@ namespace QLHS.DAL
         {
 
             string sql = "";
-            sql = string.Format("select * from GiaoVien where MaGiaoVien like N'%{0}%' or TenGiaoVien like N'%{0}%'", DK); 
-                
-               
-              //  default: sql = " select * from KNHoatDong"; break;
-            
+            sql = string.Format("select * from GiaoVien where MaGiaoVien like N'%{0}%' or TenGiaoVien like N'%{0}%'", DK);   
             DataTable dt = new DataTable();
             dt = Gvdal.GetTable(sql, true);
             List<GiaoVienDTO> ListGiaoVien = new List<GiaoVienDTO>();
             foreach (DataRow dr in dt.Rows)
             {
-                GV = new GiaoVienDTO { MaGV = dr[0].ToString(), TenGV = dr[1].ToString()};
+                GV = new GiaoVienDTO { MaGiaoVien = dr[0].ToString(), TenGiaoVien = dr[1].ToString() };
                 ListGiaoVien.Add(GV);
             }
 
@@ -101,12 +96,21 @@ namespace QLHS.DAL
             List<GiaoVienDTO> ListGiaoVien = new List<GiaoVienDTO>();
             foreach (DataRow dr in dt.Rows)
             {
-                GV = new GiaoVienDTO { MaGV = dr[0].ToString(), TenGV = dr[1].ToString() };
+                GV = new GiaoVienDTO { MaGiaoVien = dr[0].ToString(), TenGiaoVien = dr[1].ToString() };
                 ListGiaoVien.Add(GV);
             }
 
             return ListGiaoVien;
         }
         #endregion
+        public void AddNewRow(DataRow dr)
+        {  Gvdal.AddNewRow(dr); }
+        public DataRow GetNewRow()
+        { return Gvdal.GetNewRow(); }
+        public bool KiemtratontaiGiaoVien(GiaoVienDTO GV)
+        {
+            string sql = string.Format("SELECT count(*) as SoLuong FROM GiaoVien WHERE MaGiaoVien = '{0}'", GV.MaGiaoVien);
+            return (int)ExecuteScalar(sql) == 1;
+        }
     }
 }
