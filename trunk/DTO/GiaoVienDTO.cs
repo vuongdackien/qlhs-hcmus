@@ -10,24 +10,13 @@ namespace QLHS.DTO
         { }
         public GiaoVienDTO(string MaGiaovien, string TenGiaoVien)
         {
-            this.MaGV = MaGiaoVien;
-            this.TenGV=TenGiaoVien;
+            this.MaGiaoVien = MaGiaoVien;
+            this.TenGiaoVien =TenGiaoVien;
         }
-       
-        private string  MaGiaoVien;
 
-        public string MaGV
-        {
-            get { return MaGiaoVien; }
-            set { MaGiaoVien = value; }
-        }
-        private string TenGiaoVien;
-
-	    public string TenGV        
-	    {
-		    get { return TenGiaoVien;}
-		    set { TenGiaoVien = value;}
-	    }
+        public string MaGiaoVien { get; set; }
+        public string TenGiaoVien { get; set; }
+        
 	
         
 
