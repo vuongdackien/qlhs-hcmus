@@ -67,6 +67,7 @@ CREATE TABLE [dbo].[BANGDIEM] (
 	[D1T_1]			[real] NULL,
 	[D1T_2]			[real] NULL,
 	[DThi]			[real] NULL,
+	[DTB]			[real] NULL,
 	[MaLop]			[varchar](15) NOT NULL,
 	[MaHocKy]		[varchar](10) NOT NULL);
 GO
