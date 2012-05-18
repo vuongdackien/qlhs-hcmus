@@ -513,6 +513,9 @@
             // 
             this.repositoryItemTextEdit1.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.repositoryItemTextEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repositoryItemTextEdit1.Mask.ShowPlaceHolders = false;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
             // colM2
@@ -522,6 +525,7 @@
             this.colM2.AppearanceHeader.Options.UseTextOptions = true;
             this.colM2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colM2.Caption = "Cột 2";
+            this.colM2.ColumnEdit = this.repositoryItemTextEdit1;
             this.colM2.FieldName = "DM_2";
             this.colM2.Name = "colM2";
             this.colM2.Visible = true;
@@ -546,6 +550,7 @@
             this.colV1.AppearanceHeader.Options.UseTextOptions = true;
             this.colV1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colV1.Caption = "Cột 1";
+            this.colV1.ColumnEdit = this.repositoryItemTextEdit1;
             this.colV1.FieldName = "D15_1";
             this.colV1.Name = "colV1";
             this.colV1.Visible = true;
@@ -558,6 +563,7 @@
             this.colV2.AppearanceHeader.Options.UseTextOptions = true;
             this.colV2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colV2.Caption = "Cột 2";
+            this.colV2.ColumnEdit = this.repositoryItemTextEdit1;
             this.colV2.FieldName = "D15_2";
             this.colV2.Name = "colV2";
             this.colV2.Visible = true;
@@ -570,6 +576,7 @@
             this.colV3.AppearanceHeader.Options.UseTextOptions = true;
             this.colV3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colV3.Caption = "Cột 3";
+            this.colV3.ColumnEdit = this.repositoryItemTextEdit1;
             this.colV3.FieldName = "D15_3";
             this.colV3.Name = "colV3";
             this.colV3.Visible = true;
@@ -582,6 +589,7 @@
             this.colV4.AppearanceHeader.Options.UseTextOptions = true;
             this.colV4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colV4.Caption = "Cột 4";
+            this.colV4.ColumnEdit = this.repositoryItemTextEdit1;
             this.colV4.FieldName = "D15_4";
             this.colV4.Name = "colV4";
             this.colV4.Visible = true;
@@ -615,6 +623,7 @@
             this.colT1.AppearanceHeader.Options.UseTextOptions = true;
             this.colT1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colT1.Caption = "Cột 1";
+            this.colT1.ColumnEdit = this.repositoryItemTextEdit1;
             this.colT1.FieldName = "D1T_1";
             this.colT1.Name = "colT1";
             this.colT1.Visible = true;
@@ -627,6 +636,7 @@
             this.colT2.AppearanceHeader.Options.UseTextOptions = true;
             this.colT2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colT2.Caption = "Cột 2";
+            this.colT2.ColumnEdit = this.repositoryItemTextEdit1;
             this.colT2.FieldName = "D1T_2";
             this.colT2.Name = "colT2";
             this.colT2.Visible = true;
@@ -651,6 +661,7 @@
             this.colHK.AppearanceHeader.Options.UseTextOptions = true;
             this.colHK.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colHK.Caption = "Đ.Thi";
+            this.colHK.ColumnEdit = this.repositoryItemTextEdit1;
             this.colHK.FieldName = "DThi";
             this.colHK.Name = "colHK";
             this.colHK.Visible = true;
@@ -674,9 +685,9 @@
             this.colTBM.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colTBM.AppearanceHeader.Options.UseTextOptions = true;
             this.colTBM.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colTBM.FieldName = "TBM";
+            this.colTBM.ColumnEdit = this.repositoryItemTextEdit1;
+            this.colTBM.FieldName = "DTB";
             this.colTBM.Name = "colTBM";
-            this.colTBM.OptionsColumn.ReadOnly = true;
             this.colTBM.Visible = true;
             this.colTBM.Width = 52;
             // 
