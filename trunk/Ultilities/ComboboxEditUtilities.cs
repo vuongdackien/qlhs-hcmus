@@ -107,7 +107,12 @@ namespace Utilities
         /// <param name="svalue">String: Giá trị chọn valuemember</param>
         public static void SelectedItem(ComboBoxEdit comb, string svalue) 
         {
-            comb.EditValue = svalue;
+            foreach (var item in comb.Properties.Items)
+            {
+                if (((ComboboxEditUtilities)item).Value == svalue)
+                    comb.SelectedItem = item;
+            }
+            
         }
 
         public static bool CheckSelectedNull(ComboBoxEdit comb)

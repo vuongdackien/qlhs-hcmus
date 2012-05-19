@@ -126,7 +126,7 @@ namespace QLHS.DAL
                           + " GioiTinh = (CASE GioiTinh WHEN 0 THEN N'Nam' "
                           + " WHEN 1 THEN N'Nữ' END), "
                           + " NgaySinh, NoiSinh, "
-                          + " Email, DiaChi, TenLop, TenGiaoVien "
+                          + " Email, DiaChi, TenLop, lop.MaLop, TenGiaoVien "
                           + " FROM HOCSINH hsinh, GIAOVIEN gvien, LOP lop, PHANLOP plop"
                           + " WHERE lop.MaGiaoVien=gvien.MaGiaoVien AND lop.MaLop=plop.MaLop AND"
                           + " plop.MaHocSinh=hsinh.MaHocSinh ";

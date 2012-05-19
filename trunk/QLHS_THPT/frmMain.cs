@@ -14,12 +14,28 @@ namespace QLHS
 
         #region Function Show MDI Child Form
 
-        private Dictionary<Type, Form> openForms = new Dictionary<Type, Form>();
+        public Dictionary<Type, Form> openForms = new Dictionary<Type, Form>();
         /// <summary>
         /// Sử dụng để hiển thị MDI Children form
         /// </summary>
         /// <typeparam name="T">Tên form</typeparam>
         public void ShowMDIChildForm<T>() where T : Form, new()
+        {
+            Form instance;
+            openForms.TryGetValue(typeof(T), out instance);
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new T();
+                openForms[typeof(T)] = instance;
+                instance.MdiParent = this;
+                instance.Show();
+            }
+            else
+            {
+                instance.Activate();
+            }
+        }
+        public void ShowMDIChildForm<T>(object obj) where T : Form, new()
         {
             Form instance;
             openForms.TryGetValue(typeof(T), out instance);
@@ -56,12 +72,17 @@ namespace QLHS
 
         private void barBtnTimKiemHocSinh_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmTongKetHocKy>();
+            ShowMDIChildForm<frmSearchHocSinh>();
         }
 
         private void barButtonItemNhapDiemMonHoc_ItemClick(object sender, ItemClickEventArgs e)
         {
             ShowMDIChildForm<frmBangDiemMonHoc>();
+        }
+
+        private void barBtnTimKiemGiaoVien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

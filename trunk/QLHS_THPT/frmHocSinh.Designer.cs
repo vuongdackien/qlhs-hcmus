@@ -171,10 +171,10 @@
             // gridControlDSHocSinh
             // 
             this.gridControlDSHocSinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlDSHocSinh.Location = new System.Drawing.Point(2, 140);
+            this.gridControlDSHocSinh.Location = new System.Drawing.Point(3, 141);
             this.gridControlDSHocSinh.MainView = this.gridViewDSHocSinh;
             this.gridControlDSHocSinh.Name = "gridControlDSHocSinh";
-            this.gridControlDSHocSinh.Size = new System.Drawing.Size(196, 247);
+            this.gridControlDSHocSinh.Size = new System.Drawing.Size(194, 245);
             this.gridControlDSHocSinh.TabIndex = 4;
             this.gridControlDSHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDSHocSinh});
@@ -226,9 +226,9 @@
             this.panelControlTopLeft.Controls.Add(this.labelControl3);
             this.panelControlTopLeft.Controls.Add(this.labelControl1);
             this.panelControlTopLeft.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlTopLeft.Location = new System.Drawing.Point(2, 2);
+            this.panelControlTopLeft.Location = new System.Drawing.Point(3, 3);
             this.panelControlTopLeft.Name = "panelControlTopLeft";
-            this.panelControlTopLeft.Size = new System.Drawing.Size(196, 138);
+            this.panelControlTopLeft.Size = new System.Drawing.Size(194, 138);
             this.panelControlTopLeft.TabIndex = 3;
             // 
             // comboBoxEditNamHoc
