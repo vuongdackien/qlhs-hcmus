@@ -191,10 +191,10 @@
             // gridControlTongKetNamHoc
             // 
             this.gridControlTongKetNamHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlTongKetNamHoc.Location = new System.Drawing.Point(2, 82);
+            this.gridControlTongKetNamHoc.Location = new System.Drawing.Point(3, 83);
             this.gridControlTongKetNamHoc.MainView = this.gridView1;
             this.gridControlTongKetNamHoc.Name = "gridControlTongKetNamHoc";
-            this.gridControlTongKetNamHoc.Size = new System.Drawing.Size(809, 308);
+            this.gridControlTongKetNamHoc.Size = new System.Drawing.Size(807, 306);
             this.gridControlTongKetNamHoc.TabIndex = 1;
             this.gridControlTongKetNamHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -393,9 +393,9 @@
             this.panelControlTopRight.Controls.Add(this.labelControlNamHocTT);
             this.panelControlTopRight.Controls.Add(this.labelControlTitle);
             this.panelControlTopRight.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlTopRight.Location = new System.Drawing.Point(2, 2);
+            this.panelControlTopRight.Location = new System.Drawing.Point(3, 3);
             this.panelControlTopRight.Name = "panelControlTopRight";
-            this.panelControlTopRight.Size = new System.Drawing.Size(809, 80);
+            this.panelControlTopRight.Size = new System.Drawing.Size(807, 80);
             this.panelControlTopRight.TabIndex = 0;
             // 
             // simpleButtonXuatBD
@@ -463,9 +463,9 @@
             // treeListLopHoc
             // 
             this.treeListLopHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeListLopHoc.Location = new System.Drawing.Point(2, 108);
+            this.treeListLopHoc.Location = new System.Drawing.Point(3, 109);
             this.treeListLopHoc.Name = "treeListLopHoc";
-            this.treeListLopHoc.Size = new System.Drawing.Size(178, 282);
+            this.treeListLopHoc.Size = new System.Drawing.Size(176, 280);
             this.treeListLopHoc.TabIndex = 1;
             // 
             // labelControlNamHoc
@@ -483,9 +483,9 @@
             this.panelControlChooseYear.Controls.Add(this.comboBoxEditNamHoc);
             this.panelControlChooseYear.Controls.Add(this.labelControlNamHoc);
             this.panelControlChooseYear.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlChooseYear.Location = new System.Drawing.Point(2, 2);
+            this.panelControlChooseYear.Location = new System.Drawing.Point(3, 3);
             this.panelControlChooseYear.Name = "panelControlChooseYear";
-            this.panelControlChooseYear.Size = new System.Drawing.Size(178, 106);
+            this.panelControlChooseYear.Size = new System.Drawing.Size(176, 106);
             this.panelControlChooseYear.TabIndex = 0;
             // 
             // comboBoxEditHocKy

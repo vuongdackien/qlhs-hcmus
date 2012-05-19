@@ -110,17 +110,17 @@
     <Compile Include="frmSearchHocSinh.Designer.cs">
       <DependentUpon>frmSearchHocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTongKetMonHocKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTongKetMonHocKy.Designer.cs">
+      <DependentUpon>frmTongKetMonHocKy.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTongKetHocKy.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmTongKetHocKy.Designer.cs">
       <DependentUpon>frmTongKetHocKy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTongKetNamHoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTongKetNamHoc.Designer.cs">
-      <DependentUpon>frmTongKetNamHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Report\DTO_TongKetHocKy.cs" />
@@ -161,11 +161,11 @@
     <EmbeddedResource Include="frmSearchHocSinh.resx">
       <DependentUpon>frmSearchHocSinh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTongKetMonHocKy.resx">
+      <DependentUpon>frmTongKetMonHocKy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTongKetHocKy.resx">
       <DependentUpon>frmTongKetHocKy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTongKetNamHoc.resx">
-      <DependentUpon>frmTongKetNamHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\frmReportView_TongKetHK.resx">
       <DependentUpon>frmReportView_TongKetHK.cs</DependentUpon>
