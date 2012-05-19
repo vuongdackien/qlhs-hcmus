@@ -9,6 +9,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraTreeList.Nodes;
 using QLHS.DTO;
 using QLHS.BUS;
+using DevExpress.Utils;
 
 namespace QLHS
 {
@@ -83,7 +84,7 @@ namespace QLHS
 
             CapNhatListLop();
             // Disable controls search
-            DisableControls(false);                        
+            DisableControls(false);
         }
 
         private void comboBoxEditNamHoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -252,6 +253,8 @@ namespace QLHS
 
         private void menucontextXemHoSo_Click(object sender, EventArgs e)
         {
+            if (gridViewSearch.FocusedRowHandle < 0)
+                return;
             // Lấy form Main
             var frmMainInstance = this.ParentForm as frmMain;
             // Hiển thị frmHocSinh
@@ -259,10 +262,18 @@ namespace QLHS
             // Lấy instance formHocSinh
             var frmHocSinhInstance = frmMainInstance.openForms[typeof(frmHocSinh)] as frmHocSinh;
             // Gắn các properties chuẩn bị hiển thị chi tiết hồ sơ học sinh
-            frmHocSinhInstance.MaHocSinh = gridView1.GetFocusedRowCellValue("MaHocSinh").ToString();
-            frmHocSinhInstance.MaLop = gridView1.GetFocusedRowCellValue("MaLop").ToString();
+            frmHocSinhInstance.MaHocSinh = gridViewSearch.GetFocusedRowCellValue("MaHocSinh").ToString();
+            frmHocSinhInstance.MaLop = gridViewSearch.GetFocusedRowCellValue("MaLop").ToString();
             // Hiển thị lại thông tin học sinh
             frmHocSinhInstance.HienThiLai_FrmHocSinh_TuFormTimKiem();
+        }
+
+        private void gridViewSearch_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (gridViewSearch.FocusedRowHandle < 0)
+                return;
+            Utilities.MessageboxUtilities.ShowTooltip(toolTipController1,
+                "Click chuột phải lên dòng để xem chi tiết hồ sơ học sinh", "<b>Hướng dẫn</b>");
         }
     }
 }

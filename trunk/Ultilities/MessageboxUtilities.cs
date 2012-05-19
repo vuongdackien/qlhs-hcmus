@@ -2,6 +2,7 @@
 using System.Data.OleDb;
 using System.Windows.Forms;
 using System;
+using DevExpress.Utils;
 
 namespace Utilities
 {
@@ -69,6 +70,19 @@ namespace Utilities
         {
             return XtraMessageBox.Show(Message, "HỎI",
                                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+        }
+        public static void ShowTooltip(ToolTipController tooltip, string msg, string title = "<b>Hướng dẫn</b>")
+        { 
+            ToolTipControllerShowEventArgs targ = new ToolTipControllerShowEventArgs();
+            targ.Title = title;
+            targ.ToolTip = msg;
+            targ.ShowBeak = true;
+            targ.Rounded = true;
+            targ.RoundRadius = 7;
+            targ.ToolTipType = ToolTipType.SuperTip;
+            targ.IconType = ToolTipIconType.Information;
+            targ.IconSize = ToolTipIconSize.Small;
+            tooltip.ShowHint(targ);
         }
     }
 }

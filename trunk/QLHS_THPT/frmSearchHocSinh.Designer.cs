@@ -61,7 +61,7 @@
             this.comboBoxEditNamHoc = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControlNamHoc = new DevExpress.XtraEditors.LabelControl();
             this.labelControlPhamVi = new DevExpress.XtraEditors.LabelControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewSearch = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumnMaHocSinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnHoTen = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnGioiTinh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,10 +71,11 @@
             this.gridColumnDiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnLopHocHT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnGVCN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnMaLop = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlSearchHocSinh = new DevExpress.XtraGrid.GridControl();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.menucontextXemHoSo = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridColumnMaLop = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamDKien)).BeginInit();
             this.panelControlNamDKien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlDieuKien)).BeginInit();
@@ -108,7 +109,7 @@
             this.panelControlChooseYear.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditTatCaNam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditNamHoc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearchHocSinh)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -443,9 +444,9 @@
             this.labelControlPhamVi.TabIndex = 0;
             this.labelControlPhamVi.Text = "Chọn phạm vi tìm kiếm:";
             // 
-            // gridView1
+            // gridViewSearch
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridViewSearch.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumnMaHocSinh,
             this.gridColumnHoTen,
             this.gridColumnGioiTinh,
@@ -456,9 +457,10 @@
             this.gridColumnLopHocHT,
             this.gridColumnGVCN,
             this.gridColumnMaLop});
-            this.gridView1.GridControl = this.gridControlSearchHocSinh;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridViewSearch.GridControl = this.gridControlSearchHocSinh;
+            this.gridViewSearch.Name = "gridViewSearch";
+            this.gridViewSearch.OptionsView.ShowGroupPanel = false;
+            this.gridViewSearch.MouseMove += new System.Windows.Forms.MouseEventHandler(this.gridViewSearch_MouseMove);
             // 
             // gridColumnMaHocSinh
             // 
@@ -650,24 +652,31 @@
             this.gridColumnGVCN.Visible = true;
             this.gridColumnGVCN.VisibleIndex = 8;
             // 
+            // gridColumnMaLop
+            // 
+            this.gridColumnMaLop.Caption = "Mã lớp";
+            this.gridColumnMaLop.FieldName = "MaLop";
+            this.gridColumnMaLop.Name = "gridColumnMaLop";
+            // 
             // gridControlSearchHocSinh
             // 
             this.gridControlSearchHocSinh.ContextMenuStrip = this.contextMenuStrip1;
             this.gridControlSearchHocSinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControlSearchHocSinh.Location = new System.Drawing.Point(0, 240);
-            this.gridControlSearchHocSinh.MainView = this.gridView1;
+            this.gridControlSearchHocSinh.MainView = this.gridViewSearch;
             this.gridControlSearchHocSinh.Name = "gridControlSearchHocSinh";
             this.gridControlSearchHocSinh.Size = new System.Drawing.Size(995, 183);
             this.gridControlSearchHocSinh.TabIndex = 21;
+            this.gridControlSearchHocSinh.ToolTipController = this.toolTipController1;
             this.gridControlSearchHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridViewSearch});
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menucontextXemHoSo});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(179, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(179, 26);
             // 
             // menucontextXemHoSo
             // 
@@ -676,11 +685,9 @@
             this.menucontextXemHoSo.Text = "Xem hồ sơ học sinh";
             this.menucontextXemHoSo.Click += new System.EventHandler(this.menucontextXemHoSo_Click);
             // 
-            // gridColumnMaLop
+            // toolTipController1
             // 
-            this.gridColumnMaLop.Caption = "Mã lớp";
-            this.gridColumnMaLop.FieldName = "MaLop";
-            this.gridColumnMaLop.Name = "gridColumnMaLop";
+            this.toolTipController1.AllowHtmlText = true;
             // 
             // frmSearchHocSinh
             // 
@@ -728,7 +735,7 @@
             this.panelControlChooseYear.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditTatCaNam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditNamHoc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlSearchHocSinh)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -761,7 +768,7 @@
         private DevExpress.XtraEditors.TextEdit textEditDiaChi;
         private DevExpress.XtraEditors.TextEdit textEditEmail;
         private DevExpress.XtraEditors.TextEdit textEditNamSinhDen;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewSearch;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnMaHocSinh;
         private DevExpress.XtraGrid.GridControl gridControlSearchHocSinh;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnHoTen;
@@ -784,6 +791,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menucontextXemHoSo;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnMaLop;
+        private DevExpress.Utils.ToolTipController toolTipController1;
 
     }
 }
