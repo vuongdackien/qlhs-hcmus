@@ -166,16 +166,22 @@ namespace QLHS
         bool Check;
         private void DisableControls(bool show = true)
         {
-            foreach (Control c in panelControlNDungDKien.Controls)
-            {
-                if (c is CheckEdit)
-                {
-                    ((CheckEdit)c).Checked = false;
-                }
-                else
-                    c.Enabled = show;
-            }
+            checkEditMaHocSinh.Checked = show;
+            checkEditHoTen.Checked = show;
+            checkEditGioiTinh.Checked = show;
+            checkEditNamSinh.Checked = show;
+            checkEditEmail.Checked = show;
+            checkEditDiaChi.Checked = show;
+
+            textEditMaHocSinh.Enabled = show;
+            textBoxTenHocSinh.Enabled = show;
+            radioGroupGioiTinh.Enabled = show;
+            textEditNamSinhTu.Enabled = show;
+            textEditNamSinhDen.Enabled = show;
+            textEditEmail.Enabled = show;
+            textEditDiaChi.Enabled = show;
         }
+
         private void EnableControl(CheckEdit checkEdit, TextBox textEdit)
         {
             if (checkEdit.Checked)
@@ -188,6 +194,7 @@ namespace QLHS
             textEdit.ReadOnly = !Check;
             textEdit.Enabled = Check;
         }
+
         private void EnableControl(CheckEdit checkEdit, TextEdit textEdit)
         {
             if (checkEdit.Checked)
@@ -248,7 +255,7 @@ namespace QLHS
 
         private void simpleButtonXoaDK_Click(object sender, EventArgs e)
         {
-
+            frmSearchHocSinh_Load(sender, e);
         }
 
         private void menucontextXemHoSo_Click(object sender, EventArgs e)
@@ -274,6 +281,11 @@ namespace QLHS
                 return;
             Utilities.MessageboxUtilities.ShowTooltip(toolTipController1,
                 "Click chuột phải lên dòng để xem chi tiết hồ sơ học sinh", "<b>Hướng dẫn</b>");
+        }
+
+        private void simpleButtonDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

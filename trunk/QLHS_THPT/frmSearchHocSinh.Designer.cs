@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelControlNamDKien = new DevExpress.XtraEditors.PanelControl();
             this.panelControlDieuKien = new DevExpress.XtraEditors.PanelControl();
             this.xtraTabControlDieuKien = new DevExpress.XtraTab.XtraTabControl();
@@ -73,9 +74,9 @@
             this.gridColumnGVCN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnMaLop = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlSearchHocSinh = new DevExpress.XtraGrid.GridControl();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menucontextXemHoSo = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolTipController1 = new DevExpress.Utils.ToolTipController();
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamDKien)).BeginInit();
             this.panelControlNamDKien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlDieuKien)).BeginInit();
@@ -138,10 +139,10 @@
             // xtraTabControlDieuKien
             // 
             this.xtraTabControlDieuKien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControlDieuKien.Location = new System.Drawing.Point(3, 3);
+            this.xtraTabControlDieuKien.Location = new System.Drawing.Point(2, 2);
             this.xtraTabControlDieuKien.Name = "xtraTabControlDieuKien";
             this.xtraTabControlDieuKien.SelectedTabPage = this.xtraTabPageDieuKien;
-            this.xtraTabControlDieuKien.Size = new System.Drawing.Size(744, 234);
+            this.xtraTabControlDieuKien.Size = new System.Drawing.Size(746, 236);
             this.xtraTabControlDieuKien.TabIndex = 0;
             this.xtraTabControlDieuKien.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageDieuKien});
@@ -150,7 +151,7 @@
             // 
             this.xtraTabPageDieuKien.Controls.Add(this.panelControlDKienTim);
             this.xtraTabPageDieuKien.Name = "xtraTabPageDieuKien";
-            this.xtraTabPageDieuKien.Size = new System.Drawing.Size(742, 212);
+            this.xtraTabPageDieuKien.Size = new System.Drawing.Size(740, 210);
             this.xtraTabPageDieuKien.Text = "Điều kiện về hồ sơ học sinh";
             // 
             // panelControlDKienTim
@@ -161,7 +162,7 @@
             this.panelControlDKienTim.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlDKienTim.Location = new System.Drawing.Point(0, 0);
             this.panelControlDKienTim.Name = "panelControlDKienTim";
-            this.panelControlDKienTim.Size = new System.Drawing.Size(742, 212);
+            this.panelControlDKienTim.Size = new System.Drawing.Size(740, 210);
             this.panelControlDKienTim.TabIndex = 0;
             // 
             // panelControlNDungDKien
@@ -182,7 +183,7 @@
             this.panelControlNDungDKien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlNDungDKien.Location = new System.Drawing.Point(0, 0);
             this.panelControlNDungDKien.Name = "panelControlNDungDKien";
-            this.panelControlNDungDKien.Size = new System.Drawing.Size(742, 152);
+            this.panelControlNDungDKien.Size = new System.Drawing.Size(740, 150);
             this.panelControlNDungDKien.TabIndex = 1;
             // 
             // textBoxTenHocSinh
@@ -299,9 +300,9 @@
             this.panelControlButtonTim.Controls.Add(this.simpleButtonXoaDK);
             this.panelControlButtonTim.Controls.Add(this.simpleButtonSearch);
             this.panelControlButtonTim.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControlButtonTim.Location = new System.Drawing.Point(0, 152);
+            this.panelControlButtonTim.Location = new System.Drawing.Point(0, 150);
             this.panelControlButtonTim.Name = "panelControlButtonTim";
-            this.panelControlButtonTim.Size = new System.Drawing.Size(742, 60);
+            this.panelControlButtonTim.Size = new System.Drawing.Size(740, 60);
             this.panelControlButtonTim.TabIndex = 0;
             // 
             // simpleButtonDong
@@ -312,6 +313,7 @@
             this.simpleButtonDong.Size = new System.Drawing.Size(104, 35);
             this.simpleButtonDong.TabIndex = 20;
             this.simpleButtonDong.Text = "Đóng";
+            this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
             // 
             // simpleButtonXuatBaoCao
             // 
