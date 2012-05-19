@@ -88,5 +88,10 @@ namespace QLHS.DAL
                                       bd.HocSinh.MaHocSinh, bd.LopDTO.MaLop, bd.MaHocKy, bd.MonHoc.MaMonHoc);
             return ExecuteQuery(sql) > 0;
         }
+
+        public DataTable LayBangDiem_NamHoc_Khoi(string MaKhoi, string MaMonHoc)
+        {
+            return null;
+        }
     }
 }

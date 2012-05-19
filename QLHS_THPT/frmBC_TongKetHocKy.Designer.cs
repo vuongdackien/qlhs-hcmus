@@ -1,6 +1,6 @@
 ﻿namespace QLHS
 {
-    partial class frmTongKetHocKy
+    partial class frmBC_TongKetHocKy
     {
         /// <summary>
         /// Required designer variable.
@@ -525,14 +525,14 @@
             this.panelControlLeft.Size = new System.Drawing.Size(182, 392);
             this.panelControlLeft.TabIndex = 2;
             // 
-            // frmTongKetHocKy
+            // frmBC_TongKetHocKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 392);
             this.Controls.Add(this.panelControlRight);
             this.Controls.Add(this.panelControlLeft);
-            this.Name = "frmTongKetHocKy";
+            this.Name = "frmBC_TongKetHocKy";
             this.Text = "Bảng điểm học sinh";
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTongKetNamHoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

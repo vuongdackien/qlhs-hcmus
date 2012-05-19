@@ -74,6 +74,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBC_TongKetHocKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBC_TongKetHocKy.Designer.cs">
+      <DependentUpon>frmBC_TongKetHocKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBC_TongKetMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBC_TongKetMon.Designer.cs">
+      <DependentUpon>frmBC_TongKetMon.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBangDiemMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +143,12 @@
       <DependentUpon>rptTongKetHocKy.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="frmBC_TongKetHocKy.resx">
+      <DependentUpon>frmBC_TongKetHocKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBC_TongKetMon.resx">
+      <DependentUpon>frmBC_TongKetMon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBangDiemMonHoc.resx">
       <DependentUpon>frmBangDiemMonHoc.cs</DependentUpon>
     </EmbeddedResource>
