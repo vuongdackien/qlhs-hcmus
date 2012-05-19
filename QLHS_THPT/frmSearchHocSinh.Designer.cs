@@ -35,13 +35,12 @@
             this.xtraTabPageDieuKien = new DevExpress.XtraTab.XtraTabPage();
             this.panelControlDKienTim = new DevExpress.XtraEditors.PanelControl();
             this.panelControlNDungDKien = new DevExpress.XtraEditors.PanelControl();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxTenHocSinh = new System.Windows.Forms.TextBox();
             this.radioGroupGioiTinh = new DevExpress.XtraEditors.RadioGroup();
             this.textEditNamSinhDen = new DevExpress.XtraEditors.TextEdit();
             this.textEditNamSinhTu = new DevExpress.XtraEditors.TextEdit();
             this.textEditDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.textEditEmail = new DevExpress.XtraEditors.TextEdit();
-            this.textEditHoTen = new DevExpress.XtraEditors.TextEdit();
             this.textEditMaHocSinh = new DevExpress.XtraEditors.TextEdit();
             this.checkEditNamSinh = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditGioiTinh = new DevExpress.XtraEditors.CheckEdit();
@@ -92,7 +91,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhTu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditEmail.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditHoTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMaHocSinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditNamSinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditGioiTinh.Properties)).BeginInit();
@@ -139,10 +137,10 @@
             // xtraTabControlDieuKien
             // 
             this.xtraTabControlDieuKien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControlDieuKien.Location = new System.Drawing.Point(2, 2);
+            this.xtraTabControlDieuKien.Location = new System.Drawing.Point(3, 3);
             this.xtraTabControlDieuKien.Name = "xtraTabControlDieuKien";
             this.xtraTabControlDieuKien.SelectedTabPage = this.xtraTabPageDieuKien;
-            this.xtraTabControlDieuKien.Size = new System.Drawing.Size(746, 236);
+            this.xtraTabControlDieuKien.Size = new System.Drawing.Size(744, 234);
             this.xtraTabControlDieuKien.TabIndex = 0;
             this.xtraTabControlDieuKien.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageDieuKien});
@@ -151,7 +149,7 @@
             // 
             this.xtraTabPageDieuKien.Controls.Add(this.panelControlDKienTim);
             this.xtraTabPageDieuKien.Name = "xtraTabPageDieuKien";
-            this.xtraTabPageDieuKien.Size = new System.Drawing.Size(740, 210);
+            this.xtraTabPageDieuKien.Size = new System.Drawing.Size(742, 212);
             this.xtraTabPageDieuKien.Text = "Điều kiện về hồ sơ học sinh";
             // 
             // panelControlDKienTim
@@ -162,18 +160,17 @@
             this.panelControlDKienTim.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlDKienTim.Location = new System.Drawing.Point(0, 0);
             this.panelControlDKienTim.Name = "panelControlDKienTim";
-            this.panelControlDKienTim.Size = new System.Drawing.Size(740, 210);
+            this.panelControlDKienTim.Size = new System.Drawing.Size(742, 212);
             this.panelControlDKienTim.TabIndex = 0;
             // 
             // panelControlNDungDKien
             // 
-            this.panelControlNDungDKien.Controls.Add(this.textBox1);
+            this.panelControlNDungDKien.Controls.Add(this.textBoxTenHocSinh);
             this.panelControlNDungDKien.Controls.Add(this.radioGroupGioiTinh);
             this.panelControlNDungDKien.Controls.Add(this.textEditNamSinhDen);
             this.panelControlNDungDKien.Controls.Add(this.textEditNamSinhTu);
             this.panelControlNDungDKien.Controls.Add(this.textEditDiaChi);
             this.panelControlNDungDKien.Controls.Add(this.textEditEmail);
-            this.panelControlNDungDKien.Controls.Add(this.textEditHoTen);
             this.panelControlNDungDKien.Controls.Add(this.textEditMaHocSinh);
             this.panelControlNDungDKien.Controls.Add(this.checkEditNamSinh);
             this.panelControlNDungDKien.Controls.Add(this.checkEditGioiTinh);
@@ -184,15 +181,15 @@
             this.panelControlNDungDKien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlNDungDKien.Location = new System.Drawing.Point(0, 0);
             this.panelControlNDungDKien.Name = "panelControlNDungDKien";
-            this.panelControlNDungDKien.Size = new System.Drawing.Size(740, 150);
+            this.panelControlNDungDKien.Size = new System.Drawing.Size(742, 152);
             this.panelControlNDungDKien.TabIndex = 1;
             // 
-            // textBox1
+            // textBoxTenHocSinh
             // 
-            this.textBox1.Location = new System.Drawing.Point(308, 49);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 17;
+            this.textBoxTenHocSinh.Location = new System.Drawing.Point(149, 49);
+            this.textBoxTenHocSinh.Name = "textBoxTenHocSinh";
+            this.textBoxTenHocSinh.Size = new System.Drawing.Size(152, 21);
+            this.textBoxTenHocSinh.TabIndex = 17;
             // 
             // radioGroupGioiTinh
             // 
@@ -232,13 +229,6 @@
             this.textEditEmail.Name = "textEditEmail";
             this.textEditEmail.Size = new System.Drawing.Size(152, 20);
             this.textEditEmail.TabIndex = 14;
-            // 
-            // textEditHoTen
-            // 
-            this.textEditHoTen.Location = new System.Drawing.Point(149, 48);
-            this.textEditHoTen.Name = "textEditHoTen";
-            this.textEditHoTen.Size = new System.Drawing.Size(152, 20);
-            this.textEditHoTen.TabIndex = 7;
             // 
             // textEditMaHocSinh
             // 
@@ -308,9 +298,9 @@
             this.panelControlButtonTim.Controls.Add(this.simpleButtonXoaDK);
             this.panelControlButtonTim.Controls.Add(this.simpleButtonSearch);
             this.panelControlButtonTim.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControlButtonTim.Location = new System.Drawing.Point(0, 150);
+            this.panelControlButtonTim.Location = new System.Drawing.Point(0, 152);
             this.panelControlButtonTim.Name = "panelControlButtonTim";
-            this.panelControlButtonTim.Size = new System.Drawing.Size(740, 60);
+            this.panelControlButtonTim.Size = new System.Drawing.Size(742, 60);
             this.panelControlButtonTim.TabIndex = 0;
             // 
             // simpleButtonDong
@@ -488,7 +478,7 @@
             this.gridColumnMaHocSinh.OptionsFilter.AllowFilter = false;
             this.gridColumnMaHocSinh.Visible = true;
             this.gridColumnMaHocSinh.VisibleIndex = 0;
-            this.gridColumnMaHocSinh.Width = 50;
+            this.gridColumnMaHocSinh.Width = 79;
             // 
             // gridColumnHoTen
             // 
@@ -675,7 +665,7 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menucontextXemHoSo});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(179, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(179, 26);
             // 
             // menucontextXemHoSo
             // 
@@ -712,7 +702,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhTu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditEmail.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditHoTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMaHocSinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditNamSinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditGioiTinh.Properties)).EndInit();
@@ -758,7 +747,6 @@
         private DevExpress.XtraEditors.CheckEdit checkEditHoTen;
         private DevExpress.XtraEditors.CheckEdit checkEditMaHocSinh;
         private DevExpress.XtraEditors.TextEdit textEditNamSinhTu;
-        private DevExpress.XtraEditors.TextEdit textEditHoTen;
         private DevExpress.XtraEditors.TextEdit textEditMaHocSinh;
         private DevExpress.XtraEditors.CheckEdit checkEditDiaChi;
         private DevExpress.XtraEditors.CheckEdit checkEditEmail;
@@ -784,7 +772,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButtonXuatBaoCao;
         private DevExpress.XtraEditors.SimpleButton simpleButtonXoaDK;
         private DevExpress.XtraEditors.SimpleButton simpleButtonSearch;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxTenHocSinh;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menucontextXemHoSo;
 

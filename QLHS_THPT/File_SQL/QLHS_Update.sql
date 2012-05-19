@@ -1,12 +1,40 @@
-﻿----------------------------------------------------------
---drop database QLHS
-use master
+﻿GO
+USE master
 GO
-drop database QLHS
+if exists
+(
+    select name from sysobjects
+    where name = 'TatTienTrinh' and type = 'p'
+)
+begin
+ drop proc TatTienTrinh
+end;
 GO
-create database QLHS
+create proc TatTienTrinh
+@dbname varchar(20)
+as
+DECLARE @spid varchar(10)
+SELECT @spid = spid
+FROM master.sys.sysprocesses
+WHERE dbid IN (DB_ID(@dbname))
+
+WHILE @@ROWCOUNT <> 0
+BEGIN
+ EXEC('KILL ' + @spid)
+END
+
+GO
+IF(db_id('QLHS') is NOT NULL)
+BEGIN
+	USE master
+	EXEC TatTienTrinh @dbname = 'QLHS'
+	DROP DATABASE QLHS
+END;
+GO
+CREATE DATABASE QLHS
 GO
 USE QLHS
+GO
 ----------------------------------------------------------
 --1. Create table and its columns
 CREATE TABLE [dbo].[NAMHOC] (
