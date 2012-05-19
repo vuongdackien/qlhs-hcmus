@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComboboxEditUtilities.cs" />
+    <Compile Include="ControlUtilities.cs" />
     <Compile Include="TreeListUtilities.cs" />
     <Compile Include="ExceptionUtilities.cs" />
     <Compile Include="LookUpEditUtilities.cs" />

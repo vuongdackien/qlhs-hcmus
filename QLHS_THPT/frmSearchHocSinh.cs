@@ -252,8 +252,17 @@ namespace QLHS
 
         private void menucontextXemHoSo_Click(object sender, EventArgs e)
         {
-            int dong = gridView1.FocusedRowHandle;
-
+            // Lấy form Main
+            var frmMainInstance = this.ParentForm as frmMain;
+            // Hiển thị frmHocSinh
+            frmMainInstance.ShowMDIChildForm<frmHocSinh>();
+            // Lấy instance formHocSinh
+            var frmHocSinhInstance = frmMainInstance.openForms[typeof(frmHocSinh)] as frmHocSinh;
+            // Gắn các properties chuẩn bị hiển thị chi tiết hồ sơ học sinh
+            frmHocSinhInstance.MaHocSinh = gridView1.GetFocusedRowCellValue("MaHocSinh").ToString();
+            frmHocSinhInstance.MaLop = gridView1.GetFocusedRowCellValue("MaLop").ToString();
+            // Hiển thị lại thông tin học sinh
+            frmHocSinhInstance.HienThiLai_FrmHocSinh_TuFormTimKiem();
         }
     }
 }

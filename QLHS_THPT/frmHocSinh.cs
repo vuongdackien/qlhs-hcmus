@@ -17,6 +17,10 @@ namespace QLHS
         private QuyDinhBUS _quyDinhBUS;
         private PhanLopBUS _phanLopBUS;
         private HocSinhDTO _hocSinhDTO;
+
+        // Access from frmSearchHocSinh
+        public string MaLop { get; set; }
+        public string MaHocSinh { get; set; }
        
         public frmHocSinh()
         {
@@ -28,7 +32,36 @@ namespace QLHS
             _quyDinhBUS = new QuyDinhBUS();
             _phanLopBUS = new PhanLopBUS();
         }
+        /// <summary>
+        /// Hiển thị lại form học sinh khi có yêu cầu từ form tìm kiếm
+        /// </summary>
+        public void HienThiLai_FrmHocSinh_TuFormTimKiem()
+        {
+            string maNamHoc = Utilities.ObjectUtilities.LayMaNamHocTuMaLop(MaLop);
+            string maKhoi = Utilities.ObjectUtilities.LayMaKhoiLopTuMaLop(MaLop);
+            // Chọn lại năm học
+            Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditNamHoc, maNamHoc);
+            // Chọn lại khối
+            Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditKhoi, maKhoi);
+            // Chọn lại lớp
+            Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditLop, MaLop);
 
+            // Tìm vị trí học sinh trên GridView có mã là MaHocSinh truyền từ formSearch
+            int found_select_handler = -1;
+            for (int i = 0; i < gridViewDSHocSinh.RowCount; i++)
+            {
+                if (gridViewDSHocSinh.GetRowCellValue(i, "MaHocSinh").ToString() == MaHocSinh)
+                {
+                    found_select_handler = i;
+                    break;
+                }
+            }
+            // Chọn học sinh
+            if (found_select_handler != -1)
+                gridViewDSHocSinh.FocusedRowHandle = found_select_handler;
+            else
+                Utilities.MessageboxUtilities.MessageError("Không tìm thấy hồ sơ học sinh có mã: "+MaHocSinh);
+        }
         private void frmHocSinh_Load(object sender, EventArgs e)
         {
             Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,_namHocBUS.LayDTNamHoc(),

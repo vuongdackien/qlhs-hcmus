@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelControlNamDKien = new DevExpress.XtraEditors.PanelControl();
             this.panelControlDieuKien = new DevExpress.XtraEditors.PanelControl();
             this.xtraTabControlDieuKien = new DevExpress.XtraTab.XtraTabControl();
@@ -73,8 +72,9 @@
             this.gridColumnLopHocHT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumnGVCN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlSearchHocSinh = new DevExpress.XtraGrid.GridControl();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.menucontextXemHoSo = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridColumnMaLop = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamDKien)).BeginInit();
             this.panelControlNamDKien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlDieuKien)).BeginInit();
@@ -454,7 +454,8 @@
             this.gridColumnEmail,
             this.gridColumnDiaChi,
             this.gridColumnLopHocHT,
-            this.gridColumnGVCN});
+            this.gridColumnGVCN,
+            this.gridColumnMaLop});
             this.gridView1.GridControl = this.gridControlSearchHocSinh;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -499,7 +500,7 @@
             this.gridColumnHoTen.OptionsFilter.AllowFilter = false;
             this.gridColumnHoTen.Visible = true;
             this.gridColumnHoTen.VisibleIndex = 1;
-            this.gridColumnHoTen.Width = 180;
+            this.gridColumnHoTen.Width = 108;
             // 
             // gridColumnGioiTinh
             // 
@@ -520,7 +521,7 @@
             this.gridColumnGioiTinh.OptionsFilter.AllowFilter = false;
             this.gridColumnGioiTinh.Visible = true;
             this.gridColumnGioiTinh.VisibleIndex = 2;
-            this.gridColumnGioiTinh.Width = 80;
+            this.gridColumnGioiTinh.Width = 52;
             // 
             // gridColumnNgaySinh
             // 
@@ -543,7 +544,7 @@
             this.gridColumnNgaySinh.OptionsFilter.AllowFilter = false;
             this.gridColumnNgaySinh.Visible = true;
             this.gridColumnNgaySinh.VisibleIndex = 3;
-            this.gridColumnNgaySinh.Width = 80;
+            this.gridColumnNgaySinh.Width = 65;
             // 
             // gridColumnNoiSinh
             // 
@@ -564,7 +565,7 @@
             this.gridColumnNoiSinh.OptionsFilter.AllowFilter = false;
             this.gridColumnNoiSinh.Visible = true;
             this.gridColumnNoiSinh.VisibleIndex = 4;
-            this.gridColumnNoiSinh.Width = 180;
+            this.gridColumnNoiSinh.Width = 136;
             // 
             // gridColumnEmail
             // 
@@ -585,7 +586,7 @@
             this.gridColumnEmail.OptionsFilter.AllowFilter = false;
             this.gridColumnEmail.Visible = true;
             this.gridColumnEmail.VisibleIndex = 5;
-            this.gridColumnEmail.Width = 190;
+            this.gridColumnEmail.Width = 73;
             // 
             // gridColumnDiaChi
             // 
@@ -606,7 +607,7 @@
             this.gridColumnDiaChi.OptionsFilter.AllowFilter = false;
             this.gridColumnDiaChi.Visible = true;
             this.gridColumnDiaChi.VisibleIndex = 6;
-            this.gridColumnDiaChi.Width = 214;
+            this.gridColumnDiaChi.Width = 199;
             // 
             // gridColumnLopHocHT
             // 
@@ -627,6 +628,7 @@
             this.gridColumnLopHocHT.OptionsFilter.AllowFilter = false;
             this.gridColumnLopHocHT.Visible = true;
             this.gridColumnLopHocHT.VisibleIndex = 7;
+            this.gridColumnLopHocHT.Width = 62;
             // 
             // gridColumnGVCN
             // 
@@ -665,7 +667,7 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menucontextXemHoSo});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(179, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(179, 48);
             // 
             // menucontextXemHoSo
             // 
@@ -673,6 +675,12 @@
             this.menucontextXemHoSo.Size = new System.Drawing.Size(178, 22);
             this.menucontextXemHoSo.Text = "Xem hồ sơ học sinh";
             this.menucontextXemHoSo.Click += new System.EventHandler(this.menucontextXemHoSo_Click);
+            // 
+            // gridColumnMaLop
+            // 
+            this.gridColumnMaLop.Caption = "Mã lớp";
+            this.gridColumnMaLop.FieldName = "MaLop";
+            this.gridColumnMaLop.Name = "gridColumnMaLop";
             // 
             // frmSearchHocSinh
             // 
@@ -775,6 +783,7 @@
         private System.Windows.Forms.TextBox textBoxTenHocSinh;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem menucontextXemHoSo;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnMaLop;
 
     }
 }
