@@ -110,20 +110,8 @@
     <Compile Include="frmSearchHocSinh.Designer.cs">
       <DependentUpon>frmSearchHocSinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTongKetMonHocKy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTongKetMonHocKy.Designer.cs">
-      <DependentUpon>frmTongKetMonHocKy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTongKetHocKy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTongKetHocKy.Designer.cs">
-      <DependentUpon>frmTongKetHocKy.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Report\DTO_TongKetHocKy.cs" />
+    <Compile Include="Report\DTO_TongKetMon.cs" />
     <Compile Include="Report\frmReportView_TongKetHK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,10 +125,10 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Report\rptTongKetHocKy.cs">
+    <Compile Include="Report\rptTongKetMon.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>rptTongKetHocKy.rpt</DependentUpon>
+      <DependentUpon>rptTongKetMon.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="frmBC_TongKetHocKy.resx">
@@ -161,12 +149,6 @@
     <EmbeddedResource Include="frmSearchHocSinh.resx">
       <DependentUpon>frmSearchHocSinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTongKetMonHocKy.resx">
-      <DependentUpon>frmTongKetMonHocKy.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTongKetHocKy.resx">
-      <DependentUpon>frmTongKetHocKy.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Report\frmReportView_TongKetHK.resx">
       <DependentUpon>frmReportView_TongKetHK.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,9 +166,9 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\rptTongKetHocKy.rpt">
+    <EmbeddedResource Include="Report\rptTongKetMon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptTongKetHocKy.cs</LastGenOutput>
+      <LastGenOutput>rptTongKetMon.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">

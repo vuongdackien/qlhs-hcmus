@@ -24,7 +24,7 @@ namespace QLHS.BUS
         {
             return _bangDiemDAL.LayDTDiem_HocKy_Lop(MaLop, MaHocKy);
         }
-         /// <summary>
+        /// <summary>
         /// Lấy bảng điểm môn học theo học kỳ của lớp
         /// </summary>
         /// <param name="MaLop">String: Mã lớp</param>
@@ -143,6 +143,18 @@ namespace QLHS.BUS
         public DataTable Lay_Bang_BaoCao_Diem_TongKetMon(string MaNamHoc, string MaKhoi, string MaMonHoc)
         {
             return null;
+        }
+
+        /// <summary>
+        /// Lấy bảng điểm môn học theo học kỳ của lớp
+        /// </summary>
+        /// <param name="MaLop">String: Mã lớp</param>
+        /// <param name="MaHocKy">String: Mã học kỳ</param>
+        /// <param name="MaMonHoc">String: Mã môn học</param>
+        /// <returns></returns>
+        public DataTable LayBangDiem_MonHoc(string MaKhoi, string MaHocKy, string MaMonHoc, string MaNamHoc)
+        {
+            return _bangDiemDAL.LayBangDiem_MonHoc(MaKhoi, MaHocKy, MaMonHoc, MaNamHoc);
         }
     }
 }

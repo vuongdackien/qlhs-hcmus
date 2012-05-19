@@ -20,6 +20,7 @@ namespace QLHS
         private BangDiemBUS _bangDiemBUS;
         private HocKyBUS _hocKyBUS;
         private MonHocBUS _monHocBUS;
+        private BangDiemBUS _BangDiemBUS;
         public frmBC_TongKetMon()
         {
             InitializeComponent();
@@ -29,14 +30,32 @@ namespace QLHS
             _bangDiemBUS = new BangDiemBUS();
             _hocKyBUS = new HocKyBUS();
             _monHocBUS = new MonHocBUS();
+            _BangDiemBUS = new BangDiemBUS();
+
         }
         /// <summary>
         /// Hiển thị bảng tổng kết môn
         /// </summary>
         private void HienThi_Bang_TongKetMon()
         {
+            if (treeMonHoc.FocusedNode == null)
+            {
+                gridControlTongKetMonHoc.DataSource = null;
+                return;
+            }
 
-            gridControlTongKetNamHoc.DataSource = null;
+            //Chắc chắn chọn được node
+            string maMonHoc = treeMonHoc.FocusedNode.GetValue("MaMonHoc").ToString();
+
+            gridControlTongKetMonHoc.DataSource =
+            _bangDiemBUS.LayBangDiem_MonHoc(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop),
+                                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy), maMonHoc, 
+                                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc));
+
+            labelControlNamHoc.Text = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc);
+            labelControlHocKy.Text = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);
+            labelControlKhoiLop.Text = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop);
+            labelControlMonHocTT.Text = treeMonHoc.FocusedNode.GetValue("TenMonHoc").ToString().ToUpper();
             
         }
         private void frmBC_TongKetMon_Load(object sender, EventArgs e)
@@ -55,5 +74,42 @@ namespace QLHS
             treeMonHoc.PreviewFieldName = "TenMonHoc";
             treeMonHoc.DataSource = _monHocBUS.LayDT_DanhSach_MonHoc();
         }
+
+        private void comboBoxEditNamHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.HienThi_Bang_TongKetMon();
+        }
+
+        private void comboBoxEditHocKy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.HienThi_Bang_TongKetMon();
+        }
+
+        private void comboBoxEditKhoiLop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.HienThi_Bang_TongKetMon();
+        }
+
+        private void treeMonHoc_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
+        {
+            this.HienThi_Bang_TongKetMon();
+        }
+
+        private void simpleButtonDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void simpleButtonXuatBD_Click(object sender, EventArgs e)
+        {
+            var ds = _BangDiemBUS.LayDTDiem_HocKy_Lop("10A01NH1112", "1");
+            var rp = new rptTongKetHocKy();
+            rp.SetDataSource(ds);
+
+            frmReportView_TongKetHK _frmReportView_TongKetHK = new frmReportView_TongKetHK();
+            _frmReportView_TongKetHK.crystalReportViewerTongKetMonHoc.ReportSource = rp;
+            _frmReportView_TongKetHK.ShowDialog();
+        }
+
     }
 }
