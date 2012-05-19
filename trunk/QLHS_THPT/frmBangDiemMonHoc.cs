@@ -37,6 +37,25 @@ namespace QLHS
             _monHocBUS = new MonHocBUS();
         }
 
+        private void frmBangDiemMonHoc_Load(object sender, EventArgs e)
+        {
+            treeListLopHoc.ParentFieldName = "MaKhoi";
+            treeListLopHoc.PreviewFieldName = "TenKhoi";
+            treeListLopHoc.DataSource = _khoiBUS.LayDTKhoi();
+
+            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
+                                                         _namHocBUS.LayDTNamHoc(),
+                                                        "MaNamHoc", "TenNamHoc", 0);
+            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditHocKy,
+                                                        _hocKyBUS.LayDTHocKy(),
+                                                        "MaHocKy", "TenHocKy", 0);
+            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditMonHoc,
+                                                        _monHocBUS.LayDT_DanhSach_MonHoc(),
+                                                        "MaMonHoc", "TenMonHoc", 0);
+
+            this.CapNhatListLop();
+        }
+
         /// <summary>
         /// Cập nhật lại list lớp theo khối
         /// </summary>
@@ -83,24 +102,7 @@ namespace QLHS
             labelControlGVCN.Text = _lopBUS.Lay_TenGiaoVien_MaLop(maLop);
             labelControlTenMon.Text = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditMonHoc).ToUpper();
         }
-        private void frmBangDiemMonHoc_Load(object sender, EventArgs e)
-        {
-            treeListLopHoc.ParentFieldName = "MaKhoi";
-            treeListLopHoc.PreviewFieldName = "TenKhoi";
-            treeListLopHoc.DataSource = _khoiBUS.LayDTKhoi();
-
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
-                                                         _namHocBUS.LayDTNamHoc(),
-                                                        "MaNamHoc", "TenNamHoc", 0);
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditHocKy,
-                                                        _hocKyBUS.LayDTHocKy(),
-                                                        "MaHocKy", "TenHocKy", 0);
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditMonHoc,
-                                                        _monHocBUS.LayDT_DanhSach_MonHoc(),
-                                                        "MaMonHoc", "TenMonHoc", 0);
-            
-           this.CapNhatListLop();
-        }
+       
         private void simpleButtonXuatBD_Click(object sender, EventArgs e)
         {
          

@@ -139,5 +139,10 @@ namespace QLHS.BUS
         {
             return _bangDiemDAL.XoaBangDiem_MonHoc_HocSinh_HocKy(bd);
         }
+
+        public DataTable Lay_Bang_BaoCao_Diem_TongKetMon(string MaNamHoc, string MaKhoi, string MaMonHoc)
+        {
+            return null;
+        }
     }
 }
