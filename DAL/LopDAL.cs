@@ -44,6 +44,16 @@ namespace QLHS.DAL
             CloseConnect();
             return listLopDTO;
         }
-
+        /// <summary>
+        /// Lấy tên giáo viên chủ nhiệm
+        /// </summary>
+        /// <param name="MaLop">String: Mã lớp</param>
+        /// <returns>String: Tên giáo viên</returns>
+        public string Lay_TenGiaoVien_MaLop(string MaLop)
+        {
+            string sql = "SELECT gv.TenGiaoVien FROM GIAOVIEN gv, LOP l "
+                        +"WHERE gv.MaGiaoVien = l.MaGiaoVien AND l.Malop ='"+MaLop+"'";
+            return Convert.ToString(ExecuteScalar(sql));
+        }
     }
 }

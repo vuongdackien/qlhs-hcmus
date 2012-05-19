@@ -23,9 +23,6 @@ namespace QLHS
         private BangDiemBUS _bangDiemBUS;
         private HocKyBUS _hocKyBUS;
         private MonHocBUS _monHocBUS;
-        private bool _has_edit_bangdiem; // Ghi nhận có chỉnh sửa bảng điểm
-
-
 
         public frmBangDiemMonHoc()
         {
@@ -70,16 +67,21 @@ namespace QLHS
         private void HienThi_Lai_BangDiem()
         {
             // Chắc chắn chọn được node
-            if (treeListLopHoc.FocusedNode == null)
+            if (treeListLopHoc.FocusedNode == null ||
+                    Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditMonHoc))
             {
                 gridControlTongKetNamHoc.DataSource = null;
                 return;
             }
+            string maLop = treeListLopHoc.FocusedNode.GetValue("MaKhoi").ToString();
             gridControlTongKetNamHoc.DataSource =
-            _bangDiemBUS.LayBangDiem(treeListLopHoc.FocusedNode.GetValue("MaKhoi").ToString(),
-                                                Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy),
-                                                Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditMonHoc));
-       
+            _bangDiemBUS.LayBangDiem(maLop, Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy),
+                                            Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditMonHoc));
+            labelControlNamHoc.Text = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc);
+            labelControlLop.Text = treeListLopHoc.FocusedNode.GetValue("TenKhoi").ToString();
+            labelControlHocKy.Text = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);
+            labelControlGVCN.Text = _lopBUS.Lay_TenGiaoVien_MaLop(maLop);
+            labelControlTenMon.Text = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditMonHoc).ToUpper();
         }
         private void frmBangDiemMonHoc_Load(object sender, EventArgs e)
         {
@@ -101,7 +103,7 @@ namespace QLHS
         }
         private void simpleButtonXuatBD_Click(object sender, EventArgs e)
         {
-            _has_edit_bangdiem = false;
+         
         }
 
         private void comboBoxEditNamHoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -114,7 +116,6 @@ namespace QLHS
         {
             this.HienThi_Lai_BangDiem();
         }
-
         
         private void comboBoxEditMonHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -135,29 +136,30 @@ namespace QLHS
             bangDiem.MaHocKy = Convert.ToInt32(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy));
             bangDiem.MonHoc.MaMonHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditMonHoc);
             bangDiem.LopDTO.MaLop = treeListLopHoc.FocusedNode.GetValue("MaKhoi").ToString();
-            bangDiem.DM_1 = dr["DM_1"] is DBNull ? -1 : Convert.ToDouble(dr["DM_1"]); 
-            bangDiem.DM_2 = dr["DM_2"] is DBNull ? -1 : Convert.ToDouble(dr["DM_2"]); 
+            bangDiem.DM_1 = dr["DM_1"] is DBNull ? -1 : Convert.ToDouble(dr["DM_1"]);
+            bangDiem.DM_2 = dr["DM_2"] is DBNull ? -1 : Convert.ToDouble(dr["DM_2"]);
             bangDiem.D15_1 = dr["D15_1"] is DBNull ? -1 : Convert.ToDouble(dr["D15_1"]);
-            bangDiem.D15_2 = dr["D15_2"] is DBNull ? -1 : Convert.ToDouble(dr["D15_2"]); 
-            bangDiem.D15_3 = dr["D15_3"] is DBNull ? -1 : Convert.ToDouble(dr["D15_3"]); 
-            bangDiem.D15_4 = dr["D15_4"] is DBNull ? -1 : Convert.ToDouble(dr["D15_4"]); 
-            bangDiem.D1T_1 = dr["D1T_1"] is DBNull ? -1 : Convert.ToDouble(dr["D1T_1"]); 
+            bangDiem.D15_2 = dr["D15_2"] is DBNull ? -1 : Convert.ToDouble(dr["D15_2"]);
+            bangDiem.D15_3 = dr["D15_3"] is DBNull ? -1 : Convert.ToDouble(dr["D15_3"]);
+            bangDiem.D15_4 = dr["D15_4"] is DBNull ? -1 : Convert.ToDouble(dr["D15_4"]);
+            bangDiem.D1T_1 = dr["D1T_1"] is DBNull ? -1 : Convert.ToDouble(dr["D1T_1"]);
             bangDiem.D1T_2 = dr["D1T_2"] is DBNull ? -1 : Convert.ToDouble(dr["D1T_2"]);
             bangDiem.DThi = dr["DThi"] is DBNull ? -1 : Convert.ToDouble(dr["DThi"]);
             bangDiem.DTB = dr["DTB"] is DBNull ? -1 : Convert.ToDouble(dr["DTB"]);
 
- 
+
             try
             {
                 // Kiểm tra điểm hợp lệ trên 1 dòng
                 _bangDiemBUS.KiemTraHopLe_TrenDong_BangDiem(bangDiem);
                 // Tính điểm trung bình
                 double dTB_bangdiem = _bangDiemBUS.TinhDiem_TB_Mon_TrenDong(bangDiem);
+                bangDiem.DTB = dTB_bangdiem;
                 // Gán và hiển thị cột DTB
-                advBandedGridView1.SetRowCellValue(e.RowHandle, "DTB",dTB_bangdiem);
+                advBandedGridView1.SetRowCellValue(e.RowHandle, "DTB", dTB_bangdiem);
                 // Lưu vào CSDL
                 _bangDiemBUS.LuuBangDiem_Mon_Hoc_HocSinh(bangDiem);
-                
+
             }
             catch (Exception ex)
             {
@@ -200,6 +202,8 @@ namespace QLHS
                 e.ErrorText = "Điểm nhập không hợp lệ!";
             }
         }
+
+        
 
 
 
