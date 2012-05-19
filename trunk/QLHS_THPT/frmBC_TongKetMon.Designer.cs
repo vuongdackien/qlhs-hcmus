@@ -215,7 +215,7 @@
             this.simpleButtonXuatBD.Name = "simpleButtonXuatBD";
             this.simpleButtonXuatBD.Size = new System.Drawing.Size(128, 35);
             this.simpleButtonXuatBD.TabIndex = 18;
-            this.simpleButtonXuatBD.Text = "Xuất bảng điểm";
+            this.simpleButtonXuatBD.Text = "Lập báo cáo";
             // 
             // labelControlHocKyTT
             // 
