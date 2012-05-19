@@ -77,9 +77,9 @@ namespace QLHS
             treeListSearch.PreviewFieldName = "TenKhoi";
             treeListSearch.DataSource = _khoiBUS.LayDTKhoi();
 
-            textBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            textBox1.AutoCompleteCustomSource = Tao_Data_AutoComplete_Cbo_TenHocSinh();
+            textBoxTenHocSinh.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            textBoxTenHocSinh.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            textBoxTenHocSinh.AutoCompleteCustomSource = Tao_Data_AutoComplete_Cbo_TenHocSinh();
 
             CapNhatListLop();
             // Disable controls search
@@ -114,7 +114,7 @@ namespace QLHS
             DataTable kq_TimKiemDS = null;
             HocSinhTimKiemDTO hsTimKiemDTO = new HocSinhTimKiemDTO();
             hsTimKiemDTO.MaHocSinh = textEditMaHocSinh.Text;
-            hsTimKiemDTO.TenHocSinh = textEditHoTen.Text;
+            hsTimKiemDTO.TenHocSinh = textBoxTenHocSinh.Text;
             //lấy giá trị của radioGioiTinh
             if (checkEditGioiTinh.Checked)
             {
@@ -175,6 +175,18 @@ namespace QLHS
                     c.Enabled = show;
             }
         }
+        private void EnableControl(CheckEdit checkEdit, TextBox textEdit)
+        {
+            if (checkEdit.Checked)
+                Check = true;
+            else
+            {
+                Check = false;
+                textEdit.ResetText();
+            }
+            textEdit.ReadOnly = !Check;
+            textEdit.Enabled = Check;
+        }
         private void EnableControl(CheckEdit checkEdit, TextEdit textEdit)
         {
             if (checkEdit.Checked)
@@ -208,8 +220,7 @@ namespace QLHS
 
         private void checkEditHoTen_CheckedChanged(object sender, EventArgs e)
         {
-            EnableControl(checkEditHoTen, textEditHoTen);
-            textBox1.Enabled = true;
+            EnableControl(checkEditHoTen, textBoxTenHocSinh);
         }
 
         private void checkEditGioiTinh_CheckedChanged(object sender, EventArgs e)
