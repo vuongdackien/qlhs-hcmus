@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SuperToolTip superToolTip154 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem154 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip155 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem155 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip156 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem156 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip157 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem157 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip158 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem158 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip159 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem159 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip160 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem160 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip161 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem161 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip162 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem162 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem8 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip9 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem9 = new DevExpress.Utils.ToolTipItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -148,9 +148,9 @@
             this.barBtnHoSoHocSinh.Id = 13;
             this.barBtnHoSoHocSinh.LargeGlyph = global::QLHS.Properties.Resources.hocsinh;
             this.barBtnHoSoHocSinh.Name = "barBtnHoSoHocSinh";
-            toolTipItem154.Text = "Tiếp nhận, cập nhật hồ sơ học sinh.";
-            superToolTip154.Items.Add(toolTipItem154);
-            this.barBtnHoSoHocSinh.SuperTip = superToolTip154;
+            toolTipItem1.Text = "Tiếp nhận, cập nhật hồ sơ học sinh.";
+            superToolTip1.Items.Add(toolTipItem1);
+            this.barBtnHoSoHocSinh.SuperTip = superToolTip1;
             this.barBtnHoSoHocSinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnHoSoHocSinh_ItemClick);
             // 
             // barBtnKhaiBaoNamHoc
@@ -159,9 +159,9 @@
             this.barBtnKhaiBaoNamHoc.Id = 14;
             this.barBtnKhaiBaoNamHoc.LargeGlyph = global::QLHS.Properties.Resources.khaibao_namhoc;
             this.barBtnKhaiBaoNamHoc.Name = "barBtnKhaiBaoNamHoc";
-            toolTipItem155.Text = "Khai báo các thông tin của năm học mới.";
-            superToolTip155.Items.Add(toolTipItem155);
-            this.barBtnKhaiBaoNamHoc.SuperTip = superToolTip155;
+            toolTipItem2.Text = "Khai báo các thông tin của năm học mới.";
+            superToolTip2.Items.Add(toolTipItem2);
+            this.barBtnKhaiBaoNamHoc.SuperTip = superToolTip2;
             // 
             // barBtnQuanLyNamHoc
             // 
@@ -169,9 +169,9 @@
             this.barBtnQuanLyNamHoc.Id = 15;
             this.barBtnQuanLyNamHoc.LargeGlyph = global::QLHS.Properties.Resources.namhoc;
             this.barBtnQuanLyNamHoc.Name = "barBtnQuanLyNamHoc";
-            toolTipItem156.Text = "Quản lý hồ sơ các năm học.";
-            superToolTip156.Items.Add(toolTipItem156);
-            this.barBtnQuanLyNamHoc.SuperTip = superToolTip156;
+            toolTipItem3.Text = "Quản lý hồ sơ các năm học.";
+            superToolTip3.Items.Add(toolTipItem3);
+            this.barBtnQuanLyNamHoc.SuperTip = superToolTip3;
             // 
             // barBtnTimKiemHocSinh
             // 
@@ -179,9 +179,9 @@
             this.barBtnTimKiemHocSinh.Id = 16;
             this.barBtnTimKiemHocSinh.LargeGlyph = global::QLHS.Properties.Resources.tracuuhocsinh;
             this.barBtnTimKiemHocSinh.Name = "barBtnTimKiemHocSinh";
-            toolTipItem157.Text = "Tìm kiếm thông tin học sinh.";
-            superToolTip157.Items.Add(toolTipItem157);
-            this.barBtnTimKiemHocSinh.SuperTip = superToolTip157;
+            toolTipItem4.Text = "Tìm kiếm thông tin học sinh.";
+            superToolTip4.Items.Add(toolTipItem4);
+            this.barBtnTimKiemHocSinh.SuperTip = superToolTip4;
             this.barBtnTimKiemHocSinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnTimKiemHocSinh_ItemClick);
             // 
             // barBtnHoSoGiaoVien
@@ -190,9 +190,10 @@
             this.barBtnHoSoGiaoVien.Id = 19;
             this.barBtnHoSoGiaoVien.LargeGlyph = global::QLHS.Properties.Resources.giaovien;
             this.barBtnHoSoGiaoVien.Name = "barBtnHoSoGiaoVien";
-            toolTipItem158.Text = "Quản lý hồ sơ giáo viên.";
-            superToolTip158.Items.Add(toolTipItem158);
-            this.barBtnHoSoGiaoVien.SuperTip = superToolTip158;
+            toolTipItem5.Text = "Quản lý hồ sơ giáo viên.";
+            superToolTip5.Items.Add(toolTipItem5);
+            this.barBtnHoSoGiaoVien.SuperTip = superToolTip5;
+            this.barBtnHoSoGiaoVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnHoSoGiaoVien_ItemClick);
             // 
             // barBtnTimKiemGiaoVien
             // 
@@ -200,9 +201,9 @@
             this.barBtnTimKiemGiaoVien.Id = 20;
             this.barBtnTimKiemGiaoVien.LargeGlyph = global::QLHS.Properties.Resources.tracuugiaovien;
             this.barBtnTimKiemGiaoVien.Name = "barBtnTimKiemGiaoVien";
-            toolTipItem159.Text = "Tìm kiếm thông tin giáo viên.";
-            superToolTip159.Items.Add(toolTipItem159);
-            this.barBtnTimKiemGiaoVien.SuperTip = superToolTip159;
+            toolTipItem6.Text = "Tìm kiếm thông tin giáo viên.";
+            superToolTip6.Items.Add(toolTipItem6);
+            this.barBtnTimKiemGiaoVien.SuperTip = superToolTip6;
             this.barBtnTimKiemGiaoVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnTimKiemGiaoVien_ItemClick);
             // 
             // barBtnPhanCongChuyenMon
@@ -211,9 +212,10 @@
             this.barBtnPhanCongChuyenMon.Id = 21;
             this.barBtnPhanCongChuyenMon.LargeGlyph = global::QLHS.Properties.Resources.quydinh_diemcan;
             this.barBtnPhanCongChuyenMon.Name = "barBtnPhanCongChuyenMon";
-            toolTipItem160.Text = "Phân công chuyên môn giảng dạy cho giáo viên.";
-            superToolTip160.Items.Add(toolTipItem160);
-            this.barBtnPhanCongChuyenMon.SuperTip = superToolTip160;
+            toolTipItem7.Text = "Phân công chuyên môn giảng dạy cho giáo viên.";
+            superToolTip7.Items.Add(toolTipItem7);
+            this.barBtnPhanCongChuyenMon.SuperTip = superToolTip7;
+            this.barBtnPhanCongChuyenMon.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnPhanCongChuyenMon_ItemClick);
             // 
             // barBtnPhanLopHocSinh
             // 
@@ -221,9 +223,9 @@
             this.barBtnPhanLopHocSinh.Id = 22;
             this.barBtnPhanLopHocSinh.LargeGlyph = global::QLHS.Properties.Resources.khoahoc;
             this.barBtnPhanLopHocSinh.Name = "barBtnPhanLopHocSinh";
-            toolTipItem161.Text = "Phân lớp cho học sinh lưu ban, chuyển lớp,...";
-            superToolTip161.Items.Add(toolTipItem161);
-            this.barBtnPhanLopHocSinh.SuperTip = superToolTip161;
+            toolTipItem8.Text = "Phân lớp cho học sinh lưu ban, chuyển lớp,...";
+            superToolTip8.Items.Add(toolTipItem8);
+            this.barBtnPhanLopHocSinh.SuperTip = superToolTip8;
             // 
             // barBtnHeSoMonHoc
             // 
@@ -231,9 +233,9 @@
             this.barBtnHeSoMonHoc.Id = 24;
             this.barBtnHeSoMonHoc.LargeGlyph = global::QLHS.Properties.Resources.monhoc;
             this.barBtnHeSoMonHoc.Name = "barBtnHeSoMonHoc";
-            toolTipItem162.Text = "Quy định các hệ số điểm từng học kỳ của các môn học.";
-            superToolTip162.Items.Add(toolTipItem162);
-            this.barBtnHeSoMonHoc.SuperTip = superToolTip162;
+            toolTipItem9.Text = "Quy định các hệ số điểm từng học kỳ của các môn học.";
+            superToolTip9.Items.Add(toolTipItem9);
+            this.barBtnHeSoMonHoc.SuperTip = superToolTip9;
             // 
             // barButtonItem3
             // 

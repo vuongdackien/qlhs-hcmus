@@ -72,7 +72,7 @@ namespace QLHS
 
         private void barBtnTimKiemHocSinh_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmTongKetHocKy>();
+            ShowMDIChildForm<frmSearchHocSinh>();
         }
 
         private void barButtonItemNhapDiemMonHoc_ItemClick(object sender, ItemClickEventArgs e)
@@ -80,7 +80,17 @@ namespace QLHS
             ShowMDIChildForm<frmBangDiemMonHoc>();
         }
 
+        private void barBtnHoSoGiaoVien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmBC_TongKetMon>();
+        }
+
         private void barBtnTimKiemGiaoVien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void barBtnPhanCongChuyenMon_ItemClick(object sender, ItemClickEventArgs e)
         {
 
         }

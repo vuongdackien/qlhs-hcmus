@@ -14,7 +14,7 @@ namespace QLHS.DAL
         /// <returns>Datatable</returns>
         public DataTable LayDT_DanhSach_MonHoc()
         {
-            string sql = "SELECT MaMonHoc, TenMonHoc FROM MONHOC";
+            string sql = "SELECT MaMonHoc, TenMonHoc FROM MONHOC ORDER BY TenMonHoc  ASC";
             return GetTable(sql);
         }
     }
