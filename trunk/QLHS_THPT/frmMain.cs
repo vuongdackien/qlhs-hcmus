@@ -58,5 +58,10 @@ namespace QLHS
         {
             ShowMDIChildForm<frmTongKetHocKy>();
         }
+
+        private void barButtonItemNhapDiemMonHoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmBangDiemMonHoc>();
+        }
     }
 }

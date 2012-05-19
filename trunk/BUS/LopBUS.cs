@@ -34,5 +34,14 @@ namespace QLHS.BUS
         {
             return _LopDAL.LayListLop_MaNam_MaKhoi(MaNamHoc, MaKhoi);
         }
+         /// <summary>
+        /// Lấy tên giáo viên chủ nhiệm
+        /// </summary>
+        /// <param name="MaLop">String: Mã lớp</param>
+        /// <returns>String: Tên giáo viên</returns>
+        public string Lay_TenGiaoVien_MaLop(string MaLop)
+        {
+            return _LopDAL.Lay_TenGiaoVien_MaLop(MaLop);
+        }
     }
 }

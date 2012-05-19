@@ -67,8 +67,11 @@
             this.colTitleTBM = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colTBM = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.panelControlTopRight = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButtonLuuBD = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControlTenMon = new DevExpress.XtraEditors.LabelControl();
+            this.labelControlGVCN = new DevExpress.XtraEditors.LabelControl();
+            this.labelControlLop = new DevExpress.XtraEditors.LabelControl();
+            this.labelControlHocKy = new DevExpress.XtraEditors.LabelControl();
+            this.labelControlNamHoc = new DevExpress.XtraEditors.LabelControl();
             this.labelControlGVCNTT = new DevExpress.XtraEditors.LabelControl();
             this.labelControlHocKyTT = new DevExpress.XtraEditors.LabelControl();
             this.labelControlLopTT = new DevExpress.XtraEditors.LabelControl();
@@ -104,7 +107,7 @@
             // treeListLopHoc
             // 
             this.treeListLopHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeListLopHoc.Location = new System.Drawing.Point(2, 141);
+            this.treeListLopHoc.Location = new System.Drawing.Point(3, 142);
             this.treeListLopHoc.Name = "treeListLopHoc";
             this.treeListLopHoc.BeginUnboundLoad();
             this.treeListLopHoc.AppendNode(new object[0], -1);
@@ -114,7 +117,7 @@
             this.treeListLopHoc.OptionsBehavior.Editable = false;
             this.treeListLopHoc.OptionsView.ShowColumns = false;
             this.treeListLopHoc.OptionsView.ShowIndicator = false;
-            this.treeListLopHoc.Size = new System.Drawing.Size(178, 259);
+            this.treeListLopHoc.Size = new System.Drawing.Size(176, 257);
             this.treeListLopHoc.TabIndex = 1;
             this.treeListLopHoc.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeListLopHoc_FocusedNodeChanged);
             // 
@@ -127,9 +130,9 @@
             this.panelControlChooseYear.Controls.Add(this.labelControl3);
             this.panelControlChooseYear.Controls.Add(this.labelControl1);
             this.panelControlChooseYear.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlChooseYear.Location = new System.Drawing.Point(2, 2);
+            this.panelControlChooseYear.Location = new System.Drawing.Point(3, 3);
             this.panelControlChooseYear.Name = "panelControlChooseYear";
-            this.panelControlChooseYear.Size = new System.Drawing.Size(178, 139);
+            this.panelControlChooseYear.Size = new System.Drawing.Size(176, 139);
             this.panelControlChooseYear.TabIndex = 0;
             // 
             // comboBoxEditNamHoc
@@ -152,6 +155,7 @@
             this.comboBoxEditMonHoc.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditMonHoc.Size = new System.Drawing.Size(150, 20);
             this.comboBoxEditMonHoc.TabIndex = 8;
+            this.comboBoxEditMonHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditMonHoc_SelectedIndexChanged);
             // 
             // comboBoxEditHocKy
             // 
@@ -201,12 +205,12 @@
             // gridControlTongKetNamHoc
             // 
             this.gridControlTongKetNamHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlTongKetNamHoc.Location = new System.Drawing.Point(2, 82);
+            this.gridControlTongKetNamHoc.Location = new System.Drawing.Point(3, 83);
             this.gridControlTongKetNamHoc.MainView = this.advBandedGridView1;
             this.gridControlTongKetNamHoc.Name = "gridControlTongKetNamHoc";
             this.gridControlTongKetNamHoc.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
-            this.gridControlTongKetNamHoc.Size = new System.Drawing.Size(991, 318);
+            this.gridControlTongKetNamHoc.Size = new System.Drawing.Size(989, 316);
             this.gridControlTongKetNamHoc.TabIndex = 1;
             this.gridControlTongKetNamHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.advBandedGridView1});
@@ -644,7 +648,7 @@
             this.colDiemHK.AppearanceHeader.Options.UseTextOptions = true;
             this.colDiemHK.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colDiemHK.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colDiemHK.Caption = "Điểm HK";
+            this.colDiemHK.Caption = "Điểm hệ số 3";
             this.colDiemHK.Columns.Add(this.colHK);
             this.colDiemHK.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.colDiemHK.MinWidth = 20;
@@ -669,58 +673,102 @@
             this.colTitleTBM.AppearanceHeader.Options.UseTextOptions = true;
             this.colTitleTBM.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colTitleTBM.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colTitleTBM.Caption = "Điểm TBM";
+            this.colTitleTBM.Caption = "TBình Môn";
             this.colTitleTBM.Columns.Add(this.colTBM);
             this.colTitleTBM.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
             this.colTitleTBM.MinWidth = 20;
             this.colTitleTBM.Name = "colTitleTBM";
-            this.colTitleTBM.Width = 52;
+            this.colTitleTBM.Width = 61;
             // 
             // colTBM
             // 
+            this.colTBM.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.colTBM.AppearanceCell.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.colTBM.AppearanceCell.BorderColor = System.Drawing.Color.Black;
+            this.colTBM.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.colTBM.AppearanceCell.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
+            this.colTBM.AppearanceCell.Options.UseBackColor = true;
+            this.colTBM.AppearanceCell.Options.UseBorderColor = true;
+            this.colTBM.AppearanceCell.Options.UseFont = true;
             this.colTBM.AppearanceCell.Options.UseTextOptions = true;
             this.colTBM.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTBM.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.colTBM.AppearanceHeader.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.colTBM.AppearanceHeader.Options.UseBackColor = true;
             this.colTBM.AppearanceHeader.Options.UseTextOptions = true;
             this.colTBM.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTBM.Caption = "Đ.TBình";
             this.colTBM.ColumnEdit = this.repositoryItemTextEdit1;
             this.colTBM.FieldName = "DTB";
             this.colTBM.Name = "colTBM";
+            this.colTBM.OptionsColumn.AllowEdit = false;
+            this.colTBM.OptionsColumn.AllowFocus = false;
             this.colTBM.Visible = true;
-            this.colTBM.Width = 52;
+            this.colTBM.Width = 61;
             // 
             // panelControlTopRight
             // 
-            this.panelControlTopRight.Controls.Add(this.simpleButtonLuuBD);
-            this.panelControlTopRight.Controls.Add(this.simpleButtonDong);
+            this.panelControlTopRight.Controls.Add(this.labelControlTenMon);
+            this.panelControlTopRight.Controls.Add(this.labelControlGVCN);
+            this.panelControlTopRight.Controls.Add(this.labelControlLop);
+            this.panelControlTopRight.Controls.Add(this.labelControlHocKy);
+            this.panelControlTopRight.Controls.Add(this.labelControlNamHoc);
             this.panelControlTopRight.Controls.Add(this.labelControlGVCNTT);
             this.panelControlTopRight.Controls.Add(this.labelControlHocKyTT);
             this.panelControlTopRight.Controls.Add(this.labelControlLopTT);
             this.panelControlTopRight.Controls.Add(this.labelControlNamHocTT);
             this.panelControlTopRight.Controls.Add(this.labelControlTitle);
             this.panelControlTopRight.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlTopRight.Location = new System.Drawing.Point(2, 2);
+            this.panelControlTopRight.Location = new System.Drawing.Point(3, 3);
             this.panelControlTopRight.Name = "panelControlTopRight";
-            this.panelControlTopRight.Size = new System.Drawing.Size(991, 80);
+            this.panelControlTopRight.Size = new System.Drawing.Size(989, 80);
             this.panelControlTopRight.TabIndex = 0;
             // 
-            // simpleButtonLuuBD
+            // labelControlTenMon
             // 
-            this.simpleButtonLuuBD.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonLuuBD.Location = new System.Drawing.Point(488, 22);
-            this.simpleButtonLuuBD.Name = "simpleButtonLuuBD";
-            this.simpleButtonLuuBD.Size = new System.Drawing.Size(128, 35);
-            this.simpleButtonLuuBD.TabIndex = 20;
-            this.simpleButtonLuuBD.Text = "Lưu bảng điểm";
-            this.simpleButtonLuuBD.Click += new System.EventHandler(this.simpleButtonXuatBD_Click);
+            this.labelControlTenMon.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControlTenMon.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.labelControlTenMon.Location = new System.Drawing.Point(242, 7);
+            this.labelControlTenMon.Name = "labelControlTenMon";
+            this.labelControlTenMon.Size = new System.Drawing.Size(20, 19);
+            this.labelControlTenMon.TabIndex = 24;
+            this.labelControlTenMon.Text = "__";
             // 
-            // simpleButtonDong
+            // labelControlGVCN
             // 
-            this.simpleButtonDong.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonDong.Location = new System.Drawing.Point(651, 22);
-            this.simpleButtonDong.Name = "simpleButtonDong";
-            this.simpleButtonDong.Size = new System.Drawing.Size(128, 35);
-            this.simpleButtonDong.TabIndex = 19;
-            this.simpleButtonDong.Text = "Đóng";
+            this.labelControlGVCN.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.labelControlGVCN.Location = new System.Drawing.Point(50, 59);
+            this.labelControlGVCN.Name = "labelControlGVCN";
+            this.labelControlGVCN.Size = new System.Drawing.Size(49, 13);
+            this.labelControlGVCN.TabIndex = 23;
+            this.labelControlGVCN.Text = "_______";
+            // 
+            // labelControlLop
+            // 
+            this.labelControlLop.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.labelControlLop.Location = new System.Drawing.Point(193, 35);
+            this.labelControlLop.Name = "labelControlLop";
+            this.labelControlLop.Size = new System.Drawing.Size(49, 13);
+            this.labelControlLop.TabIndex = 22;
+            this.labelControlLop.Text = "_______";
+            // 
+            // labelControlHocKy
+            // 
+            this.labelControlHocKy.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.labelControlHocKy.Location = new System.Drawing.Point(342, 35);
+            this.labelControlHocKy.Name = "labelControlHocKy";
+            this.labelControlHocKy.Size = new System.Drawing.Size(49, 13);
+            this.labelControlHocKy.TabIndex = 22;
+            this.labelControlHocKy.Text = "_______";
+            // 
+            // labelControlNamHoc
+            // 
+            this.labelControlNamHoc.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.labelControlNamHoc.Location = new System.Drawing.Point(65, 35);
+            this.labelControlNamHoc.Name = "labelControlNamHoc";
+            this.labelControlNamHoc.Size = new System.Drawing.Size(49, 13);
+            this.labelControlNamHoc.TabIndex = 21;
+            this.labelControlNamHoc.Text = "_______";
             // 
             // labelControlGVCNTT
             // 
@@ -760,9 +808,9 @@
             this.labelControlTitle.Appearance.ForeColor = System.Drawing.Color.Navy;
             this.labelControlTitle.Location = new System.Drawing.Point(6, 6);
             this.labelControlTitle.Name = "labelControlTitle";
-            this.labelControlTitle.Size = new System.Drawing.Size(315, 19);
+            this.labelControlTitle.Size = new System.Drawing.Size(230, 19);
             this.labelControlTitle.TabIndex = 0;
-            this.labelControlTitle.Text = "TỔNG KẾT ĐIỂM BÌNH QUÂN NĂM HỌC";
+            this.labelControlTitle.Text = "BẢNG NHẬP ĐIỂM MÔN HỌC";
             // 
             // frmBangDiemMonHoc
             // 
@@ -772,6 +820,7 @@
             this.Controls.Add(this.panelControlRight);
             this.Controls.Add(this.panelControlLeft);
             this.Name = "frmBangDiemMonHoc";
+            this.ShowIcon = false;
             this.Text = "Bảng điểm môn học";
             this.Load += new System.EventHandler(this.frmBangDiemMonHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlLeft)).EndInit();
@@ -808,8 +857,6 @@
         private DevExpress.XtraEditors.LabelControl labelControlTitle;
         private DevExpress.XtraTreeList.TreeList treeListLopHoc;
         private DevExpress.XtraGrid.GridControl gridControlTongKetNamHoc;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonLuuBD;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonDong;
         private DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView advBandedGridView1;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn1;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSTT1;
@@ -843,5 +890,10 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand colDiemHK;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand colTitleTBM;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraEditors.LabelControl labelControlGVCN;
+        private DevExpress.XtraEditors.LabelControl labelControlLop;
+        private DevExpress.XtraEditors.LabelControl labelControlHocKy;
+        private DevExpress.XtraEditors.LabelControl labelControlNamHoc;
+        private DevExpress.XtraEditors.LabelControl labelControlTenMon;
     }
 }

@@ -79,6 +79,8 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.ribbonPageGroupNhapDiemMonHoc = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItemNhapDiemMonHoc = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -110,9 +112,10 @@
             this.barButtonItem5,
             this.barSubItem1,
             this.barSubItem2,
-            this.ribbonGalleryBarItem1});
+            this.ribbonGalleryBarItem1,
+            this.barButtonItemNhapDiemMonHoc});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 31;
+            this.ribbon.MaxItemId = 33;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategoryTiepNhanHocSinh});
@@ -309,6 +312,8 @@
             // 
             // ribbonPageQuanLyHocTap
             // 
+            this.ribbonPageQuanLyHocTap.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroupNhapDiemMonHoc});
             this.ribbonPageQuanLyHocTap.Name = "ribbonPageQuanLyHocTap";
             this.ribbonPageQuanLyHocTap.Text = "Quản Lý Học Tập";
             // 
@@ -348,6 +353,20 @@
             // xtraTabbedMdiManager
             // 
             this.xtraTabbedMdiManager.MdiParent = this;
+            // 
+            // ribbonPageGroupNhapDiemMonHoc
+            // 
+            this.ribbonPageGroupNhapDiemMonHoc.ItemLinks.Add(this.barButtonItemNhapDiemMonHoc);
+            this.ribbonPageGroupNhapDiemMonHoc.Name = "ribbonPageGroupNhapDiemMonHoc";
+            this.ribbonPageGroupNhapDiemMonHoc.Text = "Quản Lý Sổ Điểm";
+            // 
+            // barButtonItemNhapDiemMonHoc
+            // 
+            this.barButtonItemNhapDiemMonHoc.Caption = "Nhập Điểm Môn Học";
+            this.barButtonItemNhapDiemMonHoc.Id = 31;
+            this.barButtonItemNhapDiemMonHoc.LargeGlyph = global::QLHS.Properties.Resources.monhoc;
+            this.barButtonItemNhapDiemMonHoc.Name = "barButtonItemNhapDiemMonHoc";
+            this.barButtonItemNhapDiemMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemNhapDiemMonHoc_ItemClick);
             // 
             // frmMain
             // 
@@ -404,5 +423,7 @@
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemNhapDiemMonHoc;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupNhapDiemMonHoc;
     }
 }
