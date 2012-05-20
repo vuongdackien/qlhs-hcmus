@@ -9,9 +9,9 @@ using DevExpress.XtraEditors;
 
 namespace QLHS.Report
 {
-    public partial class frmReportView_TongKetHK : DevExpress.XtraEditors.XtraForm
+    public partial class frmReportView_TongKetMon : DevExpress.XtraEditors.XtraForm
     {
-        public frmReportView_TongKetHK()
+        public frmReportView_TongKetMon()
         {
             InitializeComponent();
         }

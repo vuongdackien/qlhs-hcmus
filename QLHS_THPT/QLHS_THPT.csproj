@@ -64,6 +64,8 @@
     <Reference Include="DevExpress.XtraWizard.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -112,11 +114,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Report\DTO_TongKetMon.cs" />
-    <Compile Include="Report\frmReportView_TongKetHK.cs">
+    <Compile Include="Report\frmReportView_TongKetHocKy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Report\frmReportView_TongKetHK.designer.cs">
-      <DependentUpon>frmReportView_TongKetHK.cs</DependentUpon>
+    <Compile Include="Report\frmReportView_TongKetHocKy.Designer.cs">
+      <DependentUpon>frmReportView_TongKetHocKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\frmReportView_TongKetMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\frmReportView_TongKetMon.designer.cs">
+      <DependentUpon>frmReportView_TongKetMon.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmMain.cs">
@@ -124,6 +132,12 @@
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptTongKetHocKy.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptTongKetHocKy.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\rptTongKetMon.cs">
       <AutoGen>True</AutoGen>
@@ -149,8 +163,11 @@
     <EmbeddedResource Include="frmSearchHocSinh.resx">
       <DependentUpon>frmSearchHocSinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\frmReportView_TongKetHK.resx">
-      <DependentUpon>frmReportView_TongKetHK.cs</DependentUpon>
+    <EmbeddedResource Include="Report\frmReportView_TongKetHocKy.resx">
+      <DependentUpon>frmReportView_TongKetHocKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\frmReportView_TongKetMon.resx">
+      <DependentUpon>frmReportView_TongKetMon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -165,6 +182,10 @@
     </Compile>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptTongKetHocKy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptTongKetHocKy.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\rptTongKetMon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
