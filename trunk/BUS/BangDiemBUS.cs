@@ -10,9 +10,16 @@ namespace QLHS.BUS
     public class BangDiemBUS
     {
         private BangDiemDAL _bangDiemDAL;
+        private LopDAL _lopDAL;
+        private PhanLopDAL _phanLopDAL;
+        private QuyDinhBUS _quyDinhBUS;
+
         public BangDiemBUS()
         {
             _bangDiemDAL = new BangDiemDAL();
+            _lopDAL = new LopDAL();
+            _phanLopDAL = new PhanLopDAL();
+            _quyDinhBUS = new QuyDinhBUS();
         }
 
         /// <summary>
@@ -140,11 +147,6 @@ namespace QLHS.BUS
             return _bangDiemDAL.XoaBangDiem_MonHoc_HocSinh_HocKy(bd);
         }
 
-        public DataTable Lay_Bang_BaoCao_Diem_TongKetMon(string MaNamHoc, string MaKhoi, string MaMonHoc)
-        {
-            return null;
-        }
-
         /// <summary>
         /// Lấy bảng điểm tất cả môn học theo học kỳ của lớp
         /// </summary>
@@ -174,22 +176,49 @@ namespace QLHS.BUS
         /// <param name="MaHocKy">String: Mã học kỳ</param>
         /// <param name="MaMonHoc">String: Mã môn học</param>
         /// <param name="MaNamHoc">String: Mã năm học</param>
-        /// <returns></returns>
-        public DataTable LayBangDiem_MonHoc(string MaMonHoc, string MaKhoi, string MaHocKy, string MaNamHoc)
+        /// <returns>List<TongKetMonDTO></returns>
+        public List<TongKetMonDTO> LayBangDiem_MonHoc(string MaMonHoc, string MaKhoi, string MaHocKy, string MaNamHoc)
         {
-            DataTable tbBDMonHoc =  _bangDiemDAL.LayBangDiem_MonHoc(MaMonHoc, MaKhoi, MaHocKy, MaNamHoc);
-            // Them cot stt
-            DataColumn colSTT = new DataColumn("STT");
-            // add col stt vao datatable
-            tbBDMonHoc.Columns.Add(colSTT);
-            // khoi tao cot stt
-            for (int i = 0; i < tbBDMonHoc.Rows.Count; i++)
-            {
-                tbBDMonHoc.Rows[i]["STT"] = i + 1;
-            }
-            return tbBDMonHoc;
-        }
+            // Lấy tất cả các lớp trong khối
+            List<LopDTO> ds_lop = _lopDAL.LayListLop_MaNam_MaKhoi(MaNamHoc, MaKhoi);
+            List<TongKetMonDTO> bangDiemTongKetMon = new List<TongKetMonDTO>();
+            int stt = 1;
+            foreach (LopDTO lop in ds_lop)
+            { 
+                // Kiểm tra đã nhập điểm đủ cho lớp này hay chưa
+                int siSo = _phanLopDAL.Dem_SiSo_Lop(lop.MaLop);
+                DataTable bdiemLop = _bangDiemDAL.LayBangDiem_MonHoc_Lop(lop.MaLop, MaMonHoc, MaHocKy);
+                // Tính toán số lượng đạt và tỉ lệ
+                double diemDat = _quyDinhBUS.LayDiemChuan();
+                int soLuongDat = 0;
+                double tiLe = 0;
+                // Chưa nhập đủ điểm
+                if (bdiemLop.Rows.Count < siSo)
+                {
+                    soLuongDat = 0;
+                }
+                else
+                {
+                    foreach (DataRow dr in bdiemLop.Rows)
+                    {
+                        if (Convert.ToDouble(dr["DTB"]) >= diemDat)
+                            soLuongDat++;
+                    }
+                }
+                tiLe = (soLuongDat * 100) / siSo;
 
-       
+                // tạo bảng báo cáo tổng kết môn
+                TongKetMonDTO mtongket = new TongKetMonDTO();
+                mtongket.STT = stt++;
+                mtongket.TenGiaoVien = lop.GiaoVien.TenGiaoVien;
+                mtongket.TenLop = lop.TenLop;
+                mtongket.SiSo = siSo;
+                mtongket.SoLuongDat = soLuongDat;
+                mtongket.TyLe = tiLe;
+                // add vào ds bảng báo cáo
+                bangDiemTongKetMon.Add(mtongket);
+            }
+            return bangDiemTongKetMon;
+        }
     }
 }

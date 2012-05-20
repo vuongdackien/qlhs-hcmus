@@ -69,7 +69,7 @@ namespace QLHS.BUS
         /// <returns>Double</returns>
         public double LayDiemChuan()
         {
-            return (double)_QuyDinhDAL.LayGiaTri("DiemChuan");
+            return Convert.ToDouble(_QuyDinhDAL.LayGiaTri("DiemChuan"));
         }
     }
 }

@@ -112,6 +112,5 @@ namespace QLHS
             _frmReportView_TongKetMH.crystalReportViewerTongKetMonHoc.ReportSource = rp;
             _frmReportView_TongKetMH.ShowDialog();
         }
-
     }
 }

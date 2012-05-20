@@ -105,9 +105,9 @@
             this.panelControlTopRight.Controls.Add(this.labelControlHocKyTT);
             this.panelControlTopRight.Controls.Add(this.labelControlTitle);
             this.panelControlTopRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControlTopRight.Location = new System.Drawing.Point(179, 3);
+            this.panelControlTopRight.Location = new System.Drawing.Point(178, 2);
             this.panelControlTopRight.Name = "panelControlTopRight";
-            this.panelControlTopRight.Size = new System.Drawing.Size(802, 151);
+            this.panelControlTopRight.Size = new System.Drawing.Size(804, 153);
             this.panelControlTopRight.TabIndex = 2;
             // 
             // simpleButtonDong
@@ -191,9 +191,9 @@
             this.panelControlChooseYear.Controls.Add(this.comboBoxEditNamHoc);
             this.panelControlChooseYear.Controls.Add(this.labelControlChonNamHoc);
             this.panelControlChooseYear.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControlChooseYear.Location = new System.Drawing.Point(3, 3);
+            this.panelControlChooseYear.Location = new System.Drawing.Point(2, 2);
             this.panelControlChooseYear.Name = "panelControlChooseYear";
-            this.panelControlChooseYear.Size = new System.Drawing.Size(176, 151);
+            this.panelControlChooseYear.Size = new System.Drawing.Size(176, 153);
             this.panelControlChooseYear.TabIndex = 1;
             // 
             // comboBoxEditKhoiLop
