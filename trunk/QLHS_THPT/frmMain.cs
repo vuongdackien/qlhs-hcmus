@@ -92,7 +92,7 @@ namespace QLHS
 
         private void barBtnPhanCongChuyenMon_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            ShowMDIChildForm<frmBC_TongKetHocKy>();
         }
     }
 }
