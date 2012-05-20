@@ -18,7 +18,7 @@ namespace QLHS.DAL
                                         + " WHERE BD.MaHocSinh=PL.MaHocSinh AND HS.MaHocSinh = PL.MaHocSinh "
                                         + " AND MH.MaMonHoc = BD.MaMonHoc "
                                         + " AND PL.MaLop = '{0}' AND "
-                                        + " BD.MaHocKy = {1} ", MaLop, MaHocKy);
+                                        + " BD.MaHocKy = '{1}' ", MaLop, MaHocKy);
             return GetTable(sql);
         }
         /// <summary>
@@ -95,26 +95,46 @@ namespace QLHS.DAL
         }
 
         /// <summary>
-        /// Lấy bảng điểm môn học theo học kỳ của lớp
+        /// Lấy điểm môn học theo học kỳ của lớp
         /// </summary>
-        /// <param name="MaLop">String: Mã lớp</param>
-        /// <param name="MaHocKy">String: Mã học kỳ</param>
-        /// <param name="MaMonHoc">String: Mã môn học</param>
+        /// <param name="MaMonHoc">string: Mã môn học</param>
+        /// <param name="MaKhoi">string: Mã khối</param>
+        /// <param name="MaHocKy">string: Mã học kỳ</param>
+        /// <param name="MaNamHoc">string: Mã năm học</param>
         /// <returns></returns>
-        public DataTable LayBangDiem_MonHoc(string MaKhoi, string MaHocKy, string MaMonHoc, string MaNamHoc)
+        public DataTable LayBangDiem_MonHoc(string MaMonHoc, string MaKhoi, string MaHocKy, string MaNamHoc)
         {
-            if (MaKhoi == "" || MaHocKy == "" || MaMonHoc == "" || MaNamHoc=="")
-                return null;
-
-            string sql = string.Format("SELECT TenLop, TenGiaoVien, SiSo, count(*) as SoLuongDat, ((cast(count(lop.MaLop) as real) )/SiSo) as TyLe"                                        
-                                        + " FROM BANGDIEM bdiem, HOCSINH hsinh, GIAOVIEN gvien, LOP lop, PHANLOP plop "
+            string sql = string.Format("SELECT TenNamHoc, MaHocKy, LEFT(lop.MaLop,2) as MaKhoi, lop.MaNamHoc, TenMonHoc, TenLop, TenGiaoVien, SiSo, count(*) as SoLuongDat, ((cast(count(lop.MaLop) as real) )/SiSo) as TyLe"                                        
+                                        + " FROM BANGDIEM bdiem, HOCSINH hsinh, GIAOVIEN gvien, LOP lop, PHANLOP plop, MONHOC mhoc, NAMHOC namhoc "
                                         + " WHERE hsinh.MaHocSinh=bdiem.MaHocSinh AND gvien.MaGiaoVien=lop.MaGiaoVien "
+                                        + " AND mhoc.MaMonHoc=bdiem.MaMonHoc AND namhoc.MaNamHoc=lop.MaNamHoc "
                                         + " AND DTB>=5 "
                                         + " AND lop.MaLop=plop.MaLop AND plop.MahocSinh=hsinh.MaHocSinh "
-                                        + " AND MaMonHoc='"+MaMonHoc+"'  AND "
-                                        + " MaHocKy='"+MaHocKy+"' AND LEFT(lop.MaLop,2)='"+MaKhoi+"' "
-                                        + " AND RIGHT(lop.MaLop,6)='"+MaNamHoc+"'"
-                                        + " GROUP BY TenLop, TenGiaoVien, SiSo ");
+                                        + " AND bdiem.MaMonHoc='"+MaMonHoc+"' "
+                                        + " AND MaHocKy='"+MaHocKy+"' AND LEFT(lop.MaLop,2)='"+MaKhoi+"' "
+                                        + " AND RIGHT(lop.MaLop,6)='"+MaNamHoc+"' "
+                                        + " GROUP BY lop.Malop, TenNamHoc, MaHocKy, lop.MaNamHoc, TenMonHoc, TenLop, TenGiaoVien, SiSo ");
+            return GetTable(sql);
+        }
+
+        /// <summary>
+        /// Lấy điểm tất cả các môn học theo học kỳ của lớp
+        /// </summary>
+        /// <param name="MaKhoi">string: Mã khối</param>
+        /// <param name="MaHocKy">string: Mã học kỳ</param>       
+        /// <param name="MaNamHoc">string: Mã năm học</param>
+        /// <returns></returns>
+        public DataTable LayBangDiem_HocKy(string MaKhoi, string MaHocKy, string MaNamHoc)
+        {
+            string sql = string.Format("SELECT mhoc.MaMonHoc, TenNamHoc, MaHocKy, LEFT(lop.MaLop,2) as MaKhoi, lop.MaNamHoc, TenMonHoc, TenLop, TenGiaoVien, SiSo, count(*) as SoLuongDat, ((cast(count(lop.MaLop) as real) )/SiSo) as TyLe"
+                                        + " FROM BANGDIEM bdiem, HOCSINH hsinh, GIAOVIEN gvien, LOP lop, PHANLOP plop, MONHOC mhoc, NAMHOC namhoc "
+                                        + " WHERE hsinh.MaHocSinh=bdiem.MaHocSinh AND gvien.MaGiaoVien=lop.MaGiaoVien "
+                                        + " AND mhoc.MaMonHoc=bdiem.MaMonHoc AND namhoc.MaNamHoc=lop.MaNamHoc "
+                                        + " AND DTB>=5 "
+                                        + " AND lop.MaLop=plop.MaLop AND plop.MahocSinh=hsinh.MaHocSinh "
+                                        + " AND MaHocKy='" + MaHocKy + "' AND LEFT(lop.MaLop,2)='" + MaKhoi + "' "
+                                        + " AND RIGHT(lop.MaLop,6)='" + MaNamHoc + "' "
+                                        + " GROUP BY mhoc.MaMonHoc, lop.Malop, TenNamHoc, MaHocKy, lop.MaNamHoc, TenMonHoc, TenLop, TenGiaoVien, SiSo ");
             return GetTable(sql);
         }
     }

@@ -146,15 +146,50 @@ namespace QLHS.BUS
         }
 
         /// <summary>
+        /// Lấy bảng điểm tất cả môn học theo học kỳ của lớp
+        /// </summary>
+        /// <param name="MaLop">String: Mã khối</param>
+        /// <param name="MaHocKy">String: Mã học kỳ</param>
+        /// <param name="MaNamHoc">String: Mã năm học</param>
+        /// <returns></returns>
+        public DataTable LayBangDiem_HocKy(string MaKhoi, string MaHocKy, string MaNamHoc)
+        {
+            DataTable tbBDHocKy = _bangDiemDAL.LayBangDiem_HocKy(MaKhoi, MaHocKy, MaNamHoc);
+            // Them cot stt
+            DataColumn colSTT = new DataColumn("STT");
+            // add col stt vao datatable
+            tbBDHocKy.Columns.Add(colSTT);
+            // khoi tao cot stt
+            for (int i = 0; i < tbBDHocKy.Rows.Count; i++)
+            {
+                tbBDHocKy.Rows[i]["STT"] = i + 1;
+            }
+            return tbBDHocKy;
+        }
+
+        /// <summary>
         /// Lấy bảng điểm môn học theo học kỳ của lớp
         /// </summary>
-        /// <param name="MaLop">String: Mã lớp</param>
+        /// <param name="MaLop">String: Mã khối</param>
         /// <param name="MaHocKy">String: Mã học kỳ</param>
         /// <param name="MaMonHoc">String: Mã môn học</param>
+        /// <param name="MaNamHoc">String: Mã năm học</param>
         /// <returns></returns>
-        public DataTable LayBangDiem_MonHoc(string MaKhoi, string MaHocKy, string MaMonHoc, string MaNamHoc)
+        public DataTable LayBangDiem_MonHoc(string MaMonHoc, string MaKhoi, string MaHocKy, string MaNamHoc)
         {
-            return _bangDiemDAL.LayBangDiem_MonHoc(MaKhoi, MaHocKy, MaMonHoc, MaNamHoc);
+            DataTable tbBDMonHoc =  _bangDiemDAL.LayBangDiem_MonHoc(MaMonHoc, MaKhoi, MaHocKy, MaNamHoc);
+            // Them cot stt
+            DataColumn colSTT = new DataColumn("STT");
+            // add col stt vao datatable
+            tbBDMonHoc.Columns.Add(colSTT);
+            // khoi tao cot stt
+            for (int i = 0; i < tbBDMonHoc.Rows.Count; i++)
+            {
+                tbBDMonHoc.Rows[i]["STT"] = i + 1;
+            }
+            return tbBDMonHoc;
         }
+
+       
     }
 }

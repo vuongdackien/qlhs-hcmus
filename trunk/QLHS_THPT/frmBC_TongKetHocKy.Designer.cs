@@ -28,203 +28,355 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gridColumnMH005 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnDTB = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnMH009 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnMH008 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnMH007 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnMH006 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridControlTongKetNamHoc = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumnSTT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnMaHocSinh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnHo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnTenHocSinh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnMH001 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnMH002 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnMH003 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnMH004 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControlGVCNTT = new DevExpress.XtraEditors.LabelControl();
+            this.panelControlTop = new DevExpress.XtraEditors.PanelControl();
             this.panelControlTopRight = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButtonXuatBD = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControlHocKyTT = new DevExpress.XtraEditors.LabelControl();
-            this.labelControlLopTT = new DevExpress.XtraEditors.LabelControl();
-            this.labelControlNamHocTT = new DevExpress.XtraEditors.LabelControl();
-            this.labelControlTitle = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEditNamHoc = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.treeListLopHoc = new DevExpress.XtraTreeList.TreeList();
+            this.simpleButtonXuatBD = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControlKhoiLop = new DevExpress.XtraEditors.LabelControl();
             this.labelControlNamHoc = new DevExpress.XtraEditors.LabelControl();
+            this.labelControlKhoiLopTT = new DevExpress.XtraEditors.LabelControl();
+            this.labelControlNamHocTT = new DevExpress.XtraEditors.LabelControl();
+            this.labelControlHocKyTT = new DevExpress.XtraEditors.LabelControl();
+            this.labelControlTitle = new DevExpress.XtraEditors.LabelControl();
             this.panelControlChooseYear = new DevExpress.XtraEditors.PanelControl();
+            this.comboBoxEditKhoiLop = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControlChonKhoi = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEditHocKy = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControlHocKy = new DevExpress.XtraEditors.LabelControl();
-            this.panelControlRight = new DevExpress.XtraEditors.PanelControl();
-            this.panelControlLeft = new DevExpress.XtraEditors.PanelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlTongKetNamHoc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.labelControlChonHocKy = new DevExpress.XtraEditors.LabelControl();
+            this.comboBoxEditNamHoc = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControlChonNamHoc = new DevExpress.XtraEditors.LabelControl();
+            this.gridControlTongKetHocKy = new DevExpress.XtraGrid.GridControl();
+            this.gridViewTongKetHocKy = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnTenMonHoc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridViewMonHoc = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumnSTT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnTenLop = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnGiaoVienCN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnSiSo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnSoLuongDat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnTyLe = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.advBandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn4 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlTop)).BeginInit();
+            this.panelControlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTopRight)).BeginInit();
             this.panelControlTopRight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditNamHoc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeListLopHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlChooseYear)).BeginInit();
             this.panelControlChooseYear.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditKhoiLop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditHocKy.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlRight)).BeginInit();
-            this.panelControlRight.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlLeft)).BeginInit();
-            this.panelControlLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditNamHoc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlTongKetHocKy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewTongKetHocKy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMonHoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // gridColumnMH005
+            // panelControlTop
             // 
-            this.gridColumnMH005.Caption = "Sử";
-            this.gridColumnMH005.FieldName = "MH005";
-            this.gridColumnMH005.Name = "gridColumnMH005";
-            this.gridColumnMH005.OptionsColumn.AllowEdit = false;
-            this.gridColumnMH005.OptionsColumn.AllowFocus = false;
-            this.gridColumnMH005.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH005.OptionsColumn.AllowIncrementalSearch = false;
-            this.gridColumnMH005.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH005.OptionsColumn.AllowMove = false;
-            this.gridColumnMH005.OptionsColumn.AllowShowHide = false;
-            this.gridColumnMH005.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumnMH005.OptionsColumn.ReadOnly = true;
-            this.gridColumnMH005.Visible = true;
-            this.gridColumnMH005.VisibleIndex = 7;
-            this.gridColumnMH005.Width = 49;
+            this.panelControlTop.Controls.Add(this.panelControlTopRight);
+            this.panelControlTop.Controls.Add(this.panelControlChooseYear);
+            this.panelControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControlTop.Location = new System.Drawing.Point(0, 0);
+            this.panelControlTop.Name = "panelControlTop";
+            this.panelControlTop.Size = new System.Drawing.Size(984, 157);
+            this.panelControlTop.TabIndex = 0;
             // 
-            // gridColumnDTB
+            // panelControlTopRight
             // 
-            this.gridColumnDTB.Caption = "DTB";
-            this.gridColumnDTB.FieldName = "DTB";
-            this.gridColumnDTB.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Right;
-            this.gridColumnDTB.Name = "gridColumnDTB";
-            this.gridColumnDTB.OptionsColumn.AllowEdit = false;
-            this.gridColumnDTB.OptionsColumn.AllowFocus = false;
-            this.gridColumnDTB.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnDTB.OptionsColumn.AllowIncrementalSearch = false;
-            this.gridColumnDTB.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnDTB.OptionsColumn.AllowMove = false;
-            this.gridColumnDTB.OptionsColumn.AllowShowHide = false;
-            this.gridColumnDTB.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumnDTB.OptionsColumn.ReadOnly = true;
-            this.gridColumnDTB.OptionsFilter.AllowAutoFilter = false;
-            this.gridColumnDTB.OptionsFilter.AllowFilter = false;
-            this.gridColumnDTB.Visible = true;
-            this.gridColumnDTB.VisibleIndex = 12;
-            this.gridColumnDTB.Width = 68;
+            this.panelControlTopRight.Controls.Add(this.simpleButtonDong);
+            this.panelControlTopRight.Controls.Add(this.simpleButtonXuatBD);
+            this.panelControlTopRight.Controls.Add(this.labelControlKhoiLop);
+            this.panelControlTopRight.Controls.Add(this.labelControlNamHoc);
+            this.panelControlTopRight.Controls.Add(this.labelControlKhoiLopTT);
+            this.panelControlTopRight.Controls.Add(this.labelControlNamHocTT);
+            this.panelControlTopRight.Controls.Add(this.labelControlHocKyTT);
+            this.panelControlTopRight.Controls.Add(this.labelControlTitle);
+            this.panelControlTopRight.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControlTopRight.Location = new System.Drawing.Point(179, 3);
+            this.panelControlTopRight.Name = "panelControlTopRight";
+            this.panelControlTopRight.Size = new System.Drawing.Size(802, 151);
+            this.panelControlTopRight.TabIndex = 2;
             // 
-            // gridColumnMH009
+            // simpleButtonDong
             // 
-            this.gridColumnMH009.Caption = "Thể dục";
-            this.gridColumnMH009.FieldName = "MH009";
-            this.gridColumnMH009.Name = "gridColumnMH009";
-            this.gridColumnMH009.OptionsColumn.AllowEdit = false;
-            this.gridColumnMH009.OptionsColumn.AllowFocus = false;
-            this.gridColumnMH009.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH009.OptionsColumn.AllowIncrementalSearch = false;
-            this.gridColumnMH009.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH009.OptionsColumn.AllowMove = false;
-            this.gridColumnMH009.OptionsColumn.AllowShowHide = false;
-            this.gridColumnMH009.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumnMH009.OptionsColumn.ReadOnly = true;
-            this.gridColumnMH009.OptionsFilter.AllowAutoFilter = false;
-            this.gridColumnMH009.OptionsFilter.AllowFilter = false;
-            this.gridColumnMH009.Visible = true;
-            this.gridColumnMH009.VisibleIndex = 11;
-            this.gridColumnMH009.Width = 62;
+            this.simpleButtonDong.Image = global::QLHS.Properties.Resources.chuyenlop_small;
+            this.simpleButtonDong.Location = new System.Drawing.Point(651, 46);
+            this.simpleButtonDong.Name = "simpleButtonDong";
+            this.simpleButtonDong.Size = new System.Drawing.Size(128, 35);
+            this.simpleButtonDong.TabIndex = 18;
+            this.simpleButtonDong.Text = "Đóng";
+            this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
             // 
-            // gridColumnMH008
+            // simpleButtonXuatBD
             // 
-            this.gridColumnMH008.Caption = "Đạo đức";
-            this.gridColumnMH008.FieldName = "MH008";
-            this.gridColumnMH008.Name = "gridColumnMH008";
-            this.gridColumnMH008.OptionsColumn.AllowEdit = false;
-            this.gridColumnMH008.OptionsColumn.AllowFocus = false;
-            this.gridColumnMH008.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH008.OptionsColumn.AllowIncrementalSearch = false;
-            this.gridColumnMH008.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH008.OptionsColumn.AllowMove = false;
-            this.gridColumnMH008.OptionsColumn.AllowShowHide = false;
-            this.gridColumnMH008.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumnMH008.OptionsColumn.ReadOnly = true;
-            this.gridColumnMH008.Visible = true;
-            this.gridColumnMH008.VisibleIndex = 10;
-            this.gridColumnMH008.Width = 51;
+            this.simpleButtonXuatBD.Image = global::QLHS.Properties.Resources.chuyenlop_small;
+            this.simpleButtonXuatBD.Location = new System.Drawing.Point(492, 46);
+            this.simpleButtonXuatBD.Name = "simpleButtonXuatBD";
+            this.simpleButtonXuatBD.Size = new System.Drawing.Size(128, 35);
+            this.simpleButtonXuatBD.TabIndex = 18;
+            this.simpleButtonXuatBD.Text = "Lập báo cáo";
+            this.simpleButtonXuatBD.Click += new System.EventHandler(this.simpleButtonXuatBD_Click);
             // 
-            // gridColumnMH007
+            // labelControlKhoiLop
             // 
-            this.gridColumnMH007.Caption = "Văn";
-            this.gridColumnMH007.FieldName = "MH007";
-            this.gridColumnMH007.Name = "gridColumnMH007";
-            this.gridColumnMH007.OptionsColumn.AllowEdit = false;
-            this.gridColumnMH007.OptionsColumn.AllowFocus = false;
-            this.gridColumnMH007.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH007.OptionsColumn.AllowIncrementalSearch = false;
-            this.gridColumnMH007.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH007.OptionsColumn.AllowMove = false;
-            this.gridColumnMH007.OptionsColumn.AllowShowHide = false;
-            this.gridColumnMH007.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumnMH007.OptionsColumn.ReadOnly = true;
-            this.gridColumnMH007.Visible = true;
-            this.gridColumnMH007.VisibleIndex = 9;
-            this.gridColumnMH007.Width = 49;
+            this.labelControlKhoiLop.Location = new System.Drawing.Point(46, 105);
+            this.labelControlKhoiLop.Name = "labelControlKhoiLop";
+            this.labelControlKhoiLop.Size = new System.Drawing.Size(48, 13);
+            this.labelControlKhoiLop.TabIndex = 1;
+            this.labelControlKhoiLop.Text = "________";
             // 
-            // gridColumnMH006
+            // labelControlNamHoc
             // 
-            this.gridColumnMH006.Caption = "Địa";
-            this.gridColumnMH006.FieldName = "MH006";
-            this.gridColumnMH006.Name = "gridColumnMH006";
-            this.gridColumnMH006.OptionsColumn.AllowEdit = false;
-            this.gridColumnMH006.OptionsColumn.AllowFocus = false;
-            this.gridColumnMH006.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH006.OptionsColumn.AllowIncrementalSearch = false;
-            this.gridColumnMH006.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH006.OptionsColumn.AllowMove = false;
-            this.gridColumnMH006.OptionsColumn.AllowShowHide = false;
-            this.gridColumnMH006.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumnMH006.OptionsColumn.ReadOnly = true;
-            this.gridColumnMH006.Visible = true;
-            this.gridColumnMH006.VisibleIndex = 8;
-            this.gridColumnMH006.Width = 49;
+            this.labelControlNamHoc.Location = new System.Drawing.Point(68, 69);
+            this.labelControlNamHoc.Name = "labelControlNamHoc";
+            this.labelControlNamHoc.Size = new System.Drawing.Size(48, 13);
+            this.labelControlNamHoc.TabIndex = 1;
+            this.labelControlNamHoc.Text = "________";
             // 
-            // gridControlTongKetNamHoc
+            // labelControlKhoiLopTT
             // 
-            this.gridControlTongKetNamHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlTongKetNamHoc.Location = new System.Drawing.Point(3, 83);
-            this.gridControlTongKetNamHoc.MainView = this.gridView1;
-            this.gridControlTongKetNamHoc.Name = "gridControlTongKetNamHoc";
-            this.gridControlTongKetNamHoc.Size = new System.Drawing.Size(807, 306);
-            this.gridControlTongKetNamHoc.TabIndex = 1;
-            this.gridControlTongKetNamHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.labelControlKhoiLopTT.Location = new System.Drawing.Point(13, 105);
+            this.labelControlKhoiLopTT.Name = "labelControlKhoiLopTT";
+            this.labelControlKhoiLopTT.Size = new System.Drawing.Size(24, 13);
+            this.labelControlKhoiLopTT.TabIndex = 1;
+            this.labelControlKhoiLopTT.Text = "Khối:";
             // 
-            // gridView1
+            // labelControlNamHocTT
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.labelControlNamHocTT.Location = new System.Drawing.Point(13, 69);
+            this.labelControlNamHocTT.Name = "labelControlNamHocTT";
+            this.labelControlNamHocTT.Size = new System.Drawing.Size(45, 13);
+            this.labelControlNamHocTT.TabIndex = 1;
+            this.labelControlNamHocTT.Text = "Năm học:";
+            // 
+            // labelControlHocKyTT
+            // 
+            this.labelControlHocKyTT.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControlHocKyTT.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.labelControlHocKyTT.Location = new System.Drawing.Point(250, 20);
+            this.labelControlHocKyTT.Name = "labelControlHocKyTT";
+            this.labelControlHocKyTT.Size = new System.Drawing.Size(80, 19);
+            this.labelControlHocKyTT.TabIndex = 0;
+            this.labelControlHocKyTT.Text = "________";
+            // 
+            // labelControlTitle
+            // 
+            this.labelControlTitle.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControlTitle.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.labelControlTitle.Location = new System.Drawing.Point(13, 20);
+            this.labelControlTitle.Name = "labelControlTitle";
+            this.labelControlTitle.Size = new System.Drawing.Size(231, 19);
+            this.labelControlTitle.TabIndex = 0;
+            this.labelControlTitle.Text = "BÁO CÁO TỔNG KẾT HỌC KỲ";
+            // 
+            // panelControlChooseYear
+            // 
+            this.panelControlChooseYear.Controls.Add(this.comboBoxEditKhoiLop);
+            this.panelControlChooseYear.Controls.Add(this.labelControlChonKhoi);
+            this.panelControlChooseYear.Controls.Add(this.comboBoxEditHocKy);
+            this.panelControlChooseYear.Controls.Add(this.labelControlChonHocKy);
+            this.panelControlChooseYear.Controls.Add(this.comboBoxEditNamHoc);
+            this.panelControlChooseYear.Controls.Add(this.labelControlChonNamHoc);
+            this.panelControlChooseYear.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControlChooseYear.Location = new System.Drawing.Point(3, 3);
+            this.panelControlChooseYear.Name = "panelControlChooseYear";
+            this.panelControlChooseYear.Size = new System.Drawing.Size(176, 151);
+            this.panelControlChooseYear.TabIndex = 1;
+            // 
+            // comboBoxEditKhoiLop
+            // 
+            this.comboBoxEditKhoiLop.Location = new System.Drawing.Point(25, 121);
+            this.comboBoxEditKhoiLop.Name = "comboBoxEditKhoiLop";
+            this.comboBoxEditKhoiLop.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditKhoiLop.Size = new System.Drawing.Size(130, 20);
+            this.comboBoxEditKhoiLop.TabIndex = 3;
+            this.comboBoxEditKhoiLop.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditKhoiLop_SelectedIndexChanged);
+            // 
+            // labelControlChonKhoi
+            // 
+            this.labelControlChonKhoi.Location = new System.Drawing.Point(25, 102);
+            this.labelControlChonKhoi.Name = "labelControlChonKhoi";
+            this.labelControlChonKhoi.Size = new System.Drawing.Size(51, 13);
+            this.labelControlChonKhoi.TabIndex = 2;
+            this.labelControlChonKhoi.Text = "Chọn khối:";
+            // 
+            // comboBoxEditHocKy
+            // 
+            this.comboBoxEditHocKy.Location = new System.Drawing.Point(25, 73);
+            this.comboBoxEditHocKy.Name = "comboBoxEditHocKy";
+            this.comboBoxEditHocKy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditHocKy.Size = new System.Drawing.Size(130, 20);
+            this.comboBoxEditHocKy.TabIndex = 1;
+            this.comboBoxEditHocKy.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditHocKy_SelectedIndexChanged);
+            // 
+            // labelControlChonHocKy
+            // 
+            this.labelControlChonHocKy.Location = new System.Drawing.Point(25, 54);
+            this.labelControlChonHocKy.Name = "labelControlChonHocKy";
+            this.labelControlChonHocKy.Size = new System.Drawing.Size(63, 13);
+            this.labelControlChonHocKy.TabIndex = 0;
+            this.labelControlChonHocKy.Text = "Chọn học kỳ:";
+            // 
+            // comboBoxEditNamHoc
+            // 
+            this.comboBoxEditNamHoc.Location = new System.Drawing.Point(25, 24);
+            this.comboBoxEditNamHoc.Name = "comboBoxEditNamHoc";
+            this.comboBoxEditNamHoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditNamHoc.Size = new System.Drawing.Size(130, 20);
+            this.comboBoxEditNamHoc.TabIndex = 1;
+            this.comboBoxEditNamHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHoc_SelectedIndexChanged);
+            // 
+            // labelControlChonNamHoc
+            // 
+            this.labelControlChonNamHoc.Location = new System.Drawing.Point(25, 6);
+            this.labelControlChonNamHoc.Name = "labelControlChonNamHoc";
+            this.labelControlChonNamHoc.Size = new System.Drawing.Size(72, 13);
+            this.labelControlChonNamHoc.TabIndex = 0;
+            this.labelControlChonNamHoc.Text = "Chọn năm học:";
+            // 
+            // gridControlTongKetHocKy
+            // 
+            this.gridControlTongKetHocKy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlTongKetHocKy.Location = new System.Drawing.Point(0, 157);
+            this.gridControlTongKetHocKy.MainView = this.gridViewTongKetHocKy;
+            this.gridControlTongKetHocKy.Name = "gridControlTongKetHocKy";
+            this.gridControlTongKetHocKy.Size = new System.Drawing.Size(984, 235);
+            this.gridControlTongKetHocKy.TabIndex = 2;
+            this.gridControlTongKetHocKy.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewTongKetHocKy,
+            this.gridViewMonHoc,
+            this.advBandedGridView1});
+            // 
+            // gridViewTongKetHocKy
+            // 
+            this.gridViewTongKetHocKy.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumnTenMonHoc,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6});
+            this.gridViewTongKetHocKy.GridControl = this.gridControlTongKetHocKy;
+            this.gridViewTongKetHocKy.Name = "gridViewTongKetHocKy";
+            this.gridViewTongKetHocKy.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn1.Caption = "STT";
+            this.gridColumn1.FieldName = "STT";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsColumn.AllowFocus = false;
+            this.gridColumn1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn1.OptionsColumn.AllowIncrementalSearch = false;
+            this.gridColumn1.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn1.OptionsColumn.AllowMove = false;
+            this.gridColumn1.OptionsColumn.AllowShowHide = false;
+            this.gridColumn1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn1.OptionsColumn.ReadOnly = true;
+            this.gridColumn1.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumn1.OptionsFilter.AllowFilter = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 79;
+            // 
+            // gridColumnTenMonHoc
+            // 
+            this.gridColumnTenMonHoc.Caption = "Tên môn học";
+            this.gridColumnTenMonHoc.FieldName = "TenMonHoc";
+            this.gridColumnTenMonHoc.Name = "gridColumnTenMonHoc";
+            this.gridColumnTenMonHoc.Visible = true;
+            this.gridColumnTenMonHoc.VisibleIndex = 1;
+            this.gridColumnTenMonHoc.Width = 160;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn2.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn2.Caption = "Tên lớp";
+            this.gridColumn2.FieldName = "TenLop";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.Width = 203;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Giáo viên chủ nhiệm";
+            this.gridColumn3.FieldName = "TenGiaoVien";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.Width = 194;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Sĩ số";
+            this.gridColumn4.FieldName = "SiSo";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.Width = 108;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Số lượng đạt";
+            this.gridColumn5.FieldName = "SoLuongDat";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 5;
+            this.gridColumn5.Width = 108;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Tỷ lệ";
+            this.gridColumn6.FieldName = "TyLe";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 6;
+            this.gridColumn6.Width = 111;
+            // 
+            // gridViewMonHoc
+            // 
+            this.gridViewMonHoc.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumnSTT,
-            this.gridColumnMaHocSinh,
-            this.gridColumnHo,
-            this.gridColumnTenHocSinh,
-            this.gridColumnMH001,
-            this.gridColumnMH002,
-            this.gridColumnMH003,
-            this.gridColumnMH004,
-            this.gridColumnMH005,
-            this.gridColumnMH006,
-            this.gridColumnMH007,
-            this.gridColumnMH008,
-            this.gridColumnMH009,
-            this.gridColumnDTB});
-            this.gridView1.GridControl = this.gridControlTongKetNamHoc;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridColumnTenLop,
+            this.gridColumnGiaoVienCN,
+            this.gridColumnSiSo,
+            this.gridColumnSoLuongDat,
+            this.gridColumnTyLe});
+            this.gridViewMonHoc.GridControl = this.gridControlTongKetHocKy;
+            this.gridViewMonHoc.Name = "gridViewMonHoc";
+            this.gridViewMonHoc.OptionsView.ShowGroupPanel = false;
             // 
             // gridColumnSTT
             // 
+            this.gridColumnSTT.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnSTT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnSTT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumnSTT.Caption = "STT";
             this.gridColumnSTT.FieldName = "STT";
-            this.gridColumnSTT.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.gridColumnSTT.Name = "gridColumnSTT";
             this.gridColumnSTT.OptionsColumn.AllowEdit = false;
             this.gridColumnSTT.OptionsColumn.AllowFocus = false;
@@ -239,354 +391,216 @@
             this.gridColumnSTT.OptionsFilter.AllowFilter = false;
             this.gridColumnSTT.Visible = true;
             this.gridColumnSTT.VisibleIndex = 0;
-            this.gridColumnSTT.Width = 49;
+            this.gridColumnSTT.Width = 52;
             // 
-            // gridColumnMaHocSinh
+            // gridColumnTenLop
             // 
-            this.gridColumnMaHocSinh.Caption = "Mã HS";
-            this.gridColumnMaHocSinh.FieldName = "MaHocSinh";
-            this.gridColumnMaHocSinh.Name = "gridColumnMaHocSinh";
-            this.gridColumnMaHocSinh.OptionsColumn.AllowEdit = false;
-            this.gridColumnMaHocSinh.OptionsColumn.AllowFocus = false;
-            this.gridColumnMaHocSinh.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumnMaHocSinh.OptionsColumn.AllowIncrementalSearch = false;
-            this.gridColumnMaHocSinh.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumnMaHocSinh.OptionsColumn.AllowMove = false;
-            this.gridColumnMaHocSinh.OptionsColumn.AllowShowHide = false;
-            this.gridColumnMaHocSinh.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumnMaHocSinh.OptionsColumn.ReadOnly = true;
-            this.gridColumnMaHocSinh.OptionsFilter.AllowAutoFilter = false;
-            this.gridColumnMaHocSinh.OptionsFilter.AllowFilter = false;
-            this.gridColumnMaHocSinh.Width = 60;
+            this.gridColumnTenLop.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnTenLop.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnTenLop.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumnTenLop.Caption = "Tên lớp";
+            this.gridColumnTenLop.FieldName = "TenLop";
+            this.gridColumnTenLop.Name = "gridColumnTenLop";
+            this.gridColumnTenLop.Visible = true;
+            this.gridColumnTenLop.VisibleIndex = 1;
+            this.gridColumnTenLop.Width = 141;
             // 
-            // gridColumnHo
+            // gridColumnGiaoVienCN
             // 
-            this.gridColumnHo.Caption = "Họ và đệm";
-            this.gridColumnHo.FieldName = "HoHocSinh";
-            this.gridColumnHo.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.gridColumnHo.Name = "gridColumnHo";
-            this.gridColumnHo.OptionsColumn.AllowEdit = false;
-            this.gridColumnHo.OptionsColumn.AllowFocus = false;
-            this.gridColumnHo.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnHo.OptionsColumn.AllowIncrementalSearch = false;
-            this.gridColumnHo.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnHo.OptionsColumn.AllowMove = false;
-            this.gridColumnHo.OptionsColumn.AllowShowHide = false;
-            this.gridColumnHo.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumnHo.OptionsColumn.ReadOnly = true;
-            this.gridColumnHo.OptionsFilter.AllowAutoFilter = false;
-            this.gridColumnHo.OptionsFilter.AllowFilter = false;
-            this.gridColumnHo.Visible = true;
-            this.gridColumnHo.VisibleIndex = 1;
-            this.gridColumnHo.Width = 135;
+            this.gridColumnGiaoVienCN.Caption = "Giáo viên chủ nhiệm";
+            this.gridColumnGiaoVienCN.FieldName = "TenGiaoVien";
+            this.gridColumnGiaoVienCN.Name = "gridColumnGiaoVienCN";
+            this.gridColumnGiaoVienCN.Visible = true;
+            this.gridColumnGiaoVienCN.VisibleIndex = 2;
+            this.gridColumnGiaoVienCN.Width = 135;
             // 
-            // gridColumnTenHocSinh
+            // gridColumnSiSo
             // 
-            this.gridColumnTenHocSinh.Caption = "Tên";
-            this.gridColumnTenHocSinh.FieldName = "TenHocSinh";
-            this.gridColumnTenHocSinh.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
-            this.gridColumnTenHocSinh.Name = "gridColumnTenHocSinh";
-            this.gridColumnTenHocSinh.OptionsColumn.AllowEdit = false;
-            this.gridColumnTenHocSinh.OptionsColumn.AllowFocus = false;
-            this.gridColumnTenHocSinh.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnTenHocSinh.OptionsColumn.AllowIncrementalSearch = false;
-            this.gridColumnTenHocSinh.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnTenHocSinh.OptionsColumn.AllowMove = false;
-            this.gridColumnTenHocSinh.OptionsColumn.AllowShowHide = false;
-            this.gridColumnTenHocSinh.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumnTenHocSinh.OptionsColumn.ReadOnly = true;
-            this.gridColumnTenHocSinh.OptionsFilter.AllowAutoFilter = false;
-            this.gridColumnTenHocSinh.OptionsFilter.AllowFilter = false;
-            this.gridColumnTenHocSinh.Visible = true;
-            this.gridColumnTenHocSinh.VisibleIndex = 2;
-            this.gridColumnTenHocSinh.Width = 77;
+            this.gridColumnSiSo.Caption = "Sĩ số";
+            this.gridColumnSiSo.FieldName = "SiSo";
+            this.gridColumnSiSo.Name = "gridColumnSiSo";
+            this.gridColumnSiSo.Visible = true;
+            this.gridColumnSiSo.VisibleIndex = 3;
             // 
-            // gridColumnMH001
+            // gridColumnSoLuongDat
             // 
-            this.gridColumnMH001.Caption = "Toán";
-            this.gridColumnMH001.FieldName = "MH001";
-            this.gridColumnMH001.Name = "gridColumnMH001";
-            this.gridColumnMH001.OptionsColumn.AllowEdit = false;
-            this.gridColumnMH001.OptionsColumn.AllowFocus = false;
-            this.gridColumnMH001.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH001.OptionsColumn.AllowIncrementalSearch = false;
-            this.gridColumnMH001.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH001.OptionsColumn.AllowMove = false;
-            this.gridColumnMH001.OptionsColumn.AllowShowHide = false;
-            this.gridColumnMH001.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumnMH001.OptionsColumn.ReadOnly = true;
-            this.gridColumnMH001.OptionsFilter.AllowAutoFilter = false;
-            this.gridColumnMH001.OptionsFilter.AllowFilter = false;
-            this.gridColumnMH001.Visible = true;
-            this.gridColumnMH001.VisibleIndex = 3;
-            this.gridColumnMH001.Width = 47;
+            this.gridColumnSoLuongDat.Caption = "Số lượng đạt";
+            this.gridColumnSoLuongDat.FieldName = "SoLuongDat";
+            this.gridColumnSoLuongDat.Name = "gridColumnSoLuongDat";
+            this.gridColumnSoLuongDat.Visible = true;
+            this.gridColumnSoLuongDat.VisibleIndex = 4;
             // 
-            // gridColumnMH002
+            // gridColumnTyLe
             // 
-            this.gridColumnMH002.Caption = "Lý";
-            this.gridColumnMH002.FieldName = "MH002";
-            this.gridColumnMH002.Name = "gridColumnMH002";
-            this.gridColumnMH002.OptionsColumn.AllowEdit = false;
-            this.gridColumnMH002.OptionsColumn.AllowFocus = false;
-            this.gridColumnMH002.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH002.OptionsColumn.AllowIncrementalSearch = false;
-            this.gridColumnMH002.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH002.OptionsColumn.AllowMove = false;
-            this.gridColumnMH002.OptionsColumn.AllowShowHide = false;
-            this.gridColumnMH002.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumnMH002.OptionsColumn.ReadOnly = true;
-            this.gridColumnMH002.Visible = true;
-            this.gridColumnMH002.VisibleIndex = 4;
-            this.gridColumnMH002.Width = 47;
+            this.gridColumnTyLe.Caption = "Tỷ lệ";
+            this.gridColumnTyLe.FieldName = "TyLe";
+            this.gridColumnTyLe.Name = "gridColumnTyLe";
+            this.gridColumnTyLe.Visible = true;
+            this.gridColumnTyLe.VisibleIndex = 5;
             // 
-            // gridColumnMH003
+            // advBandedGridView1
             // 
-            this.gridColumnMH003.Caption = "Hóa";
-            this.gridColumnMH003.FieldName = "MH003";
-            this.gridColumnMH003.Name = "gridColumnMH003";
-            this.gridColumnMH003.OptionsColumn.AllowEdit = false;
-            this.gridColumnMH003.OptionsColumn.AllowFocus = false;
-            this.gridColumnMH003.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH003.OptionsColumn.AllowIncrementalSearch = false;
-            this.gridColumnMH003.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH003.OptionsColumn.AllowMove = false;
-            this.gridColumnMH003.OptionsColumn.AllowShowHide = false;
-            this.gridColumnMH003.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumnMH003.OptionsColumn.ReadOnly = true;
-            this.gridColumnMH003.Visible = true;
-            this.gridColumnMH003.VisibleIndex = 5;
-            this.gridColumnMH003.Width = 51;
+            this.advBandedGridView1.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
+            this.gridBand1});
+            this.advBandedGridView1.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
+            this.bandedGridColumn1,
+            this.bandedGridColumn2,
+            this.bandedGridColumn3,
+            this.bandedGridColumn4,
+            this.bandedGridColumn5,
+            this.bandedGridColumn6});
+            this.advBandedGridView1.GridControl = this.gridControlTongKetHocKy;
+            this.advBandedGridView1.Name = "advBandedGridView1";
+            this.advBandedGridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumnMH004
+            // gridBand1
             // 
-            this.gridColumnMH004.Caption = "Sinh";
-            this.gridColumnMH004.FieldName = "MH004";
-            this.gridColumnMH004.Name = "gridColumnMH004";
-            this.gridColumnMH004.OptionsColumn.AllowEdit = false;
-            this.gridColumnMH004.OptionsColumn.AllowFocus = false;
-            this.gridColumnMH004.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH004.OptionsColumn.AllowIncrementalSearch = false;
-            this.gridColumnMH004.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumnMH004.OptionsColumn.AllowMove = false;
-            this.gridColumnMH004.OptionsColumn.AllowShowHide = false;
-            this.gridColumnMH004.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumnMH004.OptionsColumn.ReadOnly = true;
-            this.gridColumnMH004.Visible = true;
-            this.gridColumnMH004.VisibleIndex = 6;
-            this.gridColumnMH004.Width = 48;
+            this.gridBand1.Caption = "gridBand1";
+            this.gridBand1.Columns.Add(this.bandedGridColumn1);
+            this.gridBand1.Columns.Add(this.bandedGridColumn2);
+            this.gridBand1.Columns.Add(this.bandedGridColumn3);
+            this.gridBand1.Columns.Add(this.bandedGridColumn4);
+            this.gridBand1.Columns.Add(this.bandedGridColumn5);
+            this.gridBand1.Columns.Add(this.bandedGridColumn6);
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.Width = 553;
             // 
-            // labelControlGVCNTT
+            // bandedGridColumn1
             // 
-            this.labelControlGVCNTT.Location = new System.Drawing.Point(13, 61);
-            this.labelControlGVCNTT.Name = "labelControlGVCNTT";
-            this.labelControlGVCNTT.Size = new System.Drawing.Size(31, 13);
-            this.labelControlGVCNTT.TabIndex = 1;
-            this.labelControlGVCNTT.Text = "GVCN:";
+            this.bandedGridColumn1.AppearanceHeader.Options.UseTextOptions = true;
+            this.bandedGridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.bandedGridColumn1.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.bandedGridColumn1.Caption = "STT";
+            this.bandedGridColumn1.FieldName = "STT";
+            this.bandedGridColumn1.Name = "bandedGridColumn1";
+            this.bandedGridColumn1.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn1.OptionsColumn.AllowFocus = false;
+            this.bandedGridColumn1.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
+            this.bandedGridColumn1.OptionsColumn.AllowIncrementalSearch = false;
+            this.bandedGridColumn1.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.bandedGridColumn1.OptionsColumn.AllowMove = false;
+            this.bandedGridColumn1.OptionsColumn.AllowShowHide = false;
+            this.bandedGridColumn1.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.bandedGridColumn1.OptionsColumn.ReadOnly = true;
+            this.bandedGridColumn1.OptionsFilter.AllowAutoFilter = false;
+            this.bandedGridColumn1.OptionsFilter.AllowFilter = false;
+            this.bandedGridColumn1.Visible = true;
+            this.bandedGridColumn1.Width = 52;
             // 
-            // panelControlTopRight
+            // bandedGridColumn2
             // 
-            this.panelControlTopRight.Controls.Add(this.simpleButtonXuatBD);
-            this.panelControlTopRight.Controls.Add(this.simpleButtonDong);
-            this.panelControlTopRight.Controls.Add(this.labelControlGVCNTT);
-            this.panelControlTopRight.Controls.Add(this.labelControlHocKyTT);
-            this.panelControlTopRight.Controls.Add(this.labelControlLopTT);
-            this.panelControlTopRight.Controls.Add(this.labelControlNamHocTT);
-            this.panelControlTopRight.Controls.Add(this.labelControlTitle);
-            this.panelControlTopRight.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlTopRight.Location = new System.Drawing.Point(3, 3);
-            this.panelControlTopRight.Name = "panelControlTopRight";
-            this.panelControlTopRight.Size = new System.Drawing.Size(807, 80);
-            this.panelControlTopRight.TabIndex = 0;
+            this.bandedGridColumn2.AppearanceHeader.Options.UseTextOptions = true;
+            this.bandedGridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.bandedGridColumn2.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.bandedGridColumn2.Caption = "Tên lớp";
+            this.bandedGridColumn2.FieldName = "TenLop";
+            this.bandedGridColumn2.Name = "bandedGridColumn2";
+            this.bandedGridColumn2.Visible = true;
+            this.bandedGridColumn2.Width = 141;
             // 
-            // simpleButtonXuatBD
+            // bandedGridColumn3
             // 
-            this.simpleButtonXuatBD.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonXuatBD.Location = new System.Drawing.Point(488, 21);
-            this.simpleButtonXuatBD.Name = "simpleButtonXuatBD";
-            this.simpleButtonXuatBD.Size = new System.Drawing.Size(128, 35);
-            this.simpleButtonXuatBD.TabIndex = 18;
-            this.simpleButtonXuatBD.Text = "Xuất bảng điểm";
-            this.simpleButtonXuatBD.Click += new System.EventHandler(this.simpleButtonXuatBD_Click);
+            this.bandedGridColumn3.Caption = "Giáo viên chủ nhiệm";
+            this.bandedGridColumn3.FieldName = "TenGiaoVien";
+            this.bandedGridColumn3.Name = "bandedGridColumn3";
+            this.bandedGridColumn3.Visible = true;
+            this.bandedGridColumn3.Width = 135;
             // 
-            // simpleButtonDong
+            // bandedGridColumn4
             // 
-            this.simpleButtonDong.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonDong.Location = new System.Drawing.Point(651, 21);
-            this.simpleButtonDong.Name = "simpleButtonDong";
-            this.simpleButtonDong.Size = new System.Drawing.Size(128, 35);
-            this.simpleButtonDong.TabIndex = 18;
-            this.simpleButtonDong.Text = "Đóng";
+            this.bandedGridColumn4.Caption = "Sĩ số";
+            this.bandedGridColumn4.FieldName = "SiSo";
+            this.bandedGridColumn4.Name = "bandedGridColumn4";
+            this.bandedGridColumn4.Visible = true;
             // 
-            // labelControlHocKyTT
+            // bandedGridColumn5
             // 
-            this.labelControlHocKyTT.Location = new System.Drawing.Point(300, 35);
-            this.labelControlHocKyTT.Name = "labelControlHocKyTT";
-            this.labelControlHocKyTT.Size = new System.Drawing.Size(36, 13);
-            this.labelControlHocKyTT.TabIndex = 1;
-            this.labelControlHocKyTT.Text = "Học kỳ:";
+            this.bandedGridColumn5.Caption = "Số lượng đạt";
+            this.bandedGridColumn5.FieldName = "SoLuongDat";
+            this.bandedGridColumn5.Name = "bandedGridColumn5";
+            this.bandedGridColumn5.Visible = true;
             // 
-            // labelControlLopTT
+            // bandedGridColumn6
             // 
-            this.labelControlLopTT.Location = new System.Drawing.Point(166, 35);
-            this.labelControlLopTT.Name = "labelControlLopTT";
-            this.labelControlLopTT.Size = new System.Drawing.Size(21, 13);
-            this.labelControlLopTT.TabIndex = 1;
-            this.labelControlLopTT.Text = "Lớp:";
-            // 
-            // labelControlNamHocTT
-            // 
-            this.labelControlNamHocTT.Location = new System.Drawing.Point(13, 35);
-            this.labelControlNamHocTT.Name = "labelControlNamHocTT";
-            this.labelControlNamHocTT.Size = new System.Drawing.Size(45, 13);
-            this.labelControlNamHocTT.TabIndex = 1;
-            this.labelControlNamHocTT.Text = "Năm học:";
-            // 
-            // labelControlTitle
-            // 
-            this.labelControlTitle.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControlTitle.Appearance.ForeColor = System.Drawing.Color.Navy;
-            this.labelControlTitle.Location = new System.Drawing.Point(6, 6);
-            this.labelControlTitle.Name = "labelControlTitle";
-            this.labelControlTitle.Size = new System.Drawing.Size(299, 19);
-            this.labelControlTitle.TabIndex = 0;
-            this.labelControlTitle.Text = "TỔNG KẾT ĐIỂM BÌNH QUÂN HỌC KỲ";
-            // 
-            // comboBoxEditNamHoc
-            // 
-            this.comboBoxEditNamHoc.Location = new System.Drawing.Point(25, 27);
-            this.comboBoxEditNamHoc.Name = "comboBoxEditNamHoc";
-            this.comboBoxEditNamHoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEditNamHoc.Size = new System.Drawing.Size(130, 20);
-            this.comboBoxEditNamHoc.TabIndex = 1;
-            // 
-            // treeListLopHoc
-            // 
-            this.treeListLopHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeListLopHoc.Location = new System.Drawing.Point(3, 109);
-            this.treeListLopHoc.Name = "treeListLopHoc";
-            this.treeListLopHoc.Size = new System.Drawing.Size(176, 280);
-            this.treeListLopHoc.TabIndex = 1;
-            // 
-            // labelControlNamHoc
-            // 
-            this.labelControlNamHoc.Location = new System.Drawing.Point(25, 8);
-            this.labelControlNamHoc.Name = "labelControlNamHoc";
-            this.labelControlNamHoc.Size = new System.Drawing.Size(72, 13);
-            this.labelControlNamHoc.TabIndex = 0;
-            this.labelControlNamHoc.Text = "Chọn năm học:";
-            // 
-            // panelControlChooseYear
-            // 
-            this.panelControlChooseYear.Controls.Add(this.comboBoxEditHocKy);
-            this.panelControlChooseYear.Controls.Add(this.labelControlHocKy);
-            this.panelControlChooseYear.Controls.Add(this.comboBoxEditNamHoc);
-            this.panelControlChooseYear.Controls.Add(this.labelControlNamHoc);
-            this.panelControlChooseYear.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlChooseYear.Location = new System.Drawing.Point(3, 3);
-            this.panelControlChooseYear.Name = "panelControlChooseYear";
-            this.panelControlChooseYear.Size = new System.Drawing.Size(176, 106);
-            this.panelControlChooseYear.TabIndex = 0;
-            // 
-            // comboBoxEditHocKy
-            // 
-            this.comboBoxEditHocKy.Location = new System.Drawing.Point(25, 77);
-            this.comboBoxEditHocKy.Name = "comboBoxEditHocKy";
-            this.comboBoxEditHocKy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEditHocKy.Size = new System.Drawing.Size(130, 20);
-            this.comboBoxEditHocKy.TabIndex = 1;
-            // 
-            // labelControlHocKy
-            // 
-            this.labelControlHocKy.Location = new System.Drawing.Point(25, 58);
-            this.labelControlHocKy.Name = "labelControlHocKy";
-            this.labelControlHocKy.Size = new System.Drawing.Size(63, 13);
-            this.labelControlHocKy.TabIndex = 0;
-            this.labelControlHocKy.Text = "Chọn học kỳ:";
-            // 
-            // panelControlRight
-            // 
-            this.panelControlRight.Controls.Add(this.gridControlTongKetNamHoc);
-            this.panelControlRight.Controls.Add(this.panelControlTopRight);
-            this.panelControlRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControlRight.Location = new System.Drawing.Point(182, 0);
-            this.panelControlRight.Name = "panelControlRight";
-            this.panelControlRight.Size = new System.Drawing.Size(813, 392);
-            this.panelControlRight.TabIndex = 3;
-            // 
-            // panelControlLeft
-            // 
-            this.panelControlLeft.Controls.Add(this.treeListLopHoc);
-            this.panelControlLeft.Controls.Add(this.panelControlChooseYear);
-            this.panelControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.panelControlLeft.Name = "panelControlLeft";
-            this.panelControlLeft.Size = new System.Drawing.Size(182, 392);
-            this.panelControlLeft.TabIndex = 2;
+            this.bandedGridColumn6.Caption = "Tỷ lệ";
+            this.bandedGridColumn6.FieldName = "TyLe";
+            this.bandedGridColumn6.Name = "bandedGridColumn6";
+            this.bandedGridColumn6.Visible = true;
             // 
             // frmBC_TongKetHocKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 392);
-            this.Controls.Add(this.panelControlRight);
-            this.Controls.Add(this.panelControlLeft);
+            this.ClientSize = new System.Drawing.Size(984, 392);
+            this.Controls.Add(this.gridControlTongKetHocKy);
+            this.Controls.Add(this.panelControlTop);
             this.Name = "frmBC_TongKetHocKy";
-            this.Text = "Bảng điểm học sinh";
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlTongKetNamHoc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.Text = "Báo cáo tổng kết học kỳ";
+            this.Load += new System.EventHandler(this.frmBC_TongKetHocKy_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControlTop)).EndInit();
+            this.panelControlTop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTopRight)).EndInit();
             this.panelControlTopRight.ResumeLayout(false);
             this.panelControlTopRight.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditNamHoc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.treeListLopHoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlChooseYear)).EndInit();
             this.panelControlChooseYear.ResumeLayout(false);
             this.panelControlChooseYear.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditKhoiLop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditHocKy.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlRight)).EndInit();
-            this.panelControlRight.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControlLeft)).EndInit();
-            this.panelControlLeft.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditNamHoc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlTongKetHocKy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewTongKetHocKy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewMonHoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnMH005;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnDTB;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnMH009;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnMH008;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnMH007;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnMH006;
-        private DevExpress.XtraGrid.GridControl gridControlTongKetNamHoc;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnSTT;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnMaHocSinh;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnHo;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnTenHocSinh;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnMH001;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnMH002;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnMH003;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnMH004;
-        private DevExpress.XtraEditors.LabelControl labelControlGVCNTT;
-        private DevExpress.XtraEditors.PanelControl panelControlTopRight;
-        private DevExpress.XtraEditors.LabelControl labelControlHocKyTT;
-        private DevExpress.XtraEditors.LabelControl labelControlLopTT;
-        private DevExpress.XtraEditors.LabelControl labelControlNamHocTT;
-        private DevExpress.XtraEditors.LabelControl labelControlTitle;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditNamHoc;
-        private DevExpress.XtraTreeList.TreeList treeListLopHoc;
-        private DevExpress.XtraEditors.LabelControl labelControlNamHoc;
+        private DevExpress.XtraEditors.PanelControl panelControlTop;
         private DevExpress.XtraEditors.PanelControl panelControlChooseYear;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditKhoiLop;
+        private DevExpress.XtraEditors.LabelControl labelControlChonKhoi;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditHocKy;
-        private DevExpress.XtraEditors.LabelControl labelControlHocKy;
-        private DevExpress.XtraEditors.PanelControl panelControlRight;
-        private DevExpress.XtraEditors.PanelControl panelControlLeft;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonXuatBD;
+        private DevExpress.XtraEditors.LabelControl labelControlChonHocKy;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditNamHoc;
+        private DevExpress.XtraEditors.LabelControl labelControlChonNamHoc;
+        private DevExpress.XtraEditors.PanelControl panelControlTopRight;
         private DevExpress.XtraEditors.SimpleButton simpleButtonDong;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonXuatBD;
+        private DevExpress.XtraEditors.LabelControl labelControlKhoiLop;
+        private DevExpress.XtraEditors.LabelControl labelControlNamHoc;
+        private DevExpress.XtraEditors.LabelControl labelControlKhoiLopTT;
+        private DevExpress.XtraEditors.LabelControl labelControlNamHocTT;
+        private DevExpress.XtraEditors.LabelControl labelControlHocKyTT;
+        private DevExpress.XtraEditors.LabelControl labelControlTitle;
+        private DevExpress.XtraGrid.GridControl gridControlTongKetHocKy;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewTongKetHocKy;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnTenMonHoc;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewMonHoc;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnSTT;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnTenLop;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnGiaoVienCN;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnSiSo;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnSoLuongDat;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnTyLe;
+        private DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView advBandedGridView1;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn2;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn3;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn4;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn5;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn6;
+
+
 
     }
 }

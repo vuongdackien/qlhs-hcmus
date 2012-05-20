@@ -55,8 +55,7 @@ namespace QLHS
             labelControlNamHoc.Text = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc);
             labelControlHocKy.Text = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);
             labelControlKhoiLop.Text = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop);
-            labelControlMonHocTT.Text = treeMonHoc.FocusedNode.GetValue("TenMonHoc").ToString().ToUpper();
-            
+            labelControlMonHocTT.Text = treeMonHoc.FocusedNode.GetValue("TenMonHoc").ToString().ToUpper();      
         }
         private void frmBC_TongKetMon_Load(object sender, EventArgs e)
         {
@@ -102,13 +101,17 @@ namespace QLHS
 
         private void simpleButtonXuatBD_Click(object sender, EventArgs e)
         {
-            var ds = _BangDiemBUS.LayDTDiem_HocKy_Lop("10A01NH1112", "1");
-            var rp = new rptTongKetHocKy();
+            string MaKhoi = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop);
+            string MaHocKy = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);
+            string MaMonHoc = treeMonHoc.FocusedNode.GetValue("MaMonHoc").ToString();
+            string MaNamHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc);
+            var ds = _BangDiemBUS.LayBangDiem_MonHoc(MaKhoi,MaHocKy,MaMonHoc,MaNamHoc);          
+            var rp = new rptTongKetMon();
             rp.SetDataSource(ds);
 
-            frmReportView_TongKetHK _frmReportView_TongKetHK = new frmReportView_TongKetHK();
-            _frmReportView_TongKetHK.crystalReportViewerTongKetMonHoc.ReportSource = rp;
-            _frmReportView_TongKetHK.ShowDialog();
+            frmReportView_TongKetMon _frmReportView_TongKetMH = new frmReportView_TongKetMon();
+            _frmReportView_TongKetMH.crystalReportViewerTongKetMonHoc.ReportSource = rp;
+            _frmReportView_TongKetMH.ShowDialog();
         }
 
     }
