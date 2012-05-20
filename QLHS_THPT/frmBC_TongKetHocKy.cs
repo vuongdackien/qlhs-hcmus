@@ -51,7 +51,7 @@ namespace QLHS
 
         private void simpleButtonXuatBD_Click(object sender, EventArgs e)
         {
-           string MaKhoi = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop);
+            string MaKhoi = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop);
             string MaHocKy = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);
             string MaNamHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc);
             var ds = _BangDiemBUS.LayBangDiem_HocKy(MaKhoi,MaHocKy,MaNamHoc);          
@@ -100,5 +100,6 @@ namespace QLHS
         {
             this.HienThi_Bang_TongKetHocKy();
         }
+
     }
 }

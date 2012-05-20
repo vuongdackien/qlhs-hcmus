@@ -28,7 +28,8 @@ namespace QLHS.DAL
         /// <returns></returns>
         public List<LopDTO> LayListLop_MaNam_MaKhoi(string MaNamHoc, string MaKhoi)
         {
-            string sql = string.Format("SELECT MaLop, TenLop FROM LOP WHERE MaKhoiLop = '{0}' "
+            string sql = string.Format("SELECT MaLop, TenLop, g.* FROM LOP l LEFT JOIN GIAOVIEN g "
+                                       +"ON l.MaGiaoVien = g.MaGiaoVien WHERE MaKhoiLop = '{0}' "
                                       + "AND MaNamHoc = '{1}' ", MaKhoi, MaNamHoc);
             OpenConnect();
             List<LopDTO> listLopDTO = new List<LopDTO>();
@@ -39,6 +40,8 @@ namespace QLHS.DAL
                 lopDTO = new LopDTO();
                 lopDTO.MaLop = Convert.ToString(dr["MaLop"]);
                 lopDTO.TenLop = Convert.ToString(dr["TenLop"]);
+                lopDTO.GiaoVien.MaGiaoVien = Convert.ToString(dr["MaGiaoVien"]);
+                lopDTO.GiaoVien.TenGiaoVien = Convert.ToString(dr["TenGiaoVien"]);
                 listLopDTO.Add(lopDTO);
             }
             CloseConnect();

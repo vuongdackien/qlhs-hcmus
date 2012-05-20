@@ -93,10 +93,10 @@
             // gridControlTongKetMonHoc
             // 
             this.gridControlTongKetMonHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlTongKetMonHoc.Location = new System.Drawing.Point(3, 107);
+            this.gridControlTongKetMonHoc.Location = new System.Drawing.Point(2, 106);
             this.gridControlTongKetMonHoc.MainView = this.gridViewTongKetMonHoc;
             this.gridControlTongKetMonHoc.Name = "gridControlTongKetMonHoc";
-            this.gridControlTongKetMonHoc.Size = new System.Drawing.Size(807, 282);
+            this.gridControlTongKetMonHoc.Size = new System.Drawing.Size(809, 284);
             this.gridControlTongKetMonHoc.TabIndex = 1;
             this.gridControlTongKetMonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewTongKetMonHoc,
@@ -367,9 +367,9 @@
             this.panelControlTopRight.Controls.Add(this.labelControlMonHocTT);
             this.panelControlTopRight.Controls.Add(this.labelControlTitle);
             this.panelControlTopRight.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlTopRight.Location = new System.Drawing.Point(3, 3);
+            this.panelControlTopRight.Location = new System.Drawing.Point(2, 2);
             this.panelControlTopRight.Name = "panelControlTopRight";
-            this.panelControlTopRight.Size = new System.Drawing.Size(807, 104);
+            this.panelControlTopRight.Size = new System.Drawing.Size(809, 104);
             this.panelControlTopRight.TabIndex = 0;
             // 
             // simpleButtonDong
@@ -473,14 +473,14 @@
             // treeMonHoc
             // 
             this.treeMonHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeMonHoc.Location = new System.Drawing.Point(3, 152);
+            this.treeMonHoc.Location = new System.Drawing.Point(2, 151);
             this.treeMonHoc.Name = "treeMonHoc";
             this.treeMonHoc.OptionsBehavior.Editable = false;
             this.treeMonHoc.OptionsView.EnableAppearanceEvenRow = true;
             this.treeMonHoc.OptionsView.EnableAppearanceOddRow = true;
             this.treeMonHoc.OptionsView.ShowColumns = false;
             this.treeMonHoc.OptionsView.ShowRoot = false;
-            this.treeMonHoc.Size = new System.Drawing.Size(176, 237);
+            this.treeMonHoc.Size = new System.Drawing.Size(178, 239);
             this.treeMonHoc.TabIndex = 1;
             this.treeMonHoc.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeMonHoc_FocusedNodeChanged);
             // 
@@ -501,9 +501,9 @@
             this.panelControlChooseYear.Controls.Add(this.comboBoxEditNamHoc);
             this.panelControlChooseYear.Controls.Add(this.labelControlChonNamHoc);
             this.panelControlChooseYear.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlChooseYear.Location = new System.Drawing.Point(3, 3);
+            this.panelControlChooseYear.Location = new System.Drawing.Point(2, 2);
             this.panelControlChooseYear.Name = "panelControlChooseYear";
-            this.panelControlChooseYear.Size = new System.Drawing.Size(176, 149);
+            this.panelControlChooseYear.Size = new System.Drawing.Size(178, 149);
             this.panelControlChooseYear.TabIndex = 0;
             // 
             // comboBoxEditKhoiLop

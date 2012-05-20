@@ -95,6 +95,22 @@ namespace QLHS.DAL
         }
 
         /// <summary>
+        /// Lấy bảng điểm môn học học kỳ của 1 lớp
+        /// </summary>
+        /// <param name="MaLop">String: mã lớp</param>
+        /// <param name="MaMonHoc">String: mã môn học</param>
+        /// <param name="MaHocKy">String: mã học kỳ</param>
+        /// <returns>DataTable</returns>
+        public DataTable LayBangDiem_MonHoc_Lop(string MaLop, string MaMonHoc, string MaHocKy)
+        {
+            string sql = string.Format("SELECT * FROM BANGDIEM bd LEFT JOIN PHANLOP pl "
+                                      +"ON bd.MaHocSinh = pl.MaHocSinh AND bd.MaLop = pl.MaLop WHERE "
+                                      +"MaMonHoc = '{0}' AND pl.MaLop = '{1}' AND bd.DTB IS NOT NULL "
+                                      +"AND MaHocKy = '{2}'",MaMonHoc, MaLop, MaHocKy);
+            return GetTable(sql);
+        }
+
+        /// <summary>
         /// Lấy điểm môn học theo học kỳ của lớp
         /// </summary>
         /// <param name="MaMonHoc">string: Mã môn học</param>
