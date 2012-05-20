@@ -46,10 +46,9 @@ namespace QLHS
 
             //Chắc chắn chọn được node
             string maMonHoc = treeMonHoc.FocusedNode.GetValue("MaMonHoc").ToString();
-
             gridControlTongKetMonHoc.DataSource =
-            _bangDiemBUS.LayBangDiem_MonHoc(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop),
-                                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy), maMonHoc, 
+            _bangDiemBUS.LayBangDiem_MonHoc(maMonHoc, Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop),
+                                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy),  
                                     Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc));
 
             labelControlNamHoc.Text = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc);
@@ -75,7 +74,7 @@ namespace QLHS
         }
 
         private void comboBoxEditNamHoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {           
             this.HienThi_Bang_TongKetMon();
         }
 
@@ -101,11 +100,11 @@ namespace QLHS
 
         private void simpleButtonXuatBD_Click(object sender, EventArgs e)
         {
-            string MaKhoi = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop);
-            string MaHocKy = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);
             string MaMonHoc = treeMonHoc.FocusedNode.GetValue("MaMonHoc").ToString();
+            string MaKhoi = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop);
+            string MaHocKy = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);            
             string MaNamHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc);
-            var ds = _BangDiemBUS.LayBangDiem_MonHoc(MaKhoi,MaHocKy,MaMonHoc,MaNamHoc);          
+            var ds = _BangDiemBUS.LayBangDiem_MonHoc(MaMonHoc,MaKhoi,MaHocKy,MaNamHoc);          
             var rp = new rptTongKetMon();
             rp.SetDataSource(ds);
 
