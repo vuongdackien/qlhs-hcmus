@@ -85,7 +85,7 @@ namespace QLHS
         }
 
         private rptTongKetHocKy _rptTongKetHocKy;
-        private frmReportView_TongKetHocKy _frmReportView_TongKetHocKy;
+        private frmReportView _frmReportView_TongKetHocKy;
         private void simpleButtonXuatBD_Click(object sender, EventArgs e)
         {
             if (_ds_baocaoTongKetHocKy.Count == 0)
@@ -105,8 +105,8 @@ namespace QLHS
                 Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop));
 
             if (_frmReportView_TongKetHocKy == null || _frmReportView_TongKetHocKy.IsDisposed)
-                _frmReportView_TongKetHocKy = new frmReportView_TongKetHocKy();
-            _frmReportView_TongKetHocKy.crystalReportViewerTongKetHocKy.ReportSource = _rptTongKetHocKy;
+                _frmReportView_TongKetHocKy = new frmReportView();
+            _frmReportView_TongKetHocKy.crystalReportViewer.ReportSource = _rptTongKetHocKy;
             _frmReportView_TongKetHocKy.ShowDialog();
         }
     }
