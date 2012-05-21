@@ -12,26 +12,14 @@ namespace QLHS.BUS
         GiaoVienDAL GVDAL=new GiaoVienDAL();
         DataTable dt;
         GiaoVienDTO GV;
-        //public void TaoDsCv(TextBoxX MaCV, TextBoxX TenCV, TextBoxX DiemCong, TextBoxX TrangThai, TextBoxX Cap, TextBoxX MoTa, DataGridView dgv, BindingNavigator bdNav)
-        //{
-        //    BindingSource bdsrc = new BindingSource { DataSource = dtcongviec };
-        //    dgv.DataSource = bdsrc;
-        //    bdNav.BindingSource = bdsrc;
-        //    MaCV.DataBindings.Clear();
-        //    MaCV.DataBindings.Add("Text", bdsrc, "MaGV");
-        //    TenCV.DataBindings.Clear();
-        //    TenCV.DataBindings.Add("Text", bdsrc, "TenGV");
-        //    DiemCong.DataBindings.Clear();
-        //  
-
-        //}
+       
         public void ThemGiaoVien(GiaoVienDTO GV)
         {
             GVDAL.ThemGiaoVien(GV);
         }
-        public void XoaGiaoVien(GiaoVienDTO GV)
+        public void XoaGiaoVien(string MaGV)
         {
-            GVDAL.XoaGiaoVien(GV);
+            GVDAL.XoaGiaoVien(MaGV);
         }
         public void CapNhatGiaoVien(GiaoVienDTO GV)
         {
@@ -43,14 +31,16 @@ namespace QLHS.BUS
         /// </summary>
         /// <param name="DK"> truyền điều kiện để lọc các giáo  viên tương ứng</param>
         /// <returns></returns>
-        public DataTable TableGiaoVien( string DK)
+        public DataTable TableGiaoVien(int i, string DK)
         {
-            dt = new DataTable(DK);
+            //dt = new DataTable();
+            dt = GVDAL.TableGiaoVien(i,DK);
             return dt;
         }
         public DataTable TableGiaoVien()
         {
-            dt = new DataTable();
+            dt = GVDAL.TableGiaoVien();
+            //dt = new DataTable();
             return dt;
         }
         #endregion
