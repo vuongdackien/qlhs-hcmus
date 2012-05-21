@@ -43,6 +43,7 @@
     <Compile Include="DatabaseConnect\ConnectData.cs" />
     <Compile Include="GiaoVienDAL.cs" />
     <Compile Include="HocSinhDAL.cs" />
+    <Compile Include="list.cs" />
     <Compile Include="LoaiNguoiDungDAL.cs" />
     <Compile Include="LopDAL.cs" />
     <Compile Include="MonHocDAL.cs" />

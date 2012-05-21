@@ -17,7 +17,7 @@ namespace QLHS.DAL
         {
             string sql = "";
             if (chiLayCacMonDangHoc)
-                sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo FROM MONHOC ORDER BY TenMonHoc ASC WHERE TrangThai = 1");
+                sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo FROM MONHOC WHERE TrangThai = 1 ORDER BY TenMonHoc ASC");
             else
                 sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo FROM MONHOC ORDER BY TenMonHoc");
 
@@ -61,7 +61,7 @@ namespace QLHS.DAL
         {
             string sql = "";
             if(chiLayCacMonDangHoc)
-                sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo FROM MONHOC ORDER BY TenMonHoc ASC WHERE TrangThai = 1");
+                sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo FROM MONHOC WHERE TrangThai = 1 ORDER BY TenMonHoc ASC");
             else
                 sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo FROM MONHOC ORDER BY TenMonHoc");
 
