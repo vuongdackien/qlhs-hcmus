@@ -1,6 +1,6 @@
 ﻿namespace QLHS.Report
 {
-    partial class frmReportView_TongKetMon
+    partial class frmReportView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crystalReportViewerTongKetMonHoc = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.crystalReportViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
-            // crystalReportViewerTongKetMonHoc
+            // crystalReportViewer
             // 
-            this.crystalReportViewerTongKetMonHoc.ActiveViewIndex = -1;
-            this.crystalReportViewerTongKetMonHoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewerTongKetMonHoc.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewerTongKetMonHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewerTongKetMonHoc.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewerTongKetMonHoc.Name = "crystalReportViewerTongKetMonHoc";
-            this.crystalReportViewerTongKetMonHoc.Size = new System.Drawing.Size(984, 362);
-            this.crystalReportViewerTongKetMonHoc.TabIndex = 0;
+            this.crystalReportViewer.ActiveViewIndex = -1;
+            this.crystalReportViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer.Name = "crystalReportViewer";
+            this.crystalReportViewer.ShowParameterPanelButton = false;
+            this.crystalReportViewer.Size = new System.Drawing.Size(984, 362);
+            this.crystalReportViewer.TabIndex = 0;
             // 
-            // frmReportView_TongKetMon
+            // frmReportView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 362);
-            this.Controls.Add(this.crystalReportViewerTongKetMonHoc);
-            this.Name = "frmReportView_TongKetMon";
-            this.Text = "Tổng kết môn";
+            this.Controls.Add(this.crystalReportViewer);
+            this.Name = "frmReportView";
+            this.Text = "Report Viewer";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewerTongKetMonHoc;
+        public CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer;
 
     }
 }

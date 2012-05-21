@@ -91,15 +91,11 @@ namespace QLHS
             string maLop = treeListLopHoc.FocusedNode.GetValue("MaKhoi").ToString();
             _bangDiemHocKyDTO = _bangDiemBUS.Lay_BangDiem_HocKy_TheoLop(maLop,
                                                         Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy));
+            gridControlBangDiemHocKy.DataSource = _bangDiemHocKyDTO;
             labelControlNamHoc.Text = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc);
             labelControlLop.Text = treeListLopHoc.FocusedNode.GetValue("TenKhoi").ToString();
             labelControlHocKy.Text = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);
             labelControlGVCN.Text = _lopBUS.Lay_TenGiaoVien_MaLop(maLop);
-        }
-       
-        private void simpleButtonXuatBD_Click(object sender, EventArgs e)
-        {
-         
         }
 
         private void comboBoxEditNamHoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -122,15 +118,24 @@ namespace QLHS
         {
             this.HienThi_Lai_BangDiem();
         }
-        private rptTongKetHocKy _rptTongKetHocKy;
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private rptBangDiemHocKy _rptTongKetHocKy;
+        private QLHS.Report.frmReportView _frmReportView;
+        private void simpleButtonXuatBD_Click(object sender, EventArgs e)
         {
             if (_rptTongKetHocKy == null)
-                _rptTongKetHocKy = new rptTongKetHocKy();
-            _rptTongKetHocKy.SetDataSource(_bangDiemHocKyDTO);
+                _rptTongKetHocKy = new rptBangDiemHocKy();
+            if (_frmReportView == null || _frmReportView.IsDisposed)
+                _frmReportView = new frmReportView();
 
-            crystalReportViewer1.ReportSource = _rptTongKetHocKy;
-            crystalReportViewer1.Refresh();
+            // Set parameter
+            _rptTongKetHocKy.SetParameterValue("paramTenNam",labelControlNamHoc.Text);
+            _rptTongKetHocKy.SetParameterValue("paramHocKy",labelControlHocKy.Text);
+            _rptTongKetHocKy.SetParameterValue("paramGVCN", labelControlGVCN.Text);
+            _rptTongKetHocKy.SetParameterValue("paramTenLop", labelControlLop.Text);
+
+            _rptTongKetHocKy.SetDataSource(_bangDiemHocKyDTO);
+            _frmReportView.crystalReportViewer.ReportSource = _rptTongKetHocKy;
+            _frmReportView.ShowDialog();
         }
   
     }

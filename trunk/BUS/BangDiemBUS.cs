@@ -239,6 +239,7 @@ namespace QLHS.BUS
             foreach (HocSinhDTO hocsinh in ds_hocsinh)
             {
                 BangDiemHocKyDTO bangDiemCaNhan = new BangDiemHocKyDTO();
+                bangDiemCaNhan.STT = hocsinh.STT;
                 bangDiemCaNhan.MaHocSinh = hocsinh.MaHocSinh;
                 bangDiemCaNhan.TenHocSinh = hocsinh.TenHocSinh;
                 // Tinh điểm tb

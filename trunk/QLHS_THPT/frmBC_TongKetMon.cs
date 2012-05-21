@@ -98,7 +98,7 @@ namespace QLHS
         }
 
         private rptTongKetMon _rptTongKetMon;
-        private frmReportView_TongKetMon _frmReportView_TongKetMon;
+        private frmReportView _frmReportView_TongKetMon;
         private void simpleButtonXuatBD_Click(object sender, EventArgs e)
         {
             if(_ds_baocaoTongKetMonHoc.Count == 0)
@@ -120,8 +120,8 @@ namespace QLHS
                 Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop));
             
             if(_frmReportView_TongKetMon == null || _frmReportView_TongKetMon.IsDisposed)
-                _frmReportView_TongKetMon = new frmReportView_TongKetMon();
-            _frmReportView_TongKetMon.crystalReportViewerTongKetMonHoc.ReportSource = _rptTongKetMon;
+                _frmReportView_TongKetMon = new frmReportView();
+            _frmReportView_TongKetMon.crystalReportViewer.ReportSource = _rptTongKetMon;
             _frmReportView_TongKetMon.ShowDialog();
         }
     }
