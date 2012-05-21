@@ -299,7 +299,65 @@ namespace QLHS.BUS
             }
 
             return bangDiemHocKy;
-
         }
+        /// <summary>
+        /// Lấy bảng điểm tất cả môn học theo học kỳ của lớp
+        /// </summary>
+        /// <param name="MaLop">String: Mã khối</param>
+        /// <param name="MaHocKy">String: Mã học kỳ</param>
+        /// <param name="MaNamHoc">String: Mã năm học</param>
+        /// <returns></returns>
+        public List<TongKetHocKyDTO> LayBangDiem_BaoCao_HocKy(string MaKhoi, string MaHocKy, string MaNamHoc)
+        {
+            List<TongKetHocKyDTO> bangDiemTongKetHocKy = new List<TongKetHocKyDTO>();
+
+            // Lấy tất cả các môn học trong bảng môn học
+            List<MonHocDTO> ds_monhoc = _monHocDAL.LayList_MonHoc();
+
+            List<LopDTO> ds_lop = _lopDAL.LayListLop_MaNam_MaKhoi(MaNamHoc, MaKhoi);
+
+            int stt = 1;
+            foreach (MonHocDTO monhoc in ds_monhoc)
+            {
+                foreach (LopDTO lop in ds_lop)
+                {
+                    // Kiểm tra đã nhập điểm đủ cho lớp này hay chưa
+                    int siSo = _phanLopDAL.Dem_SiSo_Lop(lop.MaLop);
+                    DataTable bdiemLop = _bangDiemDAL.LayBangDiem_MonHoc_Lop(lop.MaLop, monhoc.MaMonHoc, MaHocKy);
+                    // Tính toán số lượng đạt và tỉ lệ
+                    double diemDat = _quyDinhBUS.LayDiemChuan();
+                    int soLuongDat = 0;
+                    double tiLe = 0;
+                    // Chưa nhập đủ điểm
+                    if (bdiemLop.Rows.Count < siSo)
+                    {
+                        soLuongDat = 0;
+                    }
+                    else
+                    {
+                        foreach (DataRow dr in bdiemLop.Rows)
+                        {
+                            if (Convert.ToDouble(dr["DTB"]) >= diemDat)
+                                soLuongDat++;
+                        }
+                    }
+                    tiLe = (soLuongDat * 100) / siSo;
+
+                    // tạo bảng báo cáo tổng kết môn
+                    TongKetHocKyDTO mtongket = new TongKetHocKyDTO();
+                    mtongket.STT = stt++;
+                    mtongket.TenMonHoc = monhoc.TenMonHoc;
+                    mtongket.TenGiaoVien = lop.GiaoVien.TenGiaoVien;
+                    mtongket.TenLop = lop.TenLop;
+                    mtongket.SiSo = siSo;
+                    mtongket.SoLuongDat = soLuongDat;
+                    mtongket.TyLe = tiLe;
+                    // add vào ds bảng báo cáo
+                    bangDiemTongKetHocKy.Add(mtongket);
+                }
+            }
+            return bangDiemTongKetHocKy;
+        }
+
     }
 }
