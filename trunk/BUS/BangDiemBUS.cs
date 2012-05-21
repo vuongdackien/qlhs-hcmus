@@ -298,7 +298,7 @@ namespace QLHS.BUS
                     bangDiemCaNhan.DTB = Utilities.ObjectUtilities.LamTron(tongDiem / tongHeSo, 4);
                 }
                 else
-                    bangDiemCaNhan.DTB = "";
+                    bangDiemCaNhan.DTB = "_";
 
                 bangDiemHocKy.Add(bangDiemCaNhan);
             }
