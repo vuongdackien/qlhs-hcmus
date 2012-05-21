@@ -92,10 +92,10 @@
             // gridControlTongKetMonHoc
             // 
             this.gridControlTongKetMonHoc.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gridControlTongKetMonHoc.Location = new System.Drawing.Point(2, 94);
+            this.gridControlTongKetMonHoc.Location = new System.Drawing.Point(3, 107);
             this.gridControlTongKetMonHoc.MainView = this.gridViewTongKetMonHoc;
             this.gridControlTongKetMonHoc.Name = "gridControlTongKetMonHoc";
-            this.gridControlTongKetMonHoc.Size = new System.Drawing.Size(563, 296);
+            this.gridControlTongKetMonHoc.Size = new System.Drawing.Size(563, 282);
             this.gridControlTongKetMonHoc.TabIndex = 1;
             this.gridControlTongKetMonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewTongKetMonHoc,
@@ -417,10 +417,11 @@
             this.panelControlTopRight.Controls.Add(this.labelControlMonHocTT);
             this.panelControlTopRight.Controls.Add(this.labelControlTitle);
             this.panelControlTopRight.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlTopRight.Location = new System.Drawing.Point(2, 2);
+            this.panelControlTopRight.Location = new System.Drawing.Point(3, 3);
             this.panelControlTopRight.Name = "panelControlTopRight";
-            this.panelControlTopRight.Size = new System.Drawing.Size(809, 92);
+            this.panelControlTopRight.Size = new System.Drawing.Size(807, 104);
             this.panelControlTopRight.TabIndex = 0;
+            this.panelControlTopRight.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControlTopRight_Paint);
             // 
             // simpleButtonXuatBD
             // 
@@ -434,7 +435,7 @@
             // 
             // labelControlHocKy
             // 
-            this.labelControlHocKy.Location = new System.Drawing.Point(226, 37);
+            this.labelControlHocKy.Location = new System.Drawing.Point(226, 50);
             this.labelControlHocKy.Name = "labelControlHocKy";
             this.labelControlHocKy.Size = new System.Drawing.Size(48, 13);
             this.labelControlHocKy.TabIndex = 1;
@@ -442,7 +443,7 @@
             // 
             // labelControlHocKyTT
             // 
-            this.labelControlHocKyTT.Location = new System.Drawing.Point(180, 37);
+            this.labelControlHocKyTT.Location = new System.Drawing.Point(180, 50);
             this.labelControlHocKyTT.Name = "labelControlHocKyTT";
             this.labelControlHocKyTT.Size = new System.Drawing.Size(36, 13);
             this.labelControlHocKyTT.TabIndex = 1;
@@ -450,7 +451,7 @@
             // 
             // labelControlKhoiLop
             // 
-            this.labelControlKhoiLop.Location = new System.Drawing.Point(46, 69);
+            this.labelControlKhoiLop.Location = new System.Drawing.Point(46, 82);
             this.labelControlKhoiLop.Name = "labelControlKhoiLop";
             this.labelControlKhoiLop.Size = new System.Drawing.Size(48, 13);
             this.labelControlKhoiLop.TabIndex = 1;
@@ -458,7 +459,7 @@
             // 
             // labelControlNamHoc
             // 
-            this.labelControlNamHoc.Location = new System.Drawing.Point(68, 38);
+            this.labelControlNamHoc.Location = new System.Drawing.Point(68, 51);
             this.labelControlNamHoc.Name = "labelControlNamHoc";
             this.labelControlNamHoc.Size = new System.Drawing.Size(48, 13);
             this.labelControlNamHoc.TabIndex = 1;
@@ -466,7 +467,7 @@
             // 
             // labelControlKhoiLopTT
             // 
-            this.labelControlKhoiLopTT.Location = new System.Drawing.Point(13, 69);
+            this.labelControlKhoiLopTT.Location = new System.Drawing.Point(13, 82);
             this.labelControlKhoiLopTT.Name = "labelControlKhoiLopTT";
             this.labelControlKhoiLopTT.Size = new System.Drawing.Size(24, 13);
             this.labelControlKhoiLopTT.TabIndex = 1;
@@ -474,7 +475,7 @@
             // 
             // labelControlNamHocTT
             // 
-            this.labelControlNamHocTT.Location = new System.Drawing.Point(13, 38);
+            this.labelControlNamHocTT.Location = new System.Drawing.Point(13, 51);
             this.labelControlNamHocTT.Name = "labelControlNamHocTT";
             this.labelControlNamHocTT.Size = new System.Drawing.Size(45, 13);
             this.labelControlNamHocTT.TabIndex = 1;
@@ -506,7 +507,6 @@
             this.comboBoxEditNamHoc.Name = "comboBoxEditNamHoc";
             this.comboBoxEditNamHoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEditNamHoc.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditNamHoc.Size = new System.Drawing.Size(130, 20);
             this.comboBoxEditNamHoc.TabIndex = 1;
             this.comboBoxEditNamHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHoc_SelectedIndexChanged);
@@ -514,14 +514,14 @@
             // treeMonHoc
             // 
             this.treeMonHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeMonHoc.Location = new System.Drawing.Point(2, 145);
+            this.treeMonHoc.Location = new System.Drawing.Point(3, 152);
             this.treeMonHoc.Name = "treeMonHoc";
             this.treeMonHoc.OptionsBehavior.Editable = false;
             this.treeMonHoc.OptionsView.EnableAppearanceEvenRow = true;
             this.treeMonHoc.OptionsView.EnableAppearanceOddRow = true;
             this.treeMonHoc.OptionsView.ShowColumns = false;
             this.treeMonHoc.OptionsView.ShowRoot = false;
-            this.treeMonHoc.Size = new System.Drawing.Size(178, 245);
+            this.treeMonHoc.Size = new System.Drawing.Size(176, 237);
             this.treeMonHoc.TabIndex = 1;
             this.treeMonHoc.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeMonHoc_FocusedNodeChanged);
             // 
@@ -542,25 +542,24 @@
             this.panelControlChooseYear.Controls.Add(this.comboBoxEditNamHoc);
             this.panelControlChooseYear.Controls.Add(this.labelControlChonNamHoc);
             this.panelControlChooseYear.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlChooseYear.Location = new System.Drawing.Point(2, 2);
+            this.panelControlChooseYear.Location = new System.Drawing.Point(3, 3);
             this.panelControlChooseYear.Name = "panelControlChooseYear";
-            this.panelControlChooseYear.Size = new System.Drawing.Size(178, 143);
+            this.panelControlChooseYear.Size = new System.Drawing.Size(176, 149);
             this.panelControlChooseYear.TabIndex = 0;
             // 
             // comboBoxEditKhoiLop
             // 
-            this.comboBoxEditKhoiLop.Location = new System.Drawing.Point(25, 110);
+            this.comboBoxEditKhoiLop.Location = new System.Drawing.Point(25, 121);
             this.comboBoxEditKhoiLop.Name = "comboBoxEditKhoiLop";
             this.comboBoxEditKhoiLop.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEditKhoiLop.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditKhoiLop.Size = new System.Drawing.Size(130, 20);
             this.comboBoxEditKhoiLop.TabIndex = 3;
             this.comboBoxEditKhoiLop.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditKhoiLop_SelectedIndexChanged);
             // 
             // labelControlChonKhoi
             // 
-            this.labelControlChonKhoi.Location = new System.Drawing.Point(25, 91);
+            this.labelControlChonKhoi.Location = new System.Drawing.Point(25, 102);
             this.labelControlChonKhoi.Name = "labelControlChonKhoi";
             this.labelControlChonKhoi.Size = new System.Drawing.Size(51, 13);
             this.labelControlChonKhoi.TabIndex = 2;
@@ -568,18 +567,17 @@
             // 
             // comboBoxEditHocKy
             // 
-            this.comboBoxEditHocKy.Location = new System.Drawing.Point(25, 67);
+            this.comboBoxEditHocKy.Location = new System.Drawing.Point(25, 73);
             this.comboBoxEditHocKy.Name = "comboBoxEditHocKy";
             this.comboBoxEditHocKy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEditHocKy.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditHocKy.Size = new System.Drawing.Size(130, 20);
             this.comboBoxEditHocKy.TabIndex = 1;
             this.comboBoxEditHocKy.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditHocKy_SelectedIndexChanged);
             // 
             // labelControlChonHocKy
             // 
-            this.labelControlChonHocKy.Location = new System.Drawing.Point(25, 48);
+            this.labelControlChonHocKy.Location = new System.Drawing.Point(25, 54);
             this.labelControlChonHocKy.Name = "labelControlChonHocKy";
             this.labelControlChonHocKy.Size = new System.Drawing.Size(63, 13);
             this.labelControlChonHocKy.TabIndex = 0;
