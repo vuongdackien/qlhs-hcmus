@@ -8,6 +8,13 @@ namespace QLHS.DAL
 {
     public class BangDiemDAL : ConnectData
     {
+        private MonHocDAL _MonHocDAL;
+
+        public BangDiemDAL()
+        {
+            _MonHocDAL = new MonHocDAL();
+        }
+
         public DataTable LayDTDiem_HocKy_Lop(string MaLop, string MaHocKy)
         {
             string sql = string.Format("SELECT HS.TenHocSinh, PL.STT, BD.MaHocSinh, BD.MaMonHoc, "
@@ -162,6 +169,13 @@ namespace QLHS.DAL
         /// <returns>DataTable</returns>
         public DataTable LayBangDiem_HocKy_HocSinh(string MaLop, string MaHocSinh, string MaHocKy)
         {
+            List<MonHocDTO> listMH = _MonHocDAL.LayList_MonHoc();
+
+            foreach (MonHocDTO mh in listMH)
+            {
+
+            }
+
             string sql = "SELECT b.* FROM MONHOC m LEFT JOIN BANGDIEM b ON m.MaMonHoc = b.MaMonHoc "
                                       +"WHERE m.TrangThai = 1 AND b.MaHocKy = "+MaHocKy+" "
                                       +"AND  b.MaLop = '"+MaLop+"' AND MaHocSinh = '"+MaHocSinh+"'";

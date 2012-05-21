@@ -11,15 +11,21 @@ namespace QLHS.DAL
         /// <summary>
         /// Lấy Datatable danh sách môn học
         /// </summary>
+        /// <param name="chiLayCacMonDangHoc">True: Chỉ lấy các môn đang học, False: Lấy tất cả 13 môn</param>
         /// <returns>Datatable</returns>
-        public DataTable LayDT_DanhSach_MonHoc()
+        public DataTable LayDT_DanhSach_MonHoc(bool chiLayCacMonDangHoc = true)
         {
-            string sql = "SELECT MaMonHoc, TenMonHoc FROM MONHOC ORDER BY TenMonHoc  ASC";
+            string sql = "";
+            if (chiLayCacMonDangHoc)
+                sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo FROM MONHOC ORDER BY TenMonHoc ASC WHERE TrangThai = 1");
+            else
+                sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo FROM MONHOC ORDER BY TenMonHoc");
+
             return GetTable(sql);
         }
         public MonHoc_HeSoDTO Lay_HeSoMonHoc()
         {
-            string sql = "SELECT MaMonHoc, HeSo FROM MONHOC";
+            string sql = "SELECT MaMonHoc, HeSo FROM MONHOC WHERE TrangThai = 1";
             OpenConnect();
             var dr = ExecuteReader(sql);
             MonHoc_HeSoDTO dsHeSo = new MonHoc_HeSoDTO();
@@ -46,10 +52,19 @@ namespace QLHS.DAL
             CloseConnect();
             return dsHeSo;
         }
-
-        public List<MonHocDTO> LayList_MonHoc()
+        /// <summary>
+        /// Lấy danh sách môn học
+        /// </summary>
+        /// <param name="chiLayCacMonDangHoc">True: Chỉ lấy các môn đang học, False: Lấy tất cả 13 môn</param>
+        /// <returns>List MonHocDTO</returns>
+        public List<MonHocDTO> LayList_MonHoc(bool chiLayCacMonDangHoc = true)
         {
-            string sql = string.Format("SELECT MaMonHoc, TenMonHoc FROM MONHOC ORDER BY TenMonHoc  ASC");
+            string sql = "";
+            if(chiLayCacMonDangHoc)
+                sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo FROM MONHOC ORDER BY TenMonHoc ASC WHERE TrangThai = 1");
+            else
+                sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo FROM MONHOC ORDER BY TenMonHoc");
+
             OpenConnect();
             List<MonHocDTO> listMonHocDTO = new List<MonHocDTO>();
             MonHocDTO monhocDTO;
@@ -59,9 +74,12 @@ namespace QLHS.DAL
                 monhocDTO = new MonHocDTO();
                 monhocDTO.MaMonHoc = Convert.ToString(dr["MaMonHoc"]);
                 monhocDTO.TenMonHoc = Convert.ToString(dr["TenMonHoc"]);
+                monhocDTO.SoTiet = Convert.ToInt16(dr["SoTiet"]);
+                monhocDTO.HeSo = Convert.ToInt16(dr["HeSo"]);
                 listMonHocDTO.Add(monhocDTO);
             }
             CloseConnect();
             return listMonHocDTO;
-        }    }
+        }    
+    }
 }
