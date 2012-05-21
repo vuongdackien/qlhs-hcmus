@@ -92,6 +92,16 @@ namespace QLHS
 
         private void barBtnPhanCongChuyenMon_ItemClick(object sender, ItemClickEventArgs e)
         {
+           
+        }
+
+        private void barBtnTongKetMonHoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmBC_TongKetMon>();
+        }
+
+        private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
+        {
             ShowMDIChildForm<frmBC_TongKetHocKy>();
         }
     }
