@@ -10,6 +10,7 @@ using QLHS.BUS;
 using QLHS.DTO;
 using DevExpress.XtraTreeList.Nodes;
 using DevExpress.XtraEditors.Controls;
+using QLHS.Report;
 
 namespace QLHS
 {
@@ -21,7 +22,7 @@ namespace QLHS
         private NamHocBUS _namHocBUS;
         private BangDiemBUS _bangDiemBUS;
         private HocKyBUS _hocKyBUS;
-
+        List<BangDiemHocKyDTO> _bangDiemHocKyDTO;
 
         public frmBC_BangDiemHocKy()
         {
@@ -32,6 +33,7 @@ namespace QLHS
             _namHocBUS = new NamHocBUS();
             _bangDiemBUS = new BangDiemBUS();
             _hocKyBUS = new HocKyBUS();
+            _bangDiemHocKyDTO = null;
         }
 
         private void frmBangDiemMonHoc_Load(object sender, EventArgs e)
@@ -39,7 +41,7 @@ namespace QLHS
             treeListLopHoc.ParentFieldName = "MaKhoi";
             treeListLopHoc.PreviewFieldName = "TenKhoi";
             treeListLopHoc.DataSource = _khoiBUS.LayDTKhoi();
-
+            
             Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
                                                          _namHocBUS.LayDTNamHoc(),
                                                         "MaNamHoc", "TenNamHoc", 0);
@@ -85,7 +87,10 @@ namespace QLHS
                // gridControlTongKetNamHoc.DataSource = null;
                 return;
             }
+            
             string maLop = treeListLopHoc.FocusedNode.GetValue("MaKhoi").ToString();
+            _bangDiemHocKyDTO = _bangDiemBUS.Lay_BangDiem_HocKy_TheoLop(maLop,
+                                                        Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy));
             labelControlNamHoc.Text = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc);
             labelControlLop.Text = treeListLopHoc.FocusedNode.GetValue("TenKhoi").ToString();
             labelControlHocKy.Text = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);
@@ -116,6 +121,16 @@ namespace QLHS
         private void treeListLopHoc_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
         {
             this.HienThi_Lai_BangDiem();
+        }
+        private rptTongKetHocKy _rptTongKetHocKy;
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            if (_rptTongKetHocKy == null)
+                _rptTongKetHocKy = new rptTongKetHocKy();
+            _rptTongKetHocKy.SetDataSource(_bangDiemHocKyDTO);
+
+            crystalReportViewer1.ReportSource = _rptTongKetHocKy;
+            crystalReportViewer1.Refresh();
         }
   
     }

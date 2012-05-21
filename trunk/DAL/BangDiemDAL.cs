@@ -28,7 +28,7 @@ namespace QLHS.DAL
         /// <param name="MaHocKy">String: Mã học kỳ</param>
         /// <param name="MaMonHoc">String: Mã môn học</param>
         /// <returns></returns>
-        public DataTable LayBangDiem(string MaLop, string MaHocKy, string MaMonHoc)
+        public DataTable LayBangDiem_MonHoc_HocKy_Lop(string MaLop, string MaHocKy, string MaMonHoc)
         {
             if (MaLop == "" || MaHocKy == "" || MaMonHoc == "")
                 return null;
@@ -118,7 +118,7 @@ namespace QLHS.DAL
         /// <param name="MaHocKy">string: Mã học kỳ</param>
         /// <param name="MaNamHoc">string: Mã năm học</param>
         /// <returns></returns>
-        public DataTable LayBangDiem_MonHoc(string MaMonHoc, string MaKhoi, string MaHocKy, string MaNamHoc)
+        public DataTable LayBangDiem_MonHoc_HocKy_KhoiLop(string MaMonHoc, string MaKhoi, string MaHocKy, string MaNamHoc)
         {
             string sql = string.Format("SELECT TenNamHoc, MaHocKy, LEFT(lop.MaLop,2) as MaKhoi, lop.MaNamHoc, TenMonHoc, TenLop, TenGiaoVien, SiSo, count(*) as SoLuongDat, ((cast(count(lop.MaLop) as real) )/SiSo) as TyLe"                                        
                                         + " FROM BANGDIEM bdiem, HOCSINH hsinh, GIAOVIEN gvien, LOP lop, PHANLOP plop, MONHOC mhoc, NAMHOC namhoc "
@@ -139,8 +139,8 @@ namespace QLHS.DAL
         /// <param name="MaKhoi">string: Mã khối</param>
         /// <param name="MaHocKy">string: Mã học kỳ</param>       
         /// <param name="MaNamHoc">string: Mã năm học</param>
-        /// <returns></returns>
-        public DataTable LayBangDiem_HocKy(string MaKhoi, string MaHocKy, string MaNamHoc)
+        /// <returns>DataTable</returns>
+        public DataTable LayBangDiem_MonHoc_HocKy_Khoi(string MaKhoi, string MaHocKy, string MaNamHoc)
         {
             string sql = string.Format("SELECT mhoc.MaMonHoc, TenNamHoc, MaHocKy, LEFT(lop.MaLop,2) as MaKhoi, lop.MaNamHoc, TenMonHoc, TenLop, TenGiaoVien, SiSo, count(*) as SoLuongDat, ((cast(count(lop.MaLop) as real) )/SiSo) as TyLe"
                                         + " FROM BANGDIEM bdiem, HOCSINH hsinh, GIAOVIEN gvien, LOP lop, PHANLOP plop, MONHOC mhoc, NAMHOC namhoc "
@@ -151,6 +151,20 @@ namespace QLHS.DAL
                                         + " AND MaHocKy='" + MaHocKy + "' AND LEFT(lop.MaLop,2)='" + MaKhoi + "' "
                                         + " AND RIGHT(lop.MaLop,6)='" + MaNamHoc + "' "
                                         + " GROUP BY mhoc.MaMonHoc, lop.Malop, TenNamHoc, MaHocKy, lop.MaNamHoc, TenMonHoc, TenLop, TenGiaoVien, SiSo ");
+            return GetTable(sql);
+        }
+        /// <summary>
+        /// Lấy bảng điểm học kỳ của 1 học sinh
+        /// </summary>
+        /// <param name="MaLop">String: Mã lớp</param>
+        /// <param name="MaHocSinh">String: Mã học sinh</param>
+        /// <param name="MaHocKy">String: Mã học kỳ</param>
+        /// <returns>DataTable</returns>
+        public DataTable LayBangDiem_HocKy_HocSinh(string MaLop, string MaHocSinh, string MaHocKy)
+        {
+            string sql = "SELECT b.* FROM MONHOC m LEFT JOIN BANGDIEM b ON m.MaMonHoc = b.MaMonHoc "
+                                      +"WHERE m.TrangThai = 1 AND b.MaHocKy = "+MaHocKy+" "
+                                      +"AND  b.MaLop = '"+MaLop+"' AND MaHocSinh = '"+MaHocSinh+"'";
             return GetTable(sql);
         }
     }

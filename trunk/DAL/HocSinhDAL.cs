@@ -16,12 +16,40 @@ namespace QLHS.DAL
         /// <returns>DataTable</returns>
         public DataTable LayDTHocSinh_LopHoc(string MaLop)
         {
-            string sql = string.Format("SELECT pl.STT, hs.MaHocSinh, hs.TenHocSinh "
+            string sql = string.Format("SELECT pl.STT, hs.* "
                                        +"FROM PHANLOP pl LEFT JOIN HOCSINH hs ON pl.MaHocSinh = hs.MaHocSinh "
                                        +"WHERE pl.MaLop = '{0}' ORDER BY pl.STT ASC",MaLop);
             return GetTable(sql);
         }
-
+        /// <summary>
+        /// Lấy List học sinh từ Lớp học
+        /// </summary>
+        /// <param name="MaLop">String: Mã lớp</param>
+        /// <returns>List HocSinhDTO </returns>
+        public List<HocSinhDTO> LayListHocSinh_LopHoc(string MaLop)
+        {
+            string sql = string.Format("SELECT pl.STT, hs.* "
+                                       + "FROM PHANLOP pl LEFT JOIN HOCSINH hs ON pl.MaHocSinh = hs.MaHocSinh "
+                                       + "WHERE pl.MaLop = '{0}' ORDER BY pl.STT ASC", MaLop);
+            List<HocSinhDTO> listHS = new List<HocSinhDTO>();
+            OpenConnect();
+            var reader = ExecuteReader(sql);
+            while (reader.Read())
+            {
+                HocSinhDTO hs = new HocSinhDTO();
+                hs.STT = Convert.ToInt16(reader["STT"]);
+                hs.MaHocSinh = Convert.ToString(reader["MaHocSinh"]);
+                hs.TenHocSinh = Convert.ToString(reader["TenHocSinh"]);
+                hs.NoiSinh = Convert.ToString(reader["NoiSinh"]);
+                hs.NgaySinh = Convert.ToDateTime(reader["NgaySinh"]);
+                hs.GioiTinh = Convert.ToInt16(reader["GioiTinh"]);
+                hs.Email = Convert.ToString(reader["Email"]);
+                hs.DiaChi = Convert.ToString(reader["DiaChi"]);
+                listHS.Add(hs);
+            }
+            CloseConnect();
+            return listHS;
+        }
         /// <summary>
         /// Lấy hồ sơ học sinh từ Mã học sinh
         /// </summary>

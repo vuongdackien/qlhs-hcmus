@@ -47,6 +47,7 @@
             this.labelControlLopTT = new DevExpress.XtraEditors.LabelControl();
             this.labelControlNamHocTT = new DevExpress.XtraEditors.LabelControl();
             this.labelControlTitle = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlLeft)).BeginInit();
             this.panelControlLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLopHoc)).BeginInit();
@@ -154,6 +155,7 @@
             // 
             // panelControlTopRight
             // 
+            this.panelControlTopRight.Controls.Add(this.simpleButton1);
             this.panelControlTopRight.Controls.Add(this.labelControlGVCN);
             this.panelControlTopRight.Controls.Add(this.labelControlLop);
             this.panelControlTopRight.Controls.Add(this.labelControlHocKy);
@@ -247,6 +249,15 @@
             this.labelControlTitle.TabIndex = 0;
             this.labelControlTitle.Text = "BẢNG ĐIỂM HỌC KỲ";
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(512, 31);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 24;
+            this.simpleButton1.Text = "simpleButton1";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // frmBC_BangDiemHocKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,5 +307,6 @@
         private DevExpress.XtraEditors.LabelControl labelControlHocKy;
         private DevExpress.XtraEditors.LabelControl labelControlNamHoc;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
