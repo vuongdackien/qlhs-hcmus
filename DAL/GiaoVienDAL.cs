@@ -11,23 +11,23 @@ namespace QLHS.DAL
     public class GiaoVienDAL : ConnectData
     {
         GiaoVienDTO GV;
-        GiaoVienDAL Gvdal=new GiaoVienDAL() ;
-
+ 
         public void ThemGiaoVien(GiaoVienDTO GV)
         {
 
             string sql = string.Format("insert into  Giaovien values (n'{0}',n'{1}')", GV.MaGiaoVien, GV.TenGiaoVien);
-            Gvdal.ExecuteQuery(sql);
+            ExecuteQuery(sql);
         }
-        public void XoaGiaoVien(GiaoVienDTO GV)
+        public void XoaGiaoVien(string  MaGV)
         {
-            string sql = string.Format("delete  Giaovien  where MaGiaoVien like n'%{0}%')", GV.MaGiaoVien);
-            Gvdal.ExecuteQuery(sql);
+            string sql = string.Format("delete  Giaovien  where MaGiaoVien like n'%{0}%')", MaGV);
+            ExecuteQuery(sql);
         }
         public void CapNhatGiaoVien(GiaoVienDTO GV)
         {
-            string sql = string.Format("update GiaoVien set TenGiaoVien='{0}' where madv={1} ", GV.TenGiaoVien, GV.MaGiaoVien);
-            Gvdal.ExecuteQuery(sql);
+            string sql = string.Format("update GiaoVien set TenGiaoVien=N'{0}'"
+                                                     + "where madv={1} ", GV.TenGiaoVien, GV.MaGiaoVien);
+            ExecuteQuery(sql);
         }
         #region Tạo bảng các giáo viên
         /// <summary>
@@ -36,9 +36,9 @@ namespace QLHS.DAL
         /// <returns></returns>
         public DataTable TableGiaoVien()
         {
-            string sql = " select * from KNHoatDong"; 
+            string sql = " select * from GiaoVien"; 
             DataTable dt = new DataTable();
-            dt = Gvdal.GetTable(sql, true);
+            dt = GetTable(sql, true);
             return dt;
             
         }
@@ -52,7 +52,7 @@ namespace QLHS.DAL
             string sql = null;
             sql = string.Format("select * from GiaoVien where MaGiaoVien like N'%{0}%' or TenGiaoVien like N'%{0}%'", DK); 
             DataTable dt = new DataTable();
-            dt = Gvdal.GetTable(sql, true);
+            dt =GetTable(sql, true);
             return dt;
         }
         
@@ -69,7 +69,7 @@ namespace QLHS.DAL
             string sql = "";
             sql = string.Format("select * from GiaoVien where MaGiaoVien like N'%{0}%' or TenGiaoVien like N'%{0}%'", DK);   
             DataTable dt = new DataTable();
-            dt = Gvdal.GetTable(sql, true);
+            dt = GetTable(sql, true);
             List<GiaoVienDTO> ListGiaoVien = new List<GiaoVienDTO>();
             foreach (DataRow dr in dt.Rows)
             {
@@ -92,7 +92,7 @@ namespace QLHS.DAL
             sql = " select * from GiaoVien";
 
             DataTable dt = new DataTable();
-            dt = Gvdal.GetTable(sql, true);
+            dt =GetTable(sql, true);
             List<GiaoVienDTO> ListGiaoVien = new List<GiaoVienDTO>();
             foreach (DataRow dr in dt.Rows)
             {
@@ -104,9 +104,9 @@ namespace QLHS.DAL
         }
         #endregion
         public void AddNewRow(DataRow dr)
-        {  Gvdal.AddNewRow(dr); }
+        { AddNewRow(dr); }
         public DataRow GetNewRow()
-        { return Gvdal.GetNewRow(); }
+        { return GetNewRow(); }
         public bool KiemtratontaiGiaoVien(GiaoVienDTO GV)
         {
             string sql = string.Format("SELECT count(*) as SoLuong FROM GiaoVien WHERE MaGiaoVien = '{0}'", GV.MaGiaoVien);
