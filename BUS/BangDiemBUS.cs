@@ -177,7 +177,7 @@ namespace QLHS.BUS
         /// <param name="MaMonHoc">String: Mã môn học</param>
         /// <param name="MaNamHoc">String: Mã năm học</param>
         /// <returns>List<TongKetMonDTO></returns>
-        public List<TongKetMonDTO> LayBangDiem_MonHoc(string MaMonHoc, string MaKhoi, string MaHocKy, string MaNamHoc)
+        public List<TongKetMonDTO> LayBangDiem_BaoCao_MonHoc(string MaMonHoc, string MaKhoi, string MaHocKy, string MaNamHoc)
         {
             // Lấy tất cả các lớp trong khối
             List<LopDTO> ds_lop = _lopDAL.LayListLop_MaNam_MaKhoi(MaNamHoc, MaKhoi);

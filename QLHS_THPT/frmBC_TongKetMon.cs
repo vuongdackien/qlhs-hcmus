@@ -21,6 +21,7 @@ namespace QLHS
         private HocKyBUS _hocKyBUS;
         private MonHocBUS _monHocBUS;
         private BangDiemBUS _BangDiemBUS;
+        List<TongKetMonDTO> _ds_baocaoTongKetMonHoc;
         public frmBC_TongKetMon()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace QLHS
             _hocKyBUS = new HocKyBUS();
             _monHocBUS = new MonHocBUS();
             _BangDiemBUS = new BangDiemBUS();
+            _ds_baocaoTongKetMonHoc = null;
 
         }
         /// <summary>
@@ -46,10 +48,11 @@ namespace QLHS
 
             //Chắc chắn chọn được node
             string maMonHoc = treeMonHoc.FocusedNode.GetValue("MaMonHoc").ToString();
-            gridControlTongKetMonHoc.DataSource =
-            _bangDiemBUS.LayBangDiem_MonHoc(maMonHoc, Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop),
-                                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy),  
+            _ds_baocaoTongKetMonHoc = _bangDiemBUS.LayBangDiem_BaoCao_MonHoc(maMonHoc, Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop),
+                                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy),
                                     Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc));
+            gridControlTongKetMonHoc.DataSource = _ds_baocaoTongKetMonHoc;
+           
 
             labelControlNamHoc.Text = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc);
             labelControlHocKy.Text = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);
@@ -97,14 +100,9 @@ namespace QLHS
         private frmReportView_TongKetMon _frmReportView_TongKetMon;
         private void simpleButtonXuatBD_Click(object sender, EventArgs e)
         {
-            string MaMonHoc = treeMonHoc.FocusedNode.GetValue("MaMonHoc").ToString();
-            string MaKhoi = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop);
-            string MaHocKy = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);            
-            string MaNamHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc);
-            var ds_baocaoTongKetMonHoc = _BangDiemBUS.LayBangDiem_MonHoc(MaMonHoc,MaKhoi,MaHocKy,MaNamHoc);  
             if(_rptTongKetMon == null)
                  _rptTongKetMon = new rptTongKetMon();
-            _rptTongKetMon.SetDataSource(ds_baocaoTongKetMonHoc);
+            _rptTongKetMon.SetDataSource(_ds_baocaoTongKetMonHoc);
 
             if(_frmReportView_TongKetMon == null || _frmReportView_TongKetMon.IsDisposed)
                 _frmReportView_TongKetMon = new frmReportView_TongKetMon();
