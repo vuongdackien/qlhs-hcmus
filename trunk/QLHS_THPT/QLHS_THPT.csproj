@@ -119,6 +119,7 @@
       <DependentUpon>frmSearchHocSinh.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Report\DTO_TongKetHocKy.cs" />
     <Compile Include="Report\rptBangDiemHocKy.cs">
       <DependentUpon>rptBangDiemHocKy.rpt</DependentUpon>
       <AutoGen>True</AutoGen>

@@ -59,6 +59,7 @@ namespace QLHS
             labelControlKhoiLop.Text = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop);
             labelControlMonHocTT.Text = treeMonHoc.FocusedNode.GetValue("TenMonHoc").ToString().ToUpper();      
         }
+
         private void frmBC_TongKetMon_Load(object sender, EventArgs e)
         {
             Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
@@ -100,11 +101,24 @@ namespace QLHS
         private frmReportView_TongKetMon _frmReportView_TongKetMon;
         private void simpleButtonXuatBD_Click(object sender, EventArgs e)
         {
+            if(_ds_baocaoTongKetMonHoc.Count == 0)
+            {
+                Utilities.MessageboxUtilities.MessageError("Không tồn tại lớp để thực hiện báo cáo!");
+                return;
+            }
             if(_rptTongKetMon == null)
                  _rptTongKetMon = new rptTongKetMon();
             _rptTongKetMon.SetDataSource(_ds_baocaoTongKetMonHoc);
-            _rptTongKetMon.SetParameterValue("test", 123);
-
+            // Set parameter
+            _rptTongKetMon.SetParameterValue("paramTenMonHoc", 
+                treeMonHoc.FocusedNode.GetValue("TenMonHoc").ToString().ToUpper());
+            _rptTongKetMon.SetParameterValue("paramTenNamHoc", 
+                Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc));
+            _rptTongKetMon.SetParameterValue("paramMaHocKy",
+                Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy));
+            _rptTongKetMon.SetParameterValue("paramMaKhoi",
+                Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop));
+            
             if(_frmReportView_TongKetMon == null || _frmReportView_TongKetMon.IsDisposed)
                 _frmReportView_TongKetMon = new frmReportView_TongKetMon();
             _frmReportView_TongKetMon.crystalReportViewerTongKetMonHoc.ReportSource = _rptTongKetMon;
