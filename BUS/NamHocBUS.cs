@@ -31,5 +31,29 @@ namespace QLHS.BUS
         {
             return _NamHocDAL.LayDTNamHoc();
         }
+        /// <summary>
+        /// Lấy DataTable năm học có mã năm học là tham  số truyền vào
+        /// </summary>
+        /// <returns>DataTable</returns>
+        public DataTable LayDTNamHoc(string MaNamHoc)
+        {
+            return _NamHocDAL.LayDTNamHoc(MaNamHoc);
+        }
+        /// <summary>
+        /// Lấy DataTable năm học làm năm hiện tại=năm học mới
+        /// </summary>
+        /// <returns>DataTable</returns>
+        public DataTable LayDTNamHocMoi()
+        {
+            return _NamHocDAL.LayDTNamHocMoi();
+        }
+        /// <summary>
+        /// Lấy DataTable năm học cần chuyển lên lớp khi kết thúc năm học
+        /// </summary>
+        /// <returns>DataTable</returns>
+        public DataTable LayDTNamHocCu()
+        {
+            return _NamHocDAL.LayDTNamHocCu();
+        }
     }
 }
