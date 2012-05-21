@@ -21,7 +21,7 @@ namespace QLHS
         private HocKyBUS _hocKyBUS;
         private MonHocBUS _monHocBUS;
         private BangDiemBUS _BangDiemBUS;
-
+        List<TongKetHocKyDTO> _ds_baocaoTongKetHocKy;
         public frmBC_TongKetHocKy()
         {
             InitializeComponent();
@@ -32,42 +32,25 @@ namespace QLHS
             _hocKyBUS = new HocKyBUS();
             _monHocBUS = new MonHocBUS();
             _BangDiemBUS = new BangDiemBUS();
-        }
-
+            _ds_baocaoTongKetHocKy = null;
+        }      
+       
         /// <summary>
         /// Hiển thị bảng tổng kết môn
         /// </summary>
         private void HienThi_Bang_TongKetHocKy()
         {
-            gridControlTongKetHocKy.DataSource =
-            _bangDiemBUS.LayBangDiem_HocKy(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop),
-                                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy), 
+            _ds_baocaoTongKetHocKy = _bangDiemBUS.LayBangDiem_BaoCao_HocKy(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop),
+                                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy),
                                     Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc));
+
+            gridControlTongKetHocKy.DataSource = _ds_baocaoTongKetHocKy;
 
             labelControlNamHoc.Text = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc);
             labelControlHocKyTT.Text = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);
-            labelControlKhoiLop.Text = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop);            
+            labelControlKhoiLop.Text = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop);
         }
-
-        private void simpleButtonXuatBD_Click(object sender, EventArgs e)
-        {
-            string MaKhoi = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop);
-            string MaHocKy = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);
-            string MaNamHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc);
-            var ds = _BangDiemBUS.LayBangDiem_HocKy(MaKhoi,MaHocKy,MaNamHoc);          
-            var rp = new rptTongKetHocKy();
-            rp.SetDataSource(ds);
-
-            frmReportView_TongKetHocKy _frmReportView_TongKetHK = new frmReportView_TongKetHocKy();
-            _frmReportView_TongKetHK.crystalReportViewerTongKetHocKy.ReportSource = rp;
-            _frmReportView_TongKetHK.ShowDialog();
-        }
-
-        private void simpleButtonDong_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        
         private void frmBC_TongKetHocKy_Load(object sender, EventArgs e)
         {
             Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
@@ -82,7 +65,7 @@ namespace QLHS
         }
 
         private void comboBoxEditNamHoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {            
             this.HienThi_Bang_TongKetHocKy();
         }
 
@@ -101,5 +84,30 @@ namespace QLHS
             this.HienThi_Bang_TongKetHocKy();
         }
 
+        private rptTongKetHocKy _rptTongKetHocKy;
+        private frmReportView_TongKetHocKy _frmReportView_TongKetHocKy;
+        private void simpleButtonXuatBD_Click(object sender, EventArgs e)
+        {
+            if (_ds_baocaoTongKetHocKy.Count == 0)
+            {
+                Utilities.MessageboxUtilities.MessageError("Không tồn tại lớp để thực hiện báo cáo!");
+                return;
+            }
+            if (_rptTongKetHocKy == null)
+                _rptTongKetHocKy = new rptTongKetHocKy();
+            _rptTongKetHocKy.SetDataSource(_ds_baocaoTongKetHocKy);
+            // Set parameter
+            _rptTongKetHocKy.SetParameterValue("paramTenNamHoc",
+                Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc));
+            _rptTongKetHocKy.SetParameterValue("paramMaHocKy",
+                Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy));
+            _rptTongKetHocKy.SetParameterValue("paramMaKhoi",
+                Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop));
+
+            if (_frmReportView_TongKetHocKy == null || _frmReportView_TongKetHocKy.IsDisposed)
+                _frmReportView_TongKetHocKy = new frmReportView_TongKetHocKy();
+            _frmReportView_TongKetHocKy.crystalReportViewerTongKetHocKy.ReportSource = _rptTongKetHocKy;
+            _frmReportView_TongKetHocKy.ShowDialog();
+        }
     }
 }

@@ -95,7 +95,7 @@
             this.gridControlTongKetMonHoc.Location = new System.Drawing.Point(3, 90);
             this.gridControlTongKetMonHoc.MainView = this.gridViewTongKetMonHoc;
             this.gridControlTongKetMonHoc.Name = "gridControlTongKetMonHoc";
-            this.gridControlTongKetMonHoc.Size = new System.Drawing.Size(563, 299);
+            this.gridControlTongKetMonHoc.Size = new System.Drawing.Size(571, 299);
             this.gridControlTongKetMonHoc.TabIndex = 1;
             this.gridControlTongKetMonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewTongKetMonHoc,
@@ -419,7 +419,7 @@
             this.panelControlTopRight.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControlTopRight.Location = new System.Drawing.Point(3, 3);
             this.panelControlTopRight.Name = "panelControlTopRight";
-            this.panelControlTopRight.Size = new System.Drawing.Size(807, 87);
+            this.panelControlTopRight.Size = new System.Drawing.Size(571, 87);
             this.panelControlTopRight.TabIndex = 0;
             // 
             // simpleButtonXuatBD
@@ -506,6 +506,7 @@
             this.comboBoxEditNamHoc.Name = "comboBoxEditNamHoc";
             this.comboBoxEditNamHoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditNamHoc.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditNamHoc.Size = new System.Drawing.Size(130, 20);
             this.comboBoxEditNamHoc.TabIndex = 1;
             this.comboBoxEditNamHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHoc_SelectedIndexChanged);
@@ -552,6 +553,7 @@
             this.comboBoxEditKhoiLop.Name = "comboBoxEditKhoiLop";
             this.comboBoxEditKhoiLop.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditKhoiLop.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditKhoiLop.Size = new System.Drawing.Size(130, 20);
             this.comboBoxEditKhoiLop.TabIndex = 3;
             this.comboBoxEditKhoiLop.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditKhoiLop_SelectedIndexChanged);
@@ -570,6 +572,7 @@
             this.comboBoxEditHocKy.Name = "comboBoxEditHocKy";
             this.comboBoxEditHocKy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditHocKy.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditHocKy.Size = new System.Drawing.Size(130, 20);
             this.comboBoxEditHocKy.TabIndex = 1;
             this.comboBoxEditHocKy.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditHocKy_SelectedIndexChanged);
@@ -589,7 +592,7 @@
             this.panelControlRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlRight.Location = new System.Drawing.Point(182, 0);
             this.panelControlRight.Name = "panelControlRight";
-            this.panelControlRight.Size = new System.Drawing.Size(813, 392);
+            this.panelControlRight.Size = new System.Drawing.Size(577, 392);
             this.panelControlRight.TabIndex = 3;
             // 
             // panelControlLeft
@@ -606,7 +609,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 392);
+            this.ClientSize = new System.Drawing.Size(759, 392);
             this.Controls.Add(this.panelControlRight);
             this.Controls.Add(this.panelControlLeft);
             this.Name = "frmBC_TongKetMon";

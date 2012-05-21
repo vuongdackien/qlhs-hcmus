@@ -19,7 +19,7 @@ namespace QLHS
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.Skins.SkinManager.EnableMdiFormSkins();
             
-            Application.Run(new frmBC_TongKetMon());
+            Application.Run(new frmMain());
         }
     }
 }
