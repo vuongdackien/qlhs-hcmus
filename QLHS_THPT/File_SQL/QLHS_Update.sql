@@ -46,7 +46,9 @@ CREATE TABLE [dbo].[MONHOC] (
 	[MaMonHoc]		[varchar](10) NOT NULL,
 	[TenMonHoc]		[nvarchar](50) NOT NULL,
 	[SoTiet]		[int] NOT NULL,
-	[HeSo]			[int] NOT NULL);
+	[HeSo]			[int] NOT NULL,
+	[TrangThai]		[bit] NOT NULL CONSTRAINT [DF_NGUOIDUNG_TrangThai] DEFAULT (1)
+);
 GO
 
 --3. Create table and its columns
@@ -327,16 +329,20 @@ SELECT '11A01NH1112',	'11A1',	11,	'NH1112', 40, 'GV003' UNION
 SELECT '12A01NH1112',	'12A1',	12,	'NH1112', 40, 'GV004'
 -- Mon hoc
 GO
-INSERT INTO MONHOC(MaMonHoc,TenMonHoc,SoTiet,HeSo) 
-SELECT 'daoduc',N'Đạo đức',45,1 UNION 
-SELECT 'dia',N'Địa lý',45,1 UNION 
-SELECT 'hoa',N'Hóa học',45,1 UNION 
-SELECT 'ly',N'Vật lý',45,	1 UNION 
-SELECT 'sinh',N'Sinh học',45,1 UNION 
-SELECT 'su',N'Lịch sử',45,1 UNION 
-SELECT 'theduc',N'Thể dục',45,1 UNION 
-SELECT 'toan',N'Toán',60,2 UNION 
-SELECT 'van',N'Văn học',60,2
+INSERT INTO MONHOC(MaMonHoc,TenMonHoc,SoTiet,HeSo,TrangThai) 
+SELECT 'toan',N'Toán học',90,2,1 UNION
+SELECT 'ly',N'Vật lý',60,1,1 UNION
+SELECT 'hoa',N'Hóa học',	60,1,1 UNION
+SELECT 'sinh',N'Sinh học',60,1,1 UNION
+SELECT 'ngvan',N'Ngữ văn',	90,2,1 UNION
+SELECT 'su',N'Lịch sử',	45,1,1 UNION
+SELECT 'dia',N'Địa lý',45,1,1 UNION
+SELECT 'nngu',N'Ngoại ngữ',45,1,1 UNION
+SELECT 'gdcd',N'GD Công dân',30,1,1 UNION
+SELECT 'tin',N'Tin học',30,1,1 UNION
+SELECT 'tduc',N'Thể dục',30,1,1 UNION
+SELECT 'qphong',N'Quốc phòng',30,1,1 UNION
+SELECT 'cnghe',N'Công Nghệ',30,1,1
 
 -- Phan lop
 GO	
