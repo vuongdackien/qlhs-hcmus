@@ -40,5 +40,32 @@ namespace QLHS.DAL
             string sql = "SELECT MaNamHoc, TenNamHoc FROM NAMHOC";
             return GetTable(sql);
         }
+        /// <summary>
+        /// Lấy DataTable năm học có mã năm học là tham  số truyền vào
+        /// </summary>
+        /// <returns>DataTable</returns>
+        public DataTable LayDTNamHoc(string MaNamHoc)
+        {
+            string sql = string.Format("SELECT MaNamHoc, TenNamHoc FROM NAMHOC WHERE MaNamHoc='{0}'",MaNamHoc);
+            return GetTable(sql);
+        }
+        /// <summary>
+        /// Lấy DataTable năm học làm năm hiện tại=năm học mới
+        /// </summary>
+        /// <returns>DataTable</returns>
+        public DataTable LayDTNamHocMoi()
+        {
+            string sql = "SELECT MaNamHoc,TenNamHoc FROM NAMHOC WHERE substring(TenNamHoc,1,4)=year(getdate()) ";
+            return GetTable(sql);
+        }
+        /// <summary>
+        /// Lấy DataTable năm học cần chuyển lên lớp khi kết thúc năm học
+        /// </summary>
+        /// <returns>DataTable</returns>
+        public DataTable LayDTNamHocCu()
+        {
+            string sql = "SELECT MaNamHoc,TenNamHoc FROM NAMHOC WHERE substring(TenNamHoc,8,4)=year(getdate()) ";
+            return GetTable(sql);
+        }
     }
 }
