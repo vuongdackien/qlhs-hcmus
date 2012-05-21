@@ -103,6 +103,7 @@ namespace QLHS
             if(_rptTongKetMon == null)
                  _rptTongKetMon = new rptTongKetMon();
             _rptTongKetMon.SetDataSource(_ds_baocaoTongKetMonHoc);
+            _rptTongKetMon.SetParameterValue("test", 123);
 
             if(_frmReportView_TongKetMon == null || _frmReportView_TongKetMon.IsDisposed)
                 _frmReportView_TongKetMon = new frmReportView_TongKetMon();
