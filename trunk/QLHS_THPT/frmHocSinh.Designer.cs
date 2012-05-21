@@ -50,7 +50,6 @@
             this.panelControlTopRight = new DevExpress.XtraEditors.PanelControl();
             this.labelControlTitle = new DevExpress.XtraEditors.LabelControl();
             this.simpleButtonChuyenLop = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonInHoSo = new DevExpress.XtraEditors.SimpleButton();
             this.panelControlChiTietHoSo = new DevExpress.XtraEditors.PanelControl();
             this.dateEditNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.textEditDiaChi = new DevExpress.XtraEditors.TextEdit();
@@ -292,7 +291,6 @@
             // 
             this.panelControlTopRight.Controls.Add(this.labelControlTitle);
             this.panelControlTopRight.Controls.Add(this.simpleButtonChuyenLop);
-            this.panelControlTopRight.Controls.Add(this.simpleButtonInHoSo);
             this.panelControlTopRight.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControlTopRight.Location = new System.Drawing.Point(200, 0);
             this.panelControlTopRight.Name = "panelControlTopRight";
@@ -312,22 +310,12 @@
             // simpleButtonChuyenLop
             // 
             this.simpleButtonChuyenLop.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonChuyenLop.Location = new System.Drawing.Point(307, 12);
+            this.simpleButtonChuyenLop.Location = new System.Drawing.Point(446, 12);
             this.simpleButtonChuyenLop.Name = "simpleButtonChuyenLop";
             this.simpleButtonChuyenLop.Size = new System.Drawing.Size(128, 35);
             this.simpleButtonChuyenLop.TabIndex = 17;
             this.simpleButtonChuyenLop.Text = "Chuyển lớp (Alt+&C)";
             this.simpleButtonChuyenLop.Click += new System.EventHandler(this.simpleButtonChuyenLop_Click);
-            // 
-            // simpleButtonInHoSo
-            // 
-            this.simpleButtonInHoSo.Image = global::QLHS.Properties.Resources.print;
-            this.simpleButtonInHoSo.Location = new System.Drawing.Point(441, 12);
-            this.simpleButtonInHoSo.Name = "simpleButtonInHoSo";
-            this.simpleButtonInHoSo.Size = new System.Drawing.Size(109, 35);
-            this.simpleButtonInHoSo.TabIndex = 18;
-            this.simpleButtonInHoSo.Text = "In hồ sơ (Alt+&P)";
-            this.simpleButtonInHoSo.Click += new System.EventHandler(this.simpleButtonInHoSo_Click);
             // 
             // panelControlChiTietHoSo
             // 
@@ -588,7 +576,6 @@
         private DevExpress.XtraEditors.PanelControl panelControlTopRight;
         private DevExpress.XtraEditors.LabelControl labelControlTitle;
         private DevExpress.XtraEditors.SimpleButton simpleButtonChuyenLop;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonInHoSo;
         private DevExpress.XtraEditors.PanelControl panelControlChiTietHoSo;
         private DevExpress.XtraEditors.DateEdit dateEditNgaySinh;
         private DevExpress.XtraEditors.TextEdit textEditDiaChi;

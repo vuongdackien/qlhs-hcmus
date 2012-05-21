@@ -213,7 +213,7 @@
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 79;
+            this.gridColumn5.Width = 85;
             // 
             // gridColumn6
             // 
@@ -233,7 +233,7 @@
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 101;
+            this.gridColumn6.Width = 98;
             // 
             // gridViewMonHoc
             // 
