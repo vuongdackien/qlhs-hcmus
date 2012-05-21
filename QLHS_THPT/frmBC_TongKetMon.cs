@@ -93,24 +93,23 @@ namespace QLHS
             this.HienThi_Bang_TongKetMon();
         }
 
-        private void simpleButtonDong_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        private rptTongKetMon _rptTongKetMon;
+        private frmReportView_TongKetMon _frmReportView_TongKetMon;
         private void simpleButtonXuatBD_Click(object sender, EventArgs e)
         {
             string MaMonHoc = treeMonHoc.FocusedNode.GetValue("MaMonHoc").ToString();
             string MaKhoi = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop);
             string MaHocKy = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);            
             string MaNamHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc);
-            var ds = _BangDiemBUS.LayBangDiem_MonHoc(MaMonHoc,MaKhoi,MaHocKy,MaNamHoc);          
-            var rp = new rptTongKetMon();
-            rp.SetDataSource(ds);
+            var ds_baocaoTongKetMonHoc = _BangDiemBUS.LayBangDiem_MonHoc(MaMonHoc,MaKhoi,MaHocKy,MaNamHoc);  
+            if(_rptTongKetMon == null)
+                 _rptTongKetMon = new rptTongKetMon();
+            _rptTongKetMon.SetDataSource(ds_baocaoTongKetMonHoc);
 
-            frmReportView_TongKetMon _frmReportView_TongKetMH = new frmReportView_TongKetMon();
-            _frmReportView_TongKetMH.crystalReportViewerTongKetMonHoc.ReportSource = rp;
-            _frmReportView_TongKetMH.ShowDialog();
+            if(_frmReportView_TongKetMon == null || _frmReportView_TongKetMon.IsDisposed)
+                _frmReportView_TongKetMon = new frmReportView_TongKetMon();
+            _frmReportView_TongKetMon.crystalReportViewerTongKetMonHoc.ReportSource = _rptTongKetMon;
+            _frmReportView_TongKetMon.ShowDialog();
         }
     }
 }

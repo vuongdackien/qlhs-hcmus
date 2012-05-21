@@ -52,7 +52,6 @@
             this.bandedGridColumn5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.panelControlTopRight = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonXuatBD = new DevExpress.XtraEditors.SimpleButton();
             this.labelControlHocKy = new DevExpress.XtraEditors.LabelControl();
             this.labelControlHocKyTT = new DevExpress.XtraEditors.LabelControl();
@@ -92,11 +91,11 @@
             // 
             // gridControlTongKetMonHoc
             // 
-            this.gridControlTongKetMonHoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlTongKetMonHoc.Dock = System.Windows.Forms.DockStyle.Left;
             this.gridControlTongKetMonHoc.Location = new System.Drawing.Point(2, 106);
             this.gridControlTongKetMonHoc.MainView = this.gridViewTongKetMonHoc;
             this.gridControlTongKetMonHoc.Name = "gridControlTongKetMonHoc";
-            this.gridControlTongKetMonHoc.Size = new System.Drawing.Size(809, 284);
+            this.gridControlTongKetMonHoc.Size = new System.Drawing.Size(563, 284);
             this.gridControlTongKetMonHoc.TabIndex = 1;
             this.gridControlTongKetMonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewTongKetMonHoc,
@@ -118,6 +117,11 @@
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn1.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn1.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -137,52 +141,99 @@
             this.gridColumn1.OptionsFilter.AllowFilter = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 52;
+            this.gridColumn1.Width = 44;
             // 
             // gridColumn2
             // 
+            this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn2.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn2.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn2.Caption = "Tên lớp";
             this.gridColumn2.FieldName = "TenLop";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 141;
+            this.gridColumn2.Width = 112;
             // 
             // gridColumn3
             // 
+            this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn3.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn3.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn3.Caption = "Giáo viên chủ nhiệm";
             this.gridColumn3.FieldName = "TenGiaoVien";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 135;
+            this.gridColumn3.Width = 146;
             // 
             // gridColumn4
             // 
+            this.gridColumn4.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn4.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn4.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn4.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn4.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn4.Caption = "Sĩ số";
             this.gridColumn4.FieldName = "SiSo";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 65;
             // 
             // gridColumn5
             // 
+            this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn5.Caption = "Số lượng đạt";
             this.gridColumn5.FieldName = "SoLuongDat";
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 79;
             // 
             // gridColumn6
             // 
+            this.gridColumn6.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn6.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn6.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn6.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn6.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn6.Caption = "Tỷ lệ";
+            this.gridColumn6.DisplayFormat.FormatString = "{0}%";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.gridColumn6.FieldName = "TyLe";
             this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.Width = 101;
             // 
             // gridViewMonHoc
             // 
@@ -356,7 +407,6 @@
             // 
             // panelControlTopRight
             // 
-            this.panelControlTopRight.Controls.Add(this.simpleButtonDong);
             this.panelControlTopRight.Controls.Add(this.simpleButtonXuatBD);
             this.panelControlTopRight.Controls.Add(this.labelControlHocKy);
             this.panelControlTopRight.Controls.Add(this.labelControlHocKyTT);
@@ -372,20 +422,10 @@
             this.panelControlTopRight.Size = new System.Drawing.Size(809, 104);
             this.panelControlTopRight.TabIndex = 0;
             // 
-            // simpleButtonDong
-            // 
-            this.simpleButtonDong.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonDong.Location = new System.Drawing.Point(651, 28);
-            this.simpleButtonDong.Name = "simpleButtonDong";
-            this.simpleButtonDong.Size = new System.Drawing.Size(128, 35);
-            this.simpleButtonDong.TabIndex = 18;
-            this.simpleButtonDong.Text = "Đóng";
-            this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
-            // 
             // simpleButtonXuatBD
             // 
             this.simpleButtonXuatBD.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonXuatBD.Location = new System.Drawing.Point(492, 28);
+            this.simpleButtonXuatBD.Location = new System.Drawing.Point(435, 32);
             this.simpleButtonXuatBD.Name = "simpleButtonXuatBD";
             this.simpleButtonXuatBD.Size = new System.Drawing.Size(128, 35);
             this.simpleButtonXuatBD.TabIndex = 18;
@@ -619,7 +659,6 @@
         private DevExpress.XtraEditors.LabelControl labelControlHocKy;
         private DevExpress.XtraEditors.LabelControl labelControlNamHoc;
         private DevExpress.XtraEditors.LabelControl labelControlMonHocTT;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonDong;
         private DevExpress.XtraEditors.LabelControl labelControlKhoiLop;
         private DevExpress.XtraEditors.LabelControl labelControlKhoiLopTT;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnSiSo;
