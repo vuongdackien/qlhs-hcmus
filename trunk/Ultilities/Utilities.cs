@@ -197,9 +197,9 @@ namespace Utilities
         /// <param name="so"></param>
         /// <param name="coutDevide"></param>
         /// <returns></returns>
-        public static double LamTron(double so, int coutDevide = 4)
+        public static double LamTron(double so, int coutDevide = 2)
         {
-            return Math.Round(so * coutDevide, MidpointRounding.ToEven) / coutDevide;
+            return Math.Round(so, coutDevide);
         }
     }
 }
