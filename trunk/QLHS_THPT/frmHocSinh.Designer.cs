@@ -200,7 +200,7 @@
             this.gridColumnSTT.Name = "gridColumnSTT";
             this.gridColumnSTT.Visible = true;
             this.gridColumnSTT.VisibleIndex = 0;
-            this.gridColumnSTT.Width = 27;
+            this.gridColumnSTT.Width = 29;
             // 
             // gridColumnTenHocSinh
             // 
@@ -209,7 +209,7 @@
             this.gridColumnTenHocSinh.Name = "gridColumnTenHocSinh";
             this.gridColumnTenHocSinh.Visible = true;
             this.gridColumnTenHocSinh.VisibleIndex = 1;
-            this.gridColumnTenHocSinh.Width = 167;
+            this.gridColumnTenHocSinh.Width = 161;
             // 
             // gridColumnMaHocSinh
             // 

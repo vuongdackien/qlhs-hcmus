@@ -113,6 +113,13 @@
       <DependentUpon>frmSearchHocSinh.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Report\rptBangDiemHocKy.cs">
+      <DependentUpon>rptBangDiemHocKy.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\DTO_BangDiemHocKy.cs" />
     <Compile Include="Report\DTO_TongKetMon.cs" />
     <Compile Include="Report\frmReportView_TongKetHocKy.cs">
       <SubType>Form</SubType>
@@ -162,6 +169,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchHocSinh.resx">
       <DependentUpon>frmSearchHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptBangDiemHocKy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBangDiemHocKy.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\frmReportView_TongKetHocKy.resx">
       <DependentUpon>frmReportView_TongKetHocKy.cs</DependentUpon>
