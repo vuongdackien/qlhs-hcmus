@@ -17,6 +17,35 @@ namespace QLHS.DAL
             string sql = "SELECT MaMonHoc, TenMonHoc FROM MONHOC ORDER BY TenMonHoc  ASC";
             return GetTable(sql);
         }
+        public MonHoc_HeSoDTO Lay_HeSoMonHoc()
+        {
+            string sql = "SELECT MaMonHoc, HeSo FROM MONHOC";
+            OpenConnect();
+            var dr = ExecuteReader(sql);
+            MonHoc_HeSoDTO dsHeSo = new MonHoc_HeSoDTO();
+            while (dr.Read())
+            {
+                double heso = Convert.ToDouble(dr["HeSo"]); 
+                switch (dr["MaMonHoc"].ToString())
+                {
+                    case "toan": dsHeSo.toan = heso; break;
+                    case "ly": dsHeSo.ly = heso; break;
+                    case "hoa": dsHeSo.hoa = heso; break;
+                    case "sinh": dsHeSo.sinh = heso; break;
+                    case "nvan": dsHeSo.nvan = heso; break;
+                    case "su": dsHeSo.su = heso; break;
+                    case "dia": dsHeSo.dia = heso; break;
+                    case "nngu": dsHeSo.nngu = heso; break;
+                    case "tin": dsHeSo.tin = heso; break;
+                    case "tduc": dsHeSo.tduc = heso; break;
+                    case "gdcd": dsHeSo.gdcd = heso; break;
+                    case "qphong": dsHeSo.qphong = heso; break;
+                    case "cnghe": dsHeSo.cnghe = heso; break;
+                }
+            }
+            CloseConnect();
+            return dsHeSo;
+        }
 
         public List<MonHocDTO> LayList_MonHoc()
         {
@@ -34,6 +63,5 @@ namespace QLHS.DAL
             }
             CloseConnect();
             return listMonHocDTO;
-        }
-    }
+        }    }
 }
