@@ -45,14 +45,25 @@ namespace QLHS.DAL
       /// <summary>
       /// Tao bang giao vien theo MaGV hoặc tên giáo viên
       /// </summary>
-      /// <param name="DK"></param>
+      /// i: các case của hàm
+      /// 1: Tìm theo Tên giáo viên
+      /// 2: Tìm theo Mã giáo Viên
+      /// 3: Tìm theo cả hai
+      /// <param name="DK">Điều kiện truyền vào</param>
       /// <returns></returns>
-        public DataTable TableGiaoVien(String DK)
+      
+        public DataTable TableGiaoVien(int i, String DK)
         {
-            string sql = null;
-            sql = string.Format("select * from GiaoVien where MaGiaoVien like N'%{0}%' or TenGiaoVien like N'%{0}%'", DK); 
+            string sql = "";
+            switch(i)
+            {
+                case 1: sql = string.Format("select * from GiaoVien where TenGiaoVien like N'%{0}%' ", DK); break;
+                case 2: sql = string.Format("select * from GiaoVien where MaGiaoVien like N'%{0}%' ", DK); break;
+                case 3: sql = sql = string.Format("select * from GiaoVien where MaGiaoVien like N'%{0}%' or Ten like N'%{1}%' ", DK, DK); break;
+            }
+            
             DataTable dt = new DataTable();
-            dt =GetTable(sql, true);
+            dt = GetTable(sql, true);
             return dt;
         }
         
