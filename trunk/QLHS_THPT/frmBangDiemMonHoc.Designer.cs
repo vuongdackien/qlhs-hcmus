@@ -749,7 +749,7 @@
             // labelControlHocKy
             // 
             this.labelControlHocKy.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.labelControlHocKy.Location = new System.Drawing.Point(342, 35);
+            this.labelControlHocKy.Location = new System.Drawing.Point(341, 35);
             this.labelControlHocKy.Name = "labelControlHocKy";
             this.labelControlHocKy.Size = new System.Drawing.Size(49, 13);
             this.labelControlHocKy.TabIndex = 22;
