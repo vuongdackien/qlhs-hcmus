@@ -169,17 +169,42 @@ namespace QLHS.DAL
         /// <returns>DataTable</returns>
         public DataTable LayBangDiem_HocKy_HocSinh(string MaLop, string MaHocSinh, string MaHocKy)
         {
-            List<MonHocDTO> listMH = _MonHocDAL.LayList_MonHoc();
-
-            foreach (MonHocDTO mh in listMH)
-            {
-
-            }
+            List<MonHocDTO> listMH = _MonHocDAL.LayList_MonHoc(true);
 
             string sql = "SELECT b.* FROM MONHOC m LEFT JOIN BANGDIEM b ON m.MaMonHoc = b.MaMonHoc "
                                       +"WHERE m.TrangThai = 1 AND b.MaHocKy = "+MaHocKy+" "
                                       +"AND  b.MaLop = '"+MaLop+"' AND MaHocSinh = '"+MaHocSinh+"'";
-            return GetTable(sql);
+            DataTable tbBangDiem = GetTable(sql);
+
+            // Trường hợp bảng điểm đã nhập đủ
+            if(tbBangDiem.Rows.Count == listMH.Count)
+                   return tbBangDiem;
+            // Trường hợp bảng điểm chưa đủ ta phải add thêm các môn học còn thiếu
+            sql = "SELECT m.MaMonHoc FROM MONHOC m "
+                 +"WHERE  m.TrangThai = 1 AND m.MaMonHoc NOT IN "
+                 +"(SELECT b.MaMonHoc FROM BANGDIEM b WHERE b.MaHocKy = " + MaHocKy + " "
+                 +"AND b.MaLop = '" + MaLop + "' AND b.MaHocSinh = '" + MaHocSinh + "')";
+            List<string> listMaMHBoSung = new List<string>();
+            OpenConnect();
+            var dr = ExecuteReader(sql);
+            while (dr.Read())
+            {
+                listMaMHBoSung.Add(dr["MaMonHoc"].ToString());
+            }
+            CloseConnect();
+
+            DataRow drbDiemBsung;
+            foreach (var bDiemMH in listMaMHBoSung)
+            {
+                drbDiemBsung = tbBangDiem.NewRow();
+                drbDiemBsung["MaHocSinh"] = MaHocSinh;
+                drbDiemBsung["MaLop"] = MaLop;
+                drbDiemBsung["MaHocKy"] = MaHocKy;
+                drbDiemBsung["MaMonHoc"] = bDiemMH;
+
+                tbBangDiem.Rows.Add(drbDiemBsung);
+            }
+            return tbBangDiem;
         }
     }
 }

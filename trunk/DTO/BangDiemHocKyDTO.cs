@@ -8,7 +8,7 @@ namespace QLHS
     {
         public BangDiemHocKyDTO()
         {
-     
+          
         }
         public int STT { get; set; }
         public string  MaHocSinh { get; set; }
@@ -18,7 +18,7 @@ namespace QLHS
         public object dly { get; set; }
         public object dhoa { get; set; }
         public object dsinh { get; set; }
-        public object dnvan { get; set; }
+        public object dngvan { get; set; }
         public object dsu { get; set; }
         public object ddia { get; set; }
         public object dnngu { get; set; }

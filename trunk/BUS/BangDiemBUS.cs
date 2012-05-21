@@ -249,10 +249,14 @@ namespace QLHS.BUS
                 double tongDiem = 0;
                 double tongHeSo = 0;
                 double heso = 0;
-                double dtb = 0;
+                object dtb = 0;
                 foreach (DataRow dr in tbBangDiem.Rows)
                 {
-                    dtb = (dr["DTB"] is DBNull) ? 0 : Convert.ToDouble(dr["DTB"]);  
+                    if (dr["DTB"] is DBNull)
+                        dtb = "_";
+                    else 
+                        dtb = dr["DTB"];  
+
                     switch(Convert.ToString(dr["MaMonHoc"]))
                     {
                         case "toan"  : bangDiemCaNhan.dtoan = dtb;  
@@ -263,7 +267,7 @@ namespace QLHS.BUS
                                         heso =dsHeSoMonHoc.hoa ; break;
                         case "sinh"  : bangDiemCaNhan.dsinh = dtb; 
                                        heso = dsHeSoMonHoc.sinh ; break;
-                        case "nvan"  : bangDiemCaNhan.dnvan = dtb;
+                        case "ngvan"  : bangDiemCaNhan.dngvan = dtb;
                                        heso = dsHeSoMonHoc.nngu ; break;
                         case "su"  : bangDiemCaNhan.dsu = dtb;  
                                        heso = dsHeSoMonHoc.su ; break;
@@ -282,9 +286,9 @@ namespace QLHS.BUS
                         case "cnghe"  : bangDiemCaNhan.dcnghe = dtb; 
                                        heso = dsHeSoMonHoc.cnghe ; break;
                     }
-                    if(dtb > 0)
+                    if (!Convert.ToString(dtb).Equals("_"))
                     {
-                        tongDiem += heso * dtb;
+                        tongDiem += heso * Convert.ToDouble(dtb);
                         tongHeSo += heso;
                         soMonDuDiem++;
                     }
@@ -294,7 +298,7 @@ namespace QLHS.BUS
                     bangDiemCaNhan.DTB = Utilities.ObjectUtilities.LamTron(tongDiem / tongHeSo, 4);
                 }
                 else
-                    bangDiemCaNhan.DTB = 0;
+                    bangDiemCaNhan.DTB = "";
 
                 bangDiemHocKy.Add(bangDiemCaNhan);
             }

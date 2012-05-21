@@ -126,14 +126,14 @@ namespace QLHS
                 _rptTongKetHocKy = new rptBangDiemHocKy();
             if (_frmReportView == null || _frmReportView.IsDisposed)
                 _frmReportView = new frmReportView();
-
+            _rptTongKetHocKy.SetDataSource(_bangDiemHocKyDTO);
             // Set parameter
             _rptTongKetHocKy.SetParameterValue("paramTenNam",labelControlNamHoc.Text);
             _rptTongKetHocKy.SetParameterValue("paramHocKy",labelControlHocKy.Text);
             _rptTongKetHocKy.SetParameterValue("paramGVCN", labelControlGVCN.Text);
             _rptTongKetHocKy.SetParameterValue("paramTenLop", labelControlLop.Text);
 
-            _rptTongKetHocKy.SetDataSource(_bangDiemHocKyDTO);
+            
             _frmReportView.crystalReportViewer.ReportSource = _rptTongKetHocKy;
             _frmReportView.ShowDialog();
         }

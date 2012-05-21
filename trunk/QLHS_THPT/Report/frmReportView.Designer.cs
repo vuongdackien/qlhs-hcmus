@@ -39,7 +39,6 @@
             this.crystalReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer.Name = "crystalReportViewer";
-            this.crystalReportViewer.ShowParameterPanelButton = false;
             this.crystalReportViewer.Size = new System.Drawing.Size(984, 362);
             this.crystalReportViewer.TabIndex = 0;
             // 
