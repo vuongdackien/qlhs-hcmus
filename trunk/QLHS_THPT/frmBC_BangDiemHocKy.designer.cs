@@ -36,6 +36,7 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControlRight = new DevExpress.XtraEditors.PanelControl();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.panelControlTopRight = new DevExpress.XtraEditors.PanelControl();
             this.labelControlGVCN = new DevExpress.XtraEditors.LabelControl();
             this.labelControlLop = new DevExpress.XtraEditors.LabelControl();
@@ -46,7 +47,6 @@
             this.labelControlLopTT = new DevExpress.XtraEditors.LabelControl();
             this.labelControlNamHocTT = new DevExpress.XtraEditors.LabelControl();
             this.labelControlTitle = new DevExpress.XtraEditors.LabelControl();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlLeft)).BeginInit();
             this.panelControlLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLopHoc)).BeginInit();
@@ -141,6 +141,17 @@
             this.panelControlRight.Size = new System.Drawing.Size(995, 402);
             this.panelControlRight.TabIndex = 1;
             // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 83);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(989, 316);
+            this.crystalReportViewer1.TabIndex = 1;
+            // 
             // panelControlTopRight
             // 
             this.panelControlTopRight.Controls.Add(this.labelControlGVCN);
@@ -179,7 +190,7 @@
             // labelControlHocKy
             // 
             this.labelControlHocKy.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
-            this.labelControlHocKy.Location = new System.Drawing.Point(342, 35);
+            this.labelControlHocKy.Location = new System.Drawing.Point(343, 35);
             this.labelControlHocKy.Name = "labelControlHocKy";
             this.labelControlHocKy.Size = new System.Drawing.Size(49, 13);
             this.labelControlHocKy.TabIndex = 22;
@@ -235,17 +246,6 @@
             this.labelControlTitle.Size = new System.Drawing.Size(162, 19);
             this.labelControlTitle.TabIndex = 0;
             this.labelControlTitle.Text = "BẢNG ĐIỂM HỌC KỲ";
-            // 
-            // crystalReportViewer1
-            // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(3, 83);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(989, 316);
-            this.crystalReportViewer1.TabIndex = 1;
             // 
             // frmBC_BangDiemHocKy
             // 
