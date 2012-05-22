@@ -22,11 +22,11 @@ namespace QLHS.DAL
             sql = string.Format("insert into  MonHoc values ('{0}',N'{1}','{2}','{3}')",MHDTO.MaMonHoc,MHDTO.TenMonHoc,MHDTO.SoTiet,MHDTO.HeSo);
             return ExecuteQuery(sql);
         }
-        public void CapNhatMonHoc(MonHocDTO MHDTO)
+        public int CapNhatMonHoc(MonHocDTO MHDTO)
         {
             string sql = string.Format("update MonHoc set TenMonHoc=N'{0}', SoTiet='{1}', Heso='{2}'"
                                                      + "where madv={3} ", MHDTO.TenMonHoc, MHDTO.SoTiet,MHDTO.HeSo,MHDTO.MaMonHoc);
-            ExecuteQuery(sql);
+           return ExecuteQuery(sql);
         }
         public bool KiemtratontaiMonhoc(MonHocDTO MHDTO)
         {
