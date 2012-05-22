@@ -14,7 +14,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="MaLop">String: Mã lớp</param>
         /// <returns>DataTable</returns>
-        public DataTable LayDTHocSinh_LopHoc(string MaLop)
+        public DataTable LayDT_HocSinh_LopHoc(string MaLop)
         {
             string sql = string.Format("SELECT pl.STT, hs.* "
                                        +"FROM PHANLOP pl LEFT JOIN HOCSINH hs ON pl.MaHocSinh = hs.MaHocSinh "
@@ -26,7 +26,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="MaLop">String: Mã lớp</param>
         /// <returns>List HocSinhDTO </returns>
-        public List<HocSinhDTO> LayListHocSinh_LopHoc(string MaLop)
+        public List<HocSinhDTO> LayList_HocSinh_LopHoc(string MaLop)
         {
             string sql = string.Format("SELECT pl.STT, hs.* "
                                        + "FROM PHANLOP pl LEFT JOIN HOCSINH hs ON pl.MaHocSinh = hs.MaHocSinh "
@@ -55,7 +55,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="MaHocSinh">string: Mã học sinh</param>
         /// <returns>HocSinhDTO</returns>
-        public HocSinhDTO LayHoSoHocSinh(string MaHocSinh)
+        public HocSinhDTO Lay_HoSo(string MaHocSinh)
         {
  
             string sql = string.Format("SELECT pl.STT, pl.MaHocSinh, TenHocSinh , Email, NgaySinh, GioiTinh, NoiSinh, DiaChi "
@@ -79,7 +79,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="hocsinhDTO">HocSinhDTO</param>
         /// <returns>Bool: Thành công/Không</returns>
-        public bool SuaHoSoHocSinh(HocSinhDTO hocsinhDTO,string MaLop)
+        public bool Sua_HoSo(HocSinhDTO hocsinhDTO,string MaLop)
         {
             string sql = "set dateformat dmy\n";
              sql += string.Format("UPDATE HOCSINH SET TenHocSinh = N'{1}', Email = '{2}', NgaySinh = '{3:dd-MM-yyyy}', "
@@ -96,7 +96,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="hocsinhDTO">HocSinhDTO</param>
         /// <returns>Bool: Thành công/Không</returns>
-        public bool ThemHoSoHocSinh(HocSinhDTO hocsinhDTO,string MaLop)
+        public bool Them_HoSo(HocSinhDTO hocsinhDTO,string MaLop)
         {
             string sql = "set dateformat dmy\n";
                   sql += string.Format("INSERT INTO HOCSINH (MaHocSinh, TenHocSinh , Email, NgaySinh, GioiTinh, NoiSinh, DiaChi) "
@@ -110,7 +110,7 @@ namespace QLHS.DAL
         /// Kiểm tra tồn tại của 1 hồ sơ học sinh qua Mã học sinh
         /// </summary>
         /// <param name="MaHocSinh">String: Mã học sinh</param>
-        /// <returns>Bpol: Tồn tại/Không</returns>
+        /// <returns>Bool: Tồn tại/Không</returns>
         public bool KiemTraTonTai_MaHocSinh(string MaHocSinh)
         {
             string sql = string.Format("SELECT count(*) as SL FROM HOCSINH WHERE MaHocSinh = '{0}'",MaHocSinh);
@@ -120,7 +120,7 @@ namespace QLHS.DAL
         /// Lấy mã cuối cùng (MaHocSinh) - Bảng HOCSINH
         /// </summary>
         /// <returns>String: Mã cuối cùng</returns>
-        public string LayMaCuoiCung()
+        public string Lay_MaCuoiCung()
         {
             return GetLastID("HOCSINH", "MaHocSinh");
         }
@@ -129,7 +129,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="MaHocSinh">String: Mã học sinh</param>
         /// <returns>Bool</returns>
-        public bool Xoa_HoSo_HocSinh(string MaHocSinh)
+        public bool Xoa_HoSo(string MaHocSinh)
         {
             string sql = "DELETE FROM PHANLOP WHERE MaHocSinh = '"+MaHocSinh+"'";
             sql += "\nDELETE FROM BANGDIEM WHERE MaHocSinh = '"+MaHocSinh+"'";
@@ -145,7 +145,7 @@ namespace QLHS.DAL
         /// <param name="hs">Object: HocSinhTimKiem - Thông tin học sinh tìm kiếm</param>
         /// <param name="DS_MaLop">Default: NULL (Tìm tất cả các năm) || Tìm trong các lớp</param>
         /// <returns>DataTable HocSinh</returns>
-        public DataTable TimKiem_HocSinh(HocSinhTimKiemDTO hs, List<string> DS_MaLop = null)
+        public DataTable Tim_HoSo(HocSinhTimKiemDTO hs, List<string> DS_MaLop = null)
         {
             List<HocSinhDTO> hsResult = new List<HocSinhDTO>();
             string oper = " LIKE ";
@@ -224,7 +224,7 @@ namespace QLHS.DAL
         }
         #endregion
 
-        public DataTable LayDTTenHocSinh()
+        public DataTable LayDT_TenHocSinh()
         {
             string sql = "SELECT TenHocSinh FROM HOCSINH";
             return GetTable(sql);

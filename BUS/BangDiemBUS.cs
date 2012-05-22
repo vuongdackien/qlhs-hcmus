@@ -234,7 +234,7 @@ namespace QLHS.BUS
         {
             List<BangDiemHocKyDTO> bangDiemHocKy = new List<BangDiemHocKyDTO>();
             // Lấy ds học sinh của lớp
-            var ds_hocsinh = _hocSinhDAL.LayListHocSinh_LopHoc(MaLop);
+            var ds_hocsinh = _hocSinhDAL.LayList_HocSinh_LopHoc(MaLop);
             MonHoc_HeSoDTO dsHeSoMonHoc = _monHocDAL.Lay_HeSoMonHoc();
             foreach (HocSinhDTO hocsinh in ds_hocsinh)
             {
