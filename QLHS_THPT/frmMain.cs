@@ -60,11 +60,6 @@ namespace QLHS
             //ShowMDIChildForm<frmHocSinh>();
         }
         
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            
-        }
-        
         private void barBtnHoSoHocSinh_ItemClick(object sender, ItemClickEventArgs e)
         {
             ShowMDIChildForm<frmHocSinh>();
@@ -103,6 +98,11 @@ namespace QLHS
         private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
         {
             ShowMDIChildForm<frmBC_TongKetHocKy>();
+        }
+
+        private void barBtnPhanLopHocSinh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmPhanLop>();
         }
     }
 }
