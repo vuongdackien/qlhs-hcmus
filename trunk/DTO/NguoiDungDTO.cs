@@ -14,14 +14,6 @@ namespace QLHS.DTO
             set { m_MaND = value; }
         }
 
-        private ChucVuDTO m_ChucVu = new ChucVuDTO();
-
-        public ChucVuDTO ChucVu
-        {
-            get { return m_ChucVu; }
-            set { m_ChucVu = value; }
-        }
-
         public bool TrangThai { get; set; }
 
         private LoaiNguoiDungDTO m_LoaiNguoiDung = new LoaiNguoiDungDTO();

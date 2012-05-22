@@ -38,7 +38,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BangDiemDTO.cs" />
-    <Compile Include="ChucVuDTO.cs" />
     <Compile Include="ChuyenLopDTO.cs" />
     <Compile Include="BangDiemHocKyDTO.cs" />
     <Compile Include="MonHoc_HeSoDTO.cs" />
