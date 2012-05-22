@@ -8,6 +8,31 @@ namespace QLHS.DAL
 {
     public class MonHocDAL : ConnectData
     {
+        MonHocDTO MHDTO;
+        public int XoaMonHoc(string MaMH)
+        {
+           
+            string sql="";
+            sql = string.Format("delete  Giaovien  where MaMonHoc like '%{0}%'",MaMH);
+            return ExecuteQuery(sql);
+        }
+        public int ThemMonHoc(MonHocDTO MHDTO)
+        {
+            string sql = "";
+            sql = string.Format("insert into  MonHoc values ('{0}',N'{1}','{2}','{3}')",MHDTO.MaMonHoc,MHDTO.TenMonHoc,MHDTO.SoTiet,MHDTO.HeSo);
+            return ExecuteQuery(sql);
+        }
+        public void CapNhatMonHoc(MonHocDTO MHDTO)
+        {
+            string sql = string.Format("update MonHoc set TenMonHoc=N'{0}', SoTiet='{1}', Heso='{2}'"
+                                                     + "where madv={3} ", MHDTO.TenMonHoc, MHDTO.SoTiet,MHDTO.HeSo,MHDTO.MaMonHoc);
+            ExecuteQuery(sql);
+        }
+        public bool KiemtratontaiMonhoc(MonHocDTO MHDTO)
+        {
+            string sql = string.Format("SELECT count(*) as SoLuong FROM MonHoc WHERE MaMonHoc = '{0}'",MHDTO.MaMonHoc );
+            return (int)ExecuteScalar(sql)==1 ;
+        }
         /// <summary>
         /// Lấy Datatable danh sách môn học
         /// </summary>
