@@ -12,15 +12,16 @@ namespace QLHS.DAL
     {
         GiaoVienDTO GV;
  
-        public void ThemGiaoVien(GiaoVienDTO GV)
+        public int ThemGiaoVien(GiaoVienDTO GV)
         {
 
-            string sql = string.Format("insert into  Giaovien values (n'{0}',n'{1}')", GV.MaGiaoVien, GV.TenGiaoVien);
-            ExecuteQuery(sql);
+            string sql = string.Format("insert into  Giaovien values ('{0}',N'{1}')", GV.MaGiaoVien, GV.TenGiaoVien);
+            int k=ExecuteQuery(sql);
+            return k;
         }
         public void XoaGiaoVien(string  MaGV)
         {
-            string sql = string.Format("delete  Giaovien  where MaGiaoVien like n'%{0}%')", MaGV);
+            string sql = string.Format("delete  Giaovien  where MaGiaoVien like '%{0}%'", MaGV);
             ExecuteQuery(sql);
         }
         public void CapNhatGiaoVien(GiaoVienDTO GV)
@@ -39,6 +40,8 @@ namespace QLHS.DAL
             string sql = " select * from GiaoVien"; 
             DataTable dt = new DataTable();
             dt = GetTable(sql, true);
+            dt.Rows.Count.ToString();
+            dt.Rows[0].ToString();
             return dt;
             
         }
@@ -114,7 +117,7 @@ namespace QLHS.DAL
             return ListGiaoVien;
         }
         #endregion
-        public void AddNewRow(DataRow dr)
+       public void AddNewRow(DataRow dr)
         { AddNewRow(dr); }
         public DataRow GetNewRow()
         { return GetNewRow(); }
