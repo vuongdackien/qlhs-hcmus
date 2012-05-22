@@ -90,5 +90,20 @@ namespace QLHS.BUS
            return _PhanLopDAL.CapNhat_STT_Lop(MaLop, arrList);
             
         }
+        /// <summary>
+        /// Kiểm tra mã học sinh trong năm cũ có tồn tại trong năm mới chưa
+        /// </summary>
+        /// <param name="MaHocSinh"></param>
+        /// <param name="MaKhoi"></param>
+        /// <param name="MaNamHoc"></param>
+        /// <returns> bool</returns>
+        public bool KT_HocSinh_TonTai_NamHoc(string MaHocSinh, string MaKhoi, string MaNamHoc)
+        {
+            return _PhanLopDAL.KT_HocSinh_TonTai_NamHoc(MaHocSinh, MaKhoi, MaNamHoc);
+        }
+        public bool ChuyenLop_HocSinh(string MaHocSinh, string MaLop)
+        {
+            return _PhanLopDAL.ChuyenLop_HocSinh(MaHocSinh, MaLop);
+        }
     }
 }
