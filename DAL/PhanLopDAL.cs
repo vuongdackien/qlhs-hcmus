@@ -8,6 +8,32 @@ namespace QLHS.DAL
 {
     public class PhanLopDAL : ConnectData
     {
+        /// <summary>
+        /// Kiểm tra mã học sinh trong năm cũ có tồn tại trong năm mới chưa
+        /// </summary>
+        /// <param name="MaHocSinh"></param>
+        /// <param name="MaKhoi"></param>
+        /// <param name="MaNamHoc"></param>
+        /// <returns> bool</returns>
+        public bool KT_HocSinh_TonTai_NamHoc(string MaHocSinh,string MaKhoi,string MaNamHoc)
+        {
+            string khoi="";
+            if (MaKhoi == "10")
+            {
+                khoi = khoi + "('10',11)";
+            }
+            else
+            {
+                if (MaKhoi == "11")
+                {
+                    khoi = khoi + "('11','12')";
+                }
+                else
+                    khoi = khoi + "(12)";
+            }
+            string sql = "select MaHocSinh,TenLop from PHANLOP as a, LOP as b where a.MaLop=b.MaLop and a.MaHocSinh='"+MaHocSinh+"' and b.MaNamHoc= '" + MaNamHoc + "' and b.MaKhoiLop in "+khoi+"  ";
+            return GetTable(sql).Rows.Count > 0;
+        }
         public bool KiemTra_STT_TonTai(int STT, string MaLop)
         {
             string sql = "SELECT STT FROM PHANLOP WHERE MaLop = '"+MaLop+"' AND STT = "+STT;
@@ -46,6 +72,12 @@ namespace QLHS.DAL
             {
                 sql +=  "\nUPDATE PHANLOP SET STT = "+hs.STT+" WHERE MaHocSinh = '"+hs.MaHocSinh+"' AND MaLop = '"+MaLop+"'";
             }
+            return ExecuteQuery(sql) > 0;
+        }
+        public bool ChuyenLop_HocSinh(string MaHocSinh,string MaLop)
+        {
+            int Stt = Dem_SiSo_Lop(MaLop)+1;
+            string sql = "INSERT INTO PHANLOP(Stt,MaHocSinh,MaLop) VALUES("+Stt+",'"+MaHocSinh+"','"+MaLop+"') ";
             return ExecuteQuery(sql) > 0;
         }
 
