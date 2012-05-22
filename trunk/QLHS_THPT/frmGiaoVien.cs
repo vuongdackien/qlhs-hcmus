@@ -157,16 +157,16 @@ namespace QLHS
                             string TenGV = textEditTenGiaoVien.Text.Trim();
                             GVDTO.MaGiaoVien = MaGV;
                             GVDTO.TenGiaoVien = TenGV;
-                            int kq=GVBUS.ThemGiaoVien(GVDTO);
-                            if (kq>0)
-                            {
-                                Utilities.MessageboxUtilities.MessageSuccess("Bạn đã thêm thành công" + kq + " Giáo viên vao Cơ sở dữ liệu");
-                            }
-                            else
-                            {
-                                Utilities.MessageboxUtilities.MessageError("Hành động thêm thất bại");
-                            }
-                            flag=0;
+                            //int kq=GVBUS.ThemGiaoVien(GVDTO);
+                            //if (kq>0)
+                            //{
+                            //    Utilities.MessageboxUtilities.MessageSuccess("Bạn đã thêm thành công" + kq + " Giáo viên vao Cơ sở dữ liệu");
+                            //}
+                            //else
+                            //{
+                            //    Utilities.MessageboxUtilities.MessageError("Hành động thêm thất bại");
+                            //}
+                            //flag=0;
                         }
                         else
                         {
