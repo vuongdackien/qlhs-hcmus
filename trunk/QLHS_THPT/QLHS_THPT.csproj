@@ -112,6 +112,18 @@
     <Compile Include="frmHocSinh.Designer.cs">
       <DependentUpon>frmHocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMonHoc.Designer.cs">
+      <DependentUpon>frmMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhanLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhanLop.Designer.cs">
+      <DependentUpon>frmPhanLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSearchHocSinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmHocSinh.resx">
       <DependentUpon>frmHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhanLop.resx">
+      <DependentUpon>frmPhanLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSearchHocSinh.resx">
       <DependentUpon>frmSearchHocSinh.cs</DependentUpon>

@@ -274,6 +274,18 @@ namespace QLHS
             }
         }
 
+        private void gridControlDSHocSinh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelControlTopLeft_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        {
+
+        }
+
+        
+
   
     }
 }

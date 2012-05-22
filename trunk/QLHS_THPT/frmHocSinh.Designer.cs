@@ -164,22 +164,24 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(200, 389);
+            this.panelControl1.Size = new System.Drawing.Size(348, 389);
             this.panelControl1.TabIndex = 5;
             // 
             // gridControlDSHocSinh
             // 
             this.gridControlDSHocSinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlDSHocSinh.Location = new System.Drawing.Point(3, 141);
+            this.gridControlDSHocSinh.Location = new System.Drawing.Point(2, 140);
             this.gridControlDSHocSinh.MainView = this.gridViewDSHocSinh;
             this.gridControlDSHocSinh.Name = "gridControlDSHocSinh";
-            this.gridControlDSHocSinh.Size = new System.Drawing.Size(194, 245);
+            this.gridControlDSHocSinh.Size = new System.Drawing.Size(344, 247);
             this.gridControlDSHocSinh.TabIndex = 4;
             this.gridControlDSHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDSHocSinh});
+            this.gridControlDSHocSinh.Click += new System.EventHandler(this.gridControlDSHocSinh_Click);
             // 
             // gridViewDSHocSinh
             // 
+            this.gridViewDSHocSinh.ActiveFilterEnabled = false;
             this.gridViewDSHocSinh.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumnSTT,
             this.gridColumnTenHocSinh,
@@ -225,10 +227,11 @@
             this.panelControlTopLeft.Controls.Add(this.labelControl3);
             this.panelControlTopLeft.Controls.Add(this.labelControl1);
             this.panelControlTopLeft.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlTopLeft.Location = new System.Drawing.Point(3, 3);
+            this.panelControlTopLeft.Location = new System.Drawing.Point(2, 2);
             this.panelControlTopLeft.Name = "panelControlTopLeft";
-            this.panelControlTopLeft.Size = new System.Drawing.Size(194, 138);
+            this.panelControlTopLeft.Size = new System.Drawing.Size(344, 138);
             this.panelControlTopLeft.TabIndex = 3;
+            this.panelControlTopLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControlTopLeft_Paint);
             // 
             // comboBoxEditNamHoc
             // 
@@ -292,9 +295,9 @@
             this.panelControlTopRight.Controls.Add(this.labelControlTitle);
             this.panelControlTopRight.Controls.Add(this.simpleButtonChuyenLop);
             this.panelControlTopRight.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlTopRight.Location = new System.Drawing.Point(200, 0);
+            this.panelControlTopRight.Location = new System.Drawing.Point(348, 0);
             this.panelControlTopRight.Name = "panelControlTopRight";
-            this.panelControlTopRight.Size = new System.Drawing.Size(627, 60);
+            this.panelControlTopRight.Size = new System.Drawing.Size(479, 60);
             this.panelControlTopRight.TabIndex = 6;
             // 
             // labelControlTitle
@@ -336,9 +339,9 @@
             this.panelControlChiTietHoSo.Controls.Add(this.labelControl6);
             this.panelControlChiTietHoSo.Controls.Add(this.labelControl5);
             this.panelControlChiTietHoSo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControlChiTietHoSo.Location = new System.Drawing.Point(200, 60);
+            this.panelControlChiTietHoSo.Location = new System.Drawing.Point(348, 60);
             this.panelControlChiTietHoSo.Name = "panelControlChiTietHoSo";
-            this.panelControlChiTietHoSo.Size = new System.Drawing.Size(627, 329);
+            this.panelControlChiTietHoSo.Size = new System.Drawing.Size(479, 329);
             this.panelControlChiTietHoSo.TabIndex = 7;
             // 
             // dateEditNgaySinh
