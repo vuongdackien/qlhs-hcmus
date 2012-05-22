@@ -63,7 +63,7 @@ namespace QLHS.BUS
         /// <returns>Bool</returns>
         public bool CapNhap_STT_HocSinh_Lop(string MaLop)
         {
-            DataTable dsHocSinh = _HocSinhDAL.LayDTHocSinh_LopHoc(MaLop);
+            DataTable dsHocSinh = _HocSinhDAL.LayDT_HocSinh_LopHoc(MaLop);
             int i = 0;
             int soHS = dsHocSinh.Rows.Count;
             HocSinhChuanHoaTenDTO[] listHocSinh = new HocSinhChuanHoaTenDTO[soHS];

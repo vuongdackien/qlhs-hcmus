@@ -25,7 +25,7 @@ namespace QLHS.BUS
         /// <returns>DataTable</returns>
         public DataTable LayDTHocSinh_LopHoc(string MaLop)
         {
-            return _hocSinhDAL.LayDTHocSinh_LopHoc(MaLop);
+            return _hocSinhDAL.LayDT_HocSinh_LopHoc(MaLop);
         }
          /// <summary>
         /// Lấy hồ sơ học sinh từ Mã học sinh
@@ -34,7 +34,7 @@ namespace QLHS.BUS
         /// <returns>HocSinhDTO</returns>
         public HocSinhDTO LayHoSoHocSinh(string MaHocSinh)
         {
-            return _hocSinhDAL.LayHoSoHocSinh(MaHocSinh);
+            return _hocSinhDAL.Lay_HoSo(MaHocSinh);
         }
         /// <summary>
         /// Kiểm tra tồn tại của 1 hồ sơ học sinh qua Mã học sinh
@@ -64,7 +64,7 @@ namespace QLHS.BUS
                                          + "\nBạn có thể sử dụng chức năng \"Tự động sắp xếp số thứ tự\" theo alpha.");
                     return false;
                 }
-                return _hocSinhDAL.SuaHoSoHocSinh(hocsinh, MaLop);
+                return _hocSinhDAL.Sua_HoSo(hocsinh, MaLop);
             }
             else // Thêm mới hồ sơ học sinh
             {
@@ -75,8 +75,8 @@ namespace QLHS.BUS
                                                                 + "\nBạn có thể sử dụng chức năng \"Tự động sắp xếp số thứ tự\" theo alpha.");
                     return false;
                 }
-                hocsinh.MaHocSinh = Utilities.ObjectUtilities.NextID(_hocSinhDAL.LayMaCuoiCung(), "HS",8);
-                return _hocSinhDAL.ThemHoSoHocSinh(hocsinh, MaLop);
+                hocsinh.MaHocSinh = Utilities.ObjectUtilities.NextID(_hocSinhDAL.Lay_MaCuoiCung(), "HS",8);
+                return _hocSinhDAL.Them_HoSo(hocsinh, MaLop);
             }
            
         }
@@ -102,7 +102,7 @@ namespace QLHS.BUS
         /// <returns>DataTable HocSinh</returns>
         public DataTable TimKiem_HocSinh(HocSinhTimKiemDTO hs, List<string> DS_MaLop = null)
         {
-            return _hocSinhDAL.TimKiem_HocSinh(hs,DS_MaLop);
+            return _hocSinhDAL.Tim_HoSo(hs,DS_MaLop);
         }
         /// <summary>
         /// Xóa 1 hồ sơ học sinh
@@ -111,12 +111,12 @@ namespace QLHS.BUS
         /// <returns>Bool</returns>
         public bool Xoa_HoSo_HocSinh(string MaHocSinh)
         {
-            return _hocSinhDAL.Xoa_HoSo_HocSinh(MaHocSinh);
+            return _hocSinhDAL.Xoa_HoSo(MaHocSinh);
         }
 
         public DataTable LayDTTenHocSinh()
         {
-            return _hocSinhDAL.LayDTTenHocSinh();
+            return _hocSinhDAL.LayDT_TenHocSinh();
         }
     }
 }
