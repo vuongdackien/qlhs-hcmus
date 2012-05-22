@@ -21,7 +21,8 @@ namespace QLHS.BUS
         }
         public int CapNhatMonHOc(MonHocDTO MHDTO)
         {
-            return _MonHocDAL.CapNhatMonHoc(MHDTO);
+           // return _MonHocDAL.CapNhatMonHoc(MHDTO);
+            return 0;
         }
         public bool KTTonTaiMonHoc(MonHocDTO MHDTO)
         {
