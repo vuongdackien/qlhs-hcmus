@@ -89,7 +89,7 @@ namespace QLHS
             }
             
             string maLop = treeListLopHoc.FocusedNode.GetValue("MaKhoi").ToString();
-            _bangDiemHocKyDTO = _bangDiemBUS.Lay_BangDiem_HocKy_TheoLop(maLop,
+            _bangDiemHocKyDTO = _bangDiemBUS.LayBangDiem_Lop_HocKy(maLop,
                                                         Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy));
             gridControlBangDiemHocKy.DataSource = _bangDiemHocKyDTO;
             labelControlNamHoc.Text = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc);

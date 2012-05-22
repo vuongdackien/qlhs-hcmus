@@ -40,7 +40,7 @@ namespace QLHS
         /// </summary>
         private void HienThi_Bang_TongKetHocKy()
         {
-            _ds_baocaoTongKetHocKy = _bangDiemBUS.LayBangDiem_BaoCao_HocKy(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop),
+            _ds_baocaoTongKetHocKy = _bangDiemBUS.LayBangDiem_Khoi_HocKy(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop),
                                     Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy),
                                     Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc));
 
