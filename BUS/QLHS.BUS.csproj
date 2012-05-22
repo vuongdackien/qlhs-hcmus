@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BangDiemBUS.cs" />
+    <Compile Include="ChucVuBUS.cs" />
     <Compile Include="ChuyenLopBUS.cs" />
     <Compile Include="HocKyBUS.cs" />
     <Compile Include="KhoiBUS.cs" />

@@ -529,6 +529,13 @@ namespace QLHS.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap thoat {
+            get {
+                object obj = ResourceManager.GetObject("thoat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap thoat_small {
             get {
                 object obj = ResourceManager.GetObject("thoat_small", resourceCulture);

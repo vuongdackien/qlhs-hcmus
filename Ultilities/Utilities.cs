@@ -6,14 +6,6 @@ using QLHS.DTO;
 
 namespace Utilities
 {
-    public class XepLoaiHS
-    {
-        public static string Gioi = "HS Giỏi";
-        public static string Kha = "HS Khá";
-        public static string TB = "HS TB";
-        public static string Yeu = "HS Yếu";
-        public static string Kem = "HS Kém";
-    }
     public static partial class ObjectUtilities
     {
         public static NguoiDungDTO user = null;
