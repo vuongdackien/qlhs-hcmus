@@ -94,7 +94,7 @@ namespace QLHS
             }
             string maLop = treeListLopHoc.FocusedNode.GetValue("MaKhoi").ToString();
             gridControlTongKetNamHoc.DataSource =
-            _bangDiemBUS.LayBangDiem(maLop, Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy),
+            _bangDiemBUS.LayBangDiem_Lop_MonHoc_HocKy(maLop, Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy),
                                             Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditMonHoc));
             labelControlNamHoc.Text = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc);
             labelControlLop.Text = treeListLopHoc.FocusedNode.GetValue("TenKhoi").ToString();
@@ -153,14 +153,14 @@ namespace QLHS
             try
             {
                 // Kiểm tra điểm hợp lệ trên 1 dòng
-                _bangDiemBUS.KiemTraHopLe_TrenDong_BangDiem(bangDiem);
+                _bangDiemBUS.KiemTraHopLe_DataRow_Lop_MonHoc_HocKy(bangDiem);
                 // Tính điểm trung bình
-                double dTB_bangdiem = _bangDiemBUS.TinhDiem_TB_Mon_TrenDong(bangDiem);
+                double dTB_bangdiem = _bangDiemBUS.TinhDiemTB_DataRow_Lop_MonHoc_HocKy(bangDiem);
                 bangDiem.DTB = dTB_bangdiem;
                 // Gán và hiển thị cột DTB
                 advBandedGridView1.SetRowCellValue(e.RowHandle, "DTB", dTB_bangdiem);
                 // Lưu vào CSDL
-                _bangDiemBUS.LuuBangDiem_Mon_Hoc_HocSinh(bangDiem);
+                _bangDiemBUS.LuuBangDiem_HocSinh_MonHoc_HocKy(bangDiem);
 
             }
             catch (Exception ex)
@@ -172,7 +172,7 @@ namespace QLHS
                 }
                 else
                 {
-                    _bangDiemBUS.XoaBangDiem_MonHoc_HocSinh_HocKy(bangDiem);
+                    _bangDiemBUS.XoaBangDiem_HocSinh_MonHoc_HocKy(bangDiem);
                     this.HienThi_Lai_BangDiem();
                 }
             }

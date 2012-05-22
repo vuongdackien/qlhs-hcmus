@@ -27,22 +27,13 @@ namespace QLHS.BUS
         }
 
         /// <summary>
-        /// Lấy DataTable học sinh từ Lớp học
-        /// </summary>
-        /// <param name="MaLop">String: Mã lớp</param>
-        /// <returns>DataTable</returns>
-        public DataTable LayDTDiem_HocKy_Lop(string MaLop, string MaHocKy)
-        {
-            return _bangDiemDAL.LayDTDiem_HocKy_Lop(MaLop, MaHocKy);
-        }
-        /// <summary>
         /// Lấy bảng điểm môn học theo học kỳ của lớp
         /// </summary>
         /// <param name="MaLop">String: Mã lớp</param>
         /// <param name="MaHocKy">String: Mã học kỳ</param>
         /// <param name="MaMonHoc">String: Mã môn học</param>
         /// <returns></returns>
-        public DataTable LayBangDiem(string MaLop, string MaHocKy, string MaMonHoc)
+        public DataTable LayBangDiem_Lop_MonHoc_HocKy(string MaLop, string MaHocKy, string MaMonHoc)
         {
             return _bangDiemDAL.LayBangDiem_MonHoc_HocKy_Lop(MaLop, MaHocKy, MaMonHoc);
         }
@@ -51,7 +42,7 @@ namespace QLHS.BUS
         /// </summary>
         /// <param name="bd">BangDiemDTO</param>
         /// <returns>Bool</returns>
-        public bool KiemTraHopLe_TrenDong_BangDiem(BangDiemDTO bd)
+        public bool KiemTraHopLe_DataRow_Lop_MonHoc_HocKy(BangDiemDTO bd)
         {
             string msg = "";
             if (bd.DM_1 == -1 && bd.DM_2 == -1)
@@ -77,7 +68,7 @@ namespace QLHS.BUS
         /// </summary>
         /// <param name="bd">BangDiemDTO (Quy định: VỚi điểm == -1 xem như chưa nhập</param>
         /// <returns>double: Điểm trung bình</returns>
-        public double TinhDiem_TB_Mon_TrenDong(BangDiemDTO bd)
+        public double TinhDiemTB_DataRow_Lop_MonHoc_HocKy(BangDiemDTO bd)
         {
             int soCotM = 0, soCot15 = 0, soCot1T = 0;
             double tongM = 0, tong15 = 0, tong1T = 0;
@@ -137,7 +128,7 @@ namespace QLHS.BUS
         /// </summary>
         /// <param name="bd">BangDiemDTO</param>
         /// <returns>Bool</returns>
-        public bool LuuBangDiem_Mon_Hoc_HocSinh(BangDiemDTO bd)
+        public bool LuuBangDiem_HocSinh_MonHoc_HocKy(BangDiemDTO bd)
         {
             return _bangDiemDAL.LuuBangDiem_MonHoc_HocSinh_HocKy(bd);
         }
@@ -146,31 +137,9 @@ namespace QLHS.BUS
         /// </summary>
         /// <param name="bd">BangDiemDTO</param>
         /// <returns>bool</returns>
-        public bool XoaBangDiem_MonHoc_HocSinh_HocKy(BangDiemDTO bd)
+        public bool XoaBangDiem_HocSinh_MonHoc_HocKy(BangDiemDTO bd)
         {
             return _bangDiemDAL.XoaBangDiem_MonHoc_HocSinh_HocKy(bd);
-        }
-
-        /// <summary>
-        /// Lấy bảng điểm tất cả môn học theo học kỳ của lớp
-        /// </summary>
-        /// <param name="MaLop">String: Mã khối</param>
-        /// <param name="MaHocKy">String: Mã học kỳ</param>
-        /// <param name="MaNamHoc">String: Mã năm học</param>
-        /// <returns></returns>
-        public DataTable LayBangDiem_HocKy(string MaKhoi, string MaHocKy, string MaNamHoc)
-        {
-            DataTable tbBDHocKy = _bangDiemDAL.LayBangDiem_MonHoc_HocKy_Khoi(MaKhoi, MaHocKy, MaNamHoc);
-            // Them cot stt
-            DataColumn colSTT = new DataColumn("STT");
-            // add col stt vao datatable
-            tbBDHocKy.Columns.Add(colSTT);
-            // khoi tao cot stt
-            for (int i = 0; i < tbBDHocKy.Rows.Count; i++)
-            {
-                tbBDHocKy.Rows[i]["STT"] = i + 1;
-            }
-            return tbBDHocKy;
         }
 
         /// <summary>
@@ -181,7 +150,7 @@ namespace QLHS.BUS
         /// <param name="MaMonHoc">String: Mã môn học</param>
         /// <param name="MaNamHoc">String: Mã năm học</param>
         /// <returns>List TongKetMonDTO</returns>
-        public List<TongKetMonDTO> LayBangDiem_BaoCao_MonHoc(string MaMonHoc, string MaKhoi, string MaHocKy, string MaNamHoc)
+        public List<TongKetMonDTO> LayBangDiem_MonHoc_Khoi_HocKy(string MaMonHoc, string MaKhoi, string MaHocKy, string MaNamHoc)
         {
             // Lấy tất cả các lớp trong khối
             List<LopDTO> ds_lop = _lopDAL.LayListLop_MaNam_MaKhoi(MaNamHoc, MaKhoi);
@@ -230,7 +199,7 @@ namespace QLHS.BUS
         /// <param name="MaLop">String: mã lớp</param>
         /// <param name="MaHocKy">String: Mã học kỳ</param>
         /// <returns>List BangDiemHocKyDTO</returns>
-        public List<BangDiemHocKyDTO> Lay_BangDiem_HocKy_TheoLop(string MaLop, string MaHocKy)
+        public List<BangDiemHocKyDTO> LayBangDiem_Lop_HocKy(string MaLop, string MaHocKy)
         {
             List<BangDiemHocKyDTO> bangDiemHocKy = new List<BangDiemHocKyDTO>();
             // Lấy ds học sinh của lớp
@@ -312,7 +281,7 @@ namespace QLHS.BUS
         /// <param name="MaHocKy">String: Mã học kỳ</param>
         /// <param name="MaNamHoc">String: Mã năm học</param>
         /// <returns></returns>
-        public List<TongKetHocKyDTO> LayBangDiem_BaoCao_HocKy(string MaKhoi, string MaHocKy, string MaNamHoc)
+        public List<TongKetHocKyDTO> LayBangDiem_Khoi_HocKy(string MaKhoi, string MaHocKy, string MaNamHoc)
         {
             List<TongKetHocKyDTO> bangDiemTongKetHocKy = new List<TongKetHocKyDTO>();
 
