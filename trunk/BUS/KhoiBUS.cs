@@ -38,7 +38,7 @@ namespace QLHS.BUS
             int gioihan = ma+1;
             if (ma == 12)
                 gioihan = ma;
-            for (int khoi = ma; khoi <= gioihan; khoi++)
+            for (int khoi = gioihan; khoi >= ma; khoi--)
             {
                 DataRow dr = dataTable.NewRow();
                 dr["MaKhoi"] = khoi;
