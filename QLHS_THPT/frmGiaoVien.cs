@@ -56,6 +56,7 @@ namespace QLHS
             simpleButtonXoaGiaovien.Enabled = false;
             simpleButtonhuy.Enabled=true;
             this.Enabled = false;
+
             flag = 1;
            
            
@@ -114,15 +115,21 @@ namespace QLHS
 
         private void simpleButtonXoaGiaovien_Click(object sender, EventArgs e)
         {
-            simpleButtonhuy.Show();
-            for (int i = 0; i < gridViewGiaoVien.RowCount; i++)
+           // simpleButtonhuy.Show();
+            /*for (int i = 0; i < gridViewGiaoVien.RowCount; i++)
             {
                 if (textEditMaGiaoVien.Text == gridViewGiaoVien.GetRowCellValue(i,"MaGiaoVien").ToString())
                 {
                     gridViewGiaoVien.DeleteRow(i);   
                 }
+            }*/
+            if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Bạn có chắc chắn muốn xóa giáo viên này\"" + textEditTenGiaoVien.Text + "\" hay không?") == System.Windows.Forms.DialogResult.Yes)
+            {
+                GVBUS.XoaGiaoVien(textEditMaGiaoVien.Text.Trim());
+                flag = 0;
             }
-            simpleButtonLuuGiaoVien.Enabled = true;
+            simpleButtonLoadlaidulieu_Click( sender, e);
+           // simpleButtonLuuGiaoVien.Enabled = true;
             flag = 2;
         }
 
@@ -167,16 +174,7 @@ namespace QLHS
                             this.Cursor = textEditTenGiaoVien.Cursor;
                         } 
                     }
-                    else if(flag==2)
-                    {
-                        if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Bạn có chắc chắn muốn xóa giáo viên này\"" + textEditTenGiaoVien.Text + "\" hay không?") == System.Windows.Forms.DialogResult.No)
-                        {
-                            GVBUS.XoaGiaoVien(textEditMaGiaoVien.Text.Trim());
-                            flag = 0;
-                        }
-                        
-                    }
-                    if (flag==3)
+                    else  if (flag==3)
                     {
                         if (KiemtraNull(textEditTenGiaoVien.Text.Trim()))
                         {
@@ -208,11 +206,18 @@ namespace QLHS
         }
         private void gridViewGiaoVien_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (data)
+            for (int i = 0; i < gridViewGiaoVien.RowCount; )
+           {
+               textEditMaGiaoVien.Text = gridViewGiaoVien.GetFocusedRowCellValue("MaGiaoVien").ToString();
+               textEditTenGiaoVien.Text = gridViewGiaoVien.GetFocusedRowCellValue("TenGiaoVien").ToString();
+               break;
+           }
+         /*   if (data)
             {
-                textEditMaGiaoVien.Text = gridViewGiaoVien.GetFocusedRowCellValue("MaGiaoVien").ToString();
-                textEditTenGiaoVien.Text = gridViewGiaoVien.GetFocusedRowCellValue("TenGiaoVien").ToString();
-            }
+               
+                   
+                               
+            }*/
             
         }
 
