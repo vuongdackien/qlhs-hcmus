@@ -14,6 +14,19 @@ namespace QLHS.BUS
         {
             _MonHocDAL = new MonHocDAL();
         }
+
+        public int ThemMonHoc(MonHocDTO MHDTO)
+        {
+            return _MonHocDAL.ThemMonHoc(MHDTO);
+        }
+        public int CapNhatMonHOc(MonHocDTO MHDTO)
+        {
+            return _MonHocDAL.CapNhatMonHoc(MHDTO);
+        }
+        public bool KTTonTaiMonHoc(MonHocDTO MHDTO)
+        {
+            return _MonHocDAL.KiemtratontaiMonhoc(MHDTO);
+        }
         /// <summary>
         /// Lấy Datatable danh sách môn học
         /// </summary>
