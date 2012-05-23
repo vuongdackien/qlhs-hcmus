@@ -201,6 +201,11 @@ namespace QLHS
             }
         }
 
+        private void simpleButtonDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
  
     }
 }
