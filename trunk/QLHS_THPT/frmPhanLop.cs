@@ -90,7 +90,7 @@ namespace QLHS
                 gridControlDSHocSinh.DataSource = _HocSinhBUS.LayDT_HS_HocSinh();
                 for (int i = 0; i < gridViewDSHocSinh.RowCount; i++)
                 {
-                    gridViewDSHocSinh.SetFocusedRowCellValue("STT", i + 1);
+                    gridViewDSHocSinh.SetRowCellValue(i, "STT", i + 1);
                 }
                 Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoiMoi, _KhoiBUS.LayDTKhoi_10(), "MaKhoi", "TenKhoi", 0);
             }
@@ -103,8 +103,6 @@ namespace QLHS
                 Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHocMoi, _NamHocBUS.LayDTNamHocMoi(),
                                                     "MaNamHoc", "TenNamHoc", 0);
             }
-            simpleButtonChuyenLop.Enabled = true;
-            simpleButtonChuyenLai.Enabled = true;
             
         }
        
@@ -141,17 +139,12 @@ namespace QLHS
         {
             if (e.FocusedRowHandle < 0)
                 return;
-          
             MaHocSinh_Focus = this.gridViewDSHocSinh.GetRowCellValue(e.FocusedRowHandle, "MaHocSinh").ToString();
-            
-            simpleButtonChuyenLop.Enabled = true;
-            simpleButtonChuyenLai.Enabled = false;
             
         }
 
         private void simpleButtonChuyenLop_Click(object sender, EventArgs e)
         {
-
             string MaLop = (Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLopMoi));
             int SiSoCanTren = _quyDinhBUS.LaySiSoCanTren();
             if ( _PhanLopBUS.Dem_SiSo_Lop(MaLop) >= SiSoCanTren)
@@ -163,7 +156,7 @@ namespace QLHS
             }
             if (_PhanLopBUS.KT_HocSinh_TonTai_NamHoc(MaHocSinh_Focus.ToString(), Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi), Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHocMoi)))
             {
-                Utilities.MessageboxUtilities.MessageError("Học sinh " + Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditLop)
+                Utilities.MessageboxUtilities.MessageError("Học sinh " +MaHocSinh_Focus.ToString()
                                                            + " đã được chuyển đi ");
                 return;
             }
@@ -185,13 +178,17 @@ namespace QLHS
                 return;
 
             MaHocSinhMoi_Focus = this.gridViewDSHocSinhMoi.GetRowCellValue(e.FocusedRowHandle, "MaHocSinh").ToString();
-            simpleButtonChuyenLop.Enabled = false;
-            simpleButtonChuyenLai.Enabled = true;
         }
 
         private void checkEditPhanLopHocSinhMoi_CheckedChanged(object sender, EventArgs e)
         {
             frmChuyenLop_Load(sender,e);
+            if (gridViewDSHocSinh.RowCount > 0)
+            {
+                MaHocSinh_Focus = gridViewDSHocSinh.GetRowCellValue(0, "MaHocSinh");
+            }
+            else
+                simpleButtonChuyenLop.Enabled = false;
         }
         void HienThi(bool xl)
         {
