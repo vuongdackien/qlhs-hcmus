@@ -182,10 +182,7 @@ namespace QLHS
             load_dulieu(DT);
         }
 
-        private void panelControl1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+      
 
         private void gridViewMonHoc_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
@@ -202,6 +199,32 @@ namespace QLHS
                 
             }
         }
+
+        private void simpleButtonTimKiem_Click(object sender, EventArgs e)
+        {
+            if (textEditTK.Text.Trim()!="")
+            {
+                if (radioButtonSoTiet.Checked)
+	             {
+		             DT=_MonHocBus.Table_MonHoc(3,textEditTK.Text.Trim());
+                     load_dulieu(DT);
+	            }
+                if (radioButtonTenMonHoc.Checked)
+	            {
+		             DT=_MonHocBus.Table_MonHoc(2,textEditTK.Text.Trim());
+                     load_dulieu(DT);
+	            }
+                else
+	            {
+                     DT=_MonHocBus.Table_MonHoc(1,textEditTK.Text.Trim());
+                     load_dulieu(DT);
+	            }
+               
+                
+            }
+        }
+
+      
 
         
 
