@@ -100,6 +100,12 @@
     <Compile Include="frmBangDiemMonHoc.designer.cs">
       <DependentUpon>frmBangDiemMonHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,12 +130,6 @@
     <Compile Include="frmLapDSLop.designer.cs">
       <DependentUpon>frmLapDSLop.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,11 +142,11 @@
     <Compile Include="frmPhanLop.Designer.cs">
       <DependentUpon>frmPhanLop.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSearchHocSinh.cs">
+    <Compile Include="frmTimHocSinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSearchHocSinh.Designer.cs">
-      <DependentUpon>frmSearchHocSinh.cs</DependentUpon>
+    <Compile Include="frmTimHocSinh.Designer.cs">
+      <DependentUpon>frmTimHocSinh.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Report\DTO_TongKetHocKy.cs" />
@@ -195,6 +195,9 @@
     <EmbeddedResource Include="frmBangDiemMonHoc.resx">
       <DependentUpon>frmBangDiemMonHoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,14 +210,11 @@
     <EmbeddedResource Include="frmLapDSLop.resx">
       <DependentUpon>frmLapDSLop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmPhanLop.resx">
       <DependentUpon>frmPhanLop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSearchHocSinh.resx">
-      <DependentUpon>frmSearchHocSinh.cs</DependentUpon>
+    <EmbeddedResource Include="frmTimHocSinh.resx">
+      <DependentUpon>frmTimHocSinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\rptBangDiemHocKy.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
