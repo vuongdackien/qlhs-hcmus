@@ -20,7 +20,10 @@ namespace QLHS
         {
             InitializeComponent();
         }
-
+     /*   public void load_Compobox()
+       {
+            
+        }*/
         public void KhoiTaoTrangthai()
         {
 
@@ -204,7 +207,7 @@ namespace QLHS
         {
             if (textEditTK.Text.Trim()!="")
             {
-                if (radioButtonSoTiet.Checked)
+                if (radioButtonMaGiaoVien.Checked)
 	             {
 		             DT=_MonHocBus.Table_MonHoc(3,textEditTK.Text.Trim());
                      load_dulieu(DT);
@@ -224,11 +227,7 @@ namespace QLHS
             }
         }
 
-      
-
-        
-
-        
+          
 
         
     }
