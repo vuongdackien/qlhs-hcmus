@@ -126,7 +126,7 @@ CREATE TABLE [dbo].[NGUOIDUNG] (
 	[MaLoaiND]		[varchar](10) NOT NULL,
 	[TenDNhap]		[varchar](30) NOT NULL,
 	[MatKhau]		[varchar](35) NOT NULL,
-	[TrangThai]		[bit] NOT NULL CONSTRAINT [DF_NGUOIDUNG_TrangThai] DEFAULT ((1)));
+	[TrangThai]		[int] NOT NULL CONSTRAINT [DF_NGUOIDUNG_TrangThai] DEFAULT ((1)));
 GO
 
 --11. Create table and its columns
