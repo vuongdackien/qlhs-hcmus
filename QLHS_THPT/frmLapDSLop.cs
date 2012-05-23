@@ -110,6 +110,8 @@ namespace QLHS
 
         private void gridViewLop_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            // Chac chan chon duoc 1 dong nao do
+           if (gridViewLop.FocusedRowHandle < 0) return;
            textEditMaLop.Text = gridViewLop.GetRowCellValue(gridViewLop.FocusedRowHandle, "MaLop").ToString();
            textEditTenLop.Text = gridViewLop.GetRowCellValue(gridViewLop.FocusedRowHandle, "TenLop").ToString();
            Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditGVCN,
