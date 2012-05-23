@@ -40,9 +40,7 @@ namespace QLHS.DAL
             string sql = " select * from GiaoVien"; 
             DataTable dt = new DataTable();
             dt = GetTable(sql, true);
-            dt.Rows.Count.ToString();
-            dt.Rows[0].ToString();
-            return dt;
+           return dt;
             
         }
       /// <summary>
