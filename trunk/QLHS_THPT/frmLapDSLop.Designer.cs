@@ -217,9 +217,13 @@
             // 
             this.textEditTenLop.Location = new System.Drawing.Point(21, 67);
             this.textEditTenLop.Name = "textEditTenLop";
+            this.textEditTenLop.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.textEditTenLop.Properties.Mask.EditMask = "1[012][A-H][0-9][0-9]";
+            this.textEditTenLop.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.textEditTenLop.Properties.MaxLength = 40;
             this.textEditTenLop.Size = new System.Drawing.Size(143, 20);
             this.textEditTenLop.TabIndex = 32;
+            this.textEditTenLop.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.textEditTenLop_InvalidValue);
             // 
             // comboBoxEditGVCN
             // 
@@ -289,6 +293,7 @@
             this.gridViewLop.GridControl = this.gridControl;
             this.gridViewLop.Name = "gridViewLop";
             this.gridViewLop.OptionsView.ShowGroupPanel = false;
+            this.gridViewLop.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewLop_FocusedRowChanged);
             // 
             // gColMaLop
             // 
@@ -312,6 +317,7 @@
             this.gColTenLop.Caption = "Tên Lớp";
             this.gColTenLop.FieldName = "TenLop";
             this.gColTenLop.Name = "gColTenLop";
+            this.gColTenLop.OptionsColumn.AllowEdit = false;
             this.gColTenLop.Visible = true;
             this.gColTenLop.VisibleIndex = 1;
             this.gColTenLop.Width = 104;
@@ -321,12 +327,14 @@
             this.gColMaNamHoc.Caption = "Năm học";
             this.gColMaNamHoc.FieldName = "MaNamHoc";
             this.gColMaNamHoc.Name = "gColMaNamHoc";
+            this.gColMaNamHoc.OptionsColumn.AllowEdit = false;
             // 
             // gColMaKhoiLop
             // 
             this.gColMaKhoiLop.Caption = "Khối lớp";
             this.gColMaKhoiLop.FieldName = "MaKhoiLop";
             this.gColMaKhoiLop.Name = "gColMaKhoiLop";
+            this.gColMaKhoiLop.OptionsColumn.AllowEdit = false;
             // 
             // gColMaGiaoVien
             // 
@@ -334,8 +342,9 @@
             this.gColMaGiaoVien.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gColMaGiaoVien.Caption = "Giáo viên chủ nhiệm";
             this.gColMaGiaoVien.ColumnEdit = this.repositoryItemComboBox;
-            this.gColMaGiaoVien.FieldName = "MaGiaoVien";
+            this.gColMaGiaoVien.FieldName = "TenGiaoVien";
             this.gColMaGiaoVien.Name = "gColMaGiaoVien";
+            this.gColMaGiaoVien.OptionsColumn.AllowEdit = false;
             this.gColMaGiaoVien.Visible = true;
             this.gColMaGiaoVien.VisibleIndex = 2;
             this.gColMaGiaoVien.Width = 230;

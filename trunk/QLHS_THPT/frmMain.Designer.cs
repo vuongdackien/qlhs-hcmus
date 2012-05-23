@@ -1,7 +1,7 @@
 ﻿namespace QLHS
 {
     partial class frmMain
-    {
+    { 
         /// <summary>
         /// Required designer variable.
         /// </summary>
