@@ -19,16 +19,17 @@ namespace QLHS.DAL
         public int ThemMonHoc(MonHocDTO MHDTO)
         {
             string sql = "";
-            sql = string.Format("insert into  MonHoc values ('{0}',N'{1}','{2}','{3}')",MHDTO.MaMonHoc,MHDTO.TenMonHoc,MHDTO.SoTiet,MHDTO.HeSo);
+            sql = string.Format("insert into  MonHoc values ('{0}',N'{1}','{2}','{3}','{4}')",MHDTO.MaMonHoc,MHDTO.TenMonHoc,MHDTO.SoTiet,MHDTO.HeSo,MHDTO.TrangThai);
             return ExecuteQuery(sql);
         }
         public int CapNhatMonHoc(MonHocDTO MHDTO)
         {
-            string sql = string.Format("update MonHoc set TenMonHoc=N'{0}', SoTiet='{1}', Heso='{2}'"
-                                                     + "where madv={3} ", MHDTO.TenMonHoc, MHDTO.SoTiet,MHDTO.HeSo,MHDTO.MaMonHoc);
+            string sql = string.Format("update MonHoc set TenMonHoc=N'{0}', SoTiet='{1}', HeSo='{2}', TrangThai='{3}'"
+
+                                                     + "where MaMH={4} ", MHDTO.TenMonHoc, MHDTO.SoTiet,MHDTO.HeSo,MHDTO.MaMonHoc,MHDTO.TrangThai);
            return ExecuteQuery(sql);
         }
-        public bool KiemtratontaiMonhoc(MonHocDTO MHDTO)
+        public bool KTTTMonhoc(MonHocDTO MHDTO)
         {
             string sql = string.Format("SELECT count(*) as SoLuong FROM MonHoc WHERE MaMonHoc = '{0}'",MHDTO.MaMonHoc );
             return (int)ExecuteScalar(sql)==1 ;
@@ -45,7 +46,7 @@ namespace QLHS.DAL
             if (chiLayCacMonDangHoc)
                 sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo FROM MONHOC WHERE TrangThai = 1 ORDER BY TenMonHoc ASC");
             else
-                sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo FROM MONHOC ORDER BY TenMonHoc");
+                sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo, TrangThai FROM MONHOC ORDER BY TenMonHoc");
 
             return GetTable(sql);
         }
@@ -66,9 +67,9 @@ namespace QLHS.DAL
             {
                 case 1: sql = string.Format("select * from MonHoc where MaMonHoc like N'%{0}%' ", DK); break;
                 case 2: sql = string.Format("select * from MonHoc where TenMonHoc like N'%{0}%' ", DK); break;
-                case 3: sql = string.Format("select * from MonHoc where SoTiet like N'%{0}%' ", DK); break;
-                case 4: sql = string.Format("select * from MonHoc where HeSo like N'%{0}%' ", DK); break;
-                
+                case 3: sql = string.Format("select * from MonHoc where SoTiet = '{0}' ", DK); break;
+                case 4: sql = string.Format("select * from MonHoc where HeSo ='{0}' ", DK); break;
+                case 5: sql = string.Format("select * from MonHoc where TrangThai = '{0}' ", DK); break;
             }
 
             DataTable dt = new DataTable();
