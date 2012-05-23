@@ -22,6 +22,20 @@ namespace QLHS.DAL
             return GetTable(sql);
         }
         /// <summary>
+        /// lấy DataTable học sinh chưa được có lớp
+        /// </summary>
+        /// <returns>DataTable</returns>
+        public DataTable LayDT_HS_HocSinh()
+        {
+            DataTable dt = new DataTable();
+            DataColumn dcl=new DataColumn("STT",typeof(int));
+            dt.Columns.Add(dcl);
+            string sql = "SELECT MaHocSinh,TenHocSinh from HOCSINH WHERE MaHocSinh not in (select MaHocSinh from PHANLOP)";
+            m_DataApdater = new System.Data.SqlClient.SqlDataAdapter(sql, m_Connect);
+            m_DataApdater.Fill(dt);
+            return dt;
+        }
+        /// <summary>
         /// Lấy List học sinh từ Lớp học
         /// </summary>
         /// <param name="MaLop">String: Mã lớp</param>
