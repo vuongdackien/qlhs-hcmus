@@ -11,7 +11,16 @@ namespace QLHS.DAL
     public class GiaoVienDAL : ConnectData
     {
         GiaoVienDTO GV;
- 
+
+        /// <summary>
+        /// Lấy datatable danh sách giáo viên
+        /// </summary>
+        /// <returns></returns>
+        public DataTable LayDT_DanhSach_GiaoVien()
+        {
+            string sql = "SELECT MaGiaoVien, TenGiaoVien FROM GIAOVIEN";
+            return GetTable(sql);
+        }
         public int ThemGiaoVien(GiaoVienDTO GV)
         {
 

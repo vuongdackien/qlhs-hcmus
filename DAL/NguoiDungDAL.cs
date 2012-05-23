@@ -20,7 +20,7 @@ namespace QLHS.DAL
         {
             string sql = "SELECT MaND, a.MaLoaiND, TenLoaiND, TenGiaoVien ,TenDNhap, a.TrangThai "
                          + " FROM NGUOIDUNG a,GIAOVIEN b, LOAINGUOIDUNG c "
-                         + " WHERE a.MaND = b.MaGiaoVien and a.MaLoai = c.MaLoai";
+                         + " WHERE a.MaND = b.MaGiaoVien and a.MaLoaiND = c.MaLoaiND";
             return GetTable(sql);
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace QLHS.DAL
                 nguoiDung.TenND = Convert.ToString(dr["TenGiaoVien"]);
                 nguoiDung.TenDNhap = Convert.ToString(dr["TenDNhap"]);
                 nguoiDung.MatKhau = Convert.ToString(dr["MatKhau"]);
-                nguoiDung.TrangThai = Convert.ToBoolean(dr["TrangThai"]);
+                nguoiDung.TrangThai = Convert.ToInt16(dr["TrangThai"]);
             }
             CloseConnect();
             return nguoiDung;
@@ -67,5 +67,55 @@ namespace QLHS.DAL
             string sql = "UPDATE NGUOIDUNG SET MatKhau = '" + Utilities.ObjectUtilities.MaHoaMD5(NewPassword) + "' WHERE TenDNhap = '" + TenDangNhap + "'";
             return ExecuteQuery(sql) > 0 ? true : false;
         }
+        /// <summary>
+        /// Kiểm tra tồn tại người dùng
+        /// </summary>
+        /// <param name="MaUser">String: Mã người dùng</param>
+        /// <returns></returns>
+        public bool KiemTraTonTai_NguoiDung(string MaUser)
+        {
+            string sql = "SELECT MaND FROM NGUOIDUNG WHERE MaND = '" + MaUser + "'";
+            return (ExecuteScalar(sql) == null) ? false : true;
+        }
+        /// <summary>
+        /// Thêm thông tin người dùng
+        /// </summary>
+        /// <param name="user">NguoiDungDTO</param>
+        /// <returns></returns>
+        public bool InsertUser(NguoiDungDTO user)
+        {
+            string sql = string.Format("INSERT INTO NGUOIDUNG (MaND, MaLoaiND, TenDNhap, MatKhau, TrangThai ) "
+                        + "VALUES ('{0}','{1}','{2}','{3}','{4}')",
+                        user.MaND, user.LoaiNguoiDung.MaLoai, user.TenDNhap, Utilities.ObjectUtilities.MaHoaMD5(user.MatKhau), user.TrangThai);
+            if (ExecuteQuery(sql) > 0)
+                return true;
+            return false;
+        }
+        /// <summary>
+        /// Sửa thông tin người dùng
+        /// </summary>
+        /// <param name="user">NguoiDungDTO</param>
+        /// <returns></returns>
+        public bool UpdateUser(NguoiDungDTO user)
+        {
+            string updatePassword = (user.MatKhau == "") ? "" : "MatKhau = '" + Utilities.ObjectUtilities.MaHoaMD5(user.MatKhau) + "',";
+            string sql = string.Format("UPDATE NGUOIDUNG SET MaLoaiND = '{0}', TenDNhap = '{1}', " + updatePassword + " TrangThai = '{2}' "
+                        + "WHERE MaND = '{3}'",
+                        user.LoaiNguoiDung.MaLoai, user.TenDNhap, user.TrangThai, user.MaND);
+            if (ExecuteQuery(sql) > 0)
+                return true;
+            return false;
+        }
+        /// <summary>
+        /// Xóa thông tin người dùng
+        /// </summary>
+        /// <param name="MaUser">String: Mã user</param>
+        /// <returns></returns>
+        public bool DeleteUser(string MaUser)
+        {
+            string sql = "DELETE FROM NGUOIDUNG WHERE MaND = '" + MaUser + "'";
+            return ExecuteQuery(sql) > 0 ? true : false;
+        }
+
     }
 }
