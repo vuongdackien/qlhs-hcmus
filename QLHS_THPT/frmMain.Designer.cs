@@ -71,8 +71,8 @@
             this.barStaticItemTenNguoiDung = new DevExpress.XtraBars.BarStaticItem();
             this.barButtonItemDSLop = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemBCBangDiem = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemTongKetMonHoc = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemTongKetHocKy = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemQuanLyNguoiDung = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageQuanLyHoSo = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupHoSoNamHoc = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -128,8 +128,8 @@
             this.barStaticItemTenNguoiDung,
             this.barButtonItemDSLop,
             this.barButtonItemBCBangDiem,
-            this.barButtonItem6,
-            this.barButtonItem8,
+            this.barButtonItemTongKetMonHoc,
+            this.barButtonItemTongKetHocKy,
             this.barButtonItemQuanLyNguoiDung});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 46;
@@ -272,6 +272,7 @@
             toolTipItem7.Text = "Quy định các hệ số điểm từng học kỳ của các môn học.";
             superToolTip7.Items.Add(toolTipItem7);
             this.barBtnHeSoMonHoc.SuperTip = superToolTip7;
+            
             // 
             // barButtonItem3
             // 
@@ -367,19 +368,19 @@
             this.barButtonItemBCBangDiem.LargeGlyph = global::QLHS.Properties.Resources.kqhockytheolop;
             this.barButtonItemBCBangDiem.Name = "barButtonItemBCBangDiem";
             // 
-            // barButtonItem6
+            // barButtonItemTongKetMonHoc
             // 
-            this.barButtonItem6.Caption = "Tổng Kết Môn Học";
-            this.barButtonItem6.Id = 43;
-            this.barButtonItem6.LargeGlyph = global::QLHS.Properties.Resources.kqhockytheomon;
-            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItemTongKetMonHoc.Caption = "Tổng Kết Môn Học";
+            this.barButtonItemTongKetMonHoc.Id = 43;
+            this.barButtonItemTongKetMonHoc.LargeGlyph = global::QLHS.Properties.Resources.kqhockytheomon;
+            this.barButtonItemTongKetMonHoc.Name = "barButtonItemTongKetMonHoc";
             // 
-            // barButtonItem8
+            // barButtonItemTongKetHocKy
             // 
-            this.barButtonItem8.Caption = "Tổng Kết Học Kỳ";
-            this.barButtonItem8.Id = 44;
-            this.barButtonItem8.LargeGlyph = global::QLHS.Properties.Resources.kqhockytheolop;
-            this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonItemTongKetHocKy.Caption = "Tổng Kết Học Kỳ";
+            this.barButtonItemTongKetHocKy.Id = 44;
+            this.barButtonItemTongKetHocKy.LargeGlyph = global::QLHS.Properties.Resources.kqhockytheolop;
+            this.barButtonItemTongKetHocKy.Name = "barButtonItemTongKetHocKy";
             // 
             // barButtonItemQuanLyNguoiDung
             // 
@@ -387,7 +388,6 @@
             this.barButtonItemQuanLyNguoiDung.Id = 45;
             this.barButtonItemQuanLyNguoiDung.LargeGlyph = global::QLHS.Properties.Resources.quanlynguoidung;
             this.barButtonItemQuanLyNguoiDung.Name = "barButtonItemQuanLyNguoiDung";
-            this.barButtonItemQuanLyNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemQuanLyNguoiDung_ItemClick);
             // 
             // ribbonPageQuanLyHoSo
             // 
@@ -432,8 +432,8 @@
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem6);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem8);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItemTongKetMonHoc);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItemTongKetHocKy);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Báo Cáo Tổng Kết ";
             // 
@@ -528,8 +528,8 @@
         private DevExpress.XtraBars.BarStaticItem barStaticItemTenNguoiDung;
         private DevExpress.XtraBars.BarButtonItem barButtonItemDSLop;
         private DevExpress.XtraBars.BarButtonItem barButtonItemBCBangDiem;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemTongKetMonHoc;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemTongKetHocKy;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem barButtonItemQuanLyNguoiDung;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupQuanLyND;

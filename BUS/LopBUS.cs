@@ -10,6 +10,7 @@ namespace QLHS.BUS
     public class LopBUS
     {
         LopDAL _LopDAL;
+         
         public LopBUS()
         {
             _LopDAL = new LopDAL();
@@ -43,5 +44,17 @@ namespace QLHS.BUS
         {
             return _LopDAL.Lay_TenGiaoVien_MaLop(MaLop);
         }
+
+        #region Thêm dòng mới
+        /// <summary>
+        /// Thêm 1 dòng mới vào datatable
+        /// </summary>
+        /// <param name="MaNamHoc">String: Mã năm học</param>
+        /// <param name="MaKhoi">String: Mã khối</param>
+        public void AddNewRow(string MaNamHoc, string MaKhoi)
+        {
+            _LopDAL.AddNewRow(MaNamHoc, MaKhoi);
+        }
+        #endregion
     }
 }
