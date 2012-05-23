@@ -155,10 +155,5 @@ namespace QLHS.DAL
             CloseConnect();
             return listMonHocDTO;
         }
-        public bool KiemtratontaiMonhoc(MonHocDTO MH)
-        {
-            string sql = string.Format("SELECT count(*) as SoLuong FROM GiaoVien WHERE MaGiaoVien = '{0}'", MH.MaMonHoc);
-            return (int)ExecuteScalar(sql) == 1;
-        }
     }
 }

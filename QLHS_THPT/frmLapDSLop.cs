@@ -34,7 +34,7 @@ namespace QLHS
         {
             _dsLop_Khoi_NamHoc = _lopBUS.LayDTLop_MaNam_MaKhoi(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc),
                                     Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi));
-            gridControlDSLop.DataSource = _dsLop_Khoi_NamHoc;
+            gridControl.DataSource = _dsLop_Khoi_NamHoc;
             
         }
 
