@@ -9,9 +9,9 @@ using DevExpress.XtraEditors;
 
 namespace QLHS
 {
-    public partial class frmLogin : DevExpress.XtraEditors.XtraForm
+    public partial class frmDangNhap : DevExpress.XtraEditors.XtraForm
     {
-        public frmLogin()
+        public frmDangNhap()
         {
             InitializeComponent();
         }

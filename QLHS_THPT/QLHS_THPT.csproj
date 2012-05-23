@@ -118,11 +118,11 @@
     <Compile Include="frmHocSinh.Designer.cs">
       <DependentUpon>frmHocSinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMonHoc.cs">
       <SubType>Form</SubType>
@@ -136,11 +136,11 @@
     <Compile Include="frmPhanLop.Designer.cs">
       <DependentUpon>frmPhanLop.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSearchHocSinh.cs">
+    <Compile Include="frmTimHocSinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSearchHocSinh.Designer.cs">
-      <DependentUpon>frmSearchHocSinh.cs</DependentUpon>
+    <Compile Include="frmTimHocSinh.Designer.cs">
+      <DependentUpon>frmTimHocSinh.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Report\DTO_TongKetHocKy.cs" />
@@ -198,14 +198,14 @@
     <EmbeddedResource Include="frmHocSinh.resx">
       <DependentUpon>frmHocSinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPhanLop.resx">
       <DependentUpon>frmPhanLop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSearchHocSinh.resx">
-      <DependentUpon>frmSearchHocSinh.cs</DependentUpon>
+    <EmbeddedResource Include="frmTimHocSinh.resx">
+      <DependentUpon>frmTimHocSinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\rptBangDiemHocKy.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

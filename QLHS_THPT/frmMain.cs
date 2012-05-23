@@ -8,7 +8,7 @@ namespace QLHS
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private frmLogin _fLogin = null;
+        private frmDangNhap _fLogin = null;
         private NguoiDungBUS _nguoiDungBUS;
         private frmDoiMatKhau _frmDoiMK = null;
 
@@ -144,7 +144,7 @@ namespace QLHS
             EnableAllMenu(false);
 
             if(_fLogin == null || _fLogin.IsDisposed)
-                 _fLogin = new frmLogin();
+                 _fLogin = new frmDangNhap();
             // Set datasource listbox trên form login
             _fLogin.listBoxControlNguoiDung.DataSource = _nguoiDungBUS.Lay_DT_NguoiDung_DangNhap();
             _fLogin.listBoxControlNguoiDung.DisplayMember = "TenGiaoVien";
@@ -236,7 +236,7 @@ namespace QLHS
 
         private void barBtnTimKiemHocSinh_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmSearchHocSinh>();
+            ShowMDIChildForm<frmTimHocSinh>();
         }
 
         private void barButtonItemNhapDiemMonHoc_ItemClick(object sender, ItemClickEventArgs e)
