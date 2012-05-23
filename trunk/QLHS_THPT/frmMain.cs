@@ -348,5 +348,10 @@ namespace QLHS
                 _frmQLNguoiDung = new frmQLNguoiDung();
             _frmQLNguoiDung.ShowDialog();
         }
+
+        private void barBtnKhaiBaoNamHoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

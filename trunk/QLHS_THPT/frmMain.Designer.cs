@@ -219,6 +219,7 @@
             toolTipItem2.Text = "Khai báo các thông tin của năm học mới.";
             superToolTip2.Items.Add(toolTipItem2);
             this.barBtnKhaiBaoNamHoc.SuperTip = superToolTip2;
+            this.barBtnKhaiBaoNamHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnKhaiBaoNamHoc_ItemClick);
             // 
             // barBtnQuanLyNamHoc
             // 
@@ -272,7 +273,6 @@
             toolTipItem7.Text = "Quy định các hệ số điểm từng học kỳ của các môn học.";
             superToolTip7.Items.Add(toolTipItem7);
             this.barBtnHeSoMonHoc.SuperTip = superToolTip7;
-            
             // 
             // barButtonItem3
             // 
