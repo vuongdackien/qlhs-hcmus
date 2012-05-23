@@ -128,7 +128,7 @@ namespace QLHS.DAL
         { AddNewRow(dr); }
         public DataRow GetNewRow()
         { return GetNewRow(); }
-        public bool KiemtratontaiGiaoVien(GiaoVienDTO GV)
+        public bool KTTTGiaoVien(GiaoVienDTO GV)
         {
             string sql = string.Format("SELECT count(*) as SoLuong FROM GiaoVien WHERE MaGiaoVien = '{0}'", GV.MaGiaoVien);
             return (int)ExecuteScalar(sql) == 1;
