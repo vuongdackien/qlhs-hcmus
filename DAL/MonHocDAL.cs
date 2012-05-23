@@ -131,7 +131,7 @@ namespace QLHS.DAL
                 monhocDTO.TenMonHoc = Convert.ToString(dr["TenMonHoc"]);
                 monhocDTO.SoTiet = Convert.ToInt16(dr["SoTiet"]);
                 monhocDTO.HeSo = Convert.ToInt16(dr["HeSo"]);
-                monhocDTO.TrangThai=Convert.ToBoolean(dr["TrangThai"]);
+                monhocDTO.TrangThai=Convert.ToInt16(dr["TrangThai"]);
                 listMonHocDTO.Add(monhocDTO);
             }
             CloseConnect();
