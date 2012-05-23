@@ -10,5 +10,6 @@ namespace QLHS.DTO
         public string TenMonHoc { get; set; }
         public int HeSo { get; set; }
         public int SoTiet { get; set; }
+        public bool TrangThai { get; set }
     }
 }
