@@ -76,28 +76,8 @@ namespace QLHS.DAL
             dt = GetTable(sql, true);
             return dt;
         }
-        /// <Tìm kiếm với 2 điều kiện>
-        /// 
-        /// </summary>
-        /// <param name="i">Các case</param>
-        /// <param name="DK">Điều kiện truyền vào</param>
-        /// <returns></returns>
-      /*  public DataTable TableGiaoVien(int i, String DK)
-        {
-            string sql = "";
-            switch (i)
-            {
-                case 1: sql = string.Format("select * from MonHoc where MaMonHoc like N'%{0}%' ", DK); break;
-                case 2: sql = string.Format("select * from MonHoc where TenMonHoc like N'%{0}%' ", DK); break;
-                case 3: sql = string.Format("select * from MonHoc where SoTiet like N'%{0}%' ", DK); break;
-                case 4: sql = string.Format("select * from MonHoc where HeSo like N'%{0}%' ", DK); break;
-
-            }
-
-            DataTable dt = new DataTable();
-            dt = GetTable(sql, true);
-            return dt;
-        }*/
+       
+      
         public MonHoc_HeSoDTO Lay_HeSoMonHoc()
         {
             string sql = "SELECT MaMonHoc, HeSo FROM MONHOC WHERE TrangThai = 1";
@@ -138,7 +118,7 @@ namespace QLHS.DAL
             if(chiLayCacMonDangHoc)
                 sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo FROM MONHOC WHERE TrangThai = 1 ORDER BY TenMonHoc ASC");
             else
-                sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo FROM MONHOC ORDER BY TenMonHoc");
+                sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo, TrangThai FROM MONHOC ORDER BY TenMonHoc");
 
             OpenConnect();
             List<MonHocDTO> listMonHocDTO = new List<MonHocDTO>();
@@ -151,6 +131,7 @@ namespace QLHS.DAL
                 monhocDTO.TenMonHoc = Convert.ToString(dr["TenMonHoc"]);
                 monhocDTO.SoTiet = Convert.ToInt16(dr["SoTiet"]);
                 monhocDTO.HeSo = Convert.ToInt16(dr["HeSo"]);
+                monhocDTO.TrangThai=Convert.ToBoolean(dr["TrangThai"]);
                 listMonHocDTO.Add(monhocDTO);
             }
             CloseConnect();
