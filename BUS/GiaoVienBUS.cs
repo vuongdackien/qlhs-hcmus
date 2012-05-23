@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Text.RegularExpressions;
 using System.Data;
 using QLHS.DTO;
 using QLHS.DAL;
@@ -12,10 +12,38 @@ namespace QLHS.BUS
         GiaoVienDAL GVDAL=new GiaoVienDAL();
         DataTable dt;
         GiaoVienDTO GV;
-       
-        public void ThemGiaoVien(GiaoVienDTO GV)
+       public string Doichuoi(string input, string oldValue, string newValue, bool matchCase)
         {
-            GVDAL.ThemGiaoVien(GV);
+
+            RegexOptions regexOption = RegexOptions.None;
+
+            if (!matchCase)
+            {
+
+                regexOption = RegexOptions.IgnoreCase;
+
+            }
+
+            Regex regex = new Regex(oldValue, regexOption);
+
+            input = regex.Replace(input, newValue);
+
+            return input;
+
+        }
+        
+        public int ThemGiaoVien(GiaoVienDTO GV)
+        {
+            if (KiemTonTaiGiaoVien(GV))
+            {
+                return 0;
+            }
+            else
+            {
+                int kq = GVDAL.ThemGiaoVien(GV);
+                return kq;
+            }
+            
         }
         public void XoaGiaoVien(string MaGV)
         {
@@ -28,6 +56,9 @@ namespace QLHS.BUS
         #region Tạo bảng các giáo viên
         /// <summary>
         /// Tạo bảng các giáo viên có điều kiện
+        /// 1:Tìm theo tên
+        /// 2:Tìm theo mã
+        /// 3:Tìm theo cả hai
         /// </summary>
         /// <param name="DK"> truyền điều kiện để lọc các giáo  viên tương ứng</param>
         /// <returns></returns>
@@ -67,7 +98,7 @@ namespace QLHS.BUS
         /// 
         /// </summary>
         /// <param name="MaKH"></param>
-        public void NewRows(string MaKH)
+        public void NewRows(string MAGV)
         {
             GV = new GiaoVienDTO();
             DataRow dr = GVDAL.GetNewRow();
