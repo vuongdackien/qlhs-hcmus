@@ -33,6 +33,7 @@ namespace QLHS.DAL
             string sql = string.Format("SELECT count(*) as SoLuong FROM MonHoc WHERE MaMonHoc = '{0}'",MHDTO.MaMonHoc );
             return (int)ExecuteScalar(sql)==1 ;
         }
+
         /// <summary>
         /// Lấy Datatable danh sách môn học
         /// </summary>
@@ -48,6 +49,54 @@ namespace QLHS.DAL
 
             return GetTable(sql);
         }
+        /// <Tìm giáo viên theo điều kiện cho trước>
+        /// Tìm với 1 điều kiện
+        /// </summary>
+        /// <param name="i">Các case thực hiện</param>
+        /// 1: Tìm theo mã môn học
+        /// 2: Tìm theo tên môn học
+        /// 3: Tìm theo số tiết
+        /// 4: Tìm theo hệ số
+        /// <param name="DK">Điều kiện truyền vào</param>
+        /// <returns></returns>
+        public DataTable TableGiaoVien(int i, String DK)
+        {
+            string sql = "";
+            switch (i)
+            {
+                case 1: sql = string.Format("select * from MonHoc where MaMonHoc like N'%{0}%' ", DK); break;
+                case 2: sql = string.Format("select * from MonHoc where TenMonHoc like N'%{0}%' ", DK); break;
+                case 3: sql = string.Format("select * from MonHoc where SoTiet like N'%{0}%' ", DK); break;
+                case 4: sql = string.Format("select * from MonHoc where HeSo like N'%{0}%' ", DK); break;
+                
+            }
+
+            DataTable dt = new DataTable();
+            dt = GetTable(sql, true);
+            return dt;
+        }
+        /// <Tìm kiếm với 2 điều kiện>
+        /// 
+        /// </summary>
+        /// <param name="i">Các case</param>
+        /// <param name="DK">Điều kiện truyền vào</param>
+        /// <returns></returns>
+      /*  public DataTable TableGiaoVien(int i, String DK)
+        {
+            string sql = "";
+            switch (i)
+            {
+                case 1: sql = string.Format("select * from MonHoc where MaMonHoc like N'%{0}%' ", DK); break;
+                case 2: sql = string.Format("select * from MonHoc where TenMonHoc like N'%{0}%' ", DK); break;
+                case 3: sql = string.Format("select * from MonHoc where SoTiet like N'%{0}%' ", DK); break;
+                case 4: sql = string.Format("select * from MonHoc where HeSo like N'%{0}%' ", DK); break;
+
+            }
+
+            DataTable dt = new DataTable();
+            dt = GetTable(sql, true);
+            return dt;
+        }*/
         public MonHoc_HeSoDTO Lay_HeSoMonHoc()
         {
             string sql = "SELECT MaMonHoc, HeSo FROM MONHOC WHERE TrangThai = 1";
@@ -105,6 +154,11 @@ namespace QLHS.DAL
             }
             CloseConnect();
             return listMonHocDTO;
-        }    
+        }
+        public bool KiemtratontaiMonhoc(MonHocDTO MH)
+        {
+            string sql = string.Format("SELECT count(*) as SoLuong FROM GiaoVien WHERE MaGiaoVien = '{0}'", MH.MaMonHoc);
+            return (int)ExecuteScalar(sql) == 1;
+        }
     }
 }
