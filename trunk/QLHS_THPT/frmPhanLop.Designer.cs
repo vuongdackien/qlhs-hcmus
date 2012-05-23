@@ -30,6 +30,7 @@
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.checkEditPhanLopHocSinhMoi = new DevExpress.XtraEditors.CheckEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.comboBoxEditLopMoi = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -44,7 +45,6 @@
             this.comboBoxEditKhoi = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEditNamHoc = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.gridControlDSHocSinh = new DevExpress.XtraGrid.GridControl();
             this.gridViewDSHocSinh = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -53,7 +53,7 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.gridControlDSHocSinhMoi = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewDSHocSinhMoi = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,6 +66,7 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditPhanLopHocSinhMoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditLopMoi.Properties)).BeginInit();
@@ -80,7 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDSHocSinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDSHocSinhMoi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewDSHocSinhMoi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
@@ -98,14 +99,23 @@
             // 
             // panelControl5
             // 
+            this.panelControl5.Controls.Add(this.checkEditPhanLopHocSinhMoi);
             this.panelControl5.Controls.Add(this.groupControl2);
             this.panelControl5.Controls.Add(this.groupControl1);
-            this.panelControl5.Controls.Add(this.labelControl7);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(2, 2);
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(1003, 160);
             this.panelControl5.TabIndex = 4;
+            // 
+            // checkEditPhanLopHocSinhMoi
+            // 
+            this.checkEditPhanLopHocSinhMoi.Location = new System.Drawing.Point(432, 58);
+            this.checkEditPhanLopHocSinhMoi.Name = "checkEditPhanLopHocSinhMoi";
+            this.checkEditPhanLopHocSinhMoi.Properties.Caption = "Phân Lớp Cho Học Sinh Mới";
+            this.checkEditPhanLopHocSinhMoi.Size = new System.Drawing.Size(166, 19);
+            this.checkEditPhanLopHocSinhMoi.TabIndex = 15;
+            this.checkEditPhanLopHocSinhMoi.CheckedChanged += new System.EventHandler(this.checkEditPhanLopHocSinhMoi_CheckedChanged);
             // 
             // groupControl2
             // 
@@ -245,15 +255,6 @@
             this.comboBoxEditNamHoc.TabIndex = 5;
             this.comboBoxEditNamHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHoc_SelectedIndexChanged);
             // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Location = new System.Drawing.Point(390, 44);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(234, 48);
-            this.labelControl7.TabIndex = 12;
-            this.labelControl7.Text = "CHUYỂN LỚP";
-            // 
             // labelControl5
             // 
             this.labelControl5.Location = new System.Drawing.Point(542, -14);
@@ -323,24 +324,25 @@
             // 
             this.gridControlDSHocSinhMoi.Dock = System.Windows.Forms.DockStyle.Right;
             this.gridControlDSHocSinhMoi.Location = new System.Drawing.Point(656, 164);
-            this.gridControlDSHocSinhMoi.MainView = this.gridView2;
+            this.gridControlDSHocSinhMoi.MainView = this.gridViewDSHocSinhMoi;
             this.gridControlDSHocSinhMoi.Name = "gridControlDSHocSinhMoi";
             this.gridControlDSHocSinhMoi.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit2});
             this.gridControlDSHocSinhMoi.Size = new System.Drawing.Size(351, 263);
             this.gridControlDSHocSinhMoi.TabIndex = 2;
             this.gridControlDSHocSinhMoi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.gridViewDSHocSinhMoi});
             // 
-            // gridView2
+            // gridViewDSHocSinhMoi
             // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridViewDSHocSinhMoi.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6});
-            this.gridView2.GridControl = this.gridControlDSHocSinhMoi;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridViewDSHocSinhMoi.GridControl = this.gridControlDSHocSinhMoi;
+            this.gridViewDSHocSinhMoi.Name = "gridViewDSHocSinhMoi";
+            this.gridViewDSHocSinhMoi.OptionsView.ShowGroupPanel = false;
+            this.gridViewDSHocSinhMoi.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewDSHocSinhMoi_FocusedRowChanged);
             // 
             // gridColumn4
             // 
@@ -404,7 +406,7 @@
             // simpleButtonChuyenLop
             // 
             this.simpleButtonChuyenLop.Image = global::QLHS.Properties.Resources.chuyenlop;
-            this.simpleButtonChuyenLop.Location = new System.Drawing.Point(86, 37);
+            this.simpleButtonChuyenLop.Location = new System.Drawing.Point(86, 35);
             this.simpleButtonChuyenLop.Name = "simpleButtonChuyenLop";
             this.simpleButtonChuyenLop.Size = new System.Drawing.Size(117, 35);
             this.simpleButtonChuyenLop.TabIndex = 0;
@@ -428,7 +430,7 @@
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
-            this.panelControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditPhanLopHocSinhMoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
@@ -445,7 +447,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDSHocSinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDSHocSinhMoi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewDSHocSinhMoi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
@@ -459,7 +461,7 @@
         private DevExpress.XtraGrid.GridControl gridControlDSHocSinh;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewDSHocSinh;
         private DevExpress.XtraGrid.GridControl gridControlDSHocSinhMoi;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewDSHocSinhMoi;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditLop;
@@ -471,7 +473,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditLopMoi;
@@ -489,6 +490,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButtonChuyenLop;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
+        private DevExpress.XtraEditors.CheckEdit checkEditPhanLopHocSinhMoi;
 
     }
 }
