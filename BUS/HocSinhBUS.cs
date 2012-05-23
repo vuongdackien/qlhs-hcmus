@@ -118,5 +118,13 @@ namespace QLHS.BUS
         {
             return _hocSinhDAL.LayDT_TenHocSinh();
         }
+        /// <summary>
+        /// lấy DataTable học sinh chưa có lớp
+        /// </summary>
+        /// <returns>DataTable</returns>
+        public DataTable LayDT_HS_HocSinh()
+        {
+            return _hocSinhDAL.LayDT_HS_HocSinh();
+        }
     }
 }
