@@ -46,6 +46,7 @@
             this.simpleButtonSuaMonHoc = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButtonTimKiem = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.radioButtonSoTiet = new System.Windows.Forms.RadioButton();
@@ -114,7 +115,7 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(262, 708);
             this.panelControl1.TabIndex = 0;
-            this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
+            
             // 
             // simpleButtonLuu
             // 
@@ -251,6 +252,7 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.simpleButtonTimKiem);
             this.panelControl2.Controls.Add(this.label2);
             this.panelControl2.Controls.Add(this.labelControl8);
             this.panelControl2.Controls.Add(this.radioButtonSoTiet);
@@ -262,8 +264,17 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(262, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(437, 189);
+            this.panelControl2.Size = new System.Drawing.Size(489, 189);
             this.panelControl2.TabIndex = 1;
+            // 
+            // simpleButtonTimKiem
+            // 
+            this.simpleButtonTimKiem.Location = new System.Drawing.Point(320, 124);
+            this.simpleButtonTimKiem.Name = "simpleButtonTimKiem";
+            this.simpleButtonTimKiem.Size = new System.Drawing.Size(102, 25);
+            this.simpleButtonTimKiem.TabIndex = 7;
+            this.simpleButtonTimKiem.Text = "Tìm kiếm";
+            this.simpleButtonTimKiem.Click += new System.EventHandler(this.simpleButtonTimKiem_Click);
             // 
             // label2
             // 
@@ -276,7 +287,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(308, 88);
+            this.labelControl8.Location = new System.Drawing.Point(308, 81);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(70, 13);
             this.labelControl8.TabIndex = 3;
@@ -295,7 +306,7 @@
             // 
             // comboBoxEditTKHeSo
             // 
-            this.comboBoxEditTKHeSo.Location = new System.Drawing.Point(416, 85);
+            this.comboBoxEditTKHeSo.Location = new System.Drawing.Point(410, 74);
             this.comboBoxEditTKHeSo.Name = "comboBoxEditTKHeSo";
             this.comboBoxEditTKHeSo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -315,7 +326,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(35, 88);
+            this.labelControl7.Location = new System.Drawing.Point(35, 81);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(96, 13);
             this.labelControl7.TabIndex = 2;
@@ -323,7 +334,7 @@
             // 
             // textEditTK
             // 
-            this.textEditTK.Location = new System.Drawing.Point(163, 81);
+            this.textEditTK.Location = new System.Drawing.Point(163, 74);
             this.textEditTK.Name = "textEditTK";
             this.textEditTK.Size = new System.Drawing.Size(100, 20);
             this.textEditTK.TabIndex = 0;
@@ -352,7 +363,7 @@
             this.repositoryItemCheckEdit1,
             this.repositoryItemTextEdit3,
             this.repositoryItemTextEdit4});
-            this.gridControlMonHoc.Size = new System.Drawing.Size(437, 441);
+            this.gridControlMonHoc.Size = new System.Drawing.Size(489, 441);
             this.gridControlMonHoc.TabIndex = 2;
             this.gridControlMonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMonHoc});
@@ -451,7 +462,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl3.Location = new System.Drawing.Point(262, 629);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(437, 79);
+            this.panelControl3.Size = new System.Drawing.Size(489, 79);
             this.panelControl3.TabIndex = 3;
             // 
             // simpleButtonloaddulieu
@@ -476,7 +487,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 708);
+            this.ClientSize = new System.Drawing.Size(751, 708);
             this.Controls.Add(this.gridControlMonHoc);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl2);
@@ -554,5 +565,6 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditTrangThai;
         private System.Windows.Forms.Label label2;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonTimKiem;
     }
 }
