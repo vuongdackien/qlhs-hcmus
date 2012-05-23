@@ -27,7 +27,7 @@ namespace QLHS.DAL
         public void CapNhatGiaoVien(GiaoVienDTO GV)
         {
             string sql = string.Format("update GiaoVien set TenGiaoVien=N'{0}'"
-                                                     + "where madv={1} ", GV.TenGiaoVien, GV.MaGiaoVien);
+                                                     + "where MaGiaoVien='{1}' ", GV.TenGiaoVien, GV.MaGiaoVien);
             ExecuteQuery(sql);
         }
         #region Tạo bảng các giáo viên
@@ -62,7 +62,7 @@ namespace QLHS.DAL
             {
                 case 1: sql = string.Format("select * from GiaoVien where TenGiaoVien like N'%{0}%' ", DK); break;
                 case 2: sql = string.Format("select * from GiaoVien where MaGiaoVien like N'%{0}%' ", DK); break;
-                case 3: sql = sql = string.Format("select * from GiaoVien where MaGiaoVien like N'%{0}%' or Ten like N'%{1}%' ", DK, DK); break;
+                case 3: sql = sql = string.Format("select * from GiaoVien where MaGiaoVien like N'%{0}%' or TenGiaoVien like N'%{1}%' ", DK, DK); break;
             }
             
             DataTable dt = new DataTable();
