@@ -19,8 +19,7 @@ namespace QLHS
         private HocSinhDTO _hocSinhDTO;
         private PhanLopBUS _PhanLopBUS;
         private QuyDinhBUS _quyDinhBUS;
-        private int dong_ht = -1;
-        object MaHocSinh_Focus;
+        object MaHocSinh_Focus, MaHocSinhMoi_Focus;
         public frmPhanLop()
         {
             InitializeComponent();
@@ -85,14 +84,27 @@ namespace QLHS
 
         private void frmChuyenLop_Load(object sender, EventArgs e)
         {
-            
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc, _NamHocBUS.LayDTNamHocCu(),
-                                                "MaNamHoc", "TenNamHoc", 0);
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoi, _KhoiBUS.LayDTKhoi(),
-                                                "MaKhoi", "TenKhoi", 0);
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHocMoi, _NamHocBUS.LayDTNamHocMoi(),
-                                                "MaNamHoc", "TenNamHoc", 0);
-            
+            HienThi(checkEditPhanLopHocSinhMoi.Checked);
+            if (checkEditPhanLopHocSinhMoi.Checked == true)
+            {
+                gridControlDSHocSinh.DataSource = _HocSinhBUS.LayDT_HS_HocSinh();
+                for (int i = 0; i < gridViewDSHocSinh.RowCount; i++)
+                {
+                    gridViewDSHocSinh.SetFocusedRowCellValue("STT", i + 1);
+                }
+                Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoiMoi, _KhoiBUS.LayDTKhoi_10(), "MaKhoi", "TenKhoi", 0);
+            }
+            else
+            {
+                Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc, _NamHocBUS.LayDTNamHocCu(),
+                                                    "MaNamHoc", "TenNamHoc", 0);
+                Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoi, _KhoiBUS.LayDTKhoi(),
+                                                    "MaKhoi", "TenKhoi", 0);
+                Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHocMoi, _NamHocBUS.LayDTNamHocMoi(),
+                                                    "MaNamHoc", "TenNamHoc", 0);
+            }
+            simpleButtonChuyenLop.Enabled = true;
+            simpleButtonChuyenLai.Enabled = true;
             
         }
        
@@ -133,6 +145,7 @@ namespace QLHS
             MaHocSinh_Focus = this.gridViewDSHocSinh.GetRowCellValue(e.FocusedRowHandle, "MaHocSinh").ToString();
             
             simpleButtonChuyenLop.Enabled = true;
+            simpleButtonChuyenLai.Enabled = false;
             
         }
 
@@ -164,6 +177,26 @@ namespace QLHS
                 }
             }
         }
-       
+
+        private void gridViewDSHocSinhMoi_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            
+            if (e.FocusedRowHandle < 0)
+                return;
+
+            MaHocSinhMoi_Focus = this.gridViewDSHocSinhMoi.GetRowCellValue(e.FocusedRowHandle, "MaHocSinh").ToString();
+            simpleButtonChuyenLop.Enabled = false;
+            simpleButtonChuyenLai.Enabled = true;
+        }
+
+        private void checkEditPhanLopHocSinhMoi_CheckedChanged(object sender, EventArgs e)
+        {
+            frmChuyenLop_Load(sender,e);
+        }
+        void HienThi(bool xl)
+        {
+            comboBoxEditKhoi.Enabled = comboBoxEditNamHoc.Enabled = comboBoxEditLop.Enabled = !xl;
+
+        }
     }
 }
