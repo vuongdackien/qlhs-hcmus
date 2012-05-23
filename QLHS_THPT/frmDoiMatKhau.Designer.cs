@@ -55,6 +55,7 @@
             // 
             this.textEditMatKhauCu.Location = new System.Drawing.Point(39, 50);
             this.textEditMatKhauCu.Name = "textEditMatKhauCu";
+            this.textEditMatKhauCu.Properties.UseSystemPasswordChar = true;
             this.textEditMatKhauCu.Size = new System.Drawing.Size(161, 20);
             this.textEditMatKhauCu.TabIndex = 2;
             // 
@@ -78,6 +79,7 @@
             // 
             this.textEditMatKhauMoi.Location = new System.Drawing.Point(39, 92);
             this.textEditMatKhauMoi.Name = "textEditMatKhauMoi";
+            this.textEditMatKhauMoi.Properties.UseSystemPasswordChar = true;
             this.textEditMatKhauMoi.Size = new System.Drawing.Size(161, 20);
             this.textEditMatKhauMoi.TabIndex = 4;
             // 
@@ -93,6 +95,7 @@
             // 
             this.textEditReMatKhauMoi.Location = new System.Drawing.Point(39, 137);
             this.textEditReMatKhauMoi.Name = "textEditReMatKhauMoi";
+            this.textEditReMatKhauMoi.Properties.UseSystemPasswordChar = true;
             this.textEditReMatKhauMoi.Size = new System.Drawing.Size(161, 20);
             this.textEditReMatKhauMoi.TabIndex = 6;
             // 
