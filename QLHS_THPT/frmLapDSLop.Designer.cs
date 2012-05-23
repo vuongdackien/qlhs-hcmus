@@ -99,6 +99,7 @@
             this.simpleButtonDong.Size = new System.Drawing.Size(109, 35);
             this.simpleButtonDong.TabIndex = 20;
             this.simpleButtonDong.Text = "Đóng (Alt+&X)";
+            this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
             // 
             // simpleButtonThemMoi
             // 
