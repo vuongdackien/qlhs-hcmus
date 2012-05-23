@@ -8,7 +8,7 @@ namespace QLHS
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        private frmDangNhap _fLogin = null;
+        private frmLogin _fLogin = null;
         private NguoiDungBUS _nguoiDungBUS;
         private frmDoiMatKhau _frmDoiMK = null;
 
@@ -74,7 +74,7 @@ namespace QLHS
             barBtnQuanLyNamHoc.Enabled = EnableAllMenu;
             barBtnHeSoMonHoc.Enabled = EnableAllMenu;
 
-            barBtnHoSoHocSinh.Enabled = EnableAllMenu;
+            barBtnTiepNhanHocSinh.Enabled = EnableAllMenu;
             barBtnTimKiemHocSinh.Enabled = EnableAllMenu;
             barBtnPhanLopHocSinh.Enabled = EnableAllMenu;
 
@@ -122,7 +122,7 @@ namespace QLHS
             barBtnQuanLyNamHoc.Enabled = false;
             barBtnHeSoMonHoc.Enabled = false;
 
-            barBtnHoSoHocSinh.Enabled = false;
+            barBtnTiepNhanHocSinh.Enabled = false;
             barBtnPhanLopHocSinh.Enabled = false;
 
             barBtnHoSoGiaoVien.Enabled = false;
@@ -144,7 +144,7 @@ namespace QLHS
             EnableAllMenu(false);
 
             if(_fLogin == null || _fLogin.IsDisposed)
-                 _fLogin = new frmDangNhap();
+                 _fLogin = new frmLogin();
             // Set datasource listbox trên form login
             _fLogin.listBoxControlNguoiDung.DataSource = _nguoiDungBUS.Lay_DT_NguoiDung_DangNhap();
             _fLogin.listBoxControlNguoiDung.DisplayMember = "TenGiaoVien";
@@ -222,6 +222,56 @@ namespace QLHS
         }
         #endregion
 
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            //ShowMDIChildForm<frmHocSinh>();
+        }
+        
+       
+        
+        private void barBtnHoSoHocSinh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmHocSinh>();
+        }
+
+        private void barBtnTimKiemHocSinh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmSearchHocSinh>();
+        }
+
+        private void barButtonItemNhapDiemMonHoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmBangDiemMonHoc>();
+        }
+
+        private void barBtnHoSoGiaoVien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmBC_TongKetMon>();
+        }
+
+        private void barBtnTimKiemGiaoVien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void barBtnPhanCongChuyenMon_ItemClick(object sender, ItemClickEventArgs e)
+        {
+           
+        }
+
+        private void barBtnTongKetMonHoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmBC_TongKetMon>();
+        }
+
+        private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmBC_TongKetHocKy>();
+        }
+        private void barBtnPhanLopHocSinh_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmPhanLop>();
+        }
         #region Đổi mật khẩu người dùng
         private void barButtonItemDoiMatKhau_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -234,7 +284,7 @@ namespace QLHS
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
-            if (_frmDoiMK.textEditMatKhauCu.Text == "")
+              if (_frmDoiMK.textEditMatKhauCu.Text == "")
             {
                 Utilities.MessageboxUtilities.MessageError("Bạn chưa nhập mật khẩu cũ!");
                 _frmDoiMK.textEditMatKhauCu.Focus();
@@ -278,7 +328,7 @@ namespace QLHS
                 else
                     _frmDoiMK.Dispose();
             }
-
+          
         }
 
         void btnThoatChangePass_Click(object sender, EventArgs e)
@@ -287,57 +337,9 @@ namespace QLHS
         }
         #endregion
 
-        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        private void barButtonItemDSLop_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //ShowMDIChildForm<frmHocSinh>();
+            ShowMDIChildForm<frmLapDSLop>();
         }
-        
-       
-        
-        private void barBtnHoSoHocSinh_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            ShowMDIChildForm<frmHocSinh>();
-        }
-
-        private void barBtnTimKiemHocSinh_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            ShowMDIChildForm<frmTimHocSinh>();
-        }
-
-        private void barButtonItemNhapDiemMonHoc_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            ShowMDIChildForm<frmBangDiemMonHoc>();
-        }
-
-        private void barBtnHoSoGiaoVien_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            ShowMDIChildForm<frmBC_TongKetMon>();
-        }
-
-        private void barBtnTimKiemGiaoVien_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            
-        }
-
-        private void barBtnPhanCongChuyenMon_ItemClick(object sender, ItemClickEventArgs e)
-        {
-           
-        }
-
-        private void barBtnTongKetMonHoc_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            ShowMDIChildForm<frmBC_TongKetMon>();
-        }
-
-        private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            ShowMDIChildForm<frmBC_TongKetHocKy>();
-        }
-        private void barBtnPhanLopHocSinh_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            ShowMDIChildForm<frmPhanLop>();
-        }
-     
-
     }
 }
