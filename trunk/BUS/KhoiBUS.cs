@@ -28,6 +28,22 @@ namespace QLHS.BUS
             }
             return dataTable;
         }
+        /// <summary>
+        /// Lấy DataTable Khối 10
+        /// </summary>
+        /// <returns>DataTable</returns>
+        public DataTable LayDTKhoi_10()
+        {
+
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("MaKhoi");
+            dataTable.Columns.Add("TenKhoi");
+            DataRow dr = dataTable.NewRow();
+            dr["MaKhoi"] = 10;
+            dr["TenKhoi"] = "Khối " + 10;
+            dataTable.Rows.Add(dr);
+            return dataTable;
+        }
         
         public DataTable LayDTKhoi_PL(string MaKhoi)
         {
