@@ -115,7 +115,7 @@ namespace QLHS.BUS
         }
         public bool KiemTonTaiGiaoVien(GiaoVienDTO GV)
         {
-           return _giaoVienDAL.KiemtratontaiGiaoVien(GV);
+           return _giaoVienDAL.KTTTGiaoVien(GV);
         }
 
     }
