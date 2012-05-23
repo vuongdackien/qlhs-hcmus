@@ -60,5 +60,19 @@ namespace QLHS.BUS
         {
             return _MonHocDAL.LayDT_DanhSach_MonHoc(trangthai);
         }
+        /// <summary>
+        /// 1:Tìm theo mã
+        /// 2:Tìm theo tên
+        /// 3:Tìm theo số tiết
+        /// 4:Tìm theo hệ số
+        /// 5:Tìm theo trang thái
+        /// </summary>
+        /// <param name="k"></param>
+        /// <param name="Dk"></param>
+        /// <returns></returns>
+        public DataTable Table_MonHoc(int k,string Dk)
+        {
+            return _MonHocDAL.TableGiaoVien(k,Dk);
+        }
     }
 }
