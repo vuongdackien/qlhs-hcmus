@@ -46,6 +46,9 @@ namespace QLHS
             Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoi,
                                                         _khoiBUS.LayDTKhoi(),
                                                         "MaKhoi", "TenKhoi", 0);
+            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditGVCN,
+                                                                   _giaoVienBUS.LayDT_DanhSachGiaoVien(),
+                                                                   "MaGiaoVien", "TenGiaoVien", 0);
         }
 
         private void comboBoxEditNamHoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -55,6 +58,8 @@ namespace QLHS
 
         private void comboBoxEditKhoi_SelectedIndexChanged(object sender, EventArgs e)
         {
+            textEditTenLop.Properties.Mask.EditMask = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi)
+                                                     +"[A-H][0-9][0-9]";
             this.HienThi_DSLop();
         }
 
@@ -62,7 +67,22 @@ namespace QLHS
         {
             if (comboBoxEditNamHoc.SelectedItem == null || comboBoxEditKhoi.SelectedItem == null)
                 return;
-            
+        }
+
+        private void gridViewLop_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+           textEditmaLop.Text = gridViewLop.GetRowCellValue(gridViewLop.FocusedRowHandle, "MaLop").ToString();
+           textEditTenLop.Text = gridViewLop.GetRowCellValue(gridViewLop.FocusedRowHandle, "TenLop").ToString();
+           Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditGVCN,
+               gridViewLop.GetRowCellValue(gridViewLop.FocusedRowHandle, "MaGiaoVien").ToString()
+            );
+
+        }
+
+        private void textEditTenLop_InvalidValue(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
+        {
+            string MaKhoi = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi);
+            e.ErrorText = "Tên lớp không hợp lệ. Tên lớp có dạng " + MaKhoi + "[A-H][0-9][0-9]. VD: " + MaKhoi + "B02";
         }
 
     }

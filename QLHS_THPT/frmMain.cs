@@ -7,7 +7,7 @@ using QLHS.BUS;
 namespace QLHS
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
-    {
+    { 
         private frmDangNhap _fLogin = null;
         private NguoiDungBUS _nguoiDungBUS;
         private frmDoiMatKhau _frmDoiMK = null;
