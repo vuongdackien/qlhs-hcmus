@@ -153,7 +153,7 @@ namespace QLHS
             _fLogin.listBoxControlNguoiDung.DataSource = _nguoiDungBUS.Lay_DT_NguoiDung_DangNhap();
             _fLogin.listBoxControlNguoiDung.DisplayMember = "TenGiaoVien";
             _fLogin.listBoxControlNguoiDung.ValueMember = "TenDNhap";
-            _fLogin.ShowDialog();
+            _fLogin.Show();
             // Khi người dùng click Đăng nhập, ta new event handler Click
             _fLogin.simpleButtonDangNhap.Click += new EventHandler(btn_Login_DangNhap_Click);
             _fLogin.simpleButtonThoat.Click += new EventHandler(btn_Login_Thoat_Click);
