@@ -76,7 +76,7 @@ namespace QLHS.DAL
         }
         public bool ChuyenLop_HocSinh(string MaHocSinh,string MaLop)
         {
-            int Stt = Dem_SiSo_Lop(MaLop)+1;
+            int Stt = Lay_STT_TiepTheo(MaLop);
             string sql = "INSERT INTO PHANLOP(Stt,MaHocSinh,MaLop) VALUES("+Stt+",'"+MaHocSinh+"','"+MaLop+"') ";
             return ExecuteQuery(sql) > 0;
         }
