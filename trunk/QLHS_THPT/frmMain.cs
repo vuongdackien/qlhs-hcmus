@@ -153,7 +153,7 @@ namespace QLHS
             _fLogin.listBoxControlNguoiDung.DataSource = _nguoiDungBUS.Lay_DT_NguoiDung_DangNhap();
             _fLogin.listBoxControlNguoiDung.DisplayMember = "TenGiaoVien";
             _fLogin.listBoxControlNguoiDung.ValueMember = "TenDNhap";
-            _fLogin.Show();
+            _fLogin.ShowDialog();
             // Khi người dùng click Đăng nhập, ta new event handler Click
             _fLogin.simpleButtonDangNhap.Click += new EventHandler(btn_Login_DangNhap_Click);
             _fLogin.simpleButtonThoat.Click += new EventHandler(btn_Login_Thoat_Click);
@@ -193,7 +193,7 @@ namespace QLHS
                 return;
             }
             // Trạng thái người dùng
-            if (!Utilities.ObjectUtilities.user.TrangThai)
+            if (Utilities.ObjectUtilities.user.TrangThai == 0)
             {
                 Utilities.MessageboxUtilities.MessageError("Bạn không được phép truy cập! Vui lòng liên hệ người quản trị!");
                 return;
@@ -226,12 +226,70 @@ namespace QLHS
         }
         #endregion
 
-        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        #region Đổi mật khẩu người dùng
+        private void barButtonItemDoiMatKhau_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //ShowMDIChildForm<frmHocSinh>();
+            if (_frmDoiMK == null || _frmDoiMK.IsDisposed)
+                _frmDoiMK = new frmDoiMatKhau();
+            _frmDoiMK.simpleButtonDoiMatKau.Click += new EventHandler(btnDoiMatKhau_Click);
+            _frmDoiMK.simpleButtonThoat.Click += new EventHandler(btnThoatChangePass_Click);
+            _frmDoiMK.Show();
         }
-        
-       
+
+        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            if (_frmDoiMK.textEditMatKhauCu.Text == "")
+            {
+                Utilities.MessageboxUtilities.MessageError("Bạn chưa nhập mật khẩu cũ!");
+                _frmDoiMK.textEditMatKhauCu.Focus();
+                return;
+            }
+            if (_frmDoiMK.textEditMatKhauMoi.Text == "")
+            {
+                Utilities.MessageboxUtilities.MessageError("Bạn chưa nhập mật khẩu mới!");
+                _frmDoiMK.textEditMatKhauMoi.Focus();
+                return;
+            }
+            if (_frmDoiMK.textEditReMatKhauMoi.Text == "")
+            {
+                Utilities.MessageboxUtilities.MessageError("Bạn chưa nhập mật lại khẩu mới!");
+                _frmDoiMK.textEditReMatKhauMoi.Focus();
+                return;
+            }
+            if (_frmDoiMK.textEditMatKhauMoi.Text != _frmDoiMK.textEditReMatKhauMoi.Text)
+            {
+                _frmDoiMK.textEditMatKhauMoi.Focus();
+                Utilities.MessageboxUtilities.MessageError("Mật khẩu nhập lại không hợp lệ!");
+                return;
+            }
+            if (Utilities.ObjectUtilities.user.MatKhau != Utilities.ObjectUtilities.MaHoaMD5(_frmDoiMK.textEditMatKhauCu.Text))
+            {
+                Utilities.MessageboxUtilities.MessageError("Mật khẩu cũ không hợp lệ!");
+                _frmDoiMK.textEditMatKhauCu.Focus();
+                return;
+            }
+            // Change password
+            if (_nguoiDungBUS.DoiMatKhauNguoiDung(Utilities.ObjectUtilities.user.TenDNhap, _frmDoiMK.textEditMatKhauMoi.Text))
+            {
+                // Set mật khẩu mới
+                Utilities.ObjectUtilities.user.MatKhau = Utilities.ObjectUtilities.MaHoaMD5(_frmDoiMK.textEditMatKhauMoi.Text);
+                if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Đổi mật khẩu thành công! Bạn có muốn đăng nhập lại?")
+                     == DialogResult.Yes)
+                {
+                    _frmDoiMK.Dispose();
+                    Login();
+                }
+                else
+                    _frmDoiMK.Dispose();
+            }
+
+        }
+
+        void btnThoatChangePass_Click(object sender, EventArgs e)
+        {
+            _frmDoiMK.Dispose();
+        }
+        #endregion
         
         private void barBtnHoSoHocSinh_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -276,74 +334,19 @@ namespace QLHS
         {
             ShowMDIChildForm<frmPhanLop>();
         }
-        #region Đổi mật khẩu người dùng
-        private void barButtonItemDoiMatKhau_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            if (_frmDoiMK == null || _frmDoiMK.IsDisposed)
-                _frmDoiMK = new frmDoiMatKhau();
-            _frmDoiMK.simpleButtonDoiMatKau.Click += new EventHandler(btnDoiMatKhau_Click);
-            _frmDoiMK.simpleButtonThoat.Click += new EventHandler(btnThoatChangePass_Click);
-            _frmDoiMK.Show();
-        }
-
-        private void btnDoiMatKhau_Click(object sender, EventArgs e)
-        {
-              if (_frmDoiMK.textEditMatKhauCu.Text == "")
-            {
-                Utilities.MessageboxUtilities.MessageError("Bạn chưa nhập mật khẩu cũ!");
-                _frmDoiMK.textEditMatKhauCu.Focus();
-                return;
-            }
-            if (_frmDoiMK.textEditMatKhauMoi.Text == "")
-            {
-                Utilities.MessageboxUtilities.MessageError("Bạn chưa nhập mật khẩu mới!");
-                _frmDoiMK.textEditMatKhauMoi.Focus();
-                return;
-            }
-            if (_frmDoiMK.textEditReMatKhauMoi.Text == "")
-            {
-                Utilities.MessageboxUtilities.MessageError("Bạn chưa nhập mật lại khẩu mới!");
-                _frmDoiMK.textEditReMatKhauMoi.Focus();
-                return;
-            }
-            if (_frmDoiMK.textEditMatKhauMoi.Text != _frmDoiMK.textEditReMatKhauMoi.Text)
-            {
-                _frmDoiMK.textEditMatKhauMoi.Focus();
-                Utilities.MessageboxUtilities.MessageError("Mật khẩu nhập lại không hợp lệ!");
-                return;
-            }
-            if (Utilities.ObjectUtilities.user.MatKhau != Utilities.ObjectUtilities.MaHoaMD5(_frmDoiMK.textEditMatKhauCu.Text))
-            {
-                Utilities.MessageboxUtilities.MessageError("Mật khẩu cũ không hợp lệ!");
-                _frmDoiMK.textEditMatKhauCu.Focus();
-                return;
-            }
-            // Change password
-            if (_nguoiDungBUS.DoiMatKhauNguoiDung(Utilities.ObjectUtilities.user.TenDNhap, _frmDoiMK.textEditMatKhauMoi.Text))
-            {
-                // Set mật khẩu mới
-                Utilities.ObjectUtilities.user.MatKhau = Utilities.ObjectUtilities.MaHoaMD5(_frmDoiMK.textEditMatKhauMoi.Text);
-                if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Đổi mật khẩu thành công! Bạn có muốn đăng nhập lại?")
-                     == DialogResult.Yes)
-                {
-                    _frmDoiMK.Dispose();
-                    Login();
-                }
-                else
-                    _frmDoiMK.Dispose();
-            }
-          
-        }
-
-        void btnThoatChangePass_Click(object sender, EventArgs e)
-        {
-            _frmDoiMK.Dispose();
-        }
-        #endregion
+     
 
         private void barButtonItemDSLop_ItemClick(object sender, ItemClickEventArgs e)
         {
             ShowMDIChildForm<frmLapDSLop>();
+        }
+
+        private frmQLNguoiDung _frmQLNguoiDung = null;
+        private void barButtonItemQuanLyNguoiDung_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (_frmQLNguoiDung == null || _frmQLNguoiDung.IsDisposed)
+                _frmQLNguoiDung = new frmQLNguoiDung();
+            _frmQLNguoiDung.ShowDialog();
         }
     }
 }

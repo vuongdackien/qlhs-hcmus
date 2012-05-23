@@ -9,5 +9,19 @@ namespace QLHS.BUS
 {
     public class LoaiNguoiDungBUS
     {
+        private LoaiNguoiDungDAL _loaiNguoiDungDAL;
+
+        public LoaiNguoiDungBUS()
+        {
+            _loaiNguoiDungDAL = new LoaiNguoiDungDAL();
+        }
+        /// <summary>
+        /// Lấy datatable loại người dùng
+        /// </summary>
+        /// <returns></returns>
+        public DataTable Lay_DT_LoaiNguoiDung()
+        {
+            return _loaiNguoiDungDAL.Lay_DT_LoaiNguoiDung();
+        }
     }
 }

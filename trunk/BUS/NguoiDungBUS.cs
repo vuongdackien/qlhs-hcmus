@@ -48,5 +48,41 @@ namespace QLHS.BUS
         {
             return _nguoiDungDAL.DoiMatKhauNguoiDung(TenDangNhap, NewPassword);
         }
+        /// <summary>
+        /// Kiểm tra tồn tại người dùng
+        /// </summary>
+        /// <param name="MaUser">String: Mã người dùng</param>
+        /// <returns></returns>
+        public bool KiemTraTonTai_NguoiDung(string MaUser)
+        {
+            return _nguoiDungDAL.KiemTraTonTai_NguoiDung(MaUser);
+        }
+        /// <summary>
+        /// Thêm thông tin người dùng
+        /// </summary>
+        /// <param name="user">NguoiDungDTO</param>
+        /// <returns></returns>
+        public bool InsertUser(NguoiDungDTO user)
+        {
+            return _nguoiDungDAL.InsertUser(user);
+        }
+        /// <summary>
+        /// Sửa thông tin người dùng
+        /// </summary>
+        /// <param name="user">NguoiDungDTO</param>
+        /// <returns></returns>
+        public bool UpdateUser(NguoiDungDTO user)
+        {
+            return _nguoiDungDAL.UpdateUser(user);
+        }
+        /// <summary>
+        /// Xóa thông tin người dùng
+        /// </summary>
+        /// <param name="MaUser">String: Mã user</param>
+        /// <returns></returns>
+        public bool DeleteUser(string MaUser)
+        {
+            return _nguoiDungDAL.DeleteUser(MaUser);
+        }
     }
 }

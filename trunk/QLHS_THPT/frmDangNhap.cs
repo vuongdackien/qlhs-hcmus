@@ -15,10 +15,5 @@ namespace QLHS
         {
             InitializeComponent();
         }
-
-        private void simpleButtonThoat_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }

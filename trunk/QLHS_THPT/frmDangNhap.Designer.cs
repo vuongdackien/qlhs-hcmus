@@ -101,7 +101,6 @@
             this.simpleButtonThoat.Size = new System.Drawing.Size(92, 33);
             this.simpleButtonThoat.TabIndex = 8;
             this.simpleButtonThoat.Text = "Thoát";
-            this.simpleButtonThoat.Click += new System.EventHandler(this.simpleButtonThoat_Click);
             // 
             // simpleButtonDangNhap
             // 
@@ -120,7 +119,7 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // frmLogin
+            // frmDangNhap
             // 
             this.AcceptButton = this.simpleButtonDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,7 +137,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmLogin";
+            this.Name = "frmDangNhap";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập hệ thống";

@@ -9,19 +9,25 @@ namespace QLHS.BUS
 {
     public class GiaoVienBUS
     {
-        GiaoVienDAL GVDAL=new GiaoVienDAL();
-        DataTable dt;
-        GiaoVienDTO GV;
-       public string Doichuoi(string input, string oldValue, string newValue, bool matchCase)
+        GiaoVienDAL _giaoVienDAL =new GiaoVienDAL();
+        DataTable _dataTableSource;
+        GiaoVienDTO _giaoVienDTO;
+
+        /// <summary>
+        /// Lấy datatable danh sách giáo viên
+        /// </summary>
+        /// <returns></returns>
+        public DataTable LayDT_DanhSachGiaoVien()
+        {
+            return _giaoVienDAL.LayDT_DanhSach_GiaoVien();
+        }
+        public string Doichuoi(string input, string oldValue, string newValue, bool matchCase)
         {
 
             RegexOptions regexOption = RegexOptions.None;
-
             if (!matchCase)
             {
-
                 regexOption = RegexOptions.IgnoreCase;
-
             }
 
             Regex regex = new Regex(oldValue, regexOption);
@@ -40,20 +46,20 @@ namespace QLHS.BUS
             }
             else
             {
-                int kq = GVDAL.ThemGiaoVien(GV);
+                int kq = _giaoVienDAL.ThemGiaoVien(GV);
                 return kq;
             }
             
         }
         public void XoaGiaoVien(string MaGV)
         {
-            GVDAL.XoaGiaoVien(MaGV);
+            _giaoVienDAL.XoaGiaoVien(MaGV);
         }
         public void CapNhatGiaoVien(GiaoVienDTO GV)
         {
-            GVDAL.CapNhatGiaoVien(GV);
+            _giaoVienDAL.CapNhatGiaoVien(GV);
         }
-        #region Tạo bảng các giáo viên
+
         /// <summary>
         /// Tạo bảng các giáo viên có điều kiện
         /// 1:Tìm theo tên
@@ -65,51 +71,51 @@ namespace QLHS.BUS
         public DataTable TableGiaoVien(int i, string DK)
         {
             //dt = new DataTable();
-            dt = GVDAL.TableGiaoVien(i,DK);
-            return dt;
+            _dataTableSource = _giaoVienDAL.TableGiaoVien(i,DK);
+            return _dataTableSource;
         }
         public DataTable TableGiaoVien()
         {
-            dt = GVDAL.TableGiaoVien();
+            _dataTableSource = _giaoVienDAL.TableGiaoVien();
             //dt = new DataTable();
-            return dt;
+            return _dataTableSource;
         }
-        #endregion
-        #region Tạo danh sách các giáo viên dạng List 
+        
+        /// <summary>
+        /// Tạo danh sách các giáo viên dạng List 
+        /// </summary>
+        /// <returns></returns>
         public List<GiaoVienDTO> ListGiaoVien()
         {
             List<GiaoVienDTO> ListGV=new List<GiaoVienDTO>() ;
-            ListGV=GVDAL.ListGiaoVien();
+            ListGV=_giaoVienDAL.ListGiaoVien();
             return ListGV;
         }
-        /// <Tạo danh sách các giáo viên có điều kiện>
-        /// 
+
+        /// <summary>
+        /// Truyền điều kiện KD để tạo list các giáo viên tương ứng
         /// </summary>
-        /// <param name="DK">truyền điều kiện KD để tạo list các giáo viên tương ứng</param>
+        /// <param name="DK"></param>
         /// <returns></returns>
         public List<GiaoVienDTO> ListGiaoVien(string DK)
         {
             List<GiaoVienDTO> ListGV = new List<GiaoVienDTO>();
-            ListGV = GVDAL.ListGiaoVien(DK);
+            ListGV = _giaoVienDAL.ListGiaoVien(DK);
             return ListGV;
         }
-        #endregion 
-        /// <Thêm một dòng mới>
-        /// 
-        /// </summary>
-        /// <param name="MaKH"></param>
+
         public void NewRows(string MAGV)
         {
-            GV = new GiaoVienDTO();
-            DataRow dr = GVDAL.GetNewRow();
+            _giaoVienDTO = new GiaoVienDTO();
+            DataRow dr = _giaoVienDAL.GetNewRow();
             dr["MaGiaoVien"] = "";
             dr["TenGiaoVien"] = "";
-            GVDAL.AddNewRow(dr);
+            _giaoVienDAL.AddNewRow(dr);
 
         }
         public bool KiemTonTaiGiaoVien(GiaoVienDTO GV)
         {
-           return GVDAL.KiemtratontaiGiaoVien(GV);
+           return _giaoVienDAL.KiemtratontaiGiaoVien(GV);
         }
 
     }
