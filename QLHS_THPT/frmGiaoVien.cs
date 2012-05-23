@@ -23,7 +23,7 @@ namespace QLHS
             KhoiTaoTrangthai();
         }
         private int flag = 0;
-        private bool data = true;
+       
         public static bool KiemtraNull(string Chuoi)
         {
             if (Chuoi=="")
@@ -34,7 +34,7 @@ namespace QLHS
         }
         public void KhoiTaoTrangthai()
         {
-            //dataGridViewGiaovien.Enabled = true;
+            
             simpleButonSuagiaovien.Enabled = true;
             simpleButtonLuuGiaoVien.Enabled = false;
             simpleButtonThemGiaoVien.Enabled = true;
@@ -53,23 +53,17 @@ namespace QLHS
             textEditTenGiaoVien.Enabled = true;
             simpleButtonLuuGiaoVien.Enabled = true;
             simpleButonSuagiaovien.Enabled = false;
-            simpleButtonXoaGiaovien.Enabled = false;
+           // simpleButtonXoaGiaovien.Enabled = false;
             simpleButtonhuy.Enabled=true;
-            this.Enabled = false;
-
+            this.simpleButtonThemGiaoVien.Enabled = false;
             flag = 1;
-           
-           
         }
 
         private void frmGiaoVien_Load(object sender, EventArgs e)
         {
             dt = new DataTable();
             dt = GVBUS.TableGiaoVien();
-            if (dt.Rows.Count==0)
-            {
-                data = false;
-            }
+        
             GridcontrolGiaoVien.DataSource = dt;
         }
         void load_dulieu(DataTable dt)
@@ -79,35 +73,31 @@ namespace QLHS
 
         private void simpleButtonTìmkiem_Click(object sender, EventArgs e)
         {
-           dt = new DataTable();   
+           dt = new DataTable();
+           string Tk = textEditTKGiaoVien.Text.ToString();
+            Tk=GVBUS.Doichuoi(Tk, "'", "''", true);
             if (checkTenGiaoVien.Checked==true)
             {
                 if (checkMaGiaoVien.Checked==true)
                 {
-                    dt=GVBUS.TableGiaoVien(3,textEditTKGiaoVien.Text.ToString());
+                    dt=GVBUS.TableGiaoVien(3,Tk);
                    
                 }
                 else
                 {
-                    dt=GVBUS.TableGiaoVien(1, textEditTKGiaoVien.Text.ToString());
+                    dt=GVBUS.TableGiaoVien(1, Tk);
                 }
                 
             }
             else
             {
-                dt=GVBUS.TableGiaoVien(2, textEditTKGiaoVien.Text.ToString());
+                dt=GVBUS.TableGiaoVien(2, Tk);
                 
             }
-            if (dt.Rows.Count==0)
-            {
-                data = false;
-            }
+           
             load_dulieu(dt);
                     
         }
-
-       
-
         private void simpleButtonThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -115,17 +105,12 @@ namespace QLHS
 
         private void simpleButtonXoaGiaovien_Click(object sender, EventArgs e)
         {
-           // simpleButtonhuy.Show();
-            /*for (int i = 0; i < gridViewGiaoVien.RowCount; i++)
-            {
-                if (textEditMaGiaoVien.Text == gridViewGiaoVien.GetRowCellValue(i,"MaGiaoVien").ToString())
-                {
-                    gridViewGiaoVien.DeleteRow(i);   
-                }
-            }*/
+           
             if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Bạn có chắc chắn muốn xóa giáo viên này\"" + textEditTenGiaoVien.Text + "\" hay không?") == System.Windows.Forms.DialogResult.Yes)
             {
-                GVBUS.XoaGiaoVien(textEditMaGiaoVien.Text.Trim());
+                string MaGV = textEditMaGiaoVien.Text.Trim();
+                MaGV = GVBUS.Doichuoi(MaGV, "'", "''", true);
+                GVBUS.XoaGiaoVien(MaGV);
                 flag = 0;
             }
             simpleButtonLoadlaidulieu_Click( sender, e);
@@ -138,7 +123,7 @@ namespace QLHS
             simpleButtonhuy.Enabled = true;
             textEditTenGiaoVien.Enabled = true;
             simpleButtonLuuGiaoVien.Enabled = true;
-            this.Enabled = false;
+            this.simpleButonSuagiaovien.Enabled = false;
             flag = 3;
         }
 
@@ -148,43 +133,44 @@ namespace QLHS
             {
                 if (KiemtraNull(textEditMaGiaoVien.Text.Trim()))
                 {
-                    if (flag==1)
-                    {
-                        if (textEditTenGiaoVien.Text.Trim() != "")
+                    string MaGV = textEditMaGiaoVien.Text.Trim();
+                    MaGV = GVBUS.Doichuoi(MaGV, "'", "''", true);
+                    GVDTO = new GiaoVienDTO();
+                      if (textEditTenGiaoVien.Text.Trim() != "")
                         {
-                            GVDTO = new GiaoVienDTO();
-                            string MaGV = textEditTenGiaoVien.Text.Trim();
                             string TenGV = textEditTenGiaoVien.Text.Trim();
-                            GVDTO.MaGiaoVien = MaGV;
-                            GVDTO.TenGiaoVien = TenGV;
-                            //int kq=GVBUS.ThemGiaoVien(GVDTO);
-                            //if (kq>0)
-                            //{
-                            //    Utilities.MessageboxUtilities.MessageSuccess("Bạn đã thêm thành công" + kq + " Giáo viên vao Cơ sở dữ liệu");
-                            //}
-                            //else
-                            //{
-                            //    Utilities.MessageboxUtilities.MessageError("Hành động thêm thất bại");
-                            //}
-                            //flag=0;
-                        }
-                        else
-                        {
-                            MessageboxUtilities.MessageError("Tên lớp không thể để trống");
-                            this.Cursor = textEditTenGiaoVien.Cursor;
-                        } 
+                            TenGV= GVBUS.Doichuoi(TenGV, "'", "''", true);
+                                if (flag == 1)
+                                {                                                          
+                                   
+                                    GVDTO.MaGiaoVien = MaGV;
+                                    GVDTO.TenGiaoVien = TenGV;
+                                    int kq=GVBUS.ThemGiaoVien(GVDTO);
+                                    if (kq>0)
+                                    {
+                                        Utilities.MessageboxUtilities.MessageSuccess("Bạn đã thêm thành công" + kq + " Giáo viên vào cơ sở dữ liệu");
+                                    }
+                                    else
+                                    {
+                                        Utilities.MessageboxUtilities.MessageError("Hành động thêm thất bại có thể bạn đã thêm một giáo viên đã tồn tại trong cơ sở dữ liệu");
+                                    }
+                            
+                                }
+                       
+                                else  if (flag==3)
+                                 {
+                                
+                                    GVDTO.MaGiaoVien=MaGV;
+                                    GVDTO.TenGiaoVien=textEditTenGiaoVien.Text.Trim();
+                                    GVBUS.CapNhatGiaoVien(GVDTO);                          
+                                }
+                               
                     }
-                    else  if (flag==3)
+                    else
                     {
-                        if (KiemtraNull(textEditTenGiaoVien.Text.Trim()))
-                        {
-                            GVDTO.MaGiaoVien=textEditMaGiaoVien.Text.Trim();
-                            GVDTO.TenGiaoVien=textEditMaGiaoVien.Text.Trim();
-                            GVBUS.CapNhatGiaoVien(GVDTO);
-                            flag = 0;
-                        }
+                          MessageboxUtilities.MessageError("Tên lớp không thể để trống");
+                          this.Cursor = textEditTenGiaoVien.Cursor;
                     }
-                    
 
                 }
                 else
@@ -212,12 +198,7 @@ namespace QLHS
                textEditTenGiaoVien.Text = gridViewGiaoVien.GetFocusedRowCellValue("TenGiaoVien").ToString();
                break;
            }
-         /*   if (data)
-            {
-               
-                   
-                               
-            }*/
+        
             
         }
 
@@ -229,18 +210,5 @@ namespace QLHS
             textEditTKGiaoVien.Text = "";
             GridcontrolGiaoVien.DataSource = dt;
         }
-
-        
-       
-
-      
-
-    
-      
-
-     
-
-      
-        
     }
 }
