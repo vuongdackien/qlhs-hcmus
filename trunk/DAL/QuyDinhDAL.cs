@@ -18,5 +18,10 @@ namespace QLHS.DAL
             string sql = "SELECT giatri FROM QUYDINH WHERE khoa = '"+khoa+"'";
             return ExecuteScalar(sql);
         }
+        public  void SuaQuyDinh(QuyDinhDTO QD)
+        {
+           
+            
+        }
     }
 }
