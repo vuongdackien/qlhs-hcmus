@@ -129,7 +129,7 @@ namespace QLHS
 
         private void simpleButtonLuuGiaoVien_Click(object sender, EventArgs e)
         {
-            if (flag==1||flag==2||flag==3)
+            if (flag==1||flag==3)
             {
                 if (KiemtraNull(textEditMaGiaoVien.Text.Trim()))
                 {
@@ -152,7 +152,7 @@ namespace QLHS
                                     }
                                     else
                                     {
-                                        Utilities.MessageboxUtilities.MessageError("Hành động thêm thất bại có thể bạn đã thêm một giáo viên đã tồn tại trong cơ sở dữ liệu");
+                                        Utilities.MessageboxUtilities.MessageError("Hành động thêm thất bại. Có thể giáo viên này đã tồn tại trong cơ sở dữ liệu");
                                     }
                             
                                 }
