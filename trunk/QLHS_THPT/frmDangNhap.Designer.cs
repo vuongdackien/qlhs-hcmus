@@ -1,6 +1,6 @@
 ﻿namespace QLHS
 {
-    partial class frmLogin
+    partial class frmDangNhap
     {
         /// <summary>
         /// Required designer variable.

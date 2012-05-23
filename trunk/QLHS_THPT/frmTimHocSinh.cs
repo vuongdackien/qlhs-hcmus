@@ -13,14 +13,14 @@ using DevExpress.Utils;
 
 namespace QLHS
 {
-    public partial class frmSearchHocSinh : DevExpress.XtraEditors.XtraForm
+    public partial class frmTimHocSinh : DevExpress.XtraEditors.XtraForm
     {
         private KhoiBUS _khoiBUS;
         private LopBUS _lopBUS;
         private NamHocBUS _namHocBUS;
         private HocSinhBUS _hocSinhBUS;
 
-        public frmSearchHocSinh()
+        public frmTimHocSinh()
         {
             InitializeComponent();
             _khoiBUS = new KhoiBUS();

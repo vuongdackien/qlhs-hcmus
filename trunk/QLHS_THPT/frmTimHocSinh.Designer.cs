@@ -1,6 +1,6 @@
 ﻿namespace QLHS
 {
-    partial class frmSearchHocSinh
+    partial class frmTimHocSinh
     {
         /// <summary>
         /// Required designer variable.
