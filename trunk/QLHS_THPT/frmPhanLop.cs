@@ -140,7 +140,8 @@ namespace QLHS
             if (e.FocusedRowHandle < 0)
                 return;
             MaHocSinh_Focus = this.gridViewDSHocSinh.GetRowCellValue(e.FocusedRowHandle, "MaHocSinh").ToString();
-            
+            simpleButtonChuyenLop.Enabled = true;
+            simpleButtonChuyenLai.Enabled = false;
         }
 
         private void simpleButtonChuyenLop_Click(object sender, EventArgs e)
@@ -178,6 +179,8 @@ namespace QLHS
                 return;
 
             MaHocSinhMoi_Focus = this.gridViewDSHocSinhMoi.GetRowCellValue(e.FocusedRowHandle, "MaHocSinh").ToString();
+            simpleButtonChuyenLop.Enabled = false;
+            simpleButtonChuyenLai.Enabled = true;
         }
 
         private void checkEditPhanLopHocSinhMoi_CheckedChanged(object sender, EventArgs e)
