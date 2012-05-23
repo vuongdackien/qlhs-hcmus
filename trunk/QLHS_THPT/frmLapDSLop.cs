@@ -18,7 +18,7 @@ namespace QLHS
         private QuyDinhBUS _quyDinhBUS;
         private KhoiBUS _khoiBUS;
         private LopBUS _lopBUS;
-        DataTable _dsLop_Khoi_NamHoc;
+        DataTable _dsLop_Khoi_NamHoc;        
         public frmLapDSLop()
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace QLHS
             _dsLop_Khoi_NamHoc = _lopBUS.LayDTLop_MaNam_MaKhoi(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc),
                                     Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi));
             gridControlDSLop.DataSource = _dsLop_Khoi_NamHoc;
-            gridColumnMaKhoi.ColumnEditName = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi);
+            
         }
 
         private void frmLapDSLop_Load(object sender, EventArgs e)
@@ -56,6 +56,13 @@ namespace QLHS
         private void comboBoxEditKhoi_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.HienThi_DSLop();
+        }
+
+        private void simpleButtonThemMoi_Click(object sender, EventArgs e)
+        {
+            if (comboBoxEditNamHoc.SelectedItem == null || comboBoxEditKhoi.SelectedItem == null)
+                return;
+            
         }
 
     }

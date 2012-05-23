@@ -16,9 +16,10 @@ namespace QLHS.DAL
         /// <returns></returns>
         public DataTable LayDTLop_MaNam_MaKhoi(string MaNamHoc, string MaKhoi)
         {
-            string sql = string.Format("SELECT MaLop, TenLop, gv.MaGiaoVien, TenGiaoVien, SiSo, MaNamHoc, MaKhoiLop "
-                                      + " FROM LOP l, GIAOVIEN gv WHERE l.MaGiaoVien=gv.MaGiaoVien AND "            
-                                      + " MaKhoiLop = '{0}' AND MaNamHoc = '{1}' ",MaKhoi,MaNamHoc);
+            string sql = string.Format("SELECT MaLop, TenLop, gv.MaGiaoVien, TenGiaoVien, SiSo, l. MaNamHoc, TenNamHoc, MaKhoiLop "
+                                      + " FROM LOP l, GIAOVIEN gv, NAMHOC namhoc WHERE l.MaGiaoVien=gv.MaGiaoVien AND " 
+                                      + " namhoc.MaNamHoc=l.MaNamHoc AND "
+                                      + " MaKhoiLop = '{0}' AND l.MaNamHoc = '{1}' ",MaKhoi,MaNamHoc);
             return GetTable(sql);
         }
         /// <summary>
@@ -59,5 +60,18 @@ namespace QLHS.DAL
                         +"WHERE gv.MaGiaoVien = l.MaGiaoVien AND l.Malop ='"+MaLop+"'";
             return Convert.ToString(ExecuteScalar(sql));
         }
+        /// <summary>
+        /// Thêm 1 dòng mới vào datatable
+        /// </summary>
+        /// <param name="MaNamHoc">String: Mã năm học</param>
+        /// <param name="MaKhoi">String: Mã khối</param>
+       public void AddNewRow(string MaNamHoc, string MaKhoi)
+       {
+           DataRow dr = GetNewRow();
+           dr["MaNamHoc"] = MaNamHoc;
+           dr["MaKhoiLop"] = MaKhoi;
+           dr["TenLop"] = "";
+           AddNewRow(dr);
+       }
     }
 }
