@@ -44,5 +44,41 @@ namespace QLHS.BUS
         {
             return _LopDAL.Lay_TenGiaoVien_MaLop(MaLop);
         }
+        /// <summary>
+        /// Kiểm tra tồn tại mã lớp
+        /// </summary>
+        /// <param name="MaLop">String: Mã lớp</param>
+        /// <returns>Bool</returns>
+        public bool KiemTra_TonTaiMaLop(string MaLop)
+        {
+            return _LopDAL.KiemTra_TonTaiMaLop(MaLop);
+        }
+        /// <summary>
+        /// Thêm lớp mới
+        /// </summary>
+        /// <param name="lop">LopDTO</param>
+        /// <returns></returns>
+        public bool Them_Lop(LopDTO lop)
+        {
+            return _LopDAL.Them_Lop(lop);
+        }
+        /// <summary>
+        /// Cập nhật giáo viên chủ nhiệm
+        /// </summary>
+        /// <param name="lop">LopDTO</param>
+        /// <returns></returns>
+        public bool CapNhat_GiaoVienCN_Lop(LopDTO lop)
+        {
+            return _LopDAL.CapNhat_GiaoVienCN_Lop(lop);
+        }
+        /// <summary>
+        /// Xóa lớp từ mã lớp
+        /// </summary>
+        /// <param name="MaLop">String: Mã lớp</param>
+        /// <returns></returns>
+        public bool Xoa_Lop(string MaLop)
+        {
+            return _LopDAL.Xoa_Lop(MaLop);
+        }
     }
 }

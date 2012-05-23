@@ -61,17 +61,56 @@ namespace QLHS.DAL
             return Convert.ToString(ExecuteScalar(sql));
         }
         /// <summary>
-        /// Thêm 1 dòng mới vào datatable
+        /// Kiểm tra tồn tại mã lớp
         /// </summary>
-        /// <param name="MaNamHoc">String: Mã năm học</param>
-        /// <param name="MaKhoi">String: Mã khối</param>
-       public void AddNewRow(string MaNamHoc, string MaKhoi)
-       {
-           DataRow dr = GetNewRow();
-           dr["MaNamHoc"] = MaNamHoc;
-           dr["MaKhoiLop"] = MaKhoi;
-           dr["TenLop"] = "";
-           AddNewRow(dr);
-       }
+        /// <param name="MaLop">String: Mã lớp</param>
+        /// <returns>Bool</returns>
+        public bool KiemTra_TonTaiMaLop(string MaLop)
+        {
+            string sql = "SELECT count(*) FROM Lop WHERE MaLop = '"+MaLop+"'";
+            return Convert.ToInt32(ExecuteScalar(sql)) > 0;
+        }
+        /// <summary>
+        /// Thêm lớp mới
+        /// </summary>
+        /// <param name="lop">LopDTO</param>
+        /// <returns></returns>
+        public bool Them_Lop(LopDTO lop)
+        {
+            if (this.KiemTra_TonTaiMaLop(lop.MaLop))
+            {
+                Utilities.ExceptionUtilities.Throw("Lớp: " + lop.TenLop + " đã tồn tại!");
+                return false;
+            }
+            string sql = string.Format("INSERT INTO LOP (MaLop, TenLop, MaGiaoVien, MaKhoiLop, MaNamHoc, SiSo) "
+                                        +"VALUES ('{0}','{1}','{2}',{3},'{4}',{5})",
+                                         lop.MaLop,lop.TenLop,lop.GiaoVien.MaGiaoVien,lop.MaKhoiLop,lop.MaNamHoc,0);
+            return ExecuteQuery(sql) > 0;
+        }
+        /// <summary>
+        /// Cập nhật giáo viên chủ nhiệm
+        /// </summary>
+        /// <param name="lop">LopDTO</param>
+        /// <returns></returns>
+        public bool CapNhat_GiaoVienCN_Lop(LopDTO lop)
+        {
+            string sql = string.Format("UPDATE LOP SET MaGiaoVien = '{1}' WHERE MaLop = '{0}'",
+                                        lop.MaLop,  lop.GiaoVien.MaGiaoVien);
+            return ExecuteQuery(sql) > 0; 
+        }
+        /// <summary>
+        /// Xóa lớp từ mã lớp
+        /// </summary>
+        /// <param name="MaLop">String: Mã lớp</param>
+        /// <returns></returns>
+        public bool Xoa_Lop(string MaLop)
+        {
+            string sql = "DELETE FROM PHANLOP WHERE MaLop = '"+MaLop+"'";
+            sql += "\nDELETE FROM CHUYENLOP WHERE TuLop = '"+MaLop+"'";
+            sql += "\nDELETE FROM CHUYENLOP WHERE DenLop = '" + MaLop + "'";
+            sql += "\nDELETE FROM BANGDIEM WHERE MaLop = '" + MaLop + "'";
+            sql += "\nDELETE FROM LOP WHERE MaLop = '" + MaLop + "'";
+            return ExecuteQuery(sql) > 0;
+        }
     }
 }
