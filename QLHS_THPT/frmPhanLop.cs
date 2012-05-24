@@ -20,6 +20,7 @@ namespace QLHS
         private PhanLopBUS _PhanLopBUS;
         private QuyDinhBUS _quyDinhBUS;
         object MaHocSinh_Focus, MaHocSinhMoi_Focus;
+        private int dongHT_GridHocSinh, dongHT_GridHocSinhMoi = -1;
         public frmPhanLop()
         {
             InitializeComponent();
@@ -68,10 +69,7 @@ namespace QLHS
                 gridControlDSHocSinh.DataSource = null;
                 return;
             }
-            gridControlDSHocSinh.DataSource = _HocSinhBUS.LayDTHocSinh_LopHoc(
-                 Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop)
-            );
-           
+            LoadGridcontrolDSHocSinh(); 
         }
 
         private void comboBoxEditKhoi_SelectedIndexChanged(object sender, EventArgs e)
@@ -87,7 +85,7 @@ namespace QLHS
             HienThi(checkEditPhanLopHocSinhMoi.Checked);
             if (checkEditPhanLopHocSinhMoi.Checked == true)
             {
-                gridControlDSHocSinh.DataSource = _HocSinhBUS.LayDT_HS_HocSinh();
+                LoadGridcontrolDSHocSinh_HoSo();
                 for (int i = 0; i < gridViewDSHocSinh.RowCount; i++)
                 {
                     gridViewDSHocSinh.SetRowCellValue(i, "STT", i + 1);
@@ -103,6 +101,8 @@ namespace QLHS
                 Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHocMoi, _NamHocBUS.LayDTNamHocMoi(),
                                                     "MaNamHoc", "TenNamHoc", 0);
             }
+            simpleButtonChuyenLop.Enabled = false;
+            simpleButtonChuyenLai.Enabled = false;
             
         }
        
@@ -114,9 +114,7 @@ namespace QLHS
                 gridControlDSHocSinhMoi.DataSource = null;
                 return;
             }
-            gridControlDSHocSinhMoi.DataSource = _HocSinhBUS.LayDTHocSinh_LopHoc(
-                 Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLopMoi)
-            );
+            LoadGridcontrolDSHocSinhMoi();
         }
 
         private void comboBoxEditNamHocMoi_SelectedIndexChanged(object sender, EventArgs e)
@@ -139,13 +137,13 @@ namespace QLHS
         {
             if (e.FocusedRowHandle < 0)
                 return;
-            MaHocSinh_Focus = this.gridViewDSHocSinh.GetRowCellValue(e.FocusedRowHandle, "MaHocSinh").ToString();
-            simpleButtonChuyenLop.Enabled = true;
-            simpleButtonChuyenLai.Enabled = false;
+            dongHT_GridHocSinh = e.FocusedRowHandle;
         }
 
         private void simpleButtonChuyenLop_Click(object sender, EventArgs e)
         {
+            
+            MaHocSinh_Focus = this.gridViewDSHocSinh.GetRowCellValue(dongHT_GridHocSinh, "MaHocSinh").ToString();
             string MaLop = (Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLopMoi));
             int SiSoCanTren = _quyDinhBUS.LaySiSoCanTren();
             if ( _PhanLopBUS.Dem_SiSo_Lop(MaLop) >= SiSoCanTren)
@@ -163,13 +161,21 @@ namespace QLHS
             }
             else
             {
+                if (gridViewDSHocSinhMoi.RowCount > 0)
+                {
+                    _PhanLopBUS.CapNhap_STT_HocSinh_Lop(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLopMoi));
+                }
                 if (_PhanLopBUS.ChuyenLop_HocSinh(MaHocSinh_Focus.ToString(), Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLopMoi)))
                 {
                     Utilities.MessageboxUtilities.MessageSuccess("Chuyển thành công");
                     comboBoxEditLopMoi_SelectedIndexChanged(sender, e);
-                    simpleButtonChuyenLop.Enabled = false;
+                    if (checkEditPhanLopHocSinhMoi.Checked == true)
+                    {
+                        LoadGridcontrolDSHocSinh_HoSo();
+                    }
                 }
             }
+            hienThi_Button();
         }
 
         private void gridViewDSHocSinhMoi_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -178,9 +184,7 @@ namespace QLHS
             if (e.FocusedRowHandle < 0)
                 return;
 
-            MaHocSinhMoi_Focus = this.gridViewDSHocSinhMoi.GetRowCellValue(e.FocusedRowHandle, "MaHocSinh").ToString();
-            simpleButtonChuyenLop.Enabled = false;
-            simpleButtonChuyenLai.Enabled = true;
+            dongHT_GridHocSinhMoi = e.FocusedRowHandle;
         }
 
         private void checkEditPhanLopHocSinhMoi_CheckedChanged(object sender, EventArgs e)
@@ -197,6 +201,66 @@ namespace QLHS
         {
             comboBoxEditKhoi.Enabled = comboBoxEditNamHoc.Enabled = comboBoxEditLop.Enabled = !xl;
 
+        }
+
+        private void simpleButtonChuyenLai_Click(object sender, EventArgs e)
+        {
+            MaHocSinhMoi_Focus = this.gridViewDSHocSinhMoi.GetRowCellValue(dongHT_GridHocSinhMoi, "MaHocSinh").ToString();
+            if (_PhanLopBUS.XoaHocSinh_Lop(MaHocSinhMoi_Focus.ToString(), Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLopMoi)))
+            {
+                Utilities.MessageboxUtilities.MessageSuccess("Chuyển Học Sinh "+MaHocSinhMoi_Focus+" Thành công");
+                LoadGridcontrolDSHocSinhMoi();
+                if (gridViewDSHocSinhMoi.RowCount > 0)
+                {
+                    _PhanLopBUS.CapNhap_STT_HocSinh_Lop(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLopMoi));
+                }
+                if (checkEditPhanLopHocSinhMoi.Checked == true)
+                {
+                    LoadGridcontrolDSHocSinh_HoSo();
+                }
+            }
+            hienThi_Button();
+        }
+        private void LoadGridcontrolDSHocSinhMoi()
+        {
+            gridControlDSHocSinhMoi.DataSource=_HocSinhBUS.LayDTHocSinh_LopHoc(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLopMoi));
+        }
+        private void LoadGridcontrolDSHocSinh()
+        {
+            gridControlDSHocSinh.DataSource = _HocSinhBUS.LayDTHocSinh_LopHoc(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop));
+        }
+        private void LoadGridcontrolDSHocSinh_HoSo()
+        {
+            gridControlDSHocSinh.DataSource = _HocSinhBUS.LayDT_HS_HocSinh();
+        }
+
+        private void gridViewDSHocSinh_MouseEnter(object sender, EventArgs e)
+        {
+            simpleButtonChuyenLop.Enabled = true;
+            simpleButtonChuyenLai.Enabled = false;
+            hienThi_Button();
+        }
+
+        private void gridViewDSHocSinhMoi_MouseEnter(object sender, EventArgs e)
+        {
+            simpleButtonChuyenLop.Enabled = false;
+            simpleButtonChuyenLai.Enabled = true;
+            hienThi_Button();
+        }
+        private void hienThi_Button()
+        {
+            if (gridViewDSHocSinh.RowCount == 0)
+            {
+                simpleButtonChuyenLop.Enabled = false;
+                if (gridViewDSHocSinhMoi.RowCount > 0)
+                    simpleButtonChuyenLai.Enabled = true;
+            }
+            if (gridViewDSHocSinhMoi.RowCount == 0)
+            {
+                simpleButtonChuyenLai.Enabled = false;
+                 if (gridViewDSHocSinh.RowCount>0)
+                     simpleButtonChuyenLop.Enabled = true;
+            }
         }
     }
 }

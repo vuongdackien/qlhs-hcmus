@@ -287,6 +287,7 @@
             this.gridViewDSHocSinh.OptionsView.ShowGroupPanel = false;
             this.gridViewDSHocSinh.OptionsView.ShowIndicator = false;
             this.gridViewDSHocSinh.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewDSHocSinh_FocusedRowChanged);
+            this.gridViewDSHocSinh.MouseEnter += new System.EventHandler(this.gridViewDSHocSinh_MouseEnter);
             // 
             // gridColumn1
             // 
@@ -343,6 +344,7 @@
             this.gridViewDSHocSinhMoi.Name = "gridViewDSHocSinhMoi";
             this.gridViewDSHocSinhMoi.OptionsView.ShowGroupPanel = false;
             this.gridViewDSHocSinhMoi.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewDSHocSinhMoi_FocusedRowChanged);
+            this.gridViewDSHocSinhMoi.MouseEnter += new System.EventHandler(this.gridViewDSHocSinhMoi_MouseEnter);
             // 
             // gridColumn4
             // 
@@ -402,6 +404,7 @@
             this.simpleButtonChuyenLai.Size = new System.Drawing.Size(117, 35);
             this.simpleButtonChuyenLai.TabIndex = 0;
             this.simpleButtonChuyenLai.Text = "Chuyển lại";
+            this.simpleButtonChuyenLai.Click += new System.EventHandler(this.simpleButtonChuyenLai_Click);
             // 
             // simpleButtonChuyenLop
             // 
