@@ -240,7 +240,6 @@
             this.panelControlTopLeft.Name = "panelControlTopLeft";
             this.panelControlTopLeft.Size = new System.Drawing.Size(241, 181);
             this.panelControlTopLeft.TabIndex = 3;
-            this.panelControlTopLeft.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControlTopLeft_Paint);
             // 
             // checkEditChuaPhanLop
             // 

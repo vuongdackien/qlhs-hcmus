@@ -259,13 +259,6 @@ namespace QLHS
 
         }
 
-        private void simpleButtonInHoSo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
         private void simpleButtonSXLaiSTT_Click(object sender, EventArgs e)
         {
             if (checkEditChuaPhanLop.Checked)
@@ -282,16 +275,6 @@ namespace QLHS
             Utilities.MessageboxUtilities.MessageSuccess("Cập nhật số thự tự cho lớp thành công!");
             // Load lại gridcontrol học sinh
             this.LoadLai_GridControl_HocSinh();
-        }
-
-        private void gridControlDSHocSinh_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelControlTopLeft_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
-        {
-
         }
 
         private void checkEdit1_CheckedChanged(object sender, EventArgs e)
