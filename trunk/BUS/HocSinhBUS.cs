@@ -54,6 +54,9 @@ namespace QLHS.BUS
         /// <returns>Bool</returns>
         public bool LuuHoSoHocSinh(HocSinhDTO hocsinh, string MaLop = null)
         {
+            DateTime ngayAD_QD = _quyDinhBUS.LayNgayApDungQD() ;
+            int namCanDuoi = _quyDinhBUS.LayNamCanDuoi(), namCanTren = _quyDinhBUS.LayNamCanTren();
+            DateTime ngayNhapHoc;
             // Sửa hồ sơ học sinh
             if (_hocSinhDAL.KiemTraTonTai_MaHocSinh(hocsinh.MaHocSinh))
             {
@@ -61,23 +64,49 @@ namespace QLHS.BUS
                 if (MaLop != null && hocsinh.STT != _phanLopBUS.Lay_STT_HienTai(hocsinh.MaHocSinh,MaLop)
                     && _phanLopBUS.KiemTra_STT_TonTai(hocsinh.STT, MaLop)) // STT mới này đã tồn tại
                 {
-                    Utilities.ExceptionUtilities.Throw("Số thứ tự " + hocsinh.STT + " đã tồn tại trong lớp "+MaLop+"."
+                    Utilities.ExceptionUtilities.Throw("Sửa hồ sơ học sinh không hợp lệ!"
+                                                        +"\nSố thứ tự " + hocsinh.STT + " đã tồn tại trong lớp "+MaLop+"."
                                             + "\nBạn có thể sử dụng chức năng \"Tự động sắp xếp số thứ tự\" theo alpha.");
                     return false;
+                }
+                ngayNhapHoc = _hocSinhDAL.Lay_HoSo(hocsinh.MaHocSinh).NgayNhapHoc;  
+                // Nếu ngày nhập học sau ngày áp dụng quy định
+                if (ngayNhapHoc >= ngayAD_QD)
+                {
+                    // Kiểm tra độ tuổi theo quy định
+                    if (hocsinh.NgaySinh.Year < namCanDuoi || hocsinh.NgaySinh.Year > namCanTren)
+                    {
+                        Utilities.ExceptionUtilities.Throw("Sửa hồ sơ học sinh không hợp lệ!"
+                                + "\nNăm sinh của học sinh phải theo quy định trong khoảng từ năm " + namCanDuoi + " đến năm " + namCanTren);
+                        return false;
+                    }
                 }
                 return _hocSinhDAL.Sua_HoSo(hocsinh, MaLop);
             }
             else // Thêm mới hồ sơ học sinh
             {
+                ngayNhapHoc = DateTime.Now;
                 // Nếu hồ sơ có phân lớp và kiểm tra STT đã tồn tại hay chưa?
                 if (MaLop != null && _phanLopBUS.KiemTra_STT_TonTai(hocsinh.STT, MaLop))
                 {
-                    Utilities.ExceptionUtilities.Throw("Số thứ tự " + hocsinh.STT + " đã tồn tại trong lớp."
+                    Utilities.ExceptionUtilities.Throw("Tiếp nhận học sinh không hợp lệ!"
+                                                            +"\nSố thứ tự " + hocsinh.STT + " đã tồn tại trong lớp."
                                                                 + "\nChương trình sẽ tự động tạo số thứ tự tiếp theo trong bảng điểm"
                                                                 + "\nBạn có thể sử dụng chức năng \"Tự động sắp xếp số thứ tự\" theo alpha.");
                     return false;
                 }
-                hocsinh.MaHocSinh = Utilities.ObjectUtilities.NextID(_hocSinhDAL.Lay_MaCuoiCung(), "HS",8);
+                hocsinh.MaHocSinh = Utilities.ObjectUtilities.NextID(_hocSinhDAL.Lay_MaCuoiCung(), "HS", 8);
+                // Nếu ngày nhập học sau ngày áp dụng quy định
+                if (ngayNhapHoc >= ngayAD_QD)
+                {
+                    // Kiểm tra độ tuổi theo quy định
+                    if (hocsinh.NgaySinh.Year < namCanDuoi || hocsinh.NgaySinh.Year > namCanTren)
+                    {
+                        Utilities.ExceptionUtilities.Throw("Tiếp nhận học sinh không hợp lệ!"
+                                + "\nNăm sinh của học sinh phải theo quy định trong khoảng từ năm " + namCanDuoi + " đến năm " + namCanTren);
+                        return false;
+                    }
+                }
                 return _hocSinhDAL.Them_HoSo(hocsinh, MaLop);
             }
            

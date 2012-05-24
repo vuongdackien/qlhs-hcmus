@@ -197,8 +197,16 @@ namespace QLHS
                 Utilities.MessageboxUtilities.MessageError("Họ tên học sinh không hợp lệ (không chứa khoảng trắng) hoặc nhỏ hơn 3 ký tự!");
                 return;
             }
-            _hocSinhBUS.LuuHoSoHocSinh(hocSinhDTO, maLop);
-            Utilities.MessageboxUtilities.MessageSuccess("Lưu hồ sơ học sinh " + hocSinhDTO.TenHocSinh + " thành công!");
+            try
+            {
+                _hocSinhBUS.LuuHoSoHocSinh(hocSinhDTO, maLop);
+                Utilities.MessageboxUtilities.MessageSuccess("Lưu hồ sơ học sinh " + hocSinhDTO.TenHocSinh + " thành công!");
+            }
+            catch (Exception ex)
+            {
+                Utilities.MessageboxUtilities.MessageError(ex);
+                return;
+            }
             this.LoadLai_GridControl_HocSinh(checkEditChuaPhanLop.Checked);
             gridViewDSHocSinh.SelectRow(0);
         }
@@ -239,8 +247,6 @@ namespace QLHS
             textEditDiaChi.Text = "";
             textEditEmail.Text = "";
             textEditNoiSinh.Text = "";
-            dateEditNgaySinh.Properties.MinValue = new DateTime(_quyDinhBUS.LayNamCanDuoi(),1,1);
-            dateEditNgaySinh.Properties.MaxValue = new DateTime(_quyDinhBUS.LayNamCanTren(), 1, 1);
             textEditTenHocSinh.Focus();
         }
 
@@ -279,16 +285,11 @@ namespace QLHS
 
         private void checkEdit1_CheckedChanged(object sender, EventArgs e)
         {
-            comboBoxEditKhoi.Enabled = !checkEditChuaPhanLop.Checked;
             comboBoxEditNamHoc.Enabled = !checkEditChuaPhanLop.Checked;
             comboBoxEditLop.Enabled = !checkEditChuaPhanLop.Checked;
             spinEditSTTSoDiem.Enabled = !checkEditChuaPhanLop.Checked;
             this.LoadLai_GridControl_HocSinh(checkEditChuaPhanLop.Checked);
            
         }
-
-        
-
-  
     }
 }

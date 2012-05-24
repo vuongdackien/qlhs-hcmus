@@ -70,6 +70,7 @@ namespace QLHS.DAL
                 hs.GioiTinh = Convert.ToInt16(reader["GioiTinh"]);
                 hs.Email = Convert.ToString(reader["Email"]);
                 hs.DiaChi = Convert.ToString(reader["DiaChi"]);
+                hs.NgayNhapHoc = Convert.ToDateTime(reader["NgayNhapHoc"]);
                 listHS.Add(hs);
             }
             CloseConnect();
@@ -84,10 +85,10 @@ namespace QLHS.DAL
         {
             string sql = "";
             if (!_phanLopDAL.KiemTra_TonTai_HocSinh_PhanLop(MaHocSinh))
-                sql = string.Format("SELECT 0 as STT, MaHocSinh, TenHocSinh, Email, NgaySinh, GioiTinh, NoiSinh, DiaChi "
+                sql = string.Format("SELECT 0 as STT, MaHocSinh, TenHocSinh, Email, NgaySinh, GioiTinh, NoiSinh, DiaChi, NgayNhapHoc "
                             + "FROM HOCSINH WHERE MaHocSinh = '{0}'", MaHocSinh);
             else
-                sql = string.Format("SELECT pl.STT, pl.MaHocSinh, TenHocSinh , Email, NgaySinh, GioiTinh, NoiSinh, DiaChi "
+                sql = string.Format("SELECT pl.STT, pl.MaHocSinh, TenHocSinh , Email, NgaySinh, GioiTinh, NoiSinh, DiaChi,NgayNhapHoc "
                              + "FROM HOCSINH hs LEFT JOIN PHANLOP pl ON  pl.MaHocSinh = hs.MaHocSinh WHERE hs.MaHocSinh = '{0}'", MaHocSinh);
             
             HocSinhDTO hocSinhDTO = new HocSinhDTO();
@@ -100,7 +101,8 @@ namespace QLHS.DAL
             hocSinhDTO.GioiTinh = Convert.ToInt16(dr["GioiTinh"]);
             hocSinhDTO.NgaySinh = Convert.ToDateTime(dr["NgaySinh"]);
             hocSinhDTO.NoiSinh = Convert.ToString(dr["NoiSinh"]);
-            hocSinhDTO.DiaChi = Convert.ToString(dr["DiaChi"]);            
+            hocSinhDTO.DiaChi = Convert.ToString(dr["DiaChi"]);
+            hocSinhDTO.NgayNhapHoc = Convert.ToDateTime(dr["NgayNhapHoc"]);
             return hocSinhDTO;
         }
 
@@ -112,7 +114,7 @@ namespace QLHS.DAL
         public bool Sua_HoSo(HocSinhDTO hocsinhDTO,string MaLop)
         {
             string sql = "set dateformat dmy\n";
-             sql += string.Format("UPDATE HOCSINH SET TenHocSinh = N'{1}', Email = '{2}', NgaySinh = '{3:dd-MM-yyyy}', "
+            sql += string.Format("UPDATE HOCSINH SET TenHocSinh = N'{1}', Email = '{2}', NgaySinh = '{3:dd-MM-yyyy}', "
                          +"GioiTinh = {4}, NoiSinh = N'{5}', DiaChi = N'{6}' "
                          +"WHERE MaHocSinh = '{0}'",hocsinhDTO.MaHocSinh,hocsinhDTO.TenHocSinh,hocsinhDTO.Email,
                            hocsinhDTO.NgaySinh, hocsinhDTO.GioiTinh, hocsinhDTO.NoiSinh, hocsinhDTO.DiaChi);

@@ -78,7 +78,8 @@ CREATE TABLE [dbo].[HOCSINH] (
 	[GioiTinh]		[bit] NULL,                  
 	[NgaySinh]		[datetime] NULL,
 	[NoiSinh]		[nvarchar](100) NULL,	
-	[DiaChi]		[nvarchar](100) NULL);
+	[DiaChi]		[nvarchar](100) NULL,
+	[NgayNhapHoc]	[datetime]  DEFAULT GETDATE());
 GO
 
 --6. Create table and its columns
@@ -288,37 +289,37 @@ GO
 --Table HOCSINH
 set dateformat dmy
 GO
-INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi]) 
-SELECT	'HS00000001',   N'Nguyễn Ngọc Thu',		'ngocthu@gmail.com',		1,  '08-07-1990',	N'TP.HCM',		N'Q.9'			UNION 
-SELECT	'HS00000002',	N'Nguyễn Thanh Trúc',	'thanhtruc@gmail.com',		1,	'01-01-1990',	N'TP.HCM',		N'Q.9'			UNION 
-SELECT	'HS00000003',	N'Nguyễn Ngọc Hân',		'ngochan@gmail.com',		1,	'20-09-1990',	N'Vĩnh Long',	N'Vũng Liêm'	UNION 
-SELECT	'HS00000004',	N'Nguyễn Văn Trung',	'vantrung@gmail.com',		0,	'01-01-1990',	N'Hải Dương',	N'Không Biết'	UNION 
-SELECT	'HS00000005',	N'Nguyễn Văn An',		'vanan@gmail.com',			0,	'08-07-1991',	N'TP.HCM',		N'Q.9'			UNION 
-SELECT	'HS00000006',	N'Nguyễn Bình Minh',	'binhminh@gmail.com',		0,	'01-01-1992',	N'TP.HCM',		N'Q.9'			UNION 
-SELECT	'HS00000007',	N'Nguyễn Thị Lan Anh',	'lananh@gmail.com',			1,	'20-09-1991',	 N'Vĩnh Long',	N'Vũng Liêm'	UNION 
-SELECT	'HS00000008',	N'Lê Thị Thu Hà',		'thuha@gmail.com',			1,	'01-01-1992',	N'Hải Dương',	N'Không Biết'	UNION 
-SELECT	'HS00000009',	N'Nguyễn Thị Thanh Trúc','thanhtruc@gmail.com',		1,	'08-07-1993',	N'TP.HCM',		N'Q.9'			UNION 
-SELECT	'HS00000010',	N'Trần Duy Khoa',		'duykhoa@gmail.com',		0,	'01-01-1991',	N'TP.HCM',		N'Q.9'			UNION 
-SELECT	'HS00000011',	N'Nguyễn Thị Thùy Dương','thuyduong@gmail.com',		1,	'20-09-1992',	N'Vĩnh Long',	N'Vũng Liêm'	UNION 
-SELECT	'HS00000012',	N'Nguyễn Thị Bảo Ngọc', 'baongoc@gmail.com',		1,	'01-01-1991',	N'Hải Dương',	N'Không Biết'	UNION 
-SELECT	'HS00000013',	N'Nguyễn Văn Tân',		'vantan@gmail.com',			0,	'08-07-1993',	N'TP.HCM',		N'Q.9'			UNION
-SELECT	'HS00000014',	N'Nguyễn Bình Minh',	'binhminh@gmail.com',		0,	'01-01-1992',	N'TP.HCM',		N'Q.9'			UNION 
-SELECT	'HS00000015',	N'Huỳnh Thanh Tùng',	'thanhtung@gmail.com',		0,	'20-09-1993',	N'Vĩnh Long',	N'Vũng Liêm'	UNION 
-SELECT	'HS00000016',	N'Lê Thị Ngọc Thu',		'ngocthu@gmail.com',		1,	'01-01-1992',	N'Hải Dương',	N'Không Biết'	UNION
-SELECT	'HS00000017',   N'Huỳnh Văn Tiến',		'vantien@gmail.com',		0,  '08-07-1994',	N'TP.HCM',		N'Q.9'			UNION 
-SELECT	'HS00000018',	N'Nguyễn Thị Xuân',		'thixuan@gmail.com',		1,	'01-01-1995',	N'Tiền Giang',	N'Q.9'			UNION 
-SELECT	'HS00000019',	N'Phạm Vân Trang',		'vantrang@gmail.com',		1,	'20-09-1994',	N'Long An',		N'Vũng Liêm'	UNION 
-SELECT	'HS00000020',	N'Nguyễn Thanh Tùng',	'thanhtung@gmail.com',		0,	'01-01-1995',	N'Tây Ninh',	N'Không Biết'	UNION 
-SELECT	'HS00000021',	N'Nguyễn Văn Sĩ',		'vansi@gmail.com',			0,	'08-07-1993',	N'TP.HCM',		N'Q.9'			UNION 
-SELECT	'HS00000022',	N'Nguyễn Thị Thu',		'thithu@gmail.com',			1,	'01-01-1995',	N'TP.HCM',		N'Q.9'			UNION 
-SELECT	'HS00000023',	N'Nguyễn Ngọc Lan',		'ngoclan@gmail.com',		1,	'20-09-1994',	N'Bình Thuận',	N'Vũng Liêm'	UNION 
-SELECT	'HS00000024',	N'Lê Thị Quyên',		'thiquyen@gmail.com',		1,	'01-01-1995',	N'Hải Dương',	N'Không Biết'	UNION 
-SELECT	'HS00000025',	N'Nguyễn Thị Thanh', 	'thithanh@gmail.com',		1,	'08-07-1995',	N'Bình Dương',	N'Q.9'			UNION 
-SELECT	'HS00000026',	N'Trần Duy Tâm',		'duytam@gmail.com',			0,	'01-01-1994',	N'TP.HCM',		N'Q.9'			UNION 
-SELECT	'HS00000027',	N'Nguyễn Thị Thùy', 	'thithuy@gmail.com',		1,	'20-09-1993',	N'Lâm Đồng',	N'Vũng Liêm'	UNION 
-SELECT	'HS00000028',	N'Huỳnh Ngọc Bảo', 		'ngocbao@gmail.com',		1,	'01-01-1992',	N'Long An',		N'Không Biết'	UNION 
-SELECT	'HS00000029',	N'Nguyễn Hoàng Oanh',	'hoangoanh@gmail.com',		1,	'08-07-1993',	N'TP.HCM',		N'Q.9'			UNION
-SELECT	'HS00000030',	N'Lê Bảo Trân',			'baotran@gmail.com',		1,	'01-01-1992',	N'Hải Dương',	N'Không Biết'
+INSERT INTO HOCSINH ([MaHocSinh],[TenHocSinh],[Email],[GioiTinh], [NgaySinh],[NoiSinh],	[DiaChi], [NgayNhapHoc]) 
+SELECT	'HS00000001',   N'Nguyễn Ngọc Thu',		'ngocthu@gmail.com',		1,  '08-07-1990',	N'TP.HCM',		N'Q.9'		,'23-5-2012' UNION 
+SELECT	'HS00000002',	N'Nguyễn Thanh Trúc',	'thanhtruc@gmail.com',		1,	'01-01-1990',	N'TP.HCM',		N'Q.9'			,'23-5-2012' UNION 
+SELECT	'HS00000003',	N'Nguyễn Ngọc Hân',		'ngochan@gmail.com',		1,	'20-09-1990',	N'Vĩnh Long',	N'Vũng Liêm'	,'23-5-2012' UNION 
+SELECT	'HS00000004',	N'Nguyễn Văn Trung',	'vantrung@gmail.com',		0,	'01-01-1990',	N'Hải Dương',	N'Không Biết'	,'23-5-2012' UNION 
+SELECT	'HS00000005',	N'Nguyễn Văn An',		'vanan@gmail.com',			0,	'08-07-1991',	N'TP.HCM',		N'Q.9'			,'23-5-2012' UNION 
+SELECT	'HS00000006',	N'Nguyễn Bình Minh',	'binhminh@gmail.com',		0,	'01-01-1992',	N'TP.HCM',		N'Q.9'			,'23-5-2012' UNION 
+SELECT	'HS00000007',	N'Nguyễn Thị Lan Anh',	'lananh@gmail.com',			1,	'20-09-1991',	 N'Vĩnh Long',	N'Vũng Liêm'	,'23-5-2012' UNION 
+SELECT	'HS00000008',	N'Lê Thị Thu Hà',		'thuha@gmail.com',			1,	'01-01-1992',	N'Hải Dương',	N'Không Biết'	,'23-5-2012' UNION 
+SELECT	'HS00000009',	N'Nguyễn Thị Thanh Trúc','thanhtruc@gmail.com',		1,	'08-07-1993',	N'TP.HCM',		N'Q.9'			,'23-5-2012' UNION 
+SELECT	'HS00000010',	N'Trần Duy Khoa',		'duykhoa@gmail.com',		0,	'01-01-1991',	N'TP.HCM',		N'Q.9'			,'23-5-2012' UNION 
+SELECT	'HS00000011',	N'Nguyễn Thị Thùy Dương','thuyduong@gmail.com',		1,	'20-09-1992',	N'Vĩnh Long',	N'Vũng Liêm'	,'23-5-2012' UNION 
+SELECT	'HS00000012',	N'Nguyễn Thị Bảo Ngọc', 'baongoc@gmail.com',		1,	'01-01-1991',	N'Hải Dương',	N'Không Biết'	,'23-5-2012' UNION 
+SELECT	'HS00000013',	N'Nguyễn Văn Tân',		'vantan@gmail.com',			0,	'08-07-1993',	N'TP.HCM',		N'Q.9'			,'23-5-2012' UNION
+SELECT	'HS00000014',	N'Nguyễn Bình Minh',	'binhminh@gmail.com',		0,	'01-01-1992',	N'TP.HCM',		N'Q.9'			,'23-5-2012' UNION 
+SELECT	'HS00000015',	N'Huỳnh Thanh Tùng',	'thanhtung@gmail.com',		0,	'20-09-1993',	N'Vĩnh Long',	N'Vũng Liêm'	,'23-5-2012' UNION 
+SELECT	'HS00000016',	N'Lê Thị Ngọc Thu',		'ngocthu@gmail.com',		1,	'01-01-1992',	N'Hải Dương',	N'Không Biết'	,'23-5-2012' UNION
+SELECT	'HS00000017',   N'Huỳnh Văn Tiến',		'vantien@gmail.com',		0,  '08-07-1994',	N'TP.HCM',		N'Q.9'			,'23-5-2012' UNION 
+SELECT	'HS00000018',	N'Nguyễn Thị Xuân',		'thixuan@gmail.com',		1,	'01-01-1995',	N'Tiền Giang',	N'Q.9'			,'23-5-2012' UNION 
+SELECT	'HS00000019',	N'Phạm Vân Trang',		'vantrang@gmail.com',		1,	'20-09-1994',	N'Long An',		N'Vũng Liêm'	,'23-5-2012' UNION 
+SELECT	'HS00000020',	N'Nguyễn Thanh Tùng',	'thanhtung@gmail.com',		0,	'01-01-1995',	N'Tây Ninh',	N'Không Biết'	,'23-5-2012' UNION 
+SELECT	'HS00000021',	N'Nguyễn Văn Sĩ',		'vansi@gmail.com',			0,	'08-07-1993',	N'TP.HCM',		N'Q.9'			,'23-5-2012' UNION 
+SELECT	'HS00000022',	N'Nguyễn Thị Thu',		'thithu@gmail.com',			1,	'01-01-1995',	N'TP.HCM',		N'Q.9'			,'23-5-2012' UNION 
+SELECT	'HS00000023',	N'Nguyễn Ngọc Lan',		'ngoclan@gmail.com',		1,	'20-09-1994',	N'Bình Thuận',	N'Vũng Liêm'	,'23-5-2012' UNION 
+SELECT	'HS00000024',	N'Lê Thị Quyên',		'thiquyen@gmail.com',		1,	'01-01-1995',	N'Hải Dương',	N'Không Biết'	,'23-5-2012' UNION 
+SELECT	'HS00000025',	N'Nguyễn Thị Thanh', 	'thithanh@gmail.com',		1,	'08-07-1995',	N'Bình Dương',	N'Q.9'			,'23-5-2012' UNION 
+SELECT	'HS00000026',	N'Trần Duy Tâm',		'duytam@gmail.com',			0,	'01-01-1994',	N'TP.HCM',		N'Q.9'			,'23-5-2012' UNION 
+SELECT	'HS00000027',	N'Nguyễn Thị Thùy', 	'thithuy@gmail.com',		1,	'20-09-1993',	N'Lâm Đồng',	N'Vũng Liêm'	,'23-5-2012' UNION 
+SELECT	'HS00000028',	N'Huỳnh Ngọc Bảo', 		'ngocbao@gmail.com',		1,	'01-01-1992',	N'Long An',		N'Không Biết'	,'23-5-2012' UNION 
+SELECT	'HS00000029',	N'Nguyễn Hoàng Oanh',	'hoangoanh@gmail.com',		1,	'08-07-1993',	N'TP.HCM',		N'Q.9'			,'23-5-2012' UNION
+SELECT	'HS00000030',	N'Lê Bảo Trân',			'baotran@gmail.com',		1,	'01-01-1992',	N'Hải Dương',	N'Không Biết' ,'23-5-2012'
 
 --Table GIAOVIEN
 GO
@@ -331,8 +332,10 @@ SELECT 'GV005',  N'Nguyễn Ngọc Anh Thư' UNION
 SELECT 'GV006',	 N'Phạm Đăng Khoa'		UNION
 SELECT 'GV007',	 N'Trần Thanh Huy'		UNION
 SELECT 'GV008',	 N'Huỳnh Yến Nhi'		UNION
-SELECT 'GV009',	 N'Nguyễn Thị Ngọc Thu'
-
+SELECT 'GV009',	 N'Nguyễn Thị Hoàng Oanh' UNION
+SELECT 'GV010',	 N'Huỳnh Yến Linh'		UNION
+SELECT 'GV011',	 N'Nguyễn Hoàng Nam' UNION
+SELECT 'GV012',	 N'Nguyễn Hoàng Bắc'	
 -- table LOAINGUOIDUN
 GO
 INSERT INTO LOAINGUOIDUNG(MaLoaiND,TenLoaiND)
@@ -359,8 +362,16 @@ GO
 INSERT INTO LOP ([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien])  
 SELECT '10A01NH1112',	'10A1',	10,	'NH1112', 40, 'GV001' UNION 
 SELECT '10A02NH1112',	'10A2',	10,	'NH1112', 40, 'GV002' UNION 
-SELECT '11A01NH1112',	'11A1',	11,	'NH1112', 40, 'GV003' UNION 
-SELECT '12A01NH1112',	'12A1',	12,	'NH1112', 40, 'GV004'
+SELECT '10A03NH1112',	'10A3',	10,	'NH1112', 40, 'GV003' UNION 
+SELECT '10A04NH1112',	'10A3',	10,	'NH1112', 40, 'GV004' UNION 
+SELECT '11A01NH1112',	'11A1',	11,	'NH1112', 40, 'GV005' UNION 
+SELECT '11A02NH1112',	'11A2',	11,	'NH1112', 40, 'GV006' UNION 
+SELECT '11A03NH1112',	'11A3',	11,	'NH1112', 40, 'GV007' UNION 
+SELECT '11A04NH1112',	'11A4',	11,	'NH1112', 40, 'GV008' UNION 
+SELECT '12A01NH1112',	'12A1',	12,	'NH1112', 40, 'GV009' UNION
+SELECT '12A02NH1112',	'12A2',	12,	'NH1112', 40, 'GV010' UNION
+SELECT '12A03NH1112',	'12A3',	12,	'NH1112', 40, 'GV011' UNION
+SELECT '12A04NH1112',	'12A4',	12,	'NH1112', 40, 'GV012' 
 -- Mon hoc
 GO
 INSERT INTO MONHOC(MaMonHoc,TenMonHoc,SoTiet,HeSo,TrangThai) 
@@ -402,16 +413,16 @@ SELECT 1,	'HS00000017',	'11A02NH1112' UNION
 SELECT 2,	'HS00000018',	'11A02NH1112' UNION 
 SELECT 1,	'HS00000019',	'12A02NH1112' UNION 
 SELECT 2,	'HS00000020',	'12A02NH1112' UNION
-SELECT 1,	'HS00000021',	'10A01NH1213' UNION
-SELECT 2,	'HS00000022',	'10A01NH1213' UNION
-SELECT 1,	'HS00000023',	'10A02NH1213' UNION 
-SELECT 1,	'HS00000024',	'10A02NH1213' UNION
-SELECT 1,	'HS00000025',	'11A01NH1213' UNION 
-SELECT 2,	'HS00000026',	'11A01NH1213' UNION 
-SELECT 3,	'HS00000027',	'11A01NH1213' UNION
-SELECT 1,	'HS00000028',	'12A01NH1213' UNION 
-SELECT 2,	'HS00000029',	'12A01NH1213' UNION 
-SELECT 3,	'HS00000030',	'12A01NH1213'
+SELECT 1,	'HS00000021',	'10A01NH1112' UNION
+SELECT 2,	'HS00000022',	'10A01NH1112' UNION
+SELECT 1,	'HS00000023',	'10A02NH1112' UNION 
+SELECT 1,	'HS00000024',	'10A02NH1112' UNION
+SELECT 1,	'HS00000025',	'11A01NH1112' UNION 
+SELECT 2,	'HS00000026',	'11A01NH1112' UNION 
+SELECT 3,	'HS00000027',	'11A01NH1112' UNION
+SELECT 1,	'HS00000028',	'12A01NH1112' UNION 
+SELECT 2,	'HS00000029',	'12A01NH1112' UNION 
+SELECT 3,	'HS00000030',	'12A01NH1112'
 
 -- Quy Dinh
 INSERT INTO QUYDINH (Khoa,GiaTri)  
@@ -423,7 +434,8 @@ SELECT 'SoLuongLop',	'20'			UNION
 SELECT 'TenTruong',		N'THPT Nguyễn Huệ' UNION 
 SELECT 'SoMonHoc',		'15'			UNION 
 SELECT 'TuoiCanDuoi',	'15'			UNION 
-SELECT 'TuoiCanTren',	'18'
+SELECT 'TuoiCanTren',	'18' UNION
+SELECT 'NgayApDung', '24-05-2012'
 
 -- Bảng điểm
 INSERT INTO BANGDIEM (MaHocSinh,MaMonHoc,DM_1,DM_2,D15_1,D15_2,D15_3,D15_4,D1T_1.D1T_2,DThi,MaLop,MaHocKy)
@@ -549,3 +561,4 @@ BEGIN
     END
     RETURN @strInput
 END
+
