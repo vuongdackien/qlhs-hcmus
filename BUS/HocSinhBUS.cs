@@ -22,10 +22,11 @@ namespace QLHS.BUS
         /// Lấy DataTable học sinh từ Lớp học
         /// </summary>
         /// <param name="MaLop">String: Mã lớp</param>
+        /// <param name="chua_PhanLop">bool: Lấy danh sách chưa được phân lớp</param>
         /// <returns>DataTable</returns>
-        public DataTable LayDTHocSinh_LopHoc(string MaLop)
+        public DataTable LayDTHocSinh_LopHoc(string MaLop, bool chua_PhanLop = false)
         {
-            return _hocSinhDAL.LayDT_HocSinh_LopHoc(MaLop);
+            return _hocSinhDAL.LayDT_HocSinh_LopHoc(MaLop,chua_PhanLop);
         }
          /// <summary>
         /// Lấy hồ sơ học sinh từ Mã học sinh
@@ -49,26 +50,27 @@ namespace QLHS.BUS
         /// Lưu hồ sơ học sinh 
         /// </summary>
         /// <param name="hocsinh">HocSinhDTO</param>
-        /// <param name="MaLop">String: Mã lớp</param>
+        /// <param name="MaLop">String: Mã lớp (nếu rỗng thì không phan lớp)</param>
         /// <returns>Bool</returns>
-        public bool LuuHoSoHocSinh(HocSinhDTO hocsinh, string MaLop)
+        public bool LuuHoSoHocSinh(HocSinhDTO hocsinh, string MaLop = null)
         {
             // Sửa hồ sơ học sinh
             if (_hocSinhDAL.KiemTraTonTai_MaHocSinh(hocsinh.MaHocSinh))
             {
-                // Nếu có sửa STT
-                if (hocsinh.STT != _phanLopBUS.Lay_STT_HienTai(hocsinh.MaHocSinh,MaLop)
-                   && _phanLopBUS.KiemTra_STT_TonTai(hocsinh.STT, MaLop)) // STT mới này đã tồn tại
+                // Nếu hồ sơ có phân lớp và có sửa STT
+                if (MaLop != null && hocsinh.STT != _phanLopBUS.Lay_STT_HienTai(hocsinh.MaHocSinh,MaLop)
+                    && _phanLopBUS.KiemTra_STT_TonTai(hocsinh.STT, MaLop)) // STT mới này đã tồn tại
                 {
                     Utilities.ExceptionUtilities.Throw("Số thứ tự " + hocsinh.STT + " đã tồn tại trong lớp "+MaLop+"."
-                                         + "\nBạn có thể sử dụng chức năng \"Tự động sắp xếp số thứ tự\" theo alpha.");
+                                            + "\nBạn có thể sử dụng chức năng \"Tự động sắp xếp số thứ tự\" theo alpha.");
                     return false;
                 }
                 return _hocSinhDAL.Sua_HoSo(hocsinh, MaLop);
             }
             else // Thêm mới hồ sơ học sinh
             {
-                if (_phanLopBUS.KiemTra_STT_TonTai(hocsinh.STT, MaLop))
+                // Nếu hồ sơ có phân lớp và kiểm tra STT đã tồn tại hay chưa?
+                if (MaLop != null && _phanLopBUS.KiemTra_STT_TonTai(hocsinh.STT, MaLop))
                 {
                     Utilities.ExceptionUtilities.Throw("Số thứ tự " + hocsinh.STT + " đã tồn tại trong lớp."
                                                                 + "\nChương trình sẽ tự động tạo số thứ tự tiếp theo trong bảng điểm"
