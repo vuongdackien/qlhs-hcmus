@@ -20,8 +20,9 @@ namespace QLHS.DAL
         }
         public  void SuaQuyDinh(QuyDinhDTO QD)
         {
-           
-            
+             string sql = string.Format("update QuyDinh set GiaTri=N'{0}'"
+                                                                       + "where Khoa={1} ", QD.GiaTri,QD.Khoa);
+            ExecuteQuery(sql);
         }
     }
 }
