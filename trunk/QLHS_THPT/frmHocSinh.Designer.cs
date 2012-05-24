@@ -268,7 +268,7 @@
             // 
             // comboBoxEditNamHoc
             // 
-            this.comboBoxEditNamHoc.Location = new System.Drawing.Point(23, 104);
+            this.comboBoxEditNamHoc.Location = new System.Drawing.Point(23, 55);
             this.comboBoxEditNamHoc.Name = "comboBoxEditNamHoc";
             this.comboBoxEditNamHoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -290,7 +290,7 @@
             // 
             // comboBoxEditKhoi
             // 
-            this.comboBoxEditKhoi.Location = new System.Drawing.Point(23, 59);
+            this.comboBoxEditKhoi.Location = new System.Drawing.Point(23, 101);
             this.comboBoxEditKhoi.Name = "comboBoxEditKhoi";
             this.comboBoxEditKhoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -309,7 +309,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(23, 87);
+            this.labelControl3.Location = new System.Drawing.Point(23, 38);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(72, 13);
             this.labelControl3.TabIndex = 3;
@@ -317,7 +317,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(23, 40);
+            this.labelControl1.Location = new System.Drawing.Point(23, 82);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(51, 13);
             this.labelControl1.TabIndex = 3;
