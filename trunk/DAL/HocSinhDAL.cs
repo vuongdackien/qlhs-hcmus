@@ -174,7 +174,7 @@ namespace QLHS.DAL
 
         #region Các hàm tìm kiếm học sinh
         /// <summary>
-        /// Tìm kiếm học sinh 
+        /// Tìm kiếm học sinh đã phân lớp
         /// </summary>
         /// <param name="hs">Object: HocSinhTimKiem - Thông tin học sinh tìm kiếm</param>
         /// <param name="DS_MaLop">Default: NULL (Tìm tất cả các năm) || Tìm trong các lớp</param>
@@ -252,6 +252,73 @@ namespace QLHS.DAL
                 where += "AND hsinh.MaHocSinh in (SELECT DISTINCT plop2.MaHocSinh FROM PHANLOP plop2 WHERE plop2.MaLop in ('" + MaLop + "')) ";
                 where += "AND plop.MaLop in('" + MaLop + "')";
             }
+            sql += where;
+            // thực hiện query
+            return GetTable(sql);
+        }
+        /// <summary>
+        /// Tìm kiếm tất cả học sinh kể cả học sinh chưa phân lớp
+        /// </summary>
+        /// <param name="hs"></param>
+        /// <returns></returns>
+        public DataTable Tim_HoSo_KoPhanLop(HocSinhTimKiemDTO hs)
+        {
+            List<HocSinhDTO> hsResult = new List<HocSinhDTO>();
+            string oper = " LIKE ";
+            string per = "%";
+            string sql = " SELECT distinct hsinh.MaHocSinh, TenHocSinh, "
+                          + " GioiTinh = (CASE GioiTinh WHEN 0 THEN N'Nam' "
+                          + " WHEN 1 THEN N'Nữ' END), "
+                          + " NgaySinh, NoiSinh, "
+                          + " Email, DiaChi "
+                          + " FROM HOCSINH hsinh WHERE 1 = 1 ";
+            string where = "";
+
+            // Mã học sinh
+            if (!hs.MaHocSinh.Equals(""))
+            {
+                where += " MaHocSinh " + oper + "'" + per + hs.MaHocSinh + per + "' ";                
+            }
+
+            //tên học sinh
+            if (!hs.TenHocSinh.Equals(""))
+            {
+                 where += "AND (TenHocSinh " + oper + "N'" + per + hs.TenHocSinh + per + "' ";                   
+                
+                where += " OR dbo.fnChuyenKhongDau(TenHocSinh) " + oper + "N'" + per + hs.TenHocSinh + per + "' )";
+            }
+
+            //giới tính
+            if (!hs.GioiTinh.Equals(-1))
+            {
+                where += " AND GioiTinh = " + hs.GioiTinh + " ";
+            }
+
+            //năm sinh từ
+            if (!hs.NamSinhTu.Equals(""))
+            {
+               where += " AND YEAR(NgaySinh)  >='" + hs.NamSinhTu + "' ";
+            }
+
+            //năm sinh đến
+            if (!hs.NamSinhDen.Equals(""))
+            {
+                where += " AND YEAR(NgaySinh)  <='" + hs.NamSinhDen + "' ";
+            }
+
+            //email
+            if (!hs.Email.Equals(""))
+            {
+                where += " AND Email " + oper + "'" + per + hs.Email + per + "' ";
+            }
+
+            //địa chỉ
+            if (!hs.DiaChi.Equals(""))
+            {
+                where += " AND (DiaChi " + oper + "'" + per + hs.DiaChi + per + "' ";
+                where += " OR dbo.fnChuyenKhongDau(DiaChi) " + oper + "N'" + per + hs.DiaChi + per + "') ";
+            }
+      
             sql += where;
             // thực hiện query
             return GetTable(sql);

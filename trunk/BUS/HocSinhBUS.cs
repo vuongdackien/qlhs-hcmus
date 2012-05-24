@@ -135,6 +135,11 @@ namespace QLHS.BUS
         {
             return _hocSinhDAL.Tim_HoSo(hs,DS_MaLop);
         }
+
+        public DataTable TimKiem_HocSinh_KoPhanLop(HocSinhTimKiemDTO hs)
+        {
+            return _hocSinhDAL.Tim_HoSo_KoPhanLop(hs);
+        }
         /// <summary>
         /// Xóa 1 hồ sơ học sinh
         /// </summary>
