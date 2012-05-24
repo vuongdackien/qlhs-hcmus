@@ -28,14 +28,15 @@ namespace QLHS
         {
 
             //simpleButtonThemMonHoc.Enabled = true;
-            simpleButtonXoaMonHoc.Enabled = true;
+            //simpleButtonXoaMonHoc.Enabled = true;
             simpleButtonSuaMonHoc.Enabled = true;
             simpleButtonhuy.Enabled = false;
             simpleButtonLuu.Enabled = false;
-            textEditMaMonHoc.Enabled = false;
-            textEditTenMonHoc.Enabled = false;
-            textEditSoTiet.Enabled = false;
-            comboBoxEditHeSo.Enabled = false;
+            //textEditMaMonHoc.Enabled = false;
+            //textEditTenMonHoc.Enabled = false;
+            //textEditSoTiet.Enabled = false;
+            //comboBoxEditHeSo.Enabled = false;
+            //comboBoxEditTrangThai.Enabled = false;
             simpleButtonhuy.Enabled = false;
             flag = 0;
            
@@ -73,32 +74,33 @@ namespace QLHS
             simpleButtonhuy.Enabled = false;
             flag = 1;
         }
-        */
         private void simpleButtonXoaMonHoc_Click(object sender, EventArgs e)
         {
             string MaMH = textEditMaMonHoc.Text.Trim();
             MaMH = doichuoi(MaMH);
             _MonHocBus.XoaMonHoc(MaMH);
             Utilities.MessageboxUtilities.MessageSuccess("Bạn đã xóa thành công môn học: "+MaMH);
-        }
+        }*/
 
         private void simpleButtonSuaMonHoc_Click(object sender, EventArgs e)
         {
             //simpleButtonThemMonHoc.Enabled = false;
-            simpleButtonXoaMonHoc.Enabled = true;
+          //  simpleButtonXoaMonHoc.Enabled = true;
             simpleButtonSuaMonHoc.Enabled = false;
             simpleButtonhuy.Enabled = true;
             simpleButtonLuu.Enabled = true;
-            textEditMaMonHoc.Enabled = false;
-            textEditTenMonHoc.Enabled = true;
-            textEditSoTiet.Enabled = true;
-            comboBoxEditHeSo.Enabled = true;
-            simpleButtonhuy.Enabled = false;
+            //textEditMaMonHoc.Enabled = false;
+            //textEditTenMonHoc.Enabled = true;
+            //textEditSoTiet.Enabled = true;
+            //comboBoxEditHeSo.Enabled = true;
+            //comboBoxEditTrangThai.Enabled = true;
+            
             flag = 2;
         }
 
         private void frmMonHoc_Load(object sender, EventArgs e)
         {
+            KhoiTaoTrangthai();
            DT = new DataTable();
            DT = _MonHocBus.LayDT_DanhSach_MonHoc(false);
 
@@ -120,64 +122,31 @@ namespace QLHS
 
         private void simpleButtonLuu_Click(object sender, EventArgs e)
         {
-            if (flag == 1 || flag == 3)
+            gridViewMonHoc.FocusedColumn = gridViewMonHoc.Columns[0];
+
+            _MonHocDTO = new MonHocDTO();
+            string MaMH;
+            string TenMH;
+            int SoTiet;
+            int HeSo;
+            int TrangThai;
+            for (int i = 0; i < gridViewMonHoc.RowCount; i++)
             {
-                if (KiemtraNull(textEditMaMonHoc.Text.Trim()))
-                {
-                    string MaMH = textEditMaMonHoc.Text.Trim();
-                    MaMH = doichuoi(MaMH);
-                    _MonHocDTO = new MonHocDTO();
-                    if (textEditTenMonHoc.Text.Trim() != "")
-                    {
-                         string TenMH = textEditTenMonHoc.Text.Trim();
-                         TenMH = doichuoi(TenMH);
-                        int SoTiet=int.Parse(textEditSoTiet.Text.Trim());
-                        int HeSo=int.Parse(comboBoxEditHeSo.SelectedText);
-                       _MonHocDTO.MaMonHoc = MaMH;
-                       _MonHocDTO.TenMonHoc = TenMH;
-                       _MonHocDTO.SoTiet = SoTiet;
-                       _MonHocDTO.HeSo = HeSo;
-                        if (flag == 1)
-                        {
-
-                            
-                            bool kq = _MonHocBus.KTTonTaiMonHoc(_MonHocDTO);
-                            if (kq )
-                            {
-                                Utilities.MessageboxUtilities.MessageError("Hành động thêm thất bại. Có thể giáo viên này đã tồn tại trong cơ sở dữ liệu");
-                            }
-                            else
-                            {
-                                _MonHocBus.ThemMonHoc(_MonHocDTO);
-                                Utilities.MessageboxUtilities.MessageSuccess("Bạn đã thêm thành công" + kq + " Giáo viên vào cơ sở dữ liệu");
-                                
-                            }
-
-                        }
-
-                        else if (flag == 3)
-                        {
-
-                            _MonHocBus.CapNhatMonHOc(_MonHocDTO);
-                            Utilities.MessageboxUtilities.MessageSuccess("Cập nhật thành công môn học"+_MonHocDTO.TenMonHoc.ToString());
-                        }
-
-                    }
-                    else
-                    {
-                        Utilities.MessageboxUtilities.MessageError("Tên môn học không thể để trống");
-                        this.Cursor = textEditTenMonHoc.Cursor;
-                    }
-
-                }
-                else
-                {
-                    Utilities.MessageboxUtilities.MessageError("Mã Môn học không thể để trống");
-
-                }
+                MaMH = gridViewMonHoc.GetRowCellValue(i, "MaMonHoc").ToString();
+                TenMH = gridViewMonHoc.GetRowCellValue(i, "MaMonHoc").ToString();
+                SoTiet = int.Parse(gridViewMonHoc.GetRowCellValue(i, "MaMonHoc").ToString());
+                HeSo = int.Parse(gridViewMonHoc.GetRowCellValue(i, "MaMonHoc").ToString());
+                TrangThai = int.Parse(gridViewMonHoc.GetRowCellValue(i, "MaMonHoc").ToString());
+                _MonHocDTO.MaMonHoc = MaMH;
+                _MonHocDTO.TenMonHoc = TenMH;
+                _MonHocDTO.SoTiet = SoTiet;
+                _MonHocDTO.HeSo = HeSo;
+                _MonHocDTO.TrangThai = TrangThai;
+                _MonHocBus.CapNhatMonHOc(_MonHocDTO);
+            }
+            Utilities.MessageboxUtilities.MessageSuccess("Bạn đã cập nhật thành công");
                 frmMonHoc_Load(sender, e);
             }
-        }
 
         private void simpleButtonloaddulieu_Click(object sender, EventArgs e)
         {
@@ -189,21 +158,21 @@ namespace QLHS
 
         private void gridViewMonHoc_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            for (int i = 0; i < gridViewMonHoc.RowCount; i++)
-            {
-                textEditMaMonHoc.Text = gridViewMonHoc.GetFocusedRowCellValue("MaMonHoc").ToString();
-                textEditTenMonHoc.Text = gridViewMonHoc.GetFocusedRowCellValue("TenMonHoc").ToString();
-                textEditSoTiet.Text = gridViewMonHoc.GetFocusedRowCellValue("SoTiet").ToString();
-                comboBoxEditHeSo.SelectedText="";
-                comboBoxEditTrangThai.SelectedText="";
-                comboBoxEditHeSo.SelectedText= gridViewMonHoc.GetFocusedRowCellValue("HeSo").ToString();
-                comboBoxEditTrangThai.SelectedText = gridViewMonHoc.GetFocusedRowCellValue("TrangThai").ToString();
-                break;
+            //for (int i = 0; i < gridViewMonHoc.RowCount; i++)
+            //{
+            //    textEditMaMonHoc.Text = gridViewMonHoc.GetFocusedRowCellValue("MaMonHoc").ToString();
+            //    textEditTenMonHoc.Text = gridViewMonHoc.GetFocusedRowCellValue("TenMonHoc").ToString();
+            //    textEditSoTiet.Text = gridViewMonHoc.GetFocusedRowCellValue("SoTiet").ToString();
+            //    comboBoxEditHeSo.Text="";
+            //    comboBoxEditTrangThai.Text="";
+            //    comboBoxEditHeSo.SelectedText= gridViewMonHoc.GetFocusedRowCellValue("HeSo").ToString();
+            //    comboBoxEditTrangThai.SelectedText = gridViewMonHoc.GetFocusedRowCellValue("TrangThai").ToString();
+            //    break;
                 
-            }
+            //}
         }
 
-        private void simpleButtonTimKiem_Click(object sender, EventArgs e)
+       /* private void simpleButtonTimKiem_Click(object sender, EventArgs e)
         {
             if (textEditTK.Text.Trim()!="")
             {
@@ -225,7 +194,27 @@ namespace QLHS
                
                 
             }
-        }
+        }*/
+
+       /* private void textEditSoTiet_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            int n = 1;
+            if (!int.TryParse(this.textEditSoTiet.Text, out n))
+            {
+                Utilities.MessageboxUtilities.MessageError("Số tiết phải là số nguyên");
+                
+            }
+            else
+            {
+                e.Handled = true;
+            }
+            
+        }*/
 
           
 
