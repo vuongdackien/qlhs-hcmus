@@ -315,7 +315,9 @@ SELECT	'HS00000026',	N'Trần Duy Tâm',		'duytam@gmail.com',			0,	'01-01-1994',
 SELECT	'HS00000027',	N'Nguyễn Thị Thùy', 	'thithuy@gmail.com',		1,	'20-09-1993',	N'Lâm Đồng',	N'Vũng Liêm'	,'23-5-2012' UNION 
 SELECT	'HS00000028',	N'Huỳnh Ngọc Bảo', 		'ngocbao@gmail.com',		1,	'01-01-1992',	N'Long An',		N'Không Biết'	,'23-5-2012' UNION 
 SELECT	'HS00000029',	N'Nguyễn Hoàng Oanh',	'hoangoanh@gmail.com',		1,	'08-07-1993',	N'TP.HCM',		N'Q.9'			,'23-5-2012' UNION
-SELECT	'HS00000030',	N'Lê Bảo Trân',			'baotran@gmail.com',		1,	'01-01-1992',	N'Hải Dương',	N'Không Biết' ,'23-5-2012'
+SELECT	'HS00000030',	N'Lê Bảo Trân',			'baotran@gmail.com',		1,	'01-01-1992',	N'Hải Dương',	N'Không Biết' ,'23-5-2012' UNION
+SELECT	'HS00000031',	N'Nguyễn Văn Tèo',		'vanteo@gmail.com',		1,	'01-01-1992',	N'Daklak',	N'Không Biết' ,'22-5-2012' UNION
+SELECT	'HS00000032',	N'Nguyễn Văn Tý',		'vanty@gmail.com',		1,	'01-01-1992',	N'DakNong',	N'Không Biết' ,'21-5-2012'
 
 --Table GIAOVIEN
 GO
@@ -359,7 +361,7 @@ INSERT INTO LOP ([MaLop],[TenLop],[MaKhoiLop],[MaNamHoc],[SiSo],[MaGiaoVien])
 SELECT '10A01NH1112',	'10A1',	10,	'NH1112', 40, 'GV001' UNION 
 SELECT '10A02NH1112',	'10A2',	10,	'NH1112', 40, 'GV002' UNION 
 SELECT '10A03NH1112',	'10A3',	10,	'NH1112', 40, 'GV003' UNION 
-SELECT '10A04NH1112',	'10A3',	10,	'NH1112', 40, 'GV004' UNION 
+SELECT '10A04NH1112',	'10A4',	10,	'NH1112', 40, 'GV004' UNION 
 SELECT '11A01NH1112',	'11A1',	11,	'NH1112', 40, 'GV005' UNION 
 SELECT '11A02NH1112',	'11A2',	11,	'NH1112', 40, 'GV006' UNION 
 SELECT '11A03NH1112',	'11A3',	11,	'NH1112', 40, 'GV007' UNION 

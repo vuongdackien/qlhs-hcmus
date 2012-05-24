@@ -266,12 +266,12 @@ namespace QLHS.DAL
             List<HocSinhDTO> hsResult = new List<HocSinhDTO>();
             string oper = " LIKE ";
             string per = "%";
-            string sql = " SELECT distinct hsinh.MaHocSinh, TenHocSinh, "
+            string sql = " SELECT distinct h.MaHocSinh, TenHocSinh, "
                           + " GioiTinh = (CASE GioiTinh WHEN 0 THEN N'Nam' "
                           + " WHEN 1 THEN N'Nữ' END), "
                           + " NgaySinh, NoiSinh, "
                           + " Email, DiaChi "
-                          + " FROM HOCSINH hsinh WHERE 1 = 1 ";
+                          + " FROM HOCSINH h WHERE NOT EXISTS (SELECT * FROM PHANLOP p WHERE h.MaHocSinh = p.MaHocSinh) ";
             string where = "";
 
             // Mã học sinh

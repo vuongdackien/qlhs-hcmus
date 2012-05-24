@@ -100,17 +100,16 @@ namespace QLHS
             Utilities.TreeListUtilities.SetCheckedChildNodes(e.Node, e.Node.CheckState);
             Utilities.TreeListUtilities.SetCheckedParentNodes(e.Node, e.Node.CheckState);
         }
-
-        private void checkEditTatCaHoSo_CheckedChanged(object sender, EventArgs e)
+        private void radioGroupTimTrong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            checkEditTatCaNam.Enabled = !checkEditTatCaHoSo.Checked;
-            comboBoxEditNamHoc.Enabled = !checkEditTatCaHoSo.Checked;
-            treeListSearch.Enabled = !checkEditTatCaHoSo.Checked;
+            bool enable = (radioGroupTimTrong.SelectedIndex == 0);
+            checkEditTatCaNam.Enabled = enable;
+            comboBoxEditNamHoc.Enabled = enable;
+            treeListSearch.Enabled = enable;
+  
         }
-
         private void checkEditTatCaNam_CheckedChanged(object sender, EventArgs e)
-        {
-            checkEditTatCaHoSo.Enabled = !checkEditTatCaNam.Checked;      
+        {   
             comboBoxEditNamHoc.Enabled = !checkEditTatCaNam.Checked;
             treeListSearch.Enabled = !checkEditTatCaNam.Checked;
         }
@@ -145,29 +144,32 @@ namespace QLHS
 
             try
             {
-                if (checkEditTatCaHoSo.Checked)  //Tìm tất cả hồ sơ học sinh
-                {                                     
-                    kq_TimKiemDS = _hocSinhBUS.TimKiem_HocSinh_KoPhanLop(hsTimKiemDTO); 
-                }
-                if (checkEditTatCaNam.Checked)  // Tìm trong tất cả các năm, các lớp
-                {                                
-                    kq_TimKiemDS = _hocSinhBUS.TimKiem_HocSinh(hsTimKiemDTO);                    
-                }
-                else // Nếu ko chọn tìm kiếm tất cả các năm => Tìm kiếm trong tất cả các lớp được checked
+
+                if (radioGroupTimTrong.SelectedIndex == 1)  // Chi tim trong ho so hoc sinh 
                 {
-                    checkEditTatCaHoSo.Enabled = false;
-                    List<string> lopCheck = new List<string>();
-                    foreach (TreeListNode khoi in treeListSearch.Nodes)
+                    kq_TimKiemDS = _hocSinhBUS.TimKiem_HocSinh_KoPhanLop(hsTimKiemDTO);
+                }
+                else
+                {
+                    if (checkEditTatCaNam.Checked)  // Tìm trong tất cả các năm, các lớp
                     {
-                        foreach (TreeListNode lop in khoi.Nodes)
+                        kq_TimKiemDS = _hocSinhBUS.TimKiem_HocSinh(hsTimKiemDTO);
+                    }
+                    else // Nếu ko chọn tìm kiếm tất cả các năm => Tìm kiếm trong tất cả các lớp được checked
+                    {
+                        List<string> lopCheck = new List<string>();
+                        foreach (TreeListNode khoi in treeListSearch.Nodes)
                         {
-                            if (lop.Checked)
+                            foreach (TreeListNode lop in khoi.Nodes)
                             {
-                                lopCheck.Add(lop.GetValue("MaKhoi").ToString());
+                                if (lop.Checked)
+                                {
+                                    lopCheck.Add(lop.GetValue("MaKhoi").ToString());
+                                }
                             }
                         }
+                        kq_TimKiemDS = _hocSinhBUS.TimKiem_HocSinh(hsTimKiemDTO, lopCheck);
                     }
-                    kq_TimKiemDS = _hocSinhBUS.TimKiem_HocSinh(hsTimKiemDTO, lopCheck);
                 }
             }
             catch (Exception ex)
@@ -287,7 +289,10 @@ namespace QLHS
             var frmHocSinhInstance = frmMainInstance.openForms[typeof(frmHocSinh)] as frmHocSinh;
             // Gắn các properties chuẩn bị hiển thị chi tiết hồ sơ học sinh
             frmHocSinhInstance.MaHocSinh = gridViewSearch.GetFocusedRowCellValue("MaHocSinh").ToString();
-            frmHocSinhInstance.MaLop = gridViewSearch.GetFocusedRowCellValue("MaLop").ToString();
+            if (radioGroupTimTrong.SelectedIndex == 1)
+                frmHocSinhInstance.MaLop = null;
+            else
+                frmHocSinhInstance.MaLop = gridViewSearch.GetFocusedRowCellValue("MaLop").ToString();
             // Hiển thị lại thông tin học sinh
             frmHocSinhInstance.HienThiLai_FrmHocSinh_TuFormTimKiem();
         }
@@ -304,5 +309,6 @@ namespace QLHS
         {
             this.Close();
         }
+        
     }
 }
