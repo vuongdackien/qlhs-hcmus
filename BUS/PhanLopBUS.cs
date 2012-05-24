@@ -105,5 +105,9 @@ namespace QLHS.BUS
         {
             return _PhanLopDAL.ChuyenLop_HocSinh(MaHocSinh, MaLop);
         }
+        public bool XoaHocSinh_Lop(string MaHocSinh, string MaLop)
+        {
+            return _PhanLopDAL.XoaHocSinh_Lop(MaHocSinh, MaLop);
+        }
     }
 }
