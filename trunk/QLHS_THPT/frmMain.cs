@@ -308,7 +308,7 @@ namespace QLHS
 
         private void barBtnHoSoGiaoVien_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmBC_TongKetMon>();
+            ShowMDIChildForm<frmGiaoVien>();
         }
 
         private void barBtnTimKiemGiaoVien_ItemClick(object sender, ItemClickEventArgs e)

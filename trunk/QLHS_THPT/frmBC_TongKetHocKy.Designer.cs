@@ -46,6 +46,7 @@
             this.gridControlTongKetHocKy = new DevExpress.XtraGrid.GridControl();
             this.gridViewTongKetHocKy = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumnTenMonHoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -66,7 +67,6 @@
             this.bandedGridColumn4 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridColumnTenMonHoc = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTopRight)).BeginInit();
             this.panelControlTopRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlChooseYear)).BeginInit();
@@ -97,7 +97,7 @@
             // 
             // simpleButtonXuatBD
             // 
-            this.simpleButtonXuatBD.Image = global::QLHS.Properties.Resources.chuyenlop_small;
+            this.simpleButtonXuatBD.Image = global::QLHS.Properties.Resources.xuat_bcao;
             this.simpleButtonXuatBD.Location = new System.Drawing.Point(690, 32);
             this.simpleButtonXuatBD.Name = "simpleButtonXuatBD";
             this.simpleButtonXuatBD.Size = new System.Drawing.Size(128, 35);
@@ -282,6 +282,23 @@
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             this.gridColumn1.Width = 46;
+            // 
+            // gridColumnTenMonHoc
+            // 
+            this.gridColumnTenMonHoc.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumnTenMonHoc.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnTenMonHoc.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumnTenMonHoc.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumnTenMonHoc.AppearanceHeader.Options.UseFont = true;
+            this.gridColumnTenMonHoc.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnTenMonHoc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnTenMonHoc.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumnTenMonHoc.Caption = "Tên môn học";
+            this.gridColumnTenMonHoc.FieldName = "TenMonHoc";
+            this.gridColumnTenMonHoc.Name = "gridColumnTenMonHoc";
+            this.gridColumnTenMonHoc.Visible = true;
+            this.gridColumnTenMonHoc.VisibleIndex = 1;
+            this.gridColumnTenMonHoc.Width = 99;
             // 
             // gridColumn2
             // 
@@ -544,23 +561,6 @@
             this.bandedGridColumn6.FieldName = "TyLe";
             this.bandedGridColumn6.Name = "bandedGridColumn6";
             this.bandedGridColumn6.Visible = true;
-            // 
-            // gridColumnTenMonHoc
-            // 
-            this.gridColumnTenMonHoc.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumnTenMonHoc.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumnTenMonHoc.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumnTenMonHoc.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumnTenMonHoc.AppearanceHeader.Options.UseFont = true;
-            this.gridColumnTenMonHoc.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumnTenMonHoc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumnTenMonHoc.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumnTenMonHoc.Caption = "Tên môn học";
-            this.gridColumnTenMonHoc.FieldName = "TenMonHoc";
-            this.gridColumnTenMonHoc.Name = "gridColumnTenMonHoc";
-            this.gridColumnTenMonHoc.Visible = true;
-            this.gridColumnTenMonHoc.VisibleIndex = 1;
-            this.gridColumnTenMonHoc.Width = 99;
             // 
             // frmBC_TongKetHocKy
             // 

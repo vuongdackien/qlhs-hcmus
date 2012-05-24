@@ -93,6 +93,7 @@
             // 
             // simpleButtonDong
             // 
+            this.simpleButtonDong.Image = global::QLHS.Properties.Resources.thoat_small;
             this.simpleButtonDong.ImageIndex = 0;
             this.simpleButtonDong.Location = new System.Drawing.Point(596, 10);
             this.simpleButtonDong.Name = "simpleButtonDong";
@@ -103,7 +104,7 @@
             // 
             // simpleButtonThemMoi
             // 
-            this.simpleButtonThemMoi.Image = global::QLHS.Properties.Resources.them_small;
+            this.simpleButtonThemMoi.Image = global::QLHS.Properties.Resources.them;
             this.simpleButtonThemMoi.Location = new System.Drawing.Point(180, 10);
             this.simpleButtonThemMoi.Name = "simpleButtonThemMoi";
             this.simpleButtonThemMoi.Size = new System.Drawing.Size(134, 35);
@@ -189,9 +190,9 @@
             this.labelControlTitle.Appearance.ForeColor = System.Drawing.Color.Navy;
             this.labelControlTitle.Location = new System.Drawing.Point(16, 6);
             this.labelControlTitle.Name = "labelControlTitle";
-            this.labelControlTitle.Size = new System.Drawing.Size(161, 23);
+            this.labelControlTitle.Size = new System.Drawing.Size(210, 23);
             this.labelControlTitle.TabIndex = 1;
-            this.labelControlTitle.Text = "DANH SÁCH LỚP";
+            this.labelControlTitle.Text = "DANH SÁCH LỚP HỌC";
             // 
             // panelControlTop
             // 
@@ -399,7 +400,7 @@
             this.Controls.Add(this.panelControlLeft);
             this.Controls.Add(this.panelControl1);
             this.Name = "frmLapDSLop";
-            this.Text = "Danh sách lớp";
+            this.Text = "Lập danh sách lớp";
             this.Load += new System.EventHandler(this.frmLapDSLop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

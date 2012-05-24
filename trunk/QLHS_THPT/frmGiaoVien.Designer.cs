@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGiaoVien));
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButtonhuy = new DevExpress.XtraEditors.SimpleButton();
             this.checkMaGiaoVien = new DevExpress.XtraEditors.CheckEdit();
@@ -94,11 +95,12 @@
             // 
             // simpleButtonhuy
             // 
-            this.simpleButtonhuy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButtonhuy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButtonhuy.Image = global::QLHS.Properties.Resources.huy;
             this.simpleButtonhuy.Location = new System.Drawing.Point(183, 459);
             this.simpleButtonhuy.Name = "simpleButtonhuy";
-            this.simpleButtonhuy.Size = new System.Drawing.Size(103, 39);
+            this.simpleButtonhuy.Size = new System.Drawing.Size(104, 35);
             this.simpleButtonhuy.TabIndex = 17;
             this.simpleButtonhuy.Text = "Hủy thao tác";
             // 
@@ -120,8 +122,8 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl3.Location = new System.Drawing.Point(24, 350);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(68, 13);
@@ -130,8 +132,8 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelControl2.Location = new System.Drawing.Point(24, 303);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(64, 13);
@@ -140,8 +142,8 @@
             // 
             // textEditTenGiaoVien
             // 
-            this.textEditTenGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textEditTenGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textEditTenGiaoVien.Location = new System.Drawing.Point(121, 346);
             this.textEditTenGiaoVien.Name = "textEditTenGiaoVien";
             this.textEditTenGiaoVien.Size = new System.Drawing.Size(165, 20);
@@ -149,8 +151,8 @@
             // 
             // textEditMaGiaoVien
             // 
-            this.textEditMaGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textEditMaGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textEditMaGiaoVien.Location = new System.Drawing.Point(121, 299);
             this.textEditMaGiaoVien.Name = "textEditMaGiaoVien";
             this.textEditMaGiaoVien.Size = new System.Drawing.Size(165, 20);
@@ -167,9 +169,10 @@
             // 
             // simpleButtonTìmkiem
             // 
+            this.simpleButtonTìmkiem.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonTìmkiem.Image")));
             this.simpleButtonTìmkiem.Location = new System.Drawing.Point(102, 201);
             this.simpleButtonTìmkiem.Name = "simpleButtonTìmkiem";
-            this.simpleButtonTìmkiem.Size = new System.Drawing.Size(106, 38);
+            this.simpleButtonTìmkiem.Size = new System.Drawing.Size(104, 35);
             this.simpleButtonTìmkiem.TabIndex = 6;
             this.simpleButtonTìmkiem.Text = "Tìm kiếm";
             this.simpleButtonTìmkiem.ToolTip = "Tìm kiếm theo các điều kiện";
@@ -184,33 +187,36 @@
             // 
             // simpleButtonXoaGiaovien
             // 
-            this.simpleButtonXoaGiaovien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButtonXoaGiaovien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButtonXoaGiaovien.Image = global::QLHS.Properties.Resources.xoa_small;
             this.simpleButtonXoaGiaovien.Location = new System.Drawing.Point(183, 394);
             this.simpleButtonXoaGiaovien.Name = "simpleButtonXoaGiaovien";
-            this.simpleButtonXoaGiaovien.Size = new System.Drawing.Size(103, 37);
+            this.simpleButtonXoaGiaovien.Size = new System.Drawing.Size(104, 35);
             this.simpleButtonXoaGiaovien.TabIndex = 2;
             this.simpleButtonXoaGiaovien.Text = "Xóa giáo viên";
             this.simpleButtonXoaGiaovien.Click += new System.EventHandler(this.simpleButtonXoaGiaovien_Click);
             // 
             // simpleButonSuagiaovien
             // 
-            this.simpleButonSuagiaovien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButonSuagiaovien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButonSuagiaovien.Image = ((System.Drawing.Image)(resources.GetObject("simpleButonSuagiaovien.Image")));
             this.simpleButonSuagiaovien.Location = new System.Drawing.Point(24, 459);
             this.simpleButonSuagiaovien.Name = "simpleButonSuagiaovien";
-            this.simpleButonSuagiaovien.Size = new System.Drawing.Size(103, 39);
+            this.simpleButonSuagiaovien.Size = new System.Drawing.Size(104, 35);
             this.simpleButonSuagiaovien.TabIndex = 1;
             this.simpleButonSuagiaovien.Text = "Sửa giáo viên";
             this.simpleButonSuagiaovien.Click += new System.EventHandler(this.simpleButonSuagiaovien_Click);
             // 
             // simpleButtonThemGiaoVien
             // 
-            this.simpleButtonThemGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButtonThemGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButtonThemGiaoVien.Image = global::QLHS.Properties.Resources.them;
             this.simpleButtonThemGiaoVien.Location = new System.Drawing.Point(24, 394);
             this.simpleButtonThemGiaoVien.Name = "simpleButtonThemGiaoVien";
-            this.simpleButtonThemGiaoVien.Size = new System.Drawing.Size(103, 38);
+            this.simpleButtonThemGiaoVien.Size = new System.Drawing.Size(104, 35);
             this.simpleButtonThemGiaoVien.TabIndex = 0;
             this.simpleButtonThemGiaoVien.Text = "Thêm giáo viên";
             this.simpleButtonThemGiaoVien.Click += new System.EventHandler(this.simpleButtonThemGiaoVien_Click);
@@ -218,9 +224,10 @@
             // simpleButtonLuuGiaoVien
             // 
             this.simpleButtonLuuGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButtonLuuGiaoVien.Location = new System.Drawing.Point(31, 13);
+            this.simpleButtonLuuGiaoVien.Image = global::QLHS.Properties.Resources.them_small;
+            this.simpleButtonLuuGiaoVien.Location = new System.Drawing.Point(31, 15);
             this.simpleButtonLuuGiaoVien.Name = "simpleButtonLuuGiaoVien";
-            this.simpleButtonLuuGiaoVien.Size = new System.Drawing.Size(102, 39);
+            this.simpleButtonLuuGiaoVien.Size = new System.Drawing.Size(104, 35);
             this.simpleButtonLuuGiaoVien.TabIndex = 9;
             this.simpleButtonLuuGiaoVien.Text = "Lưu";
             this.simpleButtonLuuGiaoVien.ToolTip = "Lưu kết quả của các hành động thêm, sửa giáo viên";
@@ -257,6 +264,7 @@
             this.TenGiaoVien});
             this.gridViewGiaoVien.GridControl = this.GridcontrolGiaoVien;
             this.gridViewGiaoVien.Name = "gridViewGiaoVien";
+            this.gridViewGiaoVien.OptionsView.ShowGroupPanel = false;
             this.gridViewGiaoVien.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewGiaoVien_FocusedRowChanged);
             // 
             // MaGiaoVien
@@ -314,9 +322,10 @@
             // simpleButtonLoadlaidulieu
             // 
             this.simpleButtonLoadlaidulieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButtonLoadlaidulieu.Image = global::QLHS.Properties.Resources.capnhat;
             this.simpleButtonLoadlaidulieu.Location = new System.Drawing.Point(189, 15);
             this.simpleButtonLoadlaidulieu.Name = "simpleButtonLoadlaidulieu";
-            this.simpleButtonLoadlaidulieu.Size = new System.Drawing.Size(106, 37);
+            this.simpleButtonLoadlaidulieu.Size = new System.Drawing.Size(104, 35);
             this.simpleButtonLoadlaidulieu.TabIndex = 9;
             this.simpleButtonLoadlaidulieu.Text = "Tải lại dữ liệu";
             this.simpleButtonLoadlaidulieu.ToolTip = "Load lại dữ liệu từ cơ sở dữ liệu";
@@ -325,9 +334,10 @@
             // simpleButtonThoat
             // 
             this.simpleButtonThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButtonThoat.Image = global::QLHS.Properties.Resources.thoat_small;
             this.simpleButtonThoat.Location = new System.Drawing.Point(337, 15);
             this.simpleButtonThoat.Name = "simpleButtonThoat";
-            this.simpleButtonThoat.Size = new System.Drawing.Size(106, 37);
+            this.simpleButtonThoat.Size = new System.Drawing.Size(104, 35);
             this.simpleButtonThoat.TabIndex = 8;
             this.simpleButtonThoat.Text = "Thoát";
             this.simpleButtonThoat.Click += new System.EventHandler(this.simpleButtonThoat_Click);

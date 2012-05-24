@@ -63,6 +63,8 @@
             this.labelControlTitle = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEditNamHoc = new DevExpress.XtraEditors.ComboBoxEdit();
             this.treeMonHoc = new DevExpress.XtraTreeList.TreeList();
+            this.treeListColumnTenMH = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumnMaMH = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.labelControlChonNamHoc = new DevExpress.XtraEditors.LabelControl();
             this.panelControlChooseYear = new DevExpress.XtraEditors.PanelControl();
             this.comboBoxEditKhoiLop = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -71,8 +73,6 @@
             this.labelControlChonHocKy = new DevExpress.XtraEditors.LabelControl();
             this.panelControlRight = new DevExpress.XtraEditors.PanelControl();
             this.panelControlLeft = new DevExpress.XtraEditors.PanelControl();
-            this.treeListColumnTenMH = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumnMaMH = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTongKetMonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewTongKetMonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMonHoc)).BeginInit();
@@ -426,7 +426,7 @@
             // 
             // simpleButtonXuatBD
             // 
-            this.simpleButtonXuatBD.Image = global::QLHS.Properties.Resources.chuyenlop_small;
+            this.simpleButtonXuatBD.Image = global::QLHS.Properties.Resources.xuat_bcao;
             this.simpleButtonXuatBD.Location = new System.Drawing.Point(435, 32);
             this.simpleButtonXuatBD.Name = "simpleButtonXuatBD";
             this.simpleButtonXuatBD.Size = new System.Drawing.Size(128, 35);
@@ -530,6 +530,22 @@
             this.treeMonHoc.TabIndex = 1;
             this.treeMonHoc.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeMonHoc_FocusedNodeChanged);
             // 
+            // treeListColumnTenMH
+            // 
+            this.treeListColumnTenMH.Caption = "Tên MH";
+            this.treeListColumnTenMH.FieldName = "TenMonHoc";
+            this.treeListColumnTenMH.Name = "treeListColumnTenMH";
+            this.treeListColumnTenMH.Visible = true;
+            this.treeListColumnTenMH.VisibleIndex = 0;
+            // 
+            // treeListColumnMaMH
+            // 
+            this.treeListColumnMaMH.Caption = "Mã MH";
+            this.treeListColumnMaMH.FieldName = "MaMonHoc";
+            this.treeListColumnMaMH.Name = "treeListColumnMaMH";
+            this.treeListColumnMaMH.Visible = true;
+            this.treeListColumnMaMH.VisibleIndex = 1;
+            // 
             // labelControlChonNamHoc
             // 
             this.labelControlChonNamHoc.Location = new System.Drawing.Point(25, 6);
@@ -609,22 +625,6 @@
             this.panelControlLeft.Name = "panelControlLeft";
             this.panelControlLeft.Size = new System.Drawing.Size(182, 392);
             this.panelControlLeft.TabIndex = 2;
-            // 
-            // treeListColumnTenMH
-            // 
-            this.treeListColumnTenMH.Caption = "Tên MH";
-            this.treeListColumnTenMH.FieldName = "TenMonHoc";
-            this.treeListColumnTenMH.Name = "treeListColumnTenMH";
-            this.treeListColumnTenMH.Visible = true;
-            this.treeListColumnTenMH.VisibleIndex = 0;
-            // 
-            // treeListColumnMaMH
-            // 
-            this.treeListColumnMaMH.Caption = "Mã MH";
-            this.treeListColumnMaMH.FieldName = "MaMonHoc";
-            this.treeListColumnMaMH.Name = "treeListColumnMaMH";
-            this.treeListColumnMaMH.Visible = true;
-            this.treeListColumnMaMH.VisibleIndex = 1;
             // 
             // frmBC_TongKetMon
             // 

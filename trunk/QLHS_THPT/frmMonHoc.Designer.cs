@@ -47,9 +47,9 @@
             this.HeSo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.TrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -59,9 +59,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -79,45 +79,50 @@
             // 
             // simpleButtonThoat
             // 
-            this.simpleButtonThoat.Location = new System.Drawing.Point(622, 24);
+            this.simpleButtonThoat.Image = global::QLHS.Properties.Resources.thoat_small;
+            this.simpleButtonThoat.Location = new System.Drawing.Point(618, 24);
             this.simpleButtonThoat.Name = "simpleButtonThoat";
-            this.simpleButtonThoat.Size = new System.Drawing.Size(104, 40);
+            this.simpleButtonThoat.Size = new System.Drawing.Size(120, 35);
             this.simpleButtonThoat.TabIndex = 0;
             this.simpleButtonThoat.Text = "Thoát";
             this.simpleButtonThoat.Click += new System.EventHandler(this.simpleButtonThoat_Click);
             // 
             // simpleButtonloaddulieu
             // 
-            this.simpleButtonloaddulieu.Location = new System.Drawing.Point(481, 24);
+            this.simpleButtonloaddulieu.Image = global::QLHS.Properties.Resources.capnhat;
+            this.simpleButtonloaddulieu.Location = new System.Drawing.Point(474, 24);
             this.simpleButtonloaddulieu.Name = "simpleButtonloaddulieu";
-            this.simpleButtonloaddulieu.Size = new System.Drawing.Size(104, 40);
+            this.simpleButtonloaddulieu.Size = new System.Drawing.Size(120, 35);
             this.simpleButtonloaddulieu.TabIndex = 1;
             this.simpleButtonloaddulieu.Text = "Tải lại dữ liệu";
             this.simpleButtonloaddulieu.Click += new System.EventHandler(this.simpleButtonloaddulieu_Click);
             // 
             // simpleButtonLuu
             // 
-            this.simpleButtonLuu.Location = new System.Drawing.Point(342, 24);
+            this.simpleButtonLuu.Image = global::QLHS.Properties.Resources.them_small;
+            this.simpleButtonLuu.Location = new System.Drawing.Point(328, 24);
             this.simpleButtonLuu.Name = "simpleButtonLuu";
-            this.simpleButtonLuu.Size = new System.Drawing.Size(104, 40);
+            this.simpleButtonLuu.Size = new System.Drawing.Size(120, 35);
             this.simpleButtonLuu.TabIndex = 2;
             this.simpleButtonLuu.Text = "Lưu ";
             this.simpleButtonLuu.Click += new System.EventHandler(this.simpleButtonLuu_Click);
             // 
             // simpleButtonhuy
             // 
-            this.simpleButtonhuy.Location = new System.Drawing.Point(205, 24);
+            this.simpleButtonhuy.Image = global::QLHS.Properties.Resources.huy;
+            this.simpleButtonhuy.Location = new System.Drawing.Point(183, 24);
             this.simpleButtonhuy.Name = "simpleButtonhuy";
-            this.simpleButtonhuy.Size = new System.Drawing.Size(104, 40);
+            this.simpleButtonhuy.Size = new System.Drawing.Size(120, 35);
             this.simpleButtonhuy.TabIndex = 4;
             this.simpleButtonhuy.Text = "Hủy thao tác";
             this.simpleButtonhuy.Click += new System.EventHandler(this.simpleButtonhuy_Click);
             // 
             // simpleButtonSuaMonHoc
             // 
-            this.simpleButtonSuaMonHoc.Location = new System.Drawing.Point(70, 24);
+            this.simpleButtonSuaMonHoc.Image = global::QLHS.Properties.Resources.capnhat;
+            this.simpleButtonSuaMonHoc.Location = new System.Drawing.Point(41, 24);
             this.simpleButtonSuaMonHoc.Name = "simpleButtonSuaMonHoc";
-            this.simpleButtonSuaMonHoc.Size = new System.Drawing.Size(104, 40);
+            this.simpleButtonSuaMonHoc.Size = new System.Drawing.Size(120, 35);
             this.simpleButtonSuaMonHoc.TabIndex = 2;
             this.simpleButtonSuaMonHoc.Text = "Cập nhật môn học";
             this.simpleButtonSuaMonHoc.Click += new System.EventHandler(this.simpleButtonSuaMonHoc_Click);
@@ -140,7 +145,7 @@
             this.label2.Size = new System.Drawing.Size(625, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "_________________________________________________________________________________" +
-                "______________________";
+    "______________________";
             // 
             // labelControl1
             // 
@@ -179,6 +184,7 @@
             this.TrangThai});
             this.gridViewMonHoc.GridControl = this.gridControlMonHoc;
             this.gridViewMonHoc.Name = "gridViewMonHoc";
+            this.gridViewMonHoc.OptionsView.ShowGroupPanel = false;
             this.gridViewMonHoc.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewMonHoc_FocusedRowChanged);
             // 
             // MaMonHoc
@@ -249,16 +255,6 @@
             this.TrangThai.Visible = true;
             this.TrangThai.VisibleIndex = 4;
             // 
-            // repositoryItemTextEdit3
-            // 
-            this.repositoryItemTextEdit3.AutoHeight = false;
-            this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
-            // 
-            // repositoryItemCheckEdit1
-            // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
-            // 
             // repositoryItemComboBox1
             // 
             this.repositoryItemComboBox1.AutoHeight = false;
@@ -266,6 +262,16 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemComboBox1.DropDownItemHeight = 5;
             this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            // 
+            // repositoryItemTextEdit3
+            // 
+            this.repositoryItemTextEdit3.AutoHeight = false;
+            this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
             // 
             // frmMonHoc
             // 
@@ -277,7 +283,7 @@
             this.Controls.Add(this.panelControl1);
             this.MaximizeBox = false;
             this.Name = "frmMonHoc";
-            this.Text = "frmMonHoc";
+            this.Text = "Quản lý môn học";
             this.Load += new System.EventHandler(this.frmMonHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -289,9 +295,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
             this.ResumeLayout(false);
 
         }
