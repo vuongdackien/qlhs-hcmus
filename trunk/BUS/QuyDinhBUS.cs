@@ -14,6 +14,17 @@ namespace QLHS.BUS
         {
             _QuyDinhDAL = new QuyDinhDAL();
         }
+        ///<Lấy bảng quy định>
+        ///Lấy bảng quy định
+        ///</summary>
+        public DataTable Table_QuyDinh()
+        {
+            return _QuyDinhDAL.Dt_QuyDinh();
+        }
+        public void capnhat(QuyDinhDTO QDDTO)
+        {
+            _QuyDinhDAL.SuaQuyDinh(QDDTO);
+        }
         /// <summary>
         /// Lấy tuổi cận dưới
         /// </summary>
@@ -71,5 +82,6 @@ namespace QLHS.BUS
         {
             return Convert.ToDouble(_QuyDinhDAL.LayGiaTri("DiemChuan"));
         }
+      
     }
 }
