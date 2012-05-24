@@ -9,16 +9,27 @@ namespace QLHS.DAL
 {
     public class HocSinhDAL : ConnectData
     {
+        private PhanLopDAL _phanLopDAL;
+        public HocSinhDAL()
+        {
+            _phanLopDAL = new PhanLopDAL();
+        }
         /// <summary>
         /// Lấy DataTable học sinh từ Lớp học
         /// </summary>
         /// <param name="MaLop">String: Mã lớp</param>
+        /// <param name="chua_PhanLop">bool: Lấy danh sách chưa được phân lớp</param>
         /// <returns>DataTable</returns>
-        public DataTable LayDT_HocSinh_LopHoc(string MaLop)
+        public DataTable LayDT_HocSinh_LopHoc(string MaLop, bool chua_PhanLop = false)
         {
             string sql = string.Format("SELECT pl.STT, hs.* "
-                                       +"FROM PHANLOP pl LEFT JOIN HOCSINH hs ON pl.MaHocSinh = hs.MaHocSinh "
-                                       +"WHERE pl.MaLop = '{0}' ORDER BY pl.STT ASC",MaLop);
+                                      + "FROM PHANLOP pl LEFT JOIN HOCSINH hs ON pl.MaHocSinh = hs.MaHocSinh "
+                                      + "WHERE pl.MaLop = '{0}' ORDER BY pl.STT ASC", MaLop);
+            if (chua_PhanLop)
+            {
+                sql = "SELECT 0 as STT,* FROM HOCSINH hs WHERE NOT EXISTS "
+                     +"(SELECT * FROM PHANLOP pl WHERE hs.MaHocSinh = pl.MaHocSinh)";
+            }
             return GetTable(sql);
         }
         /// <summary>
@@ -71,9 +82,14 @@ namespace QLHS.DAL
         /// <returns>HocSinhDTO</returns>
         public HocSinhDTO Lay_HoSo(string MaHocSinh)
         {
- 
-            string sql = string.Format("SELECT pl.STT, pl.MaHocSinh, TenHocSinh , Email, NgaySinh, GioiTinh, NoiSinh, DiaChi "
-                        + "FROM HOCSINH hs LEFT JOIN PHANLOP pl ON  pl.MaHocSinh = hs.MaHocSinh WHERE hs.MaHocSinh = '{0}'", MaHocSinh);
+            string sql = "";
+            if (!_phanLopDAL.KiemTra_TonTai_HocSinh_PhanLop(MaHocSinh))
+                sql = string.Format("SELECT 0 as STT, MaHocSinh, TenHocSinh, Email, NgaySinh, GioiTinh, NoiSinh, DiaChi "
+                            + "FROM HOCSINH WHERE MaHocSinh = '{0}'", MaHocSinh);
+            else
+                sql = string.Format("SELECT pl.STT, pl.MaHocSinh, TenHocSinh , Email, NgaySinh, GioiTinh, NoiSinh, DiaChi "
+                             + "FROM HOCSINH hs LEFT JOIN PHANLOP pl ON  pl.MaHocSinh = hs.MaHocSinh WHERE hs.MaHocSinh = '{0}'", MaHocSinh);
+            
             HocSinhDTO hocSinhDTO = new HocSinhDTO();
 
             DataRow dr = GetFirstDataRow(sql);
@@ -109,14 +125,16 @@ namespace QLHS.DAL
         /// Thêm hồ sơ học sinh
         /// </summary>
         /// <param name="hocsinhDTO">HocSinhDTO</param>
+        /// <param name="MaLop">String: mã lớp (nếu rỗng thì không phan lớp)</param>
         /// <returns>Bool: Thành công/Không</returns>
-        public bool Them_HoSo(HocSinhDTO hocsinhDTO,string MaLop)
+        public bool Them_HoSo(HocSinhDTO hocsinhDTO,string MaLop = null)
         {
             string sql = "set dateformat dmy\n";
                   sql += string.Format("INSERT INTO HOCSINH (MaHocSinh, TenHocSinh , Email, NgaySinh, GioiTinh, NoiSinh, DiaChi) "
                          +"VALUES ('{0}',N'{1}','{2}','{3:dd-MM-yyyy}',{4},N'{5}',N'{6}')", hocsinhDTO.MaHocSinh, hocsinhDTO.TenHocSinh,
                            hocsinhDTO.Email, hocsinhDTO.NgaySinh, hocsinhDTO.GioiTinh, hocsinhDTO.NoiSinh, hocsinhDTO.DiaChi);
-            sql += string.Format("\nINSERT INTO PHANLOP (STT,MaHocSinh,MaLop) VALUES ({0},'{1}','{2}')", 
+            if(MaLop != null)
+              sql += string.Format("\nINSERT INTO PHANLOP (STT,MaHocSinh,MaLop) VALUES ({0},'{1}','{2}')", 
                         hocsinhDTO.STT,  hocsinhDTO.MaHocSinh, MaLop);
             return ExecuteQuery(sql) > 0;
         }

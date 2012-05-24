@@ -50,6 +50,16 @@ namespace QLHS.DAL
             return Convert.ToInt32(ExecuteScalar(sql));
         }
         /// <summary>
+        /// Kiểm tra xem mã học sinh đã  phân lớp hay chưa
+        /// </summary>
+        /// <param name="MaHocSinh">String: mã học sinh</param>
+        /// <returns>Bool</returns>
+        public bool KiemTra_TonTai_HocSinh_PhanLop(string MaHocSinh)
+        {
+            string sql = "SELECT * FROM PHANLOP WHERE MaHocSinh = '"+MaHocSinh+"'";
+            return GetTable(sql).Rows.Count > 0;
+        }
+        /// <summary>
         /// Đếm sỉ số của 1 lớp
         /// </summary>
         /// <param name="MaLop">String: Mã lớp</param>
