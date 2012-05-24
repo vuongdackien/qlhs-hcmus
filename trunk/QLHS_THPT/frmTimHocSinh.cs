@@ -73,7 +73,6 @@ namespace QLHS
         {
             //disable button khi form load
             simpleButtonXoaDK.Enabled = false;
-            simpleButtonXuatBaoCao.Enabled = false;
 
             Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
                                                           _namHocBUS.LayDTNamHoc(),
@@ -118,7 +117,6 @@ namespace QLHS
         {
             //enable button khi nhấn nút tìm
             simpleButtonXoaDK.Enabled = true;
-            simpleButtonXuatBaoCao.Enabled = true;
 
             DataTable kq_TimKiemDS = null;
             HocSinhTimKiemDTO hsTimKiemDTO = new HocSinhTimKiemDTO();
