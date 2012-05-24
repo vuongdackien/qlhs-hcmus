@@ -37,14 +37,19 @@ namespace QLHS
         /// </summary>
         public void HienThiLai_FrmHocSinh_TuFormTimKiem()
         {
-            string maNamHoc = Utilities.ObjectUtilities.LayMaNamHocTuMaLop(MaLop);
-            string maKhoi = Utilities.ObjectUtilities.LayMaKhoiLopTuMaLop(MaLop);
-            // Chọn lại năm học
-            Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditNamHoc, maNamHoc);
-            // Chọn lại khối
-            Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditKhoi, maKhoi);
-            // Chọn lại lớp
-            Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditLop, MaLop);
+            if (MaLop != null)
+            {
+                string maNamHoc = Utilities.ObjectUtilities.LayMaNamHocTuMaLop(MaLop);
+                string maKhoi = Utilities.ObjectUtilities.LayMaKhoiLopTuMaLop(MaLop);
+                // Chọn lại năm học
+                Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditNamHoc, maNamHoc);
+                // Chọn lại khối
+                Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditKhoi, maKhoi);
+                // Chọn lại lớp
+                Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditLop, MaLop);
+                // Bỏ check Tiếp nhận hồ sơ mới
+                checkEditChuaPhanLop.Checked = false;
+            }
 
             // Tìm vị trí học sinh trên GridView có mã là MaHocSinh truyền từ formSearch
             int found_select_handler = -1;
