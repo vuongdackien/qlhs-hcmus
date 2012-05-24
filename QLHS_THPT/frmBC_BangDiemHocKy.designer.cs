@@ -755,7 +755,7 @@
             // 
             // simpleButtonXuatBD
             // 
-            this.simpleButtonXuatBD.Image = global::QLHS.Properties.Resources.chuyenlop_small;
+            this.simpleButtonXuatBD.Image = global::QLHS.Properties.Resources.xuat_bcao;
             this.simpleButtonXuatBD.Location = new System.Drawing.Point(840, 31);
             this.simpleButtonXuatBD.Name = "simpleButtonXuatBD";
             this.simpleButtonXuatBD.Size = new System.Drawing.Size(128, 35);

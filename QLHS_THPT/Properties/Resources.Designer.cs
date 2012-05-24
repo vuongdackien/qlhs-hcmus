@@ -619,5 +619,12 @@ namespace QLHS.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        public static System.Drawing.Bitmap xuat_bcao {
+            get {
+                object obj = ResourceManager.GetObject("xuat_bcao", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
