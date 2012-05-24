@@ -50,7 +50,7 @@ CREATE TABLE [dbo].[MONHOC] (
 	[TenMonHoc]		[nvarchar](50) NOT NULL,
 	[SoTiet]		[int] NOT NULL,
 	[HeSo]			[int] NOT NULL,
-	[TrangThai]		[bit] NOT NULL CONSTRAINT [DF_MONHOC_TrangThai] DEFAULT (1)
+	[TrangThai]		[int] NOT NULL CONSTRAINT [DF_MONHOC_TrangThai] DEFAULT (1)
 );
 GO
 
@@ -126,7 +126,7 @@ CREATE TABLE [dbo].[NGUOIDUNG] (
 	[MaLoaiND]		[varchar](10) NOT NULL,
 	[TenDNhap]		[varchar](30) NOT NULL,
 	[MatKhau]		[varchar](35) NOT NULL,
-	[TrangThai]		[int] NOT NULL CONSTRAINT [DF_NGUOIDUNG_TrangThai] DEFAULT ((1)));
+	[TrangThai]		[bit] NOT NULL CONSTRAINT [DF_NGUOIDUNG_TrangThai] DEFAULT ((1)));
 GO
 
 --11. Create table and its columns
