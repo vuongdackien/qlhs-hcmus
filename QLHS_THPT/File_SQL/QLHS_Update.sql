@@ -1,9 +1,5 @@
 ﻿use master
 GO
-drop database QLHS
-GO
-use master
-GO
 if exists
 (
     select name from sysobjects

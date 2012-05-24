@@ -73,7 +73,7 @@ namespace QLHS
         {
             //disable button khi form load
             simpleButtonXoaDK.Enabled = false;
-
+            
             Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
                                                           _namHocBUS.LayDTNamHoc(),
                                                           "MaNamHoc", "TenNamHoc",0);
@@ -100,14 +100,21 @@ namespace QLHS
             Utilities.TreeListUtilities.SetCheckedChildNodes(e.Node, e.Node.CheckState);
             Utilities.TreeListUtilities.SetCheckedParentNodes(e.Node, e.Node.CheckState);
         }
-       
+
+        private void checkEditTatCaHoSo_CheckedChanged(object sender, EventArgs e)
+        {
+            checkEditTatCaNam.Enabled = !checkEditTatCaHoSo.Checked;
+            comboBoxEditNamHoc.Enabled = !checkEditTatCaHoSo.Checked;
+            treeListSearch.Enabled = !checkEditTatCaHoSo.Checked;
+        }
 
         private void checkEditTatCaNam_CheckedChanged(object sender, EventArgs e)
         {
+            checkEditTatCaHoSo.Enabled = !checkEditTatCaNam.Checked;      
             comboBoxEditNamHoc.Enabled = !checkEditTatCaNam.Checked;
             treeListSearch.Enabled = !checkEditTatCaNam.Checked;
         }
-        
+                
         /// <summary>
         /// Tìm kiếm học sinh
         /// </summary>
@@ -116,7 +123,7 @@ namespace QLHS
         private void simpleButtonSearch_Click(object sender, EventArgs e)
         {
             //enable button khi nhấn nút tìm
-            simpleButtonXoaDK.Enabled = true;
+            simpleButtonXoaDK.Enabled = true;            
 
             DataTable kq_TimKiemDS = null;
             HocSinhTimKiemDTO hsTimKiemDTO = new HocSinhTimKiemDTO();
@@ -138,9 +145,17 @@ namespace QLHS
 
             try
             {
-                // Nếu ko chọn tìm kiếm tất cả các năm => Tìm kiếm trong tất cả các lớp được checked
-                if (!checkEditTatCaNam.Checked)
+                if (checkEditTatCaHoSo.Checked)  //Tìm tất cả hồ sơ học sinh
+                {                                     
+                    kq_TimKiemDS = _hocSinhBUS.TimKiem_HocSinh_KoPhanLop(hsTimKiemDTO); 
+                }
+                if (checkEditTatCaNam.Checked)  // Tìm trong tất cả các năm, các lớp
+                {                                
+                    kq_TimKiemDS = _hocSinhBUS.TimKiem_HocSinh(hsTimKiemDTO);                    
+                }
+                else // Nếu ko chọn tìm kiếm tất cả các năm => Tìm kiếm trong tất cả các lớp được checked
                 {
+                    checkEditTatCaHoSo.Enabled = false;
                     List<string> lopCheck = new List<string>();
                     foreach (TreeListNode khoi in treeListSearch.Nodes)
                     {
@@ -153,10 +168,6 @@ namespace QLHS
                         }
                     }
                     kq_TimKiemDS = _hocSinhBUS.TimKiem_HocSinh(hsTimKiemDTO, lopCheck);
-                }
-                else // Tìm trong tất cả các năm, các lớp
-                {
-                    kq_TimKiemDS = _hocSinhBUS.TimKiem_HocSinh(hsTimKiemDTO);
                 }
             }
             catch (Exception ex)
