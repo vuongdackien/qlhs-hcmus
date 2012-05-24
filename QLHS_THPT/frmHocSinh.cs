@@ -294,6 +294,7 @@ namespace QLHS
         private void checkEdit1_CheckedChanged(object sender, EventArgs e)
         {
             comboBoxEditNamHoc.Enabled = !checkEditChuaPhanLop.Checked;
+            comboBoxEditKhoi.Enabled = !checkEditChuaPhanLop.Checked;
             comboBoxEditLop.Enabled = !checkEditChuaPhanLop.Checked;
             spinEditSTTSoDiem.Enabled = !checkEditChuaPhanLop.Checked;
             this.LoadLai_GridControl_HocSinh(checkEditChuaPhanLop.Checked);

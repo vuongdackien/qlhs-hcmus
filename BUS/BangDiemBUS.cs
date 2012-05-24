@@ -178,7 +178,10 @@ namespace QLHS.BUS
                             soLuongDat++;
                     }
                 }
-                tiLe = (soLuongDat * 100) / siSo;
+                if (siSo > 0)
+                    tiLe = (soLuongDat * 100) / siSo;
+                else
+                    tiLe = 0;
 
                 // tạo bảng báo cáo tổng kết môn
                 TongKetMonDTO mtongket = new TongKetMonDTO();
@@ -315,7 +318,10 @@ namespace QLHS.BUS
                                 soLuongDat++;
                         }
                     }
-                    tiLe = (soLuongDat * 100) / siSo;
+                    if (siSo > 0)
+                        tiLe = (soLuongDat * 100) / siSo;
+                    else
+                        tiLe = 0;
 
                     // tạo bảng báo cáo tổng kết môn
                     TongKetHocKyDTO mtongket = new TongKetHocKyDTO();

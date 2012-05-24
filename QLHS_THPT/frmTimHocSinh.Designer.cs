@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.menucontextXemHoSo = new System.Windows.Forms.ToolStripMenuItem();
             this.panelControlChooseYear = new DevExpress.XtraEditors.PanelControl();
             this.radioGroupTimTrong = new DevExpress.XtraEditors.RadioGroup();
@@ -139,10 +138,10 @@
             this.panelControlChooseYear.Controls.Add(this.labelControlNamHoc);
             this.panelControlChooseYear.Controls.Add(this.labelControlPhamVi);
             this.panelControlChooseYear.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlChooseYear.Location = new System.Drawing.Point(2, 2);
+            this.panelControlChooseYear.Location = new System.Drawing.Point(3, 3);
             this.panelControlChooseYear.Margin = new System.Windows.Forms.Padding(0);
             this.panelControlChooseYear.Name = "panelControlChooseYear";
-            this.panelControlChooseYear.Size = new System.Drawing.Size(250, 128);
+            this.panelControlChooseYear.Size = new System.Drawing.Size(248, 128);
             this.panelControlChooseYear.TabIndex = 1;
             // 
             // radioGroupTimTrong
@@ -213,7 +212,7 @@
             this.treeListSearch.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.treeListColumn2});
             this.treeListSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeListSearch.Location = new System.Drawing.Point(2, 130);
+            this.treeListSearch.Location = new System.Drawing.Point(3, 131);
             this.treeListSearch.Name = "treeListSearch";
             this.treeListSearch.OptionsSelection.MultiSelect = true;
             this.treeListSearch.OptionsView.EnableAppearanceEvenRow = true;
@@ -224,7 +223,7 @@
             this.treeListSearch.ParentFieldName = "";
             this.treeListSearch.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.treeListSearch.Size = new System.Drawing.Size(250, 291);
+            this.treeListSearch.Size = new System.Drawing.Size(248, 289);
             this.treeListSearch.TabIndex = 4;
             this.treeListSearch.TreeLineStyle = DevExpress.XtraTreeList.LineStyle.Large;
             this.treeListSearch.AfterCheckNode += new DevExpress.XtraTreeList.NodeEventHandler(this.treeListSearch_AfterCheckNode);
@@ -265,7 +264,7 @@
             // 
             this.xtraTabPageDieuKien.Controls.Add(this.panelControlDKienTim);
             this.xtraTabPageDieuKien.Name = "xtraTabPageDieuKien";
-            this.xtraTabPageDieuKien.Size = new System.Drawing.Size(735, 210);
+            this.xtraTabPageDieuKien.Size = new System.Drawing.Size(739, 214);
             this.xtraTabPageDieuKien.Text = "Điều kiện về hồ sơ học sinh";
             // 
             // panelControlDKienTim
@@ -276,7 +275,7 @@
             this.panelControlDKienTim.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlDKienTim.Location = new System.Drawing.Point(0, 0);
             this.panelControlDKienTim.Name = "panelControlDKienTim";
-            this.panelControlDKienTim.Size = new System.Drawing.Size(735, 210);
+            this.panelControlDKienTim.Size = new System.Drawing.Size(739, 214);
             this.panelControlDKienTim.TabIndex = 0;
             // 
             // panelControlNDungDKien
@@ -297,7 +296,7 @@
             this.panelControlNDungDKien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlNDungDKien.Location = new System.Drawing.Point(0, 0);
             this.panelControlNDungDKien.Name = "panelControlNDungDKien";
-            this.panelControlNDungDKien.Size = new System.Drawing.Size(735, 150);
+            this.panelControlNDungDKien.Size = new System.Drawing.Size(739, 154);
             this.panelControlNDungDKien.TabIndex = 1;
             // 
             // textBoxTenHocSinh
@@ -413,9 +412,9 @@
             this.panelControlButtonTim.Controls.Add(this.simpleButtonXoaDK);
             this.panelControlButtonTim.Controls.Add(this.simpleButtonSearch);
             this.panelControlButtonTim.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControlButtonTim.Location = new System.Drawing.Point(0, 150);
+            this.panelControlButtonTim.Location = new System.Drawing.Point(0, 154);
             this.panelControlButtonTim.Name = "panelControlButtonTim";
-            this.panelControlButtonTim.Size = new System.Drawing.Size(735, 60);
+            this.panelControlButtonTim.Size = new System.Drawing.Size(739, 60);
             this.panelControlButtonTim.TabIndex = 0;
             // 
             // simpleButtonDong

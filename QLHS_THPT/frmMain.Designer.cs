@@ -325,7 +325,6 @@
             this.barBtnTongKetMonHoc.Id = 33;
             this.barBtnTongKetMonHoc.LargeGlyph = global::QLHS.Properties.Resources.kqcnamtheomon;
             this.barBtnTongKetMonHoc.Name = "barBtnTongKetMonHoc";
-            this.barBtnTongKetMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnTongKetMonHoc_ItemClick);
             // 
             // barButtonItem7
             // 
@@ -333,7 +332,6 @@
             this.barButtonItem7.Id = 34;
             this.barButtonItem7.LargeGlyph = global::QLHS.Properties.Resources.kqhockytheolop;
             this.barButtonItem7.Name = "barButtonItem7";
-            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
             // 
             // barStaticItemLoaiNguoiDung
             // 
@@ -367,6 +365,7 @@
             this.barButtonItemBCBangDiem.Id = 42;
             this.barButtonItemBCBangDiem.LargeGlyph = global::QLHS.Properties.Resources.kqhockytheolop;
             this.barButtonItemBCBangDiem.Name = "barButtonItemBCBangDiem";
+            this.barButtonItemBCBangDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemBCBangDiem_ItemClick);
             // 
             // barButtonItemTongKetMonHoc
             // 
@@ -374,6 +373,7 @@
             this.barButtonItemTongKetMonHoc.Id = 43;
             this.barButtonItemTongKetMonHoc.LargeGlyph = global::QLHS.Properties.Resources.kqhockytheomon;
             this.barButtonItemTongKetMonHoc.Name = "barButtonItemTongKetMonHoc";
+            this.barButtonItemTongKetMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemTongKetMonHoc_ItemClick);
             // 
             // barButtonItemTongKetHocKy
             // 
@@ -381,6 +381,7 @@
             this.barButtonItemTongKetHocKy.Id = 44;
             this.barButtonItemTongKetHocKy.LargeGlyph = global::QLHS.Properties.Resources.kqhockytheolop;
             this.barButtonItemTongKetHocKy.Name = "barButtonItemTongKetHocKy";
+            this.barButtonItemTongKetHocKy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemTongKetHocKy_ItemClick);
             // 
             // barButtonItemQuanLyNguoiDung
             // 
@@ -388,6 +389,7 @@
             this.barButtonItemQuanLyNguoiDung.Id = 45;
             this.barButtonItemQuanLyNguoiDung.LargeGlyph = global::QLHS.Properties.Resources.quanlynguoidung;
             this.barButtonItemQuanLyNguoiDung.Name = "barButtonItemQuanLyNguoiDung";
+            this.barButtonItemQuanLyNguoiDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemQuanLyNguoiDung_ItemClick);
             // 
             // ribbonPageQuanLyHoSo
             // 
