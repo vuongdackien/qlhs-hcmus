@@ -301,46 +301,37 @@ namespace QLHS
             ShowMDIChildForm<frmTimHocSinh>();
         }
 
-        private void barButtonItemNhapDiemMonHoc_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            ShowMDIChildForm<frmBangDiemMonHoc>();
-        }
-
         private void barBtnHoSoGiaoVien_ItemClick(object sender, ItemClickEventArgs e)
         {
             ShowMDIChildForm<frmGiaoVien>();
         }
-
-        private void barBtnTimKiemGiaoVien_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            
-        }
-
-        private void barBtnPhanCongChuyenMon_ItemClick(object sender, ItemClickEventArgs e)
-        {
-           
-        }
-
-        private void barBtnTongKetMonHoc_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            ShowMDIChildForm<frmBC_TongKetMon>();
-        }
-
-        private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            ShowMDIChildForm<frmBC_TongKetHocKy>();
-        }
+   
         private void barBtnPhanLopHocSinh_ItemClick(object sender, ItemClickEventArgs e)
         {
             ShowMDIChildForm<frmPhanLop>();
         }
-     
 
         private void barButtonItemDSLop_ItemClick(object sender, ItemClickEventArgs e)
         {
             ShowMDIChildForm<frmLapDSLop>();
         }
+        private void barButtonItemBCBangDiem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmBC_BangDiemHocKy>();
+        }
 
+        private void barButtonItemTongKetMonHoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmBC_TongKetMon>();
+        }
+        private void barButtonItemNhapDiemMonHoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmBangDiemMonHoc>();
+        }
+        private void barButtonItemTongKetHocKy_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmBC_TongKetHocKy>();
+        }
         private frmQLNguoiDung _frmQLNguoiDung = null;
         private void barButtonItemQuanLyNguoiDung_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -353,5 +344,9 @@ namespace QLHS
         {
 
         }
+
+       
+
+     
     }
 }
