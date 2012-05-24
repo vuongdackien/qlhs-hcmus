@@ -21,8 +21,15 @@ namespace QLHS.DAL
         public  void SuaQuyDinh(QuyDinhDTO QD)
         {
              string sql = string.Format("update QuyDinh set GiaTri=N'{0}'"
-                                                                       + "where Khoa={1} ", QD.GiaTri,QD.Khoa);
+                                                                       + "where Khoa='{1}' ", QD.GiaTri,QD.Khoa);
             ExecuteQuery(sql);
+        }
+        public DataTable Dt_QuyDinh()
+        {
+            string sql = "select * from QuyDinh";
+            DataTable Dt = new DataTable();
+            Dt= GetTable(sql, true);
+            return Dt;
         }
     }
 }
