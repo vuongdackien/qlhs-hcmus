@@ -80,7 +80,12 @@ namespace QLHS.DAL
             string sql = "INSERT INTO PHANLOP(Stt,MaHocSinh,MaLop) VALUES("+Stt+",'"+MaHocSinh+"','"+MaLop+"') ";
             return ExecuteQuery(sql) > 0;
         }
-
+        public bool XoaHocSinh_Lop(string MaHocSinh, string MaLop)
+        {
+            string sql = "DELETE FROM PHANLOP WHERE MaHocSinh='"+MaHocSinh+"' AND MaLop='"+MaLop+"' ";
+            return ExecuteQuery(sql) > 0;
+        }
        
     }
 }
+
