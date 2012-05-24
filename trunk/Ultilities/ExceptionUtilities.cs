@@ -10,5 +10,10 @@ namespace Utilities
         {
             throw new Exception(msg);
         }
+
+        public static void ThrowMsgBox(string msg)
+        {
+            Utilities.MessageboxUtilities.MessageError(msg);
+        }
     }
 }

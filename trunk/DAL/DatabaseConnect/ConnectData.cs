@@ -48,7 +48,7 @@ namespace QLHS.DAL
             }
             catch (SqlException ex)
             {
-                Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
+                 Utilities.ExceptionUtilities.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
                 return false;
             }
             finally
@@ -127,7 +127,7 @@ namespace QLHS.DAL
             }
             catch (SqlException ex)
             {
-                Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
+                 Utilities.ExceptionUtilities.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
                 return null;
             }
         }
@@ -187,7 +187,7 @@ namespace QLHS.DAL
                 // Roolback data
                 if (sqlTran != null)
                     sqlTran.Rollback();
-                Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
+                 Utilities.ExceptionUtilities.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
             }
             finally
             { 
@@ -227,7 +227,7 @@ namespace QLHS.DAL
                 // Roolback data
                 if (sqlTran != null)
                     sqlTran.Rollback();
-                Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
+                 Utilities.ExceptionUtilities.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
             }
             finally
             { 
@@ -254,7 +254,7 @@ namespace QLHS.DAL
             }
             catch (SqlException ex)
             {
-                Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
+                 Utilities.ExceptionUtilities.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
                 return false;
             }
             finally
@@ -272,7 +272,7 @@ namespace QLHS.DAL
             }
             catch (SqlException ex)
             {
-                Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
+                 Utilities.ExceptionUtilities.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
                 return null;
             }
         }
@@ -292,7 +292,7 @@ namespace QLHS.DAL
             }
             catch (SqlException ex)
             {
-                Utilities.ExceptionUtilities.Throw(ex.ErrorCode + ": " + ex.Message);
+                 Utilities.ExceptionUtilities.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
                 return null;
             }
             finally
