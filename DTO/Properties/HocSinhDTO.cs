@@ -14,5 +14,6 @@ namespace QLHS.DTO
         public DateTime NgaySinh { get; set; }
         public string NoiSinh { get; set; }
         public string DiaChi { get; set; }
+        public DateTime NgayNhapHoc { get; set; }
     }
 }

@@ -82,6 +82,11 @@ namespace QLHS.BUS
         {
             return Convert.ToDouble(_QuyDinhDAL.LayGiaTri("DiemChuan"));
         }
+        public DateTime LayNgayApDungQD()
+        {
+            string ngayQD = _QuyDinhDAL.LayGiaTri("NgayApDung").ToString();
+            return DateTime.ParseExact(ngayQD, "dd-MM-yyyy", null);
+        }
       
     }
 }
