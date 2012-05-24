@@ -49,7 +49,6 @@
             this.checkEditMaHocSinh = new DevExpress.XtraEditors.CheckEdit();
             this.panelControlButtonTim = new DevExpress.XtraEditors.PanelControl();
             this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonXuatBaoCao = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonXoaDK = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonSearch = new DevExpress.XtraEditors.SimpleButton();
             this.panelControlNamHoc = new DevExpress.XtraEditors.PanelControl();
@@ -295,7 +294,6 @@
             // panelControlButtonTim
             // 
             this.panelControlButtonTim.Controls.Add(this.simpleButtonDong);
-            this.panelControlButtonTim.Controls.Add(this.simpleButtonXuatBaoCao);
             this.panelControlButtonTim.Controls.Add(this.simpleButtonXoaDK);
             this.panelControlButtonTim.Controls.Add(this.simpleButtonSearch);
             this.panelControlButtonTim.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -314,19 +312,10 @@
             this.simpleButtonDong.Text = "Đóng";
             this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
             // 
-            // simpleButtonXuatBaoCao
-            // 
-            this.simpleButtonXuatBaoCao.Image = global::QLHS.Properties.Resources.xuat_bcao;
-            this.simpleButtonXuatBaoCao.Location = new System.Drawing.Point(479, 13);
-            this.simpleButtonXuatBaoCao.Name = "simpleButtonXuatBaoCao";
-            this.simpleButtonXuatBaoCao.Size = new System.Drawing.Size(104, 35);
-            this.simpleButtonXuatBaoCao.TabIndex = 19;
-            this.simpleButtonXuatBaoCao.Text = "Xuất báo cáo";
-            // 
             // simpleButtonXoaDK
             // 
             this.simpleButtonXoaDK.Image = global::QLHS.Properties.Resources.xoa_small;
-            this.simpleButtonXoaDK.Location = new System.Drawing.Point(347, 13);
+            this.simpleButtonXoaDK.Location = new System.Drawing.Point(480, 13);
             this.simpleButtonXoaDK.Name = "simpleButtonXoaDK";
             this.simpleButtonXoaDK.Size = new System.Drawing.Size(104, 35);
             this.simpleButtonXoaDK.TabIndex = 18;
@@ -336,7 +325,7 @@
             // simpleButtonSearch
             // 
             this.simpleButtonSearch.Image = global::QLHS.Properties.Resources.timkiem_small;
-            this.simpleButtonSearch.Location = new System.Drawing.Point(218, 13);
+            this.simpleButtonSearch.Location = new System.Drawing.Point(351, 13);
             this.simpleButtonSearch.Name = "simpleButtonSearch";
             this.simpleButtonSearch.Size = new System.Drawing.Size(104, 35);
             this.simpleButtonSearch.TabIndex = 17;
@@ -786,7 +775,6 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
         private DevExpress.XtraEditors.CheckEdit checkEditTatCaNam;
         private DevExpress.XtraEditors.SimpleButton simpleButtonDong;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonXuatBaoCao;
         private DevExpress.XtraEditors.SimpleButton simpleButtonXoaDK;
         private DevExpress.XtraEditors.SimpleButton simpleButtonSearch;
         private System.Windows.Forms.TextBox textBoxTenHocSinh;

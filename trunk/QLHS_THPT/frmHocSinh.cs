@@ -161,8 +161,7 @@ namespace QLHS
                    );
         }
         private void simpleButtonGhiDuLieu_Click(object sender, EventArgs e)
-        {
-            //disable các button khi nhấn nút ghi dữ liệu
+        {            
             HocSinhDTO hocSinhDTO  = new HocSinhDTO();
             hocSinhDTO.STT = Convert.ToInt32(spinEditSTTSoDiem.Value);
             hocSinhDTO.NgaySinh = Convert.ToDateTime(dateEditNgaySinh.EditValue);
@@ -201,12 +200,6 @@ namespace QLHS
         }
         private void simpleButtonThemMoi_Click(object sender, EventArgs e)
         {
-            //disable các nút khác khi đã nhấn nút thêm
-            simpleButtonGhiDuLieu.Enabled = true;
-            simpleButtonSXLaiSTT.Enabled = false;
-            simpleButtonThemMoi.Enabled = false;
-            simpleButtonXoa.Enabled = false;
-
             string MaLop = (Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop));
             int SiSoCanTren =  _quyDinhBUS.LaySiSoCanTren();
             if(_phanLopBUS.Dem_SiSo_Lop(MaLop) >= SiSoCanTren)
