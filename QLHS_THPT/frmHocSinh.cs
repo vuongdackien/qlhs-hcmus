@@ -50,7 +50,10 @@ namespace QLHS
                 // Bỏ check Tiếp nhận hồ sơ mới
                 checkEditChuaPhanLop.Checked = false;
             }
-
+            else
+            {
+                checkEditChuaPhanLop.Checked = true;
+            }
             // Tìm vị trí học sinh trên GridView có mã là MaHocSinh truyền từ formSearch
             int found_select_handler = -1;
             for (int i = 0; i < gridViewDSHocSinh.RowCount; i++)
