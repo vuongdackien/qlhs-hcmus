@@ -306,7 +306,7 @@
             // 
             // simpleButtonDong
             // 
-            this.simpleButtonDong.Image = global::QLHS.Properties.Resources.chuyenlop_small;
+            this.simpleButtonDong.Image = global::QLHS.Properties.Resources.thoat_small;
             this.simpleButtonDong.Location = new System.Drawing.Point(611, 13);
             this.simpleButtonDong.Name = "simpleButtonDong";
             this.simpleButtonDong.Size = new System.Drawing.Size(104, 35);
@@ -316,7 +316,7 @@
             // 
             // simpleButtonXuatBaoCao
             // 
-            this.simpleButtonXuatBaoCao.Image = global::QLHS.Properties.Resources.chuyenlop_small;
+            this.simpleButtonXuatBaoCao.Image = global::QLHS.Properties.Resources.xuat_bcao;
             this.simpleButtonXuatBaoCao.Location = new System.Drawing.Point(479, 13);
             this.simpleButtonXuatBaoCao.Name = "simpleButtonXuatBaoCao";
             this.simpleButtonXuatBaoCao.Size = new System.Drawing.Size(104, 35);
@@ -325,7 +325,7 @@
             // 
             // simpleButtonXoaDK
             // 
-            this.simpleButtonXoaDK.Image = global::QLHS.Properties.Resources.chuyenlop_small;
+            this.simpleButtonXoaDK.Image = global::QLHS.Properties.Resources.xoa_small;
             this.simpleButtonXoaDK.Location = new System.Drawing.Point(347, 13);
             this.simpleButtonXoaDK.Name = "simpleButtonXoaDK";
             this.simpleButtonXoaDK.Size = new System.Drawing.Size(104, 35);
@@ -335,7 +335,7 @@
             // 
             // simpleButtonSearch
             // 
-            this.simpleButtonSearch.Image = global::QLHS.Properties.Resources.chuyenlop_small;
+            this.simpleButtonSearch.Image = global::QLHS.Properties.Resources.timkiem_small;
             this.simpleButtonSearch.Location = new System.Drawing.Point(218, 13);
             this.simpleButtonSearch.Name = "simpleButtonSearch";
             this.simpleButtonSearch.Size = new System.Drawing.Size(104, 35);
@@ -691,7 +691,7 @@
             // 
             this.toolTipController1.AllowHtmlText = true;
             // 
-            // frmSearchHocSinh
+            // frmTimHocSinh
             // 
             this.AcceptButton = this.simpleButtonSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -699,7 +699,7 @@
             this.ClientSize = new System.Drawing.Size(995, 423);
             this.Controls.Add(this.gridControlSearchHocSinh);
             this.Controls.Add(this.panelControlNamDKien);
-            this.Name = "frmSearchHocSinh";
+            this.Name = "frmTimHocSinh";
             this.Text = "Tìm kiếm học sinh";
             this.Load += new System.EventHandler(this.frmSearchHocSinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNamDKien)).EndInit();

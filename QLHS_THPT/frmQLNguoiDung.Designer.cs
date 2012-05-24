@@ -155,43 +155,47 @@
             this.panelControl1.Controls.Add(this.simpleButtonGhi);
             this.panelControl1.Controls.Add(this.simpleButtonThemMoi);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 364);
+            this.panelControl1.Location = new System.Drawing.Point(0, 353);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(665, 56);
+            this.panelControl1.Size = new System.Drawing.Size(665, 67);
             this.panelControl1.TabIndex = 21;
             // 
             // simpleButtonDong
             // 
-            this.simpleButtonDong.Location = new System.Drawing.Point(464, 13);
+            this.simpleButtonDong.Image = global::QLHS.Properties.Resources.thoat_small;
+            this.simpleButtonDong.Location = new System.Drawing.Point(491, 16);
             this.simpleButtonDong.Name = "simpleButtonDong";
-            this.simpleButtonDong.Size = new System.Drawing.Size(105, 31);
+            this.simpleButtonDong.Size = new System.Drawing.Size(115, 35);
             this.simpleButtonDong.TabIndex = 14;
             this.simpleButtonDong.Text = "Đóng";
             this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
             // 
             // simpleButtonXoa
             // 
-            this.simpleButtonXoa.Location = new System.Drawing.Point(335, 13);
+            this.simpleButtonXoa.Image = global::QLHS.Properties.Resources.xoa_small;
+            this.simpleButtonXoa.Location = new System.Drawing.Point(345, 16);
             this.simpleButtonXoa.Name = "simpleButtonXoa";
-            this.simpleButtonXoa.Size = new System.Drawing.Size(105, 31);
+            this.simpleButtonXoa.Size = new System.Drawing.Size(115, 35);
             this.simpleButtonXoa.TabIndex = 13;
             this.simpleButtonXoa.Text = "Xóa (Alt+&D)";
             this.simpleButtonXoa.Click += new System.EventHandler(this.simpleButtonXoa_Click);
             // 
             // simpleButtonGhi
             // 
-            this.simpleButtonGhi.Location = new System.Drawing.Point(207, 13);
+            this.simpleButtonGhi.Image = global::QLHS.Properties.Resources.them_small;
+            this.simpleButtonGhi.Location = new System.Drawing.Point(202, 16);
             this.simpleButtonGhi.Name = "simpleButtonGhi";
-            this.simpleButtonGhi.Size = new System.Drawing.Size(105, 31);
+            this.simpleButtonGhi.Size = new System.Drawing.Size(115, 35);
             this.simpleButtonGhi.TabIndex = 12;
             this.simpleButtonGhi.Text = "Ghi (Enter)";
             this.simpleButtonGhi.Click += new System.EventHandler(this.simpleButtonGhi_Click);
             // 
             // simpleButtonThemMoi
             // 
-            this.simpleButtonThemMoi.Location = new System.Drawing.Point(77, 13);
+            this.simpleButtonThemMoi.Image = global::QLHS.Properties.Resources.them;
+            this.simpleButtonThemMoi.Location = new System.Drawing.Point(56, 16);
             this.simpleButtonThemMoi.Name = "simpleButtonThemMoi";
-            this.simpleButtonThemMoi.Size = new System.Drawing.Size(104, 31);
+            this.simpleButtonThemMoi.Size = new System.Drawing.Size(115, 35);
             this.simpleButtonThemMoi.TabIndex = 11;
             this.simpleButtonThemMoi.Text = "Thêm mới (Alt+&N)";
             this.simpleButtonThemMoi.Click += new System.EventHandler(this.simpleButtonThemMoi_Click);
@@ -199,7 +203,7 @@
             // gridControlNguoiDung
             // 
             this.gridControlNguoiDung.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControlNguoiDung.Location = new System.Drawing.Point(0, 114);
+            this.gridControlNguoiDung.Location = new System.Drawing.Point(0, 103);
             this.gridControlNguoiDung.MainView = this.gridViewNguoiDung;
             this.gridControlNguoiDung.Name = "gridControlNguoiDung";
             this.gridControlNguoiDung.Size = new System.Drawing.Size(665, 250);

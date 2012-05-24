@@ -81,6 +81,20 @@ namespace QLHS.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap chuyen_lop {
+            get {
+                object obj = ResourceManager.GetObject("chuyen_lop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap chuyen_loplai {
+            get {
+                object obj = ResourceManager.GetObject("chuyen_loplai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap chuyenlop {
             get {
                 object obj = ResourceManager.GetObject("chuyenlop", resourceCulture);
@@ -231,6 +245,13 @@ namespace QLHS.Properties {
         public static System.Drawing.Bitmap huongdan {
             get {
                 object obj = ResourceManager.GetObject("huongdan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap huy {
+            get {
+                object obj = ResourceManager.GetObject("huy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -501,9 +522,23 @@ namespace QLHS.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap sua {
+            get {
+                object obj = ResourceManager.GetObject("sua", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap thangdiem_small {
             get {
                 object obj = ResourceManager.GetObject("thangdiem_small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap them {
+            get {
+                object obj = ResourceManager.GetObject("them", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -553,6 +588,13 @@ namespace QLHS.Properties {
         public static System.Drawing.Bitmap timkiem {
             get {
                 object obj = ResourceManager.GetObject("timkiem", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        public static System.Drawing.Bitmap timkiem_small {
+            get {
+                object obj = ResourceManager.GetObject("timkiem_small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -103,9 +103,9 @@
             this.panelControl5.Controls.Add(this.groupControl2);
             this.panelControl5.Controls.Add(this.groupControl1);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl5.Location = new System.Drawing.Point(2, 2);
+            this.panelControl5.Location = new System.Drawing.Point(3, 3);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1003, 160);
+            this.panelControl5.Size = new System.Drawing.Size(1001, 158);
             this.panelControl5.TabIndex = 4;
             // 
             // checkEditPhanLopHocSinhMoi
@@ -126,9 +126,9 @@
             this.groupControl2.Controls.Add(this.comboBoxEditNamHocMoi);
             this.groupControl2.Controls.Add(this.labelControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupControl2.Location = new System.Drawing.Point(654, 2);
+            this.groupControl2.Location = new System.Drawing.Point(651, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(347, 156);
+            this.groupControl2.Size = new System.Drawing.Size(347, 152);
             this.groupControl2.TabIndex = 14;
             this.groupControl2.Text = "Thông Tin Lớp Mới";
             // 
@@ -195,9 +195,9 @@
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.comboBoxEditNamHoc);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl1.Location = new System.Drawing.Point(2, 2);
+            this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(365, 156);
+            this.groupControl1.Size = new System.Drawing.Size(365, 152);
             this.groupControl1.TabIndex = 13;
             this.groupControl1.Text = "Thông Tin Lớp Cũ";
             // 
@@ -389,6 +389,7 @@
             // 
             // simpleButtonDong
             // 
+            this.simpleButtonDong.Image = global::QLHS.Properties.Resources.thoat_small;
             this.simpleButtonDong.Location = new System.Drawing.Point(86, 138);
             this.simpleButtonDong.Name = "simpleButtonDong";
             this.simpleButtonDong.Size = new System.Drawing.Size(117, 35);
@@ -398,7 +399,7 @@
             // 
             // simpleButtonChuyenLai
             // 
-            this.simpleButtonChuyenLai.Image = global::QLHS.Properties.Resources.chuyenlop_lai;
+            this.simpleButtonChuyenLai.Image = global::QLHS.Properties.Resources.chuyen_lop;
             this.simpleButtonChuyenLai.Location = new System.Drawing.Point(86, 87);
             this.simpleButtonChuyenLai.Name = "simpleButtonChuyenLai";
             this.simpleButtonChuyenLai.Size = new System.Drawing.Size(117, 35);
@@ -408,7 +409,7 @@
             // 
             // simpleButtonChuyenLop
             // 
-            this.simpleButtonChuyenLop.Image = global::QLHS.Properties.Resources.chuyenlop;
+            this.simpleButtonChuyenLop.Image = global::QLHS.Properties.Resources.chuyen_loplai;
             this.simpleButtonChuyenLop.Location = new System.Drawing.Point(86, 35);
             this.simpleButtonChuyenLop.Name = "simpleButtonChuyenLop";
             this.simpleButtonChuyenLop.Size = new System.Drawing.Size(117, 35);
@@ -426,7 +427,7 @@
             this.Controls.Add(this.gridControlDSHocSinh);
             this.Controls.Add(this.panelControl1);
             this.Name = "frmPhanLop";
-            this.Text = "frmPhanLop";
+            this.Text = "Phân lớp học sinh";
             this.Load += new System.EventHandler(this.frmChuyenLop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

@@ -216,6 +216,9 @@
     <EmbeddedResource Include="frmLapDSLop.resx">
       <DependentUpon>frmLapDSLop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMonHoc.resx">
+      <DependentUpon>frmMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPhanLop.resx">
       <DependentUpon>frmPhanLop.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +292,98 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="File_SQL\QLHS_Update.sql" />
+    <Content Include="Resources\arrow.png" />
+    <Content Include="Resources\capnhat.png" />
+    <Content Include="Resources\cauhinhketnoi.png" />
+    <Content Include="Resources\chuyenlop.png" />
+    <Content Include="Resources\chuyenlop_lai.png" />
+    <Content Include="Resources\chuyenlop_large.png" />
+    <Content Include="Resources\chuyenlop_small.png" />
+    <None Include="Resources\chuyen_lop.png" />
+    <None Include="Resources\chuyen_loplai.png" />
+    <Content Include="Resources\dangnhap.png" />
+    <Content Include="Resources\dangnhap_small.png" />
+    <Content Include="Resources\dangxuat.png" />
+    <Content Include="Resources\dangxuatcontext.png" />
+    <Content Include="Resources\database.png" />
+    <Content Include="Resources\database_down.ico" />
+    <Content Include="Resources\database_up.ico" />
+    <Content Include="Resources\doimatkhau.png" />
+    <Content Include="Resources\dsgiaovien.png" />
+    <Content Include="Resources\dshocsinh.png" />
+    <Content Include="Resources\dslophoc.png" />
+    <Content Include="Resources\excel.png" />
+    <Content Include="Resources\giaovien.png" />
+    <Content Include="Resources\giupdo.png" />
+    <Content Include="Resources\hanhkiem.png" />
+    <Content Include="Resources\hocky.png" />
+    <Content Include="Resources\hocluc.png" />
+    <Content Include="Resources\hocsinh.png" />
+    <Content Include="Resources\home.png" />
+    <Content Include="Resources\huongdan.png" />
+    <None Include="Resources\huy.png" />
+    <Content Include="Resources\icon.ico" />
+    <Content Include="Resources\ketnoi_database.png" />
+    <Content Include="Resources\ketqua.png" />
+    <Content Include="Resources\khaibao_namhoc.png" />
+    <Content Include="Resources\khenthuong_kyluat.png" />
+    <Content Include="Resources\khoa.png" />
+    <Content Include="Resources\khoahoc.png" />
+    <Content Include="Resources\khoilop.png" />
+    <Content Include="Resources\kqcnamtheolop.png" />
+    <Content Include="Resources\kqcnamtheomon.png" />
+    <Content Include="Resources\kqhockytheolop.png" />
+    <Content Include="Resources\kqhockytheomon.png" />
+    <Content Include="Resources\login.png" />
+    <Content Include="Resources\login2.png" />
+    <Content Include="Resources\loginimage.png" />
+    <Content Include="Resources\lophoc.png" />
+    <Content Include="Resources\luuchuyenlop.png" />
+    <Content Include="Resources\monhoc.png" />
+    <Content Include="Resources\namhoc.png" />
+    <Content Include="Resources\narrow_down.png" />
+    <Content Include="Resources\narrow_up.png" />
+    <Content Include="Resources\next.png" />
+    <Content Include="Resources\nghenghiep.png" />
+    <Content Include="Resources\nhomnguoidung_small.png" />
+    <Content Include="Resources\nienkhoa.png" />
+    <Content Include="Resources\phancong.png" />
+    <Content Include="Resources\phancong_giaovien.png" />
+    <Content Include="Resources\phanlop.png" />
+    <Content Include="Resources\phuchoidulieu.png" />
+    <Content Include="Resources\print.png" />
+    <Content Include="Resources\pupils.png" />
+    <Content Include="Resources\qddotuoi.png" />
+    <Content Include="Resources\qdsiso.png" />
+    <Content Include="Resources\qdthangdiem.png" />
+    <Content Include="Resources\quanlynguoidung.png" />
+    <Content Include="Resources\quaylai_small.png" />
+    <Content Include="Resources\quydinh_diemcan.png" />
+    <Content Include="Resources\saoluudulieu.png" />
+    <Content Include="Resources\sapxep.png" />
+    <None Include="Resources\sua.gif" />
+    <None Include="Resources\sua.png" />
+    <Content Include="Resources\thangdiem_small.png" />
+    <Content Include="Resources\them.png" />
+    <Content Include="Resources\them_medium.png" />
+    <Content Include="Resources\them_medium2.png" />
+    <Content Include="Resources\them_small.png" />
+    <Content Include="Resources\thoat.png" />
+    <Content Include="Resources\thoat_small.png" />
+    <Content Include="Resources\thongtinphanmem.png" />
+    <Content Include="Resources\timkiem.png" />
+    <Content Include="Resources\tracuugiaovien.png" />
+    <Content Include="Resources\tracuuhocsinh.png" />
+    <Content Include="Resources\tttruonghoc.png" />
+    <Content Include="Resources\xemdiem.png" />
+    <Content Include="Resources\xeploai.png" />
+    <Content Include="Resources\xoa_hs.png" />
+    <Content Include="Resources\xoa_large.png" />
+    <Content Include="Resources\xoa_medium.png" />
+    <Content Include="Resources\xoa_small.png" />
+    <Content Include="Resources\xuat_bcao.png" />
+    <None Include="Resources\Thumbs.db" />
+    <None Include="Resources\timkiem_small.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

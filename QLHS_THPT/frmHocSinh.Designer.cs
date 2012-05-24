@@ -149,7 +149,7 @@
             // 
             // simpleButtonThemMoi
             // 
-            this.simpleButtonThemMoi.Image = global::QLHS.Properties.Resources.them_small;
+            this.simpleButtonThemMoi.Image = global::QLHS.Properties.Resources.them;
             this.simpleButtonThemMoi.Location = new System.Drawing.Point(249, 10);
             this.simpleButtonThemMoi.Name = "simpleButtonThemMoi";
             this.simpleButtonThemMoi.Size = new System.Drawing.Size(117, 35);
@@ -313,7 +313,7 @@
             // simpleButtonChuyenLop
             // 
             this.simpleButtonChuyenLop.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonChuyenLop.Location = new System.Drawing.Point(446, 12);
+            this.simpleButtonChuyenLop.Location = new System.Drawing.Point(339, 13);
             this.simpleButtonChuyenLop.Name = "simpleButtonChuyenLop";
             this.simpleButtonChuyenLop.Size = new System.Drawing.Size(128, 35);
             this.simpleButtonChuyenLop.TabIndex = 17;
