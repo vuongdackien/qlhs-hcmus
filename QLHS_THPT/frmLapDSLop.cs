@@ -152,23 +152,16 @@ namespace QLHS
             lopDTO.MaKhoiLop = Convert.ToInt16(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi));
             
 
-            try
+            if (_lopBUS.KiemTra_TonTaiMaLop(lopDTO.MaLop))
             {
-                if (_lopBUS.KiemTra_TonTaiMaLop(lopDTO.MaLop))
-                {
-                    _lopBUS.CapNhat_GiaoVienCN_Lop(lopDTO);
-                    Utilities.MessageboxUtilities.MessageSuccess("Đã cập nhật lớp " + lopDTO.TenLop+" thành công!");
-                }
-                else
-                {
-                    _lopBUS.Them_Lop(lopDTO);
-                    Utilities.MessageboxUtilities.MessageSuccess("Đã tạo lớp " + lopDTO.TenLop + " thành công!");
-                } 
+                _lopBUS.CapNhat_GiaoVienCN_Lop(lopDTO);
+                Utilities.MessageboxUtilities.MessageSuccess("Đã cập nhật lớp " + lopDTO.TenLop+" thành công!");
             }
-            catch(Exception ex)
+            else
             {
-                Utilities.MessageboxUtilities.MessageError(ex);
-            }
+                if(_lopBUS.Them_Lop(lopDTO))
+                     Utilities.MessageboxUtilities.MessageSuccess("Đã tạo lớp " + lopDTO.TenLop + " thành công!");
+            } 
             HienThi_DSLop();
             DisableControls(false);
 
@@ -189,16 +182,9 @@ namespace QLHS
                 {
                     return;
                 }
-                try
-                {
-                    _lopBUS.Xoa_Lop(textEditMaLop.Text);
-                    Utilities.MessageboxUtilities.MessageSuccess("Đã xóa lớp " + textEditTenLop.Text + " thành công!");
-                   
-                }
-                catch (Exception ex)
-                {
-                    Utilities.MessageboxUtilities.MessageError(ex);
-                }
+
+               _lopBUS.Xoa_Lop(textEditMaLop.Text);
+                Utilities.MessageboxUtilities.MessageSuccess("Đã xóa lớp " + textEditTenLop.Text + " thành công!");
                 HienThi_DSLop();
             }
         }

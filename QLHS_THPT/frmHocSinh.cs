@@ -174,18 +174,10 @@ namespace QLHS
                 Utilities.MessageboxUtilities.MessageError("Họ tên học sinh không hợp lệ (không chứa khoảng trắng) hoặc nhỏ hơn 3 ký tự!");
                 return;
             }
-            try
-            {
-                _hocSinhBUS.LuuHoSoHocSinh(hocSinhDTO, MaLop);
-                Utilities.MessageboxUtilities.MessageSuccess("Lưu hồ sơ học sinh " + hocSinhDTO.TenHocSinh + " thành công!");
-                this.LoadLai_GridControl_HocSinh();
-                gridViewDSHocSinh.SelectRow(0);
-            }
-            catch (Exception ex)
-            {
-                Utilities.MessageboxUtilities.MessageError(ex);
-                return;
-            }
+            _hocSinhBUS.LuuHoSoHocSinh(hocSinhDTO, MaLop);
+            Utilities.MessageboxUtilities.MessageSuccess("Lưu hồ sơ học sinh " + hocSinhDTO.TenHocSinh + " thành công!");
+            this.LoadLai_GridControl_HocSinh();
+            gridViewDSHocSinh.SelectRow(0);
         }
         private void simpleButtonXoa_Click(object sender, EventArgs e)
         {
@@ -198,16 +190,9 @@ namespace QLHS
             {
                 return;
             }
-            try
-            {
-                _hocSinhBUS.Xoa_HoSo_HocSinh(textEditmaHocSinh.Text);
-                Utilities.MessageboxUtilities.MessageSuccess("Xóa hồ sơ học sinh thành công!");
-                LoadLai_GridControl_HocSinh();
-            }
-            catch(Exception ex)
-            {
-                Utilities.MessageboxUtilities.MessageError(ex);
-            }
+            _hocSinhBUS.Xoa_HoSo_HocSinh(textEditmaHocSinh.Text);
+            Utilities.MessageboxUtilities.MessageSuccess("Xóa hồ sơ học sinh thành công!");
+            LoadLai_GridControl_HocSinh();
             
         }
         private void simpleButtonThemMoi_Click(object sender, EventArgs e)
@@ -261,17 +246,10 @@ namespace QLHS
                 Utilities.MessageboxUtilities.MessageError("Bạn chưa chọn lớp để thực hiện");
                 return;
             }
-            try
-            {
-                _phanLopBUS.CapNhap_STT_HocSinh_Lop(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop));
-                Utilities.MessageboxUtilities.MessageSuccess("Cập nhật số thự tự cho lớp thành công!");
-                // Load lại gridcontrol học sinh
-                this.LoadLai_GridControl_HocSinh();
-            }
-            catch(Exception ex)
-            {
-                Utilities.MessageboxUtilities.MessageError(ex);
-            }
+            _phanLopBUS.CapNhap_STT_HocSinh_Lop(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop));
+            Utilities.MessageboxUtilities.MessageSuccess("Cập nhật số thự tự cho lớp thành công!");
+            // Load lại gridcontrol học sinh
+            this.LoadLai_GridControl_HocSinh();
         }
 
         private void gridControlDSHocSinh_Click(object sender, EventArgs e)

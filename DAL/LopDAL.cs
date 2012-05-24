@@ -79,7 +79,7 @@ namespace QLHS.DAL
         {
             if (this.KiemTra_TonTaiMaLop(lop.MaLop))
             {
-                Utilities.ExceptionUtilities.Throw("Lớp: " + lop.TenLop + " đã tồn tại!");
+                Utilities.ExceptionUtilities.ThrowMsgBox("Lớp: " + lop.TenLop + " đã tồn tại!");
                 return false;
             }
             string sql = string.Format("INSERT INTO LOP (MaLop, TenLop, MaGiaoVien, MaKhoiLop, MaNamHoc, SiSo) "
