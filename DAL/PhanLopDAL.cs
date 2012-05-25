@@ -116,6 +116,13 @@ namespace QLHS.DAL
         "pl.MaLop='"+MaLop+"' and pl.MaHocSinh not in (select pl1.MaHocSinh from  PHANLOP pl1 where pl1.MaLop !='"+MaLop+"')";
             return GetTable(sql);
         }
+
+        public DataTable LayDTLop_MaNam_MaKhoi_KhacMaLop(string MaNamHoc, string MaKhoi, string MaLop)
+        {
+            string sql = string.Format("SELECT MaLop, TenLop from Lop where "
+                                      + " MaKhoiLop = '{0}' AND MaNamHoc = '{1}' and MaLop not in('{2}') ", MaKhoi, MaNamHoc, MaLop);
+            return GetTable(sql);
+        }
     }
 }
 
