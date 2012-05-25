@@ -15,7 +15,7 @@ namespace QLHS.DAL
         /// <param name="MaKhoi"></param>
         /// <param name="MaNamHoc"></param>
         /// <returns> bool</returns>
-        public bool KT_HocSinh_TonTai_NamHoc(string MaHocSinh,string MaKhoi,string MaNamHoc)
+        public DataTable KT_HocSinh_TonTai_NamHoc(string MaHocSinh,string MaKhoi,string MaNamHoc)
         {
             string khoi="";
             if (MaKhoi == "10")
@@ -31,8 +31,9 @@ namespace QLHS.DAL
                 else
                     khoi = khoi + "(12)";
             }
-            string sql = "select MaHocSinh,TenLop from PHANLOP as a, LOP as b where a.MaLop=b.MaLop and a.MaHocSinh='"+MaHocSinh+"' and b.MaNamHoc= '" + MaNamHoc + "' and b.MaKhoiLop in "+khoi+"  ";
-            return GetTable(sql).Rows.Count > 0;
+            string sql = "select a.MaHocSinh,b.TenLop from PHANLOP as a, LOP as b where a.MaLop=b.MaLop and a.MaHocSinh='"+MaHocSinh+"' and b.MaNamHoc= '" + MaNamHoc + "' and b.MaKhoiLop in "+khoi+"  ";
+            return GetTable(sql);
+            
         }
         public bool KiemTra_STT_TonTai(int STT, string MaLop)
         {
@@ -101,7 +102,20 @@ namespace QLHS.DAL
 "p.MaHocSinh not in (select p1.MaHocSinh from PHANLOP as p1, Lop as l where p1.MaLop=l.MaLop and l.MaNamHoc='"+MaNamHoc+"')";
             return GetTable(sql);
         }
-       
+        public DataTable LayDT_HocSinh_DaChuyen(string MaLopMoi,string MaLopCu)
+        {
+            string sql = string.Format("SELECT pl.STT, hs.MaHocSinh,hs.TenHocSinh,hs.Email,(CASE WHEN hs.GioiTinh='0' THEN 'Nam' ELSE N'Nữ' END) AS GioiTinh,hs.NgaySinh,hs.NoiSinh,hs.DiaChi "
+                                      + "FROM PHANLOP pl LEFT JOIN HOCSINH hs ON pl.MaHocSinh = hs.MaHocSinh "
+                                      + "WHERE pl.MaLop = '{0}' and pl.MaHocSinh in (select pl1.MaHocSinh from PHANLOP pl1 WHERE pl1.MaLop = '{1}') ORDER BY pl.STT ASC", MaLopMoi,MaLopCu);
+            
+            return GetTable(sql);
+        }
+        public DataTable LayDT_HocSinh_DaChuyen_TuHoSo(string MaLop)
+        {
+            string  sql= "select pl.STT,pl.MaHocSinh,hs.TenHocSinh from PHANLOP pl, HOCSINH hs where pl.MaHocSinh=hs.MaHocSinh and "+
+        "pl.MaLop='"+MaLop+"' and pl.MaHocSinh not in (select pl1.MaHocSinh from  PHANLOP pl1 where pl1.MaLop !='"+MaLop+"')";
+            return GetTable(sql);
+        }
     }
 }
 
