@@ -95,6 +95,12 @@ namespace QLHS.DAL
             string sql = "DELETE FROM PHANLOP WHERE MaHocSinh='"+MaHocSinh+"' AND MaLop='"+MaLop+"' ";
             return ExecuteQuery(sql) > 0;
         }
+        public DataTable LayDT_HocSinh_ChuaChuyenLop(string MaLop,string MaNamHoc)
+        {
+            string sql = "select p.STT,p.MaHocSinh,h.TenHocSinh,(case when h.GioiTinh='0' then 'Nam' else N'Nữ' end) as GioiTinh from PHANLOP as p,HOCSINH as h WHERE p.MaHocSinh=h.MaHocSinh and p.MaHocSinh=h.MaHocSinh and p.MaLop='"+MaLop+"' and "+
+"p.MaHocSinh not in (select p1.MaHocSinh from PHANLOP as p1, Lop as l where p1.MaLop=l.MaLop and l.MaNamHoc='"+MaNamHoc+"')";
+            return GetTable(sql);
+        }
        
     }
 }
