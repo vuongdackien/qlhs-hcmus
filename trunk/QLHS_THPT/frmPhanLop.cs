@@ -54,9 +54,19 @@ namespace QLHS
 
         private void loadComboboxLopHoc_Moi(object sender, EventArgs e)
         {
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditLopMoi,_LopBUS.LayDTLop_MaNam_MaKhoi(
+            if (checkEditChuyenLop.Checked == true)
+            {
+                Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditLopMoi, _PhanLopBUS.LayDTLop_MaNam_MaKhoi_KhacMaLop(
                     Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHocMoi),
-                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiMoi)),"MaLop","TenLop",0);
+                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiMoi),
+                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop)), "MaLop", "TenLop", 0);
+            }
+            else
+            {
+                Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditLopMoi, _LopBUS.LayDTLop_MaNam_MaKhoi(
+                        Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHocMoi),
+                        Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiMoi)), "MaLop", "TenLop", 0);
+            }
             comboBoxEditLopMoi_SelectedIndexChanged(sender,e);
         }
 
@@ -75,6 +85,11 @@ namespace QLHS
             if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditNamHoc))
                 return;
             this.LoadComboboxLopHoc(sender, e);
+            if (checkEditChuyenLop.Checked == true)
+            {
+                Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoiMoi, _KhoiBUS.LayDTKhoi_Chuyen(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi)),"MaKhoi","TenKhoi",0);
+            }
+            else
             Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoiMoi, _KhoiBUS.LayDTKhoi_PL(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi)), "MaKhoi", "TenKhoi", 0);
         }
 
@@ -96,15 +111,19 @@ namespace QLHS
                                                     "MaNamHoc", "TenNamHoc", 0);
                 Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoi, _KhoiBUS.LayDTKhoi(),
                                                     "MaKhoi", "TenKhoi", 0);
-                Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHocMoi, _NamHocBUS.LayDTNamHocMoi(),
+                if (checkEditChuyenLop.Checked == true)
+                {
+                    Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHocMoi, _NamHocBUS.LayDTNamHocCu(),
                                                     "MaNamHoc", "TenNamHoc", 0);
+                }
+                else
+                {
+                    Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHocMoi, _NamHocBUS.LayDTNamHocMoi(),
+                                                        "MaNamHoc", "TenNamHoc", 0);
+                }
             }
             simpleButtonChuyenLop.Enabled = false;
             simpleButtonChuyenLai.Enabled = false;
-            if (KiemTra_DuLieu()==false)
-            {
-                AnHien_from(KiemTra_DuLieu());
-            }
         }
        
         
@@ -199,6 +218,11 @@ namespace QLHS
             }
             else
                 simpleButtonChuyenLop.Enabled = false;
+            checkEditChuyenLop.Enabled = false;
+            if (checkEditHocSinhChuaChuyen.Checked == false && checkEditPhanLopHocSinhMoi.Checked == false)
+            {
+                checkEditChuyenLop.Enabled = true;
+            }
         }
         void HienThi(bool xl)
         {
@@ -266,6 +290,11 @@ namespace QLHS
         private void gridViewDSHocSinhMoi_MouseEnter(object sender, EventArgs e)
         {
             simpleButtonChuyenLop.Enabled = false;
+            if (checkEditChuyenLop.Checked == true)
+            {
+                simpleButtonChuyenLai.Enabled = false;
+            }
+            else
             simpleButtonChuyenLai.Enabled = true;
             hienThi_Button();
         }
@@ -326,6 +355,28 @@ namespace QLHS
         {
             LoadGridcontrolDSHocSinh();
             LoadGridcontrolDSHocSinhMoi();
+            checkEditChuyenLop.Enabled = false;
+            if (checkEditHocSinhChuaChuyen.Checked == false && checkEditPhanLopHocSinhMoi.Checked == false)
+            {
+                checkEditChuyenLop.Enabled = true;
+            }
+        }
+
+        private void checkEditChuyenLop_CheckedChanged(object sender, EventArgs e)
+        {
+            comboBoxEditKhoi_SelectedIndexChanged(sender, e);
+            if (checkEditChuyenLop.Checked == true)
+            {
+                Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHocMoi, _NamHocBUS.LayDTNamHocCu(),
+                                                "MaNamHoc", "TenNamHoc", 0);
+            }
+            else
+            {
+                Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHocMoi, _NamHocBUS.LayDTNamHocMoi(),
+                                                    "MaNamHoc", "TenNamHoc", 0);
+            }
+            checkEditHocSinhChuaChuyen.Enabled = !checkEditChuyenLop.Checked;
+            checkEditPhanLopHocSinhMoi.Enabled = !checkEditChuyenLop.Checked;
         }
     }
 }
