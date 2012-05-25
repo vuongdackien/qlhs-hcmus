@@ -30,6 +30,7 @@
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.checkEditHocSinhChuaChuyen = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditPhanLopHocSinhMoi = new DevExpress.XtraEditors.CheckEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.comboBoxEditLopMoi = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -51,12 +52,14 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.gridControlDSHocSinhMoi = new DevExpress.XtraGrid.GridControl();
             this.gridViewDSHocSinhMoi = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
@@ -66,6 +69,7 @@
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditHocSinhChuaChuyen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditPhanLopHocSinhMoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -99,6 +103,7 @@
             // 
             // panelControl5
             // 
+            this.panelControl5.Controls.Add(this.checkEditHocSinhChuaChuyen);
             this.panelControl5.Controls.Add(this.checkEditPhanLopHocSinhMoi);
             this.panelControl5.Controls.Add(this.groupControl2);
             this.panelControl5.Controls.Add(this.groupControl1);
@@ -107,6 +112,15 @@
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(1001, 158);
             this.panelControl5.TabIndex = 4;
+            // 
+            // checkEditHocSinhChuaChuyen
+            // 
+            this.checkEditHocSinhChuaChuyen.Location = new System.Drawing.Point(433, 84);
+            this.checkEditHocSinhChuaChuyen.Name = "checkEditHocSinhChuaChuyen";
+            this.checkEditHocSinhChuaChuyen.Properties.Caption = "Học Sinh Chưa Chuyển";
+            this.checkEditHocSinhChuaChuyen.Size = new System.Drawing.Size(147, 19);
+            this.checkEditHocSinhChuaChuyen.TabIndex = 16;
+            this.checkEditHocSinhChuaChuyen.CheckedChanged += new System.EventHandler(this.checkEditHocSinhChuaChuyen_CheckedChanged);
             // 
             // checkEditPhanLopHocSinhMoi
             // 
@@ -281,7 +295,8 @@
             this.gridViewDSHocSinh.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
-            this.gridColumn3});
+            this.gridColumn3,
+            this.gridColumn7});
             this.gridViewDSHocSinh.GridControl = this.gridControlDSHocSinh;
             this.gridViewDSHocSinh.Name = "gridViewDSHocSinh";
             this.gridViewDSHocSinh.OptionsView.ShowGroupPanel = false;
@@ -316,6 +331,14 @@
             this.gridColumn3.VisibleIndex = 1;
             this.gridColumn3.Width = 100;
             // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Giới Tính";
+            this.gridColumn7.FieldName = "GioiTinh";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 3;
+            // 
             // repositoryItemCheckEdit1
             // 
             this.repositoryItemCheckEdit1.AutoHeight = false;
@@ -339,7 +362,8 @@
             this.gridViewDSHocSinhMoi.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn4,
             this.gridColumn5,
-            this.gridColumn6});
+            this.gridColumn6,
+            this.gridColumn8});
             this.gridViewDSHocSinhMoi.GridControl = this.gridControlDSHocSinhMoi;
             this.gridViewDSHocSinhMoi.Name = "gridViewDSHocSinhMoi";
             this.gridViewDSHocSinhMoi.OptionsView.ShowGroupPanel = false;
@@ -369,6 +393,14 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 2;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Giới Tính";
+            this.gridColumn8.FieldName = "GioiTinh";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 3;
             // 
             // repositoryItemCheckEdit2
             // 
@@ -434,6 +466,7 @@
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditHocSinhChuaChuyen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditPhanLopHocSinhMoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
@@ -495,6 +528,9 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
         private DevExpress.XtraEditors.CheckEdit checkEditPhanLopHocSinhMoi;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraEditors.CheckEdit checkEditHocSinhChuaChuyen;
 
     }
 }
