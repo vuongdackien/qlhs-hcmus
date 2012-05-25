@@ -35,6 +35,7 @@
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.GiaTri = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.toolTipController2 = new DevExpress.Utils.ToolTipController(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -43,7 +44,6 @@
             this.simpleButtonThoat = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonSuaQuyDinh = new DevExpress.XtraEditors.SimpleButton();
             this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
-            this.toolTipController2 = new DevExpress.Utils.ToolTipController(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlQuyDinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewQuyDinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
@@ -71,12 +71,16 @@
             // 
             // gridViewQuyDinh
             // 
+            this.gridViewQuyDinh.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.gridViewQuyDinh.Appearance.ColumnFilterButton.Options.UseBackColor = true;
+            this.gridViewQuyDinh.Appearance.HeaderPanel.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewQuyDinh.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridViewQuyDinh.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Khoa,
             this.GiaTri});
             this.gridViewQuyDinh.GridControl = this.gridControlQuyDinh;
             this.gridViewQuyDinh.Name = "gridViewQuyDinh";
-            this.gridViewQuyDinh.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewQuyDinh_FocusedRowChanged);
+            this.gridViewQuyDinh.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridViewQuyDinh_CellValueChanged);
             // 
             // Khoa
             // 
@@ -85,6 +89,7 @@
             this.Khoa.FieldName = "Khoa";
             this.Khoa.Name = "Khoa";
             this.Khoa.OptionsColumn.ReadOnly = true;
+            this.Khoa.ToolTip = "Các quy định";
             this.Khoa.Visible = true;
             this.Khoa.VisibleIndex = 0;
             // 
@@ -107,6 +112,10 @@
             this.repositoryItemTextEdit1.AutoHeight = false;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
+            // toolTipController2
+            // 
+            this.toolTipController2.ShowBeak = true;
+            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.labelControl2);
@@ -119,18 +128,20 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(151, 68);
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Location = new System.Drawing.Point(125, 68);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(288, 13);
+            this.labelControl2.Size = new System.Drawing.Size(336, 16);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "________________________________________________";
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.labelControl1.Location = new System.Drawing.Point(194, 33);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(152, 29);
+            this.labelControl1.Size = new System.Drawing.Size(170, 29);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Bảng quy định";
             // 
@@ -149,9 +160,10 @@
             // simpleButtonLoaddulieu
             // 
             this.simpleButtonLoaddulieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButtonLoaddulieu.Location = new System.Drawing.Point(385, 26);
+            this.simpleButtonLoaddulieu.Image = global::QLHS.Properties.Resources.capnhat;
+            this.simpleButtonLoaddulieu.Location = new System.Drawing.Point(345, 26);
             this.simpleButtonLoaddulieu.Name = "simpleButtonLoaddulieu";
-            this.simpleButtonLoaddulieu.Size = new System.Drawing.Size(92, 39);
+            this.simpleButtonLoaddulieu.Size = new System.Drawing.Size(116, 39);
             this.simpleButtonLoaddulieu.TabIndex = 0;
             this.simpleButtonLoaddulieu.Text = "Tải dữ liệu mới";
             this.simpleButtonLoaddulieu.ToolTip = "Tải dữ liệu mới từ cơ sở dữ liệu";
@@ -162,9 +174,10 @@
             // simpleButtonThoat
             // 
             this.simpleButtonThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButtonThoat.Location = new System.Drawing.Point(547, 26);
+            this.simpleButtonThoat.Image = global::QLHS.Properties.Resources.thoat;
+            this.simpleButtonThoat.Location = new System.Drawing.Point(507, 26);
             this.simpleButtonThoat.Name = "simpleButtonThoat";
-            this.simpleButtonThoat.Size = new System.Drawing.Size(92, 39);
+            this.simpleButtonThoat.Size = new System.Drawing.Size(116, 39);
             this.simpleButtonThoat.TabIndex = 0;
             this.simpleButtonThoat.Text = "Thoát";
             this.simpleButtonThoat.Click += new System.EventHandler(this.simpleButtonThoat_Click);
@@ -172,9 +185,10 @@
             // simpleButtonSuaQuyDinh
             // 
             this.simpleButtonSuaQuyDinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButtonSuaQuyDinh.Location = new System.Drawing.Point(219, 26);
+            this.simpleButtonSuaQuyDinh.Image = global::QLHS.Properties.Resources.monhoc;
+            this.simpleButtonSuaQuyDinh.Location = new System.Drawing.Point(170, 26);
             this.simpleButtonSuaQuyDinh.Name = "simpleButtonSuaQuyDinh";
-            this.simpleButtonSuaQuyDinh.Size = new System.Drawing.Size(92, 39);
+            this.simpleButtonSuaQuyDinh.Size = new System.Drawing.Size(116, 39);
             this.simpleButtonSuaQuyDinh.TabIndex = 0;
             this.simpleButtonSuaQuyDinh.Text = "Sửa quy định";
             this.simpleButtonSuaQuyDinh.ToolTip = "Sửa các quy định hiện hành";
@@ -182,10 +196,6 @@
             this.simpleButtonSuaQuyDinh.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.simpleButtonSuaQuyDinh.ToolTipTitle = "Sửa quy định";
             this.simpleButtonSuaQuyDinh.Click += new System.EventHandler(this.simpleButtonSuaQuyDinh_Click);
-            // 
-            // toolTipController2
-            // 
-            this.toolTipController2.ShowBeak = true;
             // 
             // frmQuyDinh
             // 
