@@ -65,7 +65,7 @@
             this.repositoryItemTextEdit1,
             this.repositoryItemTextEdit2});
             this.gridControlQuyDinh.Size = new System.Drawing.Size(647, 300);
-            this.gridControlQuyDinh.TabIndex = 0;
+            this.gridControlQuyDinh.TabIndex = 4;
             this.gridControlQuyDinh.ToolTipController = this.toolTipController2;
             this.gridControlQuyDinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewQuyDinh});
@@ -217,6 +217,7 @@
             this.GiaTri.ColumnEdit = this.repositoryItemTextEdit1;
             this.GiaTri.FieldName = "GiaTri";
             this.GiaTri.Name = "GiaTri";
+            this.GiaTri.ToolTip = "Bạn sửa giá trị trực tiếp trên lưới";
             this.GiaTri.Visible = true;
             this.GiaTri.VisibleIndex = 1;
             // 
@@ -277,7 +278,7 @@
             this.simpleButtonLoaddulieu.Location = new System.Drawing.Point(345, 26);
             this.simpleButtonLoaddulieu.Name = "simpleButtonLoaddulieu";
             this.simpleButtonLoaddulieu.Size = new System.Drawing.Size(116, 39);
-            this.simpleButtonLoaddulieu.TabIndex = 0;
+            this.simpleButtonLoaddulieu.TabIndex = 2;
             this.simpleButtonLoaddulieu.Text = "Tải dữ liệu mới";
             this.simpleButtonLoaddulieu.ToolTip = "Tải dữ liệu mới từ cơ sở dữ liệu";
             this.simpleButtonLoaddulieu.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
@@ -291,7 +292,7 @@
             this.simpleButtonThoat.Location = new System.Drawing.Point(507, 26);
             this.simpleButtonThoat.Name = "simpleButtonThoat";
             this.simpleButtonThoat.Size = new System.Drawing.Size(116, 39);
-            this.simpleButtonThoat.TabIndex = 0;
+            this.simpleButtonThoat.TabIndex = 3;
             this.simpleButtonThoat.Text = "Thoát";
             this.simpleButtonThoat.Click += new System.EventHandler(this.simpleButtonThoat_Click);
             // 
@@ -302,7 +303,7 @@
             this.simpleButtonSuaQuyDinh.Location = new System.Drawing.Point(170, 26);
             this.simpleButtonSuaQuyDinh.Name = "simpleButtonSuaQuyDinh";
             this.simpleButtonSuaQuyDinh.Size = new System.Drawing.Size(116, 39);
-            this.simpleButtonSuaQuyDinh.TabIndex = 0;
+            this.simpleButtonSuaQuyDinh.TabIndex = 1;
             this.simpleButtonSuaQuyDinh.Text = "Sửa quy định";
             this.simpleButtonSuaQuyDinh.ToolTip = "Sửa các quy định hiện hành";
             this.simpleButtonSuaQuyDinh.ToolTipController = this.toolTipController1;
