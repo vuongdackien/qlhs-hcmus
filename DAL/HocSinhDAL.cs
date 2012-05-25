@@ -22,7 +22,7 @@ namespace QLHS.DAL
         /// <returns>DataTable</returns>
         public DataTable LayDT_HocSinh_LopHoc(string MaLop, bool chua_PhanLop = false)
         {
-            string sql = string.Format("SELECT pl.STT, hs.* "
+            string sql = string.Format("SELECT pl.STT, hs.MaHocSinh,hs.TenHocSinh,hs.Email,(CASE WHEN hs.GioiTinh='0' THEN 'Nam' ELSE N'Nữ' END) AS GioiTinh,hs.NgaySinh,hs.NoiSinh,hs.DiaChi "
                                       + "FROM PHANLOP pl LEFT JOIN HOCSINH hs ON pl.MaHocSinh = hs.MaHocSinh "
                                       + "WHERE pl.MaLop = '{0}' ORDER BY pl.STT ASC", MaLop);
             if (chua_PhanLop)
@@ -41,7 +41,7 @@ namespace QLHS.DAL
             DataTable dt = new DataTable();
             DataColumn dcl=new DataColumn("STT",typeof(int));
             dt.Columns.Add(dcl);
-            string sql = "SELECT MaHocSinh,TenHocSinh from HOCSINH WHERE MaHocSinh not in (select MaHocSinh from PHANLOP)";
+            string sql = "SELECT MaHocSinh,TenHocSinh,(CASE WHEN GioiTinh='0' THEN 'Nam' ELSE N'Nữ' END) AS GioiTinh from HOCSINH WHERE MaHocSinh not in (select MaHocSinh from PHANLOP)";
             m_DataApdater = new System.Data.SqlClient.SqlDataAdapter(sql, m_Connect);
             m_DataApdater.Fill(dt);
             return dt;
