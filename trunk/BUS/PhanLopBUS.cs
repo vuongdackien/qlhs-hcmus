@@ -97,7 +97,7 @@ namespace QLHS.BUS
         /// <param name="MaKhoi"></param>
         /// <param name="MaNamHoc"></param>
         /// <returns> bool</returns>
-        public bool KT_HocSinh_TonTai_NamHoc(string MaHocSinh, string MaKhoi, string MaNamHoc)
+        public DataTable KT_HocSinh_TonTai_NamHoc(string MaHocSinh, string MaKhoi, string MaNamHoc)
         {
             return _PhanLopDAL.KT_HocSinh_TonTai_NamHoc(MaHocSinh, MaKhoi, MaNamHoc);
         }
@@ -112,6 +112,14 @@ namespace QLHS.BUS
         public DataTable LayDT_HocSinh_ChuaChuyenLop(string MaLop, string MaNamHoc)
         {
            return  _PhanLopDAL.LayDT_HocSinh_ChuaChuyenLop(MaLop, MaNamHoc);
+        }
+        public DataTable LayDT_HocSinh_DaChuyen(string MaLopMoi, string MaLopCu)
+        {
+            return _PhanLopDAL.LayDT_HocSinh_DaChuyen(MaLopMoi, MaLopCu);
+        }
+        public DataTable LayDT_HocSinh_DaChuyen_TuHoSo(string MaLop)
+        {
+            return _PhanLopDAL.LayDT_HocSinh_DaChuyen_TuHoSo(MaLop);
         }
     }
 }
