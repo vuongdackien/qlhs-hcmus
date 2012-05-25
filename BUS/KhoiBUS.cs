@@ -34,7 +34,6 @@ namespace QLHS.BUS
         /// <returns>DataTable</returns>
         public DataTable LayDTKhoi_10()
         {
-
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("MaKhoi");
             dataTable.Columns.Add("TenKhoi");
@@ -44,7 +43,17 @@ namespace QLHS.BUS
             dataTable.Rows.Add(dr);
             return dataTable;
         }
-        
+        public DataTable LayDTKhoi_Chuyen(string MaKhoi)
+        {
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("MaKhoi");
+            dataTable.Columns.Add("TenKhoi");
+            DataRow dr = dataTable.NewRow();
+            dr["MaKhoi"] = int.Parse(MaKhoi);
+            dr["TenKhoi"] = "Khối " + int.Parse(MaKhoi);
+            dataTable.Rows.Add(dr);
+            return dataTable;
+        }
         public DataTable LayDTKhoi_PL(string MaKhoi)
         {
             int ma = Convert.ToInt32(MaKhoi);
