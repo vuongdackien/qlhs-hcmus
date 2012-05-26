@@ -12,36 +12,23 @@ namespace QLHS
 {
     public partial class frmMonHoc : DevExpress.XtraEditors.XtraForm
     {
-        MonHocBUS _MonHocBus=new MonHocBUS();
+        MonHocBUS _MonHocBus = new MonHocBUS();
         MonHocDTO _MonHocDTO;
-        private int flag = 0;
         DataTable DT;
         public frmMonHoc()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
-     /*   public void load_Compobox()
-       {
-            
-        }*/
+
         public void KhoiTaoTrangthai()
         {
 
-            //simpleButtonThemMonHoc.Enabled = true;
-            //simpleButtonXoaMonHoc.Enabled = true;
-            simpleButtonSuaMonHoc.Enabled = true;
-            simpleButtonhuy.Enabled = false;
-            simpleButtonLuu.Enabled = false;
-            //textEditMaMonHoc.Enabled = false;
-            //textEditTenMonHoc.Enabled = false;
-            //textEditSoTiet.Enabled = false;
-            //comboBoxEditHeSo.Enabled = false;
-            //comboBoxEditTrangThai.Enabled = false;
-            simpleButtonhuy.Enabled = false;
-            flag = 0;
-           
+            simpleButtonSuaMonHoc.Enabled = false;
+
+
         }
-        
+
         public static bool KiemtraNull(string Chuoi)
         {
             if (Chuoi == "")
@@ -58,166 +45,116 @@ namespace QLHS
         {
             this.Close();
         }
-       
 
-       /* private void simpleButtonThemMonHoc_Click(object sender, EventArgs e)
-        {
-           // simpleButtonThemMonHoc.Enabled = false;
-            simpleButtonXoaMonHoc.Enabled = true;
-            simpleButtonSuaMonHoc.Enabled = false;
-            simpleButtonhuy.Enabled = true;
-            simpleButtonLuu.Enabled = true;
-            textEditMaMonHoc.Enabled = true;
-            textEditTenMonHoc.Enabled = true;
-            textEditSoTiet.Enabled = true;
-            comboBoxEditHeSo.Enabled = true;
-            simpleButtonhuy.Enabled = false;
-            flag = 1;
-        }
-        private void simpleButtonXoaMonHoc_Click(object sender, EventArgs e)
-        {
-            string MaMH = textEditMaMonHoc.Text.Trim();
-            MaMH = doichuoi(MaMH);
-            _MonHocBus.XoaMonHoc(MaMH);
-            Utilities.MessageboxUtilities.MessageSuccess("Bạn đã xóa thành công môn học: "+MaMH);
-        }*/
 
         private void simpleButtonSuaMonHoc_Click(object sender, EventArgs e)
         {
-            //simpleButtonThemMonHoc.Enabled = false;
-          //  simpleButtonXoaMonHoc.Enabled = true;
-            simpleButtonSuaMonHoc.Enabled = false;
-            simpleButtonhuy.Enabled = true;
-            simpleButtonLuu.Enabled = true;
-            //textEditMaMonHoc.Enabled = false;
-            //textEditTenMonHoc.Enabled = true;
-            //textEditSoTiet.Enabled = true;
-            //comboBoxEditHeSo.Enabled = true;
-            //comboBoxEditTrangThai.Enabled = true;
-            
-            flag = 2;
+            if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Bạn có chắc chắn muốn sửa Các môn học hay không?") == System.Windows.Forms.DialogResult.Yes)
+            {
+                int kq = 0;
+                gridViewMonHoc.FocusedColumn = gridViewMonHoc.Columns[0];
+                _MonHocDTO = new MonHocDTO();
+
+                string MaMH;
+                string TenMH;
+                int SoTiet;
+                int HeSo;
+                int TrangThai;
+                for (int i = 0; i < gridViewMonHoc.RowCount; i++)
+                {
+                    MaMH = gridViewMonHoc.GetRowCellValue(i, "MaMonHoc").ToString();
+                    // MaMH = _MonHocBus.Doichuoi(MaMH, "'", "''", true);
+                    TenMH = gridViewMonHoc.GetRowCellValue(i, "TenMonHoc").ToString();
+                    TenMH = _MonHocBus.Doichuoi(MaMH, "'", "''", true);
+                    SoTiet = int.Parse(gridViewMonHoc.GetRowCellValue(i, "SoTiet").ToString());
+                    HeSo = int.Parse(gridViewMonHoc.GetRowCellValue(i, "HeSo").ToString());
+                    TrangThai = int.Parse(gridViewMonHoc.GetRowCellValue(i, "TrangThai").ToString());
+                    _MonHocDTO.MaMonHoc = MaMH;
+                    _MonHocDTO.TenMonHoc = TenMH;
+                    _MonHocDTO.SoTiet = SoTiet;
+                    _MonHocDTO.HeSo = HeSo;
+                    _MonHocDTO.TrangThai = TrangThai;
+                    kq = _MonHocBus.CapNhatMonHOc(_MonHocDTO);
+
+                }
+                Utilities.MessageboxUtilities.MessageSuccess("Đã hoàn tất quá trình cập nhật" + kq + " môn học");
+                frmMonHoc_Load(sender, e);
+            }
         }
 
         private void frmMonHoc_Load(object sender, EventArgs e)
         {
-            KhoiTaoTrangthai();
-           DT = new DataTable();
-           DT = _MonHocBus.LayDT_DanhSach_MonHoc(false);
 
-           gridControlMonHoc.DataSource = DT;
+            KhoiTaoTrangthai();
+            DT = new DataTable();
+            DT = _MonHocBus.LayDT_DanhSach_MonHoc(false);
+
+            gridControlMonHoc.DataSource = DT;
         }
         void load_dulieu(DataTable DT)
         {
             gridControlMonHoc.DataSource = DT;
-            
-            
+
+
         }
 
-       
+
 
         private void simpleButtonhuy_Click(object sender, EventArgs e)
         {
             KhoiTaoTrangthai();
         }
 
-        private void simpleButtonLuu_Click(object sender, EventArgs e)
-        {
-            gridViewMonHoc.FocusedColumn = gridViewMonHoc.Columns[0];
-
-            _MonHocDTO = new MonHocDTO();
-            string MaMH;
-            string TenMH;
-            int SoTiet;
-            int HeSo;
-            int TrangThai;
-            for (int i = 0; i < gridViewMonHoc.RowCount; i++)
-            {
-                MaMH = gridViewMonHoc.GetRowCellValue(i, "MaMonHoc").ToString();
-                TenMH = gridViewMonHoc.GetRowCellValue(i, "MaMonHoc").ToString();
-                SoTiet = int.Parse(gridViewMonHoc.GetRowCellValue(i, "MaMonHoc").ToString());
-                HeSo = int.Parse(gridViewMonHoc.GetRowCellValue(i, "MaMonHoc").ToString());
-                TrangThai = int.Parse(gridViewMonHoc.GetRowCellValue(i, "MaMonHoc").ToString());
-                _MonHocDTO.MaMonHoc = MaMH;
-                _MonHocDTO.TenMonHoc = TenMH;
-                _MonHocDTO.SoTiet = SoTiet;
-                _MonHocDTO.HeSo = HeSo;
-                _MonHocDTO.TrangThai = TrangThai;
-                _MonHocBus.CapNhatMonHOc(_MonHocDTO);
-            }
-            Utilities.MessageboxUtilities.MessageSuccess("Bạn đã cập nhật thành công");
-                frmMonHoc_Load(sender, e);
-            }
 
         private void simpleButtonloaddulieu_Click(object sender, EventArgs e)
         {
             DT = _MonHocBus.LayDT_DanhSach_MonHoc(false);
             load_dulieu(DT);
+            KhoiTaoTrangthai();
+        }
+
+        private void gridViewMonHoc_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            for (int i = 0; i < 1; i++)
+            {
+                simpleButtonSuaMonHoc.Enabled = true;
+
+            }
+        }
+
+        private void frmMonHoc_Enter(object sender, EventArgs e)
+        {
+            simpleButtonSuaMonHoc_Click(sender, e);
+        }
+
+
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case (Keys.Control | Keys.Shift):
+                    simpleButtonSuaMonHoc_Click(null, null);
+                    break;
+                case (Keys.Control | Keys.Alt):
+                    simpleButtonloaddulieu_Click(null, null);
+                    break;
+                case (Keys.Control | Keys.Escape):
+                    simpleButtonThoat_Click(null, null);
+                    break;
+
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
 
       
 
-        private void gridViewMonHoc_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            //for (int i = 0; i < gridViewMonHoc.RowCount; i++)
-            //{
-            //    textEditMaMonHoc.Text = gridViewMonHoc.GetFocusedRowCellValue("MaMonHoc").ToString();
-            //    textEditTenMonHoc.Text = gridViewMonHoc.GetFocusedRowCellValue("TenMonHoc").ToString();
-            //    textEditSoTiet.Text = gridViewMonHoc.GetFocusedRowCellValue("SoTiet").ToString();
-            //    comboBoxEditHeSo.Text="";
-            //    comboBoxEditTrangThai.Text="";
-            //    comboBoxEditHeSo.SelectedText= gridViewMonHoc.GetFocusedRowCellValue("HeSo").ToString();
-            //    comboBoxEditTrangThai.SelectedText = gridViewMonHoc.GetFocusedRowCellValue("TrangThai").ToString();
-            //    break;
-                
-            //}
-        }
 
-       /* private void simpleButtonTimKiem_Click(object sender, EventArgs e)
-        {
-            if (textEditTK.Text.Trim()!="")
-            {
-                if (radioButtonMaGiaoVien.Checked)
-	             {
-		             DT=_MonHocBus.Table_MonHoc(3,textEditTK.Text.Trim());
-                     load_dulieu(DT);
-	            }
-                if (radioButtonTenMonHoc.Checked)
-	            {
-		             DT=_MonHocBus.Table_MonHoc(2,textEditTK.Text.Trim());
-                     load_dulieu(DT);
-	            }
-                else
-	            {
-                     DT=_MonHocBus.Table_MonHoc(1,textEditTK.Text.Trim());
-                     load_dulieu(DT);
-	            }
-               
-                
-            }
-        }*/
 
-       /* private void textEditSoTiet_KeyPress(object sender, KeyPressEventArgs e)
-        {
 
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-            int n = 1;
-            if (!int.TryParse(this.textEditSoTiet.Text, out n))
-            {
-                Utilities.MessageboxUtilities.MessageError("Số tiết phải là số nguyên");
-                
-            }
-            else
-            {
-                e.Handled = true;
-            }
-            
-        }*/
 
-          
 
-        
     }
 }
+

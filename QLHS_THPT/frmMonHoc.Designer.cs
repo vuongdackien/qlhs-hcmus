@@ -31,8 +31,6 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButtonThoat = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonloaddulieu = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonLuu = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonhuy = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonSuaMonHoc = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.label2 = new System.Windows.Forms.Label();
@@ -68,8 +66,6 @@
             // 
             this.panelControl1.Controls.Add(this.simpleButtonThoat);
             this.panelControl1.Controls.Add(this.simpleButtonloaddulieu);
-            this.panelControl1.Controls.Add(this.simpleButtonLuu);
-            this.panelControl1.Controls.Add(this.simpleButtonhuy);
             this.panelControl1.Controls.Add(this.simpleButtonSuaMonHoc);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl1.Location = new System.Drawing.Point(0, 590);
@@ -97,30 +93,10 @@
             this.simpleButtonloaddulieu.Text = "Tải lại dữ liệu";
             this.simpleButtonloaddulieu.Click += new System.EventHandler(this.simpleButtonloaddulieu_Click);
             // 
-            // simpleButtonLuu
-            // 
-            this.simpleButtonLuu.Image = global::QLHS.Properties.Resources.them_small;
-            this.simpleButtonLuu.Location = new System.Drawing.Point(328, 24);
-            this.simpleButtonLuu.Name = "simpleButtonLuu";
-            this.simpleButtonLuu.Size = new System.Drawing.Size(120, 35);
-            this.simpleButtonLuu.TabIndex = 2;
-            this.simpleButtonLuu.Text = "Lưu ";
-            this.simpleButtonLuu.Click += new System.EventHandler(this.simpleButtonLuu_Click);
-            // 
-            // simpleButtonhuy
-            // 
-            this.simpleButtonhuy.Image = global::QLHS.Properties.Resources.huy;
-            this.simpleButtonhuy.Location = new System.Drawing.Point(183, 24);
-            this.simpleButtonhuy.Name = "simpleButtonhuy";
-            this.simpleButtonhuy.Size = new System.Drawing.Size(120, 35);
-            this.simpleButtonhuy.TabIndex = 4;
-            this.simpleButtonhuy.Text = "Hủy thao tác";
-            this.simpleButtonhuy.Click += new System.EventHandler(this.simpleButtonhuy_Click);
-            // 
             // simpleButtonSuaMonHoc
             // 
             this.simpleButtonSuaMonHoc.Image = global::QLHS.Properties.Resources.capnhat;
-            this.simpleButtonSuaMonHoc.Location = new System.Drawing.Point(41, 24);
+            this.simpleButtonSuaMonHoc.Location = new System.Drawing.Point(330, 24);
             this.simpleButtonSuaMonHoc.Name = "simpleButtonSuaMonHoc";
             this.simpleButtonSuaMonHoc.Size = new System.Drawing.Size(120, 35);
             this.simpleButtonSuaMonHoc.TabIndex = 2;
@@ -145,7 +121,7 @@
             this.label2.Size = new System.Drawing.Size(625, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "_________________________________________________________________________________" +
-    "______________________";
+                "______________________";
             // 
             // labelControl1
             // 
@@ -185,8 +161,7 @@
             this.gridViewMonHoc.GridControl = this.gridControlMonHoc;
             this.gridViewMonHoc.Name = "gridViewMonHoc";
             this.gridViewMonHoc.OptionsView.ShowGroupPanel = false;
-            this.gridViewMonHoc.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewMonHoc_FocusedRowChanged);
-            // 
+             // 
             // MaMonHoc
             // 
             this.MaMonHoc.Caption = "Mã môn học";
@@ -305,7 +280,6 @@
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonhuy;
         private DevExpress.XtraEditors.SimpleButton simpleButtonSuaMonHoc;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
@@ -316,7 +290,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn TenMonHoc;
         private DevExpress.XtraGrid.Columns.GridColumn SoTiet;
         private DevExpress.XtraGrid.Columns.GridColumn HeSo;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonLuu;
         private DevExpress.XtraEditors.SimpleButton simpleButtonloaddulieu;
         private DevExpress.XtraEditors.SimpleButton simpleButtonThoat;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
