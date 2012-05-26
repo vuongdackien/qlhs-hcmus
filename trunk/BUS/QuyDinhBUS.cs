@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Text.RegularExpressions;
 using System.Data;
 using QLHS.DTO;
 using QLHS.DAL;
@@ -20,6 +20,22 @@ namespace QLHS.BUS
         public DataTable Table_QuyDinh()
         {
             return _QuyDinhDAL.Dt_QuyDinh();
+        }
+        public string Doichuoi(string input, string oldValue, string newValue, bool matchCase)
+        {
+
+            RegexOptions regexOption = RegexOptions.None;
+            if (!matchCase)
+            {
+                regexOption = RegexOptions.IgnoreCase;
+            }
+
+            Regex regex = new Regex(oldValue, regexOption);
+
+            input = regex.Replace(input, newValue);
+
+            return input;
+
         }
         public void capnhat(QuyDinhDTO QDDTO)
         {
