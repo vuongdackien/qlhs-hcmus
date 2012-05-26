@@ -26,7 +26,7 @@ namespace QLHS.DAL
         {
             string sql = string.Format("update MonHoc set TenMonHoc=N'{0}', SoTiet='{1}', HeSo='{2}', TrangThai='{3}'"
 
-                                                     + "where MaMH={4} ", MHDTO.TenMonHoc, MHDTO.SoTiet,MHDTO.HeSo,MHDTO.MaMonHoc,MHDTO.TrangThai);
+                                                     + "where MaMonHoc='{4}' ", MHDTO.TenMonHoc, MHDTO.SoTiet,MHDTO.HeSo,MHDTO.TrangThai,MHDTO.MaMonHoc);
            return ExecuteQuery(sql);
         }
         public bool KTTTMonhoc(MonHocDTO MHDTO)
