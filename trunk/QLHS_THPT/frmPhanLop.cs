@@ -19,6 +19,8 @@ namespace QLHS
         private HocSinhDTO _hocSinhDTO;
         private PhanLopBUS _PhanLopBUS;
         private QuyDinhBUS _quyDinhBUS;
+        private ChuyenLopDTO _ChuyenLopDTO;
+        private ChuyenLopBUS _ChuyenLopBUS;
         object MaHocSinh_Focus, MaHocSinhMoi_Focus;
         private int dongHT_GridHocSinh, dongHT_GridHocSinhMoi = -1;
         public frmPhanLop()
@@ -31,6 +33,8 @@ namespace QLHS
             _HocSinhBUS = new HocSinhBUS();
             _PhanLopBUS = new PhanLopBUS();
             _quyDinhBUS = new QuyDinhBUS();
+            _ChuyenLopBUS = new ChuyenLopBUS();
+            _ChuyenLopDTO = new ChuyenLopDTO();
         }
       
 
@@ -95,7 +99,10 @@ namespace QLHS
 
         private void frmChuyenLop_Load(object sender, EventArgs e)
         {
+            
             HienThi(checkEditPhanLopHocSinhMoi.Checked);
+            checkEditChuyenBangDiem.Enabled = false;
+            textEditLyDoChuyen.Enabled = false;
             if (checkEditPhanLopHocSinhMoi.Checked == true)
             {
                 LoadGridcontrolDSHocSinh_HoSo();
@@ -173,10 +180,19 @@ namespace QLHS
                                                             + " (" + SiSoCanTren + " học sinh / 1 lớp)!");
                 return;
             }
-            if (_PhanLopBUS.KT_HocSinh_TonTai_NamHoc(MaHocSinh_Focus.ToString(), Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi), Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHocMoi)).Rows.Count>0)
+            DataTable dtKiemTra;
+            if (checkEditChuyenLop.Checked == true)
+            {
+                dtKiemTra = _PhanLopBUS.KT_HocSinh_ChuyenLop(MaHocSinh_Focus.ToString(), Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop));
+            }
+            else
+            {
+                dtKiemTra = _PhanLopBUS.KT_HocSinh_TonTai_NamHoc(MaHocSinh_Focus.ToString(), Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi), Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHocMoi));
+            }
+            if (dtKiemTra.Rows.Count>0)
             {
                 Utilities.MessageboxUtilities.MessageError("Học sinh " +MaHocSinh_Focus.ToString()
-                                                           + " đã được chuyển tới lớp" + _PhanLopBUS.KT_HocSinh_TonTai_NamHoc(MaHocSinh_Focus.ToString(), Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi), Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHocMoi)).Rows[0][1]+ " ");
+                                                           + " đã được chuyển tới lớp" + dtKiemTra.Rows[0][1]+ " ");
                 return;
             }
             else
@@ -187,7 +203,26 @@ namespace QLHS
                 }
                 if (_PhanLopBUS.ChuyenLop_HocSinh(MaHocSinh_Focus.ToString(), Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLopMoi)))
                 {
-                    Utilities.MessageboxUtilities.MessageSuccess("Chuyển thành công");
+                    string tb = "Chuyển học sinh thành công";
+                    if (checkEditChuyenLop.Checked == true)
+                    {
+                         DateTime dDate = DateTime.Now;
+                        _ChuyenLopDTO.TuLop = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop);
+                        _ChuyenLopDTO.DenLop = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLopMoi);
+                        _ChuyenLopDTO.NgayChuyen = dDate.ToString("dd-MM-yyy");
+                        _ChuyenLopDTO.LyDoChuyen = textEditLyDoChuyen.Text.ToString();
+                        _ChuyenLopDTO.ChuyenBangDiem = Convert.ToString(checkEditChuyenBangDiem.Checked);
+                        _ChuyenLopDTO.MaHocSinh = MaHocSinh_Focus.ToString();
+                        if (checkEditChuyenBangDiem.Checked == true)
+                        {
+                            if (_ChuyenLopBUS.ChuyenBangDiem(_ChuyenLopDTO.MaHocSinh, _ChuyenLopDTO.TuLop, _ChuyenLopDTO.DenLop))
+                                tb = tb + ",Chuyển bảng điểm thành công";
+
+                        }
+                        if (_ChuyenLopBUS.LuuChuyenLop(_ChuyenLopDTO))
+                            tb = tb + ",Đã lưu thông tin chuyển lớp";
+                        Utilities.MessageboxUtilities.MessageSuccess(tb);
+                    }
                     comboBoxEditLopMoi_SelectedIndexChanged(sender, e);
                     LoadGridcontrolDSHocSinh();
                     LoadGridcontrolDSHocSinhMoi();
@@ -295,7 +330,7 @@ namespace QLHS
                 simpleButtonChuyenLai.Enabled = false;
             }
             else
-            simpleButtonChuyenLai.Enabled = true;
+                simpleButtonChuyenLai.Enabled = true;
             hienThi_Button();
         }
         private void hienThi_Button()
@@ -375,8 +410,18 @@ namespace QLHS
                 Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHocMoi, _NamHocBUS.LayDTNamHocMoi(),
                                                     "MaNamHoc", "TenNamHoc", 0);
             }
-            checkEditHocSinhChuaChuyen.Enabled = !checkEditChuyenLop.Checked;
-            checkEditPhanLopHocSinhMoi.Enabled = !checkEditChuyenLop.Checked;
+            if (checkEditChuyenLop.Checked == true)
+            {
+                groupBoxPhanLop.Enabled = false;
+                checkEditChuyenBangDiem.Enabled = true;
+                textEditLyDoChuyen.Enabled = true;
+            }
+            else
+            {
+                checkEditChuyenBangDiem.Checked = false;
+                textEditLyDoChuyen.Text = "";
+                groupBoxPhanLop.Enabled = true;
+            }
         }
     }
 }
