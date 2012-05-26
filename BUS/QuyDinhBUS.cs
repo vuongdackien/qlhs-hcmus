@@ -14,22 +14,7 @@ namespace QLHS.BUS
         {
             _QuyDinhDAL = new QuyDinhDAL();
         }
-        public string Doichuoi(string input, string oldValue, string newValue, bool matchCase)
-        {
-
-            RegexOptions regexOption = RegexOptions.None;
-            if (!matchCase)
-            {
-                regexOption = RegexOptions.IgnoreCase;
-            }
-
-            Regex regex = new Regex(oldValue, regexOption);
-
-            input = regex.Replace(input, newValue);
-
-            return input;
-
-        }
+      
         ///<Lấy bảng quy định>
         ///Lấy bảng quy định
         ///</summary>
