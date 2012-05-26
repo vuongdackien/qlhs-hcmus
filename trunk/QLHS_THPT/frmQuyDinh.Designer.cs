@@ -64,7 +64,7 @@
             this.gridControlQuyDinh.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1,
             this.repositoryItemTextEdit2});
-            this.gridControlQuyDinh.Size = new System.Drawing.Size(647, 298);
+            this.gridControlQuyDinh.Size = new System.Drawing.Size(647, 300);
             this.gridControlQuyDinh.TabIndex = 4;
             this.gridControlQuyDinh.ToolTipController = this.toolTipController2;
             this.gridControlQuyDinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -266,9 +266,9 @@
             this.panelControl2.Controls.Add(this.simpleButtonThoat);
             this.panelControl2.Controls.Add(this.simpleButtonSuaQuyDinh);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(0, 398);
+            this.panelControl2.Location = new System.Drawing.Point(0, 400);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(647, 74);
+            this.panelControl2.Size = new System.Drawing.Size(647, 72);
             this.panelControl2.TabIndex = 2;
             // 
             // simpleButtonLoaddulieu
