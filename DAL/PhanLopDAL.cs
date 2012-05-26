@@ -35,6 +35,13 @@ namespace QLHS.DAL
             return GetTable(sql);
             
         }
+        public DataTable KT_HocSinh_ChuyenLop(string MaHocSinh, string MaLop)
+        {
+            string sql = "select cl.MaHocSinh,l.TenLop from CHUYENLOP AS cl,LOP AS l where cl.DenLop=l.MaLop and cl.TuLop='"+MaLop+"'"
+                + "and cl.MaHocSinh='"+MaHocSinh+"'";
+            return GetTable(sql);
+
+        }
         public bool KiemTra_STT_TonTai(int STT, string MaLop)
         {
             string sql = "SELECT STT FROM PHANLOP WHERE MaLop = '"+MaLop+"' AND STT = "+STT;
