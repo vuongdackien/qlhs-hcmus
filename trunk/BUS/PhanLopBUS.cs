@@ -125,5 +125,9 @@ namespace QLHS.BUS
         {
             return _PhanLopDAL.LayDTLop_MaNam_MaKhoi_KhacMaLop(MaNamHoc, MaKhoi, MaLop);
         }
+        public DataTable KT_HocSinh_ChuyenLop(string MaHocSinh, string MaLop)
+        {
+            return _PhanLopDAL.KT_HocSinh_ChuyenLop(MaHocSinh, MaLop);
+        }
     }
 }
