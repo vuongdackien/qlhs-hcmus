@@ -56,7 +56,7 @@ namespace QLHS
                 {
                     GiaTri = _QuyDinhBUS.Doichuoi(GiaTri, "'", "''", true);
                 }
-                else 
+                else if (Khoa!="NgayApDung")               
                 {
                     foreach (Char c in GiaTri)
                     {
@@ -75,7 +75,7 @@ namespace QLHS
                         }
                     }  
                 }
-                if (flag==0)
+                 if (flag==0)
                 {
                     _QuyDinhDTO.Khoa = Khoa;
                     _QuyDinhDTO.GiaTri = GiaTri;
