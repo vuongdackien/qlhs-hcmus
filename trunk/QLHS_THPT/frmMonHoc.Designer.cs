@@ -161,7 +161,7 @@
             this.gridViewMonHoc.GridControl = this.gridControlMonHoc;
             this.gridViewMonHoc.Name = "gridViewMonHoc";
             this.gridViewMonHoc.OptionsView.ShowGroupPanel = false;
-             // 
+            // 
             // MaMonHoc
             // 
             this.MaMonHoc.Caption = "Mã môn học";
@@ -235,7 +235,11 @@
             this.repositoryItemComboBox1.AutoHeight = false;
             this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox1.DropDownItemHeight = 5;
+            this.repositoryItemComboBox1.DropDownItemHeight = 20;
+            this.repositoryItemComboBox1.DropDownRows = 10;
+            this.repositoryItemComboBox1.Items.AddRange(new object[] {
+            "0",
+            "1"});
             this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
             // 
             // repositoryItemCheckEdit1
