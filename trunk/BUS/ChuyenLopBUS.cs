@@ -18,6 +18,17 @@ namespace QLHS.BUS
         {
             return _ChuyenLopDAL.LuuChuyenLop(cl);
         }
-       
+        public bool KTHocSinhThuocLop_DuocChuyenTuLop(string MaHocSinh, string MaLopMoi, string MaLopCu)
+        {
+            return _ChuyenLopDAL.KTHocSinhThuocLop_DuocChuyenTuLop(MaHocSinh, MaLopMoi, MaLopCu);
+        }
+        public bool KT_HocSinhCo_BangDiem(string MaHocSinh, string MaLop)
+        {
+            return _ChuyenLopDAL.KT_HocSinhCo_BangDiem(MaHocSinh, MaLop);
+        }
+        public bool XoaChuyenLop(string MaHocSinh, string TuLop, string DenLop)
+        {
+            return _ChuyenLopDAL.XoaChuyenLop(MaHocSinh, TuLop, DenLop);
+        }
     }
 }
