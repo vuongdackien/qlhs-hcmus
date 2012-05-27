@@ -67,5 +67,36 @@ namespace QLHS.DAL
             string sql = "SELECT MaNamHoc,TenNamHoc FROM NAMHOC WHERE substring(TenNamHoc,8,4)=year(getdate()) ";
             return GetTable(sql);
         }
+        /// <summary>
+        /// Kiểm tra tồn tại 1 năm học
+        /// </summary>
+        /// <param name="maNamHoc">string: mã năm học</param>
+        /// <returns></returns>
+        public bool KiemTraTonTai_NamHoc(string maNamHoc)
+        {
+            string sql = "SELECT * FROM NAMHOC WHERE MaNamHoc = '"+maNamHoc+"'";
+            return GetTable(sql).Rows.Count > 0;
+        }
+        /// <summary>
+        /// Thêm 1 năm học mới (không kiểm tra trùng mã năm học cũ)
+        /// </summary>
+        /// <param name="namHoc">NamHocDTO</param>
+        /// <returns></returns>
+        public bool ThemNamHoc(NamHocDTO namHoc)
+        {
+            string sql = "INSERT INTO NAMHOC (MaNamHoc,TenNamHoc) VALUES ('"+namHoc.MaNamHoc+"','"+namHoc.TenNamHoc+"')";
+            return ExecuteQuery(sql) > 0;
+        }
+        /// <summary>
+        /// Xóa 1 năm học (xóa toàn bộ thông tin liên quan đến năm học đó)
+        /// </summary>
+        /// <param name="maNamHoc">string: mã năm học</param>
+        /// <returns></returns>
+        public bool XoaNamHoc(string maNamHoc)
+        {
+            LopDAL lopDAL = new LopDAL();
+            lopDAL.Xoa_Lop_Nam(maNamHoc);
+            return ExecuteQuery("DELETE FROM NAMHOC WHERE MaNamHoc = '"+maNamHoc+"'") > 0;
+        }
     }
 }

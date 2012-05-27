@@ -148,7 +148,7 @@
             this.checkEditPhanLopHocSinhMoi.Size = new System.Drawing.Size(161, 19);
             this.checkEditPhanLopHocSinhMoi.TabIndex = 15;
             this.checkEditPhanLopHocSinhMoi.ToolTip = "Click vào checkbox này nếu bạn muốn phân lớp cho học sinh mới nhập học, chưa phân" +
-                " lớp";
+    " lớp";
             this.checkEditPhanLopHocSinhMoi.ToolTipController = this.toolTipController2;
             this.checkEditPhanLopHocSinhMoi.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.checkEditPhanLopHocSinhMoi.ToolTipTitle = "Hướng dẫn";
@@ -162,7 +162,7 @@
             this.checkEditHocSinhChuaChuyen.Size = new System.Drawing.Size(231, 19);
             this.checkEditHocSinhChuaChuyen.TabIndex = 16;
             this.checkEditHocSinhChuaChuyen.ToolTip = "Click vào checkbox này để biết những học sinh chưa phân lớp bên gird trái, và nhữ" +
-                "ng học sinh đã được phân lớp hiển thị grid phải";
+    "ng học sinh đã được phân lớp hiển thị grid phải";
             this.checkEditHocSinhChuaChuyen.ToolTipController = this.toolTipController2;
             this.checkEditHocSinhChuaChuyen.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.checkEditHocSinhChuaChuyen.ToolTipTitle = "Hướng dẫ";
@@ -206,7 +206,6 @@
             this.checkEditChuyenBangDiem.Properties.Caption = "Chuyển bảng điểm";
             this.checkEditChuyenBangDiem.Size = new System.Drawing.Size(120, 19);
             this.checkEditChuyenBangDiem.TabIndex = 18;
-           
             // 
             // checkEditChuyenLop
             // 

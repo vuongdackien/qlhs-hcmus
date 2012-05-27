@@ -41,9 +41,7 @@
     <Reference Include="DevExpress.Data.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Printing.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="DevExpress.Printing.v11.1.Core, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -60,6 +58,7 @@
     <Reference Include="DevExpress.XtraNavBar.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraWizard.v11.1, Version=11.1.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -136,6 +135,12 @@
     <Compile Include="frmMonHoc.Designer.cs">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNamHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNamHoc.Designer.cs">
+      <DependentUpon>frmNamHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPhanLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,12 +152,6 @@
     </Compile>
     <Compile Include="frmQLNguoiDung.Designer.cs">
       <DependentUpon>frmQLNguoiDung.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmQuyDinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmQuyDinh.designer.cs">
-      <DependentUpon>frmQuyDinh.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTimHocSinh.cs">
       <SubType>Form</SubType>
@@ -225,13 +224,15 @@
     <EmbeddedResource Include="frmMonHoc.resx">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNamHoc.resx">
+      <DependentUpon>frmNamHoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPhanLop.resx">
       <DependentUpon>frmPhanLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLNguoiDung.resx">
       <DependentUpon>frmQLNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQuyDinh.resx" />
     <EmbeddedResource Include="frmTimHocSinh.resx">
       <DependentUpon>frmTimHocSinh.cs</DependentUpon>
     </EmbeddedResource>
