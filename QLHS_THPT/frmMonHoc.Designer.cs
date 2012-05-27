@@ -161,6 +161,7 @@
             this.gridViewMonHoc.GridControl = this.gridControlMonHoc;
             this.gridViewMonHoc.Name = "gridViewMonHoc";
             this.gridViewMonHoc.OptionsView.ShowGroupPanel = false;
+            this.gridViewMonHoc.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridViewMonHoc_CellValueChanged_1);
             // 
             // MaMonHoc
             // 
@@ -193,13 +194,13 @@
             this.SoTiet.ColumnEdit = this.repositoryItemTextEdit4;
             this.SoTiet.FieldName = "SoTiet";
             this.SoTiet.Name = "SoTiet";
-            this.SoTiet.OptionsColumn.ReadOnly = true;
             this.SoTiet.Visible = true;
             this.SoTiet.VisibleIndex = 2;
             // 
             // repositoryItemTextEdit4
             // 
             this.repositoryItemTextEdit4.AutoHeight = false;
+            this.repositoryItemTextEdit4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryItemTextEdit4.Name = "repositoryItemTextEdit4";
             // 
             // HeSo
@@ -209,7 +210,6 @@
             this.HeSo.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.HeSo.FieldName = "HeSo";
             this.HeSo.Name = "HeSo";
-            this.HeSo.OptionsColumn.ReadOnly = true;
             this.HeSo.Visible = true;
             this.HeSo.VisibleIndex = 3;
             // 
@@ -240,6 +240,7 @@
             "0",
             "1"});
             this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            this.repositoryItemComboBox1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
             // repositoryItemCheckEdit1
             // 

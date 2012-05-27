@@ -77,7 +77,7 @@ namespace QLHS
                     kq = _MonHocBus.CapNhatMonHOc(_MonHocDTO);
 
                 }
-                Utilities.MessageboxUtilities.MessageSuccess("Đã hoàn tất quá trình cập nhật" + kq + " môn học");
+                Utilities.MessageboxUtilities.MessageSuccess("Đã hoàn tất quá trình cập nhật môn học");
                 frmMonHoc_Load(sender, e);
             }
         }
@@ -113,7 +113,9 @@ namespace QLHS
             KhoiTaoTrangthai();
         }
 
-        private void gridViewMonHoc_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        
+
+        private void gridViewMonHoc_CellValueChanged_1(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             for (int i = 0; i < 1; i++)
             {
@@ -122,10 +124,9 @@ namespace QLHS
             }
         }
 
-        private void frmMonHoc_Enter(object sender, EventArgs e)
-        {
-            simpleButtonSuaMonHoc_Click(sender, e);
-        }
+      
+
+       
 
 
 
