@@ -129,7 +129,7 @@ namespace QLHS
 
 
 
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+       /* protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             switch (keyData)
             {
@@ -146,7 +146,7 @@ namespace QLHS
             }
 
             return base.ProcessCmdKey(ref msg, keyData);
-        }
+        }*/
 
       
 

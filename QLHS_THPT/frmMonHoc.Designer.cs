@@ -226,7 +226,6 @@
             this.TrangThai.FieldName = "TrangThai";
             this.TrangThai.Name = "TrangThai";
             this.TrangThai.OptionsColumn.AllowSize = false;
-            this.TrangThai.OptionsColumn.ReadOnly = true;
             this.TrangThai.Visible = true;
             this.TrangThai.VisibleIndex = 4;
             // 
