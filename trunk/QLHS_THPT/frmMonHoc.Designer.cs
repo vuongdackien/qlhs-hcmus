@@ -116,19 +116,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 42);
+            this.label2.Location = new System.Drawing.Point(112, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(625, 13);
+            this.label2.Size = new System.Drawing.Size(553, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "_________________________________________________________________________________" +
-                "______________________";
+                "__________";
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 18F);
-            this.labelControl1.Location = new System.Drawing.Point(149, 12);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.labelControl1.Location = new System.Drawing.Point(277, 29);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(229, 27);
+            this.labelControl1.Size = new System.Drawing.Size(238, 26);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Danh sách các môn học";
             // 
@@ -152,6 +153,118 @@
             // 
             // gridViewMonHoc
             // 
+            this.gridViewMonHoc.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
+            this.gridViewMonHoc.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
+            this.gridViewMonHoc.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.Black;
+            this.gridViewMonHoc.Appearance.ColumnFilterButton.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
+            this.gridViewMonHoc.Appearance.ColumnFilterButton.Options.UseForeColor = true;
+            this.gridViewMonHoc.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(163)))));
+            this.gridViewMonHoc.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(163)))));
+            this.gridViewMonHoc.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Black;
+            this.gridViewMonHoc.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
+            this.gridViewMonHoc.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
+            this.gridViewMonHoc.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(229)))), ((int)(((byte)(128)))));
+            this.gridViewMonHoc.Appearance.Empty.BackColor2 = System.Drawing.Color.White;
+            this.gridViewMonHoc.Appearance.Empty.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(173)))));
+            this.gridViewMonHoc.Appearance.EvenRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(173)))));
+            this.gridViewMonHoc.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
+            this.gridViewMonHoc.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.EvenRow.Options.UseBorderColor = true;
+            this.gridViewMonHoc.Appearance.EvenRow.Options.UseForeColor = true;
+            this.gridViewMonHoc.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
+            this.gridViewMonHoc.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
+            this.gridViewMonHoc.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.Black;
+            this.gridViewMonHoc.Appearance.FilterCloseButton.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.FilterCloseButton.Options.UseBorderColor = true;
+            this.gridViewMonHoc.Appearance.FilterCloseButton.Options.UseForeColor = true;
+            this.gridViewMonHoc.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(229)))), ((int)(((byte)(128)))));
+            this.gridViewMonHoc.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.White;
+            this.gridViewMonHoc.Appearance.FilterPanel.ForeColor = System.Drawing.Color.Black;
+            this.gridViewMonHoc.Appearance.FilterPanel.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.FilterPanel.Options.UseForeColor = true;
+            this.gridViewMonHoc.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(159)))), ((int)(((byte)(69)))));
+            this.gridViewMonHoc.Appearance.FixedLine.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.FocusedCell.BackColor = System.Drawing.Color.White;
+            this.gridViewMonHoc.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
+            this.gridViewMonHoc.Appearance.FocusedCell.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.FocusedCell.Options.UseForeColor = true;
+            this.gridViewMonHoc.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(152)))), ((int)(((byte)(49)))));
+            this.gridViewMonHoc.Appearance.FocusedRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(167)))), ((int)(((byte)(62)))));
+            this.gridViewMonHoc.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White;
+            this.gridViewMonHoc.Appearance.FocusedRow.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.FocusedRow.Options.UseBorderColor = true;
+            this.gridViewMonHoc.Appearance.FocusedRow.Options.UseForeColor = true;
+            this.gridViewMonHoc.Appearance.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
+            this.gridViewMonHoc.Appearance.FooterPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
+            this.gridViewMonHoc.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
+            this.gridViewMonHoc.Appearance.FooterPanel.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.FooterPanel.Options.UseBorderColor = true;
+            this.gridViewMonHoc.Appearance.FooterPanel.Options.UseForeColor = true;
+            this.gridViewMonHoc.Appearance.GroupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
+            this.gridViewMonHoc.Appearance.GroupButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
+            this.gridViewMonHoc.Appearance.GroupButton.ForeColor = System.Drawing.Color.Black;
+            this.gridViewMonHoc.Appearance.GroupButton.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.GroupButton.Options.UseBorderColor = true;
+            this.gridViewMonHoc.Appearance.GroupButton.Options.UseForeColor = true;
+            this.gridViewMonHoc.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(229)))), ((int)(((byte)(128)))));
+            this.gridViewMonHoc.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(229)))), ((int)(((byte)(128)))));
+            this.gridViewMonHoc.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
+            this.gridViewMonHoc.Appearance.GroupFooter.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.GroupFooter.Options.UseBorderColor = true;
+            this.gridViewMonHoc.Appearance.GroupFooter.Options.UseForeColor = true;
+            this.gridViewMonHoc.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(229)))), ((int)(((byte)(128)))));
+            this.gridViewMonHoc.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
+            this.gridViewMonHoc.Appearance.GroupPanel.ForeColor = System.Drawing.Color.Black;
+            this.gridViewMonHoc.Appearance.GroupPanel.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.GroupPanel.Options.UseForeColor = true;
+            this.gridViewMonHoc.Appearance.GroupRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(229)))), ((int)(((byte)(128)))));
+            this.gridViewMonHoc.Appearance.GroupRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(229)))), ((int)(((byte)(128)))));
+            this.gridViewMonHoc.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
+            this.gridViewMonHoc.Appearance.GroupRow.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.GroupRow.Options.UseBorderColor = true;
+            this.gridViewMonHoc.Appearance.GroupRow.Options.UseForeColor = true;
+            this.gridViewMonHoc.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(214)))), ((int)(((byte)(115)))));
+            this.gridViewMonHoc.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(214)))), ((int)(((byte)(115)))));
+            this.gridViewMonHoc.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
+            this.gridViewMonHoc.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.HeaderPanel.Options.UseBorderColor = true;
+            this.gridViewMonHoc.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gridViewMonHoc.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(176)))), ((int)(((byte)(84)))));
+            this.gridViewMonHoc.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.White;
+            this.gridViewMonHoc.Appearance.HideSelectionRow.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.HideSelectionRow.Options.UseForeColor = true;
+            this.gridViewMonHoc.Appearance.HorzLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
+            this.gridViewMonHoc.Appearance.HorzLine.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(163)))));
+            this.gridViewMonHoc.Appearance.OddRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(163)))));
+            this.gridViewMonHoc.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
+            this.gridViewMonHoc.Appearance.OddRow.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.OddRow.Options.UseBorderColor = true;
+            this.gridViewMonHoc.Appearance.OddRow.Options.UseForeColor = true;
+            this.gridViewMonHoc.Appearance.Preview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.gridViewMonHoc.Appearance.Preview.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
+            this.gridViewMonHoc.Appearance.Preview.Font = new System.Drawing.Font("Verdana", 7.5F);
+            this.gridViewMonHoc.Appearance.Preview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(177)))), ((int)(((byte)(90)))));
+            this.gridViewMonHoc.Appearance.Preview.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.Preview.Options.UseBorderColor = true;
+            this.gridViewMonHoc.Appearance.Preview.Options.UseFont = true;
+            this.gridViewMonHoc.Appearance.Preview.Options.UseForeColor = true;
+            this.gridViewMonHoc.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(173)))));
+            this.gridViewMonHoc.Appearance.Row.ForeColor = System.Drawing.Color.Black;
+            this.gridViewMonHoc.Appearance.Row.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.Row.Options.UseForeColor = true;
+            this.gridViewMonHoc.Appearance.RowSeparator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(229)))), ((int)(((byte)(128)))));
+            this.gridViewMonHoc.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.White;
+            this.gridViewMonHoc.Appearance.RowSeparator.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(167)))), ((int)(((byte)(62)))));
+            this.gridViewMonHoc.Appearance.SelectedRow.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
+            this.gridViewMonHoc.Appearance.TopNewRow.Options.UseBackColor = true;
+            this.gridViewMonHoc.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
+            this.gridViewMonHoc.Appearance.VertLine.Options.UseBackColor = true;
             this.gridViewMonHoc.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.MaMonHoc,
             this.TenMonHoc,
@@ -160,6 +273,9 @@
             this.TrangThai});
             this.gridViewMonHoc.GridControl = this.gridControlMonHoc;
             this.gridViewMonHoc.Name = "gridViewMonHoc";
+            this.gridViewMonHoc.OptionsDetail.EnableDetailToolTip = true;
+            this.gridViewMonHoc.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridViewMonHoc.OptionsView.EnableAppearanceOddRow = true;
             this.gridViewMonHoc.OptionsView.ShowGroupPanel = false;
             this.gridViewMonHoc.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridViewMonHoc_CellValueChanged_1);
             // 
@@ -184,7 +300,6 @@
             this.TenMonHoc.ColumnEdit = this.repositoryItemTextEdit1;
             this.TenMonHoc.FieldName = "TenMonHoc";
             this.TenMonHoc.Name = "TenMonHoc";
-            this.TenMonHoc.OptionsColumn.ReadOnly = true;
             this.TenMonHoc.Visible = true;
             this.TenMonHoc.VisibleIndex = 1;
             // 
@@ -194,6 +309,8 @@
             this.SoTiet.ColumnEdit = this.repositoryItemTextEdit4;
             this.SoTiet.FieldName = "SoTiet";
             this.SoTiet.Name = "SoTiet";
+            this.SoTiet.ToolTip = "Thay đổi số tiết học của môn học. Bạn chỉ có thể nhập số, không được nhập kí tự k" +
+                "hác.";
             this.SoTiet.Visible = true;
             this.SoTiet.VisibleIndex = 2;
             // 
@@ -210,6 +327,7 @@
             this.HeSo.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.HeSo.FieldName = "HeSo";
             this.HeSo.Name = "HeSo";
+            this.HeSo.ToolTip = "Thay đổi hệ số của môn học  Bạn chỉ có thể nhập số, không được nhập kí tự khác.";
             this.HeSo.Visible = true;
             this.HeSo.VisibleIndex = 3;
             // 
@@ -224,10 +342,16 @@
             this.TrangThai.ColumnEdit = this.repositoryItemComboBox1;
             this.TrangThai.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.TrangThai.FieldName = "TrangThai";
+            this.TrangThai.MaxWidth = 15;
+            this.TrangThai.MinWidth = 10;
             this.TrangThai.Name = "TrangThai";
+            this.TrangThai.OptionsColumn.AllowShowHide = false;
             this.TrangThai.OptionsColumn.AllowSize = false;
+            this.TrangThai.ToolTip = "Thay đổi trạng thái của môn học: 1: có, 0: không.  Bạn chỉ có thể nhập số, không " +
+                "được nhập kí tự khác.";
             this.TrangThai.Visible = true;
             this.TrangThai.VisibleIndex = 4;
+            this.TrangThai.Width = 15;
             // 
             // repositoryItemComboBox1
             // 
