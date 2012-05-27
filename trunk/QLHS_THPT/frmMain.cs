@@ -19,7 +19,7 @@ namespace QLHS
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
-             Login();
+            // Login();
         }
 
         #region Function Show MDI Child Form
@@ -347,7 +347,7 @@ namespace QLHS
 
         private void barBtnKhaiBaoNamHoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            ShowMDIChildForm<frmQuyDinh>();
         }
 
 
