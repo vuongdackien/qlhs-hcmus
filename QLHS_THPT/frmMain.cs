@@ -347,7 +347,7 @@ namespace QLHS
 
         private void barBtnKhaiBaoNamHoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmQuyDinh>();
+            ShowMDIChildForm<frmQuyDinhDauNam>();
         }
 
 
