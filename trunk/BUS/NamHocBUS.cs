@@ -55,5 +55,48 @@ namespace QLHS.BUS
         {
             return _NamHocDAL.LayDTNamHocCu();
         }
+        public DataTable LayNamHoc_ThemMoi()
+        {
+            DataTable tbNH = new DataTable();
+            tbNH.Columns.Add("MaNamHoc");
+            tbNH.Columns.Add("TenNamHoc");
+            for (int i = DateTime.Now.Year; i >= DateTime.Now.Year - 9; i--)
+            { 
+                DataRow dr = tbNH.NewRow();
+                int mstart = (i%100), msend = ((i+1)%100);
+                dr["MaNamHoc"] = "NH" + (mstart < 10 ? "0"+mstart.ToString() : mstart.ToString()) 
+                                      + (msend < 10 ? "0"+msend.ToString() : msend.ToString() );
+                dr["TenNamHoc"] = i.ToString() + " - " + (i + 1).ToString();
+                tbNH.Rows.Add(dr);
+            }
+            return tbNH;
+        }
+        /// <summary>
+        /// Kiểm tra tồn tại 1 năm học
+        /// </summary>
+        /// <param name="maNamHoc">string: mã năm học</param>
+        /// <returns></returns>
+        public bool KiemTraTonTai_NamHoc(string maNamHoc)
+        {
+            return _NamHocDAL.KiemTraTonTai_NamHoc(maNamHoc);
+        }
+          /// <summary>
+        /// Thêm 1 năm học mới (không kiểm tra trùng mã năm học cũ)
+        /// </summary>
+        /// <param name="namHoc">NamHocDTO</param>
+        /// <returns></returns>
+        public bool ThemNamHoc(NamHocDTO namHoc)
+        {
+            return _NamHocDAL.ThemNamHoc(namHoc);
+        }
+         /// <summary>
+        /// Xóa 1 năm học (xóa toàn bộ thông tin liên quan đến năm học đó)
+        /// </summary>
+        /// <param name="maNamHoc">string: mã năm học</param>
+        /// <returns></returns>
+        public bool XoaNamHoc(string maNamHoc)
+        {
+            return _NamHocDAL.XoaNamHoc(maNamHoc);
+        }
     }
 }

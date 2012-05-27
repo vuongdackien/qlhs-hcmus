@@ -58,6 +58,7 @@
             this.repositoryItemTextEdit = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridViewDSLop = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditNamHoc.Properties)).BeginInit();
@@ -148,7 +149,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditNamHoc.Properties.LookAndFeel.SkinName = "Money Twins";
             this.comboBoxEditNamHoc.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEditNamHoc.Size = new System.Drawing.Size(130, 20);
+            this.comboBoxEditNamHoc.Size = new System.Drawing.Size(117, 20);
             this.comboBoxEditNamHoc.TabIndex = 5;
             this.comboBoxEditNamHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHoc_SelectedIndexChanged);
             // 
@@ -168,12 +169,13 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditKhoi.Properties.LookAndFeel.SkinName = "Money Twins";
             this.comboBoxEditKhoi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.comboBoxEditKhoi.Size = new System.Drawing.Size(130, 20);
+            this.comboBoxEditKhoi.Size = new System.Drawing.Size(117, 20);
             this.comboBoxEditKhoi.TabIndex = 4;
             this.comboBoxEditKhoi.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditKhoi_SelectedIndexChanged);
             // 
             // panelControlLeft
             // 
+            this.panelControlLeft.Controls.Add(this.simpleButton1);
             this.panelControlLeft.Controls.Add(this.comboBoxEditKhoi);
             this.panelControlLeft.Controls.Add(this.labelControlChonHocKy);
             this.panelControlLeft.Controls.Add(this.comboBoxEditNamHoc);
@@ -389,6 +391,14 @@
             this.gridViewDSLop.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridViewDSLop.OptionsView.ShowGroupPanel = false;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Image = global::QLHS.Properties.Resources.them;
+            this.simpleButton1.Location = new System.Drawing.Point(148, 24);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(24, 20);
+            this.simpleButton1.TabIndex = 6;
+            // 
             // frmLapDSLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -460,5 +470,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewDSLop;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

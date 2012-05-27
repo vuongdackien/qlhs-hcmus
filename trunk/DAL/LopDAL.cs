@@ -112,5 +112,15 @@ namespace QLHS.DAL
             sql += "\nDELETE FROM LOP WHERE MaLop = '" + MaLop + "'";
             return ExecuteQuery(sql) > 0;
         }
+        public bool Xoa_Lop_Nam(string MaNamHoc)
+        {
+            string sql = "SELECT MaLop FROM LOP WHERE MaNamHoc = '" + MaNamHoc + "'";
+            DataTable tbLop = GetTable(sql);
+            foreach (DataRow dr in tbLop.Rows)
+	        {
+                 this.Xoa_Lop(dr["MaLop"].ToString());
+	        }
+            return true;
+        }
     }
 }

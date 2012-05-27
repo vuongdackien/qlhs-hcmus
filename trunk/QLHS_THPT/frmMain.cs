@@ -332,6 +332,11 @@ namespace QLHS
         {
             ShowMDIChildForm<frmBC_TongKetHocKy>();
         }
+
+        private void barBtnQuanLyNamHoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmNamHoc>();
+        }
         private frmQLNguoiDung _frmQLNguoiDung = null;
         private void barButtonItemQuanLyNguoiDung_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -344,6 +349,7 @@ namespace QLHS
         {
 
         }
+
 
        
 
