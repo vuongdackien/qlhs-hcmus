@@ -73,8 +73,8 @@
             this.comboBoxEditHocKy = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControlChonHocKy = new DevExpress.XtraEditors.LabelControl();
             this.panelControlRight = new DevExpress.XtraEditors.PanelControl();
-            this.panelControlLeft = new DevExpress.XtraEditors.PanelControl();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.panelControlLeft = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTongKetMonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewTongKetMonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMonHoc)).BeginInit();
@@ -619,16 +619,6 @@
             this.panelControlRight.Size = new System.Drawing.Size(735, 392);
             this.panelControlRight.TabIndex = 3;
             // 
-            // panelControlLeft
-            // 
-            this.panelControlLeft.Controls.Add(this.treeMonHoc);
-            this.panelControlLeft.Controls.Add(this.panelControlChooseYear);
-            this.panelControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.panelControlLeft.Name = "panelControlLeft";
-            this.panelControlLeft.Size = new System.Drawing.Size(182, 392);
-            this.panelControlLeft.TabIndex = 2;
-            // 
             // richTextBox1
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
@@ -644,6 +634,16 @@
             this.richTextBox1.TabIndex = 26;
             this.richTextBox1.TabStop = false;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
+            // panelControlLeft
+            // 
+            this.panelControlLeft.Controls.Add(this.treeMonHoc);
+            this.panelControlLeft.Controls.Add(this.panelControlChooseYear);
+            this.panelControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.panelControlLeft.Name = "panelControlLeft";
+            this.panelControlLeft.Size = new System.Drawing.Size(182, 392);
+            this.panelControlLeft.TabIndex = 2;
             // 
             // frmBC_TongKetMon
             // 
