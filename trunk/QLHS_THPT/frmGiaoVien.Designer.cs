@@ -70,11 +70,14 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl3.Controls.Add(this.labelControl4);
             this.panelControl3.Controls.Add(this.GridcontrolGiaoVien);
             this.panelControl3.Location = new System.Drawing.Point(0, 0);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(406, 508);
+            this.panelControl3.Size = new System.Drawing.Size(368, 508);
             this.panelControl3.TabIndex = 1;
             // 
             // labelControl4
@@ -89,7 +92,8 @@
             // 
             // GridcontrolGiaoVien
             // 
-            this.GridcontrolGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.GridcontrolGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.GridcontrolGiaoVien.Location = new System.Drawing.Point(0, 113);
             this.GridcontrolGiaoVien.MainView = this.gridViewGiaoVien;
@@ -97,7 +101,7 @@
             this.GridcontrolGiaoVien.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
             this.repositoryItemTextEdit1});
-            this.GridcontrolGiaoVien.Size = new System.Drawing.Size(401, 390);
+            this.GridcontrolGiaoVien.Size = new System.Drawing.Size(363, 390);
             this.GridcontrolGiaoVien.TabIndex = 8;
             this.GridcontrolGiaoVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewGiaoVien});
@@ -150,8 +154,7 @@
             // 
             // simpleButtonhuy
             // 
-            this.simpleButtonhuy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButtonhuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButtonhuy.Image = global::QLHS.Properties.Resources.huy;
             this.simpleButtonhuy.Location = new System.Drawing.Point(344, 28);
             this.simpleButtonhuy.Name = "simpleButtonhuy";
@@ -162,9 +165,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(30, 159);
+            this.labelControl3.Location = new System.Drawing.Point(46, 154);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(68, 13);
             this.labelControl3.TabIndex = 13;
@@ -172,9 +173,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(30, 111);
+            this.labelControl2.Location = new System.Drawing.Point(46, 110);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(64, 13);
             this.labelControl2.TabIndex = 12;
@@ -182,28 +181,22 @@
             // 
             // textEditTenGiaoVien
             // 
-            this.textEditTenGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEditTenGiaoVien.Location = new System.Drawing.Point(114, 152);
+            this.textEditTenGiaoVien.Location = new System.Drawing.Point(135, 147);
             this.textEditTenGiaoVien.Name = "textEditTenGiaoVien";
             this.textEditTenGiaoVien.Size = new System.Drawing.Size(147, 20);
             this.textEditTenGiaoVien.TabIndex = 11;
             // 
             // textEditMaGiaoVien
             // 
-            this.textEditMaGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEditMaGiaoVien.Location = new System.Drawing.Point(114, 108);
+            this.textEditMaGiaoVien.Location = new System.Drawing.Point(135, 103);
             this.textEditMaGiaoVien.Name = "textEditMaGiaoVien";
             this.textEditMaGiaoVien.Size = new System.Drawing.Size(147, 20);
             this.textEditMaGiaoVien.TabIndex = 10;
             // 
             // simpleButtonXoaGiaovien
             // 
-            this.simpleButtonXoaGiaovien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButtonXoaGiaovien.Image = global::QLHS.Properties.Resources.xoa_small;
-            this.simpleButtonXoaGiaovien.Location = new System.Drawing.Point(238, 214);
+            this.simpleButtonXoaGiaovien.Location = new System.Drawing.Point(238, 209);
             this.simpleButtonXoaGiaovien.Name = "simpleButtonXoaGiaovien";
             this.simpleButtonXoaGiaovien.Size = new System.Drawing.Size(104, 35);
             this.simpleButtonXoaGiaovien.TabIndex = 2;
@@ -212,10 +205,8 @@
             // 
             // simpleButonSuagiaovien
             // 
-            this.simpleButonSuagiaovien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButonSuagiaovien.Image = ((System.Drawing.Image)(resources.GetObject("simpleButonSuagiaovien.Image")));
-            this.simpleButonSuagiaovien.Location = new System.Drawing.Point(238, 283);
+            this.simpleButonSuagiaovien.Location = new System.Drawing.Point(238, 278);
             this.simpleButonSuagiaovien.Name = "simpleButonSuagiaovien";
             this.simpleButonSuagiaovien.Size = new System.Drawing.Size(104, 35);
             this.simpleButonSuagiaovien.TabIndex = 3;
@@ -224,10 +215,8 @@
             // 
             // simpleButtonThemGiaoVien
             // 
-            this.simpleButtonThemGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButtonThemGiaoVien.Image = global::QLHS.Properties.Resources.them;
-            this.simpleButtonThemGiaoVien.Location = new System.Drawing.Point(46, 214);
+            this.simpleButtonThemGiaoVien.Location = new System.Drawing.Point(46, 209);
             this.simpleButtonThemGiaoVien.Name = "simpleButtonThemGiaoVien";
             this.simpleButtonThemGiaoVien.Size = new System.Drawing.Size(104, 35);
             this.simpleButtonThemGiaoVien.TabIndex = 1;
@@ -236,9 +225,8 @@
             // 
             // simpleButtonLuuGiaoVien
             // 
-            this.simpleButtonLuuGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButtonLuuGiaoVien.Image = global::QLHS.Properties.Resources.them_small;
-            this.simpleButtonLuuGiaoVien.Location = new System.Drawing.Point(46, 283);
+            this.simpleButtonLuuGiaoVien.Location = new System.Drawing.Point(46, 278);
             this.simpleButtonLuuGiaoVien.Name = "simpleButtonLuuGiaoVien";
             this.simpleButtonLuuGiaoVien.Size = new System.Drawing.Size(104, 35);
             this.simpleButtonLuuGiaoVien.TabIndex = 4;
@@ -248,6 +236,9 @@
             // 
             // panelControl5
             // 
+            this.panelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.panelControl5.Controls.Add(this.simpleButtonLuuGiaoVien);
             this.panelControl5.Controls.Add(this.simpleButonSuagiaovien);
             this.panelControl5.Controls.Add(this.labelControl3);
@@ -256,9 +247,9 @@
             this.panelControl5.Controls.Add(this.textEditMaGiaoVien);
             this.panelControl5.Controls.Add(this.labelControl2);
             this.panelControl5.Controls.Add(this.textEditTenGiaoVien);
-            this.panelControl5.Location = new System.Drawing.Point(407, 113);
+            this.panelControl5.Location = new System.Drawing.Point(369, 113);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(377, 395);
+            this.panelControl5.Size = new System.Drawing.Size(415, 395);
             this.panelControl5.TabIndex = 3;
             // 
             // panelControl1
@@ -267,7 +258,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(784, 107);
+            this.panelControl1.Size = new System.Drawing.Size(784, 115);
             this.panelControl1.TabIndex = 9;
             // 
             // labelControl1
@@ -282,7 +273,7 @@
             // 
             // simpleButtonLoadlaidulieu
             // 
-            this.simpleButtonLoadlaidulieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButtonLoadlaidulieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButtonLoadlaidulieu.Image = global::QLHS.Properties.Resources.capnhat;
             this.simpleButtonLoadlaidulieu.Location = new System.Drawing.Point(491, 28);
             this.simpleButtonLoadlaidulieu.Name = "simpleButtonLoadlaidulieu";
@@ -294,7 +285,7 @@
             // 
             // simpleButtonThoat
             // 
-            this.simpleButtonThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButtonThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.simpleButtonThoat.Image = global::QLHS.Properties.Resources.thoat_small;
             this.simpleButtonThoat.Location = new System.Drawing.Point(645, 28);
             this.simpleButtonThoat.Name = "simpleButtonThoat";
