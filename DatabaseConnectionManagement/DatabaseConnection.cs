@@ -390,11 +390,12 @@ namespace DatabaseConnectionManagement
         {
             try
             {
-                string data_file = @"D:\QLHS.sql";
+                string data_file = Application.StartupPath+@"/scripts/QLHS.sql";
                 StreamReader sr = new StreamReader(data_file);
                 string data = sr.ReadToEnd();
                 string dbname = this.cmbDbName.SelectedItem.ToString();
-                m_Server.Databases[dbname].ExecuteNonQuery(dbname);
+                data = data.Replace("__DBNAME__", dbname);
+                m_Server.Databases[dbname].ExecuteNonQuery(data);
                 MessageBox.Show("Đã tạo dữ liệu mẫu thành công!");
             }
             catch (Exception ex)

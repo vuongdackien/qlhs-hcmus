@@ -350,6 +350,18 @@ namespace QLHS
             ShowMDIChildForm<frmQuyDinhDauNam>();
         }
 
+        private void barButtonItemCauHinhKetNoi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DatabaseConnectionManagement.FrmAddConnection frm = new DatabaseConnectionManagement.FrmAddConnection();
+            frm.ShowDialog();
+        }
+
+        private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmThongTinChuongTrinh frmThongTin = new frmThongTinChuongTrinh();
+            frmThongTin.ShowDialog();
+        }
+
 
        
 

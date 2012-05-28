@@ -117,48 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="simpleButtonTìmkiem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAABGdBTUEAALGPC/xhBQAABChJREFUSEu1
-        lWtMW2Ucxg/LQG7TrHMuNs6uQblsWUahgNyvoRQIEQYi02EYMSMSCETZt+mHQVAy+YKBkUBGYETMVnBc
-        1wDj0sF6gELZKCsFgZbSspZCYcWkBvf3/3ZHnbOgLvFJfnlPzjnv8z7vc9601Is65O5mGxMF8c4XPslm
-        fZCe5s7lcA6c8vGx3f/PShAIKBcXV4eKr8tP37p58ytxb19P78DgWO/dgaH29vaa2ppq4YeZmc4lX3zO
-        zPgXysvLo4TCBKeG69c/6xuSaLqlU/C9ZBIaBmVwY3gSbt+fgv5R2iISieoulZSwv6uqYmbuo9TUVDI4
-        oGnh3ftjOz+OzUDr2Cx0TiqhC+mQKaFtfBZEtAL6x+Ugam29lX3+PKuoqMg2f09VV1dT35SX8zHpqlg+
-        B/T8Cjxc1oHsJy1I8ZpAL6zAiEoDvQ8XYICW/XqtpuYSAFBBQUGMix2RF1paWiqHpxQwhYbLBhModUaY
-        XTUgZHzGI2RGa4B7igW43dE5/fFH547l5uYyLnaUKEw43NndMypVLsHKuhm0pi3QrCO20QzzayaY1qzB
-        5LIeFGgsW1yFfsmI5cvLl6NKS0sZFzvKvZDz9p3ePtXEggZU+nWbKTFfNm7CzMpjGMUqhpVqGEIkcxpb
-        NSPjk7vfXr2a2djYyLjY0dm0NHZXd49CvqiFiSUd1qEHuRoTLulhfFEHE89Bnj1Q60EipX8pvXLl/ar9
-        Toeri4tzc3Nzx+yi+i+dvgjpWP14Hea1a9DVc8eQd/HimYKCAsbFjmiaprCrPHpCtqs2bGAF5r+hxlr0
-        pmfMKFVQW1vbxuWecBYKhYyLHWVlZVGJiYlH6+vr+x+p5sFgfgLGLcS8DYbNLTAiG+YtMG1tg3pVB01N
-        TZCSktLA4XBcAwICGJc9VFZWRuXk5PDq6urG5dMPwGjagG3LDjzZ+dk2mjbNMIeL4seC9PR0CA0NtQYH
-        B1fw+XzXwMBAxsWOWCwWhdujMjIy3sVarrW0/KAbHBzalUqlIJHce9rW1rZdWVnZl5SUNBIZGfk0Ojoa
-        IiIibOb+/v77mxP5+vpSXC7XEVOdzM/PP1dcXFxUWFj4aXZ2dhhOdseEJ8LCwsQxMTEQGxsLUVFR1pCQ
-        EJv5P9aylzw8PChMSOEC3PDwcHFcXBzEx8cDLmLFair8/Pxe3tzb2/sPc6xCLBAIAE8G4CJW3EkFj8dz
-        e2lzUtfv5ti3mBgnJyeT9FbcSTkmd7L343QAcUScEXfkNYSFvI4cZSDX5N4hLy+v02g2gB+VHEGSfA4T
-        v/W8sQPihLyKkMnHkXeQk8gZhI+Qt99DyF55yCnEg81mh2PHA5jYiIsU4gk7iB8ZH/0pYn4QeQUhf3wk
-        7RHkDeRNhM1Aro8hJPlhxM3T0/M4VuDr4+PjaLFY8Nb/Jor6DWRZfIGz7ItcAAAAAElFTkSuQmCC
-</value>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>- Tên đồ án: Quản lý học sinh THPT
+- Lớp: 11HCB - HCMUS
+- GVHD: Thầy Ngô Bá Nam Phương
+- SV thực hiện:
+  1. Nguyễn Hồng Phú (Trưởng nhóm)
+  2. Nguyễn Thị Mỷ Diện
+  3. Nguyễn Văn Đại
+  4. Nguyễn Duy Hà
+
+- Thời gian thực hiện: 8/4/2012 - 6/6/2012
+- Sử dụng Google SVN: http://code.google.com/p/qlhs-hcmus</value>
   </data>
-  <data name="simpleButonSuagiaovien.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAppJREFUOE+F
-        kl1IU2Ecxs+cmHNskrVOsBvTKYpdtIgSuygqQSM/ICKQBEG60fIiAguv1C66CLMPuiiIhYmZlDgGatFc
-        iB8ZUit0W2lexMbM9nHOjmdzuj297+tJLI0eeOC9OL/n+b//83JUarU6RavV6nU63X9dddCQ/ensac90
-        SYm1Oz8/iwUQ8WFBQCAYRCgUAj0LogiROBKJICJJkIhFYQnB8VLcrc3FK4MBgxkZVoXneAr/WFrCz0Bg
-        2yBRJAVTNXjQkgej0YjWipREs0Hdq/AcHwqHGRykIDkzkLTTZml5GcHPLbDeP4ScnH2oP5OGFzdSJ9LT
-        uL0Kz/EUYDBpZaMTcJmAsixDmH+Mqb5yFBUVoOqYFnP9+dip444Tbsc6TgJoG4OVVgpGo1FIvteYs9ei
-        +LAZJ47sgqt3L6bH+0GYQmIVo4l4tiTS/BuOxWKQA0743zehrPQois1GfHySidHBe3C5XFCpVEaFZeLp
-        uJvhqLCA8EwLas6dxIH92Zh4qMPIy2sYGxuDQCYlAbzCMvEUpCFRAsekRUiedjRdLEdhQQ6GOzPheHYB
-        VqsVPp8PiURiawC9r0wclcnWXdfRdrUMeaZc9LRnYbznFCwWC2ZnZ7G6urp9AB2bOri4AJulHiaTCZ1X
-        9uDDczM6Om7BbrfD7/fD6/Xiu9cXJwEGhWXaCPjmHMBoXx0etZkxP1CAO7dvwmazwel04o19BJOT75JV
-        1dWXyfPf+ANU/MrKCttBW/N5OHrrMD3ajfmvHrYw2jo0NEyetYjGxoZWjUbzB0zFAtxuF552dUEmQfSe
-        yWQS8Xgcbo8HDsfbZAOB9Xr9FpiKpx9Sr62tMW8OmHF/iVdUVl7SaNK3halSielW/+XdKX/deV0c9wuj
-        CiY4ANZZFAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>
