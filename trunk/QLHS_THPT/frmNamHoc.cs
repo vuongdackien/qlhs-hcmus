@@ -46,13 +46,13 @@ namespace QLHS
         {
             if (editing)
             {
-                simpleButtonThem.Text = "Lưu";
-                simpleButtonXoa.Text = "Không thêm";
+                simpleButtonThem.Text = "Lưu (Enter)";
+                simpleButtonXoa.Text = "Không thêm (Alt+&D)";
             }
             else
             {
-                simpleButtonThem.Text = "Thêm";
-                simpleButtonXoa.Text = "Xóa";
+                simpleButtonThem.Text = "Thêm (Enter)";
+                simpleButtonXoa.Text = "Xóa (Alt+&D)";
             }
             comboBoxEdit1.Enabled = editing;
             gridControlNamHoc.Enabled = !editing;
@@ -61,7 +61,7 @@ namespace QLHS
 
         private void simpleButtonThem_Click(object sender, EventArgs e)
         {
-            if (simpleButtonThem.Text == "Thêm")
+            if (simpleButtonThem.Text == "Thêm (Enter)")
             {
                 _Disable_Control(editing:true);
             }
@@ -91,7 +91,7 @@ namespace QLHS
         {
             string maNamHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEdit1);
             string tenNamHoc = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEdit1);
-            if (simpleButtonXoa.Text == "Xóa")
+            if (simpleButtonXoa.Text == "Xóa (Alt+&D)")
             {               
                 if (_namHocBUS.KiemTraTonTai_NamHoc(maNamHoc))
                 {
@@ -115,6 +115,11 @@ namespace QLHS
             {
                 _Disable_Control(editing: false);
             }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
     }

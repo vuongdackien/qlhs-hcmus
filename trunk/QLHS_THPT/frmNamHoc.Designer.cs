@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNamHoc));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonThem = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonXoa = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -51,6 +52,7 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.simpleButton1);
             this.panelControl1.Controls.Add(this.simpleButtonThem);
             this.panelControl1.Controls.Add(this.simpleButtonXoa);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -59,22 +61,34 @@
             this.panelControl1.Size = new System.Drawing.Size(789, 55);
             this.panelControl1.TabIndex = 1;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Image = global::QLHS.Properties.Resources.thoat_small;
+            this.simpleButton1.Location = new System.Drawing.Point(655, 10);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(109, 33);
+            this.simpleButton1.TabIndex = 5;
+            this.simpleButton1.Text = "Đóng (Alt+&X)";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // simpleButtonThem
             // 
-            this.simpleButtonThem.Location = new System.Drawing.Point(68, 11);
+            this.simpleButtonThem.Image = global::QLHS.Properties.Resources.them_small;
+            this.simpleButtonThem.Location = new System.Drawing.Point(24, 10);
             this.simpleButtonThem.Name = "simpleButtonThem";
-            this.simpleButtonThem.Size = new System.Drawing.Size(75, 32);
+            this.simpleButtonThem.Size = new System.Drawing.Size(115, 33);
             this.simpleButtonThem.TabIndex = 3;
-            this.simpleButtonThem.Text = "Thêm";
+            this.simpleButtonThem.Text = "Thêm (Enter)";
             this.simpleButtonThem.Click += new System.EventHandler(this.simpleButtonThem_Click);
             // 
             // simpleButtonXoa
             // 
-            this.simpleButtonXoa.Location = new System.Drawing.Point(167, 11);
+            this.simpleButtonXoa.Image = global::QLHS.Properties.Resources.xoa_small;
+            this.simpleButtonXoa.Location = new System.Drawing.Point(195, 10);
             this.simpleButtonXoa.Name = "simpleButtonXoa";
-            this.simpleButtonXoa.Size = new System.Drawing.Size(76, 32);
+            this.simpleButtonXoa.Size = new System.Drawing.Size(119, 33);
             this.simpleButtonXoa.TabIndex = 4;
-            this.simpleButtonXoa.Text = "Xóa";
+            this.simpleButtonXoa.Text = "Xóa (Alt+&D)";
             this.simpleButtonXoa.Click += new System.EventHandler(this.simpleButtonXoa_Click);
             // 
             // panelControl2
@@ -87,11 +101,11 @@
             this.panelControl2.Size = new System.Drawing.Size(789, 73);
             this.panelControl2.TabIndex = 3;
             // 
-            // comboBoxEditNamHoc
+            // comboBoxEdit1
             // 
             this.comboBoxEdit1.Enabled = false;
             this.comboBoxEdit1.Location = new System.Drawing.Point(24, 32);
-            this.comboBoxEdit1.Name = "comboBoxEditNamHoc";
+            this.comboBoxEdit1.Name = "comboBoxEdit1";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
@@ -169,6 +183,7 @@
             // 
             // frmNamHoc
             // 
+            this.AcceptButton = this.simpleButtonThem;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 419);
@@ -204,5 +219,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButtonXoa;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

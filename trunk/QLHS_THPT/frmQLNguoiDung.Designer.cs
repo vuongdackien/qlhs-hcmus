@@ -167,7 +167,7 @@
             this.simpleButtonDong.Name = "simpleButtonDong";
             this.simpleButtonDong.Size = new System.Drawing.Size(115, 35);
             this.simpleButtonDong.TabIndex = 14;
-            this.simpleButtonDong.Text = "Đóng";
+            this.simpleButtonDong.Text = "Đóng (Alt+&X)";
             this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
             // 
             // simpleButtonXoa
@@ -357,6 +357,7 @@
             // 
             // frmQLNguoiDung
             // 
+            this.AcceptButton = this.simpleButtonGhi;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 420);

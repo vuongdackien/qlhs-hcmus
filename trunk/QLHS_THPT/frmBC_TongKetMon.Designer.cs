@@ -431,7 +431,7 @@
             this.simpleButtonXuatBD.Name = "simpleButtonXuatBD";
             this.simpleButtonXuatBD.Size = new System.Drawing.Size(128, 35);
             this.simpleButtonXuatBD.TabIndex = 18;
-            this.simpleButtonXuatBD.Text = "Lập báo cáo";
+            this.simpleButtonXuatBD.Text = "Lập báo cáo (Alt+&R)";
             this.simpleButtonXuatBD.Click += new System.EventHandler(this.simpleButtonXuatBD_Click);
             // 
             // labelControlHocKy

@@ -96,24 +96,26 @@
             // 
             // simpleButtonThoat
             // 
+            this.simpleButtonThoat.Image = global::QLHS.Properties.Resources.thoat_small;
             this.simpleButtonThoat.Location = new System.Drawing.Point(237, 257);
             this.simpleButtonThoat.Name = "simpleButtonThoat";
-            this.simpleButtonThoat.Size = new System.Drawing.Size(92, 33);
+            this.simpleButtonThoat.Size = new System.Drawing.Size(127, 33);
             this.simpleButtonThoat.TabIndex = 8;
-            this.simpleButtonThoat.Text = "Thoát";
+            this.simpleButtonThoat.Text = "Thoát (Alt+&X)";
             // 
             // simpleButtonDangNhap
             // 
+            this.simpleButtonDangNhap.Image = global::QLHS.Properties.Resources.dangnhap_small;
             this.simpleButtonDangNhap.Location = new System.Drawing.Point(237, 214);
             this.simpleButtonDangNhap.Name = "simpleButtonDangNhap";
-            this.simpleButtonDangNhap.Size = new System.Drawing.Size(92, 33);
+            this.simpleButtonDangNhap.Size = new System.Drawing.Size(127, 33);
             this.simpleButtonDangNhap.TabIndex = 7;
-            this.simpleButtonDangNhap.Text = "Đăng nhập";
+            this.simpleButtonDangNhap.Text = "Đăng nhập (Enter)";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QLHS.Properties.Resources.login2;
-            this.pictureBox1.Location = new System.Drawing.Point(218, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(237, 40);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(111, 134);
             this.pictureBox1.TabIndex = 2;
@@ -124,7 +126,7 @@
             this.AcceptButton = this.simpleButtonDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 304);
+            this.ClientSize = new System.Drawing.Size(395, 304);
             this.Controls.Add(this.simpleButtonThoat);
             this.Controls.Add(this.simpleButtonDangNhap);
             this.Controls.Add(this.textEditMatKhau);

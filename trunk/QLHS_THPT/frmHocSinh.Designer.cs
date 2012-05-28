@@ -52,7 +52,6 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panelControlTopRight = new DevExpress.XtraEditors.PanelControl();
             this.labelControlTitle = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButtonChuyenLop = new DevExpress.XtraEditors.SimpleButton();
             this.panelControlChiTietHoSo = new DevExpress.XtraEditors.PanelControl();
             this.dateEditNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.textEditDiaChi = new DevExpress.XtraEditors.TextEdit();
@@ -174,10 +173,10 @@
             // gridControlDSHocSinh
             // 
             this.gridControlDSHocSinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlDSHocSinh.Location = new System.Drawing.Point(2, 183);
+            this.gridControlDSHocSinh.Location = new System.Drawing.Point(3, 184);
             this.gridControlDSHocSinh.MainView = this.gridViewDSHocSinh;
             this.gridControlDSHocSinh.Name = "gridControlDSHocSinh";
-            this.gridControlDSHocSinh.Size = new System.Drawing.Size(243, 271);
+            this.gridControlDSHocSinh.Size = new System.Drawing.Size(241, 269);
             this.gridControlDSHocSinh.TabIndex = 4;
             this.gridControlDSHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDSHocSinh});
@@ -237,9 +236,9 @@
             this.panelControlTopLeft.Controls.Add(this.labelControl3);
             this.panelControlTopLeft.Controls.Add(this.labelControl1);
             this.panelControlTopLeft.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlTopLeft.Location = new System.Drawing.Point(2, 2);
+            this.panelControlTopLeft.Location = new System.Drawing.Point(3, 3);
             this.panelControlTopLeft.Name = "panelControlTopLeft";
-            this.panelControlTopLeft.Size = new System.Drawing.Size(243, 181);
+            this.panelControlTopLeft.Size = new System.Drawing.Size(241, 181);
             this.panelControlTopLeft.TabIndex = 3;
             // 
             // checkEditChuaPhanLop
@@ -326,7 +325,6 @@
             // panelControlTopRight
             // 
             this.panelControlTopRight.Controls.Add(this.labelControlTitle);
-            this.panelControlTopRight.Controls.Add(this.simpleButtonChuyenLop);
             this.panelControlTopRight.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControlTopRight.Location = new System.Drawing.Point(247, 0);
             this.panelControlTopRight.Name = "panelControlTopRight";
@@ -342,16 +340,6 @@
             this.labelControlTitle.Size = new System.Drawing.Size(170, 23);
             this.labelControlTitle.TabIndex = 19;
             this.labelControlTitle.Text = "HỒ SƠ HỌC SINH";
-            // 
-            // simpleButtonChuyenLop
-            // 
-            this.simpleButtonChuyenLop.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonChuyenLop.Location = new System.Drawing.Point(520, 13);
-            this.simpleButtonChuyenLop.Name = "simpleButtonChuyenLop";
-            this.simpleButtonChuyenLop.Size = new System.Drawing.Size(149, 38);
-            this.simpleButtonChuyenLop.TabIndex = 17;
-            this.simpleButtonChuyenLop.Text = "Chuyển lớp (Alt+&C)";
-            this.simpleButtonChuyenLop.Click += new System.EventHandler(this.simpleButtonChuyenLop_Click);
             // 
             // panelControlChiTietHoSo
             // 
@@ -616,7 +604,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.PanelControl panelControlTopRight;
         private DevExpress.XtraEditors.LabelControl labelControlTitle;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonChuyenLop;
         private DevExpress.XtraEditors.PanelControl panelControlChiTietHoSo;
         private DevExpress.XtraEditors.DateEdit dateEditNgaySinh;
         private DevExpress.XtraEditors.TextEdit textEditDiaChi;
