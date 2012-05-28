@@ -93,7 +93,7 @@
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(16, 58);
+            this.labelControl3.Location = new System.Drawing.Point(56, 58);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(68, 13);
             this.labelControl3.TabIndex = 13;
@@ -103,7 +103,7 @@
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(20, 88);
+            this.labelControl2.Location = new System.Drawing.Point(60, 88);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(64, 13);
             this.labelControl2.TabIndex = 12;
@@ -113,7 +113,7 @@
             // 
             this.textEditTenGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEditTenGiaoVien.Location = new System.Drawing.Point(109, 55);
+            this.textEditTenGiaoVien.Location = new System.Drawing.Point(149, 55);
             this.textEditTenGiaoVien.Name = "textEditTenGiaoVien";
             this.textEditTenGiaoVien.Size = new System.Drawing.Size(185, 20);
             this.textEditTenGiaoVien.TabIndex = 11;
@@ -122,7 +122,7 @@
             // 
             this.textEditMaGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEditMaGiaoVien.Location = new System.Drawing.Point(109, 85);
+            this.textEditMaGiaoVien.Location = new System.Drawing.Point(149, 85);
             this.textEditMaGiaoVien.Name = "textEditMaGiaoVien";
             this.textEditMaGiaoVien.Size = new System.Drawing.Size(185, 20);
             this.textEditMaGiaoVien.TabIndex = 10;
@@ -187,13 +187,15 @@
             // 
             // GridcontrolGiaoVien
             // 
-            this.GridcontrolGiaoVien.Location = new System.Drawing.Point(5, 314);
+            this.GridcontrolGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.GridcontrolGiaoVien.Location = new System.Drawing.Point(5, 278);
             this.GridcontrolGiaoVien.MainView = this.gridViewGiaoVien;
             this.GridcontrolGiaoVien.Name = "GridcontrolGiaoVien";
             this.GridcontrolGiaoVien.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
             this.repositoryItemTextEdit1});
-            this.GridcontrolGiaoVien.Size = new System.Drawing.Size(688, 357);
+            this.GridcontrolGiaoVien.Size = new System.Drawing.Size(688, 393);
             this.GridcontrolGiaoVien.TabIndex = 11;
             this.GridcontrolGiaoVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewGiaoVien});
@@ -261,7 +263,7 @@
             this.groupControl2.Controls.Add(this.simpleButtonLoadlaidulieu);
             this.groupControl2.Controls.Add(this.simpleButtonThoat);
             this.groupControl2.Controls.Add(this.simpleButtonhuy);
-            this.groupControl2.Location = new System.Drawing.Point(418, 122);
+            this.groupControl2.Location = new System.Drawing.Point(410, 122);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(281, 116);
             this.groupControl2.TabIndex = 19;
@@ -295,7 +297,7 @@
             this.groupControl1.Controls.Add(this.simpleButonSuagiaovien);
             this.groupControl1.Controls.Add(this.simpleButtonXoaGiaovien);
             this.groupControl1.Controls.Add(this.simpleButtonLuuGiaoVien);
-            this.groupControl1.Location = new System.Drawing.Point(16, 122);
+            this.groupControl1.Location = new System.Drawing.Point(56, 122);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(318, 116);
             this.groupControl1.TabIndex = 18;
