@@ -76,6 +76,7 @@
             this.barButtonItemTongKetHocKy = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemQuanLyNguoiDung = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemCauHinhKetNoi = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageQuanLyHoSo = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupHoSoNamHoc = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupHoSoHocSinh = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -84,11 +85,10 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupQuanLyND = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroupThongTinChuognTrinh = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.ribbonPageGroupThongTinChuognTrinh = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
@@ -192,6 +192,7 @@
             this.barButtonItemThoat.Id = 37;
             this.barButtonItemThoat.LargeGlyph = global::QLHS.Properties.Resources.thoat;
             this.barButtonItemThoat.Name = "barButtonItemThoat";
+            this.barButtonItemThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemThoat_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -406,6 +407,14 @@
             this.barButtonItemCauHinhKetNoi.Name = "barButtonItemCauHinhKetNoi";
             this.barButtonItemCauHinhKetNoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemCauHinhKetNoi_ItemClick);
             // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Thông Tin Chương Trình";
+            this.barButtonItem6.Id = 47;
+            this.barButtonItem6.LargeGlyph = global::QLHS.Properties.Resources.thongtinphanmem;
+            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
+            // 
             // ribbonPageQuanLyHoSo
             // 
             this.ribbonPageQuanLyHoSo.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -468,6 +477,11 @@
             this.ribbonPageGroupQuanLyND.ItemLinks.Add(this.barButtonItemCauHinhKetNoi);
             this.ribbonPageGroupQuanLyND.Name = "ribbonPageGroupQuanLyND";
             // 
+            // ribbonPageGroupThongTinChuognTrinh
+            // 
+            this.ribbonPageGroupThongTinChuognTrinh.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroupThongTinChuognTrinh.Name = "ribbonPageGroupThongTinChuognTrinh";
+            // 
             // ribbonStatusBar
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.barStaticItemLoaiNguoiDung);
@@ -484,19 +498,6 @@
             // xtraTabbedMdiManager
             // 
             this.xtraTabbedMdiManager.MdiParent = this;
-            // 
-            // ribbonPageGroupThongTinChuognTrinh
-            // 
-            this.ribbonPageGroupThongTinChuognTrinh.ItemLinks.Add(this.barButtonItem6);
-            this.ribbonPageGroupThongTinChuognTrinh.Name = "ribbonPageGroupThongTinChuognTrinh";
-            // 
-            // barButtonItem6
-            // 
-            this.barButtonItem6.Caption = "Thông Tin Chương Trình";
-            this.barButtonItem6.Id = 47;
-            this.barButtonItem6.LargeGlyph = global::QLHS.Properties.Resources.thongtinphanmem;
-            this.barButtonItem6.Name = "barButtonItem6";
-            this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
             // frmMain
             // 

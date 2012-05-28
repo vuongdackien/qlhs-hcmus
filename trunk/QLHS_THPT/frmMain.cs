@@ -353,13 +353,23 @@ namespace QLHS
         private void barButtonItemCauHinhKetNoi_ItemClick(object sender, ItemClickEventArgs e)
         {
             DatabaseConnectionManagement.FrmAddConnection frm = new DatabaseConnectionManagement.FrmAddConnection();
-            frm.ShowDialog();
+            if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Utilities.MessageboxUtilities.MessageSuccess("Đã lưu cấu hình của chương trình!"
+                       +"\nChương trình sẽ khởi động lại để cập nhật dữ liệu!");
+                Application.Restart();
+            }
         }
 
         private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmThongTinChuongTrinh frmThongTin = new frmThongTinChuongTrinh();
             frmThongTin.ShowDialog();
+        }
+
+        private void barButtonItemThoat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Application.ExitThread();
         }
 
 
