@@ -317,7 +317,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="File_SQL\QLHS_Update.sql" />
+    <Content Include="File_SQL\QLHS.sql" />
     <Content Include="Resources\arrow.png" />
     <Content Include="Resources\capnhat.png" />
     <Content Include="Resources\cauhinhketnoi.png" />
