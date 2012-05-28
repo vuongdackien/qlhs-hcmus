@@ -71,33 +71,7 @@ namespace QLHS
             GridcontrolGiaoVien.DataSource = dt;
         }
 
-        private void simpleButtonTìmkiem_Click(object sender, EventArgs e)
-        {
-           dt = new DataTable();
-           string Tk = textEditTKGiaoVien.Text.ToString();
-            Tk=GVBUS.Doichuoi(Tk, "'", "''", true);
-            if (checkTenGiaoVien.Checked==true)
-            {
-                if (checkMaGiaoVien.Checked==true)
-                {
-                    dt=GVBUS.TableGiaoVien(3,Tk);
-                   
-                }
-                else
-                {
-                    dt=GVBUS.TableGiaoVien(1, Tk);
-                }
-                
-            }
-            else
-            {
-                dt=GVBUS.TableGiaoVien(2, Tk);
-                
-            }
-           
-            load_dulieu(dt);
-                    
-        }
+      
         private void simpleButtonThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -184,12 +158,7 @@ namespace QLHS
         }
 
        
-        private void simpleButtonhuy_Click(object sender, EventArgs e)
-        {
-            textEditTKGiaoVien.Text = "";
-            KhoiTaoTrangthai();
-            flag = 0;
-        }
+       
         private void gridViewGiaoVien_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             for (int i = 0; i < gridViewGiaoVien.RowCount; )
@@ -207,8 +176,17 @@ namespace QLHS
             dt = GVBUS.TableGiaoVien();
             load_dulieu(dt);
             KhoiTaoTrangthai();
-            textEditTKGiaoVien.Text = "";
             GridcontrolGiaoVien.DataSource = dt;
         }
+
+
+        private void simpleButtonhuy_Click_1(object sender, EventArgs e)
+        {
+            KhoiTaoTrangthai();
+            flag = 0;
+        }
+
+        
+
     }
 }
