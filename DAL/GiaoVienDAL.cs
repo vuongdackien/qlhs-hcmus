@@ -10,8 +10,6 @@ namespace QLHS.DAL
 { 
     public class GiaoVienDAL : ConnectData
     {
-        GiaoVienDTO GV;
-
         /// <summary>
         /// Lấy datatable danh sách giáo viên
         /// </summary>
@@ -21,117 +19,56 @@ namespace QLHS.DAL
             string sql = "SELECT MaGiaoVien, TenGiaoVien FROM GIAOVIEN";
             return GetTable(sql);
         }
-        public int ThemGiaoVien(GiaoVienDTO GV)
-        {
-
-            string sql = string.Format("insert into  Giaovien values ('{0}',N'{1}')", GV.MaGiaoVien, GV.TenGiaoVien);
-            int k=ExecuteQuery(sql);
-            return k;
-        }
-        public void XoaGiaoVien(string  MaGV)
-        {
-            string sql = string.Format("delete  Giaovien  where MaGiaoVien like '%{0}%'", MaGV);
-            ExecuteQuery(sql);
-        }
-        public void CapNhatGiaoVien(GiaoVienDTO GV)
-        {
-            string sql = string.Format("update GiaoVien set TenGiaoVien=N'{0}'"
-                                                     + "where MaGiaoVien='{1}' ", GV.TenGiaoVien, GV.MaGiaoVien);
-            ExecuteQuery(sql);
-        }
-        #region Tạo bảng các giáo viên
         /// <summary>
-        /// Tào bảng các giáo viên
+        /// Thêm hồ sơ giáo viên
         /// </summary>
+        /// <param name="giaoVien">GiaoVienDTO</param>
         /// <returns></returns>
-        public DataTable TableGiaoVien()
+        public bool Them_GiaoVien(GiaoVienDTO giaoVien)
         {
-            string sql = " select * from GiaoVien"; 
-            DataTable dt = new DataTable();
-            dt = GetTable(sql, true);
-           return dt;
-            
-        }
-      /// <summary>
-      /// Tao bang giao vien theo MaGV hoặc tên giáo viên
-      /// </summary>
-      /// i: các case của hàm
-      /// 1: Tìm theo Tên giáo viên
-      /// 2: Tìm theo Mã giáo Viên
-      /// 3: Tìm theo cả hai
-      /// <param name="DK">Điều kiện truyền vào</param>
-      /// <returns></returns>
-      
-        public DataTable TableGiaoVien(int i, String DK)
-        {
-            string sql = "";
-            switch(i)
-            {
-                case 1: sql = string.Format("select * from GiaoVien where TenGiaoVien like N'%{0}%' ", DK); break;
-                case 2: sql = string.Format("select * from GiaoVien where MaGiaoVien like N'%{0}%' ", DK); break;
-                case 3: sql = sql = string.Format("select * from GiaoVien where MaGiaoVien like N'%{0}%' or TenGiaoVien like N'%{1}%' ", DK, DK); break;
-            }
-            
-            DataTable dt = new DataTable();
-            dt = GetTable(sql, true);
-            return dt;
-        }
-        
-       #endregion 
-        #region Tạo danh sách các giáo viên dạng list
-        /// <summary>
-        /// Tạo danh sách giáo viên theo yêu cầu
-        /// </summary>
-        /// <param name="DK"></param>
-        /// <returns></returns>
-        public List<GiaoVienDTO> ListGiaoVien(string DK)
-        {
-
-            string sql = "";
-            sql = string.Format("select * from GiaoVien where MaGiaoVien like N'%{0}%' or TenGiaoVien like N'%{0}%'", DK);   
-            DataTable dt = new DataTable();
-            dt = GetTable(sql, true);
-            List<GiaoVienDTO> ListGiaoVien = new List<GiaoVienDTO>();
-            foreach (DataRow dr in dt.Rows)
-            {
-                GV = new GiaoVienDTO { MaGiaoVien = dr[0].ToString(), TenGiaoVien = dr[1].ToString() };
-                ListGiaoVien.Add(GV);
-            }
-
-            return ListGiaoVien;
+            string sql = string.Format("INSERT INTO GIAOVIEN VALUES ('{0}',N'{1}')", giaoVien.MaGiaoVien, giaoVien.TenGiaoVien);
+            return ExecuteQuery(sql) > 0;
         }
         /// <summary>
-        /// Tạo toàn bộ danh sách giáo viên
+        /// Xóa hồ sơ giáo viên
         /// </summary>
-        /// <param name="DK"></param>
+        /// <param name="maGiaoVien">string: mã giáo viên</param>
         /// <returns></returns>
-        public List<GiaoVienDTO> ListGiaoVien()
+        public bool Xoa_GiaoVien(string maGiaoVien)
         {
-
-            string sql = "";
-            
-            sql = " select * from GiaoVien";
-
-            DataTable dt = new DataTable();
-            dt =GetTable(sql, true);
-            List<GiaoVienDTO> ListGiaoVien = new List<GiaoVienDTO>();
-            foreach (DataRow dr in dt.Rows)
-            {
-                GV = new GiaoVienDTO { MaGiaoVien = dr[0].ToString(), TenGiaoVien = dr[1].ToString() };
-                ListGiaoVien.Add(GV);
-            }
-
-            return ListGiaoVien;
+            string sql = "\nDELETE FROM NGUOIDUNG WHERE MaND = '"+maGiaoVien+"'\n";
+            sql += "UPDATE LOP SET MaGiaoVien = NULL WHERE MaGiaoVien = '"+maGiaoVien+"'\n";
+            sql += "DELETE FROM GIAOVIEN WHERE MaGiaoVien ='" + maGiaoVien + "'\n";
+           return ExecuteQuery(sql) > 0;
         }
-        #endregion
-       public void AddNewRow(DataRow dr)
-        { AddNewRow(dr); }
-        public DataRow GetNewRow()
-        { return GetNewRow(); }
-        public bool KTTTGiaoVien(GiaoVienDTO GV)
+        /// <summary>
+        /// Cập nhật hồ sơ giáo viên
+        /// </summary>
+        /// <param name="giaoVien">GiaoVienDTO</param>
+        /// <returns></returns>
+        public bool CapNhat_GiaoVien(GiaoVienDTO giaoVien)
         {
-            string sql = string.Format("SELECT count(*) as SoLuong FROM GiaoVien WHERE MaGiaoVien = '{0}'", GV.MaGiaoVien);
-            return (int)ExecuteScalar(sql) == 1;
+            string sql = string.Format("UPDATE GIAOVIEN SET TenGiaoVien = N'{0}' "
+                                     + "WHERE MaGiaoVien='{1}' ", giaoVien.TenGiaoVien, giaoVien.MaGiaoVien);
+            return ExecuteQuery(sql) > 0;
+        }
+        /// <summary>
+        /// Kiểm tra tồn tại hồ sơ giáo viên
+        /// </summary>
+        /// <param name="maGiaoVien">string: mã giáo viên</param>
+        /// <returns></returns>
+        public bool KiemTonTai_GiaoVien(string maGiaoVien)
+        {
+            string sql = string.Format("SELECT COUNT(*) as SoLuong FROM GIAOVIEN WHERE MaGiaoVien = '{0}'", maGiaoVien);
+            return Convert.ToInt32(ExecuteScalar(sql)) == 1;
+        }
+        /// <summary>
+        /// Lấy mã cuối cùng (MaGiaoVien) - Bảng GiaoVien
+        /// </summary>
+        /// <returns>String: Mã cuối cùng</returns>
+        public string Lay_MaCuoiCung()
+        {
+            return GetLastID("GIAOVIEN", "MaGiaoVien");
         }
     }
 }
