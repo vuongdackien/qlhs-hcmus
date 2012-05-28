@@ -184,16 +184,6 @@ namespace QLHS
             textEditTenGiaoVien.Text = "";
             flag = 0;
         }
-
-
-   
-
-     
-
-     
-
-
-        
-
+       
     }
 }
