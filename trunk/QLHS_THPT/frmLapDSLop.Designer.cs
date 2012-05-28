@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLapDSLop));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonThemMoi = new DevExpress.XtraEditors.SimpleButton();
@@ -58,6 +59,7 @@
             this.repositoryItemComboBox = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.repositoryItemTextEdit = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditNamHoc.Properties)).BeginInit();
@@ -87,7 +89,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl1.Location = new System.Drawing.Point(0, 337);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(844, 55);
+            this.panelControl1.Size = new System.Drawing.Size(887, 55);
             this.panelControl1.TabIndex = 3;
             // 
             // simpleButtonDong
@@ -210,7 +212,7 @@
             this.panelControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControlTop.Location = new System.Drawing.Point(180, 0);
             this.panelControlTop.Name = "panelControlTop";
-            this.panelControlTop.Size = new System.Drawing.Size(664, 36);
+            this.panelControlTop.Size = new System.Drawing.Size(707, 36);
             this.panelControlTop.TabIndex = 5;
             // 
             // panelControlDKLop
@@ -224,7 +226,7 @@
             this.panelControlDKLop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControlDKLop.Location = new System.Drawing.Point(180, 36);
             this.panelControlDKLop.Name = "panelControlDKLop";
-            this.panelControlDKLop.Size = new System.Drawing.Size(664, 104);
+            this.panelControlDKLop.Size = new System.Drawing.Size(707, 104);
             this.panelControlDKLop.TabIndex = 22;
             // 
             // textEditTenLop
@@ -292,7 +294,7 @@
             this.repositoryItemTextEdit,
             this.repositoryItemComboBox,
             this.repositoryItemGridLookUpEdit1});
-            this.gridControlDSLop.Size = new System.Drawing.Size(525, 197);
+            this.gridControlDSLop.Size = new System.Drawing.Size(416, 197);
             this.gridControlDSLop.TabIndex = 23;
             this.gridControlDSLop.TabStop = false;
             this.gridControlDSLop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -324,7 +326,7 @@
             this.gColMaLop.OptionsColumn.TabStop = false;
             this.gColMaLop.Visible = true;
             this.gColMaLop.VisibleIndex = 0;
-            this.gColMaLop.Width = 99;
+            this.gColMaLop.Width = 90;
             // 
             // gColTenLop
             // 
@@ -336,7 +338,7 @@
             this.gColTenLop.OptionsColumn.AllowEdit = false;
             this.gColTenLop.Visible = true;
             this.gColTenLop.VisibleIndex = 1;
-            this.gColTenLop.Width = 104;
+            this.gColTenLop.Width = 99;
             // 
             // gColMaNamHoc
             // 
@@ -363,7 +365,7 @@
             this.gColMaGiaoVien.OptionsColumn.AllowEdit = false;
             this.gColMaGiaoVien.Visible = true;
             this.gColMaGiaoVien.VisibleIndex = 2;
-            this.gColMaGiaoVien.Width = 230;
+            this.gColMaGiaoVien.Width = 206;
             // 
             // repositoryItemComboBox
             // 
@@ -392,12 +394,27 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemGridLookUpEdit1.Name = "repositoryItemGridLookUpEdit1";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.richTextBox1.Location = new System.Drawing.Point(596, 140);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(291, 197);
+            this.richTextBox1.TabIndex = 24;
+            this.richTextBox1.TabStop = false;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
             // frmLapDSLop
             // 
             this.AcceptButton = this.simpleButtonGhiDuLieu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 392);
+            this.ClientSize = new System.Drawing.Size(887, 392);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.gridControlDSLop);
             this.Controls.Add(this.panelControlDKLop);
             this.Controls.Add(this.panelControlTop);
@@ -463,5 +480,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

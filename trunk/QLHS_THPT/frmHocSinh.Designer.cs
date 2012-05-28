@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHocSinh));
             this.panelControlBottom = new DevExpress.XtraEditors.PanelControl();
             this.simpleButtonSXLaiSTT = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
@@ -53,6 +54,7 @@
             this.panelControlTopRight = new DevExpress.XtraEditors.PanelControl();
             this.labelControlTitle = new DevExpress.XtraEditors.LabelControl();
             this.panelControlChiTietHoSo = new DevExpress.XtraEditors.PanelControl();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.dateEditNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.textEditDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.textEditNoiSinh = new DevExpress.XtraEditors.TextEdit();
@@ -69,6 +71,7 @@
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).BeginInit();
             this.panelControlBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -94,6 +97,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spinEditSTTSoDiem.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTenHocSinh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditmaHocSinh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControlBottom
@@ -106,7 +110,7 @@
             this.panelControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControlBottom.Location = new System.Drawing.Point(0, 456);
             this.panelControlBottom.Name = "panelControlBottom";
-            this.panelControlBottom.Size = new System.Drawing.Size(965, 60);
+            this.panelControlBottom.Size = new System.Drawing.Size(1194, 60);
             this.panelControlBottom.TabIndex = 2;
             // 
             // simpleButtonSXLaiSTT
@@ -328,7 +332,7 @@
             this.panelControlTopRight.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControlTopRight.Location = new System.Drawing.Point(247, 0);
             this.panelControlTopRight.Name = "panelControlTopRight";
-            this.panelControlTopRight.Size = new System.Drawing.Size(718, 65);
+            this.panelControlTopRight.Size = new System.Drawing.Size(947, 65);
             this.panelControlTopRight.TabIndex = 6;
             // 
             // labelControlTitle
@@ -343,6 +347,7 @@
             // 
             // panelControlChiTietHoSo
             // 
+            this.panelControlChiTietHoSo.Controls.Add(this.richTextBox1);
             this.panelControlChiTietHoSo.Controls.Add(this.dateEditNgaySinh);
             this.panelControlChiTietHoSo.Controls.Add(this.textEditDiaChi);
             this.panelControlChiTietHoSo.Controls.Add(this.textEditNoiSinh);
@@ -359,11 +364,26 @@
             this.panelControlChiTietHoSo.Controls.Add(this.labelControl7);
             this.panelControlChiTietHoSo.Controls.Add(this.labelControl6);
             this.panelControlChiTietHoSo.Controls.Add(this.labelControl5);
+            this.panelControlChiTietHoSo.Controls.Add(this.panelControl2);
             this.panelControlChiTietHoSo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlChiTietHoSo.Location = new System.Drawing.Point(247, 65);
             this.panelControlChiTietHoSo.Name = "panelControlChiTietHoSo";
-            this.panelControlChiTietHoSo.Size = new System.Drawing.Size(718, 391);
+            this.panelControlChiTietHoSo.Size = new System.Drawing.Size(947, 391);
             this.panelControlChiTietHoSo.TabIndex = 7;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.richTextBox1.Location = new System.Drawing.Point(370, 3);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(574, 385);
+            this.richTextBox1.TabIndex = 14;
+            this.richTextBox1.TabStop = false;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // dateEditNgaySinh
             // 
@@ -533,6 +553,14 @@
             this.labelControl5.TabIndex = 0;
             this.labelControl5.Text = "Mã học sinh:";
             // 
+            // panelControl2
+            // 
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl2.Location = new System.Drawing.Point(3, 3);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(367, 385);
+            this.panelControl2.TabIndex = 13;
+            // 
             // frmHocSinh
             // 
             this.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
@@ -541,7 +569,7 @@
             this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(965, 516);
+            this.ClientSize = new System.Drawing.Size(1194, 516);
             this.Controls.Add(this.panelControlChiTietHoSo);
             this.Controls.Add(this.panelControlTopRight);
             this.Controls.Add(this.panelControl1);
@@ -578,6 +606,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.spinEditSTTSoDiem.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTenHocSinh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditmaHocSinh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -624,6 +653,8 @@
         private DevExpress.XtraEditors.SimpleButton simpleButtonSXLaiSTT;
         private DevExpress.XtraEditors.CheckEdit checkEditChuaPhanLop;
         private DevExpress.Utils.ToolTipController toolTipController1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
 
     }
 }
