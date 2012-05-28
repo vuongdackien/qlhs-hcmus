@@ -48,7 +48,7 @@ namespace QLHS
 
             //Chắc chắn chọn được node
             string maMonHoc = treeMonHoc.FocusedNode.GetValue("MaMonHoc").ToString();
-            _ds_baocaoTongKetMonHoc = _bangDiemBUS.LayBangDiem_MonHoc_Khoi_HocKy(maMonHoc, Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop),
+            _ds_baocaoTongKetMonHoc = _bangDiemBUS.Lay_BangTongKet_MonHoc_Khoi_HocKy(maMonHoc, Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop),
                                     Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy),
                                     Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc));
             gridControlTongKetMonHoc.DataSource = _ds_baocaoTongKetMonHoc;

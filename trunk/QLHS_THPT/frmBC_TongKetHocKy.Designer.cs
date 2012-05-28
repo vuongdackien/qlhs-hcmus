@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBC_TongKetHocKy));
             this.panelControlTopRight = new DevExpress.XtraEditors.PanelControl();
             this.simpleButtonXuatBD = new DevExpress.XtraEditors.SimpleButton();
             this.labelControlKhoiLop = new DevExpress.XtraEditors.LabelControl();
@@ -46,7 +47,6 @@
             this.gridControlTongKetHocKy = new DevExpress.XtraGrid.GridControl();
             this.gridViewTongKetHocKy = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumnTenMonHoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -67,6 +67,7 @@
             this.bandedGridColumn4 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTopRight)).BeginInit();
             this.panelControlTopRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlChooseYear)).BeginInit();
@@ -92,7 +93,7 @@
             this.panelControlTopRight.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControlTopRight.Location = new System.Drawing.Point(0, 0);
             this.panelControlTopRight.Name = "panelControlTopRight";
-            this.panelControlTopRight.Size = new System.Drawing.Size(853, 94);
+            this.panelControlTopRight.Size = new System.Drawing.Size(1012, 94);
             this.panelControlTopRight.TabIndex = 2;
             // 
             // simpleButtonXuatBD
@@ -245,7 +246,6 @@
             // 
             this.gridViewTongKetHocKy.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
-            this.gridColumnTenMonHoc,
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4,
@@ -283,23 +283,6 @@
             this.gridColumn1.VisibleIndex = 0;
             this.gridColumn1.Width = 46;
             // 
-            // gridColumnTenMonHoc
-            // 
-            this.gridColumnTenMonHoc.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumnTenMonHoc.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumnTenMonHoc.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumnTenMonHoc.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridColumnTenMonHoc.AppearanceHeader.Options.UseFont = true;
-            this.gridColumnTenMonHoc.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumnTenMonHoc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumnTenMonHoc.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.gridColumnTenMonHoc.Caption = "Tên môn học";
-            this.gridColumnTenMonHoc.FieldName = "TenMonHoc";
-            this.gridColumnTenMonHoc.Name = "gridColumnTenMonHoc";
-            this.gridColumnTenMonHoc.Visible = true;
-            this.gridColumnTenMonHoc.VisibleIndex = 1;
-            this.gridColumnTenMonHoc.Width = 99;
-            // 
             // gridColumn2
             // 
             this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
@@ -315,7 +298,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.VisibleIndex = 1;
             this.gridColumn2.Width = 86;
             // 
             // gridColumn3
@@ -333,7 +316,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.VisibleIndex = 2;
             this.gridColumn3.Width = 155;
             // 
             // gridColumn4
@@ -351,7 +334,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
+            this.gridColumn4.VisibleIndex = 3;
             this.gridColumn4.Width = 69;
             // 
             // gridColumn5
@@ -369,7 +352,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
+            this.gridColumn5.VisibleIndex = 4;
             this.gridColumn5.Width = 84;
             // 
             // gridColumn6
@@ -389,7 +372,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 6;
+            this.gridColumn6.VisibleIndex = 5;
             this.gridColumn6.Width = 117;
             // 
             // gridViewMonHoc
@@ -562,11 +545,28 @@
             this.bandedGridColumn6.Name = "bandedGridColumn6";
             this.bandedGridColumn6.Visible = true;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.richTextBox1.Location = new System.Drawing.Point(853, 94);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.ShortcutsEnabled = false;
+            this.richTextBox1.Size = new System.Drawing.Size(159, 300);
+            this.richTextBox1.TabIndex = 25;
+            this.richTextBox1.TabStop = false;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
             // frmBC_TongKetHocKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(853, 394);
+            this.ClientSize = new System.Drawing.Size(1012, 394);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.gridControlTongKetHocKy);
             this.Controls.Add(this.panelControlChooseYear);
             this.Controls.Add(this.panelControlTopRight);
@@ -610,7 +610,6 @@
         private DevExpress.XtraGrid.GridControl gridControlTongKetHocKy;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewTongKetHocKy;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumnTenMonHoc;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
@@ -631,6 +630,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn4;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn5;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn6;
+        private System.Windows.Forms.RichTextBox richTextBox1;
 
 
 

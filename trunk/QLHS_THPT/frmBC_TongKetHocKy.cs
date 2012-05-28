@@ -21,7 +21,7 @@ namespace QLHS
         private HocKyBUS _hocKyBUS;
         private MonHocBUS _monHocBUS;
         private BangDiemBUS _BangDiemBUS;
-        List<TongKetHocKyDTO> _ds_baocaoTongKetHocKy;
+        IList<TongKetHocKyDTO> _ds_baocaoTongKetHocKy;
         public frmBC_TongKetHocKy()
         {
             InitializeComponent();
@@ -40,15 +40,17 @@ namespace QLHS
         /// </summary>
         private void HienThi_Bang_TongKetHocKy()
         {
-            _ds_baocaoTongKetHocKy = _bangDiemBUS.LayBangDiem_Khoi_HocKy(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop),
-                                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy),
-                                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc));
+            string MaKhoi = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop);
+            string MaHocKy =  Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);
+            string MaNamHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc);
+
+            _ds_baocaoTongKetHocKy = _bangDiemBUS.Lay_BangTongKet_Khoi_HocKy(MaKhoi,MaHocKy,MaNamHoc);
 
             gridControlTongKetHocKy.DataSource = _ds_baocaoTongKetHocKy;
 
             labelControlNamHoc.Text = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc);
-            labelControlHocKyTT.Text = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);
-            labelControlKhoiLop.Text = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop);
+            labelControlHocKyTT.Text = MaHocKy;
+            labelControlKhoiLop.Text = MaKhoi;
         }
         
         private void frmBC_TongKetHocKy_Load(object sender, EventArgs e)
