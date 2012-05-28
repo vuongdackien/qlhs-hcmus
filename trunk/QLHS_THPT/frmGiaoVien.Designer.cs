@@ -47,11 +47,11 @@
             this.TenGiaoVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButtonLoadlaidulieu = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButtonThoat = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.simpleButtonLoadlaidulieu = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTenGiaoVien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMaGiaoVien.Properties)).BeginInit();
@@ -63,10 +63,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelControl3
@@ -74,7 +74,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl3.Location = new System.Drawing.Point(0, 0);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(91, 589);
+            this.panelControl3.Size = new System.Drawing.Size(51, 589);
             this.panelControl3.TabIndex = 1;
             // 
             // simpleButtonhuy
@@ -93,7 +93,7 @@
             // 
             this.labelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl3.Location = new System.Drawing.Point(103, 74);
+            this.labelControl3.Location = new System.Drawing.Point(16, 58);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(68, 13);
             this.labelControl3.TabIndex = 13;
@@ -103,7 +103,7 @@
             // 
             this.labelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl2.Location = new System.Drawing.Point(416, 74);
+            this.labelControl2.Location = new System.Drawing.Point(20, 88);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(64, 13);
             this.labelControl2.TabIndex = 12;
@@ -113,18 +113,18 @@
             // 
             this.textEditTenGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEditTenGiaoVien.Location = new System.Drawing.Point(213, 71);
+            this.textEditTenGiaoVien.Location = new System.Drawing.Point(109, 55);
             this.textEditTenGiaoVien.Name = "textEditTenGiaoVien";
-            this.textEditTenGiaoVien.Size = new System.Drawing.Size(154, 20);
+            this.textEditTenGiaoVien.Size = new System.Drawing.Size(185, 20);
             this.textEditTenGiaoVien.TabIndex = 11;
             // 
             // textEditMaGiaoVien
             // 
             this.textEditMaGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEditMaGiaoVien.Location = new System.Drawing.Point(505, 67);
+            this.textEditMaGiaoVien.Location = new System.Drawing.Point(109, 85);
             this.textEditMaGiaoVien.Name = "textEditMaGiaoVien";
-            this.textEditMaGiaoVien.Size = new System.Drawing.Size(154, 20);
+            this.textEditMaGiaoVien.Size = new System.Drawing.Size(185, 20);
             this.textEditMaGiaoVien.TabIndex = 10;
             // 
             // simpleButtonXoaGiaovien
@@ -180,9 +180,9 @@
             this.panelControl5.Controls.Add(this.GridcontrolGiaoVien);
             this.panelControl5.Controls.Add(this.panelControl1);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl5.Location = new System.Drawing.Point(91, 0);
+            this.panelControl5.Location = new System.Drawing.Point(51, 0);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(693, 589);
+            this.panelControl5.Size = new System.Drawing.Size(733, 589);
             this.panelControl5.TabIndex = 3;
             // 
             // GridcontrolGiaoVien
@@ -252,9 +252,42 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(2, 2);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(689, 270);
+            this.panelControl1.Size = new System.Drawing.Size(729, 270);
             this.panelControl1.TabIndex = 9;
-            this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl2.Controls.Add(this.simpleButtonLoadlaidulieu);
+            this.groupControl2.Controls.Add(this.simpleButtonThoat);
+            this.groupControl2.Controls.Add(this.simpleButtonhuy);
+            this.groupControl2.Location = new System.Drawing.Point(418, 122);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(281, 116);
+            this.groupControl2.TabIndex = 19;
+            // 
+            // simpleButtonLoadlaidulieu
+            // 
+            this.simpleButtonLoadlaidulieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButtonLoadlaidulieu.Image = global::QLHS.Properties.Resources.capnhat;
+            this.simpleButtonLoadlaidulieu.Location = new System.Drawing.Point(38, 75);
+            this.simpleButtonLoadlaidulieu.Name = "simpleButtonLoadlaidulieu";
+            this.simpleButtonLoadlaidulieu.Size = new System.Drawing.Size(104, 35);
+            this.simpleButtonLoadlaidulieu.TabIndex = 9;
+            this.simpleButtonLoadlaidulieu.Text = "Tải lại dữ liệu";
+            this.simpleButtonLoadlaidulieu.ToolTip = "Load lại dữ liệu từ cơ sở dữ liệu";
+            this.simpleButtonLoadlaidulieu.Click += new System.EventHandler(this.simpleButtonLoadlaidulieu_Click);
+            // 
+            // simpleButtonThoat
+            // 
+            this.simpleButtonThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.simpleButtonThoat.Image = global::QLHS.Properties.Resources.thoat_small;
+            this.simpleButtonThoat.Location = new System.Drawing.Point(154, 75);
+            this.simpleButtonThoat.Name = "simpleButtonThoat";
+            this.simpleButtonThoat.Size = new System.Drawing.Size(104, 35);
+            this.simpleButtonThoat.TabIndex = 8;
+            this.simpleButtonThoat.Text = "Thoát";
+            this.simpleButtonThoat.Click += new System.EventHandler(this.simpleButtonThoat_Click);
             // 
             // groupControl1
             // 
@@ -266,20 +299,6 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(318, 116);
             this.groupControl1.TabIndex = 18;
-            this.groupControl1.Text = "groupControl1";
-            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
-            // 
-            // simpleButtonLoadlaidulieu
-            // 
-            this.simpleButtonLoadlaidulieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButtonLoadlaidulieu.Image = global::QLHS.Properties.Resources.capnhat;
-            this.simpleButtonLoadlaidulieu.Location = new System.Drawing.Point(38, 81);
-            this.simpleButtonLoadlaidulieu.Name = "simpleButtonLoadlaidulieu";
-            this.simpleButtonLoadlaidulieu.Size = new System.Drawing.Size(104, 35);
-            this.simpleButtonLoadlaidulieu.TabIndex = 9;
-            this.simpleButtonLoadlaidulieu.Text = "Tải lại dữ liệu";
-            this.simpleButtonLoadlaidulieu.ToolTip = "Load lại dữ liệu từ cơ sở dữ liệu";
-            this.simpleButtonLoadlaidulieu.Click += new System.EventHandler(this.simpleButtonLoadlaidulieu_Click);
             // 
             // labelControl4
             // 
@@ -289,29 +308,6 @@
             this.labelControl4.Size = new System.Drawing.Size(245, 27);
             this.labelControl4.TabIndex = 10;
             this.labelControl4.Text = "Bảng danh sách giáo viên";
-            // 
-            // simpleButtonThoat
-            // 
-            this.simpleButtonThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButtonThoat.Image = global::QLHS.Properties.Resources.thoat_small;
-            this.simpleButtonThoat.Location = new System.Drawing.Point(154, 81);
-            this.simpleButtonThoat.Name = "simpleButtonThoat";
-            this.simpleButtonThoat.Size = new System.Drawing.Size(104, 35);
-            this.simpleButtonThoat.TabIndex = 8;
-            this.simpleButtonThoat.Text = "Thoát";
-            this.simpleButtonThoat.Click += new System.EventHandler(this.simpleButtonThoat_Click);
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.simpleButtonLoadlaidulieu);
-            this.groupControl2.Controls.Add(this.simpleButtonThoat);
-            this.groupControl2.Controls.Add(this.simpleButtonhuy);
-            this.groupControl2.Location = new System.Drawing.Point(378, 122);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(281, 116);
-            this.groupControl2.TabIndex = 19;
-            this.groupControl2.Text = "groupControl2";
-            this.groupControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl2_Paint);
             // 
             // frmGiaoVien
             // 
@@ -336,10 +332,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
