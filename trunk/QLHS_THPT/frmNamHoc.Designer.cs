@@ -128,6 +128,7 @@
             this.gridControlNamHoc.Name = "gridControlNamHoc";
             this.gridControlNamHoc.Size = new System.Drawing.Size(340, 291);
             this.gridControlNamHoc.TabIndex = 2;
+            this.gridControlNamHoc.TabStop = false;
             this.gridControlNamHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewNamHoc});
             // 

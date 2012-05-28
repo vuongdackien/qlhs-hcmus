@@ -97,7 +97,7 @@
             this.simpleButtonDong.Location = new System.Drawing.Point(596, 10);
             this.simpleButtonDong.Name = "simpleButtonDong";
             this.simpleButtonDong.Size = new System.Drawing.Size(109, 35);
-            this.simpleButtonDong.TabIndex = 20;
+            this.simpleButtonDong.TabIndex = 9;
             this.simpleButtonDong.Text = "Đóng (Alt+&X)";
             this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
             // 
@@ -107,7 +107,7 @@
             this.simpleButtonThemMoi.Location = new System.Drawing.Point(180, 10);
             this.simpleButtonThemMoi.Name = "simpleButtonThemMoi";
             this.simpleButtonThemMoi.Size = new System.Drawing.Size(134, 35);
-            this.simpleButtonThemMoi.TabIndex = 17;
+            this.simpleButtonThemMoi.TabIndex = 6;
             this.simpleButtonThemMoi.Text = "Thêm mới (Alt+&N)";
             this.simpleButtonThemMoi.Click += new System.EventHandler(this.simpleButtonThemMoi_Click);
             // 
@@ -117,7 +117,7 @@
             this.simpleButtonXoa.Location = new System.Drawing.Point(473, 10);
             this.simpleButtonXoa.Name = "simpleButtonXoa";
             this.simpleButtonXoa.Size = new System.Drawing.Size(113, 35);
-            this.simpleButtonXoa.TabIndex = 19;
+            this.simpleButtonXoa.TabIndex = 8;
             this.simpleButtonXoa.Text = "Xóa (Alt+&D)";
             this.simpleButtonXoa.Click += new System.EventHandler(this.simpleButtonXoa_Click);
             // 
@@ -127,7 +127,7 @@
             this.simpleButtonGhiDuLieu.Location = new System.Drawing.Point(327, 10);
             this.simpleButtonGhiDuLieu.Name = "simpleButtonGhiDuLieu";
             this.simpleButtonGhiDuLieu.Size = new System.Drawing.Size(136, 35);
-            this.simpleButtonGhiDuLieu.TabIndex = 18;
+            this.simpleButtonGhiDuLieu.TabIndex = 7;
             this.simpleButtonGhiDuLieu.Text = "Ghi dữ liệu (Enter)";
             this.simpleButtonGhiDuLieu.Click += new System.EventHandler(this.simpleButtonGhiDuLieu_Click);
             // 
@@ -148,7 +148,7 @@
             this.comboBoxEditNamHoc.Properties.LookAndFeel.SkinName = "Money Twins";
             this.comboBoxEditNamHoc.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditNamHoc.Size = new System.Drawing.Size(117, 20);
-            this.comboBoxEditNamHoc.TabIndex = 5;
+            this.comboBoxEditNamHoc.TabIndex = 1;
             this.comboBoxEditNamHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHoc_SelectedIndexChanged);
             // 
             // labelControlChonHocKy
@@ -168,7 +168,7 @@
             this.comboBoxEditKhoi.Properties.LookAndFeel.SkinName = "Money Twins";
             this.comboBoxEditKhoi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditKhoi.Size = new System.Drawing.Size(117, 20);
-            this.comboBoxEditKhoi.TabIndex = 4;
+            this.comboBoxEditKhoi.TabIndex = 2;
             this.comboBoxEditKhoi.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditKhoi_SelectedIndexChanged);
             // 
             // panelControlLeft
@@ -191,6 +191,7 @@
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(24, 20);
             this.simpleButton1.TabIndex = 6;
+            this.simpleButton1.TabStop = false;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // labelControlTitle
@@ -236,7 +237,7 @@
             this.textEditTenLop.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.textEditTenLop.Properties.MaxLength = 40;
             this.textEditTenLop.Size = new System.Drawing.Size(143, 20);
-            this.textEditTenLop.TabIndex = 32;
+            this.textEditTenLop.TabIndex = 4;
             this.textEditTenLop.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.textEditTenLop_InvalidValue);
             // 
             // comboBoxEditGVCN
@@ -247,7 +248,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditGVCN.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditGVCN.Size = new System.Drawing.Size(160, 20);
-            this.comboBoxEditGVCN.TabIndex = 26;
+            this.comboBoxEditGVCN.TabIndex = 5;
             // 
             // textEditMaLop
             // 
@@ -255,7 +256,7 @@
             this.textEditMaLop.Location = new System.Drawing.Point(23, 25);
             this.textEditMaLop.Name = "textEditMaLop";
             this.textEditMaLop.Size = new System.Drawing.Size(141, 20);
-            this.textEditMaLop.TabIndex = 30;
+            this.textEditMaLop.TabIndex = 3;
             // 
             // labelControl1
             // 
@@ -293,6 +294,7 @@
             this.repositoryItemGridLookUpEdit1});
             this.gridControlDSLop.Size = new System.Drawing.Size(525, 197);
             this.gridControlDSLop.TabIndex = 23;
+            this.gridControlDSLop.TabStop = false;
             this.gridControlDSLop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLop});
             // 
@@ -392,6 +394,7 @@
             // 
             // frmLapDSLop
             // 
+            this.AcceptButton = this.simpleButtonGhiDuLieu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 392);

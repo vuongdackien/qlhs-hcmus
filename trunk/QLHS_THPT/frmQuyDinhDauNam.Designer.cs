@@ -138,7 +138,7 @@
             this.textEditDiaChi.Location = new System.Drawing.Point(131, 48);
             this.textEditDiaChi.Name = "textEditDiaChi";
             this.textEditDiaChi.Size = new System.Drawing.Size(210, 20);
-            this.textEditDiaChi.TabIndex = 22;
+            this.textEditDiaChi.TabIndex = 2;
             // 
             // simpleButtonDong
             // 
@@ -146,7 +146,7 @@
             this.simpleButtonDong.Location = new System.Drawing.Point(209, 329);
             this.simpleButtonDong.Name = "simpleButtonDong";
             this.simpleButtonDong.Size = new System.Drawing.Size(132, 38);
-            this.simpleButtonDong.TabIndex = 10;
+            this.simpleButtonDong.TabIndex = 11;
             this.simpleButtonDong.Text = "Đóng (Alt+&X)";
             this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
             // 
@@ -156,7 +156,7 @@
             this.simpleButtonApDung.Location = new System.Drawing.Point(40, 329);
             this.simpleButtonApDung.Name = "simpleButtonApDung";
             this.simpleButtonApDung.Size = new System.Drawing.Size(132, 38);
-            this.simpleButtonApDung.TabIndex = 9;
+            this.simpleButtonApDung.TabIndex = 10;
             this.simpleButtonApDung.Text = "Áp dụng (Enter)";
             this.simpleButtonApDung.Click += new System.EventHandler(this.simpleButtonApDung_Click);
             // 
@@ -167,7 +167,7 @@
             this.comboBoxEditNamHoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditNamHoc.Size = new System.Drawing.Size(155, 20);
-            this.comboBoxEditNamHoc.TabIndex = 2;
+            this.comboBoxEditNamHoc.TabIndex = 3;
             // 
             // labelControl12
             // 
@@ -187,7 +187,7 @@
             this.dateEditNgayAD.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateEditNgayAD.Size = new System.Drawing.Size(155, 20);
-            this.dateEditNgayAD.TabIndex = 8;
+            this.dateEditNgayAD.TabIndex = 9;
             // 
             // labelControl11
             // 
@@ -211,7 +211,7 @@
             this.spinEditSoLuongLop.Properties.Mask.EditMask = "[0-9]{1,2}";
             this.spinEditSoLuongLop.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.spinEditSoLuongLop.Size = new System.Drawing.Size(54, 20);
-            this.spinEditSoLuongLop.TabIndex = 5;
+            this.spinEditSoLuongLop.TabIndex = 6;
             // 
             // labelControl10
             // 
@@ -235,7 +235,7 @@
             this.spinEditDiemDat.Properties.Mask.EditMask = "n2";
             this.spinEditDiemDat.Properties.Validating += new System.ComponentModel.CancelEventHandler(this.spinEditDiemDat_Properties_Validating);
             this.spinEditDiemDat.Size = new System.Drawing.Size(54, 20);
-            this.spinEditDiemDat.TabIndex = 7;
+            this.spinEditDiemDat.TabIndex = 8;
             this.spinEditDiemDat.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.spinEditDiemDat_InvalidValue);
             // 
             // labelControl6
@@ -284,7 +284,7 @@
             this.spinEditSiSoToiDa.Properties.Mask.EditMask = "[0-9]{1,2}";
             this.spinEditSiSoToiDa.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.spinEditSiSoToiDa.Size = new System.Drawing.Size(54, 20);
-            this.spinEditSiSoToiDa.TabIndex = 6;
+            this.spinEditSiSoToiDa.TabIndex = 7;
             // 
             // labelControl7
             // 
@@ -316,7 +316,7 @@
             this.spinEditDoTuoiDen.Properties.Mask.EditMask = "[0-9]{1,2}";
             this.spinEditDoTuoiDen.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.spinEditDoTuoiDen.Size = new System.Drawing.Size(54, 20);
-            this.spinEditDoTuoiDen.TabIndex = 4;
+            this.spinEditDoTuoiDen.TabIndex = 5;
             // 
             // labelControl3
             // 
@@ -340,7 +340,7 @@
             this.spinEditDoTuoiTu.Properties.Mask.EditMask = "[0-9]{1,2}";
             this.spinEditDoTuoiTu.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.spinEditDoTuoiTu.Size = new System.Drawing.Size(54, 20);
-            this.spinEditDoTuoiTu.TabIndex = 3;
+            this.spinEditDoTuoiTu.TabIndex = 4;
             // 
             // labelControl2
             // 
@@ -375,7 +375,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(424, 379);
-            this.richTextBox1.TabIndex = 11;
+            this.richTextBox1.TabIndex = 12;
             this.richTextBox1.TabStop = false;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
