@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBC_TongKetMon));
             this.gridControlTongKetMonHoc = new DevExpress.XtraGrid.GridControl();
             this.gridViewTongKetMonHoc = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -73,6 +74,7 @@
             this.labelControlChonHocKy = new DevExpress.XtraEditors.LabelControl();
             this.panelControlRight = new DevExpress.XtraEditors.PanelControl();
             this.panelControlLeft = new DevExpress.XtraEditors.PanelControl();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlTongKetMonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewTongKetMonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMonHoc)).BeginInit();
@@ -94,10 +96,10 @@
             // gridControlTongKetMonHoc
             // 
             this.gridControlTongKetMonHoc.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gridControlTongKetMonHoc.Location = new System.Drawing.Point(3, 90);
+            this.gridControlTongKetMonHoc.Location = new System.Drawing.Point(2, 89);
             this.gridControlTongKetMonHoc.MainView = this.gridViewTongKetMonHoc;
             this.gridControlTongKetMonHoc.Name = "gridControlTongKetMonHoc";
-            this.gridControlTongKetMonHoc.Size = new System.Drawing.Size(571, 299);
+            this.gridControlTongKetMonHoc.Size = new System.Drawing.Size(571, 301);
             this.gridControlTongKetMonHoc.TabIndex = 1;
             this.gridControlTongKetMonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewTongKetMonHoc,
@@ -419,9 +421,9 @@
             this.panelControlTopRight.Controls.Add(this.labelControlMonHocTT);
             this.panelControlTopRight.Controls.Add(this.labelControlTitle);
             this.panelControlTopRight.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlTopRight.Location = new System.Drawing.Point(3, 3);
+            this.panelControlTopRight.Location = new System.Drawing.Point(2, 2);
             this.panelControlTopRight.Name = "panelControlTopRight";
-            this.panelControlTopRight.Size = new System.Drawing.Size(571, 87);
+            this.panelControlTopRight.Size = new System.Drawing.Size(731, 87);
             this.panelControlTopRight.TabIndex = 0;
             // 
             // simpleButtonXuatBD
@@ -519,14 +521,14 @@
             this.treeListColumnTenMH,
             this.treeListColumnMaMH});
             this.treeMonHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeMonHoc.Location = new System.Drawing.Point(3, 140);
+            this.treeMonHoc.Location = new System.Drawing.Point(2, 139);
             this.treeMonHoc.Name = "treeMonHoc";
             this.treeMonHoc.OptionsBehavior.Editable = false;
             this.treeMonHoc.OptionsView.EnableAppearanceEvenRow = true;
             this.treeMonHoc.OptionsView.EnableAppearanceOddRow = true;
             this.treeMonHoc.OptionsView.ShowColumns = false;
             this.treeMonHoc.OptionsView.ShowRoot = false;
-            this.treeMonHoc.Size = new System.Drawing.Size(176, 249);
+            this.treeMonHoc.Size = new System.Drawing.Size(178, 251);
             this.treeMonHoc.TabIndex = 1;
             this.treeMonHoc.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeMonHoc_FocusedNodeChanged);
             // 
@@ -563,9 +565,9 @@
             this.panelControlChooseYear.Controls.Add(this.comboBoxEditNamHoc);
             this.panelControlChooseYear.Controls.Add(this.labelControlChonNamHoc);
             this.panelControlChooseYear.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlChooseYear.Location = new System.Drawing.Point(3, 3);
+            this.panelControlChooseYear.Location = new System.Drawing.Point(2, 2);
             this.panelControlChooseYear.Name = "panelControlChooseYear";
-            this.panelControlChooseYear.Size = new System.Drawing.Size(176, 137);
+            this.panelControlChooseYear.Size = new System.Drawing.Size(178, 137);
             this.panelControlChooseYear.TabIndex = 0;
             // 
             // comboBoxEditKhoiLop
@@ -608,12 +610,13 @@
             // 
             // panelControlRight
             // 
+            this.panelControlRight.Controls.Add(this.richTextBox1);
             this.panelControlRight.Controls.Add(this.gridControlTongKetMonHoc);
             this.panelControlRight.Controls.Add(this.panelControlTopRight);
             this.panelControlRight.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlRight.Location = new System.Drawing.Point(182, 0);
             this.panelControlRight.Name = "panelControlRight";
-            this.panelControlRight.Size = new System.Drawing.Size(577, 392);
+            this.panelControlRight.Size = new System.Drawing.Size(735, 392);
             this.panelControlRight.TabIndex = 3;
             // 
             // panelControlLeft
@@ -626,11 +629,27 @@
             this.panelControlLeft.Size = new System.Drawing.Size(182, 392);
             this.panelControlLeft.TabIndex = 2;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.richTextBox1.Location = new System.Drawing.Point(573, 89);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.ShortcutsEnabled = false;
+            this.richTextBox1.Size = new System.Drawing.Size(160, 301);
+            this.richTextBox1.TabIndex = 26;
+            this.richTextBox1.TabStop = false;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
             // frmBC_TongKetMon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 392);
+            this.ClientSize = new System.Drawing.Size(917, 392);
             this.Controls.Add(this.panelControlRight);
             this.Controls.Add(this.panelControlLeft);
             this.Name = "frmBC_TongKetMon";
@@ -705,6 +724,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn6;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumnTenMH;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumnMaMH;
+        private System.Windows.Forms.RichTextBox richTextBox1;
 
     }
 }

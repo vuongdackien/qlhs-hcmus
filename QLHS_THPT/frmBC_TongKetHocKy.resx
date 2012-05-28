@@ -117,4 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>Hướng dẫn: Báo cáo tổng kết học kỳ
+
+- Chọn năm học, chọn học kỳ, chọn khối:
+Chương trình sẽ tính điểm TB các học sinh
+trong lớp và xét số lượng đạt, tỉ lệ đạt dựa 
+vào điểm đạt môn theo như quy định.
+
+- Nếu "Số lượng đạt" và "Tỷ lệ" có dạng "__" là do:
+   + Nếu sỉ số bằng 0: lớp chưa có học sinh để xét.
+   + Chưa nhập đủ điểm cho các lớp.
+
+- Ấn nút "Lập báo cáo" để xuất bảng báo cáo này.</value>
+  </data>
 </root>

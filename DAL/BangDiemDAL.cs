@@ -157,7 +157,7 @@ namespace QLHS.DAL
         {
             List<MonHocDTO> listMH = _MonHocDAL.LayList_MonHoc(true);
 
-            string sql = "SELECT b.* FROM MONHOC m LEFT JOIN BANGDIEM b ON m.MaMonHoc = b.MaMonHoc "
+            string sql = "SELECT b.*, m.HeSo FROM MONHOC m LEFT JOIN BANGDIEM b ON m.MaMonHoc = b.MaMonHoc "
                                       +"WHERE m.TrangThai = 1 AND b.MaHocKy = "+MaHocKy+" "
                                       +"AND  b.MaLop = '"+MaLop+"' AND MaHocSinh = '"+MaHocSinh+"'";
             DataTable tbBangDiem = GetTable(sql);
