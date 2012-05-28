@@ -120,8 +120,7 @@
   <data name="richTextBox1.Text" xml:space="preserve">
     <value>Hướng dẫn: Báo cáo tổng kết môn
 
-- Chọn năm học, chọn học kỳ, chọn khối,
-chọn môn học để thực hiện.
+- Chọn năm học, chọn học kỳ, chọn khối, chọn môn học để thực hiện.
 Chương trình sẽ tính điểm TB môn tương ứng
 với các học sinh trong từng lớp và xét số lượng
 đạt, tỉ lệ đạt dựa vào điểm đạt môn theo như quy định.

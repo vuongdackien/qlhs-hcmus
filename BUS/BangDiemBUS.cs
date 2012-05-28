@@ -247,13 +247,9 @@ namespace QLHS.BUS
                 // Tính toán số lượng đạt và tỉ lệ
                 double diemDat = _quyDinhBUS.LayDiemChuanDatMon();
                 int soLuongDat = 0;
-                double tiLe = 0;
+
                 // Chưa nhập đủ điểm
-                if (bdiemLop.Rows.Count < siSo)
-                {
-                    soLuongDat = 0;
-                }
-                else
+                if (bdiemLop.Rows.Count == siSo)
                 {
                     foreach (DataRow dr in bdiemLop.Rows)
                     {
@@ -261,21 +257,16 @@ namespace QLHS.BUS
                             soLuongDat++;
                     }
                 }
-                if (siSo > 0)
-                    tiLe = (soLuongDat * 100) / siSo;
-                else
-                    tiLe = 0;
 
                 // tạo bảng báo cáo tổng kết môn
-                TongKetMonDTO mtongket = new TongKetMonDTO();
-                mtongket.STT = stt++;
-                mtongket.TenGiaoVien = lop.GiaoVien.TenGiaoVien;
-                mtongket.TenLop = lop.TenLop;
-                mtongket.SiSo = siSo;
-                mtongket.SoLuongDat = soLuongDat;
-                mtongket.TyLe = tiLe;
-                // add vào ds bảng báo cáo
-                bangDiemTongKetMon.Add(mtongket);
+                bangDiemTongKetMon.Add(new TongKetMonDTO() { 
+                    STT = stt++,
+                    TenGiaoVien = lop.GiaoVien.TenGiaoVien,
+                    TenLop = lop.TenLop,
+                    SiSo = siSo,
+                    SoLuongDat = (siSo > 0 && bdiemLop.Rows.Count == siSo) ? soLuongDat.ToString() : "__",
+                    TyLe = (siSo > 0 && bdiemLop.Rows.Count == siSo) ? ((soLuongDat * 100) / siSo).ToString() : "__"
+                });
             }
             return bangDiemTongKetMon;
         }
@@ -362,7 +353,7 @@ namespace QLHS.BUS
                     TenGiaoVien = lop.GiaoVien.TenGiaoVien,
                     SiSo = siSo,
                     SoLuongDat =  duDieuKienXetTiLe ? soLuongDat.ToString() : "__",
-                    TyLe = duDieuKienXetTiLe ? (soLuongDat / siSo).ToString() : "__"
+                    TyLe = duDieuKienXetTiLe ? ((soLuongDat*100) / siSo).ToString() : "__"
                 });
             }
             return bangDiemTongKetHocKy;

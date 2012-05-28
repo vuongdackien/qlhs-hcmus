@@ -31,8 +31,8 @@ namespace QLHS
 
         public int STT { get; set; } 
        
-        public int SoLuongDat { get; set; }
+        public object SoLuongDat { get; set; }
 
-        public double TyLe { get; set; }
+        public object TyLe { get; set; }
     }
 }
