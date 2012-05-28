@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.toolTipController1 = new DevExpress.Utils.ToolTipController();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
+            this.components = new System.ComponentModel.Container();
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menucontextXemHoSo = new System.Windows.Forms.ToolStripMenuItem();
             this.panelControlChooseYear = new DevExpress.XtraEditors.PanelControl();
             this.radioGroupTimTrong = new DevExpress.XtraEditors.RadioGroup();
@@ -420,31 +421,31 @@
             // simpleButtonDong
             // 
             this.simpleButtonDong.Image = global::QLHS.Properties.Resources.thoat_small;
-            this.simpleButtonDong.Location = new System.Drawing.Point(611, 13);
+            this.simpleButtonDong.Location = new System.Drawing.Point(602, 13);
             this.simpleButtonDong.Name = "simpleButtonDong";
             this.simpleButtonDong.Size = new System.Drawing.Size(104, 35);
             this.simpleButtonDong.TabIndex = 20;
-            this.simpleButtonDong.Text = "Đóng";
+            this.simpleButtonDong.Text = "Đóng (Alt+&X)";
             this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
             // 
             // simpleButtonXoaDK
             // 
             this.simpleButtonXoaDK.Image = global::QLHS.Properties.Resources.xoa_small;
-            this.simpleButtonXoaDK.Location = new System.Drawing.Point(480, 13);
+            this.simpleButtonXoaDK.Location = new System.Drawing.Point(450, 13);
             this.simpleButtonXoaDK.Name = "simpleButtonXoaDK";
-            this.simpleButtonXoaDK.Size = new System.Drawing.Size(104, 35);
+            this.simpleButtonXoaDK.Size = new System.Drawing.Size(134, 35);
             this.simpleButtonXoaDK.TabIndex = 18;
-            this.simpleButtonXoaDK.Text = "Xóa điều kiện";
+            this.simpleButtonXoaDK.Text = "Xóa điều kiện (Alt+&D)";
             this.simpleButtonXoaDK.Click += new System.EventHandler(this.simpleButtonXoaDK_Click);
             // 
             // simpleButtonSearch
             // 
             this.simpleButtonSearch.Image = global::QLHS.Properties.Resources.timkiem_small;
-            this.simpleButtonSearch.Location = new System.Drawing.Point(351, 13);
+            this.simpleButtonSearch.Location = new System.Drawing.Point(297, 13);
             this.simpleButtonSearch.Name = "simpleButtonSearch";
-            this.simpleButtonSearch.Size = new System.Drawing.Size(104, 35);
+            this.simpleButtonSearch.Size = new System.Drawing.Size(134, 35);
             this.simpleButtonSearch.TabIndex = 17;
-            this.simpleButtonSearch.Text = "Tìm kiếm";
+            this.simpleButtonSearch.Text = "Tìm kiếm (Alt+&S)";
             this.simpleButtonSearch.Click += new System.EventHandler(this.simpleButtonSearch_Click);
             // 
             // gridControlSearchHocSinh

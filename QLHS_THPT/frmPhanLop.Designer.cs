@@ -123,9 +123,9 @@
             this.panelControl5.Controls.Add(this.groupControl2);
             this.panelControl5.Controls.Add(this.groupControl1);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl5.Location = new System.Drawing.Point(2, 2);
+            this.panelControl5.Location = new System.Drawing.Point(3, 3);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1003, 189);
+            this.panelControl5.Size = new System.Drawing.Size(1001, 187);
             this.panelControl5.TabIndex = 4;
             // 
             // groupBoxPhanLop
@@ -133,9 +133,9 @@
             this.groupBoxPhanLop.Controls.Add(this.checkEditPhanLopHocSinhMoi);
             this.groupBoxPhanLop.Controls.Add(this.checkEditHocSinhChuaChuyen);
             this.groupBoxPhanLop.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBoxPhanLop.Location = new System.Drawing.Point(367, 105);
+            this.groupBoxPhanLop.Location = new System.Drawing.Point(368, 102);
             this.groupBoxPhanLop.Name = "groupBoxPhanLop";
-            this.groupBoxPhanLop.Size = new System.Drawing.Size(287, 82);
+            this.groupBoxPhanLop.Size = new System.Drawing.Size(283, 82);
             this.groupBoxPhanLop.TabIndex = 19;
             this.groupBoxPhanLop.TabStop = false;
             this.groupBoxPhanLop.Text = "Phân lớp";
@@ -175,9 +175,9 @@
             this.groupBoxChuyenLop.Controls.Add(this.checkEditChuyenBangDiem);
             this.groupBoxChuyenLop.Controls.Add(this.checkEditChuyenLop);
             this.groupBoxChuyenLop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxChuyenLop.Location = new System.Drawing.Point(367, 2);
+            this.groupBoxChuyenLop.Location = new System.Drawing.Point(368, 3);
             this.groupBoxChuyenLop.Name = "groupBoxChuyenLop";
-            this.groupBoxChuyenLop.Size = new System.Drawing.Size(287, 97);
+            this.groupBoxChuyenLop.Size = new System.Drawing.Size(283, 97);
             this.groupBoxChuyenLop.TabIndex = 18;
             this.groupBoxChuyenLop.TabStop = false;
             this.groupBoxChuyenLop.Text = "Chuyển lớp";
@@ -229,9 +229,9 @@
             this.groupControl2.Controls.Add(this.comboBoxEditNamHocMoi);
             this.groupControl2.Controls.Add(this.labelControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupControl2.Location = new System.Drawing.Point(654, 2);
+            this.groupControl2.Location = new System.Drawing.Point(651, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(347, 185);
+            this.groupControl2.Size = new System.Drawing.Size(347, 181);
             this.groupControl2.TabIndex = 14;
             this.groupControl2.Text = "Thông Tin Lớp Mới";
             // 
@@ -298,9 +298,9 @@
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.comboBoxEditNamHoc);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl1.Location = new System.Drawing.Point(2, 2);
+            this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(365, 185);
+            this.groupControl1.Size = new System.Drawing.Size(365, 181);
             this.groupControl1.TabIndex = 13;
             this.groupControl1.Text = "Thông Tin Lớp Cũ";
             // 

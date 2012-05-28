@@ -122,7 +122,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl2.Location = new System.Drawing.Point(0, 48);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(452, 379);
+            this.panelControl2.Size = new System.Drawing.Size(409, 379);
             this.panelControl2.TabIndex = 1;
             // 
             // labelControl13
@@ -142,20 +142,22 @@
             // 
             // simpleButtonDong
             // 
-            this.simpleButtonDong.Location = new System.Drawing.Point(199, 338);
+            this.simpleButtonDong.Image = global::QLHS.Properties.Resources.thoat_small;
+            this.simpleButtonDong.Location = new System.Drawing.Point(209, 329);
             this.simpleButtonDong.Name = "simpleButtonDong";
-            this.simpleButtonDong.Size = new System.Drawing.Size(90, 29);
+            this.simpleButtonDong.Size = new System.Drawing.Size(132, 38);
             this.simpleButtonDong.TabIndex = 10;
-            this.simpleButtonDong.Text = "Đóng";
+            this.simpleButtonDong.Text = "Đóng (Alt+&X)";
             this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
             // 
             // simpleButtonApDung
             // 
-            this.simpleButtonApDung.Location = new System.Drawing.Point(61, 338);
+            this.simpleButtonApDung.Image = global::QLHS.Properties.Resources.them_small;
+            this.simpleButtonApDung.Location = new System.Drawing.Point(40, 329);
             this.simpleButtonApDung.Name = "simpleButtonApDung";
-            this.simpleButtonApDung.Size = new System.Drawing.Size(90, 29);
+            this.simpleButtonApDung.Size = new System.Drawing.Size(132, 38);
             this.simpleButtonApDung.TabIndex = 9;
-            this.simpleButtonApDung.Text = "Áp dụng";
+            this.simpleButtonApDung.Text = "Áp dụng (Enter)";
             this.simpleButtonApDung.Click += new System.EventHandler(this.simpleButtonApDung_Click);
             // 
             // comboBoxEditNamHoc
@@ -369,7 +371,7 @@
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.richTextBox1.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.richTextBox1.Location = new System.Drawing.Point(452, 48);
+            this.richTextBox1.Location = new System.Drawing.Point(409, 48);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(424, 379);
@@ -379,6 +381,7 @@
             // 
             // frmQuyDinhDauNam
             // 
+            this.AcceptButton = this.simpleButtonApDung;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 427);

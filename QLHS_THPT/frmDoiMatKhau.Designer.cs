@@ -45,11 +45,12 @@
             // 
             // simpleButtonDoiMatKau
             // 
-            this.simpleButtonDoiMatKau.Location = new System.Drawing.Point(39, 196);
+            this.simpleButtonDoiMatKau.Image = global::QLHS.Properties.Resources.them_small;
+            this.simpleButtonDoiMatKau.Location = new System.Drawing.Point(33, 196);
             this.simpleButtonDoiMatKau.Name = "simpleButtonDoiMatKau";
-            this.simpleButtonDoiMatKau.Size = new System.Drawing.Size(108, 37);
+            this.simpleButtonDoiMatKau.Size = new System.Drawing.Size(138, 37);
             this.simpleButtonDoiMatKau.TabIndex = 7;
-            this.simpleButtonDoiMatKau.Text = "Đổi mật khẩu";
+            this.simpleButtonDoiMatKau.Text = "Đổi mật khẩu (Enter)";
             // 
             // textEditMatKhauCu
             // 
@@ -110,11 +111,12 @@
             // 
             // simpleButtonThoat
             // 
-            this.simpleButtonThoat.Location = new System.Drawing.Point(177, 196);
+            this.simpleButtonThoat.Image = global::QLHS.Properties.Resources.thoat_small;
+            this.simpleButtonThoat.Location = new System.Drawing.Point(189, 196);
             this.simpleButtonThoat.Name = "simpleButtonThoat";
-            this.simpleButtonThoat.Size = new System.Drawing.Size(108, 37);
+            this.simpleButtonThoat.Size = new System.Drawing.Size(124, 37);
             this.simpleButtonThoat.TabIndex = 8;
-            this.simpleButtonThoat.Text = "Thoát";
+            this.simpleButtonThoat.Text = "Thoát (Alt+&X)";
             // 
             // frmDoiMatKhau
             // 
