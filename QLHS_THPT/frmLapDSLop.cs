@@ -32,7 +32,13 @@ namespace QLHS
         {
             gridControlDSLop.DataSource = _lopBUS.LayDTLop_MaNam_MaKhoi(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc),
                                     Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi));
-            
+            if (gridViewLop.RowCount > 0)
+                gridViewLop_FocusedRowChanged(this, new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs(0, 0));
+            else
+            {
+                textEditMaLop.Text = "";
+                textEditTenLop.Text = "";
+            }
         }
 
         private void frmLapDSLop_Load(object sender, EventArgs e)
@@ -101,8 +107,6 @@ namespace QLHS
             }
             else
             {
-                // Hiển thị lại
-                gridViewDSLop.FocusedRowHandle = 0;
                 // Bỏ ẩn control
                 DisableControls(false);
             } 
@@ -111,7 +115,7 @@ namespace QLHS
         private void gridViewLop_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             // Chac chan chon duoc 1 dong nao do
-           if (gridViewLop.FocusedRowHandle < 0) return;
+           if (gridViewLop.FocusedRowHandle < 0 || gridViewLop.FocusedRowHandle >= gridViewLop.RowCount) return;
            textEditMaLop.Text = gridViewLop.GetRowCellValue(gridViewLop.FocusedRowHandle, "MaLop").ToString();
            textEditTenLop.Text = gridViewLop.GetRowCellValue(gridViewLop.FocusedRowHandle, "TenLop").ToString();
            Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditGVCN,
@@ -176,22 +180,31 @@ namespace QLHS
             }
             else
             {
-                if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Bạn có muốn xóa toàn bộ danh sách học sinh, "
-                                +"bảng điểm học sinh và toàn bộ thông tin liên quan đến lớp "+textEditTenLop.Text+" hay không?")
-                        == DialogResult.No)
+                if (_lopBUS.KiemTra_TonTaiMaLop(textEditMaLop.Text))
                 {
-                    return;
-                }
+                    if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Bạn có muốn xóa toàn bộ danh sách học sinh, "
+                                    + "bảng điểm học sinh và toàn bộ thông tin liên quan đến lớp " + textEditTenLop.Text + " hay không?")
+                            == DialogResult.No)
+                    {
+                        return;
+                    }
 
-               _lopBUS.Xoa_Lop(textEditMaLop.Text);
-                Utilities.MessageboxUtilities.MessageSuccess("Đã xóa lớp " + textEditTenLop.Text + " thành công!");
-                HienThi_DSLop();
+                    _lopBUS.Xoa_Lop(textEditMaLop.Text);
+                    Utilities.MessageboxUtilities.MessageSuccess("Đã xóa lớp " + textEditTenLop.Text + " thành công!");
+                    HienThi_DSLop();
+                }
             }
         }
 
         private void simpleButtonDong_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            // Hiển thị frmNamHoc
+            (this.ParentForm as frmMain).ShowMDIChildForm<frmNamHoc>();
         }
 
  

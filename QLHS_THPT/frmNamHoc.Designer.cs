@@ -87,11 +87,11 @@
             this.panelControl2.Size = new System.Drawing.Size(789, 73);
             this.panelControl2.TabIndex = 3;
             // 
-            // comboBoxEdit1
+            // comboBoxEditNamHoc
             // 
             this.comboBoxEdit1.Enabled = false;
             this.comboBoxEdit1.Location = new System.Drawing.Point(24, 32);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
+            this.comboBoxEdit1.Name = "comboBoxEditNamHoc";
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;

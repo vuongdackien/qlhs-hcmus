@@ -6,24 +6,14 @@ namespace QLHS.DTO
 {
     public class QuyDinhDTO
     {
-       	   
-	
-	private String _Khoa;
-
-	public String Khoa
-	{
-		get { return _Khoa;}
-		set { _Khoa = value;}
-	}
-	
-	private string _GiaTri;
-
-	public string GiaTri
-	{
-        get { return _GiaTri; }
-        set { _GiaTri = value; }
-	}
-	
-	
+        public string TenTruong { get; set; }
+        public string DiaChiTruong { get; set; }
+        public int SoLuongLop { get; set; }
+        public int SiSoCanTren { get; set; }
+        public int TuoiCanTren { get; set; }
+        public int TuoiCanDuoi { get; set; }
+        public double DiemChuan { get; set; }
+        public DateTime NgayApDung { get; set; }
+        public string MaNamHoc { get; set; }
     }
 }
