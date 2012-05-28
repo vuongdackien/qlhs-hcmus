@@ -517,7 +517,7 @@
             this.simpleButtonChuyenLaiTatCa.Name = "simpleButtonChuyenLaiTatCa";
             this.simpleButtonChuyenLaiTatCa.Size = new System.Drawing.Size(147, 35);
             this.simpleButtonChuyenLaiTatCa.TabIndex = 2;
-            this.simpleButtonChuyenLaiTatCa.Text = "Chuyển lại tất cải(Alt+&D)";
+            this.simpleButtonChuyenLaiTatCa.Text = "Chuyển lại tất cả(Alt+&D)";
             this.simpleButtonChuyenLaiTatCa.Click += new System.EventHandler(this.simpleButtonChuyenLaiTatCa_Click);
             // 
             // simpleButtonChuyenHet
@@ -527,7 +527,7 @@
             this.simpleButtonChuyenHet.Name = "simpleButtonChuyenHet";
             this.simpleButtonChuyenHet.Size = new System.Drawing.Size(147, 35);
             this.simpleButtonChuyenHet.TabIndex = 1;
-            this.simpleButtonChuyenHet.Text = "Phân lớp tất cải(Alt+&S)";
+            this.simpleButtonChuyenHet.Text = "Phân lớp tất cả(Alt+&S)";
             this.simpleButtonChuyenHet.Click += new System.EventHandler(this.simpleButtonChuyenHet_Click);
             // 
             // simpleButtonDong
