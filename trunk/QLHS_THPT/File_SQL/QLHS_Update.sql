@@ -1,38 +1,33 @@
-﻿use master
-GO
+﻿-------------- Khoi tao database
 if exists
 (
     select name from sysobjects
-    where name = 'TatTienTrinh' and type = 'p'
+    where name = 'Init_Database' and type = 'p'
 )
 begin
- drop proc TatTienTrinh
+ drop proc Init_Database
 end;
 GO
-create proc TatTienTrinh
-@dbname varchar(20)
+create proc Init_Database
 as
-DECLARE @spid varchar(10)
-SELECT @spid = spid
-FROM master.sys.sysprocesses
-WHERE dbid IN (DB_ID(@dbname))
-
-WHILE @@ROWCOUNT <> 0
 BEGIN
- EXEC('KILL ' + @spid)
+	DECLARE @Sql NVARCHAR(500) DECLARE @Cursor CURSOR
+	SET @Cursor = CURSOR FAST_FORWARD FOR
+	SELECT DISTINCT sql = 'ALTER TABLE [' + tc2.TABLE_NAME + '] DROP [' + rc1.CONSTRAINT_NAME + ']'
+	FROM INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS rc1
+	LEFT JOIN INFORMATION_SCHEMA.TABLE_CONSTRAINTS tc2 ON tc2.CONSTRAINT_NAME =rc1.CONSTRAINT_NAME
+	OPEN @Cursor FETCH NEXT FROM @Cursor INTO @Sql
+	WHILE (@@FETCH_STATUS = 0)
+	BEGIN
+	Exec SP_EXECUTESQL @Sql
+	FETCH NEXT FROM @Cursor INTO @Sql
+	END
+	CLOSE @Cursor DEALLOCATE @Cursor
+	EXEC sp_MSForEachTable 'DROP TABLE ?'
 END
-
 GO
-IF(db_id('QLHS') is NOT NULL)
-BEGIN
-	USE master
-	EXEC TatTienTrinh @dbname = 'QLHS'
-	DROP DATABASE QLHS
-END;
-GO
-CREATE DATABASE QLHS
-GO
-USE QLHS
+EXEC Init_Database
+------------------------------------------------------
 GO
 ----------------------------------------------------------
 --1. Create table and its columns
