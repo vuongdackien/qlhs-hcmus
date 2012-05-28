@@ -421,11 +421,9 @@ SELECT 3,	'HS00000030',	'12A01NH1112'
 INSERT INTO QUYDINH (Khoa,GiaTri)  
 SELECT 'DiaChiTruong',	'Q9 - TP.HCM'	UNION 
 SELECT 'DiemChuan',		'8'				UNION 
-SELECT 'SiSoCanDuoi',	'30'			UNION 
 SELECT 'SiSoCanTren',	'45'			UNION 
 SELECT 'SoLuongLop',	'20'			UNION 
 SELECT 'TenTruong',		N'THPT Nguyễn Huệ' UNION 
-SELECT 'SoMonHoc',		'15'			UNION 
 SELECT 'TuoiCanDuoi',	'15'			UNION 
 SELECT 'TuoiCanTren',	'18' UNION
 SELECT 'NgayApDung', '24-05-2012'

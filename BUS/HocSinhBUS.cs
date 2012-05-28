@@ -55,7 +55,7 @@ namespace QLHS.BUS
         public bool LuuHoSoHocSinh(HocSinhDTO hocsinh, string MaLop = null)
         {
             DateTime ngayAD_QD = _quyDinhBUS.LayNgayApDungQD() ;
-            int namCanDuoi = _quyDinhBUS.LayNamCanDuoi(), namCanTren = _quyDinhBUS.LayNamCanTren();
+            int namCanDuoi = _quyDinhBUS.LayNamTuoiCanDuoi(), namCanTren = _quyDinhBUS.LayNamTuoiCanTren();
             DateTime ngayNhapHoc;
             // Sửa hồ sơ học sinh
             if (_hocSinhDAL.KiemTraTonTai_MaHocSinh(hocsinh.MaHocSinh))

@@ -162,7 +162,7 @@ namespace QLHS.BUS
                 int siSo = _phanLopDAL.Dem_SiSo_Lop(lop.MaLop);
                 DataTable bdiemLop = _bangDiemDAL.LayBangDiem_MonHoc_Lop(lop.MaLop, MaMonHoc, MaHocKy);
                 // Tính toán số lượng đạt và tỉ lệ
-                double diemDat = _quyDinhBUS.LayDiemChuan();
+                double diemDat = _quyDinhBUS.LayDiemChuanDatMon();
                 int soLuongDat = 0;
                 double tiLe = 0;
                 // Chưa nhập đủ điểm
@@ -302,7 +302,7 @@ namespace QLHS.BUS
                     int siSo = _phanLopDAL.Dem_SiSo_Lop(lop.MaLop);
                     DataTable bdiemLop = _bangDiemDAL.LayBangDiem_MonHoc_Lop(lop.MaLop, monhoc.MaMonHoc, MaHocKy);
                     // Tính toán số lượng đạt và tỉ lệ
-                    double diemDat = _quyDinhBUS.LayDiemChuan();
+                    double diemDat = _quyDinhBUS.LayDiemChuanDatMon();
                     int soLuongDat = 0;
                     double tiLe = 0;
                     // Chưa nhập đủ điểm
