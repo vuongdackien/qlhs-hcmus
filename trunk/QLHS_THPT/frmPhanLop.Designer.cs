@@ -158,8 +158,8 @@
             // 
             this.checkEditHocSinhChuaChuyen.Location = new System.Drawing.Point(19, 51);
             this.checkEditHocSinhChuaChuyen.Name = "checkEditHocSinhChuaChuyen";
-            this.checkEditHocSinhChuaChuyen.Properties.Caption = "Sử dụng chức năng chuyển lại";
-            this.checkEditHocSinhChuaChuyen.Size = new System.Drawing.Size(231, 19);
+            this.checkEditHocSinhChuaChuyen.Properties.Caption = "Sử dụng chức năng chuyển lại, phân lớp tất cả";
+            this.checkEditHocSinhChuaChuyen.Size = new System.Drawing.Size(259, 19);
             this.checkEditHocSinhChuaChuyen.TabIndex = 16;
             this.checkEditHocSinhChuaChuyen.ToolTip = "Click vào checkbox này để có thể sử dụng chức năng chuyển lại học sinh khi bạn ph" +
                 "ân nhầm lớp học sinh";
@@ -513,55 +513,56 @@
             // simpleButtonChuyenLaiTatCa
             // 
             this.simpleButtonChuyenLaiTatCa.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonChuyenLaiTatCa.Location = new System.Drawing.Point(86, 193);
+            this.simpleButtonChuyenLaiTatCa.Location = new System.Drawing.Point(73, 187);
             this.simpleButtonChuyenLaiTatCa.Name = "simpleButtonChuyenLaiTatCa";
-            this.simpleButtonChuyenLaiTatCa.Size = new System.Drawing.Size(117, 35);
+            this.simpleButtonChuyenLaiTatCa.Size = new System.Drawing.Size(147, 35);
             this.simpleButtonChuyenLaiTatCa.TabIndex = 2;
-            this.simpleButtonChuyenLaiTatCa.Text = "Chuyển lại tất cả";
+            this.simpleButtonChuyenLaiTatCa.Text = "Chuyển lại tất cải(Alt+&D)";
             this.simpleButtonChuyenLaiTatCa.Click += new System.EventHandler(this.simpleButtonChuyenLaiTatCa_Click);
             // 
             // simpleButtonChuyenHet
             // 
             this.simpleButtonChuyenHet.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonChuyenHet.Location = new System.Drawing.Point(86, 141);
+            this.simpleButtonChuyenHet.Location = new System.Drawing.Point(73, 137);
             this.simpleButtonChuyenHet.Name = "simpleButtonChuyenHet";
-            this.simpleButtonChuyenHet.Size = new System.Drawing.Size(117, 35);
+            this.simpleButtonChuyenHet.Size = new System.Drawing.Size(147, 35);
             this.simpleButtonChuyenHet.TabIndex = 1;
-            this.simpleButtonChuyenHet.Text = "Phân lớp tất cả";
+            this.simpleButtonChuyenHet.Text = "Phân lớp tất cải(Alt+&S)";
             this.simpleButtonChuyenHet.Click += new System.EventHandler(this.simpleButtonChuyenHet_Click);
             // 
             // simpleButtonDong
             // 
             this.simpleButtonDong.Image = global::QLHS.Properties.Resources.thoat_small;
-            this.simpleButtonDong.Location = new System.Drawing.Point(86, 236);
+            this.simpleButtonDong.Location = new System.Drawing.Point(73, 237);
             this.simpleButtonDong.Name = "simpleButtonDong";
-            this.simpleButtonDong.Size = new System.Drawing.Size(117, 35);
+            this.simpleButtonDong.Size = new System.Drawing.Size(147, 35);
             this.simpleButtonDong.TabIndex = 0;
-            this.simpleButtonDong.Text = "Đóng";
+            this.simpleButtonDong.Text = "Đóng(Alt+&X)";
             this.simpleButtonDong.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // simpleButtonChuyenLai
             // 
             this.simpleButtonChuyenLai.Image = global::QLHS.Properties.Resources.chuyen_lop;
-            this.simpleButtonChuyenLai.Location = new System.Drawing.Point(86, 87);
+            this.simpleButtonChuyenLai.Location = new System.Drawing.Point(73, 87);
             this.simpleButtonChuyenLai.Name = "simpleButtonChuyenLai";
-            this.simpleButtonChuyenLai.Size = new System.Drawing.Size(117, 35);
+            this.simpleButtonChuyenLai.Size = new System.Drawing.Size(147, 35);
             this.simpleButtonChuyenLai.TabIndex = 0;
-            this.simpleButtonChuyenLai.Text = "Chuyển lại";
+            this.simpleButtonChuyenLai.Text = "Chuyển lại(Alt+&B)";
             this.simpleButtonChuyenLai.Click += new System.EventHandler(this.simpleButtonChuyenLai_Click);
             // 
             // simpleButtonChuyenLop
             // 
             this.simpleButtonChuyenLop.Image = global::QLHS.Properties.Resources.chuyen_loplai;
-            this.simpleButtonChuyenLop.Location = new System.Drawing.Point(86, 35);
+            this.simpleButtonChuyenLop.Location = new System.Drawing.Point(73, 36);
             this.simpleButtonChuyenLop.Name = "simpleButtonChuyenLop";
-            this.simpleButtonChuyenLop.Size = new System.Drawing.Size(117, 35);
+            this.simpleButtonChuyenLop.Size = new System.Drawing.Size(147, 35);
             this.simpleButtonChuyenLop.TabIndex = 0;
-            this.simpleButtonChuyenLop.Text = "Phân lớp";
+            this.simpleButtonChuyenLop.Text = "Phân lớp (Enter)";
             this.simpleButtonChuyenLop.Click += new System.EventHandler(this.simpleButtonChuyenLop_Click);
             // 
             // frmPhanLop
             // 
+            this.AcceptButton = this.simpleButtonChuyenLop;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1007, 476);
