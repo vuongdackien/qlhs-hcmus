@@ -118,14 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>- Tên đồ án: Quản lý học sinh THPT
+    <value>- Môn học: Nhập môn công nghệ phần mềm
+- Tên đồ án: Quản lý học sinh THPT
 - Lớp: 11HCB - HCMUS
 - GVHD: Thầy Ngô Bá Nam Phương
+
 - SV thực hiện:
-  1. Nguyễn Hồng Phú (Trưởng nhóm)
-  2. Nguyễn Thị Mỷ Diện
-  3. Nguyễn Văn Đại
-  4. Nguyễn Duy Hà
+  1. Nguyễn Hồng Phú (1142066) - Nhóm trưởng
+  2. Nguyễn Thị Mỷ Diện (1142014)
+  3. Nguyễn Văn Đại 
+  4. Nguyễn Duy Hà (1142025)
 
 - Thời gian thực hiện: 8/4/2012 - 6/6/2012
 - Sử dụng Google SVN: http://code.google.com/p/qlhs-hcmus</value>
