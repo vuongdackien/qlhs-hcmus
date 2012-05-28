@@ -157,8 +157,6 @@ namespace QLHS
             
         }
 
-       
-       
         private void gridViewGiaoVien_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             for (int i = 0; i < gridViewGiaoVien.RowCount; )
@@ -179,12 +177,16 @@ namespace QLHS
             GridcontrolGiaoVien.DataSource = dt;
         }
 
-
-        private void simpleButtonhuy_Click_1(object sender, EventArgs e)
+        private void simpleButtonhuy_Click(object sender, EventArgs e)
         {
             KhoiTaoTrangthai();
+            textEditMaGiaoVien.Text = "";
+            textEditTenGiaoVien.Text = "";
             flag = 0;
         }
+
+
+   
 
      
 
