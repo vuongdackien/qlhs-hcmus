@@ -9,46 +9,39 @@ namespace QLHS.BUS
 {
     public class QuyDinhBUS
     {
-        QuyDinhDAL _QuyDinhDAL;
+        private QuyDinhDAL _quyDinhDAL;
+
         public QuyDinhBUS()
         {
-            _QuyDinhDAL = new QuyDinhDAL();
+            _quyDinhDAL = new QuyDinhDAL();
         }
       
-        ///<Lấy bảng quy định>
-        ///Lấy bảng quy định
-        ///</summary>
-        public DataTable Table_QuyDinh()
+        /// <summary>
+        /// Lấy danh sách quy định
+        /// </summary>
+        /// <returns></returns>
+        public QuyDinhDTO LayDS_QuyDinh()
         {
-            return _QuyDinhDAL.Dt_QuyDinh();
+            return _quyDinhDAL.LayDS_QuyDinh();
         }
-        public string Doichuoi(string input, string oldValue, string newValue, bool matchCase)
+
+        /// <summary>
+        /// Cập nhật quy định
+        /// </summary>
+        /// <param name="quyDinhDTO">QuyDinhDTO</param>
+        /// <returns></returns>
+        public bool CapNhatQuyDinh(QuyDinhDTO quyDinhDTO)
         {
-
-            RegexOptions regexOption = RegexOptions.None;
-            if (!matchCase)
-            {
-                regexOption = RegexOptions.IgnoreCase;
-            }
-
-            Regex regex = new Regex(oldValue, regexOption);
-
-            input = regex.Replace(input, newValue);
-
-            return input;
-
+            return _quyDinhDAL.SuaQuyDinh(quyDinhDTO);
         }
-        public void capnhat(QuyDinhDTO QDDTO)
-        {
-            _QuyDinhDAL.SuaQuyDinh(QDDTO);
-        }
+
         /// <summary>
         /// Lấy tuổi cận dưới
         /// </summary>
         /// <returns>Int</returns>
         public int LayTuoiCanDuoi()
         {
-            return Convert.ToInt32(_QuyDinhDAL.LayGiaTri("TuoiCanDuoi"));
+            return Convert.ToInt32(_quyDinhDAL.LayGiaTri("TuoiCanDuoi"));
         }
         /// <summary>
         /// Lấy tuổi cận trên
@@ -56,7 +49,7 @@ namespace QLHS.BUS
         /// <returns>Int</returns>
         public int LayTuoiCanTren()
         {
-            return Convert.ToInt32(_QuyDinhDAL.LayGiaTri("TuoiCanTren"));
+            return Convert.ToInt32(_quyDinhDAL.LayGiaTri("TuoiCanTren"));
         }
         /// <summary>
         /// Lấy năm tuổi cận dưới
@@ -74,14 +67,21 @@ namespace QLHS.BUS
         {
             return DateTime.Now.Year - this.LayTuoiCanDuoi();
         }
-       
+        /// <summary>
+        /// Lấy mã năm học hiện tại
+        /// </summary>
+        /// <returns>String: mã năm</returns>
+        public string LayMaNamHoc_HienTai()
+        {
+            return Convert.ToString(_quyDinhDAL.LayGiaTri("MaNamHocHT"));
+        }
         /// <summary>
         /// Lấy sỉ số cận dưới
         /// </summary>
         /// <returns>Int</returns>
         public int LaySiSoCanDuoi()
         {
-            return (int)_QuyDinhDAL.LayGiaTri("SiSoCanDuoi");
+            return Convert.ToInt32(_quyDinhDAL.LayGiaTri("SiSoCanDuoi"));
         }
         /// <summary>
         /// Lấy sỉ số cận trên
@@ -89,7 +89,7 @@ namespace QLHS.BUS
         /// <returns>Int</returns>
         public int LaySiSoCanTren()
         {
-            return Convert.ToInt32(_QuyDinhDAL.LayGiaTri("SiSoCanTren"));
+            return Convert.ToInt32(_quyDinhDAL.LayGiaTri("SiSoCanTren"));
         }
         /// <summary>
         /// Lấy điểm chuẩn
@@ -97,11 +97,15 @@ namespace QLHS.BUS
         /// <returns>Double</returns>
         public double LayDiemChuan()
         {
-            return Convert.ToDouble(_QuyDinhDAL.LayGiaTri("DiemChuan"));
+            return Convert.ToDouble(_quyDinhDAL.LayGiaTri("DiemChuan"));
         }
+        /// <summary>
+        /// Lấy ngày áp dụng
+        /// </summary>
+        /// <returns></returns>
         public DateTime LayNgayApDungQD()
         {
-            string ngayQD = _QuyDinhDAL.LayGiaTri("NgayApDung").ToString();
+            string ngayQD = _quyDinhDAL.LayGiaTri("NgayApDung").ToString();
             return DateTime.ParseExact(ngayQD, "dd-MM-yyyy", null);
         }
       

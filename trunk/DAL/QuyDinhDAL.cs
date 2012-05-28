@@ -18,18 +18,60 @@ namespace QLHS.DAL
             string sql = "SELECT giatri FROM QUYDINH WHERE khoa = '"+khoa+"'";
             return ExecuteScalar(sql);
         }
-        public  void SuaQuyDinh(QuyDinhDTO QD)
+        /// <summary>
+        /// Sửa quy định
+        /// </summary>
+        /// <param name="quyDinhDTO">QuyDinhDTO</param>
+        /// <returns></returns>
+        public bool SuaQuyDinh(QuyDinhDTO quyDinhDTO)
         {
-             string sql = string.Format("update QuyDinh set GiaTri=N'{0}'"
-                                                                       + "where Khoa='{1}' ", QD.GiaTri,QD.Khoa);
-            ExecuteQuery(sql);
+            string sql = string.Format("UPDATE QUYDINH SET GiaTri= N'{0}' WHERE Khoa = 'DiaChiTruong'\n",
+                                                                            quyDinhDTO.DiaChiTruong);
+            sql += string.Format("UPDATE QUYDINH SET GiaTri= N'{0}' WHERE Khoa = 'MaNamHocHT'\n",
+                                                                           quyDinhDTO.MaNamHoc);
+            sql += string.Format("UPDATE QUYDINH SET GiaTri= N'{0}' WHERE Khoa = 'DiemChuan'\n",
+                                                                            quyDinhDTO.DiemChuan);
+            sql += string.Format("UPDATE QUYDINH SET GiaTri= N'{0:dd-MM-yyyy}' WHERE Khoa = 'NgayApDung'\n",
+                                                                            quyDinhDTO.NgayApDung);
+            sql += string.Format("UPDATE QUYDINH SET GiaTri= N'{0}' WHERE Khoa = 'SiSoCanTren'\n",
+                                                                            quyDinhDTO.SiSoCanTren);
+            sql += string.Format("UPDATE QUYDINH SET GiaTri= N'{0}' WHERE Khoa = 'SoLuongLop'\n",
+                                                                            quyDinhDTO.SoLuongLop);
+            sql += string.Format("UPDATE QUYDINH SET GiaTri= N'{0}' WHERE Khoa = 'TenTruong'\n",
+                                                                            quyDinhDTO.TenTruong);
+            sql += string.Format("UPDATE QUYDINH SET GiaTri= N'{0}' WHERE Khoa = 'TuoiCanDuoi'\n",
+                                                                            quyDinhDTO.TuoiCanDuoi);
+            sql += string.Format("UPDATE QUYDINH SET GiaTri= N'{0}' WHERE Khoa = 'TuoiCanTren'\n",
+                                                                            quyDinhDTO.TuoiCanTren);
+            return ExecuteQuery(sql) > 0;
         }
-        public DataTable Dt_QuyDinh()
+        /// <summary>
+        /// Lấy danh sách quy định
+        /// </summary>
+        /// <returns></returns>
+        public QuyDinhDTO LayDS_QuyDinh()
         {
-            string sql = "select * from QuyDinh";
-            DataTable Dt = new DataTable();
-            Dt= GetTable(sql, true);
-            return Dt;
+            string sql = "SELECT Khoa, GiaTri FROM QuyDinh";
+            OpenConnect();
+            var dr = ExecuteReader(sql);
+            QuyDinhDTO quyDinh = new QuyDinhDTO();
+            while (dr.Read())
+            {
+                switch (Convert.ToString(dr["Khoa"]))
+                {
+                    case "MaNamHocHT": quyDinh.MaNamHoc = Convert.ToString(dr["GiaTri"]); break;
+                    case "DiaChiTruong": quyDinh.DiaChiTruong = Convert.ToString(dr["GiaTri"]); break;
+                    case "DiemChuan": quyDinh.DiemChuan = Convert.ToDouble(dr["GiaTri"]); break;
+                    case "NgayApDung": quyDinh.NgayApDung = Convert.ToDateTime(dr["GiaTri"]); break;
+                    case "SiSoCanTren": quyDinh.SiSoCanTren =  Convert.ToInt32(dr["GiaTri"]); break;
+                    case "SoLuongLop": quyDinh.SoLuongLop = Convert.ToInt32(dr["GiaTri"]); break;
+                    case "TenTruong": quyDinh.TenTruong =  Convert.ToString(dr["GiaTri"]); break;
+                    case "TuoiCanDuoi": quyDinh.TuoiCanDuoi = Convert.ToInt32(dr["GiaTri"]); break;
+                    case "TuoiCanTren": quyDinh.TuoiCanTren = Convert.ToInt32(dr["GiaTri"]); break;
+                }
+            }
+            CloseConnect();
+            return quyDinh;
         }
     }
 }

@@ -38,6 +38,7 @@
             this.labelControlChonHocKy = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEditKhoi = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControlLeft = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.labelControlTitle = new DevExpress.XtraEditors.LabelControl();
             this.panelControlTop = new DevExpress.XtraEditors.PanelControl();
             this.panelControlDKLop = new DevExpress.XtraEditors.PanelControl();
@@ -57,8 +58,6 @@
             this.repositoryItemComboBox = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.repositoryItemTextEdit = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
-            this.gridViewDSLop = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditNamHoc.Properties)).BeginInit();
@@ -77,7 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewDSLop)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -185,6 +183,15 @@
             this.panelControlLeft.Name = "panelControlLeft";
             this.panelControlLeft.Size = new System.Drawing.Size(180, 337);
             this.panelControlLeft.TabIndex = 4;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Image = global::QLHS.Properties.Resources.them;
+            this.simpleButton1.Location = new System.Drawing.Point(148, 24);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(24, 20);
+            this.simpleButton1.TabIndex = 6;
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // labelControlTitle
             // 
@@ -382,22 +389,6 @@
             this.repositoryItemGridLookUpEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemGridLookUpEdit1.Name = "repositoryItemGridLookUpEdit1";
-            this.repositoryItemGridLookUpEdit1.View = this.gridViewDSLop;
-            // 
-            // gridViewDSLop
-            // 
-            this.gridViewDSLop.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridViewDSLop.Name = "gridViewDSLop";
-            this.gridViewDSLop.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridViewDSLop.OptionsView.ShowGroupPanel = false;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Image = global::QLHS.Properties.Resources.them;
-            this.simpleButton1.Location = new System.Drawing.Point(148, 24);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(24, 20);
-            this.simpleButton1.TabIndex = 6;
             // 
             // frmLapDSLop
             // 
@@ -433,7 +424,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewDSLop)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -469,7 +459,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewDSLop;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
