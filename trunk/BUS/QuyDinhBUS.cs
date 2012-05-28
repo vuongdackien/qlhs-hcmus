@@ -55,7 +55,7 @@ namespace QLHS.BUS
         /// Lấy năm tuổi cận dưới
         /// </summary>
         /// <returns>Int: Năm</returns>
-        public int LayNamCanDuoi()
+        public int LayNamTuoiCanDuoi()
         {
             return DateTime.Now.Year - this.LayTuoiCanTren();
         }
@@ -63,7 +63,7 @@ namespace QLHS.BUS
         /// Lấy năm tuổi cận trên
         /// </summary>
         /// <returns>Int: Năm</returns>
-        public int LayNamCanTren()
+        public int LayNamTuoiCanTren()
         {
             return DateTime.Now.Year - this.LayTuoiCanDuoi();
         }
@@ -74,14 +74,6 @@ namespace QLHS.BUS
         public string LayMaNamHoc_HienTai()
         {
             return Convert.ToString(_quyDinhDAL.LayGiaTri("MaNamHocHT"));
-        }
-        /// <summary>
-        /// Lấy sỉ số cận dưới
-        /// </summary>
-        /// <returns>Int</returns>
-        public int LaySiSoCanDuoi()
-        {
-            return Convert.ToInt32(_quyDinhDAL.LayGiaTri("SiSoCanDuoi"));
         }
         /// <summary>
         /// Lấy sỉ số cận trên
@@ -95,7 +87,7 @@ namespace QLHS.BUS
         /// Lấy điểm chuẩn
         /// </summary>
         /// <returns>Double</returns>
-        public double LayDiemChuan()
+        public double LayDiemChuanDatMon()
         {
             return Convert.ToDouble(_quyDinhDAL.LayGiaTri("DiemChuan"));
         }
