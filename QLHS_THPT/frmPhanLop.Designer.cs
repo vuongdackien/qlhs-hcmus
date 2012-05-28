@@ -158,12 +158,11 @@
             // 
             this.checkEditHocSinhChuaChuyen.Location = new System.Drawing.Point(19, 51);
             this.checkEditHocSinhChuaChuyen.Name = "checkEditHocSinhChuaChuyen";
-            this.checkEditHocSinhChuaChuyen.Properties.Caption = "Học sinh chưa phân lớp, đã được phân lớp";
+            this.checkEditHocSinhChuaChuyen.Properties.Caption = "Sử dụng chức năng chuyển lại";
             this.checkEditHocSinhChuaChuyen.Size = new System.Drawing.Size(231, 19);
             this.checkEditHocSinhChuaChuyen.TabIndex = 16;
-            this.checkEditHocSinhChuaChuyen.ToolTip = "Click vào checkbox này để biết những học sinh chưa phân lớp bên gird trái, và nhữ" +
-                "ng học sinh đã được phân lớp hiển thị grid phải, và bật chức năng phân lớp tất c" +
-                "ả";
+            this.checkEditHocSinhChuaChuyen.ToolTip = "Click vào checkbox này để có thể sử dụng chức năng chuyển lại học sinh khi bạn ph" +
+                "ân nhầm lớp học sinh";
             this.checkEditHocSinhChuaChuyen.ToolTipController = this.toolTipController1;
             this.checkEditHocSinhChuaChuyen.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.checkEditHocSinhChuaChuyen.ToolTipTitle = "Hướng dẫ";

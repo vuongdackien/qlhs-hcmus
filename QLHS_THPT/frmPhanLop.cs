@@ -381,10 +381,14 @@ namespace QLHS
         private void gridViewDSHocSinhMoi_MouseEnter(object sender, EventArgs e)
         {
             simpleButtonChuyenLop.Enabled = false;
-            simpleButtonChuyenLai.Enabled = true;
             if (checkEditHocSinhChuaChuyen.Checked == true)
             {
+                simpleButtonChuyenLai.Enabled = true;
                 simpleButtonChuyenLaiTatCa.Enabled = true;
+            }
+            if (checkEditChuyenLop.Checked == true)
+            {
+                simpleButtonChuyenLai.Enabled = true;
             }
             hienThi_Button();
         }
@@ -396,9 +400,13 @@ namespace QLHS
                 simpleButtonChuyenHet.Enabled = false;
                 if (gridViewDSHocSinhMoi.RowCount > 0)
                 {
-                    simpleButtonChuyenLai.Enabled = true;
+                    if (checkEditChuyenLop.Checked == true)
+                    {
+                        simpleButtonChuyenLai.Enabled = true;
+                    }
                     if (checkEditHocSinhChuaChuyen.Checked == true)
                     {
+                        simpleButtonChuyenLai.Enabled = true;
                         simpleButtonChuyenLaiTatCa.Enabled = true;
                     }
                 }
@@ -468,6 +476,7 @@ namespace QLHS
             {
                 simpleButtonChuyenHet.Enabled = false;
                 simpleButtonChuyenLaiTatCa.Enabled = false;
+                simpleButtonChuyenLai.Enabled = false;
             }
         }
 
