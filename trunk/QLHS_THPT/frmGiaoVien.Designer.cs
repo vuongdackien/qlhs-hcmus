@@ -29,81 +29,166 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGiaoVien));
+            this.simpleButtonXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonThem = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControlTitle = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.GridcontrolGiaoVien = new DevExpress.XtraGrid.GridControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.textEditMaGiaoVien = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.textEditTenGiaoVien = new DevExpress.XtraEditors.TextEdit();
+            this.gridcontrolGiaoVien = new DevExpress.XtraGrid.GridControl();
             this.gridViewGiaoVien = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MaGiaoVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.TenGiaoVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.simpleButtonhuy = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textEditTenGiaoVien = new DevExpress.XtraEditors.TextEdit();
-            this.textEditMaGiaoVien = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButtonXoaGiaovien = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButonSuagiaovien = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonThemGiaoVien = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonLuuGiaoVien = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.simpleButtonLoadlaidulieu = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridcontrolGiaoVien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewGiaoVien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditTenGiaoVien.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditMaGiaoVien.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditMaGiaoVien.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditTenGiaoVien.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridcontrolGiaoVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewGiaoVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // simpleButtonXoa
+            // 
+            this.simpleButtonXoa.Image = global::QLHS.Properties.Resources.xoa_small;
+            this.simpleButtonXoa.Location = new System.Drawing.Point(324, 16);
+            this.simpleButtonXoa.Name = "simpleButtonXoa";
+            this.simpleButtonXoa.Size = new System.Drawing.Size(104, 35);
+            this.simpleButtonXoa.TabIndex = 6;
+            this.simpleButtonXoa.Text = "Xóa (Alt+&D)";
+            this.simpleButtonXoa.Click += new System.EventHandler(this.simpleButtonXoaGiaovien_Click);
+            // 
+            // simpleButtonThem
+            // 
+            this.simpleButtonThem.Image = global::QLHS.Properties.Resources.them;
+            this.simpleButtonThem.Location = new System.Drawing.Point(23, 16);
+            this.simpleButtonThem.Name = "simpleButtonThem";
+            this.simpleButtonThem.Size = new System.Drawing.Size(135, 35);
+            this.simpleButtonThem.TabIndex = 4;
+            this.simpleButtonThem.Text = "Thêm mới (Alt+&N)";
+            this.simpleButtonThem.Click += new System.EventHandler(this.simpleButtonThemGiaoVien_Click);
+            // 
+            // simpleButtonLuu
+            // 
+            this.simpleButtonLuu.Image = global::QLHS.Properties.Resources.them_small;
+            this.simpleButtonLuu.Location = new System.Drawing.Point(187, 16);
+            this.simpleButtonLuu.Name = "simpleButtonLuu";
+            this.simpleButtonLuu.Size = new System.Drawing.Size(111, 35);
+            this.simpleButtonLuu.TabIndex = 5;
+            this.simpleButtonLuu.Text = "Lưu (Enter)";
+            this.simpleButtonLuu.Click += new System.EventHandler(this.simpleButtonLuuGiaoVien_Click);
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Controls.Add(this.labelControlTitle);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(784, 48);
+            this.panelControl1.TabIndex = 9;
+            // 
+            // labelControlTitle
+            // 
+            this.labelControlTitle.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControlTitle.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.labelControlTitle.Location = new System.Drawing.Point(23, 12);
+            this.labelControlTitle.Name = "labelControlTitle";
+            this.labelControlTitle.Size = new System.Drawing.Size(176, 23);
+            this.labelControlTitle.TabIndex = 20;
+            this.labelControlTitle.Text = "HỒ SƠ GIÁO VIÊN";
+            // 
+            // simpleButtonDong
+            // 
+            this.simpleButtonDong.Image = global::QLHS.Properties.Resources.thoat_small;
+            this.simpleButtonDong.Location = new System.Drawing.Point(455, 16);
+            this.simpleButtonDong.Name = "simpleButtonDong";
+            this.simpleButtonDong.Size = new System.Drawing.Size(104, 35);
+            this.simpleButtonDong.TabIndex = 7;
+            this.simpleButtonDong.Text = "Đóng (Alt+&X)";
+            this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonThoat_Click);
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.simpleButtonLuu);
+            this.panelControl2.Controls.Add(this.simpleButtonXoa);
+            this.panelControl2.Controls.Add(this.simpleButtonDong);
+            this.panelControl2.Controls.Add(this.simpleButtonThem);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl2.Location = new System.Drawing.Point(0, 524);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(784, 65);
+            this.panelControl2.TabIndex = 10;
             // 
             // panelControl3
             // 
-            this.panelControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl3.Controls.Add(this.labelControl4);
-            this.panelControl3.Controls.Add(this.GridcontrolGiaoVien);
-            this.panelControl3.Location = new System.Drawing.Point(0, 0);
+            this.panelControl3.Controls.Add(this.labelControl3);
+            this.panelControl3.Controls.Add(this.textEditMaGiaoVien);
+            this.panelControl3.Controls.Add(this.labelControl2);
+            this.panelControl3.Controls.Add(this.textEditTenGiaoVien);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl3.Location = new System.Drawing.Point(0, 48);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(368, 508);
-            this.panelControl3.TabIndex = 1;
+            this.panelControl3.Size = new System.Drawing.Size(784, 110);
+            this.panelControl3.TabIndex = 11;
             // 
-            // labelControl4
+            // labelControl3
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Blue;
-            this.labelControl4.Location = new System.Drawing.Point(43, 34);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(258, 26);
-            this.labelControl4.TabIndex = 10;
-            this.labelControl4.Text = "Bảng danh sách giáo viên";
+            this.labelControl3.Location = new System.Drawing.Point(23, 51);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(68, 13);
+            this.labelControl3.TabIndex = 17;
+            this.labelControl3.Text = "Tên giáo viên:";
             // 
-            // GridcontrolGiaoVien
+            // textEditMaGiaoVien
             // 
-            this.GridcontrolGiaoVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.GridcontrolGiaoVien.Location = new System.Drawing.Point(0, 113);
-            this.GridcontrolGiaoVien.MainView = this.gridViewGiaoVien;
-            this.GridcontrolGiaoVien.Name = "GridcontrolGiaoVien";
-            this.GridcontrolGiaoVien.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.textEditMaGiaoVien.Enabled = false;
+            this.textEditMaGiaoVien.Location = new System.Drawing.Point(23, 25);
+            this.textEditMaGiaoVien.Name = "textEditMaGiaoVien";
+            this.textEditMaGiaoVien.Size = new System.Drawing.Size(147, 20);
+            this.textEditMaGiaoVien.TabIndex = 1;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(23, 6);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(64, 13);
+            this.labelControl2.TabIndex = 16;
+            this.labelControl2.Text = "Mã giáo viên:";
+            // 
+            // textEditTenGiaoVien
+            // 
+            this.textEditTenGiaoVien.Location = new System.Drawing.Point(23, 70);
+            this.textEditTenGiaoVien.Name = "textEditTenGiaoVien";
+            this.textEditTenGiaoVien.Size = new System.Drawing.Size(147, 20);
+            this.textEditTenGiaoVien.TabIndex = 2;
+            // 
+            // gridcontrolGiaoVien
+            // 
+            this.gridcontrolGiaoVien.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gridcontrolGiaoVien.Location = new System.Drawing.Point(0, 158);
+            this.gridcontrolGiaoVien.MainView = this.gridViewGiaoVien;
+            this.gridcontrolGiaoVien.Name = "gridcontrolGiaoVien";
+            this.gridcontrolGiaoVien.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
             this.repositoryItemTextEdit1});
-            this.GridcontrolGiaoVien.Size = new System.Drawing.Size(363, 390);
-            this.GridcontrolGiaoVien.TabIndex = 8;
-            this.GridcontrolGiaoVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridcontrolGiaoVien.Size = new System.Drawing.Size(363, 366);
+            this.gridcontrolGiaoVien.TabIndex = 3;
+            this.gridcontrolGiaoVien.TabStop = false;
+            this.gridcontrolGiaoVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewGiaoVien});
             // 
             // gridViewGiaoVien
@@ -111,7 +196,7 @@
             this.gridViewGiaoVien.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.MaGiaoVien,
             this.TenGiaoVien});
-            this.gridViewGiaoVien.GridControl = this.GridcontrolGiaoVien;
+            this.gridViewGiaoVien.GridControl = this.gridcontrolGiaoVien;
             this.gridViewGiaoVien.Name = "gridViewGiaoVien";
             this.gridViewGiaoVien.OptionsView.ShowGroupPanel = false;
             this.gridViewGiaoVien.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewGiaoVien_FocusedRowChanged);
@@ -123,6 +208,7 @@
             this.MaGiaoVien.FieldName = "MaGiaoVien";
             this.MaGiaoVien.MinWidth = 10;
             this.MaGiaoVien.Name = "MaGiaoVien";
+            this.MaGiaoVien.OptionsColumn.AllowEdit = false;
             this.MaGiaoVien.OptionsColumn.ReadOnly = true;
             this.MaGiaoVien.Visible = true;
             this.MaGiaoVien.VisibleIndex = 0;
@@ -140,6 +226,7 @@
             this.TenGiaoVien.FieldName = "TenGiaoVien";
             this.TenGiaoVien.MinWidth = 25;
             this.TenGiaoVien.Name = "TenGiaoVien";
+            this.TenGiaoVien.OptionsColumn.AllowEdit = false;
             this.TenGiaoVien.OptionsColumn.ReadOnly = true;
             this.TenGiaoVien.Visible = true;
             this.TenGiaoVien.VisibleIndex = 1;
@@ -152,217 +239,75 @@
             this.repositoryItemCheckEdit1.DisplayValueUnchecked = "0";
             this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
-            // simpleButtonhuy
+            // richTextBox1
             // 
-            this.simpleButtonhuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButtonhuy.Image = global::QLHS.Properties.Resources.huy;
-            this.simpleButtonhuy.Location = new System.Drawing.Point(344, 28);
-            this.simpleButtonhuy.Name = "simpleButtonhuy";
-            this.simpleButtonhuy.Size = new System.Drawing.Size(104, 35);
-            this.simpleButtonhuy.TabIndex = 5;
-            this.simpleButtonhuy.Text = "Hủy thao tác";
-            this.simpleButtonhuy.Click += new System.EventHandler(this.simpleButtonhuy_Click);
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(46, 154);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(68, 13);
-            this.labelControl3.TabIndex = 13;
-            this.labelControl3.Text = "Tên giáo viên:";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(46, 110);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(64, 13);
-            this.labelControl2.TabIndex = 12;
-            this.labelControl2.Text = "Mã giáo viên:";
-            // 
-            // textEditTenGiaoVien
-            // 
-            this.textEditTenGiaoVien.Location = new System.Drawing.Point(135, 147);
-            this.textEditTenGiaoVien.Name = "textEditTenGiaoVien";
-            this.textEditTenGiaoVien.Size = new System.Drawing.Size(147, 20);
-            this.textEditTenGiaoVien.TabIndex = 11;
-            // 
-            // textEditMaGiaoVien
-            // 
-            this.textEditMaGiaoVien.Location = new System.Drawing.Point(135, 103);
-            this.textEditMaGiaoVien.Name = "textEditMaGiaoVien";
-            this.textEditMaGiaoVien.Size = new System.Drawing.Size(147, 20);
-            this.textEditMaGiaoVien.TabIndex = 10;
-            // 
-            // simpleButtonXoaGiaovien
-            // 
-            this.simpleButtonXoaGiaovien.Image = global::QLHS.Properties.Resources.xoa_small;
-            this.simpleButtonXoaGiaovien.Location = new System.Drawing.Point(238, 209);
-            this.simpleButtonXoaGiaovien.Name = "simpleButtonXoaGiaovien";
-            this.simpleButtonXoaGiaovien.Size = new System.Drawing.Size(104, 35);
-            this.simpleButtonXoaGiaovien.TabIndex = 2;
-            this.simpleButtonXoaGiaovien.Text = "Xóa giáo viên";
-            this.simpleButtonXoaGiaovien.Click += new System.EventHandler(this.simpleButtonXoaGiaovien_Click);
-            // 
-            // simpleButonSuagiaovien
-            // 
-            this.simpleButonSuagiaovien.Image = ((System.Drawing.Image)(resources.GetObject("simpleButonSuagiaovien.Image")));
-            this.simpleButonSuagiaovien.Location = new System.Drawing.Point(238, 278);
-            this.simpleButonSuagiaovien.Name = "simpleButonSuagiaovien";
-            this.simpleButonSuagiaovien.Size = new System.Drawing.Size(104, 35);
-            this.simpleButonSuagiaovien.TabIndex = 3;
-            this.simpleButonSuagiaovien.Text = "Sửa giáo viên";
-            this.simpleButonSuagiaovien.Click += new System.EventHandler(this.simpleButonSuagiaovien_Click);
-            // 
-            // simpleButtonThemGiaoVien
-            // 
-            this.simpleButtonThemGiaoVien.Image = global::QLHS.Properties.Resources.them;
-            this.simpleButtonThemGiaoVien.Location = new System.Drawing.Point(46, 209);
-            this.simpleButtonThemGiaoVien.Name = "simpleButtonThemGiaoVien";
-            this.simpleButtonThemGiaoVien.Size = new System.Drawing.Size(104, 35);
-            this.simpleButtonThemGiaoVien.TabIndex = 1;
-            this.simpleButtonThemGiaoVien.Text = "Thêm giáo viên";
-            this.simpleButtonThemGiaoVien.Click += new System.EventHandler(this.simpleButtonThemGiaoVien_Click);
-            // 
-            // simpleButtonLuuGiaoVien
-            // 
-            this.simpleButtonLuuGiaoVien.Image = global::QLHS.Properties.Resources.them_small;
-            this.simpleButtonLuuGiaoVien.Location = new System.Drawing.Point(46, 278);
-            this.simpleButtonLuuGiaoVien.Name = "simpleButtonLuuGiaoVien";
-            this.simpleButtonLuuGiaoVien.Size = new System.Drawing.Size(104, 35);
-            this.simpleButtonLuuGiaoVien.TabIndex = 4;
-            this.simpleButtonLuuGiaoVien.Text = "Lưu";
-            this.simpleButtonLuuGiaoVien.ToolTip = "Lưu kết quả của các hành động thêm, sửa giáo viên";
-            this.simpleButtonLuuGiaoVien.Click += new System.EventHandler(this.simpleButtonLuuGiaoVien_Click);
-            // 
-            // panelControl5
-            // 
-            this.panelControl5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelControl5.Controls.Add(this.simpleButtonLuuGiaoVien);
-            this.panelControl5.Controls.Add(this.simpleButonSuagiaovien);
-            this.panelControl5.Controls.Add(this.labelControl3);
-            this.panelControl5.Controls.Add(this.simpleButtonXoaGiaovien);
-            this.panelControl5.Controls.Add(this.simpleButtonThemGiaoVien);
-            this.panelControl5.Controls.Add(this.textEditMaGiaoVien);
-            this.panelControl5.Controls.Add(this.labelControl2);
-            this.panelControl5.Controls.Add(this.textEditTenGiaoVien);
-            this.panelControl5.Location = new System.Drawing.Point(369, 113);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(415, 395);
-            this.panelControl5.TabIndex = 3;
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(784, 115);
-            this.panelControl1.TabIndex = 9;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Blue;
-            this.labelControl1.Location = new System.Drawing.Point(475, 35);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(193, 25);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Các thao tác chính";
-            // 
-            // simpleButtonLoadlaidulieu
-            // 
-            this.simpleButtonLoadlaidulieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButtonLoadlaidulieu.Image = global::QLHS.Properties.Resources.capnhat;
-            this.simpleButtonLoadlaidulieu.Location = new System.Drawing.Point(491, 28);
-            this.simpleButtonLoadlaidulieu.Name = "simpleButtonLoadlaidulieu";
-            this.simpleButtonLoadlaidulieu.Size = new System.Drawing.Size(104, 35);
-            this.simpleButtonLoadlaidulieu.TabIndex = 6;
-            this.simpleButtonLoadlaidulieu.Text = "Tải lại dữ liệu";
-            this.simpleButtonLoadlaidulieu.ToolTip = "Load lại dữ liệu từ cơ sở dữ liệu";
-            this.simpleButtonLoadlaidulieu.Click += new System.EventHandler(this.simpleButtonLoadlaidulieu_Click);
-            // 
-            // simpleButtonThoat
-            // 
-            this.simpleButtonThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButtonThoat.Image = global::QLHS.Properties.Resources.thoat_small;
-            this.simpleButtonThoat.Location = new System.Drawing.Point(645, 28);
-            this.simpleButtonThoat.Name = "simpleButtonThoat";
-            this.simpleButtonThoat.Size = new System.Drawing.Size(104, 35);
-            this.simpleButtonThoat.TabIndex = 7;
-            this.simpleButtonThoat.Text = "Thoát";
-            this.simpleButtonThoat.Click += new System.EventHandler(this.simpleButtonThoat_Click);
-            // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.simpleButtonThoat);
-            this.panelControl2.Controls.Add(this.simpleButtonLoadlaidulieu);
-            this.panelControl2.Controls.Add(this.simpleButtonhuy);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(0, 506);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(784, 83);
-            this.panelControl2.TabIndex = 10;
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.richTextBox1.Location = new System.Drawing.Point(363, 158);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.ShortcutsEnabled = false;
+            this.richTextBox1.Size = new System.Drawing.Size(421, 366);
+            this.richTextBox1.TabIndex = 25;
+            this.richTextBox1.TabStop = false;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // frmGiaoVien
             // 
+            this.AcceptButton = this.simpleButtonLuu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 589);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.gridcontrolGiaoVien);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.panelControl2);
-            this.Controls.Add(this.panelControl5);
             this.MaximizeBox = false;
             this.Name = "frmGiaoVien";
             this.Text = "Quản lý giáo viên";
             this.Load += new System.EventHandler(this.frmGiaoVien_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridcontrolGiaoVien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewGiaoVien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditTenGiaoVien.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditMaGiaoVien.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
-            this.panelControl5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditMaGiaoVien.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditTenGiaoVien.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridcontrolGiaoVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewGiaoVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private DevExpress.XtraEditors.SimpleButton simpleButtonThem;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonXoa;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonLuu;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonDong;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControlTitle;
         private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraEditors.PanelControl panelControl5;
-        private DevExpress.XtraEditors.SimpleButton simpleButonSuagiaovien;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonThemGiaoVien;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonXoaGiaovien;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonLuuGiaoVien;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonThoat;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.TextEdit textEditMaGiaoVien;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit textEditTenGiaoVien;
-        private DevExpress.XtraEditors.TextEdit textEditMaGiaoVien;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonLoadlaidulieu;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonhuy;
-        private DevExpress.XtraGrid.GridControl GridcontrolGiaoVien;
+        private DevExpress.XtraGrid.GridControl gridcontrolGiaoVien;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewGiaoVien;
         private DevExpress.XtraGrid.Columns.GridColumn MaGiaoVien;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn TenGiaoVien;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
-        private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

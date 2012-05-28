@@ -9,9 +9,12 @@ namespace QLHS.BUS
 {
     public class GiaoVienBUS
     {
-        GiaoVienDAL _giaoVienDAL =new GiaoVienDAL();
-        DataTable _dataTableSource;
-        GiaoVienDTO _giaoVienDTO;
+        GiaoVienDAL _giaoVienDAL;
+
+        public GiaoVienBUS()
+        {
+            _giaoVienDAL = new GiaoVienDAL();
+        }
 
         /// <summary>
         /// Lấy datatable danh sách giáo viên
@@ -21,101 +24,42 @@ namespace QLHS.BUS
         {
             return _giaoVienDAL.LayDT_DanhSach_GiaoVien();
         }
-        public string Doichuoi(string input, string oldValue, string newValue, bool matchCase)
-        {
-
-            RegexOptions regexOption = RegexOptions.None;
-            if (!matchCase)
-            {
-                regexOption = RegexOptions.IgnoreCase;
-            }
-
-            Regex regex = new Regex(oldValue, regexOption);
-
-            input = regex.Replace(input, newValue);
-
-            return input;
-
-        }
-        
-        public int ThemGiaoVien(GiaoVienDTO GV)
-        {
-            if (KiemTonTaiGiaoVien(GV))
-            {
-                return 0;
-            }
-            else
-            {
-                int kq = _giaoVienDAL.ThemGiaoVien(GV);
-                return kq;
-            }
-            
-        }
-        public void XoaGiaoVien(string MaGV)
-        {
-            _giaoVienDAL.XoaGiaoVien(MaGV);
-        }
-        public void CapNhatGiaoVien(GiaoVienDTO GV)
-        {
-            _giaoVienDAL.CapNhatGiaoVien(GV);
-        }
-
         /// <summary>
-        /// Tạo bảng các giáo viên có điều kiện
-        /// 1:Tìm theo tên
-        /// 2:Tìm theo mã
-        /// 3:Tìm theo cả hai
+        /// Xóa hồ sơ giáo viên
         /// </summary>
-        /// <param name="DK"> truyền điều kiện để lọc các giáo  viên tương ứng</param>
+        /// <param name="maGiaoVien">string: mã giáo viên</param>
         /// <returns></returns>
-        public DataTable TableGiaoVien(int i, string DK)
+        public bool Xoa_GiaoVien(string maGiaoVien)
         {
-            //dt = new DataTable();
-            _dataTableSource = _giaoVienDAL.TableGiaoVien(i,DK);
-            return _dataTableSource;
+            return _giaoVienDAL.Xoa_GiaoVien(maGiaoVien);
         }
-        public DataTable TableGiaoVien()
-        {
-            _dataTableSource = _giaoVienDAL.TableGiaoVien();
-            //dt = new DataTable();
-            return _dataTableSource;
-        }
-        
         /// <summary>
-        /// Tạo danh sách các giáo viên dạng List 
+        /// Thêm hồ sơ giáo viên
         /// </summary>
+        /// <param name="giaoVien">GiaoVienDTO</param>
         /// <returns></returns>
-        public List<GiaoVienDTO> ListGiaoVien()
+        public bool Them_GiaoVien(GiaoVienDTO giaoVien)
         {
-            List<GiaoVienDTO> ListGV=new List<GiaoVienDTO>() ;
-            ListGV=_giaoVienDAL.ListGiaoVien();
-            return ListGV;
+            giaoVien.MaGiaoVien = Utilities.ObjectUtilities.NextID(_giaoVienDAL.Lay_MaCuoiCung(), "GV", 3);
+            return _giaoVienDAL.Them_GiaoVien(giaoVien);
         }
-
         /// <summary>
-        /// Truyền điều kiện KD để tạo list các giáo viên tương ứng
+        /// Cập nhật hồ sơ giáo viên
         /// </summary>
-        /// <param name="DK"></param>
+        /// <param name="giaoVien">GiaoVienDTO</param>
         /// <returns></returns>
-        public List<GiaoVienDTO> ListGiaoVien(string DK)
+        public bool CapNhat_GiaoVien(GiaoVienDTO giaoVien)
         {
-            List<GiaoVienDTO> ListGV = new List<GiaoVienDTO>();
-            ListGV = _giaoVienDAL.ListGiaoVien(DK);
-            return ListGV;
+            return _giaoVienDAL.CapNhat_GiaoVien(giaoVien);
         }
-
-        public void NewRows(string MAGV)
+        /// <summary>
+        /// Kiểm tra tồn tại hồ sơ giáo viên
+        /// </summary>
+        /// <param name="maGiaoVien">string: mã giáo viên</param>
+        /// <returns></returns>
+        public bool KiemTonTai_GiaoVien(string maGiaoVien)
         {
-            _giaoVienDTO = new GiaoVienDTO();
-            DataRow dr = _giaoVienDAL.GetNewRow();
-            dr["MaGiaoVien"] = "";
-            dr["TenGiaoVien"] = "";
-            _giaoVienDAL.AddNewRow(dr);
-
-        }
-        public bool KiemTonTaiGiaoVien(GiaoVienDTO GV)
-        {
-           return _giaoVienDAL.KTTTGiaoVien(GV);
+            return _giaoVienDAL.KiemTonTai_GiaoVien(maGiaoVien);
         }
 
     }

@@ -117,24 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="simpleButonSuagiaovien.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAApJJREFUOE99kl1I
-        U2EcxvchtlkqWWvCblK3mNhFgz6ELgpLUMiPmwgkYSDdaHkRgYVXui66CLMPuiiIhYUtKXEM1KK5EKcZ
-        UiPcR2lexNZM93HOjmffe3rfQztoii88nPfA+/ye////vlIJWXK5XKZQKPbJZDL6u+uq0ynKTBUnJtO/
-        oz7v+roxf1gdZRiEwmFEIhHQPcOyYIlisRhiHAeOiGXWEHbW40F7Fd6pVBgvKrKKAGr+s7aG9VBoRxDL
-        koD5Njzu1UGj0aCvSZbtUcktIiASjQrmMK2A7IUKSDpN5jY2EP7WC+uj46isrEDHhUK8uV0wqyiUlIsA
-        ahDMpHyhdGLcIEae58EsP8P8SCNqavRoObMXS6NHsL9YcpaY94gAmiaY/6VSYzweBxd4jyV7O2pPGlB3
-        6gA8lnIsOEdBjNVEUhEgDIkk0y81JxIJ8CEXgp+70VB/GrUGDb4+L8X0+EN4PB5IpVLN5utS03I3m+PM
-        CqKLvWi7eA7Hjh7G7JNiTL29iZmZGTCkUgJQbwHQVAqJk+QEtwrOZ0L3lUZU6ysxOVgKx6vLsFqtCAQC
-        yGaz2wG0X54ozpOpe26h/0YDdNoqDJvK4Bw+D7PZDLfbjXQ6vTOA9kwVXl2BzdwBrVaLweuH8OW1AQMD
-        d2G32xEMBuH3+/HLH0iRFlRbWsgDfrrGMD1ixNN+A5bH9Lh/7w5sNhtcLhc+2KcwN/cp19Laeo08f/EG
-        KEidTCaFGfT3XILDYsTC9Ess//AJA6OpExOT5Fmz6Orq7FMqlVvMIsDr9eDF0BB4AqKDyuVySKVS8Pp8
-        cDg+5jqJuaSkZJtZANCDVJlMRtBmwKL3e6qpufmqUqnY0UwBBRSyiw7K/us5P8C/G9snMbQ/K1IAAAAA
-        SUVORK5CYII=
-</value>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>Hướng dẫn lập danh sách giáo viên:
+
+- Ấn nút "Thêm mới" để thêm hồ sơ giáo viên.
+
+- Ấn nút "Lưu" để cập nhật hồ sơ giáo viên
+mà bạn đã chỉnh sửa.
+
+- Ấn nút "Xóa" để xóa để xóa hồ sơ giáo viên
+Cần lưu ý khi sử dụng chức năng này:
+khi hồ sơ đã xóa thì lớp do giáo viên
+này chủ nhiệm sẽ bị xóa đi, bạn cần phải cập nhật
+lại giáo viên chủ nhiệm cho lớp đó.</value>
   </data>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

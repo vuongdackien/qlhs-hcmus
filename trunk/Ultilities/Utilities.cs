@@ -20,8 +20,7 @@ namespace Utilities
         /// <returns></returns>
         public static string NextID(string lastID, string prefixID, int lengthNumerID = 5)
         {
-            lastID = lastID.Trim();
-            if (lastID == "")
+            if (lastID == "" || lastID == null)
                 lastID = prefixID + new String('0', lengthNumerID);
 
             int nextID = int.Parse(lastID.Remove(0, prefixID.Length)) + 1;

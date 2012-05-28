@@ -58,7 +58,7 @@ CREATE TABLE [dbo].[LOP] (
 	[MaKhoiLop]		[tinyint] NOT NULL,
 	[MaNamHoc]		[varchar](6) NOT NULL,
 	[SiSo]			[int] NOT NULL,
-	[MaGiaoVien]	[varchar](10) NOT NULL);
+	[MaGiaoVien]	[varchar](10) NULL);
 GO
 
 --5. Create table and its columns
