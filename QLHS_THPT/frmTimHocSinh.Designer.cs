@@ -156,8 +156,8 @@
             this.radioGroupTimTrong.Size = new System.Drawing.Size(232, 31);
             this.radioGroupTimTrong.TabIndex = 3;
             this.radioGroupTimTrong.ToolTip = "Chọn \"Hồ sơ phân lớp\" nếu bạn muốn tìm hồ sơ học sinh trong các năm đã phân lớp.<" +
-    "br />Chọn \"Hồ sơ mới tiếp nhận\" để tìm các hồ sơ chưa được phân lớp (mới tiếp nh" +
-    "ận)";
+    "br>Chọn \"Hồ sơ mới tiếp nhận\" để tìm các hồ sơ chưa được phân lớp (mới tiếp nhận" +
+    ")";
             this.radioGroupTimTrong.ToolTipController = this.toolTipController1;
             this.radioGroupTimTrong.ToolTipTitle = "Hướng dẫn:";
             this.radioGroupTimTrong.SelectedIndexChanged += new System.EventHandler(this.radioGroupTimTrong_SelectedIndexChanged);
