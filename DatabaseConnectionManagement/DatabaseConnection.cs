@@ -13,20 +13,20 @@ using System.Data.SqlClient;
 
 namespace DatabaseConnectionManagement
 {
-    public partial class FrmAddConnection : Form
+    public partial class frmAddConnection : Form
     {
         ServerConnection m_ServerConnection;
         Server m_Server;
         EventHandler _Handler;
         DataTable dtServers = new DataTable();
-        public FrmAddConnection()
+        public frmAddConnection()
         {
             InitializeComponent();
         }
 
         public static DialogResult Show()
         {
-            FrmAddConnection frm = new FrmAddConnection();
+            frmAddConnection frm = new frmAddConnection();
             return frm.ShowDialog();
         }
 
@@ -346,7 +346,7 @@ namespace DatabaseConnectionManagement
                     MessageBox.Show("Chưa chọn được cơ sở dữ liệu để lưu cấu hình!");
                     return;
                 }
-                Properties.Settings.Default.ConnectString = FrmAddConnection.BuildConnectString();
+                Properties.Settings.Default.ConnectString = frmAddConnection.BuildConnectString();
                 Properties.Settings.Default.Save();
                 string con = Properties.Settings.Default.ConnectString;
                 this.DialogResult = DialogResult.OK;

@@ -1,6 +1,6 @@
 ﻿namespace DatabaseConnectionManagement
 {
-    partial class FrmAddConnection
+    partial class frmAddConnection
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddConnection));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddConnection));
             this.lblDataSource = new System.Windows.Forms.Label();
             this.lblServerName = new System.Windows.Forms.Label();
             this.cmbServerName = new System.Windows.Forms.ComboBox();
@@ -42,8 +42,9 @@
             this.rdbServerAuthentication = new System.Windows.Forms.RadioButton();
             this.rdbWindowsAuthentication = new System.Windows.Forms.RadioButton();
             this.grbDatabaseConnection = new System.Windows.Forms.GroupBox();
-            this.txtNewDB = new System.Windows.Forms.TextBox();
             this.btnTaoMoi = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNewDB = new System.Windows.Forms.TextBox();
             this.cmbDbName = new System.Windows.Forms.ComboBox();
             this.lblSelectDbName = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnTaoMoiDuLieuMau = new System.Windows.Forms.Button();
             this.lblSyncStatus = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.grbLogOn.SuspendLayout();
             this.grbDatabaseConnection.SuspendLayout();
             this.pnlConnectionInfo.SuspendLayout();
@@ -193,14 +193,6 @@
             this.grbDatabaseConnection.TabStop = false;
             this.grbDatabaseConnection.Text = "Chọn database làm việc";
             // 
-            // txtNewDB
-            // 
-            this.txtNewDB.Enabled = false;
-            this.txtNewDB.Location = new System.Drawing.Point(180, 38);
-            this.txtNewDB.Name = "txtNewDB";
-            this.txtNewDB.Size = new System.Drawing.Size(115, 20);
-            this.txtNewDB.TabIndex = 9;
-            // 
             // btnTaoMoi
             // 
             this.btnTaoMoi.Enabled = false;
@@ -211,6 +203,23 @@
             this.btnTaoMoi.Text = "Tạo mới";
             this.btnTaoMoi.UseVisualStyleBackColor = true;
             this.btnTaoMoi.Click += new System.EventHandler(this.btnTaoMoi_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(177, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Tạo mới cơ sở dữ liệu:";
+            // 
+            // txtNewDB
+            // 
+            this.txtNewDB.Enabled = false;
+            this.txtNewDB.Location = new System.Drawing.Point(180, 38);
+            this.txtNewDB.Name = "txtNewDB";
+            this.txtNewDB.Size = new System.Drawing.Size(115, 20);
+            this.txtNewDB.TabIndex = 9;
             // 
             // cmbDbName
             // 
@@ -304,24 +313,17 @@
             this.lblSyncStatus.Text = "Đang tìm máy chủ...";
             this.lblSyncStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(177, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Tạo mới cơ sở dữ liệu:";
-            // 
-            // FrmAddConnection
+            // frmAddConnection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 476);
+            this.ControlBox = false;
             this.Controls.Add(this.lblSyncStatus);
             this.Controls.Add(this.pnlConnectionInfo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "FrmAddConnection";
+            this.Name = "frmAddConnection";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cấu hình kết nối với máy chủ";
