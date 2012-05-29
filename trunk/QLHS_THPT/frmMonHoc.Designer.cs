@@ -121,7 +121,7 @@
             this.label2.Size = new System.Drawing.Size(553, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "_________________________________________________________________________________" +
-                "__________";
+    "__________";
             // 
             // labelControl1
             // 
@@ -288,6 +288,7 @@
             this.MaMonHoc.OptionsColumn.ReadOnly = true;
             this.MaMonHoc.Visible = true;
             this.MaMonHoc.VisibleIndex = 0;
+            this.MaMonHoc.Width = 180;
             // 
             // repositoryItemTextEdit1
             // 
@@ -302,6 +303,7 @@
             this.TenMonHoc.Name = "TenMonHoc";
             this.TenMonHoc.Visible = true;
             this.TenMonHoc.VisibleIndex = 1;
+            this.TenMonHoc.Width = 180;
             // 
             // SoTiet
             // 
@@ -310,9 +312,10 @@
             this.SoTiet.FieldName = "SoTiet";
             this.SoTiet.Name = "SoTiet";
             this.SoTiet.ToolTip = "Thay đổi số tiết học của môn học. Bạn chỉ có thể nhập số, không được nhập kí tự k" +
-                "hác.";
+    "hác.";
             this.SoTiet.Visible = true;
             this.SoTiet.VisibleIndex = 2;
+            this.SoTiet.Width = 180;
             // 
             // repositoryItemTextEdit4
             // 
@@ -330,6 +333,7 @@
             this.HeSo.ToolTip = "Thay đổi hệ số của môn học  Bạn chỉ có thể nhập số, không được nhập kí tự khác.";
             this.HeSo.Visible = true;
             this.HeSo.VisibleIndex = 3;
+            this.HeSo.Width = 164;
             // 
             // repositoryItemTextEdit2
             // 
@@ -348,7 +352,7 @@
             this.TrangThai.OptionsColumn.AllowShowHide = false;
             this.TrangThai.OptionsColumn.AllowSize = false;
             this.TrangThai.ToolTip = "Thay đổi trạng thái của môn học: 1: có, 0: không.  Bạn chỉ có thể nhập số, không " +
-                "được nhập kí tự khác.";
+    "được nhập kí tự khác.";
             this.TrangThai.Visible = true;
             this.TrangThai.VisibleIndex = 4;
             this.TrangThai.Width = 15;

@@ -14,10 +14,14 @@ namespace QLHS
     public partial class frmNamHoc : DevExpress.XtraEditors.XtraForm
     {
         private NamHocBUS _namHocBUS;
+        private bool _is_add_button;
+        private bool _is_delete_button;
         public frmNamHoc()
         {
             InitializeComponent();
             _namHocBUS = new NamHocBUS();
+            _is_add_button = true;
+            _is_delete_button = true;
         }
 
         private void frmNamHoc_Load(object sender, EventArgs e)
@@ -38,32 +42,34 @@ namespace QLHS
         private void _Load_Lai_GridView()
         {
             gridControlNamHoc.DataSource = _namHocBUS.LayDTNamHoc();
-            if(gridViewNamHoc.RowCount > 0)
-              gridView1_FocusedRowChanged(this, new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs(0, 0));
+            this._Disable_Control(editing: false);
         }
 
         private void _Disable_Control(bool editing)
         {
-            if (editing)
-            {
-                simpleButtonThem.Text = "Lưu (Enter)";
-                simpleButtonXoa.Text = "Không thêm (Alt+&D)";
-            }
-            else
-            {
-                simpleButtonThem.Text = "Thêm (Enter)";
-                simpleButtonXoa.Text = "Xóa (Alt+&D)";
-            }
+            _is_add_button = !editing;
+            _is_delete_button = !editing;
+            
+            simpleButtonThem.Text = editing ? "Lưu (Enter)" : "Thêm (Enter)";
+            simpleButtonXoa.Text = editing ? "Không thêm (Alt+&D)" : "Xóa (Alt+&D)"; 
+
             comboBoxEdit1.Enabled = editing;
             gridControlNamHoc.Enabled = !editing;
+            if (!editing)
+            {
+
+                if (gridViewNamHoc.RowCount > 0)
+                    gridView1_FocusedRowChanged(this, 
+                        new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs(0, 0));
+            }
 
         }
 
         private void simpleButtonThem_Click(object sender, EventArgs e)
         {
-            if (simpleButtonThem.Text == "Thêm (Enter)")
+            if (_is_add_button)
             {
-                _Disable_Control(editing:true);
+                _Disable_Control(editing: true);
             }
             else
             {
@@ -81,9 +87,9 @@ namespace QLHS
                     _namHocBUS.ThemNamHoc(namHocDTO);
                     Utilities.MessageboxUtilities.MessageSuccess("Đã tạo năm học mới thành công."
                                                                + "\nTiếp theo bạn hãy tạo danh sách lớp cho năm học này!");
-                    this._Load_Lai_GridView();
+                    
                 }
-                _Disable_Control(editing: false);
+                this._Load_Lai_GridView();
             }
         }
 
@@ -91,8 +97,9 @@ namespace QLHS
         {
             string maNamHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEdit1);
             string tenNamHoc = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEdit1);
-            if (simpleButtonXoa.Text == "Xóa (Alt+&D)")
-            {               
+
+            if(_is_delete_button)
+            {            
                 if (_namHocBUS.KiemTraTonTai_NamHoc(maNamHoc))
                 {
                     // xóa

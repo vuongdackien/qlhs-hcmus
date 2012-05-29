@@ -76,7 +76,7 @@
             this.simpleButtonThem.Image = global::QLHS.Properties.Resources.them_small;
             this.simpleButtonThem.Location = new System.Drawing.Point(24, 10);
             this.simpleButtonThem.Name = "simpleButtonThem";
-            this.simpleButtonThem.Size = new System.Drawing.Size(115, 33);
+            this.simpleButtonThem.Size = new System.Drawing.Size(131, 33);
             this.simpleButtonThem.TabIndex = 3;
             this.simpleButtonThem.Text = "Thêm (Enter)";
             this.simpleButtonThem.Click += new System.EventHandler(this.simpleButtonThem_Click);
@@ -84,9 +84,9 @@
             // simpleButtonXoa
             // 
             this.simpleButtonXoa.Image = global::QLHS.Properties.Resources.xoa_small;
-            this.simpleButtonXoa.Location = new System.Drawing.Point(195, 10);
+            this.simpleButtonXoa.Location = new System.Drawing.Point(182, 10);
             this.simpleButtonXoa.Name = "simpleButtonXoa";
-            this.simpleButtonXoa.Size = new System.Drawing.Size(119, 33);
+            this.simpleButtonXoa.Size = new System.Drawing.Size(132, 33);
             this.simpleButtonXoa.TabIndex = 4;
             this.simpleButtonXoa.Text = "Xóa (Alt+&D)";
             this.simpleButtonXoa.Click += new System.EventHandler(this.simpleButtonXoa_Click);
