@@ -203,10 +203,10 @@
             // gridControlNguoiDung
             // 
             this.gridControlNguoiDung.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControlNguoiDung.Location = new System.Drawing.Point(0, 103);
+            this.gridControlNguoiDung.Location = new System.Drawing.Point(0, 108);
             this.gridControlNguoiDung.MainView = this.gridViewNguoiDung;
             this.gridControlNguoiDung.Name = "gridControlNguoiDung";
-            this.gridControlNguoiDung.Size = new System.Drawing.Size(665, 250);
+            this.gridControlNguoiDung.Size = new System.Drawing.Size(665, 245);
             this.gridControlNguoiDung.TabIndex = 10;
             this.gridControlNguoiDung.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewNguoiDung});
