@@ -99,7 +99,7 @@
             this.simpleButtonDong.Location = new System.Drawing.Point(596, 10);
             this.simpleButtonDong.Name = "simpleButtonDong";
             this.simpleButtonDong.Size = new System.Drawing.Size(109, 35);
-            this.simpleButtonDong.TabIndex = 9;
+            this.simpleButtonDong.TabIndex = 10;
             this.simpleButtonDong.Text = "Đóng (Alt+&X)";
             this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
             // 
@@ -109,7 +109,7 @@
             this.simpleButtonThemMoi.Location = new System.Drawing.Point(180, 10);
             this.simpleButtonThemMoi.Name = "simpleButtonThemMoi";
             this.simpleButtonThemMoi.Size = new System.Drawing.Size(134, 35);
-            this.simpleButtonThemMoi.TabIndex = 6;
+            this.simpleButtonThemMoi.TabIndex = 7;
             this.simpleButtonThemMoi.Text = "Thêm mới (Alt+&N)";
             this.simpleButtonThemMoi.Click += new System.EventHandler(this.simpleButtonThemMoi_Click);
             // 
@@ -119,7 +119,7 @@
             this.simpleButtonXoa.Location = new System.Drawing.Point(473, 10);
             this.simpleButtonXoa.Name = "simpleButtonXoa";
             this.simpleButtonXoa.Size = new System.Drawing.Size(113, 35);
-            this.simpleButtonXoa.TabIndex = 8;
+            this.simpleButtonXoa.TabIndex = 9;
             this.simpleButtonXoa.Text = "Xóa (Alt+&D)";
             this.simpleButtonXoa.Click += new System.EventHandler(this.simpleButtonXoa_Click);
             // 
@@ -129,7 +129,7 @@
             this.simpleButtonGhiDuLieu.Location = new System.Drawing.Point(327, 10);
             this.simpleButtonGhiDuLieu.Name = "simpleButtonGhiDuLieu";
             this.simpleButtonGhiDuLieu.Size = new System.Drawing.Size(136, 35);
-            this.simpleButtonGhiDuLieu.TabIndex = 7;
+            this.simpleButtonGhiDuLieu.TabIndex = 8;
             this.simpleButtonGhiDuLieu.Text = "Ghi dữ liệu (Enter)";
             this.simpleButtonGhiDuLieu.Click += new System.EventHandler(this.simpleButtonGhiDuLieu_Click);
             // 
@@ -295,7 +295,7 @@
             this.repositoryItemComboBox,
             this.repositoryItemGridLookUpEdit1});
             this.gridControlDSLop.Size = new System.Drawing.Size(416, 197);
-            this.gridControlDSLop.TabIndex = 23;
+            this.gridControlDSLop.TabIndex = 6;
             this.gridControlDSLop.TabStop = false;
             this.gridControlDSLop.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLop});

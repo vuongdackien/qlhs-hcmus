@@ -122,9 +122,9 @@
             this.panelControl5.Controls.Add(this.groupControl2);
             this.panelControl5.Controls.Add(this.groupControl1);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl5.Location = new System.Drawing.Point(2, 2);
+            this.panelControl5.Location = new System.Drawing.Point(3, 3);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1003, 189);
+            this.panelControl5.Size = new System.Drawing.Size(1001, 187);
             this.panelControl5.TabIndex = 4;
             // 
             // groupBoxPhanLop
@@ -133,9 +133,9 @@
             this.groupBoxPhanLop.Controls.Add(this.radioButtonPhanLopHocSinhMoi);
             this.groupBoxPhanLop.Controls.Add(this.checkEditHocSinhChuaChuyen);
             this.groupBoxPhanLop.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBoxPhanLop.Location = new System.Drawing.Point(346, 101);
+            this.groupBoxPhanLop.Location = new System.Drawing.Point(347, 98);
             this.groupBoxPhanLop.Name = "groupBoxPhanLop";
-            this.groupBoxPhanLop.Size = new System.Drawing.Size(329, 86);
+            this.groupBoxPhanLop.Size = new System.Drawing.Size(325, 86);
             this.groupBoxPhanLop.TabIndex = 19;
             this.groupBoxPhanLop.TabStop = false;
             this.groupBoxPhanLop.Text = "Phân lớp";
@@ -146,7 +146,7 @@
             this.radioButtonPhanLopHocSinhCu.Location = new System.Drawing.Point(168, 20);
             this.radioButtonPhanLopHocSinhCu.Name = "radioButtonPhanLopHocSinhCu";
             this.radioButtonPhanLopHocSinhCu.Size = new System.Drawing.Size(158, 17);
-            this.radioButtonPhanLopHocSinhCu.TabIndex = 21;
+            this.radioButtonPhanLopHocSinhCu.TabIndex = 9;
             this.radioButtonPhanLopHocSinhCu.TabStop = true;
             this.radioButtonPhanLopHocSinhCu.Text = "Phân Lớp học sinh từ lớp cũ";
             this.radioButtonPhanLopHocSinhCu.UseVisualStyleBackColor = true;
@@ -158,7 +158,7 @@
             this.radioButtonPhanLopHocSinhMoi.Location = new System.Drawing.Point(16, 20);
             this.radioButtonPhanLopHocSinhMoi.Name = "radioButtonPhanLopHocSinhMoi";
             this.radioButtonPhanLopHocSinhMoi.Size = new System.Drawing.Size(151, 17);
-            this.radioButtonPhanLopHocSinhMoi.TabIndex = 21;
+            this.radioButtonPhanLopHocSinhMoi.TabIndex = 8;
             this.radioButtonPhanLopHocSinhMoi.TabStop = true;
             this.radioButtonPhanLopHocSinhMoi.Text = "Phân lớp học sinh từ hồ sơ";
             this.radioButtonPhanLopHocSinhMoi.UseVisualStyleBackColor = true;
@@ -170,9 +170,9 @@
             this.checkEditHocSinhChuaChuyen.Name = "checkEditHocSinhChuaChuyen";
             this.checkEditHocSinhChuaChuyen.Properties.Caption = "Sử dụng chức năng chuyển lại, phân lớp tất cả";
             this.checkEditHocSinhChuaChuyen.Size = new System.Drawing.Size(259, 19);
-            this.checkEditHocSinhChuaChuyen.TabIndex = 16;
+            this.checkEditHocSinhChuaChuyen.TabIndex = 10;
             this.checkEditHocSinhChuaChuyen.ToolTip = "Click vào checkbox này để có thể sử dụng chức năng chuyển lại học sinh khi bạn ph" +
-                "ân nhầm lớp học sinh";
+    "ân nhầm lớp học sinh";
             this.checkEditHocSinhChuaChuyen.ToolTipController = this.toolTipController1;
             this.checkEditHocSinhChuaChuyen.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.checkEditHocSinhChuaChuyen.ToolTipTitle = "Hướng dẫ";
@@ -185,9 +185,9 @@
             this.groupBoxChuyenLop.Controls.Add(this.textEditLyDoChuyen);
             this.groupBoxChuyenLop.Controls.Add(this.checkEditChuyenBangDiem);
             this.groupBoxChuyenLop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxChuyenLop.Location = new System.Drawing.Point(346, 2);
+            this.groupBoxChuyenLop.Location = new System.Drawing.Point(347, 3);
             this.groupBoxChuyenLop.Name = "groupBoxChuyenLop";
-            this.groupBoxChuyenLop.Size = new System.Drawing.Size(329, 90);
+            this.groupBoxChuyenLop.Size = new System.Drawing.Size(325, 90);
             this.groupBoxChuyenLop.TabIndex = 18;
             this.groupBoxChuyenLop.TabStop = false;
             this.groupBoxChuyenLop.Text = "Chuyển lớp";
@@ -197,8 +197,8 @@
             this.radioButtonChuyenLop.AutoSize = true;
             this.radioButtonChuyenLop.Location = new System.Drawing.Point(16, 16);
             this.radioButtonChuyenLop.Name = "radioButtonChuyenLop";
-            this.radioButtonChuyenLop.Size = new System.Drawing.Size(147, 17);
-            this.radioButtonChuyenLop.TabIndex = 21;
+            this.radioButtonChuyenLop.Size = new System.Drawing.Size(148, 17);
+            this.radioButtonChuyenLop.TabIndex = 5;
             this.radioButtonChuyenLop.TabStop = true;
             this.radioButtonChuyenLop.Text = "Chuyển học sinh cùng lớp";
             this.radioButtonChuyenLop.UseVisualStyleBackColor = true;
@@ -219,7 +219,7 @@
             this.textEditLyDoChuyen.Name = "textEditLyDoChuyen";
             this.textEditLyDoChuyen.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textEditLyDoChuyen.Size = new System.Drawing.Size(143, 20);
-            this.textEditLyDoChuyen.TabIndex = 19;
+            this.textEditLyDoChuyen.TabIndex = 7;
             // 
             // checkEditChuyenBangDiem
             // 
@@ -227,7 +227,7 @@
             this.checkEditChuyenBangDiem.Name = "checkEditChuyenBangDiem";
             this.checkEditChuyenBangDiem.Properties.Caption = "Chuyển bảng điểm";
             this.checkEditChuyenBangDiem.Size = new System.Drawing.Size(120, 19);
-            this.checkEditChuyenBangDiem.TabIndex = 18;
+            this.checkEditChuyenBangDiem.TabIndex = 6;
             // 
             // groupControl2
             // 
@@ -238,9 +238,9 @@
             this.groupControl2.Controls.Add(this.comboBoxEditNamHocMoi);
             this.groupControl2.Controls.Add(this.labelControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupControl2.Location = new System.Drawing.Point(675, 2);
+            this.groupControl2.Location = new System.Drawing.Point(672, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(326, 185);
+            this.groupControl2.Size = new System.Drawing.Size(326, 181);
             this.groupControl2.TabIndex = 14;
             this.groupControl2.Text = "Thông Tin Lớp Mới";
             // 
@@ -251,7 +251,7 @@
             this.comboBoxEditLopMoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditLopMoi.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEditLopMoi.TabIndex = 1;
+            this.comboBoxEditLopMoi.TabIndex = 18;
             this.comboBoxEditLopMoi.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditLopMoi_SelectedIndexChanged);
             // 
             // labelControl3
@@ -269,7 +269,7 @@
             this.comboBoxEditKhoiMoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditKhoiMoi.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEditKhoiMoi.TabIndex = 1;
+            this.comboBoxEditKhoiMoi.TabIndex = 17;
             this.comboBoxEditKhoiMoi.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditKhoiMoi_SelectedIndexChanged);
             // 
             // labelControl2
@@ -287,7 +287,7 @@
             this.comboBoxEditNamHocMoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditNamHocMoi.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEditNamHocMoi.TabIndex = 1;
+            this.comboBoxEditNamHocMoi.TabIndex = 16;
             this.comboBoxEditNamHocMoi.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHocMoi_SelectedIndexChanged);
             // 
             // labelControl1
@@ -307,9 +307,9 @@
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.comboBoxEditNamHoc);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl1.Location = new System.Drawing.Point(2, 2);
+            this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(344, 185);
+            this.groupControl1.Size = new System.Drawing.Size(344, 181);
             this.groupControl1.TabIndex = 13;
             this.groupControl1.Text = "Thông Tin Lớp Cũ";
             // 
@@ -320,7 +320,7 @@
             this.comboBoxEditLop.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditLop.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEditLop.TabIndex = 4;
+            this.comboBoxEditLop.TabIndex = 3;
             this.comboBoxEditLop.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditLop_SelectedIndexChanged);
             // 
             // labelControl8
@@ -346,7 +346,7 @@
             this.comboBoxEditKhoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditKhoi.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEditKhoi.TabIndex = 5;
+            this.comboBoxEditKhoi.TabIndex = 2;
             this.comboBoxEditKhoi.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditKhoi_SelectedIndexChanged);
             // 
             // labelControl4
@@ -364,7 +364,7 @@
             this.comboBoxEditNamHoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditNamHoc.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEditNamHoc.TabIndex = 5;
+            this.comboBoxEditNamHoc.TabIndex = 1;
             this.comboBoxEditNamHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHoc_SelectedIndexChanged);
             // 
             // labelControl5
@@ -384,7 +384,7 @@
             this.gridControlDSHocSinh.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
             this.gridControlDSHocSinh.Size = new System.Drawing.Size(348, 283);
-            this.gridControlDSHocSinh.TabIndex = 1;
+            this.gridControlDSHocSinh.TabIndex = 4;
             this.gridControlDSHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDSHocSinh});
             // 
@@ -451,7 +451,7 @@
             this.gridControlDSHocSinhMoi.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit2});
             this.gridControlDSHocSinhMoi.Size = new System.Drawing.Size(330, 283);
-            this.gridControlDSHocSinhMoi.TabIndex = 2;
+            this.gridControlDSHocSinhMoi.TabIndex = 19;
             this.gridControlDSHocSinhMoi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDSHocSinhMoi});
             // 
@@ -525,7 +525,7 @@
             this.simpleButtonChuyenLaiTatCa.Location = new System.Drawing.Point(82, 187);
             this.simpleButtonChuyenLaiTatCa.Name = "simpleButtonChuyenLaiTatCa";
             this.simpleButtonChuyenLaiTatCa.Size = new System.Drawing.Size(147, 35);
-            this.simpleButtonChuyenLaiTatCa.TabIndex = 2;
+            this.simpleButtonChuyenLaiTatCa.TabIndex = 14;
             this.simpleButtonChuyenLaiTatCa.Text = "Chuyển lại tất cả(Alt+&D)";
             this.simpleButtonChuyenLaiTatCa.Click += new System.EventHandler(this.simpleButtonChuyenLaiTatCa_Click);
             // 
@@ -535,7 +535,7 @@
             this.simpleButtonChuyenHet.Location = new System.Drawing.Point(82, 137);
             this.simpleButtonChuyenHet.Name = "simpleButtonChuyenHet";
             this.simpleButtonChuyenHet.Size = new System.Drawing.Size(147, 35);
-            this.simpleButtonChuyenHet.TabIndex = 1;
+            this.simpleButtonChuyenHet.TabIndex = 13;
             this.simpleButtonChuyenHet.Text = "Phân lớp tất cả(Alt+&S)";
             this.simpleButtonChuyenHet.Click += new System.EventHandler(this.simpleButtonChuyenHet_Click);
             // 
@@ -545,7 +545,7 @@
             this.simpleButtonDong.Location = new System.Drawing.Point(82, 237);
             this.simpleButtonDong.Name = "simpleButtonDong";
             this.simpleButtonDong.Size = new System.Drawing.Size(147, 35);
-            this.simpleButtonDong.TabIndex = 0;
+            this.simpleButtonDong.TabIndex = 15;
             this.simpleButtonDong.Text = "Đóng(Alt+&X)";
             this.simpleButtonDong.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
@@ -555,7 +555,7 @@
             this.simpleButtonChuyenLai.Location = new System.Drawing.Point(82, 87);
             this.simpleButtonChuyenLai.Name = "simpleButtonChuyenLai";
             this.simpleButtonChuyenLai.Size = new System.Drawing.Size(147, 35);
-            this.simpleButtonChuyenLai.TabIndex = 0;
+            this.simpleButtonChuyenLai.TabIndex = 12;
             this.simpleButtonChuyenLai.Text = "Chuyển lại(Alt+&B)";
             this.simpleButtonChuyenLai.Click += new System.EventHandler(this.simpleButtonChuyenLai_Click);
             // 
@@ -565,7 +565,7 @@
             this.simpleButtonChuyenLop.Location = new System.Drawing.Point(82, 36);
             this.simpleButtonChuyenLop.Name = "simpleButtonChuyenLop";
             this.simpleButtonChuyenLop.Size = new System.Drawing.Size(147, 35);
-            this.simpleButtonChuyenLop.TabIndex = 0;
+            this.simpleButtonChuyenLop.TabIndex = 11;
             this.simpleButtonChuyenLop.Text = "Phân lớp (Enter)";
             this.simpleButtonChuyenLop.Click += new System.EventHandler(this.simpleButtonChuyenLop_Click);
             // 

@@ -79,14 +79,14 @@
             this.comboBoxEditNguoiDung.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditNguoiDung.Size = new System.Drawing.Size(195, 20);
-            this.comboBoxEditNguoiDung.TabIndex = 2;
+            this.comboBoxEditNguoiDung.TabIndex = 1;
             // 
             // textEdittenTruyCap
             // 
             this.textEdittenTruyCap.Location = new System.Drawing.Point(22, 78);
             this.textEdittenTruyCap.Name = "textEdittenTruyCap";
             this.textEdittenTruyCap.Size = new System.Drawing.Size(195, 20);
-            this.textEdittenTruyCap.TabIndex = 4;
+            this.textEdittenTruyCap.TabIndex = 2;
             // 
             // labelControl2
             // 
@@ -109,7 +109,7 @@
             this.textEditMatKhau.Location = new System.Drawing.Point(240, 78);
             this.textEditMatKhau.Name = "textEditMatKhau";
             this.textEditMatKhau.Size = new System.Drawing.Size(167, 20);
-            this.textEditMatKhau.TabIndex = 6;
+            this.textEditMatKhau.TabIndex = 3;
             // 
             // radioGroupTrangThai
             // 
@@ -120,7 +120,7 @@
             new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "Không được phép"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "Được phép")});
             this.radioGroupTrangThai.Size = new System.Drawing.Size(223, 29);
-            this.radioGroupTrangThai.TabIndex = 9;
+            this.radioGroupTrangThai.TabIndex = 5;
             // 
             // labelControl4
             // 
@@ -138,7 +138,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditQuyenSuDung.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditQuyenSuDung.Size = new System.Drawing.Size(169, 20);
-            this.comboBoxEditQuyenSuDung.TabIndex = 7;
+            this.comboBoxEditQuyenSuDung.TabIndex = 4;
             // 
             // labelControl5
             // 
@@ -166,7 +166,7 @@
             this.simpleButtonDong.Location = new System.Drawing.Point(491, 16);
             this.simpleButtonDong.Name = "simpleButtonDong";
             this.simpleButtonDong.Size = new System.Drawing.Size(123, 35);
-            this.simpleButtonDong.TabIndex = 14;
+            this.simpleButtonDong.TabIndex = 10;
             this.simpleButtonDong.Text = "Đóng (Alt+&X)";
             this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
             // 
@@ -176,7 +176,7 @@
             this.simpleButtonXoa.Location = new System.Drawing.Point(345, 16);
             this.simpleButtonXoa.Name = "simpleButtonXoa";
             this.simpleButtonXoa.Size = new System.Drawing.Size(122, 35);
-            this.simpleButtonXoa.TabIndex = 13;
+            this.simpleButtonXoa.TabIndex = 9;
             this.simpleButtonXoa.Text = "Xóa (Alt+&D)";
             this.simpleButtonXoa.Click += new System.EventHandler(this.simpleButtonXoa_Click);
             // 
@@ -186,7 +186,7 @@
             this.simpleButtonGhi.Location = new System.Drawing.Point(202, 16);
             this.simpleButtonGhi.Name = "simpleButtonGhi";
             this.simpleButtonGhi.Size = new System.Drawing.Size(124, 35);
-            this.simpleButtonGhi.TabIndex = 12;
+            this.simpleButtonGhi.TabIndex = 8;
             this.simpleButtonGhi.Text = "Ghi (Enter)";
             this.simpleButtonGhi.Click += new System.EventHandler(this.simpleButtonGhi_Click);
             // 
@@ -196,7 +196,7 @@
             this.simpleButtonThemMoi.Location = new System.Drawing.Point(56, 16);
             this.simpleButtonThemMoi.Name = "simpleButtonThemMoi";
             this.simpleButtonThemMoi.Size = new System.Drawing.Size(122, 35);
-            this.simpleButtonThemMoi.TabIndex = 11;
+            this.simpleButtonThemMoi.TabIndex = 7;
             this.simpleButtonThemMoi.Text = "Thêm mới (Alt+&N)";
             this.simpleButtonThemMoi.Click += new System.EventHandler(this.simpleButtonThemMoi_Click);
             // 
@@ -207,7 +207,7 @@
             this.gridControlNguoiDung.MainView = this.gridViewNguoiDung;
             this.gridControlNguoiDung.Name = "gridControlNguoiDung";
             this.gridControlNguoiDung.Size = new System.Drawing.Size(665, 245);
-            this.gridControlNguoiDung.TabIndex = 10;
+            this.gridControlNguoiDung.TabIndex = 6;
             this.gridControlNguoiDung.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewNguoiDung});
             // 

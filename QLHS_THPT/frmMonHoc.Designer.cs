@@ -88,7 +88,7 @@
             this.simpleButtonLuu.Location = new System.Drawing.Point(59, 18);
             this.simpleButtonLuu.Name = "simpleButtonLuu";
             this.simpleButtonLuu.Size = new System.Drawing.Size(111, 35);
-            this.simpleButtonLuu.TabIndex = 9;
+            this.simpleButtonLuu.TabIndex = 7;
             this.simpleButtonLuu.Text = "Lưu (Enter)";
             this.simpleButtonLuu.Click += new System.EventHandler(this.simpleButtonLuu_Click);
             // 
@@ -98,7 +98,7 @@
             this.simpleButtonDong.Location = new System.Drawing.Point(205, 18);
             this.simpleButtonDong.Name = "simpleButtonDong";
             this.simpleButtonDong.Size = new System.Drawing.Size(104, 35);
-            this.simpleButtonDong.TabIndex = 11;
+            this.simpleButtonDong.TabIndex = 8;
             this.simpleButtonDong.Text = "Đóng (Alt+&X)";
             this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
             // 
@@ -148,7 +148,7 @@
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(0)), "Không sử dụng"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(1)), "Sử dụng")});
             this.radioGroupTrangThai.Size = new System.Drawing.Size(220, 23);
-            this.radioGroupTrangThai.TabIndex = 20;
+            this.radioGroupTrangThai.TabIndex = 5;
             // 
             // spinEditHeSo
             // 
@@ -162,7 +162,7 @@
             this.spinEditHeSo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.spinEditHeSo.Size = new System.Drawing.Size(100, 20);
-            this.spinEditHeSo.TabIndex = 18;
+            this.spinEditHeSo.TabIndex = 4;
             // 
             // spinEditSoTiet
             // 
@@ -176,7 +176,7 @@
             this.spinEditSoTiet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.spinEditSoTiet.Size = new System.Drawing.Size(100, 20);
-            this.spinEditSoTiet.TabIndex = 18;
+            this.spinEditSoTiet.TabIndex = 3;
             // 
             // labelControl4
             // 
@@ -259,8 +259,7 @@
             this.repositoryItemCheckEdit1,
             this.repositoryItemTextEdit1});
             this.gridcontrolMonHoc.Size = new System.Drawing.Size(507, 365);
-            this.gridcontrolMonHoc.TabIndex = 26;
-            this.gridcontrolMonHoc.TabStop = false;
+            this.gridcontrolMonHoc.TabIndex = 6;
             this.gridcontrolMonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMonHoc});
             // 
