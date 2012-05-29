@@ -130,6 +130,26 @@ namespace QLHS.DAL
                                       + " MaKhoiLop = '{0}' AND MaNamHoc = '{1}' and MaLop not in('{2}') ", MaKhoi, MaNamHoc, MaLop);
             return GetTable(sql);
         }
+        public DataTable LayDTKhoi(string MaNamHoc)
+        {
+            string sql = "select distinct MaKhoiLop as MaKhoi ,N'Khối'+CONVERT(varchar,MaKhoiLop) as TenKhoi from LOP where MaNamHoc='" + MaNamHoc + "' ";
+            return GetTable(sql);
+        }
+        public DataTable LayDTKhoi10(string MaNamHoc)
+        {
+            string sql = "select distinct MaKhoiLop as MaKhoi ,N'Khối'+CONVERT(varchar,MaKhoiLop) as TenKhoi from LOP where MaNamHoc='" + MaNamHoc + "' and MaKhoiLop=10 ";
+            return GetTable(sql);
+        }
+        public DataTable LayDTKhoi_PhanLopCu(string MaNamHoc)
+        {
+            string sql = "select distinct MaKhoiLop as MaKhoi ,N'Khối'+CONVERT(varchar,MaKhoiLop) as TenKhoi from LOP where MaNamHoc='" + MaNamHoc + "' and MaKhoiLop in (10,11)";
+            return GetTable(sql);
+        }
+        public DataTable LayDTKhoi_Chuyen(string MaNamHoc, string MaKhoi)
+        {
+            string sql = "select distinct MaKhoiLop as MaKhoi ,N'Khối'+CONVERT(varchar,MaKhoiLop) as TenKhoi from LOP where MaNamHoc='" + MaNamHoc + "' and MaKhoiLop ='" + MaKhoi + "'";
+            return GetTable(sql);
+        }
     }
 }
 
