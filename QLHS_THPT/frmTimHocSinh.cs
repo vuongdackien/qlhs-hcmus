@@ -70,10 +70,7 @@ namespace QLHS
             return cl;
         }
         private void frmSearchHocSinh_Load(object sender, EventArgs e)
-        {
-            //disable button khi form load
-            simpleButtonXoaDK.Enabled = false;
-            
+        {            
             Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
                                                           _namHocBUS.LayDTNamHoc(),
                                                           "MaNamHoc", "TenNamHoc",0);
@@ -121,9 +118,6 @@ namespace QLHS
         /// <param name="e"></param>
         private void simpleButtonSearch_Click(object sender, EventArgs e)
         {
-            //enable button khi nhấn nút tìm
-            simpleButtonXoaDK.Enabled = true;            
-
             DataTable kq_TimKiemDS = null;
             HocSinhTimKiemDTO hsTimKiemDTO = new HocSinhTimKiemDTO();
             hsTimKiemDTO.MaHocSinh = textEditMaHocSinh.Text;
