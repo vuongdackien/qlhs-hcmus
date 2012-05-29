@@ -231,7 +231,6 @@
             // 
             // textEditTenLop
             // 
-            this.textEditTenLop.Enabled = false;
             this.textEditTenLop.Location = new System.Drawing.Point(21, 67);
             this.textEditTenLop.Name = "textEditTenLop";
             this.textEditTenLop.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;

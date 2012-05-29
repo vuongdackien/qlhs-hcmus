@@ -17,8 +17,8 @@ namespace QLHS.DAL
         public DataTable LayDTLop_MaNam_MaKhoi(string MaNamHoc, string MaKhoi)
         {
             string sql = string.Format("SELECT MaLop, TenLop, gv.MaGiaoVien, TenGiaoVien, SiSo, l. MaNamHoc, TenNamHoc, MaKhoiLop "
-                                      + " FROM LOP l, GIAOVIEN gv, NAMHOC namhoc WHERE l.MaGiaoVien=gv.MaGiaoVien AND " 
-                                      + " namhoc.MaNamHoc=l.MaNamHoc AND "
+                                      + " FROM LOP l LEFT JOIN GIAOVIEN gv ON l.MaGiaoVien=gv.MaGiaoVien LEFT JOIN NAMHOC namhoc  ON " 
+                                      + " l.MaNamHoc=namhoc.MaNamHoc WHERE "
                                       + " MaKhoiLop = '{0}' AND l.MaNamHoc = '{1}' ",MaKhoi,MaNamHoc);
             return GetTable(sql);
         }
