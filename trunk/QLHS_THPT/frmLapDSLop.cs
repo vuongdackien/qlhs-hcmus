@@ -69,10 +69,11 @@ namespace QLHS
         {
             simpleButtonDong.Enabled = !editing;
             gridControlDSLop.Enabled = !editing;
-            comboBoxEditGVCN.Enabled = editing;
+            //comboBoxEditGVCN.Enabled = editing;
+            //textEditTenLop.Enabled = editing;
             comboBoxEditNamHoc.Enabled = !editing;
             comboBoxEditKhoi.Enabled = !editing;
-            textEditTenLop.Enabled = editing;
+            
 
             _is_add_button = !editing;
             _is_delete_button = !editing;
