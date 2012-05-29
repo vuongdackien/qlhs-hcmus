@@ -43,9 +43,9 @@ namespace QLHS.BUS
         /// Lấy DataTable năm học làm năm hiện tại=năm học mới
         /// </summary>
         /// <returns>DataTable</returns>
-        public DataTable LayDTNamHocMoi()
+        public DataTable LayDTNamHocHienTai()
         {
-            return _NamHocDAL.LayDTNamHocMoi();
+            return _NamHocDAL.LayDTNamHocHienTai();
         }
         /// <summary>
         /// Lấy DataTable năm học cần chuyển lên lớp khi kết thúc năm học
