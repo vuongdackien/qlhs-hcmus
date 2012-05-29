@@ -399,7 +399,7 @@
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.richTextBox1.Font = new System.Drawing.Font("Tahoma", 10F);
             this.richTextBox1.Location = new System.Drawing.Point(596, 140);
             this.richTextBox1.Name = "richTextBox1";
@@ -423,6 +423,7 @@
             this.Controls.Add(this.panelControlLeft);
             this.Controls.Add(this.panelControl1);
             this.Name = "frmLapDSLop";
+            this.ShowIcon = false;
             this.Text = "Lập danh sách lớp";
             this.Load += new System.EventHandler(this.frmLapDSLop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

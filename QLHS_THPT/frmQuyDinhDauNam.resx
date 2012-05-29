@@ -118,15 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>Hướng dẫn:
-- Độ tuổi quy định: Quy định tuổi cận dưới và tuổi cận trên, áp dụng khi tiếp nhận học sinh
-Lưu ý: 
-+ Quy định này không có hiệu lực khi ngày tiếp nhận hồ sơ học sinh
-chưa tới "Ngày áp dụng quy định". Khi đó các hồ sơ học sinh được tiếp nhận trước ngày
-ra quy định sẽ thay đổi độ tuổi không giới hạn.
-- Số lượng lớp/khối: Quy định số lượng lớp tối đa trong 1 khối
-- Sỉ số tối đa: Quy định số lượng học sinh tối đa trong 1 lớp
-- Điểm đạt môn: Điểm trung bình đạt môn học (dùng để thống kê môn học, thống kê học kỳ)
-- Ngày áp dụng: Ngày ban hành quyết định về các quy định trên</value>
+    <value> 
+ Hướng dẫn:
+  - Độ tuổi quy định: Quy định tuổi cận dưới và tuổi cận trên, áp dụng khi tiếp nhận học sinh
+  Lưu ý: 
+  + Quy định này không có hiệu lực khi ngày tiếp nhận hồ sơ học sinh
+  chưa tới "Ngày áp dụng quy định". Khi đó các hồ sơ học sinh được tiếp nhận trước ngày
+  ra quy định sẽ thay đổi độ tuổi không giới hạn.
+  - Số lượng lớp/khối: Quy định số lượng lớp tối đa trong 1 khối
+  - Sỉ số tối đa: Quy định số lượng học sinh tối đa trong 1 lớp
+  - Điểm đạt môn: Điểm trung bình đạt môn học (dùng để thống kê môn học, thống kê học kỳ)
+  - Ngày áp dụng: Ngày ban hành quyết định về các quy định trên</value>
   </data>
 </root>

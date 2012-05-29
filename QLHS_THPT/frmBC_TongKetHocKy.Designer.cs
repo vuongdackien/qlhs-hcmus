@@ -571,6 +571,7 @@
             this.Controls.Add(this.panelControlChooseYear);
             this.Controls.Add(this.panelControlTopRight);
             this.Name = "frmBC_TongKetHocKy";
+            this.ShowIcon = false;
             this.Text = "Báo cáo tổng kết học kỳ";
             this.Load += new System.EventHandler(this.frmBC_TongKetHocKy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlTopRight)).EndInit();

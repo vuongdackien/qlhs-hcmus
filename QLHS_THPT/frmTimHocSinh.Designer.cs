@@ -685,6 +685,7 @@
             this.Controls.Add(this.xtraTabControlDieuKien);
             this.Controls.Add(this.panelControlLeft);
             this.Name = "frmTimHocSinh";
+            this.ShowIcon = false;
             this.Text = "Tìm kiếm học sinh";
             this.Load += new System.EventHandler(this.frmSearchHocSinh_Load);
             this.contextMenuStrip1.ResumeLayout(false);

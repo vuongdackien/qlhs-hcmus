@@ -8,33 +8,58 @@ namespace QLHS.DAL
 {
     public class MonHocDAL : ConnectData
     {
-        MonHocDTO MHDTO;
-        public int XoaMonHoc(string MaMH)
+        MonHocDTO _monHocDTO;
+        /// <summary>
+        /// Thêm môn học
+        /// </summary>
+        /// <param name="monHoc">MonHocDTO</param>
+        /// <returns></returns>
+        public bool Them_MonHoc(MonHocDTO _monHocDTO)
         {
-           
-            string sql="";
-            sql = string.Format("delete  Giaovien  where MaMonHoc like '%{0}%'",MaMH);
-            return ExecuteQuery(sql);
+            string sql = string.Format("INSERT INTO MONHOC VALUES ('{0}',N'{1}',{2},{3},{4})",
+                                        _monHocDTO.MaMonHoc, _monHocDTO.TenMonHoc, _monHocDTO.SoTiet,
+                                        _monHocDTO.HeSo, _monHocDTO.TrangThai);
+            return ExecuteQuery(sql) > 0;
         }
-        public int ThemMonHoc(MonHocDTO MHDTO)
+        /// <summary>
+        /// Xóa môn học
+        /// </summary>
+        /// <param name="maMonHoc">string: Mã môn học</param>
+        /// <returns></returns>
+        public bool Xoa_MonHoc(string maMonHoc)
         {
-            string sql = "";
-            sql = string.Format("insert into  MonHoc values ('{0}',N'{1}','{2}','{3}','{4}')",MHDTO.MaMonHoc,MHDTO.TenMonHoc,MHDTO.SoTiet,MHDTO.HeSo,MHDTO.TrangThai);
-            return ExecuteQuery(sql);
+            string bd = "SELECT count(*) as SoLuong FROM BANGDIEM WHERE MaMonHoc='"+maMonHoc+"'";
+            int count = Convert.ToInt32(ExecuteScalar(bd));
+            if(count>0)
+            {
+                return false;
+            }
+            string sql = "DELETE FROM MONHOC WHERE MaMonHoc ='" + maMonHoc + "'\n";
+            return ExecuteQuery(sql) > 0;
         }
-        public int CapNhatMonHoc(MonHocDTO MHDTO)
+        /// <summary>
+        /// Cập nhật môn học
+        /// </summary>
+        /// <param name="monHoc">MonHocDTO</param>
+        /// <returns></returns>
+        public bool CapNhat_MonHoc(MonHocDTO _monHocDTO)
         {
-            string sql = string.Format("update MonHoc set TenMonHoc=N'{0}', SoTiet='{1}', HeSo='{2}', TrangThai='{3}'"
+            string sql = string.Format("UPDATE MONHOC SET TenMonHoc = N'{0}', SoTiet={1}, HeSo={2}, TrangThai={3} "
+                                     + "WHERE MaMonHoc='{4}' ", _monHocDTO.TenMonHoc,_monHocDTO.SoTiet,
+                                     _monHocDTO.HeSo, _monHocDTO.TrangThai, _monHocDTO.MaMonHoc);
+            return ExecuteQuery(sql) > 0;
+        }
 
-                                                     + "where MaMonHoc='{4}' ", MHDTO.TenMonHoc, MHDTO.SoTiet,MHDTO.HeSo,MHDTO.TrangThai,MHDTO.MaMonHoc);
-           return ExecuteQuery(sql);
-        }
-        public bool KTTTMonhoc(MonHocDTO MHDTO)
+        /// <summary>
+        /// Kiểm tra tồn tại môn học
+        /// </summary>
+        /// <param name="maMonHoc">string: Mã môn học</param>
+        /// <returns></returns>
+        public bool KiemTraTonTai_MonHoc(string maMonHoc)
         {
-            string sql = string.Format("SELECT count(*) as SoLuong FROM MonHoc WHERE MaMonHoc = '{0}'",MHDTO.MaMonHoc );
-            return (int)ExecuteScalar(sql)==1 ;
+            string sql = string.Format("SELECT count(*) as SoLuong FROM MonHoc WHERE MaMonHoc = '{0}'", maMonHoc);
+            return Convert.ToInt32(ExecuteScalar(sql)) == 1;
         }
-
         /// <summary>
         /// Lấy Datatable danh sách môn học
         /// </summary>
@@ -76,8 +101,7 @@ namespace QLHS.DAL
             dt = GetTable(sql, true);
             return dt;
         }
-       
-      
+             
         public MonHoc_HeSoDTO Lay_HeSoMonHoc()
         {
             string sql = "SELECT MaMonHoc, HeSo FROM MONHOC WHERE TrangThai = 1";

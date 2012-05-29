@@ -377,7 +377,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmQLNguoiDung";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Quản lý người dùng";
             this.TopMost = true;

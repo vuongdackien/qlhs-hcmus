@@ -28,267 +28,291 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMonHoc));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButtonThoat = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonloaddulieu = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonSuaMonHoc = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonXoa = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonThem = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelControlTitle = new DevExpress.XtraEditors.LabelControl();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.radioGroupTrangThai = new DevExpress.XtraEditors.RadioGroup();
+            this.spinEditHeSo = new DevExpress.XtraEditors.SpinEdit();
+            this.spinEditSoTiet = new DevExpress.XtraEditors.SpinEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.gridControlMonHoc = new DevExpress.XtraGrid.GridControl();
+            this.textEditMaMonHoc = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.textEditTenMonHoc = new DevExpress.XtraEditors.TextEdit();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.gridcontrolMonHoc = new DevExpress.XtraGrid.GridControl();
             this.gridViewMonHoc = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MaMonHoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.TenMonHoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoTiet = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.HeSo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.TrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.gridColumnTrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlMonHoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupTrangThai.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEditHeSo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEditSoTiet.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditMaMonHoc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditTenMonHoc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridcontrolMonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.simpleButtonThoat);
-            this.panelControl1.Controls.Add(this.simpleButtonloaddulieu);
-            this.panelControl1.Controls.Add(this.simpleButtonSuaMonHoc);
+            this.panelControl1.Controls.Add(this.simpleButtonXoa);
+            this.panelControl1.Controls.Add(this.simpleButtonLuu);
+            this.panelControl1.Controls.Add(this.simpleButtonDong);
+            this.panelControl1.Controls.Add(this.simpleButtonThem);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 590);
+            this.panelControl1.Location = new System.Drawing.Point(0, 516);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(780, 118);
+            this.panelControl1.Size = new System.Drawing.Size(834, 76);
             this.panelControl1.TabIndex = 0;
             // 
-            // simpleButtonThoat
+            // simpleButtonXoa
             // 
-            this.simpleButtonThoat.Image = global::QLHS.Properties.Resources.thoat_small;
-            this.simpleButtonThoat.Location = new System.Drawing.Point(618, 24);
-            this.simpleButtonThoat.Name = "simpleButtonThoat";
-            this.simpleButtonThoat.Size = new System.Drawing.Size(120, 35);
-            this.simpleButtonThoat.TabIndex = 0;
-            this.simpleButtonThoat.Text = "Thoát";
-            this.simpleButtonThoat.Click += new System.EventHandler(this.simpleButtonThoat_Click);
+            this.simpleButtonXoa.Image = global::QLHS.Properties.Resources.xoa_small;
+            this.simpleButtonXoa.Location = new System.Drawing.Point(459, 20);
+            this.simpleButtonXoa.Name = "simpleButtonXoa";
+            this.simpleButtonXoa.Size = new System.Drawing.Size(104, 35);
+            this.simpleButtonXoa.TabIndex = 12;
+            this.simpleButtonXoa.Text = "Xóa (Alt+&D)";
+            this.simpleButtonXoa.Click += new System.EventHandler(this.simpleButtonXoa_Click);
             // 
-            // simpleButtonloaddulieu
+            // simpleButtonLuu
             // 
-            this.simpleButtonloaddulieu.Image = global::QLHS.Properties.Resources.capnhat;
-            this.simpleButtonloaddulieu.Location = new System.Drawing.Point(474, 24);
-            this.simpleButtonloaddulieu.Name = "simpleButtonloaddulieu";
-            this.simpleButtonloaddulieu.Size = new System.Drawing.Size(120, 35);
-            this.simpleButtonloaddulieu.TabIndex = 1;
-            this.simpleButtonloaddulieu.Text = "Tải lại dữ liệu";
-            this.simpleButtonloaddulieu.Click += new System.EventHandler(this.simpleButtonloaddulieu_Click);
+            this.simpleButtonLuu.Image = global::QLHS.Properties.Resources.them_small;
+            this.simpleButtonLuu.Location = new System.Drawing.Point(320, 20);
+            this.simpleButtonLuu.Name = "simpleButtonLuu";
+            this.simpleButtonLuu.Size = new System.Drawing.Size(111, 35);
+            this.simpleButtonLuu.TabIndex = 9;
+            this.simpleButtonLuu.Text = "Lưu (Enter)";
+            this.simpleButtonLuu.Click += new System.EventHandler(this.simpleButtonLuu_Click);
             // 
-            // simpleButtonSuaMonHoc
+            // simpleButtonDong
             // 
-            this.simpleButtonSuaMonHoc.Image = global::QLHS.Properties.Resources.capnhat;
-            this.simpleButtonSuaMonHoc.Location = new System.Drawing.Point(330, 24);
-            this.simpleButtonSuaMonHoc.Name = "simpleButtonSuaMonHoc";
-            this.simpleButtonSuaMonHoc.Size = new System.Drawing.Size(120, 35);
-            this.simpleButtonSuaMonHoc.TabIndex = 2;
-            this.simpleButtonSuaMonHoc.Text = "Cập nhật môn học";
-            this.simpleButtonSuaMonHoc.Click += new System.EventHandler(this.simpleButtonSuaMonHoc_Click);
+            this.simpleButtonDong.Image = global::QLHS.Properties.Resources.thoat_small;
+            this.simpleButtonDong.Location = new System.Drawing.Point(592, 20);
+            this.simpleButtonDong.Name = "simpleButtonDong";
+            this.simpleButtonDong.Size = new System.Drawing.Size(104, 35);
+            this.simpleButtonDong.TabIndex = 11;
+            this.simpleButtonDong.Text = "Đóng (Alt+&X)";
+            this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
+            // 
+            // simpleButtonThem
+            // 
+            this.simpleButtonThem.Image = global::QLHS.Properties.Resources.them;
+            this.simpleButtonThem.Location = new System.Drawing.Point(156, 20);
+            this.simpleButtonThem.Name = "simpleButtonThem";
+            this.simpleButtonThem.Size = new System.Drawing.Size(135, 35);
+            this.simpleButtonThem.TabIndex = 8;
+            this.simpleButtonThem.Text = "Thêm mới (Alt+&N)";
+            this.simpleButtonThem.Click += new System.EventHandler(this.simpleButtonThem_Click);
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.label2);
-            this.panelControl2.Controls.Add(this.labelControl1);
+            this.panelControl2.Controls.Add(this.labelControlTitle);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl2.Location = new System.Drawing.Point(0, 0);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(780, 89);
+            this.panelControl2.Size = new System.Drawing.Size(834, 48);
             this.panelControl2.TabIndex = 1;
             // 
-            // label2
+            // labelControlTitle
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(112, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(553, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "_________________________________________________________________________________" +
-    "__________";
+            this.labelControlTitle.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControlTitle.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.labelControlTitle.Location = new System.Drawing.Point(26, 12);
+            this.labelControlTitle.Name = "labelControlTitle";
+            this.labelControlTitle.Size = new System.Drawing.Size(218, 23);
+            this.labelControlTitle.TabIndex = 21;
+            this.labelControlTitle.Text = "DANH SÁCH MÔN HỌC";
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.Controls.Add(this.radioGroupTrangThai);
+            this.panelControl3.Controls.Add(this.spinEditHeSo);
+            this.panelControl3.Controls.Add(this.spinEditSoTiet);
+            this.panelControl3.Controls.Add(this.labelControl4);
+            this.panelControl3.Controls.Add(this.labelControl5);
+            this.panelControl3.Controls.Add(this.labelControl3);
+            this.panelControl3.Controls.Add(this.labelControl1);
+            this.panelControl3.Controls.Add(this.textEditMaMonHoc);
+            this.panelControl3.Controls.Add(this.labelControl2);
+            this.panelControl3.Controls.Add(this.textEditTenMonHoc);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl3.Location = new System.Drawing.Point(0, 48);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(834, 103);
+            this.panelControl3.TabIndex = 12;
+            // 
+            // radioGroupTrangThai
+            // 
+            this.radioGroupTrangThai.EditValue = ((byte)(1));
+            this.radioGroupTrangThai.Location = new System.Drawing.Point(436, 25);
+            this.radioGroupTrangThai.Name = "radioGroupTrangThai";
+            this.radioGroupTrangThai.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(0)), "Không hiển thị"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(1)), "Hiển thị")});
+            this.radioGroupTrangThai.Size = new System.Drawing.Size(220, 23);
+            this.radioGroupTrangThai.TabIndex = 20;
+            // 
+            // spinEditHeSo
+            // 
+            this.spinEditHeSo.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spinEditHeSo.Location = new System.Drawing.Point(243, 70);
+            this.spinEditHeSo.Name = "spinEditHeSo";
+            this.spinEditHeSo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.spinEditHeSo.Size = new System.Drawing.Size(100, 20);
+            this.spinEditHeSo.TabIndex = 18;
+            // 
+            // spinEditSoTiet
+            // 
+            this.spinEditSoTiet.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spinEditSoTiet.Location = new System.Drawing.Point(243, 25);
+            this.spinEditSoTiet.Name = "spinEditSoTiet";
+            this.spinEditSoTiet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.spinEditSoTiet.Size = new System.Drawing.Size(100, 20);
+            this.spinEditSoTiet.TabIndex = 18;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(243, 51);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(31, 13);
+            this.labelControl4.TabIndex = 17;
+            this.labelControl4.Text = "Hệ số:";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(436, 6);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(53, 13);
+            this.labelControl5.TabIndex = 16;
+            this.labelControl5.Text = "Trạng thái:";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(23, 51);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(65, 13);
+            this.labelControl3.TabIndex = 17;
+            this.labelControl3.Text = "Tên môn học:";
             // 
             // labelControl1
             // 
-            this.labelControl1.Appearance.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Blue;
-            this.labelControl1.Location = new System.Drawing.Point(277, 29);
+            this.labelControl1.Location = new System.Drawing.Point(243, 6);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(238, 26);
-            this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Danh sách các môn học";
+            this.labelControl1.Size = new System.Drawing.Size(35, 13);
+            this.labelControl1.TabIndex = 16;
+            this.labelControl1.Text = "Số tiết:";
             // 
-            // gridControlMonHoc
+            // textEditMaMonHoc
             // 
-            this.gridControlMonHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlMonHoc.Location = new System.Drawing.Point(0, 89);
-            this.gridControlMonHoc.MainView = this.gridViewMonHoc;
-            this.gridControlMonHoc.Name = "gridControlMonHoc";
-            this.gridControlMonHoc.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemTextEdit1,
-            this.repositoryItemTextEdit2,
+            this.textEditMaMonHoc.Enabled = false;
+            this.textEditMaMonHoc.Location = new System.Drawing.Point(23, 25);
+            this.textEditMaMonHoc.Name = "textEditMaMonHoc";
+            this.textEditMaMonHoc.Size = new System.Drawing.Size(147, 20);
+            this.textEditMaMonHoc.TabIndex = 1;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(23, 6);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(61, 13);
+            this.labelControl2.TabIndex = 16;
+            this.labelControl2.Text = "Mã môn học:";
+            // 
+            // textEditTenMonHoc
+            // 
+            this.textEditTenMonHoc.Location = new System.Drawing.Point(23, 70);
+            this.textEditTenMonHoc.Name = "textEditTenMonHoc";
+            this.textEditTenMonHoc.Size = new System.Drawing.Size(147, 20);
+            this.textEditTenMonHoc.TabIndex = 2;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.richTextBox1.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.richTextBox1.Location = new System.Drawing.Point(507, 151);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.ShortcutsEnabled = false;
+            this.richTextBox1.Size = new System.Drawing.Size(327, 365);
+            this.richTextBox1.TabIndex = 27;
+            this.richTextBox1.TabStop = false;
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            // 
+            // gridcontrolMonHoc
+            // 
+            this.gridcontrolMonHoc.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gridcontrolMonHoc.Location = new System.Drawing.Point(0, 151);
+            this.gridcontrolMonHoc.MainView = this.gridViewMonHoc;
+            this.gridcontrolMonHoc.Name = "gridcontrolMonHoc";
+            this.gridcontrolMonHoc.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
-            this.repositoryItemTextEdit3,
-            this.repositoryItemTextEdit4,
-            this.repositoryItemComboBox1});
-            this.gridControlMonHoc.Size = new System.Drawing.Size(780, 501);
-            this.gridControlMonHoc.TabIndex = 2;
-            this.gridControlMonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.repositoryItemTextEdit1});
+            this.gridcontrolMonHoc.Size = new System.Drawing.Size(507, 365);
+            this.gridcontrolMonHoc.TabIndex = 26;
+            this.gridcontrolMonHoc.TabStop = false;
+            this.gridcontrolMonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMonHoc});
             // 
             // gridViewMonHoc
             // 
-            this.gridViewMonHoc.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
-            this.gridViewMonHoc.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
-            this.gridViewMonHoc.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.Black;
-            this.gridViewMonHoc.Appearance.ColumnFilterButton.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
-            this.gridViewMonHoc.Appearance.ColumnFilterButton.Options.UseForeColor = true;
-            this.gridViewMonHoc.Appearance.ColumnFilterButtonActive.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(163)))));
-            this.gridViewMonHoc.Appearance.ColumnFilterButtonActive.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(163)))));
-            this.gridViewMonHoc.Appearance.ColumnFilterButtonActive.ForeColor = System.Drawing.Color.Black;
-            this.gridViewMonHoc.Appearance.ColumnFilterButtonActive.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.ColumnFilterButtonActive.Options.UseBorderColor = true;
-            this.gridViewMonHoc.Appearance.ColumnFilterButtonActive.Options.UseForeColor = true;
-            this.gridViewMonHoc.Appearance.Empty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(229)))), ((int)(((byte)(128)))));
-            this.gridViewMonHoc.Appearance.Empty.BackColor2 = System.Drawing.Color.White;
-            this.gridViewMonHoc.Appearance.Empty.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(173)))));
-            this.gridViewMonHoc.Appearance.EvenRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(173)))));
-            this.gridViewMonHoc.Appearance.EvenRow.ForeColor = System.Drawing.Color.Black;
-            this.gridViewMonHoc.Appearance.EvenRow.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.EvenRow.Options.UseBorderColor = true;
-            this.gridViewMonHoc.Appearance.EvenRow.Options.UseForeColor = true;
-            this.gridViewMonHoc.Appearance.FilterCloseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
-            this.gridViewMonHoc.Appearance.FilterCloseButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
-            this.gridViewMonHoc.Appearance.FilterCloseButton.ForeColor = System.Drawing.Color.Black;
-            this.gridViewMonHoc.Appearance.FilterCloseButton.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.FilterCloseButton.Options.UseBorderColor = true;
-            this.gridViewMonHoc.Appearance.FilterCloseButton.Options.UseForeColor = true;
-            this.gridViewMonHoc.Appearance.FilterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(229)))), ((int)(((byte)(128)))));
-            this.gridViewMonHoc.Appearance.FilterPanel.BackColor2 = System.Drawing.Color.White;
-            this.gridViewMonHoc.Appearance.FilterPanel.ForeColor = System.Drawing.Color.Black;
-            this.gridViewMonHoc.Appearance.FilterPanel.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.FilterPanel.Options.UseForeColor = true;
-            this.gridViewMonHoc.Appearance.FixedLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(159)))), ((int)(((byte)(69)))));
-            this.gridViewMonHoc.Appearance.FixedLine.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.FocusedCell.BackColor = System.Drawing.Color.White;
-            this.gridViewMonHoc.Appearance.FocusedCell.ForeColor = System.Drawing.Color.Black;
-            this.gridViewMonHoc.Appearance.FocusedCell.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.FocusedCell.Options.UseForeColor = true;
-            this.gridViewMonHoc.Appearance.FocusedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(152)))), ((int)(((byte)(49)))));
-            this.gridViewMonHoc.Appearance.FocusedRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(167)))), ((int)(((byte)(62)))));
-            this.gridViewMonHoc.Appearance.FocusedRow.ForeColor = System.Drawing.Color.White;
-            this.gridViewMonHoc.Appearance.FocusedRow.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.FocusedRow.Options.UseBorderColor = true;
-            this.gridViewMonHoc.Appearance.FocusedRow.Options.UseForeColor = true;
-            this.gridViewMonHoc.Appearance.FooterPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
-            this.gridViewMonHoc.Appearance.FooterPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
-            this.gridViewMonHoc.Appearance.FooterPanel.ForeColor = System.Drawing.Color.Black;
-            this.gridViewMonHoc.Appearance.FooterPanel.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.FooterPanel.Options.UseBorderColor = true;
-            this.gridViewMonHoc.Appearance.FooterPanel.Options.UseForeColor = true;
-            this.gridViewMonHoc.Appearance.GroupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
-            this.gridViewMonHoc.Appearance.GroupButton.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
-            this.gridViewMonHoc.Appearance.GroupButton.ForeColor = System.Drawing.Color.Black;
-            this.gridViewMonHoc.Appearance.GroupButton.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.GroupButton.Options.UseBorderColor = true;
-            this.gridViewMonHoc.Appearance.GroupButton.Options.UseForeColor = true;
-            this.gridViewMonHoc.Appearance.GroupFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(229)))), ((int)(((byte)(128)))));
-            this.gridViewMonHoc.Appearance.GroupFooter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(229)))), ((int)(((byte)(128)))));
-            this.gridViewMonHoc.Appearance.GroupFooter.ForeColor = System.Drawing.Color.Black;
-            this.gridViewMonHoc.Appearance.GroupFooter.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.GroupFooter.Options.UseBorderColor = true;
-            this.gridViewMonHoc.Appearance.GroupFooter.Options.UseForeColor = true;
-            this.gridViewMonHoc.Appearance.GroupPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(229)))), ((int)(((byte)(128)))));
-            this.gridViewMonHoc.Appearance.GroupPanel.BackColor2 = System.Drawing.Color.White;
-            this.gridViewMonHoc.Appearance.GroupPanel.ForeColor = System.Drawing.Color.Black;
-            this.gridViewMonHoc.Appearance.GroupPanel.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.GroupPanel.Options.UseForeColor = true;
-            this.gridViewMonHoc.Appearance.GroupRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(229)))), ((int)(((byte)(128)))));
-            this.gridViewMonHoc.Appearance.GroupRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(229)))), ((int)(((byte)(128)))));
-            this.gridViewMonHoc.Appearance.GroupRow.ForeColor = System.Drawing.Color.Black;
-            this.gridViewMonHoc.Appearance.GroupRow.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.GroupRow.Options.UseBorderColor = true;
-            this.gridViewMonHoc.Appearance.GroupRow.Options.UseForeColor = true;
-            this.gridViewMonHoc.Appearance.HeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(214)))), ((int)(((byte)(115)))));
-            this.gridViewMonHoc.Appearance.HeaderPanel.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(214)))), ((int)(((byte)(115)))));
-            this.gridViewMonHoc.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Black;
-            this.gridViewMonHoc.Appearance.HeaderPanel.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.HeaderPanel.Options.UseBorderColor = true;
-            this.gridViewMonHoc.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.gridViewMonHoc.Appearance.HideSelectionRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(176)))), ((int)(((byte)(84)))));
-            this.gridViewMonHoc.Appearance.HideSelectionRow.ForeColor = System.Drawing.Color.White;
-            this.gridViewMonHoc.Appearance.HideSelectionRow.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.HideSelectionRow.Options.UseForeColor = true;
-            this.gridViewMonHoc.Appearance.HorzLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
-            this.gridViewMonHoc.Appearance.HorzLine.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(163)))));
-            this.gridViewMonHoc.Appearance.OddRow.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(240)))), ((int)(((byte)(163)))));
-            this.gridViewMonHoc.Appearance.OddRow.ForeColor = System.Drawing.Color.Black;
-            this.gridViewMonHoc.Appearance.OddRow.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.OddRow.Options.UseBorderColor = true;
-            this.gridViewMonHoc.Appearance.OddRow.Options.UseForeColor = true;
-            this.gridViewMonHoc.Appearance.Preview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.gridViewMonHoc.Appearance.Preview.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(255)))), ((int)(((byte)(220)))));
-            this.gridViewMonHoc.Appearance.Preview.Font = new System.Drawing.Font("Verdana", 7.5F);
-            this.gridViewMonHoc.Appearance.Preview.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(177)))), ((int)(((byte)(90)))));
-            this.gridViewMonHoc.Appearance.Preview.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.Preview.Options.UseBorderColor = true;
-            this.gridViewMonHoc.Appearance.Preview.Options.UseFont = true;
-            this.gridViewMonHoc.Appearance.Preview.Options.UseForeColor = true;
-            this.gridViewMonHoc.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(173)))));
-            this.gridViewMonHoc.Appearance.Row.ForeColor = System.Drawing.Color.Black;
-            this.gridViewMonHoc.Appearance.Row.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.Row.Options.UseForeColor = true;
-            this.gridViewMonHoc.Appearance.RowSeparator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(229)))), ((int)(((byte)(128)))));
-            this.gridViewMonHoc.Appearance.RowSeparator.BackColor2 = System.Drawing.Color.White;
-            this.gridViewMonHoc.Appearance.RowSeparator.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(167)))), ((int)(((byte)(62)))));
-            this.gridViewMonHoc.Appearance.SelectedRow.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.TopNewRow.BackColor = System.Drawing.Color.White;
-            this.gridViewMonHoc.Appearance.TopNewRow.Options.UseBackColor = true;
-            this.gridViewMonHoc.Appearance.VertLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(194)))), ((int)(((byte)(102)))));
-            this.gridViewMonHoc.Appearance.VertLine.Options.UseBackColor = true;
             this.gridViewMonHoc.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.MaMonHoc,
             this.TenMonHoc,
             this.SoTiet,
             this.HeSo,
-            this.TrangThai});
-            this.gridViewMonHoc.GridControl = this.gridControlMonHoc;
+            this.gridColumnTrangThai});
+            this.gridViewMonHoc.GridControl = this.gridcontrolMonHoc;
             this.gridViewMonHoc.Name = "gridViewMonHoc";
-            this.gridViewMonHoc.OptionsDetail.EnableDetailToolTip = true;
-            this.gridViewMonHoc.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridViewMonHoc.OptionsView.EnableAppearanceOddRow = true;
             this.gridViewMonHoc.OptionsView.ShowGroupPanel = false;
-            this.gridViewMonHoc.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridViewMonHoc_CellValueChanged_1);
+            this.gridViewMonHoc.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewMonHoc_FocusedRowChanged);
             // 
             // MaMonHoc
             // 
-            this.MaMonHoc.Caption = "Mã môn học";
+            this.MaMonHoc.Caption = "Mã Môn Học";
             this.MaMonHoc.ColumnEdit = this.repositoryItemTextEdit1;
             this.MaMonHoc.FieldName = "MaMonHoc";
+            this.MaMonHoc.MinWidth = 10;
             this.MaMonHoc.Name = "MaMonHoc";
+            this.MaMonHoc.OptionsColumn.AllowEdit = false;
             this.MaMonHoc.OptionsColumn.ReadOnly = true;
             this.MaMonHoc.Visible = true;
             this.MaMonHoc.VisibleIndex = 0;
-            this.MaMonHoc.Width = 180;
+            this.MaMonHoc.Width = 91;
             // 
             // repositoryItemTextEdit1
             // 
@@ -297,99 +321,69 @@
             // 
             // TenMonHoc
             // 
-            this.TenMonHoc.Caption = "Tên môn học";
+            this.TenMonHoc.Caption = "Tên Môn Học";
             this.TenMonHoc.ColumnEdit = this.repositoryItemTextEdit1;
             this.TenMonHoc.FieldName = "TenMonHoc";
+            this.TenMonHoc.MinWidth = 25;
             this.TenMonHoc.Name = "TenMonHoc";
+            this.TenMonHoc.OptionsColumn.AllowEdit = false;
+            this.TenMonHoc.OptionsColumn.ReadOnly = true;
             this.TenMonHoc.Visible = true;
             this.TenMonHoc.VisibleIndex = 1;
-            this.TenMonHoc.Width = 180;
+            this.TenMonHoc.Width = 184;
             // 
             // SoTiet
             // 
-            this.SoTiet.Caption = "Số tiết";
-            this.SoTiet.ColumnEdit = this.repositoryItemTextEdit4;
+            this.SoTiet.Caption = "Số Tiết";
             this.SoTiet.FieldName = "SoTiet";
             this.SoTiet.Name = "SoTiet";
-            this.SoTiet.ToolTip = "Thay đổi số tiết học của môn học. Bạn chỉ có thể nhập số, không được nhập kí tự k" +
-    "hác.";
+            this.SoTiet.OptionsColumn.AllowEdit = false;
+            this.SoTiet.OptionsColumn.ReadOnly = true;
             this.SoTiet.Visible = true;
             this.SoTiet.VisibleIndex = 2;
-            this.SoTiet.Width = 180;
-            // 
-            // repositoryItemTextEdit4
-            // 
-            this.repositoryItemTextEdit4.AutoHeight = false;
-            this.repositoryItemTextEdit4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repositoryItemTextEdit4.Name = "repositoryItemTextEdit4";
+            this.SoTiet.Width = 103;
             // 
             // HeSo
             // 
-            this.HeSo.Caption = "Hệ số";
-            this.HeSo.ColumnEdit = this.repositoryItemTextEdit2;
-            this.HeSo.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.HeSo.Caption = "Hệ Số";
             this.HeSo.FieldName = "HeSo";
             this.HeSo.Name = "HeSo";
-            this.HeSo.ToolTip = "Thay đổi hệ số của môn học  Bạn chỉ có thể nhập số, không được nhập kí tự khác.";
+            this.HeSo.OptionsColumn.AllowEdit = false;
+            this.HeSo.OptionsColumn.ReadOnly = true;
             this.HeSo.Visible = true;
             this.HeSo.VisibleIndex = 3;
-            this.HeSo.Width = 164;
+            this.HeSo.Width = 108;
             // 
-            // repositoryItemTextEdit2
+            // gridColumnTrangThai
             // 
-            this.repositoryItemTextEdit2.AutoHeight = false;
-            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.Caption = "Trạng thái";
-            this.TrangThai.ColumnEdit = this.repositoryItemComboBox1;
-            this.TrangThai.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.TrangThai.FieldName = "TrangThai";
-            this.TrangThai.MaxWidth = 15;
-            this.TrangThai.MinWidth = 10;
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.OptionsColumn.AllowShowHide = false;
-            this.TrangThai.OptionsColumn.AllowSize = false;
-            this.TrangThai.ToolTip = "Thay đổi trạng thái của môn học: 1: có, 0: không.  Bạn chỉ có thể nhập số, không " +
-    "được nhập kí tự khác.";
-            this.TrangThai.Visible = true;
-            this.TrangThai.VisibleIndex = 4;
-            this.TrangThai.Width = 15;
-            // 
-            // repositoryItemComboBox1
-            // 
-            this.repositoryItemComboBox1.AutoHeight = false;
-            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox1.DropDownItemHeight = 20;
-            this.repositoryItemComboBox1.DropDownRows = 10;
-            this.repositoryItemComboBox1.Items.AddRange(new object[] {
-            "0",
-            "1"});
-            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
-            this.repositoryItemComboBox1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.gridColumnTrangThai.Caption = "Trạng Thái";
+            this.gridColumnTrangThai.FieldName = "TrangThai";
+            this.gridColumnTrangThai.Name = "gridColumnTrangThai";
+            this.gridColumnTrangThai.OptionsColumn.AllowEdit = false;
+            this.gridColumnTrangThai.OptionsColumn.ReadOnly = true;
+            this.gridColumnTrangThai.Visible = true;
+            this.gridColumnTrangThai.VisibleIndex = 4;
             // 
             // repositoryItemCheckEdit1
             // 
             this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.DisplayValueChecked = "1";
+            this.repositoryItemCheckEdit1.DisplayValueUnchecked = "0";
             this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
-            // 
-            // repositoryItemTextEdit3
-            // 
-            this.repositoryItemTextEdit3.AutoHeight = false;
-            this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
             // 
             // frmMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 708);
-            this.Controls.Add(this.gridControlMonHoc);
+            this.ClientSize = new System.Drawing.Size(834, 592);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.gridcontrolMonHoc);
+            this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.MaximizeBox = false;
             this.Name = "frmMonHoc";
+            this.ShowIcon = false;
             this.Text = "Quản lý môn học";
             this.Load += new System.EventHandler(this.frmMonHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -397,14 +391,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlMonHoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupTrangThai.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEditHeSo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEditSoTiet.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditMaMonHoc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditTenMonHoc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridcontrolMonHoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewMonHoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -412,24 +410,32 @@
         #endregion
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonSuaMonHoc;
         private DevExpress.XtraEditors.PanelControl panelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControlTitle;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraGrid.GridControl gridControlMonHoc;
+        private DevExpress.XtraEditors.TextEdit textEditMaMonHoc;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit textEditTenMonHoc;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private DevExpress.XtraGrid.GridControl gridcontrolMonHoc;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewMonHoc;
         private DevExpress.XtraGrid.Columns.GridColumn MaMonHoc;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn TenMonHoc;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn SoTiet;
         private DevExpress.XtraGrid.Columns.GridColumn HeSo;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonloaddulieu;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonThoat;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
-        private DevExpress.XtraGrid.Columns.GridColumn TrangThai;
-        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
-        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit4;
-        private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
+        private DevExpress.XtraEditors.SpinEdit spinEditHeSo;
+        private DevExpress.XtraEditors.SpinEdit spinEditSoTiet;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonLuu;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonDong;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonThem;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumnTrangThai;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonXoa;
+        private DevExpress.XtraEditors.RadioGroup radioGroupTrangThai;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
     }
 }
