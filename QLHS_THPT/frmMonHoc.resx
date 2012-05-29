@@ -120,15 +120,14 @@
   <data name="richTextBox1.Text" xml:space="preserve">
     <value>  
   Hướng dẫn quản lý môn học:
-
-  - Ấn nút "Thêm mới" để thêm môn học.
-
-  - Ấn nút "Lưu" để cập nhật môn học
+   
+    - Không được thêm và xóa môn học
+    - Chỉ được chỉnh sử thông tin môn học
+    - Ấn nút "Lưu" để cập nhật môn học
   mà bạn đã chỉnh sửa.
-
-  - Ấn nút "Xóa" để xóa môn học
-  Cần lưu ý khi sử dụng chức năng này:
-  khi môn học đã có trong bảng điểm thì bạn sẽ 
-  không được phép xóa môn học. </value>
+    - Chọn trạng thái "Sử dụng" hoặc "Không sử dụng" 
+   để hiển thị môn học
+    - Hệ số chỉ được là 1 hoặc 2
+    - Số tiết không được &lt; 0</value>
   </data>
 </root>

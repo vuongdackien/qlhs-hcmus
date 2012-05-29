@@ -30,10 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMonHoc));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButtonXoa = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonLuu = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonThem = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.labelControlTitle = new DevExpress.XtraEditors.LabelControl();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
@@ -76,30 +74,18 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.simpleButtonXoa);
             this.panelControl1.Controls.Add(this.simpleButtonLuu);
             this.panelControl1.Controls.Add(this.simpleButtonDong);
-            this.panelControl1.Controls.Add(this.simpleButtonThem);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl1.Location = new System.Drawing.Point(0, 516);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(834, 76);
             this.panelControl1.TabIndex = 0;
             // 
-            // simpleButtonXoa
-            // 
-            this.simpleButtonXoa.Image = global::QLHS.Properties.Resources.xoa_small;
-            this.simpleButtonXoa.Location = new System.Drawing.Point(459, 20);
-            this.simpleButtonXoa.Name = "simpleButtonXoa";
-            this.simpleButtonXoa.Size = new System.Drawing.Size(104, 35);
-            this.simpleButtonXoa.TabIndex = 12;
-            this.simpleButtonXoa.Text = "Xóa (Alt+&D)";
-            this.simpleButtonXoa.Click += new System.EventHandler(this.simpleButtonXoa_Click);
-            // 
             // simpleButtonLuu
             // 
             this.simpleButtonLuu.Image = global::QLHS.Properties.Resources.them_small;
-            this.simpleButtonLuu.Location = new System.Drawing.Point(320, 20);
+            this.simpleButtonLuu.Location = new System.Drawing.Point(59, 18);
             this.simpleButtonLuu.Name = "simpleButtonLuu";
             this.simpleButtonLuu.Size = new System.Drawing.Size(111, 35);
             this.simpleButtonLuu.TabIndex = 9;
@@ -109,22 +95,12 @@
             // simpleButtonDong
             // 
             this.simpleButtonDong.Image = global::QLHS.Properties.Resources.thoat_small;
-            this.simpleButtonDong.Location = new System.Drawing.Point(592, 20);
+            this.simpleButtonDong.Location = new System.Drawing.Point(205, 18);
             this.simpleButtonDong.Name = "simpleButtonDong";
             this.simpleButtonDong.Size = new System.Drawing.Size(104, 35);
             this.simpleButtonDong.TabIndex = 11;
             this.simpleButtonDong.Text = "Đóng (Alt+&X)";
             this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
-            // 
-            // simpleButtonThem
-            // 
-            this.simpleButtonThem.Image = global::QLHS.Properties.Resources.them;
-            this.simpleButtonThem.Location = new System.Drawing.Point(156, 20);
-            this.simpleButtonThem.Name = "simpleButtonThem";
-            this.simpleButtonThem.Size = new System.Drawing.Size(135, 35);
-            this.simpleButtonThem.TabIndex = 8;
-            this.simpleButtonThem.Text = "Thêm mới (Alt+&N)";
-            this.simpleButtonThem.Click += new System.EventHandler(this.simpleButtonThem_Click);
             // 
             // panelControl2
             // 
@@ -169,8 +145,8 @@
             this.radioGroupTrangThai.Location = new System.Drawing.Point(436, 25);
             this.radioGroupTrangThai.Name = "radioGroupTrangThai";
             this.radioGroupTrangThai.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(0)), "Không hiển thị"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(1)), "Hiển thị")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(0)), "Không sử dụng"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(1)), "Sử dụng")});
             this.radioGroupTrangThai.Size = new System.Drawing.Size(220, 23);
             this.radioGroupTrangThai.TabIndex = 20;
             // 
@@ -303,6 +279,12 @@
             // 
             // MaMonHoc
             // 
+            this.MaMonHoc.AppearanceCell.Options.UseTextOptions = true;
+            this.MaMonHoc.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MaMonHoc.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.MaMonHoc.AppearanceHeader.Options.UseTextOptions = true;
+            this.MaMonHoc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.MaMonHoc.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.MaMonHoc.Caption = "Mã Môn Học";
             this.MaMonHoc.ColumnEdit = this.repositoryItemTextEdit1;
             this.MaMonHoc.FieldName = "MaMonHoc";
@@ -321,6 +303,12 @@
             // 
             // TenMonHoc
             // 
+            this.TenMonHoc.AppearanceCell.Options.UseTextOptions = true;
+            this.TenMonHoc.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TenMonHoc.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.TenMonHoc.AppearanceHeader.Options.UseTextOptions = true;
+            this.TenMonHoc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.TenMonHoc.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.TenMonHoc.Caption = "Tên Môn Học";
             this.TenMonHoc.ColumnEdit = this.repositoryItemTextEdit1;
             this.TenMonHoc.FieldName = "TenMonHoc";
@@ -334,6 +322,12 @@
             // 
             // SoTiet
             // 
+            this.SoTiet.AppearanceCell.Options.UseTextOptions = true;
+            this.SoTiet.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SoTiet.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.SoTiet.AppearanceHeader.Options.UseTextOptions = true;
+            this.SoTiet.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SoTiet.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.SoTiet.Caption = "Số Tiết";
             this.SoTiet.FieldName = "SoTiet";
             this.SoTiet.Name = "SoTiet";
@@ -345,6 +339,12 @@
             // 
             // HeSo
             // 
+            this.HeSo.AppearanceCell.Options.UseTextOptions = true;
+            this.HeSo.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.HeSo.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.HeSo.AppearanceHeader.Options.UseTextOptions = true;
+            this.HeSo.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.HeSo.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.HeSo.Caption = "Hệ Số";
             this.HeSo.FieldName = "HeSo";
             this.HeSo.Name = "HeSo";
@@ -356,7 +356,13 @@
             // 
             // gridColumnTrangThai
             // 
-            this.gridColumnTrangThai.Caption = "Trạng Thái";
+            this.gridColumnTrangThai.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumnTrangThai.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnTrangThai.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumnTrangThai.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnTrangThai.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnTrangThai.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridColumnTrangThai.Caption = "Sử Dụng";
             this.gridColumnTrangThai.FieldName = "TrangThai";
             this.gridColumnTrangThai.Name = "gridColumnTrangThai";
             this.gridColumnTrangThai.OptionsColumn.AllowEdit = false;
@@ -432,9 +438,7 @@
         private DevExpress.XtraEditors.SpinEdit spinEditSoTiet;
         private DevExpress.XtraEditors.SimpleButton simpleButtonLuu;
         private DevExpress.XtraEditors.SimpleButton simpleButtonDong;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonThem;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnTrangThai;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonXoa;
         private DevExpress.XtraEditors.RadioGroup radioGroupTrangThai;
         private DevExpress.XtraEditors.LabelControl labelControl5;
     }
