@@ -102,7 +102,7 @@
             this.simpleButtonXuatBD.Location = new System.Drawing.Point(690, 32);
             this.simpleButtonXuatBD.Name = "simpleButtonXuatBD";
             this.simpleButtonXuatBD.Size = new System.Drawing.Size(128, 35);
-            this.simpleButtonXuatBD.TabIndex = 18;
+            this.simpleButtonXuatBD.TabIndex = 4;
             this.simpleButtonXuatBD.Text = "Lập báo cáo (Alt+&R)";
             this.simpleButtonXuatBD.Click += new System.EventHandler(this.simpleButtonXuatBD_Click);
             // 
@@ -199,7 +199,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditHocKy.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditHocKy.Size = new System.Drawing.Size(130, 20);
-            this.comboBoxEditHocKy.TabIndex = 1;
+            this.comboBoxEditHocKy.TabIndex = 2;
             this.comboBoxEditHocKy.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditHocKy_SelectedIndexChanged);
             // 
             // labelControlChonHocKy
@@ -236,7 +236,7 @@
             this.gridControlTongKetHocKy.MainView = this.gridViewTongKetHocKy;
             this.gridControlTongKetHocKy.Name = "gridControlTongKetHocKy";
             this.gridControlTongKetHocKy.Size = new System.Drawing.Size(677, 300);
-            this.gridControlTongKetHocKy.TabIndex = 4;
+            this.gridControlTongKetHocKy.TabIndex = 5;
             this.gridControlTongKetHocKy.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewTongKetHocKy,
             this.gridViewMonHoc,

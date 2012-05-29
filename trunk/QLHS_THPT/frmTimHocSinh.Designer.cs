@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.toolTipController1 = new DevExpress.Utils.ToolTipController();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
+            this.components = new System.ComponentModel.Container();
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menucontextXemHoSo = new System.Windows.Forms.ToolStripMenuItem();
             this.panelControlChooseYear = new DevExpress.XtraEditors.PanelControl();
             this.radioGroupTimTrong = new DevExpress.XtraEditors.RadioGroup();
@@ -153,7 +154,7 @@
             new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "Hồ sơ phân lớp"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "Hồ sơ mới tiếp nhận")});
             this.radioGroupTimTrong.Size = new System.Drawing.Size(232, 31);
-            this.radioGroupTimTrong.TabIndex = 3;
+            this.radioGroupTimTrong.TabIndex = 1;
             this.radioGroupTimTrong.ToolTip = "Chọn \"Hồ sơ phân lớp\" nếu bạn muốn tìm hồ sơ học sinh trong các năm đã phân lớp.<" +
     "br>Chọn \"Hồ sơ mới tiếp nhận\" để tìm các hồ sơ chưa được phân lớp (mới tiếp nhận" +
     ")";
@@ -167,7 +168,7 @@
             this.checkEditTatCaNam.Name = "checkEditTatCaNam";
             this.checkEditTatCaNam.Properties.Caption = "Tìm tất cả các năm";
             this.checkEditTatCaNam.Size = new System.Drawing.Size(133, 19);
-            this.checkEditTatCaNam.TabIndex = 1;
+            this.checkEditTatCaNam.TabIndex = 2;
             this.checkEditTatCaNam.CheckedChanged += new System.EventHandler(this.checkEditTatCaNam_CheckedChanged);
             // 
             // comboBoxEditNamHoc
@@ -178,7 +179,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditNamHoc.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditNamHoc.Size = new System.Drawing.Size(137, 20);
-            this.comboBoxEditNamHoc.TabIndex = 2;
+            this.comboBoxEditNamHoc.TabIndex = 3;
             this.comboBoxEditNamHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHoc_SelectedIndexChanged);
             // 
             // labelControlNamHoc
@@ -304,7 +305,7 @@
             this.textBoxTenHocSinh.Location = new System.Drawing.Point(149, 49);
             this.textBoxTenHocSinh.Name = "textBoxTenHocSinh";
             this.textBoxTenHocSinh.Size = new System.Drawing.Size(152, 21);
-            this.textBoxTenHocSinh.TabIndex = 17;
+            this.textBoxTenHocSinh.TabIndex = 6;
             // 
             // radioGroupGioiTinh
             // 
@@ -315,35 +316,35 @@
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(0)), "Nam"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(1)), "Nữ")});
             this.radioGroupGioiTinh.Size = new System.Drawing.Size(152, 26);
-            this.radioGroupGioiTinh.TabIndex = 9;
+            this.radioGroupGioiTinh.TabIndex = 7;
             // 
             // textEditNamSinhDen
             // 
             this.textEditNamSinhDen.Location = new System.Drawing.Point(232, 119);
             this.textEditNamSinhDen.Name = "textEditNamSinhDen";
             this.textEditNamSinhDen.Size = new System.Drawing.Size(69, 20);
-            this.textEditNamSinhDen.TabIndex = 12;
+            this.textEditNamSinhDen.TabIndex = 9;
             // 
             // textEditNamSinhTu
             // 
             this.textEditNamSinhTu.Location = new System.Drawing.Point(149, 118);
             this.textEditNamSinhTu.Name = "textEditNamSinhTu";
             this.textEditNamSinhTu.Size = new System.Drawing.Size(69, 20);
-            this.textEditNamSinhTu.TabIndex = 11;
+            this.textEditNamSinhTu.TabIndex = 8;
             // 
             // textEditDiaChi
             // 
             this.textEditDiaChi.Location = new System.Drawing.Point(530, 46);
             this.textEditDiaChi.Name = "textEditDiaChi";
             this.textEditDiaChi.Size = new System.Drawing.Size(152, 20);
-            this.textEditDiaChi.TabIndex = 16;
+            this.textEditDiaChi.TabIndex = 11;
             // 
             // textEditEmail
             // 
             this.textEditEmail.Location = new System.Drawing.Point(530, 13);
             this.textEditEmail.Name = "textEditEmail";
             this.textEditEmail.Size = new System.Drawing.Size(152, 20);
-            this.textEditEmail.TabIndex = 14;
+            this.textEditEmail.TabIndex = 10;
             // 
             // textEditMaHocSinh
             // 
@@ -423,7 +424,7 @@
             this.simpleButtonDong.Location = new System.Drawing.Point(602, 13);
             this.simpleButtonDong.Name = "simpleButtonDong";
             this.simpleButtonDong.Size = new System.Drawing.Size(104, 35);
-            this.simpleButtonDong.TabIndex = 20;
+            this.simpleButtonDong.TabIndex = 14;
             this.simpleButtonDong.Text = "Đóng (Alt+&X)";
             this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
             // 
@@ -433,7 +434,7 @@
             this.simpleButtonXoaDK.Location = new System.Drawing.Point(450, 13);
             this.simpleButtonXoaDK.Name = "simpleButtonXoaDK";
             this.simpleButtonXoaDK.Size = new System.Drawing.Size(134, 35);
-            this.simpleButtonXoaDK.TabIndex = 18;
+            this.simpleButtonXoaDK.TabIndex = 13;
             this.simpleButtonXoaDK.Text = "Xóa điều kiện (Alt+&D)";
             this.simpleButtonXoaDK.Click += new System.EventHandler(this.simpleButtonXoaDK_Click);
             // 
@@ -443,7 +444,7 @@
             this.simpleButtonSearch.Location = new System.Drawing.Point(297, 13);
             this.simpleButtonSearch.Name = "simpleButtonSearch";
             this.simpleButtonSearch.Size = new System.Drawing.Size(134, 35);
-            this.simpleButtonSearch.TabIndex = 17;
+            this.simpleButtonSearch.TabIndex = 12;
             this.simpleButtonSearch.Text = "Tìm kiếm (Alt+&S)";
             this.simpleButtonSearch.Click += new System.EventHandler(this.simpleButtonSearch_Click);
             // 
@@ -455,7 +456,7 @@
             this.gridControlSearchHocSinh.MainView = this.gridViewSearch;
             this.gridControlSearchHocSinh.Name = "gridControlSearchHocSinh";
             this.gridControlSearchHocSinh.Size = new System.Drawing.Size(741, 187);
-            this.gridControlSearchHocSinh.TabIndex = 25;
+            this.gridControlSearchHocSinh.TabIndex = 15;
             this.gridControlSearchHocSinh.ToolTipController = this.toolTipController1;
             this.gridControlSearchHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewSearch});

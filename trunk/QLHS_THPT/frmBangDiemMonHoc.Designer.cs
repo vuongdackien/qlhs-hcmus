@@ -113,7 +113,7 @@
             this.treeListLopHoc.OptionsView.ShowColumns = false;
             this.treeListLopHoc.OptionsView.ShowIndicator = false;
             this.treeListLopHoc.Size = new System.Drawing.Size(176, 257);
-            this.treeListLopHoc.TabIndex = 1;
+            this.treeListLopHoc.TabIndex = 4;
             this.treeListLopHoc.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeListLopHoc_FocusedNodeChanged);
             // 
             // panelControlChooseYear
@@ -137,7 +137,7 @@
             this.comboBoxEditNamHoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditNamHoc.Size = new System.Drawing.Size(150, 20);
-            this.comboBoxEditNamHoc.TabIndex = 4;
+            this.comboBoxEditNamHoc.TabIndex = 1;
             this.comboBoxEditNamHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHoc_SelectedIndexChanged);
             // 
             // comboBoxEditMonHoc
@@ -148,7 +148,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditMonHoc.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditMonHoc.Size = new System.Drawing.Size(150, 20);
-            this.comboBoxEditMonHoc.TabIndex = 8;
+            this.comboBoxEditMonHoc.TabIndex = 3;
             this.comboBoxEditMonHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditMonHoc_SelectedIndexChanged);
             // 
             // comboBoxEditHocKy
@@ -159,7 +159,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditHocKy.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditHocKy.Size = new System.Drawing.Size(150, 20);
-            this.comboBoxEditHocKy.TabIndex = 5;
+            this.comboBoxEditHocKy.TabIndex = 2;
             this.comboBoxEditHocKy.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditHocKy_SelectedIndexChanged);
             // 
             // labelControl2
@@ -205,7 +205,7 @@
             this.gridControlTongKetNamHoc.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
             this.gridControlTongKetNamHoc.Size = new System.Drawing.Size(989, 316);
-            this.gridControlTongKetNamHoc.TabIndex = 1;
+            this.gridControlTongKetNamHoc.TabIndex = 5;
             this.gridControlTongKetNamHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.advBandedGridView1});
             // 
