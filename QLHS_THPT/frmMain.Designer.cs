@@ -371,7 +371,7 @@
             // 
             this.barButtonItemBCBangDiem.Caption = "Bảng Điểm Học Kỳ";
             this.barButtonItemBCBangDiem.Id = 42;
-            this.barButtonItemBCBangDiem.LargeGlyph = global::QLHS.Properties.Resources.kqhockytheolop;
+            this.barButtonItemBCBangDiem.LargeGlyph = global::QLHS.Properties.Resources.bangdiemhky;
             this.barButtonItemBCBangDiem.Name = "barButtonItemBCBangDiem";
             this.barButtonItemBCBangDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemBCBangDiem_ItemClick);
             // 
