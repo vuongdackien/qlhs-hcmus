@@ -67,6 +67,13 @@ namespace QLHS.Properties {
             }
         }
         
+        public static System.Drawing.Bitmap bangdiemhky {
+            get {
+                object obj = ResourceManager.GetObject("bangdiemhky", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         public static System.Drawing.Bitmap capnhat {
             get {
                 object obj = ResourceManager.GetObject("capnhat", resourceCulture);

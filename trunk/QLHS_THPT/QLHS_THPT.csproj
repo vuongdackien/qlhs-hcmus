@@ -318,6 +318,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\arrow.png" />
+    <Content Include="Resources\bangdiemhky.png" />
     <Content Include="Resources\capnhat.png" />
     <Content Include="Resources\cauhinhketnoi.png" />
     <Content Include="Resources\chuyenlop.png" />
