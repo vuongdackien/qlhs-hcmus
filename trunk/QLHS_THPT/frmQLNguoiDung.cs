@@ -13,14 +13,21 @@ namespace QLHS
 {
     public partial class frmQLNguoiDung : DevExpress.XtraEditors.XtraForm
     {
+        NguoiDungBUS _nguoiDungBUS;
+        GiaoVienBUS _giaoVienBUS;
+        LoaiNguoiDungBUS _loaiNguoiDungBUS;
+        private bool _is_add_button;
+        private bool _is_delete_button;
+        private int _current_row_edit;
+
         public frmQLNguoiDung()
         {
             InitializeComponent();
+            _nguoiDungBUS = new NguoiDungBUS();
+            _giaoVienBUS = new GiaoVienBUS();
+            _loaiNguoiDungBUS = new LoaiNguoiDungBUS();
+            _is_add_button = _is_delete_button = true;
         }
-        NguoiDungBUS _nguoiDungBUS = new NguoiDungBUS();
-        GiaoVienBUS _giaoVienBUS = new GiaoVienBUS();
-        LoaiNguoiDungBUS _loaiNguoiDungBUS = new LoaiNguoiDungBUS();
-        int _currentRow = 0;
 
         private void frmQLNguoiDung_Load(object sender, EventArgs e)
         {
@@ -29,13 +36,39 @@ namespace QLHS
             Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditQuyenSuDung, _loaiNguoiDungBUS.Lay_DT_LoaiNguoiDung(),
                                                          "MaLoaiND", "TenLoaiND", 0);
             // load gridview
-            gridControlNguoiDung.DataSource = _nguoiDungBUS.Lay_DT_NguoiDung();                                                
+            this._Load_Lai_Gridview();                             
         }
-        public void DisableControls(bool editing)
+        private void _Load_Lai_Gridview(int row = 0)
+        {
+            gridControlNguoiDung.DataSource = _nguoiDungBUS.Lay_DT_NguoiDung();
+            if (gridViewNguoiDung.RowCount > 0)
+            {
+                gridViewNguoiDung_FocusedRowChanged(this,
+                    new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs(0, row));
+                gridViewNguoiDung.FocusedRowHandle = row;
+            }
+            else
+            {
+                _Reset_Control();
+            }
+        }
+        private void _Reset_Control()
+        {
+            comboBoxEditNguoiDung.SelectedIndex = 0;
+            textEditMatKhau.Text = "";
+            textEdittenTruyCap.Text = "";
+            radioGroupTrangThai.SelectedIndex = 0;
+        }
+
+        public void _Disable_Controls(bool editing)
         {
             simpleButtonDong.Enabled = !editing;
             gridControlNguoiDung.Enabled = !editing;
             comboBoxEditNguoiDung.Enabled = editing;
+
+            _is_add_button = !editing;
+            _is_delete_button = !editing;
+
             if (editing)
             {
                 simpleButtonThemMoi.Text = "Không nhập (Alt+&N)";
@@ -46,30 +79,29 @@ namespace QLHS
                 simpleButtonThemMoi.Text = "Thêm mới (Alt+&N)";
                 simpleButtonXoa.Text = "Xóa (Alt+&D)";
             }
-        }
-
-
-        private void ResetControl()
-        {
-            comboBoxEditNguoiDung.SelectedIndex = 0;
-            textEditMatKhau.Text = "";
-            textEdittenTruyCap.Text = "";
-            radioGroupTrangThai.SelectedIndex = 0;
+            if (!editing)
+            {
+                if (gridViewNguoiDung.RowCount > 0)
+                    gridViewNguoiDung_FocusedRowChanged(this,
+                        new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs(0, 0));
+                else
+                {
+                    _Reset_Control();
+                }
+            }
         }
 
         private void simpleButtonThemMoi_Click(object sender, EventArgs e)
         {
-            if (simpleButtonThemMoi.Text == "Thêm mới (Alt+&N)")
+            if (_is_add_button)
             {
-                DisableControls(true);
-                ResetControl();
+                _Disable_Controls(true);
+                _Reset_Control();
             }
             else
             {
-                // Hiển thị lại
-                gridViewNguoiDung.FocusedRowHandle = 0;
                 // Bỏ ẩn control
-                DisableControls(false);
+                _Disable_Controls(false);
             } 
         }
 
@@ -97,13 +129,12 @@ namespace QLHS
                 return;
             }
 
-            DisableControls(false);
             // Lay tt nguoi dung
             NguoiDungDTO user = new NguoiDungDTO();
             user.MaND = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNguoiDung);
             user.LoaiNguoiDung.MaLoai =  Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditQuyenSuDung);
-            user.TenDNhap = textEdittenTruyCap.Text;
-            user.MatKhau = (textEditMatKhau.Text == "") ? "" : textEditMatKhau.Text;
+            user.TenDNhap = textEdittenTruyCap.Text.Replace("'","''");
+            user.MatKhau = (textEditMatKhau.Text == "") ? "" : textEditMatKhau.Text.Replace("'", "''");
             user.TrangThai = radioGroupTrangThai.SelectedIndex;
             // Check nguoi dung ton tai hay chua
             if (!checkExistsUser)
@@ -114,41 +145,50 @@ namespace QLHS
                     Utilities.MessageboxUtilities.MessageSuccess("Thêm thành công user: " +
                             Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNguoiDung) + " !");
                 }
+                _Load_Lai_Gridview(0);
             }
             else
             {
+                _current_row_edit = gridViewNguoiDung.FocusedRowHandle;
                 // Sửa
                 if (_nguoiDungBUS.UpdateUser(user))
                 {
                     Utilities.MessageboxUtilities.MessageSuccess("Sửa thành công user: " +  Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNguoiDung)  + " !");
                 }
+                _Load_Lai_Gridview(_current_row_edit);
             }
-            int cur = gridViewNguoiDung.FocusedRowHandle;
-            gridControlNguoiDung.DataSource = _nguoiDungBUS.Lay_DT_NguoiDung(); 
-            gridViewNguoiDung.FocusedRowHandle = cur;
+            
         }
 
         private void simpleButtonXoa_Click(object sender, EventArgs e)
         {
-            if (!_nguoiDungBUS.KiemTraTonTai_NguoiDung(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNguoiDung)))
+            if (_is_delete_button)
             {
-                ResetControl();
-                return;
+                if (!_nguoiDungBUS.KiemTraTonTai_NguoiDung(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNguoiDung)))
+                {
+                    _Reset_Control();
+                    return;
+                }
+                else
+                {
+                    string tenNguoiDung = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNguoiDung);
+                    if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Bạn có muốn xóa người dùng "
+                        + tenNguoiDung + " hay không?") == DialogResult.Yes)
+                    {
+                        if (_nguoiDungBUS.DeleteUser(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNguoiDung)))
+                        {
+                            Utilities.MessageboxUtilities.MessageSuccess("Xóa người dùng "
+                                        + tenNguoiDung + " thành công!");
+                            gridControlNguoiDung.DataSource = _nguoiDungBUS.Lay_DT_NguoiDung();
+                            return;
+                        }
+                    }
+                }
             }
             else
             {
-                string tenNguoiDung = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNguoiDung);
-                if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Bạn có muốn xóa người dùng "
-                    + tenNguoiDung  + " hay không?") == DialogResult.Yes)
-                {
-                    if (_nguoiDungBUS.DeleteUser(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNguoiDung)))
-                    {
-                        Utilities.MessageboxUtilities.MessageSuccess("Xóa người dùng "
-                                    + tenNguoiDung + " thành công!");
-                        gridControlNguoiDung.DataSource = _nguoiDungBUS.Lay_DT_NguoiDung(); 
-                        return;
-                    }
-                }
+                _Reset_Control();
+                return;
             }
         }
 
@@ -159,13 +199,15 @@ namespace QLHS
 
         private void gridViewNguoiDung_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            _currentRow = gridViewNguoiDung.FocusedRowHandle;
-            textEdittenTruyCap.Text = gridViewNguoiDung.GetRowCellValue(_currentRow, "TenDNhap").ToString();
+            // Chac chan chon duoc 1 dong nao do
+            if (gridViewNguoiDung.FocusedRowHandle < 0 || gridViewNguoiDung.FocusedRowHandle >= gridViewNguoiDung.RowCount)
+                return;
+            textEdittenTruyCap.Text = gridViewNguoiDung.GetRowCellValue(e.FocusedRowHandle, "TenDNhap").ToString();
             Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditNguoiDung,
-                    gridViewNguoiDung.GetRowCellValue(_currentRow, "MaND").ToString());
+                    gridViewNguoiDung.GetRowCellValue(e.FocusedRowHandle, "MaND").ToString());
             Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditQuyenSuDung,
-                    gridViewNguoiDung.GetRowCellValue(_currentRow, "MaLoaiND").ToString());
-            radioGroupTrangThai.SelectedIndex = (bool)gridViewNguoiDung.GetRowCellValue(_currentRow, "TrangThai") ? 1 : 0;
+                    gridViewNguoiDung.GetRowCellValue(e.FocusedRowHandle, "MaLoaiND").ToString());
+            radioGroupTrangThai.SelectedIndex = (bool)gridViewNguoiDung.GetRowCellValue(e.FocusedRowHandle, "TrangThai") ? 1 : 0;
             textEditMatKhau.Text = "";
         }
     }
