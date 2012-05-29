@@ -119,7 +119,7 @@ namespace QLHS.DAL
         }
         public DataTable LayDT_HocSinh_DaChuyen_TuHoSo(string MaLop)
         {
-            string  sql= "select pl.STT,pl.MaHocSinh,hs.TenHocSinh from PHANLOP pl, HOCSINH hs where pl.MaHocSinh=hs.MaHocSinh and "+
+            string sql = "select pl.STT,pl.MaHocSinh,hs.TenHocSinh,(CASE WHEN hs.GioiTinh='0' THEN 'Nam' ELSE N'Nữ' END) AS GioiTinh from PHANLOP pl, HOCSINH hs where pl.MaHocSinh=hs.MaHocSinh and " +
         "pl.MaLop='"+MaLop+"' and pl.MaHocSinh not in (select pl1.MaHocSinh from  PHANLOP pl1 where pl1.MaLop !='"+MaLop+"')";
             return GetTable(sql);
         }
