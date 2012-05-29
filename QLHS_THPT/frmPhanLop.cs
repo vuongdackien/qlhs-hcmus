@@ -48,6 +48,7 @@ namespace QLHS
             {
                 LoadCbKhoi_ChuyenLop(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc));
             }
+            else
             if (radioButtonPhanLopHocSinhCu.Checked == true)
             {
                 LoadCbKhoi_PhanLopCu(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc));
@@ -561,33 +562,31 @@ namespace QLHS
 
         private void radioButtonChuyenLop_CheckedChanged(object sender, EventArgs e)
         {
-           
-            LoadCbNamHocChung();
-            HienThiChuyenLop();
-            HienThigGroupChyenLop_PhanLopNew(radioButtonPhanLopHocSinhMoi.Checked);
             if (radioButtonChuyenLop.Checked == true)
             {
-               radioButtonPhanLopHocSinhCu.Checked = false;
-               radioButtonPhanLopHocSinhMoi.Checked = false;
+                radioButtonPhanLopHocSinhCu.Checked = false;
+                radioButtonPhanLopHocSinhMoi.Checked = false;
             }
-            
+            HienThiChuyenLop();
+            HienThigGroupChyenLop_PhanLopNew(radioButtonPhanLopHocSinhMoi.Checked);
+            LoadCbNamHocChung();
         }
 
         private void radioButtonPhanLopHocSinhMoi_CheckedChanged(object sender, EventArgs e)
         {
+
             if (radioButtonPhanLopHocSinhMoi.Checked == true)
             {
                 radioButtonChuyenLop.Checked = false;
-                
             }
+            HienThiChuyenLop();
+            HienThigGroupChyenLop_PhanLopNew(radioButtonPhanLopHocSinhMoi.Checked);
             LoadCbNamHocMoi();
             LoadGridcontrolDSHocSinh_HoSo();
             for (int i = 0; i < gridViewDSHocSinh.RowCount; i++)
             {
                 gridViewDSHocSinh.SetRowCellValue(i, "STT", i + 1);
             }
-            HienThiChuyenLop();
-            HienThigGroupChyenLop_PhanLopNew(radioButtonPhanLopHocSinhMoi.Checked);
         }
 
         private void radioButtonPhanLopHocSinhCu_CheckedChanged(object sender, EventArgs e)
@@ -595,18 +594,19 @@ namespace QLHS
             if (radioButtonPhanLopHocSinhCu.Checked == true)
             {
                 radioButtonChuyenLop.Checked = false;
+                HienThiChuyenLop();
+                HienThigGroupChyenLop_PhanLopNew(radioButtonPhanLopHocSinhMoi.Checked);
                 LoadCbNamHocCu();
                 if (KiemTraCbThongTinLopCu())
-                {
-                    LoadCbNamHocMoi();
-                    HienThiChuyenLop();
-                    HienThigGroupChyenLop_PhanLopNew(radioButtonPhanLopHocSinhMoi.Checked);
+                { 
+                    LoadCbNamHocMoi();   
                 }
                 else
                 {
                     radioButtonPhanLopHocSinhCu.Checked = false;
                     radioButtonPhanLopHocSinhCu.Enabled = false;
                 }
+                
             }
             
         }
@@ -663,12 +663,6 @@ namespace QLHS
         }
         private void HienThigGroupChyenLop_PhanLopNew(bool ht)
         {
-            if (ht == true)
-            {
-                comboBoxEditNamHoc.SelectedIndex = -1;
-                comboBoxEditKhoi.SelectedIndex = -1;
-                comboBoxEditLop.SelectedIndex = -1;
-            }
             groupControl1.Enabled = !ht;
         }
         private bool KiemTraCbThongTinLopCu()
