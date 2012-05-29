@@ -17,7 +17,10 @@ namespace QLHS
         private NamHocBUS _namHocBUS;
         private QuyDinhBUS _quyDinhBUS;
         private KhoiBUS _khoiBUS;
-        private LopBUS _lopBUS;  
+        private LopBUS _lopBUS;
+        private bool _is_add_button;
+        private bool _is_delete_button;
+
         public frmLapDSLop()
         {
             InitializeComponent();
@@ -26,19 +29,15 @@ namespace QLHS
             _quyDinhBUS = new QuyDinhBUS();
             _khoiBUS = new KhoiBUS();
             _lopBUS = new LopBUS();
+            _is_add_button = true;
+            _is_delete_button = true;
         }
 
         private void HienThi_DSLop()
         {
             gridControlDSLop.DataSource = _lopBUS.LayDTLop_MaNam_MaKhoi(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc),
                                     Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi));
-            if (gridViewLop.RowCount > 0)
-                gridViewLop_FocusedRowChanged(this, new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs(0, 0));
-            else
-            {
-                textEditMaLop.Text = "";
-                textEditTenLop.Text = "";
-            }
+            this.DisableControls(editing: false);
         }
 
         private void frmLapDSLop_Load(object sender, EventArgs e)
@@ -74,15 +73,22 @@ namespace QLHS
             comboBoxEditNamHoc.Enabled = !editing;
             comboBoxEditKhoi.Enabled = !editing;
             textEditTenLop.Enabled = editing;
-            if (editing)
+
+            _is_add_button = !editing;
+            _is_delete_button = !editing;
+
+            simpleButtonThemMoi.Text = editing ? "Không nhập (Alt+&N)" : "Thêm mới (Alt+&N)";
+            simpleButtonXoa.Text = editing ? "Nhập lại (Alt+&D)" : "Xóa (Alt+&D)";
+
+            if (!editing)
             {
-                simpleButtonThemMoi.Text = "Không nhập (Alt+&N)";
-                simpleButtonXoa.Text = "Nhập lại (Alt+&D)";
-            }
-            else
-            {
-                simpleButtonThemMoi.Text = "Thêm mới (Alt+&N)";
-                simpleButtonXoa.Text = "Xóa (Alt+&D)";
+                if (gridViewLop.RowCount > 0)
+                    gridViewLop_FocusedRowChanged(this, new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs(0, 0));
+                else
+                {
+                    textEditMaLop.Text = "";
+                    textEditTenLop.Text = "";
+                }
             }
         }
 
@@ -100,12 +106,12 @@ namespace QLHS
                 Utilities.MessageboxUtilities.MessageError("Bạn chưa chọn năm học để thêm mới lớp!");
                 return;
             }
-            if (simpleButtonThemMoi.Text == "Thêm mới (Alt+&N)")
+            if (_is_add_button) // button them moi
             {
                 DisableControls(true);
                 ResetControl();
             }
-            else
+            else // button khong nhap
             {
                 // Bỏ ẩn control
                 DisableControls(false);
@@ -167,18 +173,17 @@ namespace QLHS
                      Utilities.MessageboxUtilities.MessageSuccess("Đã tạo lớp " + lopDTO.TenLop + " thành công!");
             } 
             HienThi_DSLop();
-            DisableControls(false);
 
         }
 
         private void simpleButtonXoa_Click(object sender, EventArgs e)
         {
-            if (simpleButtonXoa.Text == "Nhập lại (Alt+&D)")
+            if (!_is_delete_button) // button nhap lai 
             {
                 ResetControl();
                 return;
             }
-            else
+            else // button xoa
             {
                 if (_lopBUS.KiemTra_TonTaiMaLop(textEditMaLop.Text))
                 {

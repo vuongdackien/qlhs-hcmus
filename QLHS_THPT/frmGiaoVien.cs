@@ -15,11 +15,15 @@ namespace QLHS
     public partial class frmGiaoVien : DevExpress.XtraEditors.XtraForm
     {
         private GiaoVienBUS _giaoVienBUS;
+        private bool _is_add_button;
+        private bool _is_delete_button;
 
         public frmGiaoVien()
         {
             InitializeComponent();
             _giaoVienBUS = new GiaoVienBUS();
+            _is_add_button = true;
+            _is_delete_button = true;
         }
 
         public void _Diable_Control(bool editing)
@@ -27,15 +31,20 @@ namespace QLHS
             simpleButtonDong.Enabled = !editing;
             gridcontrolGiaoVien.Enabled = !editing;
 
-            if (editing)
+            _is_add_button = !editing;
+            _is_delete_button = !editing;
+
+            simpleButtonThem.Text = editing ? "Không nhập (Alt+&N)" : "Thêm mới (Alt+&N)";
+            simpleButtonXoa.Text = editing ? "Nhập lại (Alt+&D)" : "Xóa (Alt+&D)";
+            if (!editing)
             {
-                simpleButtonThem.Text = "Không nhập (Alt+&N)";
-                simpleButtonXoa.Text = "Nhập lại (Alt+&D)";
-            }
-            else
-            {
-                simpleButtonThem.Text = "Thêm mới (Alt+&N)";
-                simpleButtonXoa.Text = "Xóa (Alt+&D)";
+                if (gridViewGiaoVien.RowCount > 0)
+                    gridViewGiaoVien_FocusedRowChanged(this,
+                        new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs(0, 0));
+                else
+                {
+                    _Reset_Control();
+                }
             }
         }
         private void _Reset_Control()
@@ -45,7 +54,7 @@ namespace QLHS
         }
         private void simpleButtonThemGiaoVien_Click(object sender, EventArgs e)
         {
-            if (simpleButtonThem.Text == "Thêm mới (Alt+&N)")
+            if (_is_add_button)
             {
                 _Diable_Control(editing:true);
                 _Reset_Control();
@@ -65,12 +74,7 @@ namespace QLHS
         private void _Load_GridView()
         {
             gridcontrolGiaoVien.DataSource = _giaoVienBUS.LayDT_DanhSachGiaoVien();
-            if (gridViewGiaoVien.RowCount > 0)
-                gridViewGiaoVien_FocusedRowChanged(this, new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs(0, 0));
-            else
-            {
-                _Reset_Control();
-            }
+            this._Diable_Control(editing: false);
         }
 
       
@@ -81,17 +85,12 @@ namespace QLHS
 
         private void simpleButtonXoaGiaovien_Click(object sender, EventArgs e)
         {
-            if (simpleButtonXoa.Text == "Nhập lại (Alt+&D)")
-            {
-                _Reset_Control();
-                return;
-            }
-            else
+            if (_is_delete_button)
             {
                 if (_giaoVienBUS.KiemTonTai_GiaoVien(textEditMaGiaoVien.Text))
                 {
                     if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Bạn có muốn xóa hồ sơ giáo viên: "
-                                                        +textEditTenGiaoVien.Text+" hay không?")
+                                                        + textEditTenGiaoVien.Text + " hay không?")
                             == DialogResult.No)
                     {
                         return;
@@ -102,6 +101,12 @@ namespace QLHS
                                                 + textEditTenGiaoVien.Text + " thành công!");
                     _Load_GridView();
                 }
+                
+            }
+            else // reset button
+            {
+                _Reset_Control();
+                return;
             }
         }
 
@@ -131,7 +136,6 @@ namespace QLHS
                     Utilities.MessageboxUtilities.MessageSuccess("Đã tạo hồ sơ giáo viên: " + giaoVienDTO.TenGiaoVien + " thành công!");
             }
             _Load_GridView();
-            _Diable_Control(editing:false);
         }
 
         private void gridViewGiaoVien_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
