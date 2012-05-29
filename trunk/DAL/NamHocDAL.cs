@@ -57,9 +57,9 @@ namespace QLHS.DAL
         /// Lấy DataTable năm học làm năm hiện tại=năm học mới
         /// </summary>
         /// <returns>DataTable</returns>
-        public DataTable LayDTNamHocMoi()
+        public DataTable LayDTNamHocHienTai()
         {
-            string sql = "SELECT MaNamHoc,TenNamHoc FROM NAMHOC WHERE substring(TenNamHoc,1,4)=year(getdate()) ";
+            string sql = "SELECT MaNamHoc,TenNamHoc FROM NAMHOC WHERE MaNamHoc in (select GiaTri from QUYDINH where Khoa='MaNamHocHT') ";
             return GetTable(sql);
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace QLHS.DAL
         /// <returns>DataTable</returns>
         public DataTable LayDTNamHocCu()
         {
-            string sql = "SELECT MaNamHoc,TenNamHoc FROM NAMHOC WHERE substring(TenNamHoc,8,4)=year(getdate()) ";
+            string sql = "SELECT MaNamHoc,TenNamHoc FROM NAMHOC WHERE substring(TenNamHoc,8,4)= (select substring(TenNamHoc,1,4) as TenNamHoc from NAMHOC WHERE MaNamHoc in (select GiaTri from QUYDINH where Khoa='MaNamHocHT')) ";
             return GetTable(sql);
         }
         /// <summary>
