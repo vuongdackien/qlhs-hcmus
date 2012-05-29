@@ -372,9 +372,9 @@ namespace QLHS
             Application.ExitThread();
         }
 
-
-       
-
-     
+        private void barBtnHeSoMonHoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ShowMDIChildForm<frmMonHoc>();
+        }
     }
 }

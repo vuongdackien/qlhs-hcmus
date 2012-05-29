@@ -177,7 +177,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(340, 73);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(424, 291);
+            this.richTextBox1.Size = new System.Drawing.Size(449, 291);
             this.richTextBox1.TabIndex = 6;
             this.richTextBox1.TabStop = false;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
@@ -193,6 +193,7 @@
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Name = "frmNamHoc";
+            this.ShowIcon = false;
             this.Text = "Quản lý năm học";
             this.Load += new System.EventHandler(this.frmNamHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

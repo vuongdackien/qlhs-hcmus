@@ -118,18 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="richTextBox1.Text" xml:space="preserve">
-    <value>Hướng dẫn lập danh sách giáo viên:
+    <value>  
+  Hướng dẫn lập danh sách giáo viên:
 
-- Ấn nút "Thêm mới" để thêm hồ sơ giáo viên.
+  - Ấn nút "Thêm mới" để thêm hồ sơ giáo viên.
 
-- Ấn nút "Lưu" để cập nhật hồ sơ giáo viên
-mà bạn đã chỉnh sửa.
+  - Ấn nút "Lưu" để cập nhật hồ sơ giáo viên
+  mà bạn đã chỉnh sửa.
 
-- Ấn nút "Xóa" để xóa để xóa hồ sơ giáo viên
-Cần lưu ý khi sử dụng chức năng này:
-khi hồ sơ đã xóa thì lớp do giáo viên
-này chủ nhiệm sẽ bị xóa đi, bạn cần phải cập nhật
-lại giáo viên chủ nhiệm cho lớp đó.</value>
+  - Ấn nút "Xóa" để xóa hồ sơ giáo viên
+  Cần lưu ý khi sử dụng chức năng này:
+  khi hồ sơ đã xóa thì lớp do giáo viên
+  này chủ nhiệm sẽ bị xóa đi, bạn cần phải cập nhật
+  lại giáo viên chủ nhiệm cho lớp đó.</value>
   </data>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

@@ -376,13 +376,13 @@
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.richTextBox1.Font = new System.Drawing.Font("Tahoma", 10F);
             this.richTextBox1.Location = new System.Drawing.Point(370, 3);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.ShortcutsEnabled = false;
-            this.richTextBox1.Size = new System.Drawing.Size(574, 385);
+            this.richTextBox1.Size = new System.Drawing.Size(577, 385);
             this.richTextBox1.TabIndex = 14;
             this.richTextBox1.TabStop = false;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
@@ -578,6 +578,7 @@
             this.Controls.Add(this.panelControlBottom);
             this.LookAndFeel.UseWindowsXPTheme = true;
             this.Name = "frmHocSinh";
+            this.ShowIcon = false;
             this.Text = "Tiếp nhận học sinh";
             this.Load += new System.EventHandler(this.frmHocSinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlBottom)).EndInit();

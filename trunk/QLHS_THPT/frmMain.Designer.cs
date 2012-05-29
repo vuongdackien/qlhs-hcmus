@@ -281,6 +281,7 @@
             toolTipItem7.Text = "Quy định các hệ số điểm từng học kỳ của các môn học.";
             superToolTip7.Items.Add(toolTipItem7);
             this.barBtnHeSoMonHoc.SuperTip = superToolTip7;
+            this.barBtnHeSoMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnHeSoMonHoc_ItemClick);
             // 
             // barButtonItem3
             // 

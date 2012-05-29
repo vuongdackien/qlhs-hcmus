@@ -142,7 +142,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3.Location = new System.Drawing.Point(0, 48);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(784, 110);
+            this.panelControl3.Size = new System.Drawing.Size(784, 104);
             this.panelControl3.TabIndex = 11;
             // 
             // labelControl3
@@ -180,13 +180,14 @@
             // gridcontrolGiaoVien
             // 
             this.gridcontrolGiaoVien.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gridcontrolGiaoVien.Location = new System.Drawing.Point(0, 158);
+            this.gridcontrolGiaoVien.Location = new System.Drawing.Point(0, 152);
             this.gridcontrolGiaoVien.MainView = this.gridViewGiaoVien;
+            this.gridcontrolGiaoVien.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.gridcontrolGiaoVien.Name = "gridcontrolGiaoVien";
             this.gridcontrolGiaoVien.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1,
             this.repositoryItemTextEdit1});
-            this.gridcontrolGiaoVien.Size = new System.Drawing.Size(363, 366);
+            this.gridcontrolGiaoVien.Size = new System.Drawing.Size(363, 372);
             this.gridcontrolGiaoVien.TabIndex = 3;
             this.gridcontrolGiaoVien.TabStop = false;
             this.gridcontrolGiaoVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -245,13 +246,13 @@
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.richTextBox1.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.richTextBox1.Location = new System.Drawing.Point(363, 158);
+            this.richTextBox1.Location = new System.Drawing.Point(363, 152);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.ShortcutsEnabled = false;
-            this.richTextBox1.Size = new System.Drawing.Size(421, 366);
+            this.richTextBox1.Size = new System.Drawing.Size(421, 372);
             this.richTextBox1.TabIndex = 25;
             this.richTextBox1.TabStop = false;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
@@ -269,6 +270,7 @@
             this.Controls.Add(this.panelControl2);
             this.MaximizeBox = false;
             this.Name = "frmGiaoVien";
+            this.ShowIcon = false;
             this.Text = "Quản lý giáo viên";
             this.Load += new System.EventHandler(this.frmGiaoVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
