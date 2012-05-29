@@ -32,6 +32,7 @@ namespace QLHS.DAL
             }
             return GetTable(sql);
         }
+        
         /// <summary>
         /// lấy DataTable học sinh chưa được có lớp
         /// </summary>
