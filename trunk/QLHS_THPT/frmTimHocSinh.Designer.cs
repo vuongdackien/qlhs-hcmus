@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.menucontextXemHoSo = new System.Windows.Forms.ToolStripMenuItem();
             this.panelControlChooseYear = new DevExpress.XtraEditors.PanelControl();
             this.radioGroupTimTrong = new DevExpress.XtraEditors.RadioGroup();

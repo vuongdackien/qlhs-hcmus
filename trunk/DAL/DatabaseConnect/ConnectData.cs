@@ -17,9 +17,9 @@ namespace QLHS.DAL
         {
             _strConnect = DatabaseConnectionManagement.Properties.Settings.Default.ConnectString;
             // Nếu không kết nối được
-            if (!DatabaseConnectionManagement.FrmAddConnection.TestConnect())
+            if (!DatabaseConnectionManagement.frmAddConnection.TestConnect())
             {
-                if (DatabaseConnectionManagement.FrmAddConnection.Show() == System.Windows.Forms.DialogResult.OK)
+                if (DatabaseConnectionManagement.frmAddConnection.Show() == System.Windows.Forms.DialogResult.OK)
                     _strConnect = DatabaseConnectionManagement.Properties.Settings.Default.ConnectString;
                 else
                     System.Windows.Forms.Application.Exit();

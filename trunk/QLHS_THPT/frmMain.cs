@@ -352,7 +352,7 @@ namespace QLHS
 
         private void barButtonItemCauHinhKetNoi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DatabaseConnectionManagement.FrmAddConnection frm = new DatabaseConnectionManagement.FrmAddConnection();
+            DatabaseConnectionManagement.frmAddConnection frm = new DatabaseConnectionManagement.frmAddConnection();
             if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 Utilities.MessageboxUtilities.MessageSuccess("Đã lưu cấu hình của chương trình!"
