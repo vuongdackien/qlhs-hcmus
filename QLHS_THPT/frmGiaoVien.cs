@@ -24,6 +24,7 @@ namespace QLHS
             _giaoVienBUS = new GiaoVienBUS();
             _is_add_button = true;
             _is_delete_button = true;
+            
         }
 
         public void _Diable_Control(bool editing)
@@ -51,6 +52,7 @@ namespace QLHS
         {
             textEditMaGiaoVien.Text = "";
             textEditTenGiaoVien.Text = "";
+            simpleButtonLuu.Enabled = false;
         }
         private void simpleButtonThemGiaoVien_Click(object sender, EventArgs e)
         {
@@ -69,12 +71,14 @@ namespace QLHS
         private void frmGiaoVien_Load(object sender, EventArgs e)
         {
             this._Load_GridView();
+           
         }
 
         private void _Load_GridView()
         {
             gridcontrolGiaoVien.DataSource = _giaoVienBUS.LayDT_DanhSachGiaoVien();
             this._Diable_Control(editing: false);
+            simpleButtonLuu.Enabled = false;
         }
 
       
@@ -135,6 +139,7 @@ namespace QLHS
                 if (_giaoVienBUS.Them_GiaoVien(giaoVienDTO))
                     Utilities.MessageboxUtilities.MessageSuccess("Đã tạo hồ sơ giáo viên: " + giaoVienDTO.TenGiaoVien + " thành công!");
             }
+            simpleButtonLuu.Enabled = false;
             _Load_GridView();
         }
 
@@ -145,6 +150,11 @@ namespace QLHS
                 return;
             textEditMaGiaoVien.Text = gridViewGiaoVien.GetRowCellValue(gridViewGiaoVien.FocusedRowHandle, "MaGiaoVien").ToString();
             textEditTenGiaoVien.Text = gridViewGiaoVien.GetRowCellValue(gridViewGiaoVien.FocusedRowHandle, "TenGiaoVien").ToString();
+        }
+
+        private void textEditTenGiaoVien_EditValueChanged(object sender, EventArgs e)
+        {
+            simpleButtonLuu.Enabled = true;
         }
     }
 }

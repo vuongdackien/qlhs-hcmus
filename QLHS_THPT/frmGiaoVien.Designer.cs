@@ -175,6 +175,7 @@
             this.textEditTenGiaoVien.Name = "textEditTenGiaoVien";
             this.textEditTenGiaoVien.Size = new System.Drawing.Size(147, 20);
             this.textEditTenGiaoVien.TabIndex = 2;
+            this.textEditTenGiaoVien.EditValueChanged += new System.EventHandler(this.textEditTenGiaoVien_EditValueChanged);
             // 
             // gridcontrolGiaoVien
             // 
