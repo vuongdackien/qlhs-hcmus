@@ -36,7 +36,7 @@ namespace QLHS
         }      
        
         /// <summary>
-        /// Hiển thị bảng tổng kết môn
+        /// Hiển thị bảng tổng kết học kỳ
         /// </summary>
         private void HienThi_Bang_TongKetHocKy()
         {
