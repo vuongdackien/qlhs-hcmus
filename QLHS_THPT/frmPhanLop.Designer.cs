@@ -32,14 +32,15 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.groupBoxPhanLop = new System.Windows.Forms.GroupBox();
-            this.checkEditPhanLopHocSinhMoi = new DevExpress.XtraEditors.CheckEdit();
-            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
+            this.radioButtonPhanLopHocSinhCu = new System.Windows.Forms.RadioButton();
+            this.radioButtonPhanLopHocSinhMoi = new System.Windows.Forms.RadioButton();
             this.checkEditHocSinhChuaChuyen = new DevExpress.XtraEditors.CheckEdit();
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
             this.groupBoxChuyenLop = new System.Windows.Forms.GroupBox();
+            this.radioButtonChuyenLop = new System.Windows.Forms.RadioButton();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.textEditLyDoChuyen = new DevExpress.XtraEditors.TextEdit();
             this.checkEditChuyenBangDiem = new DevExpress.XtraEditors.CheckEdit();
-            this.checkEditChuyenLop = new DevExpress.XtraEditors.CheckEdit();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.comboBoxEditLopMoi = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -80,12 +81,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
             this.groupBoxPhanLop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditPhanLopHocSinhMoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditHocSinhChuaChuyen.Properties)).BeginInit();
             this.groupBoxChuyenLop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEditLyDoChuyen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditChuyenBangDiem.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditChuyenLop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditLopMoi.Properties)).BeginInit();
@@ -130,33 +129,44 @@
             // 
             // groupBoxPhanLop
             // 
-            this.groupBoxPhanLop.Controls.Add(this.checkEditPhanLopHocSinhMoi);
+            this.groupBoxPhanLop.Controls.Add(this.radioButtonPhanLopHocSinhCu);
+            this.groupBoxPhanLop.Controls.Add(this.radioButtonPhanLopHocSinhMoi);
             this.groupBoxPhanLop.Controls.Add(this.checkEditHocSinhChuaChuyen);
             this.groupBoxPhanLop.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBoxPhanLop.Location = new System.Drawing.Point(367, 105);
+            this.groupBoxPhanLop.Location = new System.Drawing.Point(346, 101);
             this.groupBoxPhanLop.Name = "groupBoxPhanLop";
-            this.groupBoxPhanLop.Size = new System.Drawing.Size(287, 82);
+            this.groupBoxPhanLop.Size = new System.Drawing.Size(329, 86);
             this.groupBoxPhanLop.TabIndex = 19;
             this.groupBoxPhanLop.TabStop = false;
             this.groupBoxPhanLop.Text = "Phân lớp";
             // 
-            // checkEditPhanLopHocSinhMoi
+            // radioButtonPhanLopHocSinhCu
             // 
-            this.checkEditPhanLopHocSinhMoi.Location = new System.Drawing.Point(19, 25);
-            this.checkEditPhanLopHocSinhMoi.Name = "checkEditPhanLopHocSinhMoi";
-            this.checkEditPhanLopHocSinhMoi.Properties.Caption = "Phân Lớp Cho Học Sinh Mới";
-            this.checkEditPhanLopHocSinhMoi.Size = new System.Drawing.Size(161, 19);
-            this.checkEditPhanLopHocSinhMoi.TabIndex = 15;
-            this.checkEditPhanLopHocSinhMoi.ToolTip = "Click vào checkbox này nếu bạn muốn phân lớp cho học sinh mới nhập học, chưa phân" +
-                " lớp";
-            this.checkEditPhanLopHocSinhMoi.ToolTipController = this.toolTipController1;
-            this.checkEditPhanLopHocSinhMoi.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.checkEditPhanLopHocSinhMoi.ToolTipTitle = "Hướng dẫn";
-            this.checkEditPhanLopHocSinhMoi.CheckedChanged += new System.EventHandler(this.checkEditPhanLopHocSinhMoi_CheckedChanged);
+            this.radioButtonPhanLopHocSinhCu.AutoSize = true;
+            this.radioButtonPhanLopHocSinhCu.Location = new System.Drawing.Point(168, 20);
+            this.radioButtonPhanLopHocSinhCu.Name = "radioButtonPhanLopHocSinhCu";
+            this.radioButtonPhanLopHocSinhCu.Size = new System.Drawing.Size(158, 17);
+            this.radioButtonPhanLopHocSinhCu.TabIndex = 21;
+            this.radioButtonPhanLopHocSinhCu.TabStop = true;
+            this.radioButtonPhanLopHocSinhCu.Text = "Phân Lớp học sinh từ lớp cũ";
+            this.radioButtonPhanLopHocSinhCu.UseVisualStyleBackColor = true;
+            this.radioButtonPhanLopHocSinhCu.CheckedChanged += new System.EventHandler(this.radioButtonPhanLopHocSinhCu_CheckedChanged);
+            // 
+            // radioButtonPhanLopHocSinhMoi
+            // 
+            this.radioButtonPhanLopHocSinhMoi.AutoSize = true;
+            this.radioButtonPhanLopHocSinhMoi.Location = new System.Drawing.Point(16, 20);
+            this.radioButtonPhanLopHocSinhMoi.Name = "radioButtonPhanLopHocSinhMoi";
+            this.radioButtonPhanLopHocSinhMoi.Size = new System.Drawing.Size(151, 17);
+            this.radioButtonPhanLopHocSinhMoi.TabIndex = 21;
+            this.radioButtonPhanLopHocSinhMoi.TabStop = true;
+            this.radioButtonPhanLopHocSinhMoi.Text = "Phân lớp học sinh từ hồ sơ";
+            this.radioButtonPhanLopHocSinhMoi.UseVisualStyleBackColor = true;
+            this.radioButtonPhanLopHocSinhMoi.CheckedChanged += new System.EventHandler(this.radioButtonPhanLopHocSinhMoi_CheckedChanged);
             // 
             // checkEditHocSinhChuaChuyen
             // 
-            this.checkEditHocSinhChuaChuyen.Location = new System.Drawing.Point(19, 51);
+            this.checkEditHocSinhChuaChuyen.Location = new System.Drawing.Point(13, 51);
             this.checkEditHocSinhChuaChuyen.Name = "checkEditHocSinhChuaChuyen";
             this.checkEditHocSinhChuaChuyen.Properties.Caption = "Sử dụng chức năng chuyển lại, phân lớp tất cả";
             this.checkEditHocSinhChuaChuyen.Size = new System.Drawing.Size(259, 19);
@@ -170,21 +180,33 @@
             // 
             // groupBoxChuyenLop
             // 
+            this.groupBoxChuyenLop.Controls.Add(this.radioButtonChuyenLop);
             this.groupBoxChuyenLop.Controls.Add(this.labelControl7);
             this.groupBoxChuyenLop.Controls.Add(this.textEditLyDoChuyen);
             this.groupBoxChuyenLop.Controls.Add(this.checkEditChuyenBangDiem);
-            this.groupBoxChuyenLop.Controls.Add(this.checkEditChuyenLop);
             this.groupBoxChuyenLop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxChuyenLop.Location = new System.Drawing.Point(367, 2);
+            this.groupBoxChuyenLop.Location = new System.Drawing.Point(346, 2);
             this.groupBoxChuyenLop.Name = "groupBoxChuyenLop";
-            this.groupBoxChuyenLop.Size = new System.Drawing.Size(287, 97);
+            this.groupBoxChuyenLop.Size = new System.Drawing.Size(329, 90);
             this.groupBoxChuyenLop.TabIndex = 18;
             this.groupBoxChuyenLop.TabStop = false;
             this.groupBoxChuyenLop.Text = "Chuyển lớp";
             // 
+            // radioButtonChuyenLop
+            // 
+            this.radioButtonChuyenLop.AutoSize = true;
+            this.radioButtonChuyenLop.Location = new System.Drawing.Point(16, 16);
+            this.radioButtonChuyenLop.Name = "radioButtonChuyenLop";
+            this.radioButtonChuyenLop.Size = new System.Drawing.Size(147, 17);
+            this.radioButtonChuyenLop.TabIndex = 21;
+            this.radioButtonChuyenLop.TabStop = true;
+            this.radioButtonChuyenLop.Text = "Chuyển học sinh cùng lớp";
+            this.radioButtonChuyenLop.UseVisualStyleBackColor = true;
+            this.radioButtonChuyenLop.CheckedChanged += new System.EventHandler(this.radioButtonChuyenLop_CheckedChanged);
+            // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(26, 47);
+            this.labelControl7.Location = new System.Drawing.Point(76, 46);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(64, 13);
             this.labelControl7.TabIndex = 20;
@@ -193,7 +215,7 @@
             // textEditLyDoChuyen
             // 
             this.textEditLyDoChuyen.EditValue = "";
-            this.textEditLyDoChuyen.Location = new System.Drawing.Point(135, 43);
+            this.textEditLyDoChuyen.Location = new System.Drawing.Point(180, 44);
             this.textEditLyDoChuyen.Name = "textEditLyDoChuyen";
             this.textEditLyDoChuyen.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textEditLyDoChuyen.Size = new System.Drawing.Size(143, 20);
@@ -201,24 +223,11 @@
             // 
             // checkEditChuyenBangDiem
             // 
-            this.checkEditChuyenBangDiem.Location = new System.Drawing.Point(132, 14);
+            this.checkEditChuyenBangDiem.Location = new System.Drawing.Point(178, 15);
             this.checkEditChuyenBangDiem.Name = "checkEditChuyenBangDiem";
             this.checkEditChuyenBangDiem.Properties.Caption = "Chuyển bảng điểm";
             this.checkEditChuyenBangDiem.Size = new System.Drawing.Size(120, 19);
             this.checkEditChuyenBangDiem.TabIndex = 18;
-            // 
-            // checkEditChuyenLop
-            // 
-            this.checkEditChuyenLop.Location = new System.Drawing.Point(19, 16);
-            this.checkEditChuyenLop.Name = "checkEditChuyenLop";
-            this.checkEditChuyenLop.Properties.Caption = "Chuyển lớp";
-            this.checkEditChuyenLop.Size = new System.Drawing.Size(128, 19);
-            this.checkEditChuyenLop.TabIndex = 17;
-            this.checkEditChuyenLop.ToolTip = "Click vào checkbox nếu bạn muốn chuyển lớp cho học sinh";
-            this.checkEditChuyenLop.ToolTipController = this.toolTipController1;
-            this.checkEditChuyenLop.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.checkEditChuyenLop.ToolTipTitle = "Hướng dẫn";
-            this.checkEditChuyenLop.CheckedChanged += new System.EventHandler(this.checkEditChuyenLop_CheckedChanged);
             // 
             // groupControl2
             // 
@@ -229,9 +238,9 @@
             this.groupControl2.Controls.Add(this.comboBoxEditNamHocMoi);
             this.groupControl2.Controls.Add(this.labelControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupControl2.Location = new System.Drawing.Point(654, 2);
+            this.groupControl2.Location = new System.Drawing.Point(675, 2);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(347, 185);
+            this.groupControl2.Size = new System.Drawing.Size(326, 185);
             this.groupControl2.TabIndex = 14;
             this.groupControl2.Text = "Thông Tin Lớp Mới";
             // 
@@ -300,7 +309,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl1.Location = new System.Drawing.Point(2, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(365, 185);
+            this.groupControl1.Size = new System.Drawing.Size(344, 185);
             this.groupControl1.TabIndex = 13;
             this.groupControl1.Text = "Thông Tin Lớp Cũ";
             // 
@@ -374,7 +383,7 @@
             this.gridControlDSHocSinh.Name = "gridControlDSHocSinh";
             this.gridControlDSHocSinh.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControlDSHocSinh.Size = new System.Drawing.Size(369, 283);
+            this.gridControlDSHocSinh.Size = new System.Drawing.Size(348, 283);
             this.gridControlDSHocSinh.TabIndex = 1;
             this.gridControlDSHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDSHocSinh});
@@ -436,12 +445,12 @@
             // gridControlDSHocSinhMoi
             // 
             this.gridControlDSHocSinhMoi.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gridControlDSHocSinhMoi.Location = new System.Drawing.Point(656, 193);
+            this.gridControlDSHocSinhMoi.Location = new System.Drawing.Point(677, 193);
             this.gridControlDSHocSinhMoi.MainView = this.gridViewDSHocSinhMoi;
             this.gridControlDSHocSinhMoi.Name = "gridControlDSHocSinhMoi";
             this.gridControlDSHocSinhMoi.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit2});
-            this.gridControlDSHocSinhMoi.Size = new System.Drawing.Size(351, 283);
+            this.gridControlDSHocSinhMoi.Size = new System.Drawing.Size(330, 283);
             this.gridControlDSHocSinhMoi.TabIndex = 2;
             this.gridControlDSHocSinhMoi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDSHocSinhMoi});
@@ -504,16 +513,16 @@
             this.groupControl3.Controls.Add(this.simpleButtonChuyenLai);
             this.groupControl3.Controls.Add(this.simpleButtonChuyenLop);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl3.Location = new System.Drawing.Point(369, 193);
+            this.groupControl3.Location = new System.Drawing.Point(348, 193);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(287, 283);
+            this.groupControl3.Size = new System.Drawing.Size(329, 283);
             this.groupControl3.TabIndex = 3;
             this.groupControl3.Text = "Chức năng";
             // 
             // simpleButtonChuyenLaiTatCa
             // 
             this.simpleButtonChuyenLaiTatCa.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonChuyenLaiTatCa.Location = new System.Drawing.Point(73, 187);
+            this.simpleButtonChuyenLaiTatCa.Location = new System.Drawing.Point(82, 187);
             this.simpleButtonChuyenLaiTatCa.Name = "simpleButtonChuyenLaiTatCa";
             this.simpleButtonChuyenLaiTatCa.Size = new System.Drawing.Size(147, 35);
             this.simpleButtonChuyenLaiTatCa.TabIndex = 2;
@@ -523,7 +532,7 @@
             // simpleButtonChuyenHet
             // 
             this.simpleButtonChuyenHet.Image = global::QLHS.Properties.Resources.chuyenlop_small;
-            this.simpleButtonChuyenHet.Location = new System.Drawing.Point(73, 137);
+            this.simpleButtonChuyenHet.Location = new System.Drawing.Point(82, 137);
             this.simpleButtonChuyenHet.Name = "simpleButtonChuyenHet";
             this.simpleButtonChuyenHet.Size = new System.Drawing.Size(147, 35);
             this.simpleButtonChuyenHet.TabIndex = 1;
@@ -533,7 +542,7 @@
             // simpleButtonDong
             // 
             this.simpleButtonDong.Image = global::QLHS.Properties.Resources.thoat_small;
-            this.simpleButtonDong.Location = new System.Drawing.Point(73, 237);
+            this.simpleButtonDong.Location = new System.Drawing.Point(82, 237);
             this.simpleButtonDong.Name = "simpleButtonDong";
             this.simpleButtonDong.Size = new System.Drawing.Size(147, 35);
             this.simpleButtonDong.TabIndex = 0;
@@ -543,7 +552,7 @@
             // simpleButtonChuyenLai
             // 
             this.simpleButtonChuyenLai.Image = global::QLHS.Properties.Resources.chuyen_lop;
-            this.simpleButtonChuyenLai.Location = new System.Drawing.Point(73, 87);
+            this.simpleButtonChuyenLai.Location = new System.Drawing.Point(82, 87);
             this.simpleButtonChuyenLai.Name = "simpleButtonChuyenLai";
             this.simpleButtonChuyenLai.Size = new System.Drawing.Size(147, 35);
             this.simpleButtonChuyenLai.TabIndex = 0;
@@ -553,7 +562,7 @@
             // simpleButtonChuyenLop
             // 
             this.simpleButtonChuyenLop.Image = global::QLHS.Properties.Resources.chuyen_loplai;
-            this.simpleButtonChuyenLop.Location = new System.Drawing.Point(73, 36);
+            this.simpleButtonChuyenLop.Location = new System.Drawing.Point(82, 36);
             this.simpleButtonChuyenLop.Name = "simpleButtonChuyenLop";
             this.simpleButtonChuyenLop.Size = new System.Drawing.Size(147, 35);
             this.simpleButtonChuyenLop.TabIndex = 0;
@@ -579,13 +588,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.groupBoxPhanLop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditPhanLopHocSinhMoi.Properties)).EndInit();
+            this.groupBoxPhanLop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditHocSinhChuaChuyen.Properties)).EndInit();
             this.groupBoxChuyenLop.ResumeLayout(false);
             this.groupBoxChuyenLop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEditLyDoChuyen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditChuyenBangDiem.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditChuyenLop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
@@ -638,11 +646,9 @@
         private DevExpress.XtraEditors.SimpleButton simpleButtonChuyenLop;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
-        private DevExpress.XtraEditors.CheckEdit checkEditPhanLopHocSinhMoi;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraEditors.CheckEdit checkEditHocSinhChuaChuyen;
-        private DevExpress.XtraEditors.CheckEdit checkEditChuyenLop;
         private DevExpress.Utils.ToolTipController toolTipController1;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditLop;
@@ -658,6 +664,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.SimpleButton simpleButtonChuyenHet;
         private DevExpress.XtraEditors.SimpleButton simpleButtonChuyenLaiTatCa;
+        private System.Windows.Forms.RadioButton radioButtonPhanLopHocSinhCu;
+        private System.Windows.Forms.RadioButton radioButtonPhanLopHocSinhMoi;
+        private System.Windows.Forms.RadioButton radioButtonChuyenLop;
 
     }
 }
