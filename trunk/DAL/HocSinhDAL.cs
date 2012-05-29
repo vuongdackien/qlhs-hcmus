@@ -204,7 +204,7 @@ namespace QLHS.DAL
             if (!hs.TenHocSinh.Equals(""))
             {
                 where += " AND (TenHocSinh " + oper + "N'" + per + hs.TenHocSinh + per + "' ";
-                where += "OR dbo.fnChuyenKhongDau(TenHocSinh) " + oper + "N'" + per + hs.TenHocSinh + per + "' )";
+                where += " OR dbo.fnChuyenKhongDau(TenHocSinh) " + oper + "N'" + per + hs.TenHocSinh + per + "' )";
             }
 
             //giới tính

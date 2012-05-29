@@ -60,6 +60,35 @@ namespace QLHS.DAL
             string sql = string.Format("SELECT count(*) as SoLuong FROM MonHoc WHERE MaMonHoc = '{0}'", maMonHoc);
             return Convert.ToInt32(ExecuteScalar(sql)) == 1;
         }
+
+        /// <summary>
+        /// Kiểm tra tên môn học đã có hay chưa
+        /// </summary>
+        /// <param name="tenMonHoc"></param>
+        /// <returns></returns>
+        public bool KiemTraTonTai_TenMonHoc(MonHocDTO _monHocDTO)
+        {
+            string sql = string.Format("SELECT count(*) FROM MONHOC WHERE ");
+            string tenmh = "";
+            tenmh += " (TenMonHoc LIKE N'%" + _monHocDTO.TenMonHoc + "%' ";
+            tenmh += " OR dbo.fnChuyenKhongDau(TenMonHoc) LIKE N'%" + _monHocDTO.TenMonHoc + "%')";
+            sql += tenmh;
+            return Convert.ToInt32(ExecuteScalar(sql)) == 1;
+        }
+
+        /// <summary>
+        /// Kiểm tra tên môn học đã có hay chưa
+        /// </summary>
+        /// <param name="tenMonHoc"></param>
+        /// <returns></returns>
+        public bool KiemTra_ThongTin_MonHoc(MonHocDTO _monHocDTO)
+        {
+            string sql = string.Format("SELECT count(*) FROM MONHOC WHERE SoTiet={0} AND HeSo={1} AND TrangThai={2}", 
+                                            _monHocDTO.SoTiet, _monHocDTO.HeSo, _monHocDTO.TrangThai);           
+            return Convert.ToInt32(ExecuteScalar(sql)) == 1;
+        }
+
+
         /// <summary>
         /// Lấy Datatable danh sách môn học
         /// </summary>

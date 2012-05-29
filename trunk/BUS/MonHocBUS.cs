@@ -95,5 +95,20 @@ namespace QLHS.BUS
         {
             return _monHocDAL.KiemTraTonTai_MonHoc(maMonHoc);
         }
+
+        /// <summary>
+        /// Kiểm tra tên môn học đã có hay chưa
+        /// </summary>
+        /// <param name="tenMonHoc"></param>
+        /// <returns></returns>
+        public bool KiemTraTonTai_TenMonHoc(MonHocDTO _monHocDTO)
+        {
+            return _monHocDAL.KiemTraTonTai_TenMonHoc(_monHocDTO);
+        }
+
+        public bool KiemTra_ThongTin_MonHoc(MonHocDTO _monHocDTO)
+        {
+            return _monHocDAL.KiemTra_ThongTin_MonHoc(_monHocDTO);
+        }        
     }
 }
