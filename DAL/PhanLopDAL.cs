@@ -78,6 +78,16 @@ namespace QLHS.DAL
             return Convert.ToInt32(ExecuteScalar(sql));
         }
         /// <summary>
+        /// Đếm sỉ số của 1 lớp mà các học sinh đang theo học
+        /// </summary>
+        /// <param name="MaLop">String: Mã lớp</param>
+        /// <returns>Int</returns>
+        public int DemSiSoLop_HocSinhDangHoc(string MaLop)
+        {
+            string sql = "SELECT count(*) FROM PHANLOP WHERE MaLop = '" + MaLop + "' and MaHocSinh not in (select MaHocSinh from CHUYENLOP where TuLop ='"+MaLop+"')";
+            return Convert.ToInt32(ExecuteScalar(sql));
+        }
+        /// <summary>
         /// Cập nhật STT cho cả lớp
         /// </summary>
         /// <param name="MaLop">String: mã lớp</param>
