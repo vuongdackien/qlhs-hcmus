@@ -126,9 +126,9 @@
             this.groupControl2.Controls.Add(this.comboBoxEditNamHocMoi);
             this.groupControl2.Controls.Add(this.labelControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl2.Location = new System.Drawing.Point(660, 2);
+            this.groupControl2.Location = new System.Drawing.Point(661, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(345, 189);
+            this.groupControl2.Size = new System.Drawing.Size(345, 187);
             this.groupControl2.TabIndex = 16;
             this.groupControl2.Text = "Thông Tin Lớp Mới";
             // 
@@ -139,7 +139,7 @@
             this.comboBoxEditLopMoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditLopMoi.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEditLopMoi.TabIndex = 1;
+            this.comboBoxEditLopMoi.TabIndex = 12;
             this.comboBoxEditLopMoi.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditLopMoi_SelectedIndexChanged);
             // 
             // labelControl3
@@ -157,7 +157,7 @@
             this.comboBoxEditKhoiMoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditKhoiMoi.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEditKhoiMoi.TabIndex = 1;
+            this.comboBoxEditKhoiMoi.TabIndex = 11;
             this.comboBoxEditKhoiMoi.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditKhoiMoi_SelectedIndexChanged);
             // 
             // labelControl2
@@ -175,7 +175,7 @@
             this.comboBoxEditNamHocMoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditNamHocMoi.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEditNamHocMoi.TabIndex = 1;
+            this.comboBoxEditNamHocMoi.TabIndex = 10;
             this.comboBoxEditNamHocMoi.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHocMoi_SelectedIndexChanged);
             // 
             // labelControl1
@@ -191,9 +191,9 @@
             this.panelControl2.Controls.Add(this.groupBoxPhanLop);
             this.panelControl2.Controls.Add(this.groupBoxChuyenLop);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl2.Location = new System.Drawing.Point(350, 2);
+            this.panelControl2.Location = new System.Drawing.Point(351, 3);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(310, 189);
+            this.panelControl2.Size = new System.Drawing.Size(310, 187);
             this.panelControl2.TabIndex = 15;
             // 
             // groupBoxPhanLop
@@ -202,9 +202,9 @@
             this.groupBoxPhanLop.Controls.Add(this.radioButtonPhanLopHocSinhMoi);
             this.groupBoxPhanLop.Controls.Add(this.checkEditHocSinhChuaChuyen);
             this.groupBoxPhanLop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxPhanLop.Location = new System.Drawing.Point(2, 2);
+            this.groupBoxPhanLop.Location = new System.Drawing.Point(3, 3);
             this.groupBoxPhanLop.Name = "groupBoxPhanLop";
-            this.groupBoxPhanLop.Size = new System.Drawing.Size(306, 97);
+            this.groupBoxPhanLop.Size = new System.Drawing.Size(304, 97);
             this.groupBoxPhanLop.TabIndex = 21;
             this.groupBoxPhanLop.TabStop = false;
             this.groupBoxPhanLop.Text = "Phân lớp";
@@ -215,11 +215,11 @@
             this.radioButtonPhanLopHocSinhCu.Location = new System.Drawing.Point(16, 43);
             this.radioButtonPhanLopHocSinhCu.Name = "radioButtonPhanLopHocSinhCu";
             this.radioButtonPhanLopHocSinhCu.Size = new System.Drawing.Size(158, 17);
-            this.radioButtonPhanLopHocSinhCu.TabIndex = 21;
+            this.radioButtonPhanLopHocSinhCu.TabIndex = 5;
             this.radioButtonPhanLopHocSinhCu.Text = "Phân Lớp học sinh từ lớp cũ";
             this.toolTipController1.SetTitle(this.radioButtonPhanLopHocSinhCu, "Hướng dẫn");
             this.toolTipController1.SetToolTip(this.radioButtonPhanLopHocSinhCu, "Click vào radiobtton này nếu bạn muốn phân học sinh lên lớp(10->11,11->12), và họ" +
-                    "c sinh bị đúp(phân cùng khối)");
+        "c sinh bị đúp(phân cùng khối)");
             this.radioButtonPhanLopHocSinhCu.UseVisualStyleBackColor = true;
             this.radioButtonPhanLopHocSinhCu.CheckedChanged += new System.EventHandler(this.radioButtonPhanLopHocSinhCu_CheckedChanged);
             // 
@@ -229,11 +229,11 @@
             this.radioButtonPhanLopHocSinhMoi.Location = new System.Drawing.Point(16, 20);
             this.radioButtonPhanLopHocSinhMoi.Name = "radioButtonPhanLopHocSinhMoi";
             this.radioButtonPhanLopHocSinhMoi.Size = new System.Drawing.Size(151, 17);
-            this.radioButtonPhanLopHocSinhMoi.TabIndex = 21;
+            this.radioButtonPhanLopHocSinhMoi.TabIndex = 4;
             this.radioButtonPhanLopHocSinhMoi.Text = "Phân lớp học sinh từ hồ sơ";
             this.toolTipController1.SetTitle(this.radioButtonPhanLopHocSinhMoi, "Hướng dẫn");
             this.toolTipController1.SetToolTip(this.radioButtonPhanLopHocSinhMoi, "Click vào radiobutton này nều bạn muốn phân lớp cho những học sinh mới nhập học n" +
-                    "hưng chưa có lớp");
+        "hưng chưa có lớp");
             this.radioButtonPhanLopHocSinhMoi.UseVisualStyleBackColor = true;
             this.radioButtonPhanLopHocSinhMoi.CheckedChanged += new System.EventHandler(this.radioButtonPhanLopHocSinhMoi_CheckedChanged);
             // 
@@ -243,9 +243,9 @@
             this.checkEditHocSinhChuaChuyen.Name = "checkEditHocSinhChuaChuyen";
             this.checkEditHocSinhChuaChuyen.Properties.Caption = "Sử dụng chức năng chuyển lại, phân lớp tất cả";
             this.checkEditHocSinhChuaChuyen.Size = new System.Drawing.Size(259, 19);
-            this.checkEditHocSinhChuaChuyen.TabIndex = 16;
+            this.checkEditHocSinhChuaChuyen.TabIndex = 6;
             this.checkEditHocSinhChuaChuyen.ToolTip = "Click vào checkbox này để có thể sử dụng chức năng chuyển lại học sinh khi bạn ph" +
-                "ân nhầm lớp học sinh. Và phân tất cả học sinh 1 lúc.";
+    "ân nhầm lớp học sinh. Và phân tất cả học sinh 1 lúc.";
             this.checkEditHocSinhChuaChuyen.ToolTipController = this.toolTipController1;
             this.checkEditHocSinhChuaChuyen.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.checkEditHocSinhChuaChuyen.ToolTipTitle = "Hướng dẫ";
@@ -256,13 +256,13 @@
             this.radioButtonChuyenLop.AutoSize = true;
             this.radioButtonChuyenLop.Location = new System.Drawing.Point(16, 16);
             this.radioButtonChuyenLop.Name = "radioButtonChuyenLop";
-            this.radioButtonChuyenLop.Size = new System.Drawing.Size(148, 17);
-            this.radioButtonChuyenLop.TabIndex = 21;
+            this.radioButtonChuyenLop.Size = new System.Drawing.Size(154, 17);
+            this.radioButtonChuyenLop.TabIndex = 7;
             this.radioButtonChuyenLop.TabStop = true;
-            this.radioButtonChuyenLop.Text = "Chuyển học sinh cùng lớp";
+            this.radioButtonChuyenLop.Text = "Chuyển học sinh cùng khối";
             this.toolTipController1.SetTitle(this.radioButtonChuyenLop, "Hướng dẫn");
             this.toolTipController1.SetToolTip(this.radioButtonChuyenLop, "Click vào radiobutton này nếu bạn muốn chuyển lớp cho 1 học sinh, chỉ chuyển cùng" +
-                    " khối và cùng năm học");
+        " khối và cùng năm học");
             this.radioButtonChuyenLop.UseVisualStyleBackColor = true;
             this.radioButtonChuyenLop.CheckedChanged += new System.EventHandler(this.radioButtonChuyenLop_CheckedChanged);
             // 
@@ -273,9 +273,9 @@
             this.groupBoxChuyenLop.Controls.Add(this.textEditLyDoChuyen);
             this.groupBoxChuyenLop.Controls.Add(this.checkEditChuyenBangDiem);
             this.groupBoxChuyenLop.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBoxChuyenLop.Location = new System.Drawing.Point(2, 115);
+            this.groupBoxChuyenLop.Location = new System.Drawing.Point(3, 112);
             this.groupBoxChuyenLop.Name = "groupBoxChuyenLop";
-            this.groupBoxChuyenLop.Size = new System.Drawing.Size(306, 72);
+            this.groupBoxChuyenLop.Size = new System.Drawing.Size(304, 72);
             this.groupBoxChuyenLop.TabIndex = 20;
             this.groupBoxChuyenLop.TabStop = false;
             this.groupBoxChuyenLop.Text = "Chuyển lớp";
@@ -295,7 +295,7 @@
             this.textEditLyDoChuyen.Name = "textEditLyDoChuyen";
             this.textEditLyDoChuyen.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textEditLyDoChuyen.Size = new System.Drawing.Size(143, 20);
-            this.textEditLyDoChuyen.TabIndex = 19;
+            this.textEditLyDoChuyen.TabIndex = 9;
             // 
             // checkEditChuyenBangDiem
             // 
@@ -303,7 +303,7 @@
             this.checkEditChuyenBangDiem.Name = "checkEditChuyenBangDiem";
             this.checkEditChuyenBangDiem.Properties.Caption = "Chuyển bảng điểm";
             this.checkEditChuyenBangDiem.Size = new System.Drawing.Size(120, 19);
-            this.checkEditChuyenBangDiem.TabIndex = 18;
+            this.checkEditChuyenBangDiem.TabIndex = 8;
             // 
             // labelControl5
             // 
@@ -322,9 +322,9 @@
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.comboBoxEditNamHoc);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl1.Location = new System.Drawing.Point(2, 2);
+            this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(348, 189);
+            this.groupControl1.Size = new System.Drawing.Size(348, 187);
             this.groupControl1.TabIndex = 13;
             this.groupControl1.Text = "Thông Tin Lớp Cũ";
             // 
@@ -335,7 +335,7 @@
             this.comboBoxEditLop.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditLop.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEditLop.TabIndex = 4;
+            this.comboBoxEditLop.TabIndex = 3;
             this.comboBoxEditLop.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditLop_SelectedIndexChanged);
             // 
             // labelControl8
@@ -361,7 +361,7 @@
             this.comboBoxEditKhoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditKhoi.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEditKhoi.TabIndex = 5;
+            this.comboBoxEditKhoi.TabIndex = 2;
             this.comboBoxEditKhoi.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditKhoi_SelectedIndexChanged);
             // 
             // labelControl4
@@ -379,7 +379,7 @@
             this.comboBoxEditNamHoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEditNamHoc.Size = new System.Drawing.Size(100, 20);
-            this.comboBoxEditNamHoc.TabIndex = 5;
+            this.comboBoxEditNamHoc.TabIndex = 1;
             this.comboBoxEditNamHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHoc_SelectedIndexChanged);
             // 
             // gridControlDSHocSinh
@@ -391,7 +391,7 @@
             this.gridControlDSHocSinh.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
             this.gridControlDSHocSinh.Size = new System.Drawing.Size(351, 283);
-            this.gridControlDSHocSinh.TabIndex = 1;
+            this.gridControlDSHocSinh.TabIndex = 4;
             this.gridControlDSHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDSHocSinh});
             // 
@@ -414,6 +414,8 @@
             this.gridColumn1.Caption = "STT";
             this.gridColumn1.FieldName = "STT";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsColumn.ReadOnly = true;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             this.gridColumn1.Width = 38;
@@ -423,6 +425,8 @@
             this.gridColumn2.Caption = "Tên Học Sinh";
             this.gridColumn2.FieldName = "TenHocSinh";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsColumn.ReadOnly = true;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 2;
             this.gridColumn2.Width = 163;
@@ -432,6 +436,8 @@
             this.gridColumn3.Caption = "Mã Học Sinh";
             this.gridColumn3.FieldName = "MaHocSinh";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.OptionsColumn.ReadOnly = true;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 1;
             this.gridColumn3.Width = 70;
@@ -441,6 +447,8 @@
             this.gridColumn7.Caption = "Giới Tính";
             this.gridColumn7.FieldName = "GioiTinh";
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
+            this.gridColumn7.OptionsColumn.ReadOnly = true;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 3;
             this.gridColumn7.Width = 76;
@@ -470,7 +478,7 @@
             this.simpleButtonChuyenLaiTatCa.Location = new System.Drawing.Point(82, 187);
             this.simpleButtonChuyenLaiTatCa.Name = "simpleButtonChuyenLaiTatCa";
             this.simpleButtonChuyenLaiTatCa.Size = new System.Drawing.Size(147, 35);
-            this.simpleButtonChuyenLaiTatCa.TabIndex = 2;
+            this.simpleButtonChuyenLaiTatCa.TabIndex = 16;
             this.simpleButtonChuyenLaiTatCa.Text = "Chuyển lại tất cả(Alt+&D)";
             this.simpleButtonChuyenLaiTatCa.Click += new System.EventHandler(this.simpleButtonChuyenLaiTatCa_Click);
             // 
@@ -480,7 +488,7 @@
             this.simpleButtonChuyenHet.Location = new System.Drawing.Point(82, 137);
             this.simpleButtonChuyenHet.Name = "simpleButtonChuyenHet";
             this.simpleButtonChuyenHet.Size = new System.Drawing.Size(147, 35);
-            this.simpleButtonChuyenHet.TabIndex = 1;
+            this.simpleButtonChuyenHet.TabIndex = 15;
             this.simpleButtonChuyenHet.Text = "Phân lớp tất cả(Alt+&S)";
             this.simpleButtonChuyenHet.Click += new System.EventHandler(this.simpleButtonChuyenHet_Click);
             // 
@@ -490,7 +498,7 @@
             this.simpleButtonDong.Location = new System.Drawing.Point(82, 237);
             this.simpleButtonDong.Name = "simpleButtonDong";
             this.simpleButtonDong.Size = new System.Drawing.Size(147, 35);
-            this.simpleButtonDong.TabIndex = 0;
+            this.simpleButtonDong.TabIndex = 17;
             this.simpleButtonDong.Text = "Đóng(Alt+&X)";
             this.simpleButtonDong.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
@@ -500,7 +508,7 @@
             this.simpleButtonChuyenLai.Location = new System.Drawing.Point(82, 87);
             this.simpleButtonChuyenLai.Name = "simpleButtonChuyenLai";
             this.simpleButtonChuyenLai.Size = new System.Drawing.Size(147, 35);
-            this.simpleButtonChuyenLai.TabIndex = 0;
+            this.simpleButtonChuyenLai.TabIndex = 14;
             this.simpleButtonChuyenLai.Text = "Chuyển lại(Alt+&B)";
             this.simpleButtonChuyenLai.Click += new System.EventHandler(this.simpleButtonChuyenLai_Click);
             // 
@@ -510,7 +518,7 @@
             this.simpleButtonChuyenLop.Location = new System.Drawing.Point(82, 36);
             this.simpleButtonChuyenLop.Name = "simpleButtonChuyenLop";
             this.simpleButtonChuyenLop.Size = new System.Drawing.Size(147, 35);
-            this.simpleButtonChuyenLop.TabIndex = 0;
+            this.simpleButtonChuyenLop.TabIndex = 13;
             this.simpleButtonChuyenLop.Text = "Phân lớp (Enter)";
             this.simpleButtonChuyenLop.Click += new System.EventHandler(this.simpleButtonChuyenLop_Click);
             // 
@@ -545,6 +553,8 @@
             this.gridColumn4.Caption = "STT";
             this.gridColumn4.FieldName = "STT";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.OptionsColumn.ReadOnly = true;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 0;
             this.gridColumn4.Width = 39;
@@ -554,6 +564,8 @@
             this.gridColumn5.Caption = "Mã Học Sinh";
             this.gridColumn5.FieldName = "MaHocSinh";
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.OptionsColumn.ReadOnly = true;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 1;
             this.gridColumn5.Width = 74;
@@ -563,6 +575,8 @@
             this.gridColumn6.Caption = "Tên Học Sinh";
             this.gridColumn6.FieldName = "TenHocSinh";
             this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.OptionsColumn.ReadOnly = true;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 2;
             this.gridColumn6.Width = 141;
@@ -572,6 +586,8 @@
             this.gridColumn8.Caption = "Giới Tính";
             this.gridColumn8.FieldName = "GioiTinh";
             this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowEdit = false;
+            this.gridColumn8.OptionsColumn.ReadOnly = true;
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 3;
             this.gridColumn8.Width = 70;
