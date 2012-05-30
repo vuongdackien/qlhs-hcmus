@@ -126,9 +126,9 @@
             this.groupControl2.Controls.Add(this.comboBoxEditNamHocMoi);
             this.groupControl2.Controls.Add(this.labelControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl2.Location = new System.Drawing.Point(661, 3);
+            this.groupControl2.Location = new System.Drawing.Point(660, 2);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(345, 187);
+            this.groupControl2.Size = new System.Drawing.Size(345, 189);
             this.groupControl2.TabIndex = 16;
             this.groupControl2.Text = "Thông Tin Lớp Mới";
             // 
@@ -191,9 +191,9 @@
             this.panelControl2.Controls.Add(this.groupBoxPhanLop);
             this.panelControl2.Controls.Add(this.groupBoxChuyenLop);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl2.Location = new System.Drawing.Point(351, 3);
+            this.panelControl2.Location = new System.Drawing.Point(350, 2);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(310, 187);
+            this.panelControl2.Size = new System.Drawing.Size(310, 189);
             this.panelControl2.TabIndex = 15;
             // 
             // groupBoxPhanLop
@@ -202,9 +202,9 @@
             this.groupBoxPhanLop.Controls.Add(this.radioButtonPhanLopHocSinhMoi);
             this.groupBoxPhanLop.Controls.Add(this.checkEditHocSinhChuaChuyen);
             this.groupBoxPhanLop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBoxPhanLop.Location = new System.Drawing.Point(3, 3);
+            this.groupBoxPhanLop.Location = new System.Drawing.Point(2, 2);
             this.groupBoxPhanLop.Name = "groupBoxPhanLop";
-            this.groupBoxPhanLop.Size = new System.Drawing.Size(304, 97);
+            this.groupBoxPhanLop.Size = new System.Drawing.Size(306, 97);
             this.groupBoxPhanLop.TabIndex = 21;
             this.groupBoxPhanLop.TabStop = false;
             this.groupBoxPhanLop.Text = "Phân lớp";
@@ -219,7 +219,7 @@
             this.radioButtonPhanLopHocSinhCu.Text = "Phân Lớp học sinh từ lớp cũ";
             this.toolTipController1.SetTitle(this.radioButtonPhanLopHocSinhCu, "Hướng dẫn");
             this.toolTipController1.SetToolTip(this.radioButtonPhanLopHocSinhCu, "Click vào radiobtton này nếu bạn muốn phân học sinh lên lớp(10->11,11->12), và họ" +
-        "c sinh bị đúp(phân cùng khối)");
+                    "c sinh bị đúp(phân cùng khối)");
             this.radioButtonPhanLopHocSinhCu.UseVisualStyleBackColor = true;
             this.radioButtonPhanLopHocSinhCu.CheckedChanged += new System.EventHandler(this.radioButtonPhanLopHocSinhCu_CheckedChanged);
             // 
@@ -233,7 +233,7 @@
             this.radioButtonPhanLopHocSinhMoi.Text = "Phân lớp học sinh từ hồ sơ";
             this.toolTipController1.SetTitle(this.radioButtonPhanLopHocSinhMoi, "Hướng dẫn");
             this.toolTipController1.SetToolTip(this.radioButtonPhanLopHocSinhMoi, "Click vào radiobutton này nều bạn muốn phân lớp cho những học sinh mới nhập học n" +
-        "hưng chưa có lớp");
+                    "hưng chưa có lớp");
             this.radioButtonPhanLopHocSinhMoi.UseVisualStyleBackColor = true;
             this.radioButtonPhanLopHocSinhMoi.CheckedChanged += new System.EventHandler(this.radioButtonPhanLopHocSinhMoi_CheckedChanged);
             // 
@@ -245,7 +245,7 @@
             this.checkEditHocSinhChuaChuyen.Size = new System.Drawing.Size(259, 19);
             this.checkEditHocSinhChuaChuyen.TabIndex = 16;
             this.checkEditHocSinhChuaChuyen.ToolTip = "Click vào checkbox này để có thể sử dụng chức năng chuyển lại học sinh khi bạn ph" +
-    "ân nhầm lớp học sinh. Và phân tất cả học sinh 1 lúc.";
+                "ân nhầm lớp học sinh. Và phân tất cả học sinh 1 lúc.";
             this.checkEditHocSinhChuaChuyen.ToolTipController = this.toolTipController1;
             this.checkEditHocSinhChuaChuyen.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.checkEditHocSinhChuaChuyen.ToolTipTitle = "Hướng dẫ";
@@ -262,7 +262,7 @@
             this.radioButtonChuyenLop.Text = "Chuyển học sinh cùng lớp";
             this.toolTipController1.SetTitle(this.radioButtonChuyenLop, "Hướng dẫn");
             this.toolTipController1.SetToolTip(this.radioButtonChuyenLop, "Click vào radiobutton này nếu bạn muốn chuyển lớp cho 1 học sinh, chỉ chuyển cùng" +
-        " khối và cùng năm học");
+                    " khối và cùng năm học");
             this.radioButtonChuyenLop.UseVisualStyleBackColor = true;
             this.radioButtonChuyenLop.CheckedChanged += new System.EventHandler(this.radioButtonChuyenLop_CheckedChanged);
             // 
@@ -273,9 +273,9 @@
             this.groupBoxChuyenLop.Controls.Add(this.textEditLyDoChuyen);
             this.groupBoxChuyenLop.Controls.Add(this.checkEditChuyenBangDiem);
             this.groupBoxChuyenLop.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBoxChuyenLop.Location = new System.Drawing.Point(3, 112);
+            this.groupBoxChuyenLop.Location = new System.Drawing.Point(2, 115);
             this.groupBoxChuyenLop.Name = "groupBoxChuyenLop";
-            this.groupBoxChuyenLop.Size = new System.Drawing.Size(304, 72);
+            this.groupBoxChuyenLop.Size = new System.Drawing.Size(306, 72);
             this.groupBoxChuyenLop.TabIndex = 20;
             this.groupBoxChuyenLop.TabStop = false;
             this.groupBoxChuyenLop.Text = "Chuyển lớp";
@@ -304,7 +304,6 @@
             this.checkEditChuyenBangDiem.Properties.Caption = "Chuyển bảng điểm";
             this.checkEditChuyenBangDiem.Size = new System.Drawing.Size(120, 19);
             this.checkEditChuyenBangDiem.TabIndex = 18;
-            
             // 
             // labelControl5
             // 
@@ -323,9 +322,9 @@
             this.groupControl1.Controls.Add(this.labelControl4);
             this.groupControl1.Controls.Add(this.comboBoxEditNamHoc);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl1.Location = new System.Drawing.Point(3, 3);
+            this.groupControl1.Location = new System.Drawing.Point(2, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(348, 187);
+            this.groupControl1.Size = new System.Drawing.Size(348, 189);
             this.groupControl1.TabIndex = 13;
             this.groupControl1.Text = "Thông Tin Lớp Cũ";
             // 
@@ -538,6 +537,8 @@
             this.gridViewDSHocSinhMoi.GridControl = this.gridControlDSHocSinhMoi;
             this.gridViewDSHocSinhMoi.Name = "gridViewDSHocSinhMoi";
             this.gridViewDSHocSinhMoi.OptionsView.ShowGroupPanel = false;
+            this.gridViewDSHocSinhMoi.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewDSHocSinhMoi_FocusedRowChanged);
+            this.gridViewDSHocSinhMoi.MouseEnter += new System.EventHandler(this.gridViewDSHocSinhMoi_MouseEnter);
             // 
             // gridColumn4
             // 
