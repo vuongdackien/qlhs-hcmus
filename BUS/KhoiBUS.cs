@@ -42,7 +42,7 @@ namespace QLHS.BUS
             {
                 DataRow dr = dataTable.NewRow();
                 dr["MaKhoi"] = khoi;
-                dr["TenKhoi"] = "Khoi" + khoi;
+                dr["TenKhoi"] = "Khối" + khoi;
                 dataTable.Rows.Add(dr);
             }
             return dataTable;

@@ -170,7 +170,7 @@
             this.checkEditHocSinhChuaChuyen.Size = new System.Drawing.Size(259, 19);
             this.checkEditHocSinhChuaChuyen.TabIndex = 16;
             this.checkEditHocSinhChuaChuyen.ToolTip = "Click vào checkbox này để có thể sử dụng chức năng chuyển lại học sinh khi bạn ph" +
-                "ân nhầm lớp học sinh";
+    "ân nhầm lớp học sinh";
             this.checkEditHocSinhChuaChuyen.ToolTipController = this.toolTipController1;
             this.checkEditHocSinhChuaChuyen.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.checkEditHocSinhChuaChuyen.ToolTipTitle = "Hướng dẫ";
