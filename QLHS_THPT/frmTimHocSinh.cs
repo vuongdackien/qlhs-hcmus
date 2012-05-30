@@ -70,7 +70,9 @@ namespace QLHS
             return cl;
         }
         private void frmSearchHocSinh_Load(object sender, EventArgs e)
-        {            
+        {
+            checkEditHoTen.Checked = true;
+            checkEditTatCaNam.Checked = true;
             Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
                                                           _namHocBUS.LayDTNamHoc(),
                                                           "MaNamHoc", "TenNamHoc",0);
@@ -171,8 +173,11 @@ namespace QLHS
                 Utilities.MessageboxUtilities.MessageError(ex);
                 return;
             }
-
-            gridControlSearchHocSinh.DataSource = kq_TimKiemDS;               
+            if (kq_TimKiemDS.Rows.Count == 0)
+            {
+                Utilities.MessageboxUtilities.MessageError("Không tìm thấy học sinh!");
+            }
+            gridControlSearchHocSinh.DataSource = kq_TimKiemDS;
         }
 
         #region Ẩn hiện các control khi load form
@@ -180,14 +185,14 @@ namespace QLHS
         private void DisableControls(bool show = true)
         {
             checkEditMaHocSinh.Checked = show;
-            checkEditHoTen.Checked = show;
+            //checkEditHoTen.Checked = show;
             checkEditGioiTinh.Checked = show;
             checkEditNamSinh.Checked = show;
             checkEditEmail.Checked = show;
             checkEditDiaChi.Checked = show;
 
             textEditMaHocSinh.Enabled = show;
-            textBoxTenHocSinh.Enabled = show;
+            //textBoxTenHocSinh.Enabled = show;
             radioGroupGioiTinh.Enabled = show;
             textEditNamSinhTu.Enabled = show;
             textEditNamSinhDen.Enabled = show;

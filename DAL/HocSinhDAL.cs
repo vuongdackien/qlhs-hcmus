@@ -198,7 +198,7 @@ namespace QLHS.DAL
             // Mã học sinh
             if (!hs.MaHocSinh.Equals(""))
             {
-                where += " AND MaHocSinh " + oper + "'" + per + hs.MaHocSinh + per + "' ";
+                where += " AND hsinh.MaHocSinh " + oper + "'" + per + hs.MaHocSinh + per + "' ";
             }
 
             //tên học sinh
@@ -278,7 +278,7 @@ namespace QLHS.DAL
             // Mã học sinh
             if (!hs.MaHocSinh.Equals(""))
             {
-                where += " MaHocSinh " + oper + "'" + per + hs.MaHocSinh + per + "' ";                
+                where += " AND MaHocSinh " + oper + "'" + per + hs.MaHocSinh + per + "' ";                
             }
 
             //tên học sinh
