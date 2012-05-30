@@ -44,15 +44,7 @@ namespace QLHS
             {
                 return;
             }
-            if(radioButtonChuyenLop.Checked==true)
-            {
-                LoadCbKhoi_ChuyenLop(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc));
-            }
-            else
-            if (radioButtonPhanLopHocSinhCu.Checked == true)
-            {
-                LoadCbKhoi_PhanLopCu(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc));
-            }
+            LoadCbKhoi_ChuyenLop(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc));
         }
 
         private void LoadComboboxLopHoc(object sender, EventArgs e)
@@ -103,11 +95,15 @@ namespace QLHS
             this.LoadComboboxLopHoc(sender, e);
             if (radioButtonChuyenLop.Checked == true)
             {
-                Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoiMoi, _PhanLopBUS.LayDTKhoi_Chuyen(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHocMoi),Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi)), "MaKhoi", "TenKhoi", 0);
-                
+                Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoiMoi, _PhanLopBUS.LayDTKhoi_Chuyen(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHocMoi), Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi)), "MaKhoi", "TenKhoi", 0);
+
             }
             else
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoiMoi, _KhoiBUS.LayDTKhoi_PL(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi)), "MaKhoi", "TenKhoi", 0);
+            {
+                Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoiMoi, _KhoiBUS.LayDTKhoi_PL(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi)), "MaKhoi", "TenKhoi", 0);
+                
+                
+            }
         }
 
         private void frmChuyenLop_Load(object sender, EventArgs e)
@@ -153,6 +149,8 @@ namespace QLHS
             {
                 Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoiMoi, _PhanLopBUS.LayDTKhoi_Chuyen(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHocMoi), Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi)), "MaKhoi", "TenKhoi", 0);
             }
+            if(radioButtonPhanLopHocSinhCu.Checked==true)
+                Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoiMoi, _KhoiBUS.LayDTKhoi_PL(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi)), "MaKhoi", "TenKhoi", 0);
         }
         
         private void comboBoxEditKhoiMoi_SelectedIndexChanged(object sender, EventArgs e)
