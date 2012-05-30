@@ -138,6 +138,7 @@
             this.comboBoxEditLopMoi.Name = "comboBoxEditLopMoi";
             this.comboBoxEditLopMoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditLopMoi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditLopMoi.Size = new System.Drawing.Size(100, 20);
             this.comboBoxEditLopMoi.TabIndex = 12;
             this.comboBoxEditLopMoi.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditLopMoi_SelectedIndexChanged);
@@ -156,6 +157,7 @@
             this.comboBoxEditKhoiMoi.Name = "comboBoxEditKhoiMoi";
             this.comboBoxEditKhoiMoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditKhoiMoi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditKhoiMoi.Size = new System.Drawing.Size(100, 20);
             this.comboBoxEditKhoiMoi.TabIndex = 11;
             this.comboBoxEditKhoiMoi.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditKhoiMoi_SelectedIndexChanged);
@@ -174,6 +176,7 @@
             this.comboBoxEditNamHocMoi.Name = "comboBoxEditNamHocMoi";
             this.comboBoxEditNamHocMoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditNamHocMoi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditNamHocMoi.Size = new System.Drawing.Size(100, 20);
             this.comboBoxEditNamHocMoi.TabIndex = 10;
             this.comboBoxEditNamHocMoi.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHocMoi_SelectedIndexChanged);
@@ -334,6 +337,7 @@
             this.comboBoxEditLop.Name = "comboBoxEditLop";
             this.comboBoxEditLop.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditLop.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditLop.Size = new System.Drawing.Size(100, 20);
             this.comboBoxEditLop.TabIndex = 3;
             this.comboBoxEditLop.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditLop_SelectedIndexChanged);
@@ -360,6 +364,7 @@
             this.comboBoxEditKhoi.Name = "comboBoxEditKhoi";
             this.comboBoxEditKhoi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditKhoi.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditKhoi.Size = new System.Drawing.Size(100, 20);
             this.comboBoxEditKhoi.TabIndex = 2;
             this.comboBoxEditKhoi.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditKhoi_SelectedIndexChanged);
@@ -378,6 +383,7 @@
             this.comboBoxEditNamHoc.Name = "comboBoxEditNamHoc";
             this.comboBoxEditNamHoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditNamHoc.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditNamHoc.Size = new System.Drawing.Size(100, 20);
             this.comboBoxEditNamHoc.TabIndex = 1;
             this.comboBoxEditNamHoc.SelectedIndexChanged += new System.EventHandler(this.comboBoxEditNamHoc_SelectedIndexChanged);
