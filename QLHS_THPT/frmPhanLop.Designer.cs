@@ -221,8 +221,8 @@
             this.radioButtonPhanLopHocSinhCu.TabIndex = 5;
             this.radioButtonPhanLopHocSinhCu.Text = "Phân Lớp học sinh từ lớp cũ";
             this.toolTipController1.SetTitle(this.radioButtonPhanLopHocSinhCu, "Hướng dẫn");
-            this.toolTipController1.SetToolTip(this.radioButtonPhanLopHocSinhCu, "Click vào radiobtton này nếu bạn muốn phân học sinh lên lớp(10->11,11->12), và họ" +
-        "c sinh bị đúp(phân cùng khối)");
+            this.toolTipController1.SetToolTip(this.radioButtonPhanLopHocSinhCu, "Click vào radiobutton này nếu bạn muốn phân học sinh lên lớp(10->11,11->12), và h" +
+        "ọc sinh không đủ điểm lên lớp (phân cùng khối)");
             this.radioButtonPhanLopHocSinhCu.UseVisualStyleBackColor = true;
             this.radioButtonPhanLopHocSinhCu.CheckedChanged += new System.EventHandler(this.radioButtonPhanLopHocSinhCu_CheckedChanged);
             // 
@@ -251,7 +251,7 @@
     "ân nhầm lớp học sinh. Và phân tất cả học sinh 1 lúc.";
             this.checkEditHocSinhChuaChuyen.ToolTipController = this.toolTipController1;
             this.checkEditHocSinhChuaChuyen.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
-            this.checkEditHocSinhChuaChuyen.ToolTipTitle = "Hướng dẫ";
+            this.checkEditHocSinhChuaChuyen.ToolTipTitle = "Hướng dẫn";
             this.checkEditHocSinhChuaChuyen.CheckedChanged += new System.EventHandler(this.checkEditHocSinhChuaChuyen_CheckedChanged);
             // 
             // radioButtonChuyenLop
