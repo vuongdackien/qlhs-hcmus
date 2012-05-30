@@ -149,5 +149,9 @@ namespace QLHS.BUS
         {
             return _PhanLopDAL.KiemTraHSTonTaiTrongLop_ChuyenLop(MaHocSinh,MaLop);
         }
+        public int DemSiSoLop_HocSinhDangHoc(string MaLop)
+        {
+            return _PhanLopDAL.DemSiSoLop_HocSinhDangHoc(MaLop);
+        }
     }
 }
