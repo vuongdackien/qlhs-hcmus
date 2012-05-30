@@ -150,6 +150,11 @@ namespace QLHS.DAL
             string sql = "select distinct MaKhoiLop as MaKhoi ,N'Khối '+CONVERT(varchar,MaKhoiLop) as TenKhoi from LOP where MaNamHoc='" + MaNamHoc + "' and MaKhoiLop ='" + MaKhoi + "'";
             return GetTable(sql);
         }
+        public DataTable KiemTraHSTonTaiTrongLop_ChuyenLop(string MaHocSinh, string MaLop)
+        {
+            string sql = "select pl.MaHocSinh,hs.MaHocSinh from PhanLop pl,HocSinh hs where pl.MaHocSinh='"+MaHocSinh+"' and pl.MaLop='"+MaLop+"' and pl.MaHocSinh=hs.MaHocSinh";
+            return GetTable(sql);
+        }
     }
 }
 
