@@ -176,7 +176,13 @@ namespace QLHS
         {
             if (KiemTra_DuLieu())
             {
-                if (MessageBox.Show("Bạn có muốn chuyển học sinh " + this.gridViewDSHocSinh.GetRowCellValue(dongHT_GridHocSinh, "TenHocSinh").ToString() + " trong lớp" + Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditLop) + " năm học " + Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc) + " sang lớp " + Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditLopMoi) + " trong năm học " + Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHocMoi) + " không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, 0, false) == DialogResult.Yes)
+                if (MessageBox.Show("Bạn có muốn chuyển học sinh " +
+                    this.gridViewDSHocSinh.GetRowCellValue(dongHT_GridHocSinh, "TenHocSinh").ToString() 
+                    + " trong lớp " + Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditLop) 
+                    + " năm học " + Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc) 
+                    + " sang lớp " + Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditLopMoi) 
+                    + " trong năm học " + Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHocMoi) + " không?",
+                    "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1, 0, false) == DialogResult.Yes)
                 {
                     MaHocSinh_Focus = this.gridViewDSHocSinh.GetRowCellValue(dongHT_GridHocSinh, "MaHocSinh").ToString();
                     string MaLop = (Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLopMoi));
@@ -741,6 +747,6 @@ namespace QLHS
             simpleButtonChuyenLai.Enabled = false;
             simpleButtonChuyenHet.Enabled = false;
             simpleButtonChuyenLaiTatCa.Enabled = false;
-        }
+        }   
     }
 }
