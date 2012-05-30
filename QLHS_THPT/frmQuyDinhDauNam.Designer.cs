@@ -76,6 +76,7 @@
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.labelControlTitle);
+            this.panelControl1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
@@ -153,7 +154,7 @@
             // simpleButtonApDung
             // 
             this.simpleButtonApDung.Image = global::QLHS.Properties.Resources.them_small;
-            this.simpleButtonApDung.Location = new System.Drawing.Point(40, 329);
+            this.simpleButtonApDung.Location = new System.Drawing.Point(35, 329);
             this.simpleButtonApDung.Name = "simpleButtonApDung";
             this.simpleButtonApDung.Size = new System.Drawing.Size(132, 38);
             this.simpleButtonApDung.TabIndex = 10;
@@ -162,10 +163,13 @@
             // 
             // comboBoxEditNamHoc
             // 
+            this.comboBoxEditNamHoc.Cursor = System.Windows.Forms.Cursors.Default;
+            this.comboBoxEditNamHoc.EditValue = "";
             this.comboBoxEditNamHoc.Location = new System.Drawing.Point(131, 72);
             this.comboBoxEditNamHoc.Name = "comboBoxEditNamHoc";
             this.comboBoxEditNamHoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditNamHoc.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.comboBoxEditNamHoc.Size = new System.Drawing.Size(155, 20);
             this.comboBoxEditNamHoc.TabIndex = 3;
             // 
@@ -179,7 +183,7 @@
             // 
             // dateEditNgayAD
             // 
-            this.dateEditNgayAD.EditValue = null;
+            this.dateEditNgayAD.EditValue = new System.DateTime(2012, 5, 30, 0, 0, 0, 0);
             this.dateEditNgayAD.Location = new System.Drawing.Point(131, 288);
             this.dateEditNgayAD.Name = "dateEditNgayAD";
             this.dateEditNgayAD.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
