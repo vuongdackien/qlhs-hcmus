@@ -72,8 +72,8 @@ namespace QLHS
             {
                 QuyDinhDTO quyDinh = new QuyDinhDTO()
                 {
-                    TenTruong= textEdittenTruong.Text,
-                    DiaChiTruong = textEditDiaChi.Text,
+                    TenTruong= textEdittenTruong.Text.Replace("'","''"),
+                    DiaChiTruong = textEditDiaChi.Text.Replace("'","''"),
                     SoLuongLop = Convert.ToInt32(spinEditSoLuongLop.Value),
                     SiSoCanTren = Convert.ToInt32(spinEditSiSoToiDa.Value),
                     TuoiCanTren = Convert.ToInt32( spinEditDoTuoiDen.Value),
