@@ -36,8 +36,8 @@
             this.radioButtonPhanLopHocSinhMoi = new System.Windows.Forms.RadioButton();
             this.checkEditHocSinhChuaChuyen = new DevExpress.XtraEditors.CheckEdit();
             this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
-            this.groupBoxChuyenLop = new System.Windows.Forms.GroupBox();
             this.radioButtonChuyenLop = new System.Windows.Forms.RadioButton();
+            this.groupBoxChuyenLop = new System.Windows.Forms.GroupBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.textEditLyDoChuyen = new DevExpress.XtraEditors.TextEdit();
             this.checkEditChuyenBangDiem = new DevExpress.XtraEditors.CheckEdit();
@@ -148,6 +148,9 @@
             this.radioButtonPhanLopHocSinhCu.Size = new System.Drawing.Size(158, 17);
             this.radioButtonPhanLopHocSinhCu.TabIndex = 21;
             this.radioButtonPhanLopHocSinhCu.Text = "Phân Lớp học sinh từ lớp cũ";
+            this.toolTipController1.SetTitle(this.radioButtonPhanLopHocSinhCu, "Hướng dẫn");
+            this.toolTipController1.SetToolTip(this.radioButtonPhanLopHocSinhCu, "Click vào radiobtton này nếu bạn muốn phân học sinh lên lớp(10->11,11->12), và họ" +
+                    "c sinh bị đúp(phân cùng khối)");
             this.radioButtonPhanLopHocSinhCu.UseVisualStyleBackColor = true;
             this.radioButtonPhanLopHocSinhCu.CheckedChanged += new System.EventHandler(this.radioButtonPhanLopHocSinhCu_CheckedChanged);
             // 
@@ -159,6 +162,9 @@
             this.radioButtonPhanLopHocSinhMoi.Size = new System.Drawing.Size(151, 17);
             this.radioButtonPhanLopHocSinhMoi.TabIndex = 21;
             this.radioButtonPhanLopHocSinhMoi.Text = "Phân lớp học sinh từ hồ sơ";
+            this.toolTipController1.SetTitle(this.radioButtonPhanLopHocSinhMoi, "Hướng dẫn");
+            this.toolTipController1.SetToolTip(this.radioButtonPhanLopHocSinhMoi, "Click vào radiobutton này nều bạn muốn phân lớp cho những học sinh mới nhập học n" +
+                    "hưng chưa có lớp");
             this.radioButtonPhanLopHocSinhMoi.UseVisualStyleBackColor = true;
             this.radioButtonPhanLopHocSinhMoi.CheckedChanged += new System.EventHandler(this.radioButtonPhanLopHocSinhMoi_CheckedChanged);
             // 
@@ -170,11 +176,26 @@
             this.checkEditHocSinhChuaChuyen.Size = new System.Drawing.Size(259, 19);
             this.checkEditHocSinhChuaChuyen.TabIndex = 16;
             this.checkEditHocSinhChuaChuyen.ToolTip = "Click vào checkbox này để có thể sử dụng chức năng chuyển lại học sinh khi bạn ph" +
-    "ân nhầm lớp học sinh";
+                "ân nhầm lớp học sinh. Và phân tất cả học sinh 1 lúc.";
             this.checkEditHocSinhChuaChuyen.ToolTipController = this.toolTipController1;
             this.checkEditHocSinhChuaChuyen.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             this.checkEditHocSinhChuaChuyen.ToolTipTitle = "Hướng dẫ";
             this.checkEditHocSinhChuaChuyen.CheckedChanged += new System.EventHandler(this.checkEditHocSinhChuaChuyen_CheckedChanged);
+            // 
+            // radioButtonChuyenLop
+            // 
+            this.radioButtonChuyenLop.AutoSize = true;
+            this.radioButtonChuyenLop.Location = new System.Drawing.Point(16, 16);
+            this.radioButtonChuyenLop.Name = "radioButtonChuyenLop";
+            this.radioButtonChuyenLop.Size = new System.Drawing.Size(148, 17);
+            this.radioButtonChuyenLop.TabIndex = 21;
+            this.radioButtonChuyenLop.TabStop = true;
+            this.radioButtonChuyenLop.Text = "Chuyển học sinh cùng lớp";
+            this.toolTipController1.SetTitle(this.radioButtonChuyenLop, "Hướng dẫn");
+            this.toolTipController1.SetToolTip(this.radioButtonChuyenLop, "Click vào radiobutton này nếu bạn muốn chuyển lớp cho 1 học sinh, chỉ chuyển cùng" +
+                    " khối và cùng năm học");
+            this.radioButtonChuyenLop.UseVisualStyleBackColor = true;
+            this.radioButtonChuyenLop.CheckedChanged += new System.EventHandler(this.radioButtonChuyenLop_CheckedChanged);
             // 
             // groupBoxChuyenLop
             // 
@@ -189,18 +210,6 @@
             this.groupBoxChuyenLop.TabIndex = 18;
             this.groupBoxChuyenLop.TabStop = false;
             this.groupBoxChuyenLop.Text = "Chuyển lớp";
-            // 
-            // radioButtonChuyenLop
-            // 
-            this.radioButtonChuyenLop.AutoSize = true;
-            this.radioButtonChuyenLop.Location = new System.Drawing.Point(16, 16);
-            this.radioButtonChuyenLop.Name = "radioButtonChuyenLop";
-            this.radioButtonChuyenLop.Size = new System.Drawing.Size(148, 17);
-            this.radioButtonChuyenLop.TabIndex = 21;
-            this.radioButtonChuyenLop.TabStop = true;
-            this.radioButtonChuyenLop.Text = "Chuyển học sinh cùng lớp";
-            this.radioButtonChuyenLop.UseVisualStyleBackColor = true;
-            this.radioButtonChuyenLop.CheckedChanged += new System.EventHandler(this.radioButtonChuyenLop_CheckedChanged);
             // 
             // labelControl7
             // 
