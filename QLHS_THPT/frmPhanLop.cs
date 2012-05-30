@@ -117,10 +117,7 @@ namespace QLHS
             {
                 if (KiemTraKhoiLop_ChuyenLop(_NamHocBUS.LayDTNamHocHienTai().Rows[0][0].ToString()))
                 {
-                    simpleButtonChuyenLop.Enabled = false;
-                    simpleButtonChuyenLai.Enabled = false;
-                    simpleButtonChuyenHet.Enabled = false;
-                    simpleButtonChuyenLaiTatCa.Enabled = false;
+                    LoadForm();
                     HienThiChuyenLop();
                 }
                 else
@@ -562,6 +559,7 @@ namespace QLHS
 
         private void radioButtonChuyenLop_CheckedChanged(object sender, EventArgs e)
         {
+            HienThiThucHien();
             if (radioButtonChuyenLop.Checked == true)
             {
                 radioButtonPhanLopHocSinhCu.Checked = false;
@@ -574,7 +572,7 @@ namespace QLHS
 
         private void radioButtonPhanLopHocSinhMoi_CheckedChanged(object sender, EventArgs e)
         {
-
+            HienThiThucHien();
             if (radioButtonPhanLopHocSinhMoi.Checked == true)
             {
                 radioButtonChuyenLop.Checked = false;
@@ -605,6 +603,7 @@ namespace QLHS
                 {
                     radioButtonPhanLopHocSinhCu.Checked = false;
                     radioButtonPhanLopHocSinhCu.Enabled = false;
+					HienThiFormGapLoi(false);
                 }
                 
             }
@@ -709,6 +708,39 @@ namespace QLHS
         {
             return _PhanLopBUS.LayDTKhoi(MaNamHoc).Rows.Count>0;
         }
-
+		private void HienThiFormGapLoi(bool ht)
+        {
+            groupControl1.Enabled=ht;
+            groupControl2.Enabled=ht;
+            gridControlDSHocSinh.Enabled=ht;
+            gridControlDSHocSinhMoi.Enabled=ht;
+        }
+        private void HienThiThucHien()
+        {
+            if (groupControl1.Enabled == false)
+            {
+                groupControl1.Enabled = true;
+            }
+            if (groupControl2.Enabled == false)
+            {
+                groupControl2.Enabled = true;
+            }
+            if (gridControlDSHocSinh.Enabled == false)
+            {
+                gridControlDSHocSinh.Enabled = true;
+            }
+            if (gridControlDSHocSinhMoi.Enabled == false)
+            {
+                gridControlDSHocSinhMoi.Enabled = true;
+            }
+            
+        }
+        private void LoadForm()
+        {
+            simpleButtonChuyenLop.Enabled = false;
+            simpleButtonChuyenLai.Enabled = false;
+            simpleButtonChuyenHet.Enabled = false;
+            simpleButtonChuyenLaiTatCa.Enabled = false;
+        }
     }
 }
