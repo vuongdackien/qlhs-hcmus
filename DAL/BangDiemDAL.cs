@@ -37,7 +37,7 @@ namespace QLHS.DAL
             ExecuteQuery(sql);
             // Lấy bảng điểm
             sql = "\nSELECT bd.*, pl.STT, hs.TenHocSinh "
-                    + "FROM BANGDIEM bd, PHANLOP pl, HOCSINH hs WHERE hs.MaHocSinh = pl.MaHocSinh AND bd.MaHocSinh = pl.MaHocSinh "
+                    + "FROM BANGDIEM bd, PHANLOP pl, HOCSINH hs WHERE hs.MaHocSinh = pl.MaHocSinh AND bd.MaHocSinh = pl.MaHocSinh AND pl.MaLop = bd.MaLop "
                     + "AND bd.MaLop = '" + MaLop + "' AND bd.MaHocKy='" + MaHocKy + "' AND bd.MaMonHoc = '" + MaMonHoc + "' "
                     + "ORDER BY pl.STT ASC";
             return GetTable(sql);
