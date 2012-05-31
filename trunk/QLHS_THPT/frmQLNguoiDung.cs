@@ -140,7 +140,7 @@ namespace QLHS
             if (!checkExistsUser)
             {
                 // thêm
-                if (_nguoiDungBUS.InsertUser(user))
+                if (_nguoiDungBUS.ThemNguoiDung(user))
                 {
                     Utilities.MessageboxUtilities.MessageSuccess("Thêm thành công user: " +
                             Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNguoiDung) + " !");
@@ -151,7 +151,7 @@ namespace QLHS
             {
                 _current_row_edit = gridViewNguoiDung.FocusedRowHandle;
                 // Sửa
-                if (_nguoiDungBUS.UpdateUser(user))
+                if (_nguoiDungBUS.SuaNguoiDung(user))
                 {
                     Utilities.MessageboxUtilities.MessageSuccess("Sửa thành công user: " +  Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNguoiDung)  + " !");
                 }
@@ -175,7 +175,7 @@ namespace QLHS
                     if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Bạn có muốn xóa người dùng "
                         + tenNguoiDung + " hay không?") == DialogResult.Yes)
                     {
-                        if (_nguoiDungBUS.DeleteUser(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNguoiDung)))
+                        if (_nguoiDungBUS.XoaNguoiDung(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNguoiDung)))
                         {
                             Utilities.MessageboxUtilities.MessageSuccess("Xóa người dùng "
                                         + tenNguoiDung + " thành công!");
