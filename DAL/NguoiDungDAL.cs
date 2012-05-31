@@ -82,7 +82,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="user">NguoiDungDTO</param>
         /// <returns></returns>
-        public bool InsertUser(NguoiDungDTO user)
+        public bool ThemNguoiDung(NguoiDungDTO user)
         {
             string sql = string.Format("INSERT INTO NGUOIDUNG (MaND, MaLoaiND, TenDNhap, MatKhau, TrangThai ) "
                         + "VALUES ('{0}','{1}','{2}','{3}','{4}')",
@@ -96,7 +96,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="user">NguoiDungDTO</param>
         /// <returns></returns>
-        public bool UpdateUser(NguoiDungDTO user)
+        public bool SuaNguoiDung(NguoiDungDTO user)
         {
             string updatePassword = (user.MatKhau == "") ? "" : "MatKhau = '" + Utilities.ObjectUtilities.MaHoaMD5(user.MatKhau) + "',";
             string sql = string.Format("UPDATE NGUOIDUNG SET MaLoaiND = '{0}', TenDNhap = '{1}', " + updatePassword + " TrangThai = '{2}' "
@@ -111,7 +111,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="MaUser">String: Mã user</param>
         /// <returns></returns>
-        public bool DeleteUser(string MaUser)
+        public bool XoaNguoiDung(string MaUser)
         {
             string sql = "DELETE FROM NGUOIDUNG WHERE MaND = '" + MaUser + "'";
             return ExecuteQuery(sql) > 0 ? true : false;

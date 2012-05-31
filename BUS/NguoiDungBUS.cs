@@ -62,27 +62,27 @@ namespace QLHS.BUS
         /// </summary>
         /// <param name="user">NguoiDungDTO</param>
         /// <returns></returns>
-        public bool InsertUser(NguoiDungDTO user)
+        public bool ThemNguoiDung(NguoiDungDTO user)
         {
-            return _nguoiDungDAL.InsertUser(user);
+            return _nguoiDungDAL.ThemNguoiDung(user);
         }
         /// <summary>
         /// Sửa thông tin người dùng
         /// </summary>
         /// <param name="user">NguoiDungDTO</param>
         /// <returns></returns>
-        public bool UpdateUser(NguoiDungDTO user)
+        public bool SuaNguoiDung(NguoiDungDTO user)
         {
-            return _nguoiDungDAL.UpdateUser(user);
+            return _nguoiDungDAL.SuaNguoiDung(user);
         }
         /// <summary>
         /// Xóa thông tin người dùng
         /// </summary>
         /// <param name="MaUser">String: Mã user</param>
         /// <returns></returns>
-        public bool DeleteUser(string MaUser)
+        public bool XoaNguoiDung(string MaUser)
         {
-            return _nguoiDungDAL.DeleteUser(MaUser);
+            return _nguoiDungDAL.XoaNguoiDung(MaUser);
         }
     }
 }
