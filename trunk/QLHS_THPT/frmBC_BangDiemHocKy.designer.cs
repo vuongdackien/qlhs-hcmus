@@ -850,7 +850,7 @@
             this.Controls.Add(this.panelControlLeft);
             this.Name = "frmBC_BangDiemHocKy";
             this.ShowIcon = false;
-            this.Text = "Bảng điểm môn học";
+            this.Text = "Bảng điểm học kỳ";
             this.Load += new System.EventHandler(this.frmBangDiemMonHoc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControlLeft)).EndInit();
             this.panelControlLeft.ResumeLayout(false);

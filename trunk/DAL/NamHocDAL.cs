@@ -37,11 +37,12 @@ namespace QLHS.DAL
         /// <returns>DataTable</returns>
         public DataTable LayDTNamHoc()
         {
-            string sql = "select MaNamHoc, TenNamHoc FROM NAMHOC "
-                        +"WHERE MaNamHoc IN (SELECT GiaTri FROM QUYDINH WHERE Khoa = 'MaNamHocHT') "
-                        +"UNION ALL "
-                        +"Select MaNamHoc, TenNamHoc FROM NAMHOC "
-                        +"WHERE MaNamHoc NOT IN (SELECT GiaTri FROM QUYDINH WHERE Khoa = 'MaNamHocHT')";
+            string sql = "SELECT MaNamHoc, TenNamHoc FROM NAMHOC "
+                        + "WHERE MaNamHoc IN (SELECT GiaTri FROM QUYDINH WHERE Khoa = 'MaNamHocHT') "
+                        + "UNION ALL "
+                        + "Select MaNamHoc, TenNamHoc FROM NAMHOC "
+                        + "WHERE MaNamHoc NOT IN (SELECT GiaTri FROM QUYDINH WHERE Khoa = 'MaNamHocHT') "
+                        + " ORDER BY MaNamHoc ASC ";
             return GetTable(sql);
         }
         /// <summary>
