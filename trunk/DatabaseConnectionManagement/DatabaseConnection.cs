@@ -266,7 +266,7 @@ namespace DatabaseConnectionManagement
                     this.m_ServerConnection = new ServerConnection(this.cmbServerName.Text.ToString());
                     //this.m_ServerConnection
                     //First Check type of Authentication
-                    if (this.rdbWindowsAuthentication.Checked == true)   //Windows Authentication
+                    if (this.rdbWindowsAuthentication.Checked)   //Windows Authentication
                     {
                         this.m_ServerConnection.LoginSecure = true;
                         this.m_Server = new Server(this.m_ServerConnection);

@@ -124,6 +124,18 @@ namespace QLHS.DAL
             }
             return ExecuteQuery(sql) > 0;
         }
+        /// <summary>
+        /// Thay đổi lớp mới cho học sinh 
+        /// </summary>
+        /// <param name="MaHocSinh">String: mã học sinh</param>
+        /// <param name="MaLopCu">String: Mã lớp cũ</param>
+        /// <param name="MaLopMoi">String: Mã lớp mới</param>
+        /// <returns></returns>
+        public bool ThayDoi_LopMoi_HocSinh(string MaHocSinh, string MaLopCu, string MaLopMoi)
+        {
+            return ExecuteQuery("UPDATE PHANLOP SET MaLop ='"+MaLopMoi+"' WHERE MaLop = '"+
+                        MaLopCu+"' AND MaHocSinh = '"+MaHocSinh+"'") > 0;
+        }
         public bool Xoa_DSHocSinh_Lop(Dictionary<string, string> ds_hocsinhchon, string MaLop)
         {
             string sql = "";
@@ -160,10 +172,10 @@ namespace QLHS.DAL
             string sql = "select distinct MaKhoiLop as MaKhoi ,N'Khối '+CONVERT(varchar,MaKhoiLop) as TenKhoi from LOP where MaNamHoc='" + MaNamHoc + "' and MaKhoiLop ='" + MaKhoi + "'";
             return GetTable(sql);
         }
-        public DataTable KiemTraHSTonTaiTrongLop_ChuyenLop(string MaHocSinh, string MaLop)
+        public bool KiemTraHSTonTaiTrongLop_ChuyenLop(string MaHocSinh, string MaLop)
         {
-            string sql = "select pl.MaHocSinh,hs.MaHocSinh from PhanLop pl,HocSinh hs where pl.MaHocSinh='"+MaHocSinh+"' and pl.MaLop='"+MaLop+"' and pl.MaHocSinh=hs.MaHocSinh";
-            return GetTable(sql);
+            string sql = "select pl.MaHocSinh from PhanLop pl,HocSinh hs where pl.MaHocSinh='"+MaHocSinh+"' and pl.MaLop='"+MaLop+"' and pl.MaHocSinh=hs.MaHocSinh";
+            return ExecuteScalar(sql) != null;
         }
     }
 }

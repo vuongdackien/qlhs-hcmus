@@ -9,16 +9,38 @@ namespace QLHS.BUS
 {
     public class ChuyenLopBUS
     {
-        ChuyenLopDAL _ChuyenLopDAL = new ChuyenLopDAL();
-        public bool ChuyenBangDiem(string MaHocSinh, string MaLop_old, string MaLop_new)
+        private ChuyenLopDAL _ChuyenLopDAL;
+        private BangDiemBUS _BangDiemBUS;
+        private PhanLopBUS _PhanLopBUS;
+        public ChuyenLopBUS()
         {
-            return _ChuyenLopDAL.ChuyenBangDiem(MaHocSinh, MaLop_old, MaLop_new);
+            _ChuyenLopDAL = new ChuyenLopDAL();
+            _PhanLopBUS = new PhanLopBUS();
+            _BangDiemBUS = new BangDiemBUS();
         }
-        public bool ChuyenLop_HocSinh_Lop(ChuyenLopDTO cl)
+
+        public bool ChuyenLop_HocSinh_Lop( Dictionary<string,string> ds_HocSinhChon, ChuyenLopDTO thongTinCL)
         {
-            if (cl.ChuyenBangDiem == "true")
-                _ChuyenLopDAL.ChuyenBangDiem(cl.MaHocSinh, cl.TuLop, cl.DenLop);
-            return _ChuyenLopDAL.LuuChuyenLop(cl);
+            IList<bool> list_success = new List<bool>();
+            foreach (var item in ds_HocSinhChon)
+            {
+                if (thongTinCL.GiuLaiBangDiem)
+                    _BangDiemBUS.CapNhat_BangDiem_HocSinh_LopMoi(item.Key, thongTinCL.TuLop, thongTinCL.DenLop);
+                else
+                    _BangDiemBUS.XoaBangDiem_HocSinh_Lop(item.Key, thongTinCL.TuLop);
+
+                if (!_PhanLopBUS.KiemTraHSTonTaiTrongLop_ChuyenLop(item.Key, thongTinCL.DenLop))
+                {
+                    _PhanLopBUS.ThayDoi_LopMoi_HocSinh(item.Key, thongTinCL.TuLop, thongTinCL.DenLop);
+                }
+                list_success.Add(_ChuyenLopDAL.Luu_ThongTin_ChuyenLop(item.Key, thongTinCL));
+            }
+            foreach (var item in list_success)
+            {
+                if (!item)
+                    return false;
+            }
+            return true;
         }
         public bool KTHocSinhThuocLop_DuocChuyenTuLop(string MaHocSinh, string MaLopMoi, string MaLopCu)
         {
