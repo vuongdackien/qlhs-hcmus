@@ -6,9 +6,9 @@ using DevExpress.XtraEditors;
 using System.Windows.Forms;
 using DevExpress.XtraTreeList.Nodes;
 
-namespace Utilities
+namespace Util
 {
-    public class TreeListUtilities
+    public class TreeListUtil
     {
         /// <summary>
         /// Chọn tất cả các nodes con khi node cha được chọn

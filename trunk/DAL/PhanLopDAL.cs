@@ -113,26 +113,6 @@ namespace QLHS.DAL
             string sql = "DELETE FROM PHANLOP WHERE MaHocSinh='"+MaHocSinh+"' AND MaLop='"+MaLop+"' ";
             return ExecuteQuery(sql) > 0;
         }
-        public DataTable LayDT_HocSinh_ChuaChuyenLop(string MaLop,string MaNamHoc)
-        {
-            string sql = "select p.STT,p.MaHocSinh,h.TenHocSinh,(case when h.GioiTinh='0' then 'Nam' else N'Nữ' end) as GioiTinh from PHANLOP as p,HOCSINH as h WHERE p.MaHocSinh=h.MaHocSinh and p.MaHocSinh=h.MaHocSinh and p.MaLop='"+MaLop+"' and "+
-"p.MaHocSinh not in (select p1.MaHocSinh from PHANLOP as p1, Lop as l where p1.MaLop=l.MaLop and l.MaNamHoc='"+MaNamHoc+"')";
-            return GetTable(sql);
-        }
-        public DataTable LayDT_HocSinh_DaChuyen(string MaLopMoi,string MaLopCu)
-        {
-            string sql = string.Format("SELECT pl.STT, hs.MaHocSinh,hs.TenHocSinh,hs.Email,(CASE WHEN hs.GioiTinh='0' THEN 'Nam' ELSE N'Nữ' END) AS GioiTinh,hs.NgaySinh,hs.NoiSinh,hs.DiaChi "
-                                      + "FROM PHANLOP pl LEFT JOIN HOCSINH hs ON pl.MaHocSinh = hs.MaHocSinh "
-                                      + "WHERE pl.MaLop = '{0}' and pl.MaHocSinh in (select pl1.MaHocSinh from PHANLOP pl1 WHERE pl1.MaLop = '{1}') ORDER BY pl.STT ASC", MaLopMoi,MaLopCu);
-            
-            return GetTable(sql);
-        }
-        public DataTable LayDT_HocSinh_DaChuyen_TuHoSo(string MaLop)
-        {
-            string sql = "select pl.STT,pl.MaHocSinh,hs.TenHocSinh,(CASE WHEN hs.GioiTinh='0' THEN 'Nam' ELSE N'Nữ' END) AS GioiTinh from PHANLOP pl, HOCSINH hs where pl.MaHocSinh=hs.MaHocSinh and " +
-        "pl.MaLop='"+MaLop+"' and pl.MaHocSinh not in (select pl1.MaHocSinh from  PHANLOP pl1 where pl1.MaLop !='"+MaLop+"')";
-            return GetTable(sql);
-        }
 
         public DataTable LayDTLop_MaNam_MaKhoi_KhacMaLop(string MaNamHoc, string MaKhoi, string MaLop)
         {

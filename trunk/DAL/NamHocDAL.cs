@@ -67,9 +67,9 @@ namespace QLHS.DAL
         /// Lấy DataTable năm học cần chuyển lên lớp khi kết thúc năm học
         /// </summary>
         /// <returns>DataTable</returns>
-        public DataTable LayDTNamHocCu()
+        public DataTable LayDTNamHocTruoc()
         {
-            string sql = "SELECT MaNamHoc,TenNamHoc FROM NAMHOC WHERE substring(TenNamHoc,8,4)= (select substring(TenNamHoc,1,4) as TenNamHoc from NAMHOC WHERE MaNamHoc in (select GiaTri from QUYDINH where Khoa='MaNamHocHT')) ";
+            string sql = "SELECT MaNamHoc,TenNamHoc FROM NAMHOC WHERE substring(TenNamHoc,8,4) = (select substring(TenNamHoc,1,4) as TenNamHoc from NAMHOC WHERE MaNamHoc in (select GiaTri from QUYDINH where Khoa='MaNamHocHT')) ";
             return GetTable(sql);
         }
         /// <summary>

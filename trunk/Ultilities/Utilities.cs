@@ -4,9 +4,9 @@ using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using QLHS.DTO;
 
-namespace Utilities
+namespace Util
 {
-    public static partial class ObjectUtilities
+    public static partial class ObjectUtil
     {
         public static NguoiDungDTO user = null;
 

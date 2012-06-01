@@ -51,9 +51,9 @@ namespace QLHS.BUS
         /// Lấy DataTable năm học cần chuyển lên lớp khi kết thúc năm học
         /// </summary>
         /// <returns>DataTable</returns>
-        public DataTable LayDTNamHocCu()
+        public DataTable LayDTNamHocTruoc()
         {
-            return _NamHocDAL.LayDTNamHocCu();
+            return _NamHocDAL.LayDTNamHocTruoc();
         }
         public DataTable LayNamHoc_ThemMoi()
         {

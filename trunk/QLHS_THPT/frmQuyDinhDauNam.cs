@@ -23,7 +23,7 @@ namespace QLHS
         }
         private void frmQuyDinhDauNam_Load(object sender, EventArgs e)
         {
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc, _namHocBUS.LayDTNamHoc(),
+            Util.CboUtil.SetDataSource(comboBoxEditNamHoc, _namHocBUS.LayDTNamHoc(),
                                                             "MaNamHoc", "TenNamHoc", 0);
             QuyDinhDTO quyDinh = _quyDinhBUS.LayDS_QuyDinh();
             textEdittenTruong.Text = quyDinh.TenTruong;
@@ -34,7 +34,7 @@ namespace QLHS
             spinEditDoTuoiTu.Value = quyDinh.TuoiCanDuoi;
             spinEditDiemDat.Value = Convert.ToDecimal(quyDinh.DiemChuan);
             dateEditNgayAD.EditValue = quyDinh.NgayApDung;
-            Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditNamHoc, quyDinh.MaNamHoc);
+            Util.CboUtil.SelectedItem(comboBoxEditNamHoc, quyDinh.MaNamHoc);
         }
         private void simpleButtonApDung_Click(object sender, EventArgs e)
         {
@@ -65,7 +65,7 @@ namespace QLHS
             }
             if (msg != "")
             {
-                Utilities.MessageboxUtilities.MessageError(msg);
+                Util.MsgboxUtil.Error(msg);
                 return;
             }
             else
@@ -80,12 +80,12 @@ namespace QLHS
                     TuoiCanDuoi = Convert.ToInt32(spinEditDoTuoiTu.Value),
                     DiemChuan = Convert.ToDouble(spinEditDiemDat.Value),
                     NgayApDung = Convert.ToDateTime(dateEditNgayAD.EditValue),
-                    MaNamHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc)
+                    MaNamHoc = Util.CboUtil.GetValueItem(comboBoxEditNamHoc)
                 };
                 if (_quyDinhBUS.CapNhatQuyDinh(quyDinh))
-                    Utilities.MessageboxUtilities.MessageSuccess("Cập nhật quy định năm học thành công!");
+                    Util.MsgboxUtil.Success("Cập nhật quy định năm học thành công!");
                 else
-                    Utilities.MessageboxUtilities.MessageError("Có lỗi trong quá trình cập nhật!");
+                    Util.MsgboxUtil.Error("Có lỗi trong quá trình cập nhật!");
             }
         }
 

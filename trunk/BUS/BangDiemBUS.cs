@@ -59,7 +59,7 @@ namespace QLHS.BUS
                        + bd.HocSinh.TenHocSinh + " (" + bd.HocSinh.MaHocSinh+ ").";
             if (msg != "")
             {
-                Utilities.ExceptionUtilities.Throw(msg);
+                Util.ExceptionUtil.Throw(msg);
                 return false;
             }
             return true;
@@ -121,7 +121,7 @@ namespace QLHS.BUS
                                + (tong1T / soCot1T) * 2 // 1T  hệ số 2
                                +  bd.DThi           * 3;
   
-            return Utilities.ObjectUtilities.LamTron(TongDiem / 7);
+            return Util.ObjectUtil.LamTron(TongDiem / 7);
 
         }
          /// <summary>
@@ -215,7 +215,7 @@ namespace QLHS.BUS
                 }
                 if (soMonDuDiem == soMonHoc)
                 {
-                    bangDiemCaNhan.DTB = Utilities.ObjectUtilities.LamTron(tongDiem / tongHeSo, 4);
+                    bangDiemCaNhan.DTB = Util.ObjectUtil.LamTron(tongDiem / tongHeSo, 4);
                 }
                 else
                     bangDiemCaNhan.DTB = "_";
@@ -296,7 +296,7 @@ namespace QLHS.BUS
                     tongDiem += Convert.ToDouble(bdmon["DTB"]) * heSo; 
                 }
             }
-            return Utilities.ObjectUtilities.LamTron(tongDiem / tongHeSo, 2);
+            return Util.ObjectUtil.LamTron(tongDiem / tongHeSo, 2);
         }
 
         /// <summary>

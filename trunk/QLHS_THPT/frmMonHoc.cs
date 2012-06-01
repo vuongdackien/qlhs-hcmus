@@ -100,7 +100,7 @@ namespace QLHS
                 {
                     if (gridViewMonHoc.GetRowCellValue(i,"TenMonHoc").ToString() == textEditTenMonHoc.Text)
                     {
-                        Utilities.MessageboxUtilities.MessageError("Môn học "+textEditTenMonHoc.Text+
+                        Util.MsgboxUtil.Error("Môn học "+textEditTenMonHoc.Text+
                                                                  " đã tồn tại");
                         return;
                     }
@@ -112,13 +112,13 @@ namespace QLHS
             // Sửa
             if (spinEditHeSo.Value < 1 || spinEditHeSo.Value > 2)
             {
-                Utilities.MessageboxUtilities.MessageError("Hệ số của môn học "
+                Util.MsgboxUtil.Error("Hệ số của môn học "
                                                     + textEditTenMonHoc + " chỉ là 1 hoặc 2!");
                 return;
             }
             if (spinEditSoTiet.Value < 0 || spinEditSoTiet.Value >= 120)
             {
-                Utilities.MessageboxUtilities.MessageError("Số tiết của môn học không hợp lệ " +
+                Util.MsgboxUtil.Error("Số tiết của môn học không hợp lệ " +
                                                "(không thể nhỏ hơn 15 và quá 120)!");
                 return;
             }
@@ -133,7 +133,7 @@ namespace QLHS
             };
 
             _monHocBUS.CapNhat_MonHoc(_monHocDTO);
-            Utilities.MessageboxUtilities.MessageSuccess("Đã cập nhật môn học: " + _monHocDTO.TenMonHoc + " thành công!");
+            Util.MsgboxUtil.Success("Đã cập nhật môn học: " + _monHocDTO.TenMonHoc + " thành công!");
             _Load_GridView();
         }
     }

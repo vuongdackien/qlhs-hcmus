@@ -4,14 +4,14 @@ using System.Text;
 using System.Data;
 using DevExpress.XtraEditors;
 
-namespace Utilities
+namespace Util
 {
-    public class ComboboxEditUtilities
+    public class CboUtil
     {
         private string sValue;
         private string sDisplay;
 
-        public ComboboxEditUtilities(string svalue, string sdisplay)
+        public CboUtil(string svalue, string sdisplay)
         {
             sValue = svalue;
             sDisplay = sdisplay;
@@ -41,7 +41,7 @@ namespace Utilities
             foreach (DataRow dr in dt.Rows)
             {
                 comb.Properties.Items.Add(
-                      new ComboboxEditUtilities(dr[value].ToString(), dr[display].ToString())
+                      new CboUtil(dr[value].ToString(), dr[display].ToString())
                 );
 
             }
@@ -65,12 +65,12 @@ namespace Utilities
                 return;
            comb.Properties.Items.Clear();
 
-           comb.Properties.Items.Add(new ComboboxEditUtilities(value_all, display_all));
+           comb.Properties.Items.Add(new CboUtil(value_all, display_all));
          
             foreach (DataRow dr in dt.Rows)
             {
                 comb.Properties.Items.Add(
-                      new ComboboxEditUtilities(dr[value].ToString(), dr[display].ToString())
+                      new CboUtil(dr[value].ToString(), dr[display].ToString())
                 );
             }
             comb.SelectedIndex = selected_index;
@@ -86,7 +86,7 @@ namespace Utilities
         {
             if (comb.SelectedItem == null)
                 return null;
-            return ((ComboboxEditUtilities)comb.SelectedItem).Value;
+            return ((CboUtil)comb.SelectedItem).Value;
         }
         /// <summary>
         /// Lấy giá trị hiển thị selected của ComboboxEdit
@@ -97,7 +97,7 @@ namespace Utilities
         {
             if (comb.SelectedItem == null)
                 return null;
-            return ((ComboboxEditUtilities)comb.SelectedItem).sDisplay;
+            return ((CboUtil)comb.SelectedItem).sDisplay;
         }
 
         /// <summary>
@@ -109,7 +109,7 @@ namespace Utilities
         {
             foreach (var item in comb.Properties.Items)
             {
-                if (((ComboboxEditUtilities)item).Value == svalue)
+                if (((CboUtil)item).Value == svalue)
                     comb.SelectedItem = item;
             }
             

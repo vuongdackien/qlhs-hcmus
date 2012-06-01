@@ -31,9 +31,9 @@ namespace QLHS
 
         private void frmQLNguoiDung_Load(object sender, EventArgs e)
         {
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNguoiDung, _giaoVienBUS.LayDT_DanhSachGiaoVien(),
+            Util.CboUtil.SetDataSource(comboBoxEditNguoiDung, _giaoVienBUS.LayDT_DanhSachGiaoVien(),
                                                           "MaGiaoVien", "TenGiaoVien",0);
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditQuyenSuDung, _loaiNguoiDungBUS.Lay_DT_LoaiNguoiDung(),
+            Util.CboUtil.SetDataSource(comboBoxEditQuyenSuDung, _loaiNguoiDungBUS.Lay_DT_LoaiNguoiDung(),
                                                          "MaLoaiND", "TenLoaiND", 0);
             // load gridview
             this._Load_Lai_Gridview();                             
@@ -107,32 +107,32 @@ namespace QLHS
 
         private void simpleButtonGhi_Click(object sender, EventArgs e)
         {
-            if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditNguoiDung)
-              || Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditQuyenSuDung))
+            if (Util.CboUtil.CheckSelectedNull(comboBoxEditNguoiDung)
+              || Util.CboUtil.CheckSelectedNull(comboBoxEditQuyenSuDung))
                 
             {
-                Utilities.MessageboxUtilities.MessageError("Bạn chưa chọn người dùng hoặc chưa có giáo viên nào trong danh sách!");
+                Util.MsgboxUtil.Error("Bạn chưa chọn người dùng hoặc chưa có giáo viên nào trong danh sách!");
                 return;
             }
             if (textEdittenTruyCap.Text == "")
             {
-                Utilities.MessageboxUtilities.MessageError("Bạn chưa nhập tên đăng nhập");
+                Util.MsgboxUtil.Error("Bạn chưa nhập tên đăng nhập");
                 return;
             }
 
             bool checkExistsUser = _nguoiDungBUS.KiemTraTonTai_NguoiDung(
-                      Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNguoiDung));
+                      Util.CboUtil.GetValueItem(comboBoxEditNguoiDung));
 
             if (!checkExistsUser && textEditMatKhau.Text == "")
             {
-                Utilities.MessageboxUtilities.MessageError("Bạn chưa nhập mật khẩu!");
+                Util.MsgboxUtil.Error("Bạn chưa nhập mật khẩu!");
                 return;
             }
 
             // Lay tt nguoi dung
             NguoiDungDTO user = new NguoiDungDTO();
-            user.MaND = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNguoiDung);
-            user.LoaiNguoiDung.MaLoai =  Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditQuyenSuDung);
+            user.MaND = Util.CboUtil.GetValueItem(comboBoxEditNguoiDung);
+            user.LoaiNguoiDung.MaLoai =  Util.CboUtil.GetValueItem(comboBoxEditQuyenSuDung);
             user.TenDNhap = textEdittenTruyCap.Text.Replace("'","''");
             user.MatKhau = (textEditMatKhau.Text == "") ? "" : textEditMatKhau.Text.Replace("'", "''");
             user.TrangThai = radioGroupTrangThai.SelectedIndex;
@@ -142,8 +142,8 @@ namespace QLHS
                 // thêm
                 if (_nguoiDungBUS.ThemNguoiDung(user))
                 {
-                    Utilities.MessageboxUtilities.MessageSuccess("Thêm thành công user: " +
-                            Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNguoiDung) + " !");
+                    Util.MsgboxUtil.Success("Thêm thành công user: " +
+                            Util.CboUtil.GetDisplayItem(comboBoxEditNguoiDung) + " !");
                 }
                 _Load_Lai_Gridview(0);
             }
@@ -153,7 +153,7 @@ namespace QLHS
                 // Sửa
                 if (_nguoiDungBUS.SuaNguoiDung(user))
                 {
-                    Utilities.MessageboxUtilities.MessageSuccess("Sửa thành công user: " +  Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNguoiDung)  + " !");
+                    Util.MsgboxUtil.Success("Sửa thành công user: " +  Util.CboUtil.GetDisplayItem(comboBoxEditNguoiDung)  + " !");
                 }
                 _Load_Lai_Gridview(_current_row_edit);
             }
@@ -164,20 +164,20 @@ namespace QLHS
         {
             if (_is_delete_button)
             {
-                if (!_nguoiDungBUS.KiemTraTonTai_NguoiDung(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNguoiDung)))
+                if (!_nguoiDungBUS.KiemTraTonTai_NguoiDung(Util.CboUtil.GetValueItem(comboBoxEditNguoiDung)))
                 {
                     _Reset_Control();
                     return;
                 }
                 else
                 {
-                    string tenNguoiDung = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNguoiDung);
-                    if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Bạn có muốn xóa người dùng "
+                    string tenNguoiDung = Util.CboUtil.GetDisplayItem(comboBoxEditNguoiDung);
+                    if (Util.MsgboxUtil.YesNo("Bạn có muốn xóa người dùng "
                         + tenNguoiDung + " hay không?") == DialogResult.Yes)
                     {
-                        if (_nguoiDungBUS.XoaNguoiDung(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNguoiDung)))
+                        if (_nguoiDungBUS.XoaNguoiDung(Util.CboUtil.GetValueItem(comboBoxEditNguoiDung)))
                         {
-                            Utilities.MessageboxUtilities.MessageSuccess("Xóa người dùng "
+                            Util.MsgboxUtil.Success("Xóa người dùng "
                                         + tenNguoiDung + " thành công!");
                             gridControlNguoiDung.DataSource = _nguoiDungBUS.Lay_DT_NguoiDung();
                             return;
@@ -203,9 +203,9 @@ namespace QLHS
             if (gridViewNguoiDung.FocusedRowHandle < 0 || gridViewNguoiDung.FocusedRowHandle >= gridViewNguoiDung.RowCount)
                 return;
             textEdittenTruyCap.Text = gridViewNguoiDung.GetRowCellValue(e.FocusedRowHandle, "TenDNhap").ToString();
-            Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditNguoiDung,
+            Util.CboUtil.SelectedItem(comboBoxEditNguoiDung,
                     gridViewNguoiDung.GetRowCellValue(e.FocusedRowHandle, "MaND").ToString());
-            Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditQuyenSuDung,
+            Util.CboUtil.SelectedItem(comboBoxEditQuyenSuDung,
                     gridViewNguoiDung.GetRowCellValue(e.FocusedRowHandle, "MaLoaiND").ToString());
             radioGroupTrangThai.SelectedIndex = (bool)gridViewNguoiDung.GetRowCellValue(e.FocusedRowHandle, "TrangThai") ? 1 : 0;
             textEditMatKhau.Text = "";

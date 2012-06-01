@@ -45,14 +45,14 @@ namespace QLHS
         {
             if (MaLop != null)
             {
-                string maNamHoc = Utilities.ObjectUtilities.LayMaNamHocTuMaLop(MaLop);
-                string maKhoi = Utilities.ObjectUtilities.LayMaKhoiLopTuMaLop(MaLop);
+                string maNamHoc = Util.ObjectUtil.LayMaNamHocTuMaLop(MaLop);
+                string maKhoi = Util.ObjectUtil.LayMaKhoiLopTuMaLop(MaLop);
                 // Chọn lại năm học
-                Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditNamHoc, maNamHoc);
+                Util.CboUtil.SelectedItem(comboBoxEditNamHoc, maNamHoc);
                 // Chọn lại khối
-                Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditKhoi, maKhoi);
+                Util.CboUtil.SelectedItem(comboBoxEditKhoi, maKhoi);
                 // Chọn lại lớp
-                Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditLop, MaLop);
+                Util.CboUtil.SelectedItem(comboBoxEditLop, MaLop);
                 // Bỏ check Tiếp nhận hồ sơ mới
                 checkEditChuaPhanLop.Checked = false;
             }
@@ -74,23 +74,17 @@ namespace QLHS
             if (found_select_handler != -1)
                 gridViewDSHocSinh.FocusedRowHandle = found_select_handler;
             else
-                Utilities.MessageboxUtilities.MessageError("Không tìm thấy hồ sơ học sinh có mã: "+MaHocSinh);
+                Util.MsgboxUtil.Error("Không tìm thấy hồ sơ học sinh có mã: "+MaHocSinh);
         }
-        private void frmHocSinh_Load(object sender, EventArgs e)
-        {
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,_namHocBUS.LayDTNamHoc(),"MaNamHoc", "TenNamHoc",0);
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoi, _khoiBUS.LayDTKhoi(),
-                                                "MaKhoi", "TenKhoi",0);
-        }
-
+      
         /// <summary>
         /// Load lại combobox lớp học theo năm và khối
         /// </summary>
         private void LoadComboboxLopHoc(object sender, EventArgs e)
         {
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditLop, _lopBUS.LayDTLop_MaNam_MaKhoi(
-                       Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc),
-                         Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi)
+            Util.CboUtil.SetDataSource(comboBoxEditLop, _lopBUS.LayDTLop_MaNam_MaKhoi(
+                       Util.CboUtil.GetValueItem(comboBoxEditNamHoc),
+                         Util.CboUtil.GetValueItem(comboBoxEditKhoi)
                     ), "MaLop", "TenLop", 0);
             comboBoxEditLop_SelectedIndexChanged(sender,e);
             this.HienThiHoSoHocSinh(gridViewDSHocSinh.GetRowCellValue(0, "MaHocSinh"));
@@ -170,24 +164,30 @@ namespace QLHS
             textEditTenHocSinh.Focus();
         }
 
+        private void frmHocSinh_Load(object sender, EventArgs e)
+        {
+            Util.CboUtil.SetDataSource(comboBoxEditNamHoc, _namHocBUS.LayDTNamHoc(), "MaNamHoc", "TenNamHoc", 0);
+            Util.CboUtil.SetDataSource(comboBoxEditKhoi, _khoiBUS.LayDTKhoi(),
+                                                "MaKhoi", "TenKhoi", 0);
+        }
         private void comboBoxEditNamHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditKhoi) ||
-                Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditNamHoc))
+            if (Util.CboUtil.CheckSelectedNull(comboBoxEditKhoi) ||
+                Util.CboUtil.CheckSelectedNull(comboBoxEditNamHoc))
                 return;
             this.LoadComboboxLopHoc(sender, e);
         }
 
         private void comboBoxEditKhoi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditNamHoc))
+            if (Util.CboUtil.CheckSelectedNull(comboBoxEditNamHoc))
                 return;
             this.LoadComboboxLopHoc(sender, e);
         }
 
         private void comboBoxEditLop_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditLop))
+            if (Util.CboUtil.CheckSelectedNull(comboBoxEditLop))
             {
                 gridControlDSHocSinh.DataSource = null;
                 return;
@@ -216,7 +216,7 @@ namespace QLHS
                 gridControlDSHocSinh.DataSource = _hocSinhBUS.LayDTHocSinh_LopHoc("",true);
             else
                  gridControlDSHocSinh.DataSource = _hocSinhBUS.LayDTHocSinh_LopHoc(
-                     Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop), false
+                     Util.CboUtil.GetValueItem(comboBoxEditLop), false
             );
             if (gridViewDSHocSinh.RowCount > 0)
             {
@@ -255,34 +255,34 @@ namespace QLHS
             if(!checkEditChuaPhanLop.Checked)
             {
                 hocSinhDTO.STT = Convert.ToInt32(spinEditSTTSoDiem.Value);
-                maLop = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop);
+                maLop = Util.CboUtil.GetValueItem(comboBoxEditLop);
             }
             if (hocSinhDTO.TenHocSinh.Length < 3 || !hocSinhDTO.TenHocSinh.Contains(" "))
             {
-                Utilities.MessageboxUtilities.MessageError("Họ tên học sinh không hợp lệ (không chứa khoảng trắng) hoặc nhỏ hơn 3 ký tự!");
+                Util.MsgboxUtil.Error("Họ tên học sinh không hợp lệ (không chứa khoảng trắng) hoặc nhỏ hơn 3 ký tự!");
                 textEditTenHocSinh.Focus();
                 return;
             }
             if (hocSinhDTO.NoiSinh.Length < 3)
             {
-                Utilities.MessageboxUtilities.MessageError("Nơi sinh không hợp lệ (nhỏ hơn 3 ký tự)!");
+                Util.MsgboxUtil.Error("Nơi sinh không hợp lệ (nhỏ hơn 3 ký tự)!");
                 textEditNoiSinh.Focus();
                 return;
             }
             if (hocSinhDTO.DiaChi.Length < 3)
             {
-                Utilities.MessageboxUtilities.MessageError("Địa chỉ không hợp lệ (nhỏ hơn 3 ký tự)!");
+                Util.MsgboxUtil.Error("Địa chỉ không hợp lệ (nhỏ hơn 3 ký tự)!");
                 textEditDiaChi.Focus();
                 return;
             }
             try
             {
                 _hocSinhBUS.LuuHoSoHocSinh(hocSinhDTO, maLop);
-                Utilities.MessageboxUtilities.MessageSuccess("Lưu hồ sơ học sinh " + hocSinhDTO.TenHocSinh + " thành công!");
+                Util.MsgboxUtil.Success("Lưu hồ sơ học sinh " + hocSinhDTO.TenHocSinh + " thành công!");
             }
             catch (Exception ex)
             {
-                Utilities.MessageboxUtilities.MessageError(ex);
+                Util.MsgboxUtil.Error(ex);
                 return;
             }
             this.LoadLai_GridControl_HocSinh(checkEditChuaPhanLop.Checked);
@@ -298,15 +298,15 @@ namespace QLHS
 
             if(textEditmaHocSinh.Text == "")
             {
-                Utilities.MessageboxUtilities.MessageError("Bạn chưa chọn học sinh để thực hiện xóa!");
+                Util.MsgboxUtil.Error("Bạn chưa chọn học sinh để thực hiện xóa!");
                 return;
             }
-            if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Bạn có chắc chắn muốn xóa toàn bộ hồ sơ học sinh \""+textEditTenHocSinh.Text+"\" hay không?") == System.Windows.Forms.DialogResult.No)
+            if (Util.MsgboxUtil.YesNo("Bạn có chắc chắn muốn xóa toàn bộ hồ sơ học sinh \""+textEditTenHocSinh.Text+"\" hay không?") == System.Windows.Forms.DialogResult.No)
             {
                 return;
             }
             _hocSinhBUS.Xoa_HoSo_HocSinh(textEditmaHocSinh.Text);
-            Utilities.MessageboxUtilities.MessageSuccess("Xóa hồ sơ học sinh thành công!");
+            Util.MsgboxUtil.Success("Xóa hồ sơ học sinh thành công!");
             LoadLai_GridControl_HocSinh(checkEditChuaPhanLop.Checked);
             
         }
@@ -321,19 +321,19 @@ namespace QLHS
             }
             // Thêm
             string maNamHocHT = _quyDinhBUS.LayMaNamHoc_HienTai();
-            string maNamHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc);
+            string maNamHoc = Util.CboUtil.GetValueItem(comboBoxEditNamHoc);
             string tenNamHT = _namHocBUS.LayTenNamHoc(maNamHocHT);
 
             if (maNamHoc != maNamHocHT)
             {
-                if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Chương trình chỉ được phép tiếp nhận học sinh trong năm " + tenNamHT
+                if (Util.MsgboxUtil.YesNo("Chương trình chỉ được phép tiếp nhận học sinh trong năm " + tenNamHT
                                                             + "\nĐể thực hiện chức năng này, bạn có muốn di chuyển đến năm " + tenNamHT + " hay không?")
                                                     == System.Windows.Forms.DialogResult.Yes)
                 {
-                    string maKhoiHT = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi);
-                    Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditNamHoc, maNamHocHT);
-                    Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditKhoi, maKhoiHT);
-                    Utilities.MessageboxUtilities.MessageInfo("Đã chuyển đến năm " + tenNamHT
+                    string maKhoiHT = Util.CboUtil.GetValueItem(comboBoxEditKhoi);
+                    Util.CboUtil.SelectedItem(comboBoxEditNamHoc, maNamHocHT);
+                    Util.CboUtil.SelectedItem(comboBoxEditKhoi, maKhoiHT);
+                    Util.MsgboxUtil.Info("Đã chuyển đến năm " + tenNamHT
                                                     + ", bạn hãy chọn lớp để thực hiện tiếp nhận hồ sơ mới!");
                 }
                   
@@ -342,11 +342,11 @@ namespace QLHS
             // Neu co phan lop
             if (!checkEditChuaPhanLop.Checked)
             {
-                string MaLop = (Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop));
+                string MaLop = (Util.CboUtil.GetValueItem(comboBoxEditLop));
                 int SiSoCanTren = _quyDinhBUS.LaySiSoCanTren();
                 if (_phanLopBUS.Dem_SiSo_Lop(MaLop) >= SiSoCanTren)
                 {
-                    Utilities.MessageboxUtilities.MessageError("Lớp " + Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditLop)
+                    Util.MsgboxUtil.Error("Lớp " + Util.CboUtil.GetDisplayItem(comboBoxEditLop)
                                                                 + " đã đủ học sinh theo quy định "
                                                                 + " (" + SiSoCanTren + " học sinh / 1 lớp)!");
                     return;
@@ -372,16 +372,16 @@ namespace QLHS
         {
             if (checkEditChuaPhanLop.Checked)
             {
-                Utilities.MessageboxUtilities.MessageError("Danh sách hiện tại chưa được phân lớp nên không thể sắp xếp STT!");
+                Util.MsgboxUtil.Error("Danh sách hiện tại chưa được phân lớp nên không thể sắp xếp STT!");
                 return;
             }
-            if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditLop))
+            if (Util.CboUtil.CheckSelectedNull(comboBoxEditLop))
             {
-                Utilities.MessageboxUtilities.MessageError("Bạn chưa chọn lớp để thực hiện");
+                Util.MsgboxUtil.Error("Bạn chưa chọn lớp để thực hiện");
                 return;
             }
-            _phanLopBUS.CapNhap_STT_HocSinh_Lop(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditLop));
-            Utilities.MessageboxUtilities.MessageSuccess("Cập nhật số thự tự cho lớp thành công!");
+            _phanLopBUS.CapNhap_STT_HocSinh_Lop(Util.CboUtil.GetValueItem(comboBoxEditLop));
+            Util.MsgboxUtil.Success("Cập nhật số thự tự cho lớp thành công!");
             // Load lại gridcontrol học sinh
             this.LoadLai_GridControl_HocSinh();
         }

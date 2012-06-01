@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Utilities
+namespace Util
 {
-    public static class ExceptionUtilities
+    public static class ExceptionUtil
     {
         public static void Throw(string msg)
         {
@@ -13,7 +13,7 @@ namespace Utilities
 
         public static void ThrowMsgBox(string msg)
         {
-            Utilities.MessageboxUtilities.MessageError(msg);
+            Util.MsgboxUtil.Error(msg);
         }
     }
 }

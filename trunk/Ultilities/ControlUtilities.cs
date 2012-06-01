@@ -6,7 +6,7 @@ using DevExpress.XtraEditors;
 using System.Windows.Forms;
 using DevExpress.XtraTreeList.Nodes;
 
-namespace Utilities
+namespace Util
 {
     public class ControlUtilities
     {

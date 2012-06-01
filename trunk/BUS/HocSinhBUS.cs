@@ -26,7 +26,13 @@ namespace QLHS.BUS
         /// <returns>DataTable</returns>
         public DataTable LayDTHocSinh_LopHoc(string MaLop, bool chua_PhanLop = false)
         {
-            return _hocSinhDAL.LayDT_HocSinh_LopHoc(MaLop,chua_PhanLop);
+            DataTable tbHS = _hocSinhDAL.LayDT_HocSinh_LopHoc(MaLop,chua_PhanLop);
+            tbHS.Columns.Add(new DataColumn("Check", typeof(bool)));
+            for (int i = 0; i < tbHS.Rows.Count; i++)
+            {
+                tbHS.Rows[i]["Check"] = false;
+            }
+            return tbHS;
         }
          /// <summary>
         /// Lấy hồ sơ học sinh từ Mã học sinh
@@ -64,7 +70,7 @@ namespace QLHS.BUS
                 if (MaLop != null && hocsinh.STT != _phanLopBUS.Lay_STT_HienTai(hocsinh.MaHocSinh,MaLop)
                     && _phanLopBUS.KiemTra_STT_TonTai(hocsinh.STT, MaLop)) // STT mới này đã tồn tại
                 {
-                    Utilities.ExceptionUtilities.Throw("Sửa hồ sơ học sinh không hợp lệ!"
+                    Util.ExceptionUtil.Throw("Sửa hồ sơ học sinh không hợp lệ!"
                                                         +"\nSố thứ tự " + hocsinh.STT + " đã tồn tại trong lớp "+MaLop+"."
                                             + "\nBạn có thể sử dụng chức năng \"Tự động sắp xếp số thứ tự\" theo alpha.");
                     return false;
@@ -76,7 +82,7 @@ namespace QLHS.BUS
                     // Kiểm tra độ tuổi theo quy định
                     if (hocsinh.NgaySinh.Year < namCanDuoi || hocsinh.NgaySinh.Year > namCanTren)
                     {
-                        Utilities.ExceptionUtilities.Throw("Sửa hồ sơ học sinh không hợp lệ!"
+                        Util.ExceptionUtil.Throw("Sửa hồ sơ học sinh không hợp lệ!"
                                 + "\nNăm sinh của học sinh phải theo quy định trong khoảng từ năm " + namCanDuoi + " đến năm " + namCanTren);
                         return false;
                     }
@@ -89,20 +95,20 @@ namespace QLHS.BUS
                 // Nếu hồ sơ có phân lớp và kiểm tra STT đã tồn tại hay chưa?
                 if (MaLop != null && _phanLopBUS.KiemTra_STT_TonTai(hocsinh.STT, MaLop))
                 {
-                    Utilities.ExceptionUtilities.Throw("Tiếp nhận học sinh không hợp lệ!"
+                    Util.ExceptionUtil.Throw("Tiếp nhận học sinh không hợp lệ!"
                                                             +"\nSố thứ tự " + hocsinh.STT + " đã tồn tại trong lớp."
                                                                 + "\nChương trình sẽ tự động tạo số thứ tự tiếp theo trong bảng điểm"
                                                                 + "\nBạn có thể sử dụng chức năng \"Tự động sắp xếp số thứ tự\" theo alpha.");
                     return false;
                 }
-                hocsinh.MaHocSinh = Utilities.ObjectUtilities.NextID(_hocSinhDAL.Lay_MaCuoiCung(), "HS", 8);
+                hocsinh.MaHocSinh = Util.ObjectUtil.NextID(_hocSinhDAL.Lay_MaCuoiCung(), "HS", 8);
                 // Nếu ngày nhập học sau ngày áp dụng quy định
                 if (ngayNhapHoc >= ngayAD_QD)
                 {
                     // Kiểm tra độ tuổi theo quy định
                     if (hocsinh.NgaySinh.Year < namCanDuoi || hocsinh.NgaySinh.Year > namCanTren)
                     {
-                        Utilities.ExceptionUtilities.Throw("Tiếp nhận học sinh không hợp lệ!"
+                        Util.ExceptionUtil.Throw("Tiếp nhận học sinh không hợp lệ!"
                                 + "\nNăm sinh của học sinh phải theo quy định trong khoảng từ năm " + namCanDuoi + " đến năm " + namCanTren);
                         return false;
                     }
@@ -155,12 +161,22 @@ namespace QLHS.BUS
             return _hocSinhDAL.LayDT_TenHocSinh();
         }
         /// <summary>
-        /// lấy DataTable học sinh chưa có lớp
+        /// lấy DataTable học sinh chưa được có lớp
         /// </summary>
+        /// <param name="ngayTiepNhanTu">DateTime: Ngày tiếp nhận từ</param>
+        /// <param name="ngayTiepNhanDen">DateTime: Ngày tiếp nhận đến</param>
         /// <returns>DataTable</returns>
-        public DataTable LayDT_HS_HocSinh()
+        public DataTable LayDT_HocSinh_ChuaPhanLop(DateTime ngayTiepNhanTu, DateTime ngayTiepNhanDen)
         {
-            return _hocSinhDAL.LayDT_HS_HocSinh();
+            DataTable tbHS = _hocSinhDAL.LayDT_HocSinh_ChuaPhanLop(ngayTiepNhanTu,ngayTiepNhanDen);
+            tbHS.Columns.Add(new DataColumn("Check", typeof(bool)));
+            tbHS.Columns.Add(new DataColumn("STT",typeof(int)));
+            for (int i = 0; i < tbHS.Rows.Count; i++)
+			{
+                tbHS.Rows[i]["STT"] = i+1;
+                tbHS.Rows[i]["Check"] = false;
+			}
+            return tbHS;
         }
     }
 }

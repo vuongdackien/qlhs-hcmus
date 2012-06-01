@@ -40,7 +40,7 @@ namespace QLHS.BUS
         /// <returns></returns>
         public bool Them_GiaoVien(GiaoVienDTO giaoVien)
         {
-            giaoVien.MaGiaoVien = Utilities.ObjectUtilities.NextID(_giaoVienDAL.Lay_MaCuoiCung(), "GV", 3);
+            giaoVien.MaGiaoVien = Util.ObjectUtil.NextID(_giaoVienDAL.Lay_MaCuoiCung(), "GV", 3);
             return _giaoVienDAL.Them_GiaoVien(giaoVien);
         }
         /// <summary>

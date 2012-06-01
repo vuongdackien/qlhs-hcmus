@@ -1,10 +1,10 @@
 ﻿using System.Data;
 using DevExpress.XtraEditors;
 
-namespace Utilities
+namespace Util
 {
 
-    public class LookUpEditUtilities
+    public class LookUpEditUtil
     {
 
         /// <summary>

@@ -41,7 +41,7 @@ namespace QLHS
 
                 item.Nodes.Clear();
                 list_LopNode = _lopBUS.LayListLop_MaNam_MaKhoi(
-                                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc),
+                                    Util.CboUtil.GetValueItem(comboBoxEditNamHoc),
                                     item.GetValue("MaKhoi").ToString()
                                );
                 // add các lớp vào khối item
@@ -59,7 +59,7 @@ namespace QLHS
             foreach (DataRow rd in tb.Rows)
             {
                 cl.Add(rd["TenHocSinh"].ToString());
-                string[] hoten = Utilities.ObjectUtilities.LayHoTen(rd["TenHocSinh"].ToString());
+                string[] hoten = Util.ObjectUtil.LayHoTen(rd["TenHocSinh"].ToString());
                 if (hoten[0] != "") 
                     cl.Add(hoten[0]);
                 if (hoten[1] != "") 
@@ -73,7 +73,7 @@ namespace QLHS
         {
             checkEditHoTen.Checked = true;
             checkEditTatCaNam.Checked = true;
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
+            Util.CboUtil.SetDataSource(comboBoxEditNamHoc,
                                                           _namHocBUS.LayDTNamHoc(),
                                                           "MaNamHoc", "TenNamHoc",0);
             treeListSearch.ParentFieldName = "MaKhoi";
@@ -96,8 +96,8 @@ namespace QLHS
 
         private void treeListSearch_AfterCheckNode(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
         {
-            Utilities.TreeListUtilities.SetCheckedChildNodes(e.Node, e.Node.CheckState);
-            Utilities.TreeListUtilities.SetCheckedParentNodes(e.Node, e.Node.CheckState);
+            Util.TreeListUtil.SetCheckedChildNodes(e.Node, e.Node.CheckState);
+            Util.TreeListUtil.SetCheckedParentNodes(e.Node, e.Node.CheckState);
         }
         private void radioGroupTimTrong_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -176,12 +176,12 @@ namespace QLHS
             }
             catch (Exception ex)
             {
-                Utilities.MessageboxUtilities.MessageError(ex);
+                Util.MsgboxUtil.Error(ex);
                 return;
             }
             if (kq_TimKiemDS.Rows.Count == 0)
             {
-                Utilities.MessageboxUtilities.MessageError("Không tìm thấy học sinh!");
+                Util.MsgboxUtil.Error("Không tìm thấy học sinh!");
             }
             gridControlSearchHocSinh.DataSource = kq_TimKiemDS;
         }
@@ -306,7 +306,7 @@ namespace QLHS
         {
             if (gridViewSearch.FocusedRowHandle < 0)
                 return;
-            Utilities.MessageboxUtilities.ShowTooltip(toolTipController1,
+            Util.MsgboxUtil.ShowTooltip(toolTipController1,
                 "Click chuột phải lên dòng để xem chi tiết hồ sơ học sinh", "<b>Hướng dẫn</b>");
         }
 

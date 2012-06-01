@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using QLHS.BUS;
 using QLHS.DTO;
-using Utilities;
+using Util;
 using DevExpress.XtraEditors;
 
 namespace QLHS
@@ -95,7 +95,7 @@ namespace QLHS
             {
                 if (_giaoVienBUS.KiemTonTai_GiaoVien(textEditMaGiaoVien.Text))
                 {
-                    if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Bạn có muốn xóa hồ sơ giáo viên: "
+                    if (Util.MsgboxUtil.YesNo("Bạn có muốn xóa hồ sơ giáo viên: "
                                                         + textEditTenGiaoVien.Text + " hay không?")
                             == DialogResult.No)
                     {
@@ -103,7 +103,7 @@ namespace QLHS
                     }
 
                     _giaoVienBUS.Xoa_GiaoVien(textEditMaGiaoVien.Text);
-                    Utilities.MessageboxUtilities.MessageSuccess("Đã xóa hồ sơ giáo viên: "
+                    Util.MsgboxUtil.Success("Đã xóa hồ sơ giáo viên: "
                                                 + textEditTenGiaoVien.Text + " thành công!");
                     _Load_GridView();
                 }
@@ -125,7 +125,7 @@ namespace QLHS
 
             if (textEditTenGiaoVien.Text.Length <= 3 || !textEditTenGiaoVien.Text.Contains(" "))
             {
-                Utilities.MessageboxUtilities.MessageError("Tên giáo viên không hợp lệ hoặc nhỏ hơn 3 ký tự!");
+                Util.MsgboxUtil.Error("Tên giáo viên không hợp lệ hoặc nhỏ hơn 3 ký tự!");
                 textEditTenGiaoVien.Focus();
                 return; 
             }
@@ -140,12 +140,12 @@ namespace QLHS
             if (_giaoVienBUS.KiemTonTai_GiaoVien(giaoVienDTO.MaGiaoVien))
             {
                 _giaoVienBUS.CapNhat_GiaoVien(giaoVienDTO);
-                Utilities.MessageboxUtilities.MessageSuccess("Đã cập nhật hồ sơ giáo viên: " + giaoVienDTO.TenGiaoVien + " thành công!");
+                Util.MsgboxUtil.Success("Đã cập nhật hồ sơ giáo viên: " + giaoVienDTO.TenGiaoVien + " thành công!");
             }
             else // thêm
             {
                 if (_giaoVienBUS.Them_GiaoVien(giaoVienDTO))
-                    Utilities.MessageboxUtilities.MessageSuccess("Đã tạo hồ sơ giáo viên: " + giaoVienDTO.TenGiaoVien + " thành công!");
+                    Util.MsgboxUtil.Success("Đã tạo hồ sơ giáo viên: " + giaoVienDTO.TenGiaoVien + " thành công!");
             }
             _Load_GridView();
             this._Diable_Control(is_adding: false); 
