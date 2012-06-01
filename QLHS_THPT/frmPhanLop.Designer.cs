@@ -73,10 +73,10 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.simpleButtonChuyenHet = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonChuyenTatCa = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonXoaPL = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButtonChuyenLop = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButtonPhanLop = new DevExpress.XtraEditors.SimpleButton();
             this.gridControlDSHocSinhMoi = new DevExpress.XtraGrid.GridControl();
             this.contextMenuStripLopDen = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.chonTatCaDSLopDenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -603,10 +603,10 @@
             // 
             // groupControl3
             // 
-            this.groupControl3.Controls.Add(this.simpleButtonChuyenHet);
+            this.groupControl3.Controls.Add(this.simpleButtonChuyenTatCa);
             this.groupControl3.Controls.Add(this.simpleButtonDong);
             this.groupControl3.Controls.Add(this.simpleButtonXoaPL);
-            this.groupControl3.Controls.Add(this.simpleButtonChuyenLop);
+            this.groupControl3.Controls.Add(this.simpleButtonPhanLop);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl3.Location = new System.Drawing.Point(345, 212);
             this.groupControl3.Name = "groupControl3";
@@ -614,15 +614,15 @@
             this.groupControl3.TabIndex = 3;
             this.groupControl3.Text = "Chức năng";
             // 
-            // simpleButtonChuyenHet
+            // simpleButtonChuyenTatCa
             // 
-            this.simpleButtonChuyenHet.Image = global::QLHS.Properties.Resources.chuyen_loplai;
-            this.simpleButtonChuyenHet.Location = new System.Drawing.Point(94, 100);
-            this.simpleButtonChuyenHet.Name = "simpleButtonChuyenHet";
-            this.simpleButtonChuyenHet.Size = new System.Drawing.Size(155, 35);
-            this.simpleButtonChuyenHet.TabIndex = 17;
-            this.simpleButtonChuyenHet.Text = "Phân lớp tất cả (Alt+&S)";
-            this.simpleButtonChuyenHet.Click += new System.EventHandler(this.simpleButtonChuyenHet_Click);
+            this.simpleButtonChuyenTatCa.Image = global::QLHS.Properties.Resources.chuyen_loplai;
+            this.simpleButtonChuyenTatCa.Location = new System.Drawing.Point(94, 100);
+            this.simpleButtonChuyenTatCa.Name = "simpleButtonChuyenTatCa";
+            this.simpleButtonChuyenTatCa.Size = new System.Drawing.Size(155, 35);
+            this.simpleButtonChuyenTatCa.TabIndex = 17;
+            this.simpleButtonChuyenTatCa.Text = "Phân lớp tất cả (Alt+&S)";
+            this.simpleButtonChuyenTatCa.Click += new System.EventHandler(this.simpleButtonChuyenHet_Click);
             // 
             // simpleButtonDong
             // 
@@ -644,15 +644,15 @@
             this.simpleButtonXoaPL.Text = "Xóa phân lớp mới (Alt+&D)";
             this.simpleButtonXoaPL.Click += new System.EventHandler(this.simpleButtonXoaPLMoi_Click);
             // 
-            // simpleButtonChuyenLop
+            // simpleButtonPhanLop
             // 
-            this.simpleButtonChuyenLop.Image = global::QLHS.Properties.Resources.chuyen_loplai;
-            this.simpleButtonChuyenLop.Location = new System.Drawing.Point(94, 50);
-            this.simpleButtonChuyenLop.Name = "simpleButtonChuyenLop";
-            this.simpleButtonChuyenLop.Size = new System.Drawing.Size(155, 35);
-            this.simpleButtonChuyenLop.TabIndex = 16;
-            this.simpleButtonChuyenLop.Text = "Phân lớp đã chọn (Enter)";
-            this.simpleButtonChuyenLop.Click += new System.EventHandler(this.simpleButtonChuyenLop_Click);
+            this.simpleButtonPhanLop.Image = global::QLHS.Properties.Resources.chuyen_loplai;
+            this.simpleButtonPhanLop.Location = new System.Drawing.Point(94, 50);
+            this.simpleButtonPhanLop.Name = "simpleButtonPhanLop";
+            this.simpleButtonPhanLop.Size = new System.Drawing.Size(155, 35);
+            this.simpleButtonPhanLop.TabIndex = 16;
+            this.simpleButtonPhanLop.Text = "Phân lớp đã chọn (Enter)";
+            this.simpleButtonPhanLop.Click += new System.EventHandler(this.simpleButtonChuyenLop_Click);
             // 
             // gridControlDSHocSinhMoi
             // 
@@ -791,7 +791,7 @@
             // 
             // frmPhanLop
             // 
-            this.AcceptButton = this.simpleButtonChuyenLop;
+            this.AcceptButton = this.simpleButtonPhanLop;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1197, 564);
@@ -853,7 +853,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.SimpleButton simpleButtonDong;
         private DevExpress.XtraEditors.SimpleButton simpleButtonXoaPL;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonChuyenLop;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonPhanLop;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.Utils.ToolTipController toolTipController1;
@@ -864,7 +864,7 @@
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditKhoi;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditNamHoc;
-        private DevExpress.XtraEditors.SimpleButton simpleButtonChuyenHet;
+        private DevExpress.XtraEditors.SimpleButton simpleButtonChuyenTatCa;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private System.Windows.Forms.GroupBox groupBoxPhanLop;
         private System.Windows.Forms.RadioButton radioButtonPhanLopHocSinh_NamTruoc;

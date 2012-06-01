@@ -56,7 +56,7 @@ namespace QLHS
             groupControlLopCu.Enabled = true;
 
             simpleButtonXoaPL.Enabled = true;
-            simpleButtonChuyenHet.Enabled = true;
+            simpleButtonChuyenTatCa.Enabled = true;
 
             // Show control
             if (yc == YeuCau.PhanLop_HoSoChuaPhanLop)
@@ -75,7 +75,7 @@ namespace QLHS
                 checkEditChuyenBangDiem.Enabled = true;
                 textEditLyDoChuyen.Enabled = true;
                 simpleButtonXoaPL.Enabled = false;
-                simpleButtonChuyenHet.Enabled = false;
+                simpleButtonChuyenTatCa.Enabled = false;
             }
         }
         private void _LoadGridcontrolDSHocSinhMoi()
@@ -151,9 +151,9 @@ namespace QLHS
 
         private void _Load_Form()
         {
-            simpleButtonChuyenLop.Enabled = false;
+            simpleButtonPhanLop.Enabled = false;
             simpleButtonXoaPL.Enabled = false;
-            simpleButtonChuyenHet.Enabled = false;
+            simpleButtonChuyenTatCa.Enabled = false;
         }
 
         /// <summary>
@@ -511,15 +511,16 @@ namespace QLHS
 
         private void gridViewDSHocSinh_MouseEnter(object sender, EventArgs e)
         {
-            simpleButtonChuyenLop.Enabled = true;
+            simpleButtonChuyenTatCa.Enabled = true;
+            simpleButtonPhanLop.Enabled = true;
             simpleButtonXoaPL.Enabled = false;
             _HienThi_Button();
         }
 
         private void gridViewDSHocSinhMoi_MouseEnter(object sender, EventArgs e)
         {
-            simpleButtonChuyenLop.Enabled = false;
-         
+            simpleButtonPhanLop.Enabled = false;
+            simpleButtonChuyenTatCa.Enabled = false;
             if (radioButtonChuyenLopCungKhoi.Checked == false)
             {
                 simpleButtonXoaPL.Enabled = true;
@@ -530,8 +531,8 @@ namespace QLHS
         {
             if (gridViewDSHocSinh.RowCount == 0)
             {
-                simpleButtonChuyenLop.Enabled = false;
-                simpleButtonChuyenHet.Enabled = false;
+                simpleButtonPhanLop.Enabled = false;
+                simpleButtonChuyenTatCa.Enabled = false;
                 if (gridViewDSHocSinhMoi.RowCount > 0)
                 {
                     if (radioButtonChuyenLopCungKhoi.Checked)
@@ -545,7 +546,7 @@ namespace QLHS
                 simpleButtonXoaPL.Enabled = false;
                 if (gridViewDSHocSinh.RowCount > 0)
                 {
-                    simpleButtonChuyenLop.Enabled = true;
+                    simpleButtonPhanLop.Enabled = true;
                 }
             }
         }
@@ -580,13 +581,13 @@ namespace QLHS
             }
             if (radioButtonChuyenLopCungKhoi.Checked)
             {
-                simpleButtonChuyenLop.Text = "Chuyển Lớp";
+                simpleButtonPhanLop.Text = "Chuyển Lớp";
                 checkEditChuyenBangDiem.Enabled = true;
                 textEditLyDoChuyen.Enabled = true;
             }
             else
             {
-                simpleButtonChuyenLop.Text = "Phân Lớp";
+                simpleButtonPhanLop.Text = "Phân Lớp";
                 checkEditChuyenBangDiem.Checked = false;
                 textEditLyDoChuyen.Text = "";
                 groupBoxPhanLop.Enabled = true;
