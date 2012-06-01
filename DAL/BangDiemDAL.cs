@@ -81,11 +81,29 @@ namespace QLHS.DAL
                                       bd.HocSinh.MaHocSinh, bd.LopDTO.MaLop, bd.MaHocKy, bd.MonHoc.MaMonHoc);
             return ExecuteQuery(sql) > 0;
         }
-
-        public DataTable LayBangDiem_NamHoc_Khoi(string MaKhoi, string MaMonHoc)
+        /// <summary>
+        /// Xóa bảng điểm của 1 học sinh thuộc 1 lớp nào đó
+        /// </summary>
+        /// <param name="MaHocSinh">String: Mã học sinh</param>
+        /// <param name="MaLop">String: Mã lớp</param>
+        /// <returns></returns>
+        public bool XoaBangDiem_HocSinh_Lop(string MaHocSinh, string MaLop)
         {
-            return null;
+            return ExecuteQuery("DELETE FROM BANGDIEM WHERE MaHocSinh = '"+MaHocSinh+"' AND MaLop = '"+MaLop+"'") > 0;
         }
+        /// <summary>
+        /// Cập nhật lớp mới cho bảng điểm của 1 học sinh
+        /// </summary>
+        /// <param name="MaHocSinh">String: Mã học sinh</param>
+        /// <param name="MaLopCu">String: Mã lớp cũ</param>
+        /// <param name="MaLopMoi">String: Mã lớp mới</param>
+        /// <returns></returns>
+        public bool CapNhat_BangDiem_HocSinh_LopMoi(string MaHocSinh, string MaLopCu, string MaLopMoi)
+        {
+            return ExecuteQuery("UPDATE BANGDIEM SET MaLop = '" + MaLopMoi 
+                + "' WHERE MaLop = '" + MaLopCu + "' AND MaHocSinh = '"+MaHocSinh+"'") > 0;
+        }
+
 
         /// <summary>
         /// Lấy bảng điểm môn học học kỳ của 1 lớp

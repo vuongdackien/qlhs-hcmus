@@ -57,7 +57,17 @@ namespace QLHS.BUS
         {
             return _PhanLopDAL.Dem_SiSo_Lop(MaLop);
         }
-
+        /// <summary>
+        /// Thay đổi lớp mới cho học sinh 
+        /// </summary>
+        /// <param name="MaHocSinh">String: mã học sinh</param>
+        /// <param name="MaLopCu">String: Mã lớp cũ</param>
+        /// <param name="MaLopMoi">String: Mã lớp mới</param>
+        /// <returns></returns>
+        public bool ThayDoi_LopMoi_HocSinh(string MaHocSinh, string MaLopCu, string MaLopMoi)
+        {
+            return _PhanLopDAL.ThayDoi_LopMoi_HocSinh(MaHocSinh, MaLopCu, MaLopMoi);
+        }
         /// <summary>
         /// Cập nhật STT học sinh cho cả lớp
         /// </summary>
@@ -143,7 +153,7 @@ namespace QLHS.BUS
         {
             return _PhanLopDAL.LayDTKhoi_Chuyen(MaNamHoc, MaKhoi);
         }
-        public DataTable KiemTraHSTonTaiTrongLop_ChuyenLop(string MaHocSinh, string MaLop)
+        public bool KiemTraHSTonTaiTrongLop_ChuyenLop(string MaHocSinh, string MaLop)
         {
             return _PhanLopDAL.KiemTraHSTonTaiTrongLop_ChuyenLop(MaHocSinh,MaLop);
         }

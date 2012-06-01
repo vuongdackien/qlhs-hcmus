@@ -142,7 +142,27 @@ namespace QLHS.BUS
         {
             return _bangDiemDAL.XoaBangDiem_MonHoc_HocSinh_HocKy(bd);
         }
-
+        /// <summary>
+        /// Xóa bảng điểm của 1 học sinh thuộc 1 lớp nào đó
+        /// </summary>
+        /// <param name="MaHocSinh">String: Mã học sinh</param>
+        /// <param name="MaLop">String: Mã lớp</param>
+        /// <returns></returns>
+        public bool XoaBangDiem_HocSinh_Lop(string MaHocSinh, string MaLop)
+        {
+            return _bangDiemDAL.XoaBangDiem_HocSinh_Lop(MaHocSinh,MaLop);
+        }
+        /// <summary>
+        /// Cập nhật lớp mới cho bảng điểm của 1 học sinh
+        /// </summary>
+        /// <param name="MaHocSinh">String: Mã học sinh</param>
+        /// <param name="MaLopCu">String: Mã lớp cũ</param>
+        /// <param name="MaLopMoi">String: Mã lớp mới</param>
+        /// <returns></returns>
+        public bool CapNhat_BangDiem_HocSinh_LopMoi(string MaHocSinh, string MaLopCu, string MaLopMoi)
+        {
+            return _bangDiemDAL.CapNhat_BangDiem_HocSinh_LopMoi(MaHocSinh, MaLopCu, MaLopMoi);
+        }
    
         /// <summary>
         /// Lấy bảng điểm tổng kết học kỳ theo lớp
