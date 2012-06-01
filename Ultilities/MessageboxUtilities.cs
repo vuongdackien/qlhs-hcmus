@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using System;
 using DevExpress.Utils;
 
-namespace Utilities
+namespace Util
 {
 
     class CustomErrorSQL
@@ -27,34 +27,34 @@ namespace Utilities
         }
     }
 
-    public class MessageboxUtilities
+    public class MsgboxUtil
     {
-        public static DialogResult MessageError(Exception ex)
+        public static DialogResult Error(Exception ex)
         {
             return XtraMessageBox.Show(ex.Message,
                 "LỖI", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        public static DialogResult MessageError(string Message)
+        public static DialogResult Error(string Message)
         {
             return XtraMessageBox.Show("Lỗi: " + Message, "LỖI",
                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        public static DialogResult MessageSuccess(string Message)
+        public static DialogResult Success(string Message)
         {
             return XtraMessageBox.Show(Message, "THÀNH CÔNG",
                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        public static DialogResult MessageInfo(string Message)
+        public static DialogResult Info(string Message)
         {
             return XtraMessageBox.Show(Message, "THÔNG TIN",
                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        public static DialogResult MessageQuestionYesNo(string Message)
+        public static DialogResult YesNo(string Message)
         {
             return XtraMessageBox.Show(Message, "HỎI",
                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
-        public static DialogResult MessageQuestionOkCancel(string Message)
+        public static DialogResult OkCancel(string Message)
         {
             return XtraMessageBox.Show(Message, "HỎI",
                                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);

@@ -35,20 +35,20 @@ namespace QLHS
 
         private void HienThi_DSLop()
         {
-            gridControlDSLop.DataSource = _lopBUS.LayDTLop_MaNam_MaKhoi(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc),
-                                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi));
+            gridControlDSLop.DataSource = _lopBUS.LayDTLop_MaNam_MaKhoi(Util.CboUtil.GetValueItem(comboBoxEditNamHoc),
+                                    Util.CboUtil.GetValueItem(comboBoxEditKhoi));
             this.DisableControls(editing: false);
         }
 
         private void frmLapDSLop_Load(object sender, EventArgs e)
         {
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
+            Util.CboUtil.SetDataSource(comboBoxEditNamHoc,
                                                          _namHocBUS.LayDTNamHoc(),
                                                         "MaNamHoc", "TenNamHoc", 0);
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoi,
+            Util.CboUtil.SetDataSource(comboBoxEditKhoi,
                                                         _khoiBUS.LayDTKhoi(),
                                                         "MaKhoi", "TenKhoi", 0);
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditGVCN,
+            Util.CboUtil.SetDataSource(comboBoxEditGVCN,
                                                                    _giaoVienBUS.LayDT_DanhSachGiaoVien(),
                                                                    "MaGiaoVien", "TenGiaoVien", 0);
         }
@@ -60,7 +60,7 @@ namespace QLHS
 
         private void comboBoxEditKhoi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textEditTenLop.Properties.Mask.EditMask = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi)
+            textEditTenLop.Properties.Mask.EditMask = Util.CboUtil.GetValueItem(comboBoxEditKhoi)
                                                      +"[A-H][0-9]{1,2}";
             this.HienThi_DSLop();
         }
@@ -102,9 +102,9 @@ namespace QLHS
         }
         private void simpleButtonThemMoi_Click(object sender, EventArgs e)
         {
-            if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditNamHoc))
+            if (Util.CboUtil.CheckSelectedNull(comboBoxEditNamHoc))
             {
-                Utilities.MessageboxUtilities.MessageError("Bạn chưa chọn năm học để thêm mới lớp!");
+                Util.MsgboxUtil.Error("Bạn chưa chọn năm học để thêm mới lớp!");
                 return;
             }
             if (_is_add_button) // button them moi
@@ -125,7 +125,7 @@ namespace QLHS
            if (gridViewLop.FocusedRowHandle < 0 || gridViewLop.FocusedRowHandle >= gridViewLop.RowCount) return;
            textEditMaLop.Text = gridViewLop.GetRowCellValue(gridViewLop.FocusedRowHandle, "MaLop").ToString();
            textEditTenLop.Text = gridViewLop.GetRowCellValue(gridViewLop.FocusedRowHandle, "TenLop").ToString();
-           Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditGVCN,
+           Util.CboUtil.SelectedItem(comboBoxEditGVCN,
                gridViewLop.GetRowCellValue(gridViewLop.FocusedRowHandle, "MaGiaoVien").ToString()
             );
 
@@ -133,7 +133,7 @@ namespace QLHS
 
         private void textEditTenLop_InvalidValue(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
         {
-            string MaKhoi = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi);
+            string MaKhoi = Util.CboUtil.GetValueItem(comboBoxEditKhoi);
             e.ErrorText = "Tên lớp không hợp lệ. Tên lớp có dạng " + MaKhoi + "[A-H][0-9][0-9]. VD: " + MaKhoi + "B02";
         }
 
@@ -141,37 +141,37 @@ namespace QLHS
         {
             if (textEditTenLop.Text == "")
             {
-                Utilities.MessageboxUtilities.MessageError("Bạn chưa nhập tên lớp!");
+                Util.MsgboxUtil.Error("Bạn chưa nhập tên lớp!");
                 return;
             }
-            if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditGVCN))
+            if (Util.CboUtil.CheckSelectedNull(comboBoxEditGVCN))
             {
-                Utilities.MessageboxUtilities.MessageError("Bạn chưa chọn GVCN!");
+                Util.MsgboxUtil.Error("Bạn chưa chọn GVCN!");
                 return;
             }
             LopDTO lopDTO = new LopDTO();
-            lopDTO.GiaoVien.MaGiaoVien = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditGVCN);
+            lopDTO.GiaoVien.MaGiaoVien = Util.CboUtil.GetValueItem(comboBoxEditGVCN);
 
             string TenLop = textEditTenLop.Text;
             string tTenLop = TenLop.Substring(0, 3); // 10A
             int hTenLop = Convert.ToInt32(TenLop.Substring(3, TenLop.Length - 3)); // 1
             TenLop = tTenLop + ((hTenLop < 10) ? "0" + hTenLop.ToString() : hTenLop.ToString()); // 10A01
 
-            lopDTO.MaNamHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc);
+            lopDTO.MaNamHoc = Util.CboUtil.GetValueItem(comboBoxEditNamHoc);
             lopDTO.MaLop = TenLop + lopDTO.MaNamHoc;
             lopDTO.TenLop = textEditTenLop.Text;
-            lopDTO.MaKhoiLop = Convert.ToInt16(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi));
+            lopDTO.MaKhoiLop = Convert.ToInt16(Util.CboUtil.GetValueItem(comboBoxEditKhoi));
             
 
             if (_lopBUS.KiemTra_TonTaiMaLop(lopDTO.MaLop))
             {
                 _lopBUS.CapNhat_GiaoVienCN_Lop(lopDTO);
-                Utilities.MessageboxUtilities.MessageSuccess("Đã cập nhật lớp " + lopDTO.TenLop+" thành công!");
+                Util.MsgboxUtil.Success("Đã cập nhật lớp " + lopDTO.TenLop+" thành công!");
             }
             else
             {
                 if(_lopBUS.Them_Lop(lopDTO))
-                     Utilities.MessageboxUtilities.MessageSuccess("Đã tạo lớp " + lopDTO.TenLop + " thành công!");
+                     Util.MsgboxUtil.Success("Đã tạo lớp " + lopDTO.TenLop + " thành công!");
             } 
             HienThi_DSLop();
 
@@ -188,7 +188,7 @@ namespace QLHS
             {
                 if (_lopBUS.KiemTra_TonTaiMaLop(textEditMaLop.Text))
                 {
-                    if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Bạn có muốn xóa toàn bộ danh sách học sinh, "
+                    if (Util.MsgboxUtil.YesNo("Bạn có muốn xóa toàn bộ danh sách học sinh, "
                                     + "bảng điểm học sinh và toàn bộ thông tin liên quan đến lớp " + textEditTenLop.Text + " hay không?")
                             == DialogResult.No)
                     {
@@ -196,7 +196,7 @@ namespace QLHS
                     }
 
                     _lopBUS.Xoa_Lop(textEditMaLop.Text);
-                    Utilities.MessageboxUtilities.MessageSuccess("Đã xóa lớp " + textEditTenLop.Text + " thành công!");
+                    Util.MsgboxUtil.Success("Đã xóa lớp " + textEditTenLop.Text + " thành công!");
                     HienThi_DSLop();
                 }
             }

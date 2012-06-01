@@ -36,16 +36,18 @@ namespace QLHS.DAL
         /// <summary>
         /// lấy DataTable học sinh chưa được có lớp
         /// </summary>
+        /// <param name="ngayTiepNhanTu">DateTime: Ngày tiếp nhận từ</param>
+        /// <param name="ngayTiepNhanDen">DateTime: Ngày tiếp nhận đến</param>
         /// <returns>DataTable</returns>
-        public DataTable LayDT_HS_HocSinh()
+        public DataTable LayDT_HocSinh_ChuaPhanLop(DateTime ngayTiepNhanTu, DateTime ngayTiepNhanDen)
         {
-            DataTable dt = new DataTable();
-            DataColumn dcl=new DataColumn("STT",typeof(int));
-            dt.Columns.Add(dcl);
-            string sql = "SELECT MaHocSinh,TenHocSinh,(CASE WHEN GioiTinh='0' THEN 'Nam' ELSE N'Nữ' END) AS GioiTinh from HOCSINH WHERE MaHocSinh not in (select MaHocSinh from PHANLOP)";
-            m_DataApdater = new System.Data.SqlClient.SqlDataAdapter(sql, m_Connect);
-            m_DataApdater.Fill(dt);
-            return dt;
+            string sql = "set dateformat dmy";
+                     sql +="\nSELECT MaHocSinh,TenHocSinh,(CASE WHEN GioiTinh='0' THEN 'Nam' ELSE N'Nữ' END) AS GioiTinh "
+                       +"FROM HOCSINH "
+                       + "WHERE NgayNhapHoc BETWEEN '" + ngayTiepNhanTu.ToString("dd-MM-yyyy") + "' AND "
+                       +" '" + ngayTiepNhanDen.ToString("dd-MM-yyyy") + "' AND "
+                       +"MaHocSinh NOT IN (SELECT MaHocSinh FROM PHANLOP)";
+           return GetTable(sql);
         }
         /// <summary>
         /// Lấy List học sinh từ Lớp học

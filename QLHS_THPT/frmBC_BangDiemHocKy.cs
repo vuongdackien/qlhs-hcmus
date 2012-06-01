@@ -42,10 +42,10 @@ namespace QLHS
             treeListLopHoc.PreviewFieldName = "TenKhoi";
             treeListLopHoc.DataSource = _khoiBUS.LayDTKhoi();
             
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
+            Util.CboUtil.SetDataSource(comboBoxEditNamHoc,
                                                          _namHocBUS.LayDTNamHoc(),
                                                         "MaNamHoc", "TenNamHoc", 0);
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditHocKy,
+            Util.CboUtil.SetDataSource(comboBoxEditHocKy,
                                                         _hocKyBUS.LayDTHocKy(),
                                                         "MaHocKy", "TenHocKy", 0);
 
@@ -64,7 +64,7 @@ namespace QLHS
 
                 item.Nodes.Clear();
                 list_LopNode = _lopBUS.LayListLop_MaNam_MaKhoi(
-                                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc),
+                                    Util.CboUtil.GetValueItem(comboBoxEditNamHoc),
                                     item.GetValue("MaKhoi").ToString()
                                );
                 // add các lớp vào khối item
@@ -90,11 +90,11 @@ namespace QLHS
             
             string maLop = treeListLopHoc.FocusedNode.GetValue("MaKhoi").ToString();
             _bangDiemHocKyDTO = _bangDiemBUS.Lay_BangDiem_Lop_HocKy(maLop,
-                                                        Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy));
+                                                        Util.CboUtil.GetValueItem(comboBoxEditHocKy));
             gridControlBangDiemHocKy.DataSource = _bangDiemHocKyDTO;
-            labelControlNamHoc.Text = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc);
+            labelControlNamHoc.Text = Util.CboUtil.GetDisplayItem(comboBoxEditNamHoc);
             labelControlLop.Text = treeListLopHoc.FocusedNode.GetValue("TenKhoi").ToString();
-            labelControlHocKy.Text = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);
+            labelControlHocKy.Text = Util.CboUtil.GetValueItem(comboBoxEditHocKy);
             labelControlGVCN.Text = _lopBUS.Lay_TenGiaoVien_MaLop(maLop);
         }
 

@@ -64,7 +64,7 @@ namespace QLHS.DAL
         /// <param name="NewPassword">Mật khẩu mới</param>
         public bool DoiMatKhauNguoiDung(string TenDangNhap, string NewPassword)
         {
-            string sql = "UPDATE NGUOIDUNG SET MatKhau = '" + Utilities.ObjectUtilities.MaHoaMD5(NewPassword) + "' WHERE TenDNhap = '" + TenDangNhap + "'";
+            string sql = "UPDATE NGUOIDUNG SET MatKhau = '" + Util.ObjectUtil.MaHoaMD5(NewPassword) + "' WHERE TenDNhap = '" + TenDangNhap + "'";
             return ExecuteQuery(sql) > 0 ? true : false;
         }
         /// <summary>
@@ -86,7 +86,7 @@ namespace QLHS.DAL
         {
             string sql = string.Format("INSERT INTO NGUOIDUNG (MaND, MaLoaiND, TenDNhap, MatKhau, TrangThai ) "
                         + "VALUES ('{0}','{1}','{2}','{3}','{4}')",
-                        user.MaND, user.LoaiNguoiDung.MaLoai, user.TenDNhap, Utilities.ObjectUtilities.MaHoaMD5(user.MatKhau), user.TrangThai);
+                        user.MaND, user.LoaiNguoiDung.MaLoai, user.TenDNhap, Util.ObjectUtil.MaHoaMD5(user.MatKhau), user.TrangThai);
             if (ExecuteQuery(sql) > 0)
                 return true;
             return false;
@@ -98,7 +98,7 @@ namespace QLHS.DAL
         /// <returns></returns>
         public bool SuaNguoiDung(NguoiDungDTO user)
         {
-            string updatePassword = (user.MatKhau == "") ? "" : "MatKhau = '" + Utilities.ObjectUtilities.MaHoaMD5(user.MatKhau) + "',";
+            string updatePassword = (user.MatKhau == "") ? "" : "MatKhau = '" + Util.ObjectUtil.MaHoaMD5(user.MatKhau) + "',";
             string sql = string.Format("UPDATE NGUOIDUNG SET MaLoaiND = '{0}', TenDNhap = '{1}', " + updatePassword + " TrangThai = '{2}' "
                         + "WHERE MaND = '{3}'",
                         user.LoaiNguoiDung.MaLoai, user.TenDNhap, user.TrangThai, user.MaND);

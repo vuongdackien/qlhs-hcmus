@@ -111,7 +111,7 @@
             this.panelControlBottom.Location = new System.Drawing.Point(0, 456);
             this.panelControlBottom.Name = "panelControlBottom";
             this.panelControlBottom.Size = new System.Drawing.Size(1194, 60);
-            this.panelControlBottom.TabIndex = 2;
+            this.panelControlBottom.TabIndex = 10;
             // 
             // simpleButtonSXLaiSTT
             // 
@@ -182,6 +182,7 @@
             this.gridControlDSHocSinh.Name = "gridControlDSHocSinh";
             this.gridControlDSHocSinh.Size = new System.Drawing.Size(241, 269);
             this.gridControlDSHocSinh.TabIndex = 5;
+            this.gridControlDSHocSinh.TabStop = false;
             this.gridControlDSHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDSHocSinh});
             // 
@@ -243,16 +244,16 @@
             this.panelControlTopLeft.Location = new System.Drawing.Point(3, 3);
             this.panelControlTopLeft.Name = "panelControlTopLeft";
             this.panelControlTopLeft.Size = new System.Drawing.Size(241, 181);
-            this.panelControlTopLeft.TabIndex = 3;
+            this.panelControlTopLeft.TabIndex = 1;
             // 
             // checkEditChuaPhanLop
             // 
-            this.checkEditChuaPhanLop.Location = new System.Drawing.Point(21, 12);
+            this.checkEditChuaPhanLop.Location = new System.Drawing.Point(20, 12);
             this.checkEditChuaPhanLop.Name = "checkEditChuaPhanLop";
             this.checkEditChuaPhanLop.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.checkEditChuaPhanLop.Properties.Appearance.Options.UseFont = true;
-            this.checkEditChuaPhanLop.Properties.Caption = "Tiếp nhận hồ sơ chưa phân lớp";
-            this.checkEditChuaPhanLop.Size = new System.Drawing.Size(193, 19);
+            this.checkEditChuaPhanLop.Properties.Caption = "Tiếp nhận hồ sơ và chưa phân lớp";
+            this.checkEditChuaPhanLop.Size = new System.Drawing.Size(214, 19);
             this.checkEditChuaPhanLop.TabIndex = 1;
             this.checkEditChuaPhanLop.ToolTip = "Click vào checkbox nếu bạn muốn tiếp nhận hồ sơ học sinh chưa phân lớp, ta có thể" +
     " phân lớp cho các hồ sơ này sau khi có danh sách lớp";
@@ -561,7 +562,7 @@
             this.panelControl2.Location = new System.Drawing.Point(3, 3);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(367, 385);
-            this.panelControl2.TabIndex = 13;
+            this.panelControl2.TabIndex = 3;
             // 
             // frmHocSinh
             // 

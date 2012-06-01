@@ -40,28 +40,28 @@ namespace QLHS
         /// </summary>
         private void HienThi_Bang_TongKetHocKy()
         {
-            string MaKhoi = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop);
-            string MaHocKy =  Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);
-            string MaNamHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc);
+            string MaKhoi = Util.CboUtil.GetValueItem(comboBoxEditKhoiLop);
+            string MaHocKy =  Util.CboUtil.GetValueItem(comboBoxEditHocKy);
+            string MaNamHoc = Util.CboUtil.GetValueItem(comboBoxEditNamHoc);
 
             _ds_baocaoTongKetHocKy = _bangDiemBUS.Lay_BangTongKet_Khoi_HocKy(MaKhoi,MaHocKy,MaNamHoc);
 
             gridControlTongKetHocKy.DataSource = _ds_baocaoTongKetHocKy;
 
-            labelControlNamHoc.Text = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc);
+            labelControlNamHoc.Text = Util.CboUtil.GetDisplayItem(comboBoxEditNamHoc);
             labelControlHocKyTT.Text = MaHocKy;
             labelControlKhoiLop.Text = MaKhoi;
         }
         
         private void frmBC_TongKetHocKy_Load(object sender, EventArgs e)
         {
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
+            Util.CboUtil.SetDataSource(comboBoxEditNamHoc,
                                                         _namHocBUS.LayDTNamHoc(),
                                                        "MaNamHoc", "TenNamHoc", 0);
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditHocKy,
+            Util.CboUtil.SetDataSource(comboBoxEditHocKy,
                                                         _hocKyBUS.LayDTHocKy(),
                                                         "MaHocKy", "TenHocKy", 0);
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditKhoiLop,
+            Util.CboUtil.SetDataSource(comboBoxEditKhoiLop,
                                                         _khoiBUS.LayDTKhoi(),
                                                         "MaKhoi", "TenKhoi", 0);
         }
@@ -92,7 +92,7 @@ namespace QLHS
         {
             if (_ds_baocaoTongKetHocKy.Count == 0)
             {
-                Utilities.MessageboxUtilities.MessageError("Không tồn tại lớp để thực hiện báo cáo!");
+                Util.MsgboxUtil.Error("Không tồn tại lớp để thực hiện báo cáo!");
                 return;
             }
             if (_rptTongKetHocKy == null)
@@ -100,11 +100,11 @@ namespace QLHS
             _rptTongKetHocKy.SetDataSource(_ds_baocaoTongKetHocKy);
             // Set parameter
             _rptTongKetHocKy.SetParameterValue("paramTenNamHoc",
-                Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc));
+                Util.CboUtil.GetDisplayItem(comboBoxEditNamHoc));
             _rptTongKetHocKy.SetParameterValue("paramMaHocKy",
-                Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy));
+                Util.CboUtil.GetValueItem(comboBoxEditHocKy));
             _rptTongKetHocKy.SetParameterValue("paramMaKhoi",
-                Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoiLop));
+                Util.CboUtil.GetValueItem(comboBoxEditKhoiLop));
 
             if (_frmReportView_TongKetHocKy == null || _frmReportView_TongKetHocKy.IsDisposed)
                 _frmReportView_TongKetHocKy = new frmReportView();

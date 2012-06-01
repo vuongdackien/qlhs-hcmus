@@ -93,7 +93,7 @@ namespace QLHS
         /// </summary>
         private void PhanQuyenNguoiDung()
         {
-            switch (Utilities.ObjectUtilities.user.LoaiNguoiDung.MaLoai)
+            switch (Util.ObjectUtil.user.LoaiNguoiDung.MaLoai)
             {
                 // Administrator
                 case "quantri":
@@ -165,7 +165,7 @@ namespace QLHS
             // Kiểm tra người dùng đã chọn username hay chưa
             if (_fLogin.listBoxControlNguoiDung.SelectedValue == null)
             {
-                Utilities.MessageboxUtilities.MessageError("Bạn chưa chọn tên người dùng đăng nhập!");
+                Util.MsgboxUtil.Error("Bạn chưa chọn tên người dùng đăng nhập!");
                 return; // trả về đăng nhập tiếp
             }
             string PassWord = _fLogin.textEditMatKhau.Text;
@@ -174,34 +174,34 @@ namespace QLHS
             // Kiểm tra password bỏ trống
             if (PassWord.Equals(""))
             {
-                Utilities.MessageboxUtilities.MessageError("Bạn chưa nhập password!");
+                Util.MsgboxUtil.Error("Bạn chưa nhập password!");
                 _fLogin.textEditMatKhau.Focus();
                 return;
             }
             // Tạo biến lấy thông tin user đăng nhập hiện tại
-            Utilities.ObjectUtilities.user = _nguoiDungBUS.LayThongTinNguoiDung(UserName);
-            if (Utilities.ObjectUtilities.user == null)
+            Util.ObjectUtil.user = _nguoiDungBUS.LayThongTinNguoiDung(UserName);
+            if (Util.ObjectUtil.user == null)
             {
-                Utilities.MessageboxUtilities.MessageError("Tài khoản này không tồn tại!");
+                Util.MsgboxUtil.Error("Tài khoản này không tồn tại!");
                 return;
             }
             // Kiểm tra password nhập có chính xác hay không
-            if (Utilities.ObjectUtilities.user.MatKhau != Utilities.ObjectUtilities.MaHoaMD5(PassWord))
+            if (Util.ObjectUtil.user.MatKhau != Util.ObjectUtil.MaHoaMD5(PassWord))
             {
-                Utilities.MessageboxUtilities.MessageError("Mật khẩu không chính xác!");
+                Util.MsgboxUtil.Error("Mật khẩu không chính xác!");
                 _fLogin.textEditMatKhau.Focus();
                 return;
             }
             // Trạng thái người dùng
-            if (Utilities.ObjectUtilities.user.TrangThai == 0)
+            if (Util.ObjectUtil.user.TrangThai == 0)
             {
-                Utilities.MessageboxUtilities.MessageError("Bạn không được phép truy cập! Vui lòng liên hệ người quản trị!");
+                Util.MsgboxUtil.Error("Bạn không được phép truy cập! Vui lòng liên hệ người quản trị!");
                 return;
             }
             _fLogin.Dispose();
             // Gắn lại trạng thái login dưới bar from Main
-            barStaticItemLoaiNguoiDung.Caption = Utilities.ObjectUtilities.user.LoaiNguoiDung.TenLoaiND;
-            barStaticItemTenNguoiDung.Caption = Utilities.ObjectUtilities.user.TenND;
+            barStaticItemLoaiNguoiDung.Caption = Util.ObjectUtil.user.LoaiNguoiDung.TenLoaiND;
+            barStaticItemTenNguoiDung.Caption = Util.ObjectUtil.user.TenND;
             // hiển thị lại form main
             this.Show();
             // Enable all menu
@@ -240,40 +240,40 @@ namespace QLHS
         {
             if (_frmDoiMK.textEditMatKhauCu.Text == "")
             {
-                Utilities.MessageboxUtilities.MessageError("Bạn chưa nhập mật khẩu cũ!");
+                Util.MsgboxUtil.Error("Bạn chưa nhập mật khẩu cũ!");
                 _frmDoiMK.textEditMatKhauCu.Focus();
                 return;
             }
             if (_frmDoiMK.textEditMatKhauMoi.Text == "")
             {
-                Utilities.MessageboxUtilities.MessageError("Bạn chưa nhập mật khẩu mới!");
+                Util.MsgboxUtil.Error("Bạn chưa nhập mật khẩu mới!");
                 _frmDoiMK.textEditMatKhauMoi.Focus();
                 return;
             }
             if (_frmDoiMK.textEditReMatKhauMoi.Text == "")
             {
-                Utilities.MessageboxUtilities.MessageError("Bạn chưa nhập mật lại khẩu mới!");
+                Util.MsgboxUtil.Error("Bạn chưa nhập mật lại khẩu mới!");
                 _frmDoiMK.textEditReMatKhauMoi.Focus();
                 return;
             }
             if (_frmDoiMK.textEditMatKhauMoi.Text != _frmDoiMK.textEditReMatKhauMoi.Text)
             {
                 _frmDoiMK.textEditMatKhauMoi.Focus();
-                Utilities.MessageboxUtilities.MessageError("Mật khẩu nhập lại không hợp lệ!");
+                Util.MsgboxUtil.Error("Mật khẩu nhập lại không hợp lệ!");
                 return;
             }
-            if (Utilities.ObjectUtilities.user.MatKhau != Utilities.ObjectUtilities.MaHoaMD5(_frmDoiMK.textEditMatKhauCu.Text))
+            if (Util.ObjectUtil.user.MatKhau != Util.ObjectUtil.MaHoaMD5(_frmDoiMK.textEditMatKhauCu.Text))
             {
-                Utilities.MessageboxUtilities.MessageError("Mật khẩu cũ không hợp lệ!");
+                Util.MsgboxUtil.Error("Mật khẩu cũ không hợp lệ!");
                 _frmDoiMK.textEditMatKhauCu.Focus();
                 return;
             }
             // Change password
-            if (_nguoiDungBUS.DoiMatKhauNguoiDung(Utilities.ObjectUtilities.user.TenDNhap, _frmDoiMK.textEditMatKhauMoi.Text))
+            if (_nguoiDungBUS.DoiMatKhauNguoiDung(Util.ObjectUtil.user.TenDNhap, _frmDoiMK.textEditMatKhauMoi.Text))
             {
                 // Set mật khẩu mới
-                Utilities.ObjectUtilities.user.MatKhau = Utilities.ObjectUtilities.MaHoaMD5(_frmDoiMK.textEditMatKhauMoi.Text);
-                if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Đổi mật khẩu thành công! Bạn có muốn đăng nhập lại?")
+                Util.ObjectUtil.user.MatKhau = Util.ObjectUtil.MaHoaMD5(_frmDoiMK.textEditMatKhauMoi.Text);
+                if (Util.MsgboxUtil.YesNo("Đổi mật khẩu thành công! Bạn có muốn đăng nhập lại?")
                      == DialogResult.Yes)
                 {
                     _frmDoiMK.Dispose();
@@ -355,7 +355,7 @@ namespace QLHS
             DatabaseConnectionManagement.frmAddConnection frm = new DatabaseConnectionManagement.frmAddConnection();
             if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                Utilities.MessageboxUtilities.MessageSuccess("Đã lưu cấu hình của chương trình!"
+                Util.MsgboxUtil.Success("Đã lưu cấu hình của chương trình!"
                        +"\nChương trình sẽ khởi động lại để cập nhật dữ liệu!");
                 Application.Restart();
             }

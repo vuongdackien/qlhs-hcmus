@@ -43,13 +43,13 @@ namespace QLHS
             treeListLopHoc.PreviewFieldName = "TenKhoi";
             treeListLopHoc.DataSource = _khoiBUS.LayDTKhoi();
 
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditNamHoc,
+            Util.CboUtil.SetDataSource(comboBoxEditNamHoc,
                                                          _namHocBUS.LayDTNamHoc(),
                                                         "MaNamHoc", "TenNamHoc", 0);
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditHocKy,
+            Util.CboUtil.SetDataSource(comboBoxEditHocKy,
                                                         _hocKyBUS.LayDTHocKy(),
                                                         "MaHocKy", "TenHocKy", 0);
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEditMonHoc,
+            Util.CboUtil.SetDataSource(comboBoxEditMonHoc,
                                                         _monHocBUS.LayDT_DanhSach_MonHoc(),
                                                         "MaMonHoc", "TenMonHoc", 0);
 
@@ -68,7 +68,7 @@ namespace QLHS
 
                 item.Nodes.Clear();
                 list_LopNode = _lopBUS.LayListLop_MaNam_MaKhoi(
-                                    Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc),
+                                    Util.CboUtil.GetValueItem(comboBoxEditNamHoc),
                                     item.GetValue("MaKhoi").ToString()
                                );
                 // add các lớp vào khối item
@@ -87,20 +87,20 @@ namespace QLHS
         {
             // Chắc chắn chọn được node
             if (treeListLopHoc.FocusedNode == null ||
-                    Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditMonHoc))
+                    Util.CboUtil.CheckSelectedNull(comboBoxEditMonHoc))
             {
                 gridControlTongKetNamHoc.DataSource = null;
                 return;
             }
             string maLop = treeListLopHoc.FocusedNode.GetValue("MaKhoi").ToString();
             gridControlTongKetNamHoc.DataSource =
-            _bangDiemBUS.LayBangDiem_Lop_MonHoc_HocKy(maLop, Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy),
-                                            Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditMonHoc));
-            labelControlNamHoc.Text = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditNamHoc);
+            _bangDiemBUS.LayBangDiem_Lop_MonHoc_HocKy(maLop, Util.CboUtil.GetValueItem(comboBoxEditHocKy),
+                                            Util.CboUtil.GetValueItem(comboBoxEditMonHoc));
+            labelControlNamHoc.Text = Util.CboUtil.GetDisplayItem(comboBoxEditNamHoc);
             labelControlLop.Text = treeListLopHoc.FocusedNode.GetValue("TenKhoi").ToString();
-            labelControlHocKy.Text = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy);
+            labelControlHocKy.Text = Util.CboUtil.GetValueItem(comboBoxEditHocKy);
             labelControlGVCN.Text = _lopBUS.Lay_TenGiaoVien_MaLop(maLop);
-            labelControlTenMon.Text = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEditMonHoc).ToUpper();
+            labelControlTenMon.Text = Util.CboUtil.GetDisplayItem(comboBoxEditMonHoc).ToUpper();
         }
        
         private void simpleButtonXuatBD_Click(object sender, EventArgs e)
@@ -135,8 +135,8 @@ namespace QLHS
             BangDiemDTO bangDiem = new BangDiemDTO();
             bangDiem.HocSinh.MaHocSinh = dr["MaHocSinh"].ToString();
             bangDiem.HocSinh.TenHocSinh = dr["TenHocSinh"].ToString();
-            bangDiem.MaHocKy = Convert.ToInt32(Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditHocKy));
-            bangDiem.MonHoc.MaMonHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditMonHoc);
+            bangDiem.MaHocKy = Convert.ToInt32(Util.CboUtil.GetValueItem(comboBoxEditHocKy));
+            bangDiem.MonHoc.MaMonHoc = Util.CboUtil.GetValueItem(comboBoxEditMonHoc);
             bangDiem.LopDTO.MaLop = treeListLopHoc.FocusedNode.GetValue("MaKhoi").ToString();
             bangDiem.DM_1 = dr["DM_1"] is DBNull ? -1 : Convert.ToDouble(dr["DM_1"]);
             bangDiem.DM_2 = dr["DM_2"] is DBNull ? -1 : Convert.ToDouble(dr["DM_2"]);
@@ -165,7 +165,7 @@ namespace QLHS
             }
             catch (Exception ex)
             {
-                if (Utilities.MessageboxUtilities.MessageQuestionYesNo(ex.Message
+                if (Util.MsgboxUtil.YesNo(ex.Message
                             + "\nBạn có muốn bỏ dòng này và nhập lại lần sau hay không?") == DialogResult.No)
                 {
                     e.Valid = false;

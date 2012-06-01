@@ -26,7 +26,7 @@ namespace QLHS
 
         private void frmNamHoc_Load(object sender, EventArgs e)
         {
-            Utilities.ComboboxEditUtilities.SetDataSource(comboBoxEdit1, _namHocBUS.LayNamHoc_ThemMoi(),
+            Util.CboUtil.SetDataSource(comboBoxEdit1, _namHocBUS.LayNamHoc_ThemMoi(),
                                                                         "MaNamHoc", "TenNamHoc", 0);
             this._Load_Lai_GridView();
             
@@ -37,7 +37,7 @@ namespace QLHS
             if (e.FocusedRowHandle < 0)
                 return;
             string maNamHoc = gridViewNamHoc.GetRowCellValue(e.FocusedRowHandle, "MaNamHoc").ToString();
-            Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEdit1, maNamHoc);
+            Util.CboUtil.SelectedItem(comboBoxEdit1, maNamHoc);
         }
         private void _Load_Lai_GridView()
         {
@@ -73,19 +73,19 @@ namespace QLHS
             }
             else
             {
-                NamHocDTO namHocDTO = new NamHocDTO() { MaNamHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEdit1),
-                                                        TenNamHoc = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEdit1)};
+                NamHocDTO namHocDTO = new NamHocDTO() { MaNamHoc = Util.CboUtil.GetValueItem(comboBoxEdit1),
+                                                        TenNamHoc = Util.CboUtil.GetDisplayItem(comboBoxEdit1)};
                 // check & save
                 if (_namHocBUS.KiemTraTonTai_NamHoc(namHocDTO.MaNamHoc))
                 {
-                    Utilities.MessageboxUtilities.MessageError("Năm học " +namHocDTO.TenNamHoc
+                    Util.MsgboxUtil.Error("Năm học " +namHocDTO.TenNamHoc
                                                                 + " đã tồn tại. Hãy chọn 1 năm học khác!");
                     return;
                 }
                 else
                 {
                     _namHocBUS.ThemNamHoc(namHocDTO);
-                    Utilities.MessageboxUtilities.MessageSuccess("Đã tạo năm học mới thành công."
+                    Util.MsgboxUtil.Success("Đã tạo năm học mới thành công."
                                                                + "\nTiếp theo bạn hãy tạo danh sách lớp cho năm học này!");
                     
                 }
@@ -95,26 +95,26 @@ namespace QLHS
 
         private void simpleButtonXoa_Click(object sender, EventArgs e)
         {
-            string maNamHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEdit1);
-            string tenNamHoc = Utilities.ComboboxEditUtilities.GetDisplayItem(comboBoxEdit1);
+            string maNamHoc = Util.CboUtil.GetValueItem(comboBoxEdit1);
+            string tenNamHoc = Util.CboUtil.GetDisplayItem(comboBoxEdit1);
 
             if(_is_delete_button)
             {            
                 if (_namHocBUS.KiemTraTonTai_NamHoc(maNamHoc))
                 {
                     // xóa
-                    if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Bạn có chắc chắn muốn xóa năm học"
+                    if (Util.MsgboxUtil.YesNo("Bạn có chắc chắn muốn xóa năm học"
                                                 + tenNamHoc + " và tất cả hồ sơ: Lớp học, phân lớp, bảng điểm,... liên quan đến năm học này?")
                         == DialogResult.Yes)
                     {
                         _namHocBUS.XoaNamHoc(maNamHoc);
-                        Utilities.MessageboxUtilities.MessageSuccess("Đã xóa năm học " + tenNamHoc + " thành công!");
+                        Util.MsgboxUtil.Success("Đã xóa năm học " + tenNamHoc + " thành công!");
                         this._Load_Lai_GridView();
                     }
                 }
                 else
                 {
-                    Utilities.MessageboxUtilities.MessageError("Không tồn tại năm học " + tenNamHoc);
+                    Util.MsgboxUtil.Error("Không tồn tại năm học " + tenNamHoc);
                 }
                 
             }
