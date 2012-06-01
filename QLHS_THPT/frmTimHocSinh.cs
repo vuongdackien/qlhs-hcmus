@@ -104,8 +104,6 @@ namespace QLHS
             bool enable = (radioGroupTimTrong.SelectedIndex == 0);
             checkEditTatCaNam.Enabled = enable;
             comboBoxEditNamHoc.Enabled = enable;
-            treeListSearch.Enabled = enable;
-  
         }
         private void checkEditTatCaNam_CheckedChanged(object sender, EventArgs e)
         {   
@@ -133,8 +131,16 @@ namespace QLHS
             {
                 hsTimKiemDTO.GioiTinh = -1;
             }
-            hsTimKiemDTO.NamSinhTu = textEditNamSinhTu.Text;
-            hsTimKiemDTO.NamSinhDen = textEditNamSinhDen.Text;
+            if (checkEditNamSinh.Checked)
+            {                
+                hsTimKiemDTO.NamSinhTu = spinEditNamSinhTu.Value.ToString();
+                hsTimKiemDTO.NamSinhDen = spinEditNamSinhDen.Value.ToString();
+            }
+            else
+            {
+                hsTimKiemDTO.NamSinhTu = "";
+                hsTimKiemDTO.NamSinhDen = "";
+            }
             hsTimKiemDTO.Email = textEditEmail.Text;
             hsTimKiemDTO.DiaChi = textEditDiaChi.Text;
 
@@ -194,8 +200,8 @@ namespace QLHS
             textEditMaHocSinh.Enabled = show;
             //textBoxTenHocSinh.Enabled = show;
             radioGroupGioiTinh.Enabled = show;
-            textEditNamSinhTu.Enabled = show;
-            textEditNamSinhDen.Enabled = show;
+            spinEditNamSinhTu.Enabled = show;
+            spinEditNamSinhDen.Enabled = show;
             textEditEmail.Enabled = show;
             textEditDiaChi.Enabled = show;
         }
@@ -256,8 +262,8 @@ namespace QLHS
 
         private void checkEditNamSinh_CheckedChanged(object sender, EventArgs e)
         {
-            EnableControl(checkEditNamSinh, textEditNamSinhTu);
-            EnableControl(checkEditNamSinh, textEditNamSinhDen);
+            EnableControl(checkEditNamSinh, spinEditNamSinhTu);
+            EnableControl(checkEditNamSinh, spinEditNamSinhDen);
         }
 
         private void checkEditEmail_CheckedChanged(object sender, EventArgs e)
