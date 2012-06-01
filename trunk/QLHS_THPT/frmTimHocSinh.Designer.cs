@@ -46,10 +46,10 @@
             this.xtraTabPageDieuKien = new DevExpress.XtraTab.XtraTabPage();
             this.panelControlDKienTim = new DevExpress.XtraEditors.PanelControl();
             this.panelControlNDungDKien = new DevExpress.XtraEditors.PanelControl();
+            this.spinEditNamSinhDen = new DevExpress.XtraEditors.SpinEdit();
+            this.spinEditNamSinhTu = new DevExpress.XtraEditors.SpinEdit();
             this.textBoxTenHocSinh = new System.Windows.Forms.TextBox();
             this.radioGroupGioiTinh = new DevExpress.XtraEditors.RadioGroup();
-            this.textEditNamSinhDen = new DevExpress.XtraEditors.TextEdit();
-            this.textEditNamSinhTu = new DevExpress.XtraEditors.TextEdit();
             this.textEditDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.textEditEmail = new DevExpress.XtraEditors.TextEdit();
             this.textEditMaHocSinh = new DevExpress.XtraEditors.TextEdit();
@@ -92,9 +92,9 @@
             this.panelControlDKienTim.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNDungDKien)).BeginInit();
             this.panelControlNDungDKien.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEditNamSinhDen.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEditNamSinhTu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupGioiTinh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhDen.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhTu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMaHocSinh.Properties)).BeginInit();
@@ -139,10 +139,10 @@
             this.panelControlChooseYear.Controls.Add(this.labelControlNamHoc);
             this.panelControlChooseYear.Controls.Add(this.labelControlPhamVi);
             this.panelControlChooseYear.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlChooseYear.Location = new System.Drawing.Point(3, 3);
+            this.panelControlChooseYear.Location = new System.Drawing.Point(2, 2);
             this.panelControlChooseYear.Margin = new System.Windows.Forms.Padding(0);
             this.panelControlChooseYear.Name = "panelControlChooseYear";
-            this.panelControlChooseYear.Size = new System.Drawing.Size(248, 128);
+            this.panelControlChooseYear.Size = new System.Drawing.Size(250, 128);
             this.panelControlChooseYear.TabIndex = 1;
             // 
             // radioGroupTimTrong
@@ -213,7 +213,7 @@
             this.treeListSearch.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.treeListColumn2});
             this.treeListSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeListSearch.Location = new System.Drawing.Point(3, 131);
+            this.treeListSearch.Location = new System.Drawing.Point(2, 130);
             this.treeListSearch.Name = "treeListSearch";
             this.treeListSearch.OptionsSelection.MultiSelect = true;
             this.treeListSearch.OptionsView.EnableAppearanceEvenRow = true;
@@ -224,7 +224,7 @@
             this.treeListSearch.ParentFieldName = "";
             this.treeListSearch.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.treeListSearch.Size = new System.Drawing.Size(248, 289);
+            this.treeListSearch.Size = new System.Drawing.Size(250, 291);
             this.treeListSearch.TabIndex = 4;
             this.treeListSearch.TreeLineStyle = DevExpress.XtraTreeList.LineStyle.Large;
             this.treeListSearch.AfterCheckNode += new DevExpress.XtraTreeList.NodeEventHandler(this.treeListSearch_AfterCheckNode);
@@ -281,10 +281,10 @@
             // 
             // panelControlNDungDKien
             // 
+            this.panelControlNDungDKien.Controls.Add(this.spinEditNamSinhDen);
+            this.panelControlNDungDKien.Controls.Add(this.spinEditNamSinhTu);
             this.panelControlNDungDKien.Controls.Add(this.textBoxTenHocSinh);
             this.panelControlNDungDKien.Controls.Add(this.radioGroupGioiTinh);
-            this.panelControlNDungDKien.Controls.Add(this.textEditNamSinhDen);
-            this.panelControlNDungDKien.Controls.Add(this.textEditNamSinhTu);
             this.panelControlNDungDKien.Controls.Add(this.textEditDiaChi);
             this.panelControlNDungDKien.Controls.Add(this.textEditEmail);
             this.panelControlNDungDKien.Controls.Add(this.textEditMaHocSinh);
@@ -299,6 +299,34 @@
             this.panelControlNDungDKien.Name = "panelControlNDungDKien";
             this.panelControlNDungDKien.Size = new System.Drawing.Size(739, 154);
             this.panelControlNDungDKien.TabIndex = 1;
+            // 
+            // spinEditNamSinhDen
+            // 
+            this.spinEditNamSinhDen.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spinEditNamSinhDen.Location = new System.Drawing.Point(232, 118);
+            this.spinEditNamSinhDen.Name = "spinEditNamSinhDen";
+            this.spinEditNamSinhDen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.spinEditNamSinhDen.Size = new System.Drawing.Size(69, 20);
+            this.spinEditNamSinhDen.TabIndex = 9;
+            // 
+            // spinEditNamSinhTu
+            // 
+            this.spinEditNamSinhTu.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spinEditNamSinhTu.Location = new System.Drawing.Point(149, 118);
+            this.spinEditNamSinhTu.Name = "spinEditNamSinhTu";
+            this.spinEditNamSinhTu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.spinEditNamSinhTu.Size = new System.Drawing.Size(69, 20);
+            this.spinEditNamSinhTu.TabIndex = 8;
             // 
             // textBoxTenHocSinh
             // 
@@ -317,20 +345,6 @@
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((byte)(1)), "Nữ")});
             this.radioGroupGioiTinh.Size = new System.Drawing.Size(152, 26);
             this.radioGroupGioiTinh.TabIndex = 7;
-            // 
-            // textEditNamSinhDen
-            // 
-            this.textEditNamSinhDen.Location = new System.Drawing.Point(232, 119);
-            this.textEditNamSinhDen.Name = "textEditNamSinhDen";
-            this.textEditNamSinhDen.Size = new System.Drawing.Size(69, 20);
-            this.textEditNamSinhDen.TabIndex = 9;
-            // 
-            // textEditNamSinhTu
-            // 
-            this.textEditNamSinhTu.Location = new System.Drawing.Point(149, 118);
-            this.textEditNamSinhTu.Name = "textEditNamSinhTu";
-            this.textEditNamSinhTu.Size = new System.Drawing.Size(69, 20);
-            this.textEditNamSinhTu.TabIndex = 8;
             // 
             // textEditDiaChi
             // 
@@ -707,9 +721,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControlNDungDKien)).EndInit();
             this.panelControlNDungDKien.ResumeLayout(false);
             this.panelControlNDungDKien.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEditNamSinhDen.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEditNamSinhTu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupGioiTinh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhDen.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditNamSinhTu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMaHocSinh.Properties)).EndInit();
@@ -748,8 +762,6 @@
         private DevExpress.XtraEditors.PanelControl panelControlNDungDKien;
         private System.Windows.Forms.TextBox textBoxTenHocSinh;
         private DevExpress.XtraEditors.RadioGroup radioGroupGioiTinh;
-        private DevExpress.XtraEditors.TextEdit textEditNamSinhDen;
-        private DevExpress.XtraEditors.TextEdit textEditNamSinhTu;
         private DevExpress.XtraEditors.TextEdit textEditDiaChi;
         private DevExpress.XtraEditors.TextEdit textEditEmail;
         private DevExpress.XtraEditors.TextEdit textEditMaHocSinh;
@@ -775,6 +787,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnLopHocHT;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnGVCN;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumnMaLop;
+        private DevExpress.XtraEditors.SpinEdit spinEditNamSinhDen;
+        private DevExpress.XtraEditors.SpinEdit spinEditNamSinhTu;
 
     }
 }
