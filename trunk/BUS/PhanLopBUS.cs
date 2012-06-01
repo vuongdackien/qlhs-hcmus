@@ -12,10 +12,12 @@ namespace QLHS.BUS
     {
         PhanLopDAL _PhanLopDAL;
         HocSinhDAL _HocSinhDAL;
+        NamHocBUS _NamHocBUS;
         public PhanLopBUS()
         {
             _PhanLopDAL = new PhanLopDAL();
             _HocSinhDAL = new HocSinhDAL();
+            _NamHocBUS = new NamHocBUS();
         }
         /// <summary>
         /// Kiểm tra tồn tại  STT của 1 học sinh trong lớp
@@ -90,24 +92,32 @@ namespace QLHS.BUS
            return _PhanLopDAL.CapNhat_STT_Lop(MaLop, arrList);
             
         }
-        /// <summary>
-        /// Kiểm tra mã học sinh trong năm cũ có tồn tại trong năm mới chưa
-        /// </summary>
-        /// <param name="MaHocSinh"></param>
-        /// <param name="MaKhoi"></param>
-        /// <param name="MaNamHoc"></param>
-        /// <returns> bool</returns>
-        public DataTable KT_HocSinh_TonTai_NamHoc(string MaHocSinh, string MaKhoi, string MaNamHoc)
+
+        public bool PhanLop_DSHocSinh_Lop(Dictionary<string,string> ds_hocsinhchuyen, string MaLopMoi)
         {
-            return _PhanLopDAL.KT_HocSinh_TonTai_NamHoc(MaHocSinh, MaKhoi, MaNamHoc);
+            string maKhoi = Util.ObjectUtil.LayMaKhoiLopTuMaLop(MaLopMoi),
+                   maNamHoc = Util.ObjectUtil.LayMaNamHocTuMaLop(MaLopMoi);
+
+            PhanLopDTO phanLopDTO = null;
+            Dictionary<string, string> ds_them = new Dictionary<string,string>();
+            foreach (var item in ds_hocsinhchuyen)
+	        {
+                phanLopDTO = _PhanLopDAL.KT_HocSinh_TonTai_Khoi_NamHoc(item.Key, maKhoi, maNamHoc);
+                if (phanLopDTO == null)
+                {
+                    ds_them.Add(item.Key,item.Value);
+                }
+	        }
+
+            // chuyển lớp cho ds học sinh
+            _PhanLopDAL.ChuyenLop_HocSinh(ds_them, MaLopMoi);
+            // cập nhật stt cho lớp
+            this.CapNhap_STT_HocSinh_Lop(MaLopMoi);
+            return true;
         }
-        public bool ChuyenLop_HocSinh(string MaHocSinh, string MaLop)
+        public bool Xoa_DSHocSinh_Lop(Dictionary<string,string> ds_hocsinhchon, string MaLop)
         {
-            return _PhanLopDAL.ChuyenLop_HocSinh(MaHocSinh, MaLop);
-        }
-        public bool XoaHocSinh_Lop(string MaHocSinh, string MaLop)
-        {
-            return _PhanLopDAL.XoaHocSinh_Lop(MaHocSinh, MaLop);
+            return _PhanLopDAL.Xoa_DSHocSinh_Lop(ds_hocsinhchon, MaLop);
         }
         public DataTable LayDTLop_MaNam_MaKhoi_KhacMaLop(string MaNamHoc, string MaKhoi, string MaLop)
         {
@@ -137,9 +147,6 @@ namespace QLHS.BUS
         {
             return _PhanLopDAL.KiemTraHSTonTaiTrongLop_ChuyenLop(MaHocSinh,MaLop);
         }
-        public int DemSiSoLop_HocSinhDangHoc(string MaLop)
-        {
-            return _PhanLopDAL.DemSiSoLop_HocSinhDangHoc(MaLop);
-        }
+
     }
 }

@@ -14,8 +14,8 @@ namespace QLHS.DAL
         /// <param name="MaHocSinh"></param>
         /// <param name="MaKhoi"></param>
         /// <param name="MaNamHoc"></param>
-        /// <returns> bool</returns>
-        public DataTable KT_HocSinh_TonTai_NamHoc(string MaHocSinh,string MaKhoi,string MaNamHoc)
+        /// <returns>PhanLopDTO</returns>
+        public PhanLopDTO KT_HocSinh_TonTai_Khoi_NamHoc(string MaHocSinh,string MaKhoi,string MaNamHoc)
         {
             string khoi="";
             if (MaKhoi == "10")
@@ -31,9 +31,26 @@ namespace QLHS.DAL
                 else
                     khoi = khoi + "(12)";
             }
-            string sql = "select a.MaHocSinh,b.TenLop from PHANLOP as a, LOP as b where a.MaLop=b.MaLop and a.MaHocSinh='"+MaHocSinh+"' and b.MaNamHoc= '" + MaNamHoc + "' and b.MaKhoiLop in "+khoi+"  ";
-            return GetTable(sql);
-            
+            string sql = "select a.STT, a.MaHocSinh,b.TenLop, b.MaLop, b.TenLop, h.TenHocSinh from PHANLOP as a, LOP as b, HOCSINH h "
+                        + "where a.MaLop=b.MaLop and h.MaHocSinh = a.MaHocSinh "
+                        + "and a.MaHocSinh='"+MaHocSinh+"' and b.MaNamHoc= '"
+                        + MaNamHoc + "' and b.MaKhoiLop in "+khoi+"  ";
+            OpenConnect();
+            var dr = ExecuteReader(sql);
+            PhanLopDTO phanlop = null;
+            while (dr.Read())
+            {
+                phanlop = new PhanLopDTO();
+                phanlop.MaHocSinh = Convert.ToString(dr["MaHocSinh"]);
+                phanlop.TenHocSinh = Convert.ToString(dr["TenHocSinh"]);
+                phanlop.STT = Convert.ToInt32(dr["STT"]);
+                phanlop.MaLop = Convert.ToString(dr["MaLop"]);
+                phanlop.MaLop = Convert.ToString(dr["TenLop"]);
+                break;
+            }
+
+            CloseConnect();
+            return phanlop;
         }
         public DataTable KT_HocSinh_ChuyenLop(string MaHocSinh, string MaLop)
         {
@@ -77,16 +94,7 @@ namespace QLHS.DAL
             string sql = "SELECT count(*) FROM PHANLOP WHERE MaLop = '" + MaLop +"'";
             return Convert.ToInt32(ExecuteScalar(sql));
         }
-        /// <summary>
-        /// Đếm sỉ số của 1 lớp mà các học sinh đang theo học
-        /// </summary>
-        /// <param name="MaLop">String: Mã lớp</param>
-        /// <returns>Int</returns>
-        public int DemSiSoLop_HocSinhDangHoc(string MaLop)
-        {
-            string sql = "SELECT count(*) FROM PHANLOP WHERE MaLop = '" + MaLop + "' and MaHocSinh not in (select MaHocSinh from CHUYENLOP where TuLop ='"+MaLop+"')";
-            return Convert.ToInt32(ExecuteScalar(sql));
-        }
+
         /// <summary>
         /// Cập nhật STT cho cả lớp
         /// </summary>
@@ -102,15 +110,27 @@ namespace QLHS.DAL
             }
             return ExecuteQuery(sql) > 0;
         }
-        public bool ChuyenLop_HocSinh(string MaHocSinh,string MaLop)
+        public bool ChuyenLop_HocSinh(Dictionary<string,string> ds_hocsinh,string MaLopMoi)
         {
-            int Stt = Lay_STT_TiepTheo(MaLop);
-            string sql = "INSERT INTO PHANLOP(Stt,MaHocSinh,MaLop) VALUES("+Stt+",'"+MaHocSinh+"','"+MaLop+"') ";
+            if (ds_hocsinh.Count == 0)
+                return false;
+
+            string sql = "INSERT INTO PHANLOP(STT,MaHocSinh,MaLop) ";
+            string union = "";
+            foreach (var item in ds_hocsinh)
+            {
+                sql += union + "\n SELECT " + 0 + ",'" + item.Key + "','" + MaLopMoi + "' ";
+                union = " UNION ";
+            }
             return ExecuteQuery(sql) > 0;
         }
-        public bool XoaHocSinh_Lop(string MaHocSinh, string MaLop)
+        public bool Xoa_DSHocSinh_Lop(Dictionary<string, string> ds_hocsinhchon, string MaLop)
         {
-            string sql = "DELETE FROM PHANLOP WHERE MaHocSinh='"+MaHocSinh+"' AND MaLop='"+MaLop+"' ";
+            string sql = "";
+            foreach (var item in ds_hocsinhchon)
+            {
+                 sql += "\nDELETE FROM PHANLOP WHERE MaHocSinh='" + item.Key + "' AND MaLop='" + MaLop + "' ";
+            }
             return ExecuteQuery(sql) > 0;
         }
 

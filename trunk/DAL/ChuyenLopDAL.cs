@@ -12,7 +12,7 @@ namespace QLHS.DAL
         public bool ChuyenBangDiem(string MaHocSinh,string MaLop_old,string MaLop_new)
         {
             string sql = "update BANGDIEM SET MaLop='"+MaLop_new+"' where MaHocSinh='"+MaHocSinh+"'"
-                +"and MaLop='"+MaLop_old+"'";
+                +" and MaLop='"+MaLop_old+"'";
             return ExecuteQuery(sql) > 0;
         }
         public bool LuuChuyenLop(ChuyenLopDTO cl)
