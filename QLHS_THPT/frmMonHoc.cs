@@ -14,6 +14,8 @@ namespace QLHS
     public partial class frmMonHoc : DevExpress.XtraEditors.XtraForm
     {
         private MonHocBUS _monHocBUS;
+        private int _current_row_edit;
+
         public frmMonHoc()
         {
             InitializeComponent();
@@ -29,8 +31,11 @@ namespace QLHS
             if (!editing)
             {
                 if (gridViewMonHoc.RowCount > 0)
+                {
+                    gridViewMonHoc.FocusedRowHandle = _current_row_edit;
                     gridViewMonHoc_FocusedRowChanged(this,
-                        new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs(0, 0));
+                        new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs(0, _current_row_edit));
+                }
                 else
                 {
                     _Reset_Control();
@@ -70,15 +75,6 @@ namespace QLHS
         private void _Load_GridView()
         {
             gridcontrolMonHoc.DataSource = _monHocBUS.LayDT_DanhSach_MonHoc(false);
-            //gridViewMonHoc.Columns.Add(
-            //new DevExpress.XtraGrid.Columns.GridColumn()
-            //{
-            //    Caption = "Selected",
-            //    ColumnEdit = new RepositoryItemCheckEdit() { },
-            //    VisibleIndex = 0,
-            //    UnboundType = DevExpress.Data.UnboundColumnType.Boolean
-            //}
-            //);
             RepositoryItemCheckEdit fCheckEdit = new RepositoryItemCheckEdit();
             fCheckEdit.ValueChecked = 1;
             fCheckEdit.ValueUnchecked = 0;
@@ -95,6 +91,8 @@ namespace QLHS
 
         private void simpleButtonLuu_Click(object sender, EventArgs e)
         {
+            _current_row_edit = gridViewMonHoc.FocusedRowHandle;
+
             // Kiem tra mon hoc da ton tai
             for (int i = 0; i < gridViewMonHoc.RowCount; i++)
             {
@@ -109,6 +107,22 @@ namespace QLHS
                 }
             }
 
+          
+
+            // Sửa
+            if (spinEditHeSo.Value < 1 || spinEditHeSo.Value > 2)
+            {
+                Utilities.MessageboxUtilities.MessageError("Hệ số của môn học "
+                                                    + textEditTenMonHoc + " chỉ là 1 hoặc 2!");
+                return;
+            }
+            if (spinEditSoTiet.Value < 0 || spinEditSoTiet.Value >= 120)
+            {
+                Utilities.MessageboxUtilities.MessageError("Số tiết của môn học không hợp lệ " +
+                                               "(không thể nhỏ hơn 15 và quá 120)!");
+                return;
+            }
+
             MonHocDTO _monHocDTO = new MonHocDTO()
             {
                 MaMonHoc = textEditMaMonHoc.Text,
@@ -118,19 +132,9 @@ namespace QLHS
                 TrangThai = Convert.ToInt32(radioGroupTrangThai.SelectedIndex)
             };
 
-            // Sửa
-            if (_monHocDTO.HeSo < 1 || _monHocDTO.HeSo > 2)
-                    Utilities.MessageboxUtilities.MessageError("Hệ số của môn học "
-                                                        + _monHocDTO.TenMonHoc + " chỉ là 1 hoặc 2!");
-            if (_monHocDTO.SoTiet < 0)
-                Utilities.MessageboxUtilities.MessageError("Số tiết của môn học "
-                                                + _monHocDTO.TenMonHoc + " không được nhỏ hơn 0!");
-            else
-            {
-                _monHocBUS.CapNhat_MonHoc(_monHocDTO);
-                Utilities.MessageboxUtilities.MessageSuccess("Đã cập nhật môn học: " + _monHocDTO.TenMonHoc + " thành công!");
-                _Load_GridView();
-            }
+            _monHocBUS.CapNhat_MonHoc(_monHocDTO);
+            Utilities.MessageboxUtilities.MessageSuccess("Đã cập nhật môn học: " + _monHocDTO.TenMonHoc + " thành công!");
+            _Load_GridView();
         }
     }
 }

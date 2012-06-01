@@ -98,5 +98,14 @@ namespace QLHS.BUS
         {
             return _NamHocDAL.XoaNamHoc(maNamHoc);
         }
+         /// <summary>
+        /// Lấy tên năm học
+        /// </summary>
+        /// <param name="MaNamHoc">String: Mã năm học</param>
+        /// <returns></returns>
+        public string LayTenNamHoc(string MaNamHoc)
+        {
+            return _NamHocDAL.LayTenNamHoc(MaNamHoc);
+        }
     }
 }

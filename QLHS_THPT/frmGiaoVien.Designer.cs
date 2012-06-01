@@ -87,9 +87,9 @@
             this.simpleButtonLuu.Image = global::QLHS.Properties.Resources.them_small;
             this.simpleButtonLuu.Location = new System.Drawing.Point(187, 16);
             this.simpleButtonLuu.Name = "simpleButtonLuu";
-            this.simpleButtonLuu.Size = new System.Drawing.Size(111, 35);
+            this.simpleButtonLuu.Size = new System.Drawing.Size(116, 35);
             this.simpleButtonLuu.TabIndex = 5;
-            this.simpleButtonLuu.Text = "Lưu (Enter)";
+            this.simpleButtonLuu.Text = "Lưu hồ sơ (Enter)";
             this.simpleButtonLuu.Click += new System.EventHandler(this.simpleButtonLuuGiaoVien_Click);
             // 
             // panelControl1
@@ -175,7 +175,6 @@
             this.textEditTenGiaoVien.Name = "textEditTenGiaoVien";
             this.textEditTenGiaoVien.Size = new System.Drawing.Size(147, 20);
             this.textEditTenGiaoVien.TabIndex = 2;
-            this.textEditTenGiaoVien.EditValueChanged += new System.EventHandler(this.textEditTenGiaoVien_EditValueChanged);
             // 
             // gridcontrolGiaoVien
             // 

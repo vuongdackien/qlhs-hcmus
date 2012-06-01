@@ -87,9 +87,9 @@
             this.simpleButtonLuu.Image = global::QLHS.Properties.Resources.them_small;
             this.simpleButtonLuu.Location = new System.Drawing.Point(59, 18);
             this.simpleButtonLuu.Name = "simpleButtonLuu";
-            this.simpleButtonLuu.Size = new System.Drawing.Size(111, 35);
+            this.simpleButtonLuu.Size = new System.Drawing.Size(118, 35);
             this.simpleButtonLuu.TabIndex = 7;
-            this.simpleButtonLuu.Text = "Lưu (Enter)";
+            this.simpleButtonLuu.Text = "Cập nhật (Enter)";
             this.simpleButtonLuu.Click += new System.EventHandler(this.simpleButtonLuu_Click);
             // 
             // simpleButtonDong
@@ -97,7 +97,7 @@
             this.simpleButtonDong.Image = global::QLHS.Properties.Resources.thoat_small;
             this.simpleButtonDong.Location = new System.Drawing.Point(205, 18);
             this.simpleButtonDong.Name = "simpleButtonDong";
-            this.simpleButtonDong.Size = new System.Drawing.Size(104, 35);
+            this.simpleButtonDong.Size = new System.Drawing.Size(116, 35);
             this.simpleButtonDong.TabIndex = 8;
             this.simpleButtonDong.Text = "Đóng (Alt+&X)";
             this.simpleButtonDong.Click += new System.EventHandler(this.simpleButtonDong_Click);
@@ -153,7 +153,7 @@
             // spinEditHeSo
             // 
             this.spinEditHeSo.EditValue = new decimal(new int[] {
-            0,
+            1,
             0,
             0,
             0});
@@ -161,13 +161,25 @@
             this.spinEditHeSo.Name = "spinEditHeSo";
             this.spinEditHeSo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.spinEditHeSo.Properties.Mask.EditMask = "n0";
+            this.spinEditHeSo.Properties.MaxLength = 1;
+            this.spinEditHeSo.Properties.MaxValue = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.spinEditHeSo.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.spinEditHeSo.Size = new System.Drawing.Size(100, 20);
             this.spinEditHeSo.TabIndex = 4;
             // 
             // spinEditSoTiet
             // 
             this.spinEditSoTiet.EditValue = new decimal(new int[] {
-            0,
+            15,
             0,
             0,
             0});
@@ -175,6 +187,18 @@
             this.spinEditSoTiet.Name = "spinEditSoTiet";
             this.spinEditSoTiet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.spinEditSoTiet.Properties.Mask.EditMask = "n0";
+            this.spinEditSoTiet.Properties.MaxLength = 3;
+            this.spinEditSoTiet.Properties.MaxValue = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.spinEditSoTiet.Properties.MinValue = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
             this.spinEditSoTiet.Size = new System.Drawing.Size(100, 20);
             this.spinEditSoTiet.TabIndex = 3;
             // 
@@ -260,6 +284,7 @@
             this.repositoryItemTextEdit1});
             this.gridcontrolMonHoc.Size = new System.Drawing.Size(507, 365);
             this.gridcontrolMonHoc.TabIndex = 6;
+            this.gridcontrolMonHoc.TabStop = false;
             this.gridcontrolMonHoc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMonHoc});
             // 
@@ -378,6 +403,7 @@
             // 
             // frmMonHoc
             // 
+            this.AcceptButton = this.simpleButtonLuu;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 592);
