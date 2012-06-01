@@ -565,6 +565,7 @@
             // 
             // frmHocSinh
             // 
+            this.AcceptButton = this.simpleButtonGhiDuLieu;
             this.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
             this.Appearance.ForeColor = System.Drawing.Color.Transparent;
             this.Appearance.Options.UseFont = true;
