@@ -14,17 +14,15 @@ namespace QLHS.BUS
         {
             return _ChuyenLopDAL.ChuyenBangDiem(MaHocSinh, MaLop_old, MaLop_new);
         }
-        public bool LuuChuyenLop(ChuyenLopDTO cl)
+        public bool ChuyenLop_HocSinh_Lop(ChuyenLopDTO cl)
         {
+            if (cl.ChuyenBangDiem == "true")
+                _ChuyenLopDAL.ChuyenBangDiem(cl.MaHocSinh, cl.TuLop, cl.DenLop);
             return _ChuyenLopDAL.LuuChuyenLop(cl);
         }
         public bool KTHocSinhThuocLop_DuocChuyenTuLop(string MaHocSinh, string MaLopMoi, string MaLopCu)
         {
             return _ChuyenLopDAL.KTHocSinhThuocLop_DuocChuyenTuLop(MaHocSinh, MaLopMoi, MaLopCu);
-        }
-        public bool KT_HocSinhCo_BangDiem(string MaHocSinh, string MaLop)
-        {
-            return _ChuyenLopDAL.KT_HocSinhCo_BangDiem(MaHocSinh, MaLop);
         }
         public bool XoaChuyenLop(string MaHocSinh, string TuLop, string DenLop)
         {
