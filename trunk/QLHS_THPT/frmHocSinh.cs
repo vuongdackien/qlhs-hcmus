@@ -17,6 +17,9 @@ namespace QLHS
         private QuyDinhBUS _quyDinhBUS;
         private PhanLopBUS _phanLopBUS;
         private HocSinhDTO _hocSinhDTO;
+        private bool _is_add_button;
+        private bool _is_delete_button;
+        private int _current_row_edit;
 
         // Access from frmSearchHocSinh
         public string MaLop { get; set; }
@@ -31,7 +34,10 @@ namespace QLHS
             _hocSinhBUS = new HocSinhBUS();
             _quyDinhBUS = new QuyDinhBUS();
             _phanLopBUS = new PhanLopBUS();
+            _is_add_button = true;
+            _is_delete_button = true;
         }
+
         /// <summary>
         /// Hiển thị lại form học sinh khi có yêu cầu từ form tìm kiếm
         /// </summary>
@@ -90,31 +96,6 @@ namespace QLHS
             this.HienThiHoSoHocSinh(gridViewDSHocSinh.GetRowCellValue(0, "MaHocSinh"));
             
         }
-        private void comboBoxEditNamHoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditKhoi) ||
-                Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditNamHoc))
-                return;
-            this.LoadComboboxLopHoc(sender, e);
-        }
-
-        private void comboBoxEditKhoi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditNamHoc))
-                return;
-            this.LoadComboboxLopHoc(sender, e);
-        }
-
-        private void comboBoxEditLop_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditLop))
-            {
-                gridControlDSHocSinh.DataSource = null;
-                return;
-            }
-            this.LoadLai_GridControl_HocSinh();
-        }
-      
 
         /// <summary>
         /// Hiển thị chi tiết hồ sơ học sinh
@@ -140,9 +121,80 @@ namespace QLHS
             textEditNoiSinh.Text = _hocSinhDTO.NoiSinh;
             textEditDiaChi.Text = _hocSinhDTO.DiaChi;
             textEditEmail.Text = _hocSinhDTO.Email;
-            
+
+        }
+        /// <summary>
+        /// Ẩn hiện các control cho thao tác thêm/không thêm
+        /// </summary>
+        /// <param name="is_adding">is_adding: Thêm/Không thêm</param>
+        public void _Diable_Control(bool is_adding)
+        {
+            simpleButtonDong.Enabled = !is_adding;
+            gridControlDSHocSinh.Enabled = !is_adding;
+            comboBoxEditNamHoc.Enabled = !is_adding;
+            comboBoxEditKhoi.Enabled = !is_adding;
+            comboBoxEditLop.Enabled = !is_adding;
+            simpleButtonSXLaiSTT.Enabled = !is_adding;
+            checkEditChuaPhanLop.Enabled = !is_adding;
+
+            _is_add_button = !is_adding;
+            _is_delete_button = !is_adding;
+
+            simpleButtonThemMoi.Text = is_adding ? "Không nhập (Alt+&N)" : "Thêm mới (Alt+&N)";
+            simpleButtonXoa.Text = is_adding ? "Nhập lại (Alt+&D)" : "Xóa (Alt+&D)";
+            simpleButtonGhiDuLieu.Text = is_adding ? "Lưu hồ sơ (Enter)" : "Cập nhật (Enter)";
+            if (!is_adding)
+            {
+                if (gridViewDSHocSinh.RowCount > 0)
+                {
+                    gridViewDSHocSinh.FocusedRowHandle = _current_row_edit;
+                    gridViewDSHocSinh_FocusedRowChanged(this,
+                        new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs(0, _current_row_edit));
+                }
+                else
+                {
+                    _Reset_Control();
+                }
+            }
+        }
+        /// <summary>
+        /// Xóa dữ liệu control, chuẩn bị thêm mới hồ sơ
+        /// </summary>
+        private void _Reset_Control()
+        {
+            textEditmaHocSinh.Text = "";
+            textEditTenHocSinh.Text = "";
+            textEditDiaChi.Text = "";
+            textEditEmail.Text = "";
+            textEditNoiSinh.Text = "";
+            textEditTenHocSinh.Focus();
         }
 
+        private void comboBoxEditNamHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditKhoi) ||
+                Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditNamHoc))
+                return;
+            this.LoadComboboxLopHoc(sender, e);
+        }
+
+        private void comboBoxEditKhoi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditNamHoc))
+                return;
+            this.LoadComboboxLopHoc(sender, e);
+        }
+
+        private void comboBoxEditLop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Utilities.ComboboxEditUtilities.CheckSelectedNull(comboBoxEditLop))
+            {
+                gridControlDSHocSinh.DataSource = null;
+                return;
+            }
+            this.LoadLai_GridControl_HocSinh();
+        }
+      
         private void gridViewDSHocSinh_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (e.FocusedRowHandle < 0)
@@ -184,14 +236,19 @@ namespace QLHS
         }
         private void simpleButtonGhiDuLieu_Click(object sender, EventArgs e)
         {
+            if (_is_add_button)
+                _current_row_edit = gridViewDSHocSinh.FocusedRowHandle;
+            else
+                _current_row_edit = 0;
+
             HocSinhDTO hocSinhDTO  = new HocSinhDTO();
             
             hocSinhDTO.NgaySinh = Convert.ToDateTime(dateEditNgaySinh.EditValue);
             hocSinhDTO.MaHocSinh = textEditmaHocSinh.Text;
-            hocSinhDTO.TenHocSinh = textEditTenHocSinh.Text;
+            hocSinhDTO.TenHocSinh = textEditTenHocSinh.Text.Replace("'","''");
             hocSinhDTO.GioiTinh = radioGroupGioiTinh.SelectedIndex;
-            hocSinhDTO.NoiSinh = textEditNoiSinh.Text;
-            hocSinhDTO.DiaChi = textEditDiaChi.Text;
+            hocSinhDTO.NoiSinh = textEditNoiSinh.Text.Replace("'", "''");
+            hocSinhDTO.DiaChi = textEditDiaChi.Text.Replace("'", "''");
             hocSinhDTO.Email = textEditEmail.Text;
             string maLop = null;
             // neu co phan lop
@@ -203,6 +260,19 @@ namespace QLHS
             if (hocSinhDTO.TenHocSinh.Length < 3 || !hocSinhDTO.TenHocSinh.Contains(" "))
             {
                 Utilities.MessageboxUtilities.MessageError("Họ tên học sinh không hợp lệ (không chứa khoảng trắng) hoặc nhỏ hơn 3 ký tự!");
+                textEditTenHocSinh.Focus();
+                return;
+            }
+            if (hocSinhDTO.NoiSinh.Length < 3)
+            {
+                Utilities.MessageboxUtilities.MessageError("Nơi sinh không hợp lệ (nhỏ hơn 3 ký tự)!");
+                textEditNoiSinh.Focus();
+                return;
+            }
+            if (hocSinhDTO.DiaChi.Length < 3)
+            {
+                Utilities.MessageboxUtilities.MessageError("Địa chỉ không hợp lệ (nhỏ hơn 3 ký tự)!");
+                textEditDiaChi.Focus();
                 return;
             }
             try
@@ -216,10 +286,16 @@ namespace QLHS
                 return;
             }
             this.LoadLai_GridControl_HocSinh(checkEditChuaPhanLop.Checked);
-            gridViewDSHocSinh.SelectRow(0);
+            this._Diable_Control(is_adding: false);
         }
         private void simpleButtonXoa_Click(object sender, EventArgs e)
         {
+            if(!_is_delete_button)
+            {
+                _Reset_Control();
+                return;
+            }
+
             if(textEditmaHocSinh.Text == "")
             {
                 Utilities.MessageboxUtilities.MessageError("Bạn chưa chọn học sinh để thực hiện xóa!");
@@ -234,8 +310,35 @@ namespace QLHS
             LoadLai_GridControl_HocSinh(checkEditChuaPhanLop.Checked);
             
         }
+      
         private void simpleButtonThemMoi_Click(object sender, EventArgs e)
         {
+            // Không thêm
+            if (!_is_add_button)
+            {
+                this._Diable_Control(is_adding: false);
+                return;
+            }
+            // Thêm
+            string maNamHocHT = _quyDinhBUS.LayMaNamHoc_HienTai();
+            string maNamHoc = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditNamHoc);
+            string tenNamHT = _namHocBUS.LayTenNamHoc(maNamHocHT);
+
+            if (maNamHoc != maNamHocHT)
+            {
+                if (Utilities.MessageboxUtilities.MessageQuestionYesNo("Chương trình chỉ được phép tiếp nhận học sinh trong năm " + tenNamHT
+                                                            + "\nĐể thực hiện chức năng này, bạn có muốn di chuyển đến năm " + tenNamHT + " hay không?")
+                                                    == System.Windows.Forms.DialogResult.Yes)
+                {
+                    string maKhoiHT = Utilities.ComboboxEditUtilities.GetValueItem(comboBoxEditKhoi);
+                    Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditNamHoc, maNamHocHT);
+                    Utilities.ComboboxEditUtilities.SelectedItem(comboBoxEditKhoi, maKhoiHT);
+                    Utilities.MessageboxUtilities.MessageInfo("Đã chuyển đến năm " + tenNamHT
+                                                    + ", bạn hãy chọn lớp để thực hiện tiếp nhận hồ sơ mới!");
+                }
+                  
+                return;
+            }
             // Neu co phan lop
             if (!checkEditChuaPhanLop.Checked)
             {
@@ -250,12 +353,9 @@ namespace QLHS
                 }
                 spinEditSTTSoDiem.Value = _phanLopBUS.Lay_STT_TiepTheo(MaLop);
             }
-            textEditmaHocSinh.Text = "";
-            textEditTenHocSinh.Text = "";
-            textEditDiaChi.Text = "";
-            textEditEmail.Text = "";
-            textEditNoiSinh.Text = "";
-            textEditTenHocSinh.Focus();
+            this._Diable_Control(is_adding: true);
+            this._Reset_Control();
+            
         }
 
         private void dateEditNgaySinh_InvalidValue(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
@@ -266,11 +366,6 @@ namespace QLHS
         private void textEditEmail_InvalidValue(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
         {
             e.ErrorText = "Email không hợp lệ! (Ấn ESC để trở lại)";
-        }
-
-        private void simpleButtonChuyenLop_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void simpleButtonSXLaiSTT_Click(object sender, EventArgs e)

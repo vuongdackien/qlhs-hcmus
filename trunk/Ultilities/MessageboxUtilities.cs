@@ -29,36 +29,24 @@ namespace Utilities
 
     public class MessageboxUtilities
     {
-
-        public static DialogResult MessageError(OleDbException ex)
-        {
-            return XtraMessageBox.Show(CustomErrorSQL.GetMessageError(ex),
-                "LỖI", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
         public static DialogResult MessageError(Exception ex)
         {
             return XtraMessageBox.Show(ex.Message,
                 "LỖI", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-        public static DialogResult MessageError()
-        {
-            
-            return XtraMessageBox.Show("Có lỗi trong quá trình thực hiện", "LỖI",
-                                           MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         public static DialogResult MessageError(string Message)
         {
             return XtraMessageBox.Show("Lỗi: " + Message, "LỖI",
                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        public static DialogResult MessageSuccess()
-        {
-            return XtraMessageBox.Show("Thực hiện thành công", "THÀNH CÔNG",
-                                       MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
         public static DialogResult MessageSuccess(string Message)
         {
             return XtraMessageBox.Show(Message, "THÀNH CÔNG",
+                                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        public static DialogResult MessageInfo(string Message)
+        {
+            return XtraMessageBox.Show(Message, "THÔNG TIN",
                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         public static DialogResult MessageQuestionYesNo(string Message)

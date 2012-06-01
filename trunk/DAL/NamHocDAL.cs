@@ -103,5 +103,14 @@ namespace QLHS.DAL
             lopDAL.Xoa_Lop_Nam(maNamHoc);
             return ExecuteQuery("DELETE FROM NAMHOC WHERE MaNamHoc = '"+maNamHoc+"'") > 0;
         }
+        /// <summary>
+        /// Lấy tên năm học
+        /// </summary>
+        /// <param name="MaNamHoc">String: Mã năm học</param>
+        /// <returns></returns>
+        public string LayTenNamHoc(string MaNamHoc)
+        {
+            return Convert.ToString(ExecuteScalar("SELECT TenNamHoc FROM NAMHOC WHERE MaNamHoc = '"+MaNamHoc+"'"));
+        }
     }
 }

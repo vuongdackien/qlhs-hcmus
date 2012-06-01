@@ -132,6 +132,8 @@
        hồ sơ học sinh và hồ sơ phân lớp.
 
   - Ấn nút "Thêm mới" để tiếp nhận mới hồ sơ học sinh.
+  Lưu ý: Chương trình chỉ cho phép tiếp nhận hồ sơ mới trong năm học hiện tại
+              theo như quy định.
 
   - Ấn nút "Lưu" để cập nhật thông tin hồ sơ mà bạn đã chỉnh sửa.
   Lưu ý: 

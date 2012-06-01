@@ -17,7 +17,7 @@ namespace QLHS
         private GiaoVienBUS _giaoVienBUS;
         private bool _is_add_button;
         private bool _is_delete_button;
-
+        private int _current_row_edit;
         public frmGiaoVien()
         {
             InitializeComponent();
@@ -27,21 +27,25 @@ namespace QLHS
             
         }
 
-        public void _Diable_Control(bool editing)
+        public void _Diable_Control(bool is_adding)
         {
-            simpleButtonDong.Enabled = !editing;
-            gridcontrolGiaoVien.Enabled = !editing;
+            simpleButtonDong.Enabled = !is_adding;
+            gridcontrolGiaoVien.Enabled = !is_adding;
 
-            _is_add_button = !editing;
-            _is_delete_button = !editing;
+            _is_add_button = !is_adding;
+            _is_delete_button = !is_adding;
 
-            simpleButtonThem.Text = editing ? "Không nhập (Alt+&N)" : "Thêm mới (Alt+&N)";
-            simpleButtonXoa.Text = editing ? "Nhập lại (Alt+&D)" : "Xóa (Alt+&D)";
-            if (!editing)
+            simpleButtonThem.Text = is_adding ? "Không nhập (Alt+&N)" : "Thêm mới (Alt+&N)";
+            simpleButtonXoa.Text = is_adding ? "Nhập lại (Alt+&D)" : "Xóa (Alt+&D)";
+            simpleButtonLuu.Text = is_adding ? "Lưu hồ sơ (Enter)" : "Cập nhật (Enter)";
+            if (!is_adding)
             {
                 if (gridViewGiaoVien.RowCount > 0)
+                {
+                    gridViewGiaoVien.FocusedRowHandle = _current_row_edit;
                     gridViewGiaoVien_FocusedRowChanged(this,
-                        new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs(0, 0));
+                        new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs(0, _current_row_edit));
+                }
                 else
                 {
                     _Reset_Control();
@@ -52,19 +56,18 @@ namespace QLHS
         {
             textEditMaGiaoVien.Text = "";
             textEditTenGiaoVien.Text = "";
-            simpleButtonLuu.Enabled = false;
         }
         private void simpleButtonThemGiaoVien_Click(object sender, EventArgs e)
         {
             if (_is_add_button)
             {
-                _Diable_Control(editing:true);
+                _Diable_Control(is_adding:true);
                 _Reset_Control();
             }
             else
             {
                 // Bỏ ẩn control
-                _Diable_Control(editing:false);
+                _Diable_Control(is_adding:false);
             } 
         }
 
@@ -77,8 +80,7 @@ namespace QLHS
         private void _Load_GridView()
         {
             gridcontrolGiaoVien.DataSource = _giaoVienBUS.LayDT_DanhSachGiaoVien();
-            this._Diable_Control(editing: false);
-            simpleButtonLuu.Enabled = false;
+            this._Diable_Control(is_adding: false);
         }
 
       
@@ -116,9 +118,15 @@ namespace QLHS
 
         private void simpleButtonLuuGiaoVien_Click(object sender, EventArgs e)
         {
+            if (_is_add_button)
+                _current_row_edit = gridViewGiaoVien.FocusedRowHandle;
+            else
+                _current_row_edit = 0;
+
             if (textEditTenGiaoVien.Text.Length <= 3 || !textEditTenGiaoVien.Text.Contains(" "))
             {
                 Utilities.MessageboxUtilities.MessageError("Tên giáo viên không hợp lệ hoặc nhỏ hơn 3 ký tự!");
+                textEditTenGiaoVien.Focus();
                 return; 
             }
 
@@ -139,8 +147,8 @@ namespace QLHS
                 if (_giaoVienBUS.Them_GiaoVien(giaoVienDTO))
                     Utilities.MessageboxUtilities.MessageSuccess("Đã tạo hồ sơ giáo viên: " + giaoVienDTO.TenGiaoVien + " thành công!");
             }
-            simpleButtonLuu.Enabled = false;
             _Load_GridView();
+            this._Diable_Control(is_adding: false); 
         }
 
         private void gridViewGiaoVien_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -150,11 +158,6 @@ namespace QLHS
                 return;
             textEditMaGiaoVien.Text = gridViewGiaoVien.GetRowCellValue(gridViewGiaoVien.FocusedRowHandle, "MaGiaoVien").ToString();
             textEditTenGiaoVien.Text = gridViewGiaoVien.GetRowCellValue(gridViewGiaoVien.FocusedRowHandle, "TenGiaoVien").ToString();
-        }
-
-        private void textEditTenGiaoVien_EditValueChanged(object sender, EventArgs e)
-        {
-            simpleButtonLuu.Enabled = true;
         }
     }
 }

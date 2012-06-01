@@ -151,7 +151,7 @@
             this.simpleButtonGhiDuLieu.Name = "simpleButtonGhiDuLieu";
             this.simpleButtonGhiDuLieu.Size = new System.Drawing.Size(135, 38);
             this.simpleButtonGhiDuLieu.TabIndex = 15;
-            this.simpleButtonGhiDuLieu.Text = "Ghi dữ liệu (Enter)";
+            this.simpleButtonGhiDuLieu.Text = "Sửa hồ sơ (Enter)";
             this.simpleButtonGhiDuLieu.Click += new System.EventHandler(this.simpleButtonGhiDuLieu_Click);
             // 
             // simpleButtonThemMoi
