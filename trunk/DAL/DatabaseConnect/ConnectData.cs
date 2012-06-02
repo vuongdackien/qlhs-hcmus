@@ -22,7 +22,7 @@ namespace QLHS.DAL
                 if (DatabaseConnectionManagement.frmAddConnection.Show() == System.Windows.Forms.DialogResult.OK)
                     _strConnect = DatabaseConnectionManagement.Properties.Settings.Default.ConnectString;
                 else
-                    System.Windows.Forms.Application.Exit();
+                    System.Environment.Exit(1);
             }
 
             Connect();
