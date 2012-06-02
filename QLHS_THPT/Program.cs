@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Data.Common;
+using System.Threading;
 
 namespace QLHS
 {
@@ -19,7 +20,14 @@ namespace QLHS
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.Skins.SkinManager.EnableMdiFormSkins();
 
-            Application.Run(new frmMain());
+            bool firstInstance;
+            using (Mutex mutex = new Mutex(true, "Instance Program", out firstInstance))
+            {
+                if (firstInstance)
+                    Application.Run(new frmMain());
+                else
+                     Util.MsgboxUtil.Error("Chương trình đang chạy!");
+            }
         }
     }
 }
