@@ -10,7 +10,7 @@
   <Class Name="QLHS.BUS.ChuyenLopBUS">
     <Position X="13.5" Y="10.25" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAIAABAAAAAAAAAIAQAAAACAAAAAAAAAAgA=</HashCode>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAIAgAAAAGAAAAAAIAAAAA=</HashCode>
       <FileName>ChuyenLopBUS.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -52,7 +52,7 @@
   <Class Name="QLHS.BUS.LopBUS">
     <Position X="32" Y="10.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAgBAIAAAAQAAAAgAAAAAAAAAAAAAAAAEACAAAAIAAA=</HashCode>
+      <HashCode>AAgBAAAAAAQAAAAgAAAAAAAAAAAAAAAAEACAAAAIAAI=</HashCode>
       <FileName>LopBUS.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -66,7 +66,7 @@
   <Class Name="QLHS.BUS.NamHocBUS">
     <Position X="19.75" Y="10.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>IAAAQAQACAAAAAAAAAEAAAAAAAAAAAAAIAAgEIAAAAA=</HashCode>
+      <HashCode>AAAAQAQACAAAAAAAAAEAAAAAAAAAAAAAIAAgGIAAAAA=</HashCode>
       <FileName>NamHocBUS.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -80,7 +80,7 @@
   <Class Name="QLHS.BUS.PhanLopBUS">
     <Position X="35" Y="10.25" Width="3" />
     <TypeIdentifier>
-      <HashCode>AwAAAAAAAAQAAAABAAAAgAAQAEEIAEAAAAAAIBAAAAI=</HashCode>
+      <HashCode>AwAAAAAAAAQAAAAAAAAAgAABEEAIAEAAAAAAIBAAAAM=</HashCode>
       <FileName>PhanLopBUS.cs</FileName>
     </TypeIdentifier>
   </Class>

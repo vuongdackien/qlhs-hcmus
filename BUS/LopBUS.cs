@@ -9,11 +9,11 @@ namespace QLHS.BUS
 {
     public class LopBUS
     {
-        LopDAL _LopDAL;
+        LopDAL _lopDAL;
          
         public LopBUS()
         {
-            _LopDAL = new LopDAL();
+            _lopDAL = new LopDAL();
         }
          /// <summary>
         /// Lấy DataTable Lớp từ mã năm và khối
@@ -23,7 +23,7 @@ namespace QLHS.BUS
         /// <returns>DataTable:</returns>
         public DataTable LayDTLop_MaNam_MaKhoi(string MaNamHoc, string MaKhoi)
         {
-            return _LopDAL.LayDTLop_MaNam_MaKhoi(MaNamHoc, MaKhoi);
+            return _lopDAL.LayDTLop_MaNam_MaKhoi(MaNamHoc, MaKhoi);
         }
         /// <summary>
         /// Lấy list Lớp từ mã năm và khối
@@ -33,7 +33,7 @@ namespace QLHS.BUS
         /// <returns>List:</returns>
         public List<LopDTO> LayListLop_MaNam_MaKhoi(string MaNamHoc, string MaKhoi)
         {
-            return _LopDAL.LayListLop_MaNam_MaKhoi(MaNamHoc, MaKhoi);
+            return _lopDAL.LayListLop_MaNam_MaKhoi(MaNamHoc, MaKhoi);
         }
          /// <summary>
         /// Lấy tên giáo viên chủ nhiệm
@@ -42,7 +42,7 @@ namespace QLHS.BUS
         /// <returns>String: Tên giáo viên</returns>
         public string LayTenGiaoVien_MaLop(string MaLop)
         {
-            return _LopDAL.LayTen_GiaoVien_MaLop(MaLop);
+            return _lopDAL.LayTen_GiaoVien_MaLop(MaLop);
         }
         /// <summary>
         /// Kiểm tra tồn tại mã lớp
@@ -51,7 +51,7 @@ namespace QLHS.BUS
         /// <returns>Bool</returns>
         public bool KiemTraTonTai_MaLop(string MaLop)
         {
-            return _LopDAL.KiemTra_TonTaiMaLop(MaLop);
+            return _lopDAL.KiemTra_TonTaiMaLop(MaLop);
         }
         /// <summary>
         /// Thêm lớp mới
@@ -60,7 +60,7 @@ namespace QLHS.BUS
         /// <returns></returns>
         public bool Them_Lop(LopDTO lop)
         {
-            return _LopDAL.Them_HoSo_Lop(lop);
+            return _lopDAL.Them_HoSo_Lop(lop);
         }
         /// <summary>
         /// Cập nhật giáo viên chủ nhiệm
@@ -69,7 +69,7 @@ namespace QLHS.BUS
         /// <returns></returns>
         public bool CapNhat_GiaoVienCN_Lop(LopDTO lop)
         {
-            return _LopDAL.CapNhat_GiaoVienCN_Lop(lop);
+            return _lopDAL.CapNhat_GiaoVienCN_Lop(lop);
         }
         /// <summary>
         /// Xóa lớp từ mã lớp
@@ -78,7 +78,7 @@ namespace QLHS.BUS
         /// <returns></returns>
         public bool Xoa_Lop(string MaLop)
         {
-            return _LopDAL.Xoa_HoSo_Lop(MaLop);
+            return _lopDAL.Xoa_HoSo_Lop(MaLop);
         }
     }
 }
