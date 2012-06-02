@@ -92,7 +92,7 @@ namespace QLHS
         private void simpleButtonLuu_Click(object sender, EventArgs e)
         {
             _current_row_edit = gridViewMonHoc.FocusedRowHandle;
-
+            /*
             // Kiem tra mon hoc da ton tai
             for (int i = 0; i < gridViewMonHoc.RowCount; i++)
             {
@@ -107,19 +107,21 @@ namespace QLHS
                 }
             }
 
-          
+          */
 
             // Sửa
-            if (spinEditHeSo.Value < 1 || spinEditHeSo.Value > 2)
+            if (spinEditHeSo.Value < 1 || spinEditHeSo.Value > 3)
             {
                 Util.MsgboxUtil.Error("Hệ số của môn học "
-                                                    + textEditTenMonHoc + " chỉ là 1 hoặc 2!");
+                                                    + textEditTenMonHoc.Text + " không được quá 3.");
+                spinEditHeSo.Focus();
                 return;
             }
             if (spinEditSoTiet.Value < 0 || spinEditSoTiet.Value >= 120)
             {
                 Util.MsgboxUtil.Error("Số tiết của môn học không hợp lệ " +
                                                "(không thể nhỏ hơn 15 và quá 120)!");
+                spinEditSoTiet.Focus();
                 return;
             }
 
