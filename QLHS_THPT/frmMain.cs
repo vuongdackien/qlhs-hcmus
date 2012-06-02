@@ -376,5 +376,18 @@ namespace QLHS
         {
             ShowMDIChildForm<frmMonHoc>();
         }
+
+        private void frmMain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                if(Util.MsgboxUtil.YesNo("Bạn có muốn đóng màn hình "+
+                    xtraTabbedMdiManager.SelectedPage.MdiChild.Text+" hay không?")
+                == DialogResult.Yes)
+                {
+                    xtraTabbedMdiManager.SelectedPage.MdiChild.Close();
+                }
+            }
+        }
     }
 }
