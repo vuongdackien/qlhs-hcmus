@@ -37,13 +37,21 @@ namespace QLHS.DAL
         /// <returns>DataTable</returns>
         public DataTable LayDTNamHoc()
         {
-            string sql = "SELECT MaNamHoc, TenNamHoc FROM NAMHOC "
-                        + "WHERE MaNamHoc IN (SELECT GiaTri FROM QUYDINH WHERE Khoa = 'MaNamHocHT') "
-                        + "UNION ALL "
-                        + "Select MaNamHoc, TenNamHoc FROM NAMHOC "
+            DataTable dbNamHoc = 
+                        GetTable( "Select MaNamHoc, TenNamHoc FROM NAMHOC "
                         + "WHERE MaNamHoc NOT IN (SELECT GiaTri FROM QUYDINH WHERE Khoa = 'MaNamHocHT') "
-                        + " ORDER BY MaNamHoc ASC ";
-            return GetTable(sql);
+                        + "ORDER BY MaNamHoc ASC ");
+
+            DataRow drNamHocHienTai = GetFirstDataRow("SELECT MaNamHoc, TenNamHoc FROM NAMHOC "
+                 + "WHERE MaNamHoc IN (SELECT GiaTri FROM QUYDINH WHERE Khoa = 'MaNamHocHT') ");
+
+            DataRow drAdd = dbNamHoc.NewRow();
+            drAdd["MaNamHoc"] = drNamHocHienTai["MaNamHoc"];
+            drAdd["TenNamHoc"] = drNamHocHienTai["TenNamHoc"];
+
+            dbNamHoc.Rows.InsertAt(drAdd, 0);
+
+            return dbNamHoc;
         }
         /// <summary>
         /// Lấy DataTable năm học có mã năm học là tham  số truyền vào
