@@ -164,7 +164,7 @@
             this.spinEditHeSo.Properties.Mask.EditMask = "n0";
             this.spinEditHeSo.Properties.MaxLength = 1;
             this.spinEditHeSo.Properties.MaxValue = new decimal(new int[] {
-            2,
+            10,
             0,
             0,
             0});
@@ -179,7 +179,7 @@
             // spinEditSoTiet
             // 
             this.spinEditSoTiet.EditValue = new decimal(new int[] {
-            15,
+            0,
             0,
             0,
             0});
@@ -189,16 +189,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.spinEditSoTiet.Properties.Mask.EditMask = "n0";
             this.spinEditSoTiet.Properties.MaxLength = 3;
-            this.spinEditSoTiet.Properties.MaxValue = new decimal(new int[] {
-            120,
-            0,
-            0,
-            0});
-            this.spinEditSoTiet.Properties.MinValue = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
             this.spinEditSoTiet.Size = new System.Drawing.Size(100, 20);
             this.spinEditSoTiet.TabIndex = 3;
             // 
