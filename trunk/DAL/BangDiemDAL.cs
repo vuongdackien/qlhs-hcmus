@@ -8,11 +8,11 @@ namespace QLHS.DAL
 {
     public class BangDiemDAL : ConnectData
     {
-        private MonHocDAL _MonHocDAL;
+        private MonHocDAL _monHocDAL;
 
         public BangDiemDAL()
         {
-            _MonHocDAL = new MonHocDAL();
+            _monHocDAL = new MonHocDAL();
         }
         /// <summary>
         /// Lấy bảng điểm môn học theo học kỳ của lớp
@@ -173,7 +173,7 @@ namespace QLHS.DAL
         /// <returns>DataTable</returns>
         public DataTable LayBangDiem_HocKy_HocSinh(string MaLop, string MaHocSinh, string MaHocKy)
         {
-            List<MonHocDTO> listMH = _MonHocDAL.LayList_MonHoc(true);
+            List<MonHocDTO> listMH = _monHocDAL.LayList_MonHoc(true);
 
             string sql = "SELECT b.*, m.HeSo FROM MONHOC m LEFT JOIN BANGDIEM b ON m.MaMonHoc = b.MaMonHoc "
                                       +"WHERE m.TrangThai = 1 AND b.MaHocKy = "+MaHocKy+" "

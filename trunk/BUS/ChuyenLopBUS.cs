@@ -9,14 +9,14 @@ namespace QLHS.BUS
 {
     public class ChuyenLopBUS
     {
-        private ChuyenLopDAL _ChuyenLopDAL;
-        private BangDiemBUS _BangDiemBUS;
-        private PhanLopBUS _PhanLopBUS;
+        private ChuyenLopDAL _chuyenLopDAL;
+        private BangDiemBUS _bangDiemBUS;
+        private PhanLopBUS _phanLopBUS;
         public ChuyenLopBUS()
         {
-            _ChuyenLopDAL = new ChuyenLopDAL();
-            _PhanLopBUS = new PhanLopBUS();
-            _BangDiemBUS = new BangDiemBUS();
+            _chuyenLopDAL = new ChuyenLopDAL();
+            _phanLopBUS = new PhanLopBUS();
+            _bangDiemBUS = new BangDiemBUS();
         }
 
         public bool ChuyenLop_HocSinh_Lop( Dictionary<string,string> ds_HocSinhChon, ChuyenLopDTO thongTinCL)
@@ -25,15 +25,15 @@ namespace QLHS.BUS
             foreach (var item in ds_HocSinhChon)
             {
                 if (thongTinCL.GiuLaiBangDiem)
-                    _BangDiemBUS.CapNhat_BangDiem_HocSinh_LopMoi(item.Key, thongTinCL.TuLop, thongTinCL.DenLop);
+                    _bangDiemBUS.CapNhat_BangDiem_HocSinh_LopMoi(item.Key, thongTinCL.TuLop, thongTinCL.DenLop);
                 else
-                    _BangDiemBUS.XoaBangDiem_HocSinh_Lop(item.Key, thongTinCL.TuLop);
+                    _bangDiemBUS.XoaBangDiem_HocSinh_Lop(item.Key, thongTinCL.TuLop);
 
-                if (!_PhanLopBUS.KiemTraTonTai_HocSinh_TrongLop(item.Key, thongTinCL.DenLop))
+                if (!_phanLopBUS.KiemTraTonTai_HocSinh_TrongLop(item.Key, thongTinCL.DenLop))
                 {
-                    _PhanLopBUS.ThayDoi_LopMoi_HocSinh(item.Key, thongTinCL.TuLop, thongTinCL.DenLop);
+                    _phanLopBUS.ThayDoi_LopMoi_HocSinh(item.Key, thongTinCL.TuLop, thongTinCL.DenLop);
                 }
-                list_success.Add(_ChuyenLopDAL.Luu_ThongTin_ChuyenLop(item.Key, thongTinCL));
+                list_success.Add(_chuyenLopDAL.Luu_ThongTin_ChuyenLop(item.Key, thongTinCL));
             }
             foreach (var item in list_success)
             {
@@ -44,11 +44,11 @@ namespace QLHS.BUS
         }
         public bool KiemTraHocSinh_ThuocLop_DuocChuyenTuLop(string MaHocSinh, string MaLopMoi, string MaLopCu)
         {
-            return _ChuyenLopDAL.KiemTra_HocSinhThuocLop_DuocChuyenTuLop(MaHocSinh, MaLopMoi, MaLopCu);
+            return _chuyenLopDAL.KiemTra_HocSinhThuocLop_DuocChuyenTuLop(MaHocSinh, MaLopMoi, MaLopCu);
         }
         public bool Xoa_ChuyenLop(string MaHocSinh, string TuLop, string DenLop)
         {
-            return _ChuyenLopDAL.Xoa_ChuyenLop(MaHocSinh, TuLop, DenLop);
+            return _chuyenLopDAL.Xoa_ChuyenLop(MaHocSinh, TuLop, DenLop);
         }
     }
 }
