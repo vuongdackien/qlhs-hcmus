@@ -30,7 +30,7 @@ namespace QLHS.BUS
         /// </summary>
         /// <param name="quyDinhDTO">QuyDinhDTO</param>
         /// <returns></returns>
-        public bool CapNhatQuyDinh(QuyDinhDTO quyDinhDTO)
+        public bool CapNhat_QuyDinh(QuyDinhDTO quyDinhDTO)
         {
             return _quyDinhDAL.SuaQuyDinh(quyDinhDTO);
         }
@@ -39,7 +39,7 @@ namespace QLHS.BUS
         /// Lấy tuổi cận dưới
         /// </summary>
         /// <returns>Int</returns>
-        public int LayTuoiCanDuoi()
+        public int LayTuoi_CanDuoi()
         {
             return Convert.ToInt32(_quyDinhDAL.LayGiaTri("TuoiCanDuoi"));
         }
@@ -47,7 +47,7 @@ namespace QLHS.BUS
         /// Lấy tuổi cận trên
         /// </summary>
         /// <returns>Int</returns>
-        public int LayTuoiCanTren()
+        public int LayTuoi_CanTren()
         {
             return Convert.ToInt32(_quyDinhDAL.LayGiaTri("TuoiCanTren"));
         }
@@ -55,17 +55,17 @@ namespace QLHS.BUS
         /// Lấy năm tuổi cận dưới
         /// </summary>
         /// <returns>Int: Năm</returns>
-        public int LayNamTuoiCanDuoi()
+        public int LayNamTuoi_CanDuoi()
         {
-            return DateTime.Now.Year - this.LayTuoiCanTren();
+            return DateTime.Now.Year - this.LayTuoi_CanTren();
         }
         /// <summary>
         /// Lấy năm tuổi cận trên
         /// </summary>
         /// <returns>Int: Năm</returns>
-        public int LayNamTuoiCanTren()
+        public int LayNamTuoi_CanTren()
         {
-            return DateTime.Now.Year - this.LayTuoiCanDuoi();
+            return DateTime.Now.Year - this.LayTuoi_CanDuoi();
         }
         /// <summary>
         /// Lấy mã năm học hiện tại
@@ -79,7 +79,7 @@ namespace QLHS.BUS
         /// Lấy sỉ số cận trên
         /// </summary>
         /// <returns>Int</returns>
-        public int LaySiSoCanTren()
+        public int LaySiSo_CanTren()
         {
             return Convert.ToInt32(_quyDinhDAL.LayGiaTri("SiSoCanTren"));
         }
@@ -87,7 +87,7 @@ namespace QLHS.BUS
         /// Lấy điểm chuẩn
         /// </summary>
         /// <returns>Double</returns>
-        public double LayDiemChuanDatMon()
+        public double LayDiemChuan_DatMon()
         {
             return Convert.ToDouble(_quyDinhDAL.LayGiaTri("DiemChuan"));
         }
@@ -95,7 +95,7 @@ namespace QLHS.BUS
         /// Lấy ngày áp dụng
         /// </summary>
         /// <returns></returns>
-        public DateTime LayNgayApDungQD()
+        public DateTime LayNgayApDung_QuyDinh()
         {
             string ngayQD = _quyDinhDAL.LayGiaTri("NgayApDung").ToString();
             return DateTime.ParseExact(ngayQD, "dd-MM-yyyy", null);

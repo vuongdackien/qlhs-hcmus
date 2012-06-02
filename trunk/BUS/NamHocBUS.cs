@@ -19,9 +19,9 @@ namespace QLHS.BUS
         /// Lấy list năm học
         /// </summary>
         /// <returns>List</returns>
-        public List<NamHocDTO> LayListNamHoc()
+        public List<NamHocDTO> LayList_NamHoc()
         {
-            return _NamHocDAL.LayListNamHoc();
+            return _NamHocDAL.LayList_NamHoc();
         }
         /// <summary>
         /// Lấy DataTable năm học
@@ -29,7 +29,7 @@ namespace QLHS.BUS
         /// <returns>DataTable</returns>
         public DataTable LayDTNamHoc()
         {
-            return _NamHocDAL.LayDTNamHoc();
+            return _NamHocDAL.LayDT_NamHoc();
         }
         /// <summary>
         /// Lấy DataTable năm học có mã năm học là tham  số truyền vào
@@ -37,13 +37,13 @@ namespace QLHS.BUS
         /// <returns>DataTable</returns>
         public DataTable LayDTNamHoc(string MaNamHoc)
         {
-            return _NamHocDAL.LayDTNamHoc(MaNamHoc);
+            return _NamHocDAL.LayDT_NamHoc(MaNamHoc);
         }
         /// <summary>
         /// Lấy DataTable năm học làm năm hiện tại=năm học mới
         /// </summary>
         /// <returns>DataTable</returns>
-        public DataTable LayDTNamHocHienTai()
+        public DataTable LayDT_NamHocHienTai()
         {
             return _NamHocDAL.LayDTNamHocHienTai();
         }
@@ -51,11 +51,15 @@ namespace QLHS.BUS
         /// Lấy DataTable năm học cần chuyển lên lớp khi kết thúc năm học
         /// </summary>
         /// <returns>DataTable</returns>
-        public DataTable LayDTNamHocTruoc()
+        public DataTable LayDT_NamHocTruoc()
         {
-            return _NamHocDAL.LayDTNamHocTruoc();
+            return _NamHocDAL.LayDT_NamHocTruoc();
         }
-        public DataTable LayNamHoc_ThemMoi()
+        /// <summary>
+        /// Lấy datatable thêm mới trong 10 năm gần đây
+        /// </summary>
+        /// <returns></returns>
+        public DataTable LayDT_NamHoc_ThemMoi()
         {
             DataTable tbNH = new DataTable();
             tbNH.Columns.Add("MaNamHoc");
@@ -78,32 +82,32 @@ namespace QLHS.BUS
         /// <returns></returns>
         public bool KiemTraTonTai_NamHoc(string maNamHoc)
         {
-            return _NamHocDAL.KiemTraTonTai_NamHoc(maNamHoc);
+            return _NamHocDAL.KiemTraTonTai_MaNamHoc(maNamHoc);
         }
           /// <summary>
         /// Thêm 1 năm học mới (không kiểm tra trùng mã năm học cũ)
         /// </summary>
         /// <param name="namHoc">NamHocDTO</param>
         /// <returns></returns>
-        public bool ThemNamHoc(NamHocDTO namHoc)
+        public bool Them_NamHoc(NamHocDTO namHoc)
         {
-            return _NamHocDAL.ThemNamHoc(namHoc);
+            return _NamHocDAL.Them_NamHoc(namHoc);
         }
          /// <summary>
         /// Xóa 1 năm học (xóa toàn bộ thông tin liên quan đến năm học đó)
         /// </summary>
         /// <param name="maNamHoc">string: mã năm học</param>
         /// <returns></returns>
-        public bool XoaNamHoc(string maNamHoc)
+        public bool Xoa_NamHoc(string maNamHoc)
         {
-            return _NamHocDAL.XoaNamHoc(maNamHoc);
+            return _NamHocDAL.Xoa_NamHoc(maNamHoc);
         }
          /// <summary>
         /// Lấy tên năm học
         /// </summary>
         /// <param name="MaNamHoc">String: Mã năm học</param>
         /// <returns></returns>
-        public string LayTenNamHoc(string MaNamHoc)
+        public string LayTenNamHoc_MaNamHoc(string MaNamHoc)
         {
             return _NamHocDAL.LayTenNamHoc(MaNamHoc);
         }

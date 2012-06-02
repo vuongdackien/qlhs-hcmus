@@ -13,7 +13,7 @@ namespace QLHS.BUS
         /// Lấy DataTable Học kỳ
         /// </summary>
         /// <returns>DataTable</returns>
-        public DataTable LayDTHocKy()
+        public DataTable LayDT_HocKy()
         {
             DataTable dataTable = new DataTable();
             dataTable.Columns.Add("MaHocKy");

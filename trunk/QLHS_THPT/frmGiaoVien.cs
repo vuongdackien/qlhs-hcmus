@@ -93,7 +93,7 @@ namespace QLHS
         {
             if (_is_delete_button)
             {
-                if (_giaoVienBUS.KiemTonTai_GiaoVien(textEditMaGiaoVien.Text))
+                if (_giaoVienBUS.KiemTonTai_HoSo_GiaoVien(textEditMaGiaoVien.Text))
                 {
                     if (Util.MsgboxUtil.YesNo("Bạn có muốn xóa hồ sơ giáo viên: "
                                                         + textEditTenGiaoVien.Text + " hay không?")
@@ -102,7 +102,7 @@ namespace QLHS
                         return;
                     }
 
-                    _giaoVienBUS.Xoa_GiaoVien(textEditMaGiaoVien.Text);
+                    _giaoVienBUS.Xoa_HoSo_GiaoVien(textEditMaGiaoVien.Text);
                     Util.MsgboxUtil.Success("Đã xóa hồ sơ giáo viên: "
                                                 + textEditTenGiaoVien.Text + " thành công!");
                     _Load_GridView();
@@ -137,14 +137,14 @@ namespace QLHS
                                           };
 
             // Sửa
-            if (_giaoVienBUS.KiemTonTai_GiaoVien(giaoVienDTO.MaGiaoVien))
+            if (_giaoVienBUS.KiemTonTai_HoSo_GiaoVien(giaoVienDTO.MaGiaoVien))
             {
-                _giaoVienBUS.CapNhat_GiaoVien(giaoVienDTO);
+                _giaoVienBUS.CapNhat_HoSo_GiaoVien(giaoVienDTO);
                 Util.MsgboxUtil.Success("Đã cập nhật hồ sơ giáo viên: " + giaoVienDTO.TenGiaoVien + " thành công!");
             }
             else // thêm
             {
-                if (_giaoVienBUS.Them_GiaoVien(giaoVienDTO))
+                if (_giaoVienBUS.Them_HoSo_GiaoVien(giaoVienDTO))
                     Util.MsgboxUtil.Success("Đã tạo hồ sơ giáo viên: " + giaoVienDTO.TenGiaoVien + " thành công!");
             }
             _Load_GridView();

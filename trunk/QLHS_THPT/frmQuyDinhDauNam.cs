@@ -82,7 +82,7 @@ namespace QLHS
                     NgayApDung = Convert.ToDateTime(dateEditNgayAD.EditValue),
                     MaNamHoc = Util.CboUtil.GetValueItem(comboBoxEditNamHoc)
                 };
-                if (_quyDinhBUS.CapNhatQuyDinh(quyDinh))
+                if (_quyDinhBUS.CapNhat_QuyDinh(quyDinh))
                     Util.MsgboxUtil.Success("Cập nhật quy định năm học thành công!");
                 else
                     Util.MsgboxUtil.Error("Có lỗi trong quá trình cập nhật!");

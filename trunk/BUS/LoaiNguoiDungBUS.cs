@@ -19,7 +19,7 @@ namespace QLHS.BUS
         /// Lấy datatable loại người dùng
         /// </summary>
         /// <returns></returns>
-        public DataTable Lay_DT_LoaiNguoiDung()
+        public DataTable LayDT_LoaiNguoiDung()
         {
             return _loaiNguoiDungDAL.Lay_DT_LoaiNguoiDung();
         }

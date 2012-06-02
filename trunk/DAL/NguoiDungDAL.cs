@@ -16,7 +16,7 @@ namespace QLHS.DAL
         /// Lấy danh sách người dùng
         /// </summary>
         /// <returns></returns>
-        public DataTable Lay_DT_NguoiDung()
+        public DataTable LayDT_NguoiDung()
         {
             string sql = "SELECT MaND, a.MaLoaiND, TenLoaiND, TenGiaoVien ,TenDNhap, a.TrangThai "
                          + " FROM NGUOIDUNG a,GIAOVIEN b, LOAINGUOIDUNG c "
@@ -27,14 +27,14 @@ namespace QLHS.DAL
         /// Lấy danh sách người dùng đăng nhập
         /// </summary>
         /// <returns></returns>
-        public DataTable Lay_DT_NguoiDung_DangNhap()
+        public DataTable LayDT_NguoiDung_DangNhap()
         {
             string sql = "SELECT MaND, a.MaLoaiND, TenLoaiND, TenGiaoVien ,TenDNhap "
                          + " FROM NGUOIDUNG a,GIAOVIEN b, LOAINGUOIDUNG c "
                          + " WHERE a.MaND = b.MaGiaoVien and a.MaLoaiND = c.MaLoaiND AND a.TrangThai = 1";
             return GetTable(sql);
         }
-        public NguoiDungDTO LayThongTinNguoiDung(string username)
+        public NguoiDungDTO LayDTO_ThongTin_NguoiDung(string username)
         {
             string sql = "SELECT MaND, a.MaLoaiND, MatKhau, TenLoaiND, TenGiaoVien ,TenDNhap, a.TrangThai "
                         + " FROM NGUOIDUNG a, GIAOVIEN b, LOAINGUOIDUNG c "
@@ -82,7 +82,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="user">NguoiDungDTO</param>
         /// <returns></returns>
-        public bool ThemNguoiDung(NguoiDungDTO user)
+        public bool Them_ThongTin_NguoiDung(NguoiDungDTO user)
         {
             string sql = string.Format("INSERT INTO NGUOIDUNG (MaND, MaLoaiND, TenDNhap, MatKhau, TrangThai ) "
                         + "VALUES ('{0}','{1}','{2}','{3}','{4}')",
@@ -96,7 +96,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="user">NguoiDungDTO</param>
         /// <returns></returns>
-        public bool SuaNguoiDung(NguoiDungDTO user)
+        public bool Sua_ThongTin_NguoiDung(NguoiDungDTO user)
         {
             string updatePassword = (user.MatKhau == "") ? "" : "MatKhau = '" + Util.ObjectUtil.MaHoaMD5(user.MatKhau) + "',";
             string sql = string.Format("UPDATE NGUOIDUNG SET MaLoaiND = '{0}', TenDNhap = '{1}', " + updatePassword + " TrangThai = '{2}' "
@@ -111,7 +111,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="MaUser">String: Mã user</param>
         /// <returns></returns>
-        public bool XoaNguoiDung(string MaUser)
+        public bool Xoa_ThongTin_NguoiDung(string MaUser)
         {
             string sql = "DELETE FROM NGUOIDUNG WHERE MaND = '" + MaUser + "'";
             return ExecuteQuery(sql) > 0 ? true : false;

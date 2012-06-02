@@ -53,7 +53,7 @@ namespace QLHS.DAL
             return phanlop;
         }
 
-        public bool KiemTra_STT_TonTai(int STT, string MaLop)
+        public bool KiemTraTonTai_STT(int STT, string MaLop)
         {
             string sql = "SELECT STT FROM PHANLOP WHERE MaLop = '"+MaLop+"' AND STT = "+STT;
             return GetTable(sql).Rows.Count > 0;
@@ -140,33 +140,14 @@ namespace QLHS.DAL
             return ExecuteQuery(sql) > 0;
         }
 
-        public DataTable LayDTLop_MaNam_MaKhoi_KhacMaLop(string MaNamHoc, string MaKhoi, string MaLop)
+        public DataTable LayDT_Lop_MaKhoi_KhacMaLop_MaNam(string MaNamHoc, string MaKhoi, string MaLop)
         {
             string sql = string.Format("SELECT MaLop, TenLop from Lop where "
                                       + " MaKhoiLop = '{0}' AND MaNamHoc = '{1}' and MaLop not in('{2}') ", MaKhoi, MaNamHoc, MaLop);
             return GetTable(sql);
         }
-        public DataTable LayDTKhoi(string MaNamHoc)
-        {
-            string sql = "select distinct MaKhoiLop as MaKhoi ,N'Khối '+CONVERT(varchar,MaKhoiLop) as TenKhoi from LOP where MaNamHoc='" + MaNamHoc + "' ";
-            return GetTable(sql);
-        }
-        public DataTable LayDTKhoi10(string MaNamHoc)
-        {
-            string sql = "select distinct MaKhoiLop as MaKhoi ,N'Khối '+CONVERT(varchar,MaKhoiLop) as TenKhoi from LOP where MaNamHoc='" + MaNamHoc + "' and MaKhoiLop=10 ";
-            return GetTable(sql);
-        }
-        public DataTable LayDTKhoi_PhanLopCu(string MaNamHoc)
-        {
-            string sql = "select distinct MaKhoiLop as MaKhoi ,N'Khối '+CONVERT(varchar,MaKhoiLop) as TenKhoi from LOP where MaNamHoc='" + MaNamHoc + "' and MaKhoiLop in (10,11)";
-            return GetTable(sql);
-        }
-        public DataTable LayDTKhoi_Chuyen(string MaNamHoc, string MaKhoi)
-        {
-            string sql = "select distinct MaKhoiLop as MaKhoi ,N'Khối '+CONVERT(varchar,MaKhoiLop) as TenKhoi from LOP where MaNamHoc='" + MaNamHoc + "' and MaKhoiLop ='" + MaKhoi + "'";
-            return GetTable(sql);
-        }
-        public bool KiemTraHSTonTaiTrongLop_ChuyenLop(string MaHocSinh, string MaLop)
+      
+        public bool KiemTraTonTao_HSinh_TrongLop_ChuyenLop(string MaHocSinh, string MaLop)
         {
             string sql = "select pl.MaHocSinh from PhanLop pl,HocSinh hs where pl.MaHocSinh='"+MaHocSinh+"' and pl.MaLop='"+MaLop+"' and pl.MaHocSinh=hs.MaHocSinh";
             return ExecuteScalar(sql) != null;

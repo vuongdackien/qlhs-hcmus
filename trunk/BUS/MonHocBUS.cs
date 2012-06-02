@@ -14,22 +14,6 @@ namespace QLHS.BUS
         {
             _monHocDAL = new MonHocDAL();
         }
-        public string Doichuoi(string input, string oldValue, string newValue, bool matchCase)
-        {
-
-            RegexOptions regexOption = RegexOptions.None;
-            if (!matchCase)
-            {
-                regexOption = RegexOptions.IgnoreCase;
-            }
-
-            Regex regex = new Regex(oldValue, regexOption);
-
-            input = regex.Replace(input, newValue);
-
-            return input;
-
-        }
         
         
         /// <summary>
@@ -40,24 +24,16 @@ namespace QLHS.BUS
         {
             return _monHocDAL.LayDT_DanhSach_MonHoc();
         }
-        public DataTable LayDT_DanhSach_MonHoc(bool trangthai)
-        {
-            return _monHocDAL.LayDT_DanhSach_MonHoc(trangthai);
-        }
         /// <summary>
-        /// 1:Tìm theo mã
-        /// 2:Tìm theo tên
-        /// 3:Tìm theo số tiết
-        /// 4:Tìm theo hệ số
-        /// 5:Tìm theo trang thái
+        /// Lấy DataTable môn học đang sử dụng
         /// </summary>
-        /// <param name="k"></param>
-        /// <param name="Dk"></param>
+        /// <param name="layDangSuDung">Đang sử dụng?</param>
         /// <returns></returns>
-        public DataTable Table_MonHoc(int k,string Dk)
+        public DataTable LayDT_DanhSach_MonHoc(bool layDangSuDung)
         {
-            return _monHocDAL.TableGiaoVien(k,Dk);
+            return _monHocDAL.LayDT_DanhSach_MonHoc(layDangSuDung);
         }
+       
 
         /// <summary>
         /// Xóa môn học
@@ -95,20 +71,6 @@ namespace QLHS.BUS
         {
             return _monHocDAL.KiemTraTonTai_MonHoc(maMonHoc);
         }
-
-        /// <summary>
-        /// Kiểm tra tên môn học đã có hay chưa
-        /// </summary>
-        /// <param name="tenMonHoc"></param>
-        /// <returns></returns>
-        public bool KiemTraTonTai_TenMonHoc(MonHocDTO _monHocDTO)
-        {
-            return _monHocDAL.KiemTraTonTai_TenMonHoc(_monHocDTO);
-        }
-
-        public bool KiemTra_ThongTin_MonHoc(MonHocDTO _monHocDTO)
-        {
-            return _monHocDAL.KiemTra_ThongTin_MonHoc(_monHocDTO);
-        }        
+       
     }
 }

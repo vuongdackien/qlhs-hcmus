@@ -24,7 +24,7 @@ namespace QLHS.BUS
         /// <param name="MaLop">String: Mã lớp</param>
         /// <param name="chua_PhanLop">bool: Lấy danh sách chưa được phân lớp</param>
         /// <returns>DataTable</returns>
-        public DataTable LayDTHocSinh_LopHoc(string MaLop, bool chua_PhanLop = false)
+        public DataTable LayDT_HocSinh(string MaLop, bool chua_PhanLop = false)
         {
             DataTable tbHS = _hocSinhDAL.LayDT_HocSinh_LopHoc(MaLop,chua_PhanLop);
             tbHS.Columns.Add(new DataColumn("Check", typeof(bool)));
@@ -39,7 +39,7 @@ namespace QLHS.BUS
         /// </summary>
         /// <param name="MaHocSinh">string: Mã học sinh</param>
         /// <returns>HocSinhDTO</returns>
-        public HocSinhDTO LayHoSoHocSinh(string MaHocSinh)
+        public HocSinhDTO LayHoSo_HocSinh(string MaHocSinh)
         {
             return _hocSinhDAL.Lay_HoSo(MaHocSinh);
         }
@@ -58,16 +58,16 @@ namespace QLHS.BUS
         /// <param name="hocsinh">HocSinhDTO</param>
         /// <param name="MaLop">String: Mã lớp (nếu rỗng thì không phan lớp)</param>
         /// <returns>Bool</returns>
-        public bool LuuHoSoHocSinh(HocSinhDTO hocsinh, string MaLop = null)
+        public bool LuuHoSo_HocSinh(HocSinhDTO hocsinh, string MaLop = null)
         {
-            DateTime ngayAD_QD = _quyDinhBUS.LayNgayApDungQD() ;
-            int namCanDuoi = _quyDinhBUS.LayNamTuoiCanDuoi(), namCanTren = _quyDinhBUS.LayNamTuoiCanTren();
+            DateTime ngayAD_QD = _quyDinhBUS.LayNgayApDung_QuyDinh() ;
+            int namCanDuoi = _quyDinhBUS.LayNamTuoi_CanDuoi(), namCanTren = _quyDinhBUS.LayNamTuoi_CanTren();
             DateTime ngayNhapHoc;
             // Sửa hồ sơ học sinh
             if (_hocSinhDAL.KiemTraTonTai_MaHocSinh(hocsinh.MaHocSinh))
             {
                 // Nếu hồ sơ có phân lớp và có sửa STT
-                if (MaLop != null && hocsinh.STT != _phanLopBUS.Lay_STT_HienTai(hocsinh.MaHocSinh,MaLop)
+                if (MaLop != null && hocsinh.STT != _phanLopBUS.LaySTT_HienTai(hocsinh.MaHocSinh,MaLop)
                     && _phanLopBUS.KiemTra_STT_TonTai(hocsinh.STT, MaLop)) // STT mới này đã tồn tại
                 {
                     Util.ExceptionUtil.Throw("Sửa hồ sơ học sinh không hợp lệ!"
@@ -122,10 +122,10 @@ namespace QLHS.BUS
         /// </summary>
         /// <param name="namSinh">int: Năm</param>
         /// <returns>Bool</returns>
-        public bool KiemTraNamSinhHopLe(int namSinh)
+        public bool KiemTraNamSinh_HopLe(int namSinh)
         {
-            int tuoiCanDuoi = _quyDinhBUS.LayTuoiCanDuoi(),
-                tuoiCanTren = _quyDinhBUS.LayTuoiCanTren();
+            int tuoiCanDuoi = _quyDinhBUS.LayTuoi_CanDuoi(),
+                tuoiCanTren = _quyDinhBUS.LayTuoi_CanTren();
             if(tuoiCanDuoi <= namSinh && namSinh <= tuoiCanTren)
                 return true;
             return false;
@@ -142,7 +142,7 @@ namespace QLHS.BUS
             return _hocSinhDAL.Tim_HoSo(hs,DS_MaLop);
         }
 
-        public DataTable TimKiem_HocSinh_KoPhanLop(HocSinhTimKiemDTO hs)
+        public DataTable TimKiem_HocSinh_ChuaPhanLop(HocSinhTimKiemDTO hs)
         {
             return _hocSinhDAL.Tim_HoSo_KoPhanLop(hs);
         }
@@ -156,7 +156,7 @@ namespace QLHS.BUS
             return _hocSinhDAL.Xoa_HoSo(MaHocSinh);
         }
 
-        public DataTable LayDTTenHocSinh()
+        public DataTable LayDT_TenHocSinh()
         {
             return _hocSinhDAL.LayDT_TenHocSinh();
         }

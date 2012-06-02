@@ -29,26 +29,26 @@ namespace QLHS.BUS
         /// </summary>
         /// <param name="maGiaoVien">string: mã giáo viên</param>
         /// <returns></returns>
-        public bool Xoa_GiaoVien(string maGiaoVien)
+        public bool Xoa_HoSo_GiaoVien(string maGiaoVien)
         {
-            return _giaoVienDAL.Xoa_GiaoVien(maGiaoVien);
+            return _giaoVienDAL.Xoa_HoSo_GiaoVien(maGiaoVien);
         }
         /// <summary>
         /// Thêm hồ sơ giáo viên
         /// </summary>
         /// <param name="giaoVien">GiaoVienDTO</param>
         /// <returns></returns>
-        public bool Them_GiaoVien(GiaoVienDTO giaoVien)
+        public bool Them_HoSo_GiaoVien(GiaoVienDTO giaoVien)
         {
             giaoVien.MaGiaoVien = Util.ObjectUtil.NextID(_giaoVienDAL.Lay_MaCuoiCung(), "GV", 3);
-            return _giaoVienDAL.Them_GiaoVien(giaoVien);
+            return _giaoVienDAL.Them_HoSo_GiaoVien(giaoVien);
         }
         /// <summary>
         /// Cập nhật hồ sơ giáo viên
         /// </summary>
         /// <param name="giaoVien">GiaoVienDTO</param>
         /// <returns></returns>
-        public bool CapNhat_GiaoVien(GiaoVienDTO giaoVien)
+        public bool CapNhat_HoSo_GiaoVien(GiaoVienDTO giaoVien)
         {
             return _giaoVienDAL.CapNhat_GiaoVien(giaoVien);
         }
@@ -57,7 +57,7 @@ namespace QLHS.BUS
         /// </summary>
         /// <param name="maGiaoVien">string: mã giáo viên</param>
         /// <returns></returns>
-        public bool KiemTonTai_GiaoVien(string maGiaoVien)
+        public bool KiemTonTai_HoSo_GiaoVien(string maGiaoVien)
         {
             return _giaoVienDAL.KiemTonTai_GiaoVien(maGiaoVien);
         }

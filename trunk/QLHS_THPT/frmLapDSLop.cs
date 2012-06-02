@@ -46,7 +46,7 @@ namespace QLHS
                                                          _namHocBUS.LayDTNamHoc(),
                                                         "MaNamHoc", "TenNamHoc", 0);
             Util.CboUtil.SetDataSource(comboBoxEditKhoi,
-                                                        _khoiBUS.LayDTKhoi(),
+                                                        _khoiBUS.LayDT_Khoi(),
                                                         "MaKhoi", "TenKhoi", 0);
             Util.CboUtil.SetDataSource(comboBoxEditGVCN,
                                                                    _giaoVienBUS.LayDT_DanhSachGiaoVien(),
@@ -163,7 +163,7 @@ namespace QLHS
             lopDTO.MaKhoiLop = Convert.ToInt16(Util.CboUtil.GetValueItem(comboBoxEditKhoi));
             
 
-            if (_lopBUS.KiemTra_TonTaiMaLop(lopDTO.MaLop))
+            if (_lopBUS.KiemTraTonTai_MaLop(lopDTO.MaLop))
             {
                 _lopBUS.CapNhat_GiaoVienCN_Lop(lopDTO);
                 Util.MsgboxUtil.Success("Đã cập nhật lớp " + lopDTO.TenLop+" thành công!");
@@ -186,7 +186,7 @@ namespace QLHS
             }
             else // button xoa
             {
-                if (_lopBUS.KiemTra_TonTaiMaLop(textEditMaLop.Text))
+                if (_lopBUS.KiemTraTonTai_MaLop(textEditMaLop.Text))
                 {
                     if (Util.MsgboxUtil.YesNo("Bạn có muốn xóa toàn bộ danh sách học sinh, "
                                     + "bảng điểm học sinh và toàn bộ thông tin liên quan đến lớp " + textEditTenLop.Text + " hay không?")

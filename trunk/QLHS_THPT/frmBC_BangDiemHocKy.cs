@@ -40,13 +40,13 @@ namespace QLHS
         {
             treeListLopHoc.ParentFieldName = "MaKhoi";
             treeListLopHoc.PreviewFieldName = "TenKhoi";
-            treeListLopHoc.DataSource = _khoiBUS.LayDTKhoi();
+            treeListLopHoc.DataSource = _khoiBUS.LayDT_Khoi();
             
             Util.CboUtil.SetDataSource(comboBoxEditNamHoc,
                                                          _namHocBUS.LayDTNamHoc(),
                                                         "MaNamHoc", "TenNamHoc", 0);
             Util.CboUtil.SetDataSource(comboBoxEditHocKy,
-                                                        _hocKyBUS.LayDTHocKy(),
+                                                        _hocKyBUS.LayDT_HocKy(),
                                                         "MaHocKy", "TenHocKy", 0);
 
             this.CapNhatListLop();
@@ -89,13 +89,13 @@ namespace QLHS
             }
             
             string maLop = treeListLopHoc.FocusedNode.GetValue("MaKhoi").ToString();
-            _bangDiemHocKyDTO = _bangDiemBUS.Lay_BangDiem_Lop_HocKy(maLop,
+            _bangDiemHocKyDTO = _bangDiemBUS.LayList_BangDiem_Lop_HocKy(maLop,
                                                         Util.CboUtil.GetValueItem(comboBoxEditHocKy));
             gridControlBangDiemHocKy.DataSource = _bangDiemHocKyDTO;
             labelControlNamHoc.Text = Util.CboUtil.GetDisplayItem(comboBoxEditNamHoc);
             labelControlLop.Text = treeListLopHoc.FocusedNode.GetValue("TenKhoi").ToString();
             labelControlHocKy.Text = Util.CboUtil.GetValueItem(comboBoxEditHocKy);
-            labelControlGVCN.Text = _lopBUS.Lay_TenGiaoVien_MaLop(maLop);
+            labelControlGVCN.Text = _lopBUS.LayTenGiaoVien_MaLop(maLop);
         }
 
         private void comboBoxEditNamHoc_SelectedIndexChanged(object sender, EventArgs e)

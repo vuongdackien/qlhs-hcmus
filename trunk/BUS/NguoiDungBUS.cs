@@ -18,33 +18,33 @@ namespace QLHS.BUS
         /// Lấy danh sách người dùng
         /// </summary>
         /// <returns></returns>
-        public DataTable Lay_DT_NguoiDung()
+        public DataTable LayDT_NguoiDung()
         {
-            return _nguoiDungDAL.Lay_DT_NguoiDung();
+            return _nguoiDungDAL.LayDT_NguoiDung();
         }
         /// <summary>
         /// Lấy danh sách người dùng đăng nhập
         /// </summary>
         /// <returns></returns>
-        public DataTable Lay_DT_NguoiDung_DangNhap()
+        public DataTable LayDT_NguoiDung_DangNhap()
         {
-            return _nguoiDungDAL.Lay_DT_NguoiDung_DangNhap();
+            return _nguoiDungDAL.LayDT_NguoiDung_DangNhap();
         }
         /// <summary>
         /// Lấy thông tin người dùng qua username
         /// </summary>
         /// <param name="username">String: username</param>
         /// <returns></returns>
-        public NguoiDungDTO LayThongTinNguoiDung(string username)
+        public NguoiDungDTO LayThongTin_NguoiDung(string username)
         {
-            return _nguoiDungDAL.LayThongTinNguoiDung(username);
+            return _nguoiDungDAL.LayDTO_ThongTin_NguoiDung(username);
         }
         /// <summary>
         /// Đổi mật khẩu người dùng
         /// </summary>
         /// <param name="TenDangNhap">Tên đăng nhập</param>
         /// <param name="NewPassword">Mật khẩu mới</param>
-        public bool DoiMatKhauNguoiDung(string TenDangNhap, string NewPassword)
+        public bool DoiMatKhau_NguoiDung(string TenDangNhap, string NewPassword)
         {
             return _nguoiDungDAL.DoiMatKhauNguoiDung(TenDangNhap, NewPassword);
         }
@@ -62,27 +62,27 @@ namespace QLHS.BUS
         /// </summary>
         /// <param name="user">NguoiDungDTO</param>
         /// <returns></returns>
-        public bool ThemNguoiDung(NguoiDungDTO user)
+        public bool Them_NguoiDung(NguoiDungDTO user)
         {
-            return _nguoiDungDAL.ThemNguoiDung(user);
+            return _nguoiDungDAL.Them_ThongTin_NguoiDung(user);
         }
         /// <summary>
         /// Sửa thông tin người dùng
         /// </summary>
         /// <param name="user">NguoiDungDTO</param>
         /// <returns></returns>
-        public bool SuaNguoiDung(NguoiDungDTO user)
+        public bool Sua_NguoiDung(NguoiDungDTO user)
         {
-            return _nguoiDungDAL.SuaNguoiDung(user);
+            return _nguoiDungDAL.Sua_ThongTin_NguoiDung(user);
         }
         /// <summary>
         /// Xóa thông tin người dùng
         /// </summary>
         /// <param name="MaUser">String: Mã user</param>
         /// <returns></returns>
-        public bool XoaNguoiDung(string MaUser)
+        public bool Xoa_NguoiDung(string MaUser)
         {
-            return _nguoiDungDAL.XoaNguoiDung(MaUser);
+            return _nguoiDungDAL.Xoa_ThongTin_NguoiDung(MaUser);
         }
     }
 }

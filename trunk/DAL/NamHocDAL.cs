@@ -13,7 +13,7 @@ namespace QLHS.DAL
         /// Lấy list năm học
         /// </summary>
         /// <returns>List: NamHocDTO</returns>
-        public List<NamHocDTO> LayListNamHoc()
+        public List<NamHocDTO> LayList_NamHoc()
         {
             string sql = "SELECT MaNamHoc, TenNamHoc FROM NAMHOC";
             List<NamHocDTO> listNamHoc = new List<NamHocDTO>();
@@ -35,7 +35,7 @@ namespace QLHS.DAL
         /// Lấy DataTable năm học
         /// </summary>
         /// <returns>DataTable</returns>
-        public DataTable LayDTNamHoc()
+        public DataTable LayDT_NamHoc()
         {
             DataTable dbNamHoc = 
                         GetTable( "Select MaNamHoc, TenNamHoc FROM NAMHOC "
@@ -57,7 +57,7 @@ namespace QLHS.DAL
         /// Lấy DataTable năm học có mã năm học là tham  số truyền vào
         /// </summary>
         /// <returns>DataTable</returns>
-        public DataTable LayDTNamHoc(string MaNamHoc)
+        public DataTable LayDT_NamHoc(string MaNamHoc)
         {
             string sql = string.Format("SELECT MaNamHoc, TenNamHoc FROM NAMHOC WHERE MaNamHoc='{0}'",MaNamHoc);
             return GetTable(sql);
@@ -75,7 +75,7 @@ namespace QLHS.DAL
         /// Lấy DataTable năm học cần chuyển lên lớp khi kết thúc năm học
         /// </summary>
         /// <returns>DataTable</returns>
-        public DataTable LayDTNamHocTruoc()
+        public DataTable LayDT_NamHocTruoc()
         {
             string sql = "SELECT MaNamHoc,TenNamHoc FROM NAMHOC WHERE substring(TenNamHoc,8,4) = (select substring(TenNamHoc,1,4) as TenNamHoc from NAMHOC WHERE MaNamHoc in (select GiaTri from QUYDINH where Khoa='MaNamHocHT')) ";
             return GetTable(sql);
@@ -85,7 +85,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="maNamHoc">string: mã năm học</param>
         /// <returns></returns>
-        public bool KiemTraTonTai_NamHoc(string maNamHoc)
+        public bool KiemTraTonTai_MaNamHoc(string maNamHoc)
         {
             string sql = "SELECT * FROM NAMHOC WHERE MaNamHoc = '"+maNamHoc+"'";
             return GetTable(sql).Rows.Count > 0;
@@ -95,7 +95,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="namHoc">NamHocDTO</param>
         /// <returns></returns>
-        public bool ThemNamHoc(NamHocDTO namHoc)
+        public bool Them_NamHoc(NamHocDTO namHoc)
         {
             string sql = "INSERT INTO NAMHOC (MaNamHoc,TenNamHoc) VALUES ('"+namHoc.MaNamHoc+"','"+namHoc.TenNamHoc+"')";
             return ExecuteQuery(sql) > 0;
@@ -105,10 +105,10 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="maNamHoc">string: mã năm học</param>
         /// <returns></returns>
-        public bool XoaNamHoc(string maNamHoc)
+        public bool Xoa_NamHoc(string maNamHoc)
         {
             LopDAL lopDAL = new LopDAL();
-            lopDAL.Xoa_Lop_Nam(maNamHoc);
+            lopDAL.Xoa_HoSo_Lop_Nam(maNamHoc);
             return ExecuteQuery("DELETE FROM NAMHOC WHERE MaNamHoc = '"+maNamHoc+"'") > 0;
         }
         /// <summary>

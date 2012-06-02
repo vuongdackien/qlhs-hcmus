@@ -44,7 +44,7 @@ namespace QLHS
             string MaHocKy =  Util.CboUtil.GetValueItem(comboBoxEditHocKy);
             string MaNamHoc = Util.CboUtil.GetValueItem(comboBoxEditNamHoc);
 
-            _ds_baocaoTongKetHocKy = _bangDiemBUS.Lay_BangTongKet_Khoi_HocKy(MaKhoi,MaHocKy,MaNamHoc);
+            _ds_baocaoTongKetHocKy = _bangDiemBUS.LayList_BangTongKet_Khoi_HocKy(MaKhoi,MaHocKy,MaNamHoc);
 
             gridControlTongKetHocKy.DataSource = _ds_baocaoTongKetHocKy;
 
@@ -59,10 +59,10 @@ namespace QLHS
                                                         _namHocBUS.LayDTNamHoc(),
                                                        "MaNamHoc", "TenNamHoc", 0);
             Util.CboUtil.SetDataSource(comboBoxEditHocKy,
-                                                        _hocKyBUS.LayDTHocKy(),
+                                                        _hocKyBUS.LayDT_HocKy(),
                                                         "MaHocKy", "TenHocKy", 0);
             Util.CboUtil.SetDataSource(comboBoxEditKhoiLop,
-                                                        _khoiBUS.LayDTKhoi(),
+                                                        _khoiBUS.LayDT_Khoi(),
                                                         "MaKhoi", "TenKhoi", 0);
         }
 
