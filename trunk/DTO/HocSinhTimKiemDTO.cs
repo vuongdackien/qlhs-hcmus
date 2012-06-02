@@ -14,17 +14,17 @@ namespace QLHS.DTO
             set { m_TimChinhXac = value; }
         }
 
-        private string m_NamSinhTu;
+        private int m_NamSinhTu;
 
-        public string NamSinhTu
+        public int NamSinhTu
         {
             get { return m_NamSinhTu; }
             set { m_NamSinhTu = value; }
         }
 
-        private string m_NamSinhDen;
+        private int m_NamSinhDen;
 
-        public string NamSinhDen
+        public int NamSinhDen
         {
             get { return m_NamSinhDen; }
             set { m_NamSinhDen = value; }
