@@ -100,21 +100,23 @@ namespace QLHS
             if (MaHocSinh == null)
             {
                 _hocSinhDTO = new HocSinhDTO();
-                panelControlChiTietHoSo.Enabled = false;
+                panelControlHoSo.Enabled = false;
+                _Reset_Control();
             }
             else
             {
                 _hocSinhDTO = _hocSinhBUS.LayHoSoHocSinh(MaHocSinh.ToString());
-                panelControlChiTietHoSo.Enabled = true;
+                panelControlHoSo.Enabled = true;
+                spinEditSTTSoDiem.Value = _hocSinhDTO.STT;
+                dateEditNgaySinh.EditValue = _hocSinhDTO.NgaySinh;
+                textEditmaHocSinh.Text = _hocSinhDTO.MaHocSinh;
+                textEditTenHocSinh.Text = _hocSinhDTO.TenHocSinh;
+                radioGroupGioiTinh.SelectedIndex = _hocSinhDTO.GioiTinh;
+                textEditNoiSinh.Text = _hocSinhDTO.NoiSinh;
+                textEditDiaChi.Text = _hocSinhDTO.DiaChi;
+                textEditEmail.Text = _hocSinhDTO.Email;
             }
-            spinEditSTTSoDiem.Value = _hocSinhDTO.STT;
-            dateEditNgaySinh.EditValue = _hocSinhDTO.NgaySinh;
-            textEditmaHocSinh.Text = _hocSinhDTO.MaHocSinh;
-            textEditTenHocSinh.Text = _hocSinhDTO.TenHocSinh;
-            radioGroupGioiTinh.SelectedIndex = _hocSinhDTO.GioiTinh;
-            textEditNoiSinh.Text = _hocSinhDTO.NoiSinh;
-            textEditDiaChi.Text = _hocSinhDTO.DiaChi;
-            textEditEmail.Text = _hocSinhDTO.Email;
+           
 
         }
         /// <summary>
@@ -125,10 +127,22 @@ namespace QLHS
         {
             simpleButtonDong.Enabled = !is_adding;
             gridControlDSHocSinh.Enabled = !is_adding;
-            comboBoxEditNamHoc.Enabled = !is_adding;
-            comboBoxEditKhoi.Enabled = !is_adding;
-            comboBoxEditLop.Enabled = !is_adding;
-            simpleButtonSXLaiSTT.Enabled = !is_adding;
+
+            if (!checkEditChuaPhanLop.Checked)
+            {
+                comboBoxEditNamHoc.Enabled = !is_adding;
+                comboBoxEditKhoi.Enabled = !is_adding;
+                comboBoxEditLop.Enabled = !is_adding;
+                simpleButtonSXLaiSTT.Enabled = !is_adding;
+            }
+            else
+            {
+                comboBoxEditNamHoc.Enabled = false;
+                comboBoxEditKhoi.Enabled = false;
+                comboBoxEditLop.Enabled = false;
+                simpleButtonSXLaiSTT.Enabled = false;
+            }
+            
             checkEditChuaPhanLop.Enabled = !is_adding;
 
             _is_add_button = !is_adding;
@@ -137,18 +151,28 @@ namespace QLHS
             simpleButtonThemMoi.Text = is_adding ? "Không nhập (Alt+&N)" : "Thêm mới (Alt+&N)";
             simpleButtonXoa.Text = is_adding ? "Nhập lại (Alt+&D)" : "Xóa (Alt+&D)";
             simpleButtonGhiDuLieu.Text = is_adding ? "Lưu hồ sơ (Enter)" : "Cập nhật (Enter)";
-            if (!is_adding)
+
+            // Mac dinh cac control nay deu duoc bat
+            panelControlHoSo.Enabled = true;
+            simpleButtonXoa.Enabled = true;
+            simpleButtonGhiDuLieu.Enabled = true;
+
+            if (gridViewDSHocSinh.RowCount > 0)
             {
-                if (gridViewDSHocSinh.RowCount > 0)
+                // Neu khong them moi chon hoc sinh
+                if(!is_adding)
                 {
                     gridViewDSHocSinh.FocusedRowHandle = _current_row_edit;
                     gridViewDSHocSinh_FocusedRowChanged(this,
                         new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs(0, _current_row_edit));
                 }
-                else
-                {
-                    _Reset_Control();
-                }
+            }
+            else  // TH Grid ko co hoc sinh nao
+            {
+                 simpleButtonGhiDuLieu.Enabled = is_adding; // An nut Cap Nhat, Hien nut Luu
+                 simpleButtonXoa.Enabled = is_adding;
+                 panelControlHoSo.Enabled = is_adding;
+                _Reset_Control();
             }
         }
         /// <summary>
@@ -156,6 +180,8 @@ namespace QLHS
         /// </summary>
         private void _Reset_Control()
         {
+            if (gridViewDSHocSinh.RowCount == 0)
+                spinEditSTTSoDiem.Value = 1;
             textEditmaHocSinh.Text = "";
             textEditTenHocSinh.Text = "";
             textEditDiaChi.Text = "";
@@ -223,16 +249,7 @@ namespace QLHS
                 object MaHocSinh = this.gridViewDSHocSinh.GetRowCellValue(0, "MaHocSinh").ToString();
                 HienThiHoSoHocSinh(MaHocSinh);
             }
-            else
-            {
-                spinEditSTTSoDiem.Value = 1;
-                textEditmaHocSinh.Text = "";
-                textEditTenHocSinh.Text = "";
-                textEditDiaChi.Text = "";
-                textEditEmail.Text = "";
-                textEditNoiSinh.Text = "";
-                textEditTenHocSinh.Focus();
-            }
+            _Diable_Control(is_adding: false);
         }
         private void simpleButtonGhiDuLieu_Click(object sender, EventArgs e)
         {
@@ -320,28 +337,30 @@ namespace QLHS
                 return;
             }
             // Thêm
-            string maNamHocHT = _quyDinhBUS.LayMaNamHoc_HienTai();
-            string maNamHoc = Util.CboUtil.GetValueItem(comboBoxEditNamHoc);
-            string tenNamHT = _namHocBUS.LayTenNamHoc(maNamHocHT);
-
-            if (maNamHoc != maNamHocHT)
-            {
-                if (Util.MsgboxUtil.YesNo("Chương trình chỉ được phép tiếp nhận học sinh trong năm " + tenNamHT
-                                                            + "\nĐể thực hiện chức năng này, bạn có muốn di chuyển đến năm " + tenNamHT + " hay không?")
-                                                    == System.Windows.Forms.DialogResult.Yes)
-                {
-                    string maKhoiHT = Util.CboUtil.GetValueItem(comboBoxEditKhoi);
-                    Util.CboUtil.SelectedItem(comboBoxEditNamHoc, maNamHocHT);
-                    Util.CboUtil.SelectedItem(comboBoxEditKhoi, maKhoiHT);
-                    Util.MsgboxUtil.Info("Đã chuyển đến năm " + tenNamHT
-                                                    + ", bạn hãy chọn lớp để thực hiện tiếp nhận hồ sơ mới!");
-                }
-                  
-                return;
-            }
+           
             // Neu co phan lop
             if (!checkEditChuaPhanLop.Checked)
             {
+                string maNamHocHT = _quyDinhBUS.LayMaNamHoc_HienTai();
+                string maNamHoc = Util.CboUtil.GetValueItem(comboBoxEditNamHoc);
+                string tenNamHT = _namHocBUS.LayTenNamHoc(maNamHocHT);
+
+                if (maNamHoc != maNamHocHT)
+                {
+                    if (Util.MsgboxUtil.YesNo("Chương trình chỉ được phép tiếp nhận học sinh trong năm " + tenNamHT
+                                                                + "\nĐể thực hiện chức năng này, bạn có muốn di chuyển đến năm " + tenNamHT + " hay không?")
+                                                        == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        string maKhoiHT = Util.CboUtil.GetValueItem(comboBoxEditKhoi);
+                        Util.CboUtil.SelectedItem(comboBoxEditNamHoc, maNamHocHT);
+                        Util.CboUtil.SelectedItem(comboBoxEditKhoi, maKhoiHT);
+                        Util.MsgboxUtil.Info("Đã chuyển đến năm " + tenNamHT
+                                                        + ", bạn hãy chọn lớp để thực hiện tiếp nhận hồ sơ mới!");
+                    }
+
+                    return;
+                }
+
                 string MaLop = (Util.CboUtil.GetValueItem(comboBoxEditLop));
                 int SiSoCanTren = _quyDinhBUS.LaySiSoCanTren();
                 if (_phanLopBUS.Dem_SiSo_Lop(MaLop) >= SiSoCanTren)
@@ -393,7 +412,6 @@ namespace QLHS
             comboBoxEditLop.Enabled = !checkEditChuaPhanLop.Checked;
             spinEditSTTSoDiem.Enabled = !checkEditChuaPhanLop.Checked;
             this.LoadLai_GridControl_HocSinh(checkEditChuaPhanLop.Checked);
-           
         }
     }
 }
