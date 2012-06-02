@@ -252,6 +252,7 @@
             // 
             // textEditTenMonHoc
             // 
+            this.textEditTenMonHoc.Enabled = false;
             this.textEditTenMonHoc.Location = new System.Drawing.Point(23, 70);
             this.textEditTenMonHoc.Name = "textEditTenMonHoc";
             this.textEditTenMonHoc.Size = new System.Drawing.Size(147, 20);
