@@ -26,7 +26,7 @@ namespace QLHS
 
         private void frmNamHoc_Load(object sender, EventArgs e)
         {
-            Util.CboUtil.SetDataSource(comboBoxEdit1, _namHocBUS.LayNamHoc_ThemMoi(),
+            Util.CboUtil.SetDataSource(comboBoxEdit1, _namHocBUS.LayDT_NamHoc_ThemMoi(),
                                                                         "MaNamHoc", "TenNamHoc", 0);
             this._Load_Lai_GridView();
             
@@ -84,7 +84,7 @@ namespace QLHS
                 }
                 else
                 {
-                    _namHocBUS.ThemNamHoc(namHocDTO);
+                    _namHocBUS.Them_NamHoc(namHocDTO);
                     Util.MsgboxUtil.Success("Đã tạo năm học mới thành công."
                                                                + "\nTiếp theo bạn hãy tạo danh sách lớp cho năm học này!");
                     
@@ -107,7 +107,7 @@ namespace QLHS
                                                 + tenNamHoc + " và tất cả hồ sơ: Lớp học, phân lớp, bảng điểm,... liên quan đến năm học này?")
                         == DialogResult.Yes)
                     {
-                        _namHocBUS.XoaNamHoc(maNamHoc);
+                        _namHocBUS.Xoa_NamHoc(maNamHoc);
                         Util.MsgboxUtil.Success("Đã xóa năm học " + tenNamHoc + " thành công!");
                         this._Load_Lai_GridView();
                     }

@@ -41,13 +41,13 @@ namespace QLHS
         {
             treeListLopHoc.ParentFieldName = "MaKhoi";
             treeListLopHoc.PreviewFieldName = "TenKhoi";
-            treeListLopHoc.DataSource = _khoiBUS.LayDTKhoi();
+            treeListLopHoc.DataSource = _khoiBUS.LayDT_Khoi();
 
             Util.CboUtil.SetDataSource(comboBoxEditNamHoc,
                                                          _namHocBUS.LayDTNamHoc(),
                                                         "MaNamHoc", "TenNamHoc", 0);
             Util.CboUtil.SetDataSource(comboBoxEditHocKy,
-                                                        _hocKyBUS.LayDTHocKy(),
+                                                        _hocKyBUS.LayDT_HocKy(),
                                                         "MaHocKy", "TenHocKy", 0);
             Util.CboUtil.SetDataSource(comboBoxEditMonHoc,
                                                         _monHocBUS.LayDT_DanhSach_MonHoc(),
@@ -94,12 +94,12 @@ namespace QLHS
             }
             string maLop = treeListLopHoc.FocusedNode.GetValue("MaKhoi").ToString();
             gridControlTongKetNamHoc.DataSource =
-            _bangDiemBUS.LayBangDiem_Lop_MonHoc_HocKy(maLop, Util.CboUtil.GetValueItem(comboBoxEditHocKy),
+            _bangDiemBUS.LayDT_BangDiem_Lop_MonHoc_HocKy(maLop, Util.CboUtil.GetValueItem(comboBoxEditHocKy),
                                             Util.CboUtil.GetValueItem(comboBoxEditMonHoc));
             labelControlNamHoc.Text = Util.CboUtil.GetDisplayItem(comboBoxEditNamHoc);
             labelControlLop.Text = treeListLopHoc.FocusedNode.GetValue("TenKhoi").ToString();
             labelControlHocKy.Text = Util.CboUtil.GetValueItem(comboBoxEditHocKy);
-            labelControlGVCN.Text = _lopBUS.Lay_TenGiaoVien_MaLop(maLop);
+            labelControlGVCN.Text = _lopBUS.LayTenGiaoVien_MaLop(maLop);
             labelControlTenMon.Text = Util.CboUtil.GetDisplayItem(comboBoxEditMonHoc).ToUpper();
         }
        
@@ -155,7 +155,7 @@ namespace QLHS
                 // Kiểm tra điểm hợp lệ trên 1 dòng
                 _bangDiemBUS.KiemTraHopLe_DataRow_Lop_MonHoc_HocKy(bangDiem);
                 // Tính điểm trung bình
-                double dTB_bangdiem = _bangDiemBUS.TinhDiemTB_DataRow_Lop_MonHoc_HocKy(bangDiem);
+                double dTB_bangdiem = _bangDiemBUS.TinhDTB_DataRow_Lop_MonHoc_HocKy(bangDiem);
                 bangDiem.DTB = dTB_bangdiem;
                 // Gán và hiển thị cột DTB
                 advBandedGridView1.SetRowCellValue(e.RowHandle, "DTB", dTB_bangdiem);

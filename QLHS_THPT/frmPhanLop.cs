@@ -87,7 +87,7 @@ namespace QLHS
         }
         private void _LoadGridcontrolDSHocSinhMoi()
         {
-            gridControlDSHocSinhMoi.DataSource =  _hocSinhBUS.LayDTHocSinh_LopHoc(
+            gridControlDSHocSinhMoi.DataSource =  _hocSinhBUS.LayDT_HocSinh(
                                                         Util.CboUtil.GetValueItem(comboBoxEditLopMoi)
                                                   );
         }
@@ -105,7 +105,7 @@ namespace QLHS
             else if(radioButtonPhanLopHocSinh_NamTruoc.Checked || 
                     radioButtonChuyenLopCungKhoi.Checked)
             {
-                  gridControlDSHocSinh.DataSource = _hocSinhBUS.LayDTHocSinh_LopHoc(
+                  gridControlDSHocSinh.DataSource = _hocSinhBUS.LayDT_HocSinh(
                          Util.CboUtil.GetValueItem(comboBoxEditLop)
                   );
             }
@@ -160,7 +160,7 @@ namespace QLHS
         }
         private bool _KiemTraKhoiLop_ChuyenLop(string MaNamHoc)
         {
-            return _phanLopBUS.LayDTKhoi(MaNamHoc).Rows.Count > 0;
+            return _KhoiBUS.LayDT_Khoi(MaNamHoc).Rows.Count > 0;
         }
 
         private void _Load_Form()
@@ -176,7 +176,7 @@ namespace QLHS
             {
                 return;
             }
-            Util.CboUtil.SetDataSource(comboBoxEditKhoi, _phanLopBUS.LayDTKhoi(
+            Util.CboUtil.SetDataSource(comboBoxEditKhoi, _KhoiBUS.LayDT_Khoi(
                 Util.CboUtil.GetValueItem(comboBoxEditNamHoc)), "MaKhoi", "TenKHoi", 0);
         }
 
@@ -228,20 +228,20 @@ namespace QLHS
             this.LoadComboboxLopHoc(sender, e);
             if (radioButtonChuyenLopCungKhoi.Checked)
             {
-                Util.CboUtil.SetDataSource(comboBoxEditKhoiMoi, _phanLopBUS.LayDTKhoi_Chuyen(Util.CboUtil.GetValueItem(comboBoxEditNamHocMoi), Util.CboUtil.GetValueItem(comboBoxEditKhoi)), "MaKhoi", "TenKhoi", 0);
+                Util.CboUtil.SetDataSource(comboBoxEditKhoiMoi, _KhoiBUS.LayDT_Khoi_ChuyenLop(Util.CboUtil.GetValueItem(comboBoxEditNamHocMoi), Util.CboUtil.GetValueItem(comboBoxEditKhoi)), "MaKhoi", "TenKhoi", 0);
 
             }
             else
             {
                 Util.CboUtil.SetDataSource(
-                    comboBoxEditKhoiMoi, _KhoiBUS.LayDTKhoi_PL(Util.CboUtil.GetValueItem(comboBoxEditKhoi)), "MaKhoi", "TenKhoi", 0);
+                    comboBoxEditKhoiMoi, _KhoiBUS.LayDT_Khoi_PhanLop(Util.CboUtil.GetValueItem(comboBoxEditKhoi)), "MaKhoi", "TenKhoi", 0);
             }
         }
 
         private void frmChuyenLop_Load(object sender, EventArgs e)
         {
             string tb = "";
-            if (_NamHocBUS.LayDTNamHocHienTai().Rows.Count > 0)
+            if (_NamHocBUS.LayDT_NamHocHienTai().Rows.Count > 0)
             {
                 if (_KiemTraKhoiLop_ChuyenLop(_maNamHocHienTai))
                 {
@@ -289,15 +289,15 @@ namespace QLHS
             if(radioButtonPhanLopHoSo_ChuaPhanLop.Checked)
             {
                 Util.CboUtil.SetDataSource(comboBoxEditKhoiMoi, 
-                    _phanLopBUS.LayDTKhoi10(Util.CboUtil.GetValueItem(comboBoxEditNamHocMoi)),
+                    _KhoiBUS.LayDT_Khoi10(Util.CboUtil.GetValueItem(comboBoxEditNamHocMoi)),
                     "MaKhoi", "TenKHoi", 0);
             }
             if (radioButtonChuyenLopCungKhoi.Checked)
             {
-                Util.CboUtil.SetDataSource(comboBoxEditKhoiMoi, _phanLopBUS.LayDTKhoi_Chuyen(Util.CboUtil.GetValueItem(comboBoxEditNamHocMoi), Util.CboUtil.GetValueItem(comboBoxEditKhoi)), "MaKhoi", "TenKhoi", 0);
+                Util.CboUtil.SetDataSource(comboBoxEditKhoiMoi, _KhoiBUS.LayDT_Khoi_ChuyenLop(Util.CboUtil.GetValueItem(comboBoxEditNamHocMoi), Util.CboUtil.GetValueItem(comboBoxEditKhoi)), "MaKhoi", "TenKhoi", 0);
             }
             if(radioButtonPhanLopHocSinh_NamTruoc.Checked)
-                Util.CboUtil.SetDataSource(comboBoxEditKhoiMoi, _KhoiBUS.LayDTKhoi_PL(Util.CboUtil.GetValueItem(comboBoxEditKhoi)), "MaKhoi", "TenKhoi", 0);
+                Util.CboUtil.SetDataSource(comboBoxEditKhoiMoi, _KhoiBUS.LayDT_Khoi_PhanLop(Util.CboUtil.GetValueItem(comboBoxEditKhoi)), "MaKhoi", "TenKhoi", 0);
         }
         
         private void comboBoxEditKhoiMoi_SelectedIndexChanged(object sender, EventArgs e)
@@ -339,7 +339,7 @@ namespace QLHS
                 return;
             }
 
-            int siSoToiDa = _quyDinhBUS.LaySiSoCanTren();
+            int siSoToiDa = _quyDinhBUS.LaySiSo_CanTren();
           
 
             // Chuyển cùng khối, chuyển và xóa hồ sơ cũ
@@ -551,12 +551,12 @@ namespace QLHS
             comboBoxEditKhoi_SelectedIndexChanged(sender, e);
             if (radioButtonChuyenLopCungKhoi.Checked)
             {
-                Util.CboUtil.SetDataSource(comboBoxEditNamHoc, _NamHocBUS.LayDTNamHocHienTai(),
+                Util.CboUtil.SetDataSource(comboBoxEditNamHoc, _NamHocBUS.LayDT_NamHocHienTai(),
                                                 "MaNamHoc", "TenNamHoc", 0);
             }
             else
             {
-                Util.CboUtil.SetDataSource(comboBoxEditNamHoc, _NamHocBUS.LayDTNamHocTruoc(),
+                Util.CboUtil.SetDataSource(comboBoxEditNamHoc, _NamHocBUS.LayDT_NamHocTruoc(),
                                                     "MaNamHoc", "TenNamHoc", 0);
             }
             if (radioButtonChuyenLopCungKhoi.Checked)
@@ -590,8 +590,8 @@ namespace QLHS
                 _Show_Control(YeuCau.ChuyenLop_CungKhoi);
             }
             // Load combobox 2 bên chuyển lớp
-            Util.CboUtil.SetDataSource(comboBoxEditNamHoc, _NamHocBUS.LayDTNamHocHienTai(), "MaNamHoc", "TenNamHoc", 0);
-            Util.CboUtil.SetDataSource(comboBoxEditNamHocMoi, _NamHocBUS.LayDTNamHocHienTai(), "MaNamHoc", "TenNamHoc", 0);
+            Util.CboUtil.SetDataSource(comboBoxEditNamHoc, _NamHocBUS.LayDT_NamHocHienTai(), "MaNamHoc", "TenNamHoc", 0);
+            Util.CboUtil.SetDataSource(comboBoxEditNamHocMoi, _NamHocBUS.LayDT_NamHocHienTai(), "MaNamHoc", "TenNamHoc", 0);
         }
 
         private void radioButtonPhanLopHocSinhMoi_CheckedChanged(object sender, EventArgs e)
@@ -602,7 +602,7 @@ namespace QLHS
                 _Show_Control(YeuCau.PhanLop_HoSoChuaPhanLop);
             }
             Util.CboUtil.SetDataSource(comboBoxEditNamHocMoi,
-                _NamHocBUS.LayDTNamHocHienTai(), "MaNamHoc", "TenNamHoc", 0);
+                _NamHocBUS.LayDT_NamHocHienTai(), "MaNamHoc", "TenNamHoc", 0);
 
             this._LoadGridcontrolDSHocSinh();
 
@@ -615,12 +615,12 @@ namespace QLHS
                 this._Show_Control(YeuCau.PhanLop_HoSoNamCu);
 
                 // Load năm học trước
-                Util.CboUtil.SetDataSource(comboBoxEditNamHoc, _NamHocBUS.LayDTNamHocTruoc(), "MaNamHoc", "TenNamHoc", 0);
+                Util.CboUtil.SetDataSource(comboBoxEditNamHoc, _NamHocBUS.LayDT_NamHocTruoc(), "MaNamHoc", "TenNamHoc", 0);
                 
                 if (_KiemTraCbThongTinLopCu())
                 {
                     Util.CboUtil.SetDataSource(comboBoxEditNamHocMoi,
-                        _NamHocBUS.LayDTNamHocHienTai(), "MaNamHoc", "TenNamHoc", 0);
+                        _NamHocBUS.LayDT_NamHocHienTai(), "MaNamHoc", "TenNamHoc", 0);
                 }
                 
             }

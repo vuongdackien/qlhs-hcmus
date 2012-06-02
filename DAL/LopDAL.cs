@@ -54,7 +54,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="MaLop">String: Mã lớp</param>
         /// <returns>String: Tên giáo viên</returns>
-        public string Lay_TenGiaoVien_MaLop(string MaLop)
+        public string LayTen_GiaoVien_MaLop(string MaLop)
         {
             string sql = "SELECT gv.TenGiaoVien FROM GIAOVIEN gv, LOP l "
                         +"WHERE gv.MaGiaoVien = l.MaGiaoVien AND l.Malop ='"+MaLop+"'";
@@ -75,7 +75,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="lop">LopDTO</param>
         /// <returns></returns>
-        public bool Them_Lop(LopDTO lop)
+        public bool Them_HoSo_Lop(LopDTO lop)
         {
             if (this.KiemTra_TonTaiMaLop(lop.MaLop))
             {
@@ -103,7 +103,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="MaLop">String: Mã lớp</param>
         /// <returns></returns>
-        public bool Xoa_Lop(string MaLop)
+        public bool Xoa_HoSo_Lop(string MaLop)
         {
             string sql = "DELETE FROM PHANLOP WHERE MaLop = '"+MaLop+"'";
             sql += "\nDELETE FROM CHUYENLOP WHERE TuLop = '"+MaLop+"'";
@@ -112,13 +112,13 @@ namespace QLHS.DAL
             sql += "\nDELETE FROM LOP WHERE MaLop = '" + MaLop + "'";
             return ExecuteQuery(sql) > 0;
         }
-        public bool Xoa_Lop_Nam(string MaNamHoc)
+        public bool Xoa_HoSo_Lop_Nam(string MaNamHoc)
         {
             string sql = "SELECT MaLop FROM LOP WHERE MaNamHoc = '" + MaNamHoc + "'";
             DataTable tbLop = GetTable(sql);
             foreach (DataRow dr in tbLop.Rows)
 	        {
-                 this.Xoa_Lop(dr["MaLop"].ToString());
+                 this.Xoa_HoSo_Lop(dr["MaLop"].ToString());
 	        }
             return true;
         }

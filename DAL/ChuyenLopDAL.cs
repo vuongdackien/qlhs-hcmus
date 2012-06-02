@@ -17,7 +17,7 @@ namespace QLHS.DAL
                          cl.TuLop, cl.DenLop, cl.NgayChuyen.ToString("dd-MM-yyy HH:mm:ss"), cl.LyDoChuyen, cl.GiuLaiBangDiem, MaHocSinh);
             return ExecuteQuery(sql)>0;  
         }
-        public bool KTHocSinhThuocLop_DuocChuyenTuLop(string MaHocSinh, string MaLopMoi, string MaLopCu)
+        public bool KiemTra_HocSinhThuocLop_DuocChuyenTuLop(string MaHocSinh, string MaLopMoi, string MaLopCu)
         {
             string sql = "select pl.MaHocSinh "
                             + " from PHANLOP pl,CHUYENLOP cl "
@@ -28,12 +28,12 @@ namespace QLHS.DAL
                             + " and cl.DenLop not in (select TuLop from CHUYENLOP cl1 where cl1.MaHocSinh='" + MaHocSinh + "')";
             return GetTable(sql).Rows.Count > 0;
         }
-        public bool KT_HocSinhCo_BangDiem(string MaHocSinh, string MaLop)
+        public bool KiemTra_HocSinhCo_BangDiem(string MaHocSinh, string MaLop)
         {
             string sql = "select MaHocSinh from BANGDIEM where MaHocSinh='" + MaHocSinh + "' and MaLop='" +MaLop+ "'  ";
             return GetTable(sql).Rows.Count > 0;
         }
-        public bool XoaChuyenLop(string MaHocSinh, string TuLop, string DenLop)
+        public bool Xoa_ChuyenLop(string MaHocSinh, string TuLop, string DenLop)
         {
             string sql = "delete from CHUYENLOP where TuLop='"+TuLop+"' and DenLop='"+DenLop+"' and MaHocSinh='"+MaHocSinh+"' ";
             return ExecuteQuery(sql)>0;

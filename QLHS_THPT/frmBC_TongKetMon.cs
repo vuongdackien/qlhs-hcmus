@@ -48,7 +48,7 @@ namespace QLHS
 
             //Chắc chắn chọn được node
             string maMonHoc = treeMonHoc.FocusedNode.GetValue("MaMonHoc").ToString();
-            _ds_baocaoTongKetMonHoc = _bangDiemBUS.Lay_BangTongKet_MonHoc_Khoi_HocKy(maMonHoc, Util.CboUtil.GetValueItem(comboBoxEditKhoiLop),
+            _ds_baocaoTongKetMonHoc = _bangDiemBUS.LayList_BangTongKet_MonHoc_Khoi_HocKy(maMonHoc, Util.CboUtil.GetValueItem(comboBoxEditKhoiLop),
                                     Util.CboUtil.GetValueItem(comboBoxEditHocKy),
                                     Util.CboUtil.GetValueItem(comboBoxEditNamHoc));
             gridControlTongKetMonHoc.DataSource = _ds_baocaoTongKetMonHoc;
@@ -66,10 +66,10 @@ namespace QLHS
                                                         _namHocBUS.LayDTNamHoc(),
                                                        "MaNamHoc", "TenNamHoc", 0);
             Util.CboUtil.SetDataSource(comboBoxEditHocKy,
-                                                        _hocKyBUS.LayDTHocKy(),
+                                                        _hocKyBUS.LayDT_HocKy(),
                                                         "MaHocKy", "TenHocKy", 0);
             Util.CboUtil.SetDataSource(comboBoxEditKhoiLop,
-                                                        _khoiBUS.LayDTKhoi(),
+                                                        _khoiBUS.LayDT_Khoi(),
                                                         "MaKhoi", "TenKhoi", 0);
 
             treeMonHoc.ParentFieldName = "MaMonHoc";

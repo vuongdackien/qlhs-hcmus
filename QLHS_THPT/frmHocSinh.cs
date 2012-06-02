@@ -105,7 +105,7 @@ namespace QLHS
             }
             else
             {
-                _hocSinhDTO = _hocSinhBUS.LayHoSoHocSinh(MaHocSinh.ToString());
+                _hocSinhDTO = _hocSinhBUS.LayHoSo_HocSinh(MaHocSinh.ToString());
                 panelControlHoSo.Enabled = true;
                 spinEditSTTSoDiem.Value = _hocSinhDTO.STT;
                 dateEditNgaySinh.EditValue = _hocSinhDTO.NgaySinh;
@@ -193,7 +193,7 @@ namespace QLHS
         private void frmHocSinh_Load(object sender, EventArgs e)
         {
             Util.CboUtil.SetDataSource(comboBoxEditNamHoc, _namHocBUS.LayDTNamHoc(), "MaNamHoc", "TenNamHoc", 0);
-            Util.CboUtil.SetDataSource(comboBoxEditKhoi, _khoiBUS.LayDTKhoi(),
+            Util.CboUtil.SetDataSource(comboBoxEditKhoi, _khoiBUS.LayDT_Khoi(),
                                                 "MaKhoi", "TenKhoi", 0);
         }
         private void comboBoxEditNamHoc_SelectedIndexChanged(object sender, EventArgs e)
@@ -239,9 +239,9 @@ namespace QLHS
         private void LoadLai_GridControl_HocSinh(bool chuaPhanLop = false)
         {
             if(chuaPhanLop)
-                gridControlDSHocSinh.DataSource = _hocSinhBUS.LayDTHocSinh_LopHoc("",true);
+                gridControlDSHocSinh.DataSource = _hocSinhBUS.LayDT_HocSinh("",true);
             else
-                 gridControlDSHocSinh.DataSource = _hocSinhBUS.LayDTHocSinh_LopHoc(
+                 gridControlDSHocSinh.DataSource = _hocSinhBUS.LayDT_HocSinh(
                      Util.CboUtil.GetValueItem(comboBoxEditLop), false
             );
             if (gridViewDSHocSinh.RowCount > 0)
@@ -294,7 +294,7 @@ namespace QLHS
             }
             try
             {
-                _hocSinhBUS.LuuHoSoHocSinh(hocSinhDTO, maLop);
+                _hocSinhBUS.LuuHoSo_HocSinh(hocSinhDTO, maLop);
                 Util.MsgboxUtil.Success("Lưu hồ sơ học sinh " + hocSinhDTO.TenHocSinh + " thành công!");
             }
             catch (Exception ex)
@@ -343,7 +343,7 @@ namespace QLHS
             {
                 string maNamHocHT = _quyDinhBUS.LayMaNamHoc_HienTai();
                 string maNamHoc = Util.CboUtil.GetValueItem(comboBoxEditNamHoc);
-                string tenNamHT = _namHocBUS.LayTenNamHoc(maNamHocHT);
+                string tenNamHT = _namHocBUS.LayTenNamHoc_MaNamHoc(maNamHocHT);
 
                 if (maNamHoc != maNamHocHT)
                 {
@@ -362,7 +362,7 @@ namespace QLHS
                 }
 
                 string MaLop = (Util.CboUtil.GetValueItem(comboBoxEditLop));
-                int SiSoCanTren = _quyDinhBUS.LaySiSoCanTren();
+                int SiSoCanTren = _quyDinhBUS.LaySiSo_CanTren();
                 if (_phanLopBUS.Dem_SiSo_Lop(MaLop) >= SiSoCanTren)
                 {
                     Util.MsgboxUtil.Error("Lớp " + Util.CboUtil.GetDisplayItem(comboBoxEditLop)
@@ -370,7 +370,7 @@ namespace QLHS
                                                                 + " (" + SiSoCanTren + " học sinh / 1 lớp)!");
                     return;
                 }
-                spinEditSTTSoDiem.Value = _phanLopBUS.Lay_STT_TiepTheo(MaLop);
+                spinEditSTTSoDiem.Value = _phanLopBUS.LaySTT_TiepTheo(MaLop);
             }
             this._Diable_Control(is_adding: true);
             this._Reset_Control();
@@ -399,7 +399,7 @@ namespace QLHS
                 Util.MsgboxUtil.Error("Bạn chưa chọn lớp để thực hiện");
                 return;
             }
-            _phanLopBUS.CapNhap_STT_HocSinh_Lop(Util.CboUtil.GetValueItem(comboBoxEditLop));
+            _phanLopBUS.CapNhapSTT_HocSinh_Lop(Util.CboUtil.GetValueItem(comboBoxEditLop));
             Util.MsgboxUtil.Success("Cập nhật số thự tự cho lớp thành công!");
             // Load lại gridcontrol học sinh
             this.LoadLai_GridControl_HocSinh();

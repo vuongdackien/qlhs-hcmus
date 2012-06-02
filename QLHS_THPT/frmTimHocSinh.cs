@@ -54,7 +54,7 @@ namespace QLHS
         }
         private AutoCompleteStringCollection Tao_Data_AutoComplete_Cbo_TenHocSinh()
         {
-            DataTable tb = _hocSinhBUS.LayDTTenHocSinh();
+            DataTable tb = _hocSinhBUS.LayDT_TenHocSinh();
             AutoCompleteStringCollection cl = new AutoCompleteStringCollection();
             foreach (DataRow rd in tb.Rows)
             {
@@ -78,7 +78,7 @@ namespace QLHS
                                                           "MaNamHoc", "TenNamHoc",0);
             treeListSearch.ParentFieldName = "MaKhoi";
             treeListSearch.PreviewFieldName = "TenKhoi";
-            treeListSearch.DataSource = _khoiBUS.LayDTKhoi();
+            treeListSearch.DataSource = _khoiBUS.LayDT_Khoi();
 
             textBoxTenHocSinh.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             textBoxTenHocSinh.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -149,7 +149,7 @@ namespace QLHS
 
                 if (radioGroupTimTrong.SelectedIndex == 1)  // Chi tim trong ho so hoc sinh 
                 {
-                    kq_TimKiemDS = _hocSinhBUS.TimKiem_HocSinh_KoPhanLop(hsTimKiemDTO);
+                    kq_TimKiemDS = _hocSinhBUS.TimKiem_HocSinh_ChuaPhanLop(hsTimKiemDTO);
                 }
                 else
                 {

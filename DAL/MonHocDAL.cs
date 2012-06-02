@@ -8,7 +8,6 @@ namespace QLHS.DAL
 {
     public class MonHocDAL : ConnectData
     {
-        MonHocDTO _monHocDTO;
         /// <summary>
         /// Thêm môn học
         /// </summary>
@@ -61,33 +60,6 @@ namespace QLHS.DAL
             return Convert.ToInt32(ExecuteScalar(sql)) == 1;
         }
 
-        /// <summary>
-        /// Kiểm tra tên môn học đã có hay chưa
-        /// </summary>
-        /// <param name="tenMonHoc"></param>
-        /// <returns></returns>
-        public bool KiemTraTonTai_TenMonHoc(MonHocDTO _monHocDTO)
-        {
-            string sql = string.Format("SELECT count(*) FROM MONHOC WHERE ");
-            string tenmh = "";
-            tenmh += " (TenMonHoc LIKE N'%" + _monHocDTO.TenMonHoc + "%' ";
-            tenmh += " OR dbo.fnChuyenKhongDau(TenMonHoc) LIKE N'%" + _monHocDTO.TenMonHoc + "%')";
-            sql += tenmh;
-            return Convert.ToInt32(ExecuteScalar(sql)) == 1;
-        }
-
-        /// <summary>
-        /// Kiểm tra tên môn học đã có hay chưa
-        /// </summary>
-        /// <param name="tenMonHoc"></param>
-        /// <returns></returns>
-        public bool KiemTra_ThongTin_MonHoc(MonHocDTO _monHocDTO)
-        {
-            string sql = string.Format("SELECT count(*) FROM MONHOC WHERE SoTiet={0} AND HeSo={1} AND TrangThai={2}", 
-                                            _monHocDTO.SoTiet, _monHocDTO.HeSo, _monHocDTO.TrangThai);           
-            return Convert.ToInt32(ExecuteScalar(sql)) == 1;
-        }
-
 
         /// <summary>
         /// Lấy Datatable danh sách môn học
@@ -104,34 +76,8 @@ namespace QLHS.DAL
 
             return GetTable(sql);
         }
-        /// <Tìm giáo viên theo điều kiện cho trước>
-        /// Tìm với 1 điều kiện
-        /// </summary>
-        /// <param name="i">Các case thực hiện</param>
-        /// 1: Tìm theo mã môn học
-        /// 2: Tìm theo tên môn học
-        /// 3: Tìm theo số tiết
-        /// 4: Tìm theo hệ số
-        /// <param name="DK">Điều kiện truyền vào</param>
-        /// <returns></returns>
-        public DataTable TableGiaoVien(int i, String DK)
-        {
-            string sql = "";
-            switch (i)
-            {
-                case 1: sql = string.Format("select * from MonHoc where MaMonHoc like N'%{0}%' ", DK); break;
-                case 2: sql = string.Format("select * from MonHoc where TenMonHoc like N'%{0}%' ", DK); break;
-                case 3: sql = string.Format("select * from MonHoc where SoTiet = '{0}' ", DK); break;
-                case 4: sql = string.Format("select * from MonHoc where HeSo ='{0}' ", DK); break;
-                case 5: sql = string.Format("select * from MonHoc where TrangThai = '{0}' ", DK); break;
-            }
-
-            DataTable dt = new DataTable();
-            dt = GetTable(sql, true);
-            return dt;
-        }
-             
-        public MonHoc_HeSoDTO Lay_HeSoMonHoc()
+      
+        public MonHoc_HeSoDTO LayDTO_HeSoMonHoc()
         {
             string sql = "SELECT MaMonHoc, HeSo FROM MONHOC WHERE TrangThai = 1";
             OpenConnect();

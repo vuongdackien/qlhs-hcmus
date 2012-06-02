@@ -29,7 +29,7 @@ namespace QLHS.BUS
                 else
                     _BangDiemBUS.XoaBangDiem_HocSinh_Lop(item.Key, thongTinCL.TuLop);
 
-                if (!_PhanLopBUS.KiemTraHSTonTaiTrongLop_ChuyenLop(item.Key, thongTinCL.DenLop))
+                if (!_PhanLopBUS.KiemTraTonTai_HocSinh_TrongLop(item.Key, thongTinCL.DenLop))
                 {
                     _PhanLopBUS.ThayDoi_LopMoi_HocSinh(item.Key, thongTinCL.TuLop, thongTinCL.DenLop);
                 }
@@ -42,13 +42,13 @@ namespace QLHS.BUS
             }
             return true;
         }
-        public bool KTHocSinhThuocLop_DuocChuyenTuLop(string MaHocSinh, string MaLopMoi, string MaLopCu)
+        public bool KiemTraHocSinh_ThuocLop_DuocChuyenTuLop(string MaHocSinh, string MaLopMoi, string MaLopCu)
         {
-            return _ChuyenLopDAL.KTHocSinhThuocLop_DuocChuyenTuLop(MaHocSinh, MaLopMoi, MaLopCu);
+            return _ChuyenLopDAL.KiemTra_HocSinhThuocLop_DuocChuyenTuLop(MaHocSinh, MaLopMoi, MaLopCu);
         }
-        public bool XoaChuyenLop(string MaHocSinh, string TuLop, string DenLop)
+        public bool Xoa_ChuyenLop(string MaHocSinh, string TuLop, string DenLop)
         {
-            return _ChuyenLopDAL.XoaChuyenLop(MaHocSinh, TuLop, DenLop);
+            return _ChuyenLopDAL.Xoa_ChuyenLop(MaHocSinh, TuLop, DenLop);
         }
     }
 }

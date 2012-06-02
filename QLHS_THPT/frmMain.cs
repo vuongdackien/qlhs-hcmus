@@ -150,7 +150,7 @@ namespace QLHS
             if(_fLogin == null || _fLogin.IsDisposed)
                  _fLogin = new frmDangNhap();
             // Set datasource listbox trên form login
-            _fLogin.listBoxControlNguoiDung.DataSource = _nguoiDungBUS.Lay_DT_NguoiDung_DangNhap();
+            _fLogin.listBoxControlNguoiDung.DataSource = _nguoiDungBUS.LayDT_NguoiDung_DangNhap();
             _fLogin.listBoxControlNguoiDung.DisplayMember = "TenGiaoVien";
             _fLogin.listBoxControlNguoiDung.ValueMember = "TenDNhap";
             _fLogin.Show();
@@ -179,7 +179,7 @@ namespace QLHS
                 return;
             }
             // Tạo biến lấy thông tin user đăng nhập hiện tại
-            Util.ObjectUtil.user = _nguoiDungBUS.LayThongTinNguoiDung(UserName);
+            Util.ObjectUtil.user = _nguoiDungBUS.LayThongTin_NguoiDung(UserName);
             if (Util.ObjectUtil.user == null)
             {
                 Util.MsgboxUtil.Error("Tài khoản này không tồn tại!");
@@ -269,7 +269,7 @@ namespace QLHS
                 return;
             }
             // Change password
-            if (_nguoiDungBUS.DoiMatKhauNguoiDung(Util.ObjectUtil.user.TenDNhap, _frmDoiMK.textEditMatKhauMoi.Text))
+            if (_nguoiDungBUS.DoiMatKhau_NguoiDung(Util.ObjectUtil.user.TenDNhap, _frmDoiMK.textEditMatKhauMoi.Text))
             {
                 // Set mật khẩu mới
                 Util.ObjectUtil.user.MatKhau = Util.ObjectUtil.MaHoaMD5(_frmDoiMK.textEditMatKhauMoi.Text);

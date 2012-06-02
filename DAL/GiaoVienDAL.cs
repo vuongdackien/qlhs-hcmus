@@ -24,7 +24,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="giaoVien">GiaoVienDTO</param>
         /// <returns></returns>
-        public bool Them_GiaoVien(GiaoVienDTO giaoVien)
+        public bool Them_HoSo_GiaoVien(GiaoVienDTO giaoVien)
         {
             string sql = string.Format("INSERT INTO GIAOVIEN VALUES ('{0}',N'{1}')", giaoVien.MaGiaoVien, giaoVien.TenGiaoVien);
             return ExecuteQuery(sql) > 0;
@@ -34,7 +34,7 @@ namespace QLHS.DAL
         /// </summary>
         /// <param name="maGiaoVien">string: mã giáo viên</param>
         /// <returns></returns>
-        public bool Xoa_GiaoVien(string maGiaoVien)
+        public bool Xoa_HoSo_GiaoVien(string maGiaoVien)
         {
             string sql = "\nDELETE FROM NGUOIDUNG WHERE MaND = '"+maGiaoVien+"'\n";
             sql += "UPDATE LOP SET MaGiaoVien = NULL WHERE MaGiaoVien = '"+maGiaoVien+"'\n";

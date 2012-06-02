@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="BangDiemDAL.cs" />
     <Compile Include="ChuyenLopDAL.cs" />
+    <Compile Include="KhoiDAL.cs" />
     <Compile Include="DatabaseConnect\ConnectData.cs" />
     <Compile Include="GiaoVienDAL.cs" />
     <Compile Include="HocSinhDAL.cs" />

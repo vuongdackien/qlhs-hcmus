@@ -267,7 +267,7 @@
             // 
             this.xtraTabPageDieuKien.Controls.Add(this.panelControlDKienTim);
             this.xtraTabPageDieuKien.Name = "xtraTabPageDieuKien";
-            this.xtraTabPageDieuKien.Size = new System.Drawing.Size(733, 208);
+            this.xtraTabPageDieuKien.Size = new System.Drawing.Size(739, 214);
             this.xtraTabPageDieuKien.Text = "Điều kiện về hồ sơ học sinh";
             // 
             // panelControlDKienTim
@@ -278,7 +278,7 @@
             this.panelControlDKienTim.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlDKienTim.Location = new System.Drawing.Point(0, 0);
             this.panelControlDKienTim.Name = "panelControlDKienTim";
-            this.panelControlDKienTim.Size = new System.Drawing.Size(733, 208);
+            this.panelControlDKienTim.Size = new System.Drawing.Size(739, 214);
             this.panelControlDKienTim.TabIndex = 0;
             // 
             // panelControlNDungDKien
@@ -300,12 +300,12 @@
             this.panelControlNDungDKien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControlNDungDKien.Location = new System.Drawing.Point(0, 0);
             this.panelControlNDungDKien.Name = "panelControlNDungDKien";
-            this.panelControlNDungDKien.Size = new System.Drawing.Size(733, 148);
+            this.panelControlNDungDKien.Size = new System.Drawing.Size(739, 154);
             this.panelControlNDungDKien.TabIndex = 1;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(226, 122);
+            this.labelControl1.Location = new System.Drawing.Point(227, 123);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(20, 13);
             this.labelControl1.TabIndex = 16;
@@ -442,9 +442,9 @@
             this.panelControlButtonTim.Controls.Add(this.simpleButtonXoaDK);
             this.panelControlButtonTim.Controls.Add(this.simpleButtonSearch);
             this.panelControlButtonTim.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControlButtonTim.Location = new System.Drawing.Point(0, 148);
+            this.panelControlButtonTim.Location = new System.Drawing.Point(0, 154);
             this.panelControlButtonTim.Name = "panelControlButtonTim";
-            this.panelControlButtonTim.Size = new System.Drawing.Size(733, 60);
+            this.panelControlButtonTim.Size = new System.Drawing.Size(739, 60);
             this.panelControlButtonTim.TabIndex = 0;
             // 
             // simpleButtonDong

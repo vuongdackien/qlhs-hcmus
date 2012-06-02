@@ -40,16 +40,16 @@ namespace QLHS.BUS
         /// </summary>
         /// <param name="MaLop">String: Mã lớp</param>
         /// <returns>String: Tên giáo viên</returns>
-        public string Lay_TenGiaoVien_MaLop(string MaLop)
+        public string LayTenGiaoVien_MaLop(string MaLop)
         {
-            return _LopDAL.Lay_TenGiaoVien_MaLop(MaLop);
+            return _LopDAL.LayTen_GiaoVien_MaLop(MaLop);
         }
         /// <summary>
         /// Kiểm tra tồn tại mã lớp
         /// </summary>
         /// <param name="MaLop">String: Mã lớp</param>
         /// <returns>Bool</returns>
-        public bool KiemTra_TonTaiMaLop(string MaLop)
+        public bool KiemTraTonTai_MaLop(string MaLop)
         {
             return _LopDAL.KiemTra_TonTaiMaLop(MaLop);
         }
@@ -60,7 +60,7 @@ namespace QLHS.BUS
         /// <returns></returns>
         public bool Them_Lop(LopDTO lop)
         {
-            return _LopDAL.Them_Lop(lop);
+            return _LopDAL.Them_HoSo_Lop(lop);
         }
         /// <summary>
         /// Cập nhật giáo viên chủ nhiệm
@@ -78,7 +78,7 @@ namespace QLHS.BUS
         /// <returns></returns>
         public bool Xoa_Lop(string MaLop)
         {
-            return _LopDAL.Xoa_Lop(MaLop);
+            return _LopDAL.Xoa_HoSo_Lop(MaLop);
         }
     }
 }

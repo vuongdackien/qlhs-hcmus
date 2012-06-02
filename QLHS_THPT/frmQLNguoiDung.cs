@@ -33,14 +33,14 @@ namespace QLHS
         {
             Util.CboUtil.SetDataSource(comboBoxEditNguoiDung, _giaoVienBUS.LayDT_DanhSachGiaoVien(),
                                                           "MaGiaoVien", "TenGiaoVien",0);
-            Util.CboUtil.SetDataSource(comboBoxEditQuyenSuDung, _loaiNguoiDungBUS.Lay_DT_LoaiNguoiDung(),
+            Util.CboUtil.SetDataSource(comboBoxEditQuyenSuDung, _loaiNguoiDungBUS.LayDT_LoaiNguoiDung(),
                                                          "MaLoaiND", "TenLoaiND", 0);
             // load gridview
             this._Load_Lai_Gridview();                             
         }
         private void _Load_Lai_Gridview(int row = 0)
         {
-            gridControlNguoiDung.DataSource = _nguoiDungBUS.Lay_DT_NguoiDung();
+            gridControlNguoiDung.DataSource = _nguoiDungBUS.LayDT_NguoiDung();
             if (gridViewNguoiDung.RowCount > 0)
             {
                 gridViewNguoiDung_FocusedRowChanged(this,
@@ -140,7 +140,7 @@ namespace QLHS
             if (!checkExistsUser)
             {
                 // thêm
-                if (_nguoiDungBUS.ThemNguoiDung(user))
+                if (_nguoiDungBUS.Them_NguoiDung(user))
                 {
                     Util.MsgboxUtil.Success("Thêm thành công user: " +
                             Util.CboUtil.GetDisplayItem(comboBoxEditNguoiDung) + " !");
@@ -151,7 +151,7 @@ namespace QLHS
             {
                 _current_row_edit = gridViewNguoiDung.FocusedRowHandle;
                 // Sửa
-                if (_nguoiDungBUS.SuaNguoiDung(user))
+                if (_nguoiDungBUS.Sua_NguoiDung(user))
                 {
                     Util.MsgboxUtil.Success("Sửa thành công user: " +  Util.CboUtil.GetDisplayItem(comboBoxEditNguoiDung)  + " !");
                 }
@@ -175,11 +175,11 @@ namespace QLHS
                     if (Util.MsgboxUtil.YesNo("Bạn có muốn xóa người dùng "
                         + tenNguoiDung + " hay không?") == DialogResult.Yes)
                     {
-                        if (_nguoiDungBUS.XoaNguoiDung(Util.CboUtil.GetValueItem(comboBoxEditNguoiDung)))
+                        if (_nguoiDungBUS.Xoa_NguoiDung(Util.CboUtil.GetValueItem(comboBoxEditNguoiDung)))
                         {
                             Util.MsgboxUtil.Success("Xóa người dùng "
                                         + tenNguoiDung + " thành công!");
-                            gridControlNguoiDung.DataSource = _nguoiDungBUS.Lay_DT_NguoiDung();
+                            gridControlNguoiDung.DataSource = _nguoiDungBUS.LayDT_NguoiDung();
                             return;
                         }
                     }
