@@ -151,6 +151,6 @@
   - Ấn nút "Sắp xếp lại STT" để tự động sắp xếp STT trong lớp theo Alpha.  </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>34</value>
+    <value>70</value>
   </metadata>
 </root>
