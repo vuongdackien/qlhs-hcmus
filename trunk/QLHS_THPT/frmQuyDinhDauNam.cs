@@ -47,13 +47,13 @@ namespace QLHS
             {
                 msg = "\nĐịa chỉ không hợp lệ! (lớn hơn 3 ký tự)";
             }
-            if (spinEditSoLuongLop.Value <= 3)
+            if (spinEditSoLuongLop.Value <= 0)
             {
-                msg = "\nSố lượng lớp tối đa không hợp lệ! (lớn hơn 3)";
+                msg = "\nSố lượng lớp tối đa không hợp lệ! (lớn hơn 0)";
             }
-            if (spinEditSiSoToiDa.Value <= 15)
+            if (spinEditSiSoToiDa.Value <= 0)
             {
-                msg = "\nSỉ số lớp tối đa không hợp lệ! (lớn hơn 15)";
+                msg = "\nSỉ số lớp tối đa không hợp lệ! (lớn hơn 0)";
             }
             if (spinEditDoTuoiTu.Value <= 13 || spinEditDoTuoiDen.Value < 13)
             {
@@ -62,6 +62,10 @@ namespace QLHS
             else if(spinEditDoTuoiTu.Value >= spinEditDoTuoiDen.Value)
             {
                 msg = "\nTuổi cận dưới phải nhỏ hơn tuổi cận trên!";
+            }
+            if (spinEditDiemDat.Value < 5 || spinEditDiemDat.Value > 10)
+            {
+                msg = "\nĐiểm đạt môn không hợp lệ (trong khoảng 5 đến 10)!";
             }
             if (msg != "")
             {
