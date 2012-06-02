@@ -9,32 +9,32 @@ namespace QLHS.DAL
     public class PhanLopDAL : ConnectData
     {
         /// <summary>
-        /// Kiểm tra mã học sinh trong năm cũ có tồn tại trong năm mới chưa
+        /// Lấy hồ sơ phân lớp học sinh trong năm cũ có tồn tại trong năm mới chưa
         /// </summary>
         /// <param name="MaHocSinh"></param>
         /// <param name="MaKhoi"></param>
         /// <param name="MaNamHoc"></param>
         /// <returns>PhanLopDTO</returns>
-        public PhanLopDTO KT_HocSinh_TonTai_Khoi_NamHoc(string MaHocSinh,string MaKhoi,string MaNamHoc)
+        public PhanLopDTO Lay_PhanLop_HocSinh_Khoi_NamHoc(string MaHocSinh,string MaKhoi,string MaNamHoc)
         {
-            string khoi="";
+            string khoi_in="";
             if (MaKhoi == "10")
             {
-                khoi = khoi + "('10',11)";
+                khoi_in = "(10,11)";
             }
             else
             {
                 if (MaKhoi == "11")
                 {
-                    khoi = khoi + "('11','12')";
+                    khoi_in = "(11,12)";
                 }
                 else
-                    khoi = khoi + "(12)";
+                    khoi_in = "(12)";
             }
             string sql = "select a.STT, a.MaHocSinh,b.TenLop, b.MaLop, b.TenLop, h.TenHocSinh from PHANLOP as a, LOP as b, HOCSINH h "
                         + "where a.MaLop=b.MaLop and h.MaHocSinh = a.MaHocSinh "
                         + "and a.MaHocSinh='"+MaHocSinh+"' and b.MaNamHoc= '"
-                        + MaNamHoc + "' and b.MaKhoiLop in "+khoi+"  ";
+                        + MaNamHoc + "' and b.MaKhoiLop in " + khoi_in + "  ";
             OpenConnect();
             var dr = ExecuteReader(sql);
             PhanLopDTO phanlop = null;
@@ -45,20 +45,14 @@ namespace QLHS.DAL
                 phanlop.TenHocSinh = Convert.ToString(dr["TenHocSinh"]);
                 phanlop.STT = Convert.ToInt32(dr["STT"]);
                 phanlop.MaLop = Convert.ToString(dr["MaLop"]);
-                phanlop.MaLop = Convert.ToString(dr["TenLop"]);
+                phanlop.TenLop = Convert.ToString(dr["TenLop"]);
                 break;
             }
 
             CloseConnect();
             return phanlop;
         }
-        public DataTable KT_HocSinh_ChuyenLop(string MaHocSinh, string MaLop)
-        {
-            string sql = "select cl.MaHocSinh,l.TenLop from CHUYENLOP AS cl,LOP AS l where cl.DenLop=l.MaLop and cl.TuLop='"+MaLop+"'"
-                + "and cl.MaHocSinh='"+MaHocSinh+"'";
-            return GetTable(sql);
 
-        }
         public bool KiemTra_STT_TonTai(int STT, string MaLop)
         {
             string sql = "SELECT STT FROM PHANLOP WHERE MaLop = '"+MaLop+"' AND STT = "+STT;

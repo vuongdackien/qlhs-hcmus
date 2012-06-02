@@ -156,47 +156,6 @@ namespace QLHS
             simpleButtonChuyenTatCa.Enabled = false;
         }
 
-        /// <summary>
-        /// Chuyển tất cả học sinh sang lớp mới
-        /// </summary>
-        private void _ChuyenTatCa()
-        {
-            string maLop = Util.CboUtil.GetValueItem(comboBoxEditLop),
-                    tenLop = Util.CboUtil.GetDisplayItem(comboBoxEditLop),
-                    maLopMoi = Util.CboUtil.GetValueItem(comboBoxEditLopMoi),
-                    tenLopMoi = Util.CboUtil.GetDisplayItem(comboBoxEditLopMoi),
-                    maNamHoc = Util.CboUtil.GetValueItem(comboBoxEditNamHoc),
-                    tenNamHoc = Util.CboUtil.GetDisplayItem(comboBoxEditNamHoc),
-                    maNamHocMoi = Util.CboUtil.GetValueItem(comboBoxEditNamHocMoi),
-                    tenNamHocMoi = Util.CboUtil.GetDisplayItem(comboBoxEditNamHocMoi),
-                    tenKhoi = Util.CboUtil.GetDisplayItem(comboBoxEditKhoi),
-                    tenKhoiMoi = Util.CboUtil.GetDisplayItem(comboBoxEditKhoiMoi);
-            int siSoToiDa = _quyDinhBUS.LaySiSoCanTren();
-            int siSoLopMoi = _phanLopBUS.Dem_SiSo_Lop(maLopMoi);
-            int siSoLop = _phanLopBUS.Dem_SiSo_Lop(maLop);
-            if ((siSoLop + siSoLopMoi) >= siSoToiDa)
-            {
-                Util.MsgboxUtil.Error("Không thể chuyển tất cả vì sau khi chuyển học sinh từ lớp " + tenLop
-                            + " (" + siSoLop + " hs) sang lớp " + tenLopMoi + " (" + siSoLopMoi + " hs) sẽ vượt quá quy định (" + siSoToiDa + ")!");
-                return;
-            }
-
-            Dictionary<string, string> ds_HocSinhChon = new Dictionary<string, string>();
-            for (int i = 0; i < gridViewDSHocSinh.RowCount; i++)
-            {
-                ds_HocSinhChon.Add(this.gridViewDSHocSinh.GetRowCellValue(i, "MaHocSinh").ToString(),
-                                        this.gridViewDSHocSinh.GetRowCellValue(i, "TenHocSinh").ToString());
-            }
-            if (ds_HocSinhChon.Count == 0)
-            {
-                Util.MsgboxUtil.Error("Bạn chưa chọn học sinh để chuyển!");
-                return;
-            }
-            _phanLopBUS.PhanLop_DSHocSinh_Lop(ds_HocSinhChon, maLopMoi);
-
-
-        }
-
         private void comboBoxEditNamHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Util.CboUtil.CheckSelectedNull(comboBoxEditNamHoc))
@@ -423,13 +382,23 @@ namespace QLHS
                 {
                     return;
                 }
-                if(_phanLopBUS.PhanLop_DSHocSinh_Lop(ds_HocSinhChon,maLopMoi))
+                List<PhanLopDTO> ds_hsTonTai;
+                if (_phanLopBUS.PhanLop_DSHocSinh_Lop(ds_HocSinhChon, maLopMoi, out ds_hsTonTai) 
+                    && ds_hsTonTai.Count == 0)
                 {
                     Util.MsgboxUtil.Success("Đã phân lớp danh sách học sinh đến lớp mới: "+tenLopMoi+".");
                 }
                 else
                 {
-                     Util.MsgboxUtil.Info("Không có học sinh nào được chuyển!");
+                    string ds_hocsinhTonTai = "";
+                    foreach (var item in ds_hsTonTai)
+                    {
+                        ds_hocsinhTonTai = "\n" + item.STT + ". "
+                        + item.TenHocSinh + " (" + item.MaHocSinh + ") lớp: " + item.TenLop 
+                        + ds_hocsinhTonTai;
+                    }
+                    Util.MsgboxUtil.Info("Các học sinh sau đã tồn tại trong năm "+tenNamHocMoi+":" 
+                        + ds_hocsinhTonTai);
                 }
             }
             // Cập nhật lại danh sách lớp mới
@@ -521,10 +490,7 @@ namespace QLHS
         {
             simpleButtonPhanLop.Enabled = false;
             simpleButtonChuyenTatCa.Enabled = false;
-            if (radioButtonChuyenLopCungKhoi.Checked == false)
-            {
-                simpleButtonXoaPL.Enabled = true;
-            }
+            simpleButtonXoaPL.Enabled = !radioButtonChuyenLopCungKhoi.Checked;
             _HienThi_Button();
         }
         private void _HienThi_Button()
@@ -533,20 +499,13 @@ namespace QLHS
             {
                 simpleButtonPhanLop.Enabled = false;
                 simpleButtonChuyenTatCa.Enabled = false;
-                if (gridViewDSHocSinhMoi.RowCount > 0)
-                {
-                    if (radioButtonChuyenLopCungKhoi.Checked)
-                    {
-                        simpleButtonXoaPL.Enabled = true;
-                    }
-                }
             }
             if (gridViewDSHocSinhMoi.RowCount == 0)
             {
                 simpleButtonXoaPL.Enabled = false;
                 if (gridViewDSHocSinh.RowCount > 0)
                 {
-                    simpleButtonPhanLop.Enabled = true;
+                    simpleButtonXoaPL.Enabled = !radioButtonChuyenLopCungKhoi.Checked;
                 }
             }
         }
@@ -597,26 +556,10 @@ namespace QLHS
        
         private void simpleButtonChuyenHet_Click(object sender, EventArgs e)
         {
-            if (_KiemTra_LopMoi_DaChon())
-            {
-                string chuyen = "";
-                if (radioButtonPhanLopHoSo_ChuaPhanLop.Checked)
-                {
-                    chuyen = chuyen + " từ hồ sơ ";
-                }
-                else
-                    chuyen = chuyen + Util.CboUtil.GetDisplayItem(comboBoxEditLop) + "trong năm học " 
-                        + Util.CboUtil.GetDisplayItem(comboBoxEditNamHoc);
-                if (Util.MsgboxUtil.YesNo("Bạn có muốn phân lớp hết học sinh đã chọn sang lớp " 
-                    + Util.CboUtil.GetDisplayItem(comboBoxEditLopMoi) + " trong năm học "
-                    + Util.CboUtil.GetDisplayItem(comboBoxEditNamHocMoi) + " hay không?")
-                    == DialogResult.Yes)
-                {
-                    _ChuyenTatCa();
-                    this._LoadGridcontrolDSHocSinh();
-                    this._LoadGridcontrolDSHocSinhMoi();
-                }
-            }
+            // Chọn tất cả các hs bên trái
+            chonTatCaToolStripMenuItem_Click(this, new EventArgs());
+            // phân lớp
+            simpleButtonChuyenLop_Click(this, new EventArgs());
         }
 
         private void radioButtonChuyenLop_CheckedChanged(object sender, EventArgs e)

@@ -78,6 +78,9 @@ namespace QLHS.BUS
             DataTable dsHocSinh = _HocSinhDAL.LayDT_HocSinh_LopHoc(MaLop);
             int i = 0;
             int soHS = dsHocSinh.Rows.Count;
+            // Lop khong co hoc sinh nao
+            if (soHS == 0)
+                return false;
             HocSinhChuanHoaTenDTO[] listHocSinh = new HocSinhChuanHoaTenDTO[soHS];
            
             ArrayList arrList = new ArrayList();
@@ -103,8 +106,10 @@ namespace QLHS.BUS
             
         }
 
-        public bool PhanLop_DSHocSinh_Lop(Dictionary<string,string> ds_hocsinhchuyen, string MaLopMoi)
+        public bool PhanLop_DSHocSinh_Lop(Dictionary<string,string> ds_hocsinhchuyen, string MaLopMoi
+                    , out List<PhanLopDTO> ds_TonTai)
         {
+            ds_TonTai = new List<PhanLopDTO>();
             string maKhoi = Util.ObjectUtil.LayMaKhoiLopTuMaLop(MaLopMoi),
                    maNamHoc = Util.ObjectUtil.LayMaNamHocTuMaLop(MaLopMoi);
 
@@ -112,13 +117,16 @@ namespace QLHS.BUS
             Dictionary<string, string> ds_them = new Dictionary<string,string>();
             foreach (var item in ds_hocsinhchuyen)
 	        {
-                phanLopDTO = _PhanLopDAL.KT_HocSinh_TonTai_Khoi_NamHoc(item.Key, maKhoi, maNamHoc);
+                phanLopDTO = _PhanLopDAL.Lay_PhanLop_HocSinh_Khoi_NamHoc(item.Key, maKhoi, maNamHoc);
                 if (phanLopDTO == null)
                 {
-                    ds_them.Add(item.Key,item.Value);
+                    ds_them.Add(item.Key, item.Value);
                 }
+                else
+                    ds_TonTai.Add(phanLopDTO);
 	        }
-
+            if (ds_them.Count == 0)
+                return false;
             // chuyển lớp cho ds học sinh
             _PhanLopDAL.ChuyenLop_HocSinh(ds_them, MaLopMoi);
             // cập nhật stt cho lớp
@@ -127,16 +135,16 @@ namespace QLHS.BUS
         }
         public bool Xoa_DSHocSinh_Lop(Dictionary<string,string> ds_hocsinhchon, string MaLop)
         {
-            return _PhanLopDAL.Xoa_DSHocSinh_Lop(ds_hocsinhchon, MaLop);
+            bool success =  _PhanLopDAL.Xoa_DSHocSinh_Lop(ds_hocsinhchon, MaLop);
+            // cập nhật stt cho lớp
+            this.CapNhap_STT_HocSinh_Lop(MaLop);
+            return success;
         }
         public DataTable LayDTLop_MaNam_MaKhoi_KhacMaLop(string MaNamHoc, string MaKhoi, string MaLop)
         {
             return _PhanLopDAL.LayDTLop_MaNam_MaKhoi_KhacMaLop(MaNamHoc, MaKhoi, MaLop);
         }
-        public DataTable KT_HocSinh_ChuyenLop(string MaHocSinh, string MaLop)
-        {
-            return _PhanLopDAL.KT_HocSinh_ChuyenLop(MaHocSinh, MaLop);
-        }
+
         public DataTable LayDTKhoi(string MaNamHoc)
         {
             return _PhanLopDAL.LayDTKhoi(MaNamHoc);
