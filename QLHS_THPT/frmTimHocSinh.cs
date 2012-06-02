@@ -133,13 +133,13 @@ namespace QLHS
             }
             if (checkEditNamSinh.Checked)
             {                
-                hsTimKiemDTO.NamSinhTu = spinEditNamSinhTu.Value.ToString();
-                hsTimKiemDTO.NamSinhDen = spinEditNamSinhDen.Value.ToString();
+                hsTimKiemDTO.NamSinhTu = Convert.ToInt32(spinEditNamSinhTu.Value);
+                hsTimKiemDTO.NamSinhDen = Convert.ToInt32(spinEditNamSinhDen.Value);
             }
             else
             {
-                hsTimKiemDTO.NamSinhTu = "";
-                hsTimKiemDTO.NamSinhDen = "";
+                hsTimKiemDTO.NamSinhTu = 0;
+                hsTimKiemDTO.NamSinhDen = 0;
             }
             hsTimKiemDTO.Email = textEditEmail.Text;
             hsTimKiemDTO.DiaChi = textEditDiaChi.Text;

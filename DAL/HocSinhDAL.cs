@@ -216,17 +216,26 @@ namespace QLHS.DAL
                 where += "AND GioiTinh = " + hs.GioiTinh + " ";
             }
 
-            //năm sinh từ
-            if (!hs.NamSinhTu.Equals(""))
+            if (!hs.NamSinhTu.Equals(0) && !hs.NamSinhDen.Equals(0))
             {
-                where += "AND YEAR(NgaySinh)  >='" + hs.NamSinhTu + "' ";
+                where += "AND YEAR(NgaySinh) BETWEEN '" + hs.NamSinhTu + "' AND  '" + hs.NamSinhDen + "' ";
+            }
+            else
+            {
+                //năm sinh từ
+                if (!hs.NamSinhTu.Equals(0))
+                {
+                    where += "AND YEAR(NgaySinh)  >='" + hs.NamSinhTu + "' ";
+                }
+
+                //năm sinh đến
+                if (!hs.NamSinhDen.Equals(0))
+                {
+                    where += "AND YEAR(NgaySinh)  <='" + hs.NamSinhDen + "' ";
+                }
             }
 
-            //năm sinh đến
-            if (!hs.NamSinhDen.Equals(""))
-            {
-                where += "AND YEAR(NgaySinh)  <='" + hs.NamSinhDen + "' ";
-            }
+
 
             //email
             if (!hs.Email.Equals(""))
@@ -297,16 +306,23 @@ namespace QLHS.DAL
                 where += " AND GioiTinh = " + hs.GioiTinh + " ";
             }
 
-            //năm sinh từ
-            if (!hs.NamSinhTu.Equals(""))
+            if (!hs.NamSinhTu.Equals(0) && !hs.NamSinhDen.Equals(0))
             {
-               where += " AND YEAR(NgaySinh)  >='" + hs.NamSinhTu + "' ";
+                where += "AND YEAR(NgaySinh) BETWEEN '" + hs.NamSinhTu + "' AND  '" + hs.NamSinhDen + "' ";
             }
-
-            //năm sinh đến
-            if (!hs.NamSinhDen.Equals(""))
+            else
             {
-                where += " AND YEAR(NgaySinh)  <='" + hs.NamSinhDen + "' ";
+                //năm sinh từ
+                if (!hs.NamSinhTu.Equals(0))
+                {
+                    where += "AND YEAR(NgaySinh)  >='" + hs.NamSinhTu + "' ";
+                }
+
+                //năm sinh đến
+                if (!hs.NamSinhDen.Equals(0))
+                {
+                    where += "AND YEAR(NgaySinh)  <='" + hs.NamSinhDen + "' ";
+                }
             }
 
             //email
