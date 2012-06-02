@@ -57,7 +57,14 @@ namespace QLHS
 
             simpleButtonXoaPL.Enabled = true;
             simpleButtonChuyenTatCa.Enabled = true;
-
+            //hiển thị control bị ẩn khi gặp lỗi
+            if (gridControlDSHocSinh.Enabled == false)
+            {
+                groupControlLopCu.Enabled = true;
+                groupControlLopMoi.Enabled = true;
+                gridControlDSHocSinh.Enabled = true;
+                gridControlDSHocSinhMoi.Enabled = true;
+            }
             // Show control
             if (yc == YeuCau.PhanLop_HoSoChuaPhanLop)
             {
@@ -106,23 +113,30 @@ namespace QLHS
  
         private bool _KiemTraCbThongTinLopCu()
         {
+            bool flag = true;
             if (Util.CboUtil.CheckSelectedNull(comboBoxEditNamHoc))
             {
                 Util.MsgboxUtil.Error("Không có năm học sau năm học hiện tại, bạn hãy chọn chức năng khác");
-                return false;
+                flag = false;
 
             }
             if (Util.CboUtil.CheckSelectedNull(comboBoxEditKhoi))
             {
-                Util.MsgboxUtil.Error("Năm học này không tồn tại lớp học");
-                return false;
+                if (flag == true)
+                {
+                    Util.MsgboxUtil.Error("Năm học này không tồn tại lớp học");
+                    flag = false;
+                }
+                
             }
-            if (Util.CboUtil.CheckSelectedNull(comboBoxEditLop))
+            if (flag == false)
             {
-                Util.MsgboxUtil.Error("Năm học này không có lớp");
-                return false;
+                groupControlLopCu.Enabled = false;
+                groupControlLopMoi.Enabled = false;
+                gridControlDSHocSinh.Enabled = false;
+                gridControlDSHocSinhMoi.Enabled = false;
             }
-            return true;
+            return flag;
         }
         private bool _KiemTraCbThongTinLopMoi()
         {
@@ -243,6 +257,13 @@ namespace QLHS
             if (tb != "")
             {
                 Util.MsgboxUtil.Error(tb);
+                groupControlLopCu.Enabled = false;
+                groupControlLopMoi.Enabled = false;
+                gridControlDSHocSinh.Enabled = false;
+                gridControlDSHocSinhMoi.Enabled = false;
+                groupBoxPhanLop.Enabled = false;
+                radioButtonPhanLopHoSo_ChuaPhanLop.Checked = false;
+                return;
             }
             // khoi tao 2 input datetime từ và đến
             DateTime dateTu = new DateTime(DateTime.Now.Year, DateTime.Now.Month - 1, 1);

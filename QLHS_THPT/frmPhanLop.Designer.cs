@@ -131,7 +131,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1197, 212);
+            this.panelControl1.Size = new System.Drawing.Size(1028, 212);
             this.panelControl1.TabIndex = 0;
             // 
             // groupControlLopMoi
@@ -250,7 +250,7 @@
             this.radioButtonChuyenLopCungKhoi.Text = "Chuyển học sinh cùng khối";
             this.toolTipController1.SetTitle(this.radioButtonChuyenLopCungKhoi, "Hướng dẫn");
             this.toolTipController1.SetToolTip(this.radioButtonChuyenLopCungKhoi, "Click vào radiobutton này nếu bạn muốn chuyển lớp cho 1 học sinh, chỉ chuyển cùng" +
-        " khối và cùng năm học");
+                    " khối và cùng năm học");
             this.radioButtonChuyenLopCungKhoi.UseVisualStyleBackColor = true;
             this.radioButtonChuyenLopCungKhoi.CheckedChanged += new System.EventHandler(this.radioButtonChuyenLop_CheckedChanged);
             // 
@@ -348,7 +348,7 @@
             this.radioButtonPhanLopHocSinh_NamTruoc.Text = "Phân lớp học sinh từ lớp cũ năm trước";
             this.toolTipController1.SetTitle(this.radioButtonPhanLopHocSinh_NamTruoc, "Hướng dẫn");
             this.toolTipController1.SetToolTip(this.radioButtonPhanLopHocSinh_NamTruoc, "Click vào radiobutton này nếu bạn muốn phân học sinh lên lớp(10->11,11->12), và h" +
-        "ọc sinh không đủ điểm lên lớp (phân cùng khối)");
+                    "ọc sinh không đủ điểm lên lớp (phân cùng khối)");
             this.radioButtonPhanLopHocSinh_NamTruoc.UseVisualStyleBackColor = true;
             this.radioButtonPhanLopHocSinh_NamTruoc.CheckedChanged += new System.EventHandler(this.radioButtonPhanLopHocSinhCu_CheckedChanged);
             // 
@@ -366,7 +366,7 @@
             this.radioButtonPhanLopHoSo_ChuaPhanLop.Text = "Phân lớp cho hồ sơ mới nhập, chưa phân lớp";
             this.toolTipController1.SetTitle(this.radioButtonPhanLopHoSo_ChuaPhanLop, "Hướng dẫn");
             this.toolTipController1.SetToolTip(this.radioButtonPhanLopHoSo_ChuaPhanLop, "Click vào radiobutton này nều bạn muốn phân lớp cho những học sinh mới nhập học n" +
-        "hưng chưa có lớp");
+                    "hưng chưa có lớp");
             this.radioButtonPhanLopHoSo_ChuaPhanLop.UseVisualStyleBackColor = true;
             this.radioButtonPhanLopHoSo_ChuaPhanLop.CheckedChanged += new System.EventHandler(this.radioButtonPhanLopHocSinhMoi_CheckedChanged);
             // 
@@ -402,7 +402,7 @@
             this.label1.Size = new System.Drawing.Size(219, 39);
             this.label1.TabIndex = 4;
             this.label1.Text = "Hướng dẫn:\r\nClick chuột lên dòng để chọn từng học sinh\r\nHoặc click chuột phải lên" +
-    " lưới để chọn tất cả.\r\n";
+                " lưới để chọn tất cả.\r\n";
             // 
             // comboBoxEditLop
             // 
@@ -794,7 +794,7 @@
             this.AcceptButton = this.simpleButtonPhanLop;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1197, 564);
+            this.ClientSize = new System.Drawing.Size(1028, 564);
             this.Controls.Add(this.gridControlDSHocSinhMoi);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.gridControlDSHocSinh);
