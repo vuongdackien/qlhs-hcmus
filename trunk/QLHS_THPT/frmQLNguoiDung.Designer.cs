@@ -187,7 +187,7 @@
             this.simpleButtonGhi.Name = "simpleButtonGhi";
             this.simpleButtonGhi.Size = new System.Drawing.Size(124, 35);
             this.simpleButtonGhi.TabIndex = 8;
-            this.simpleButtonGhi.Text = "Ghi (Enter)";
+            this.simpleButtonGhi.Text = "Lưu (Enter)";
             this.simpleButtonGhi.Click += new System.EventHandler(this.simpleButtonGhi_Click);
             // 
             // simpleButtonThemMoi

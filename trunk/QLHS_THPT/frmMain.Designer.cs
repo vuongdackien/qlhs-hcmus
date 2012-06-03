@@ -146,7 +146,7 @@
             this.ribbonPageQuanLyHocTap,
             this.ribbonPageHeThong});
             this.ribbon.ShowToolbarCustomizeItem = false;
-            this.ribbon.Size = new System.Drawing.Size(862, 148);
+            this.ribbon.Size = new System.Drawing.Size(1220, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             // 
@@ -487,10 +487,10 @@
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.barStaticItemLoaiNguoiDung);
             this.ribbonStatusBar.ItemLinks.Add(this.barStaticItemTenNguoiDung);
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 441);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 645);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(862, 23);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1220, 23);
             // 
             // defaultLookAndFeel
             // 
@@ -498,6 +498,7 @@
             // 
             // xtraTabbedMdiManager
             // 
+            this.xtraTabbedMdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager.MdiParent = this;
             // 
             // frmMain
@@ -505,7 +506,7 @@
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 464);
+            this.ClientSize = new System.Drawing.Size(1220, 668);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

@@ -28,29 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.simpleButtonDoiMatKau = new DevExpress.XtraEditors.SimpleButton();
             this.textEditMatKhauCu = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.textEditMatKhauMoi = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.textEditReMatKhauMoi = new DevExpress.XtraEditors.TextEdit();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.simpleButtonDoiMatKau = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonThoat = new DevExpress.XtraEditors.SimpleButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMatKhauCu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditMatKhauMoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditReMatKhauMoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // simpleButtonDoiMatKau
-            // 
-            this.simpleButtonDoiMatKau.Image = global::QLHS.Properties.Resources.them_small;
-            this.simpleButtonDoiMatKau.Location = new System.Drawing.Point(33, 196);
-            this.simpleButtonDoiMatKau.Name = "simpleButtonDoiMatKau";
-            this.simpleButtonDoiMatKau.Size = new System.Drawing.Size(138, 37);
-            this.simpleButtonDoiMatKau.TabIndex = 7;
-            this.simpleButtonDoiMatKau.Text = "Đổi mật khẩu (Enter)";
             // 
             // textEditMatKhauCu
             // 
@@ -100,14 +91,14 @@
             this.textEditReMatKhauMoi.Size = new System.Drawing.Size(161, 20);
             this.textEditReMatKhauMoi.TabIndex = 6;
             // 
-            // pictureBox1
+            // simpleButtonDoiMatKau
             // 
-            this.pictureBox1.Image = global::QLHS.Properties.Resources.login2;
-            this.pictureBox1.Location = new System.Drawing.Point(211, 31);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(111, 134);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.simpleButtonDoiMatKau.Image = global::QLHS.Properties.Resources.them_small;
+            this.simpleButtonDoiMatKau.Location = new System.Drawing.Point(33, 196);
+            this.simpleButtonDoiMatKau.Name = "simpleButtonDoiMatKau";
+            this.simpleButtonDoiMatKau.Size = new System.Drawing.Size(138, 37);
+            this.simpleButtonDoiMatKau.TabIndex = 7;
+            this.simpleButtonDoiMatKau.Text = "Đổi mật khẩu (Enter)";
             // 
             // simpleButtonThoat
             // 
@@ -117,6 +108,15 @@
             this.simpleButtonThoat.Size = new System.Drawing.Size(124, 37);
             this.simpleButtonThoat.TabIndex = 8;
             this.simpleButtonThoat.Text = "Thoát (Alt+&X)";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QLHS.Properties.Resources.login2;
+            this.pictureBox1.Location = new System.Drawing.Point(211, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(111, 134);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // frmDoiMatKhau
             // 

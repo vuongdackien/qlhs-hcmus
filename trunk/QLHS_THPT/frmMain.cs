@@ -11,6 +11,7 @@ namespace QLHS
         private frmDangNhap _fLogin = null;
         private NguoiDungBUS _nguoiDungBUS;
         private frmDoiMatKhau _frmDoiMK = null;
+        public Dictionary<Type, Form> openForms = new Dictionary<Type, Form>();
 
         public frmMain()
         {
@@ -19,12 +20,14 @@ namespace QLHS
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
-             Login();
+            //  Login();
+            ShowMDIChildForm<frmHome>();
+            var frm = openForms[typeof(frmHome)] as frmHome;
+            xtraTabbedMdiManager.Pages[frm].ShowCloseButton = DevExpress.Utils.DefaultBoolean.False;
+          
         }
-
         #region Function Show MDI Child Form
-
-        public Dictionary<Type, Form> openForms = new Dictionary<Type, Form>();
+       
         /// <summary>
         /// Sử dụng để hiển thị MDI Children form
         /// </summary>
@@ -379,7 +382,8 @@ namespace QLHS
 
         private void frmMain_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Escape)
+            if (e.KeyCode == Keys.Escape
+                && !(xtraTabbedMdiManager.SelectedPage.MdiChild is frmHome))
             {
                 if(Util.MsgboxUtil.YesNo("Bạn có muốn đóng màn hình "+
                     xtraTabbedMdiManager.SelectedPage.MdiChild.Text+" hay không?")
@@ -389,5 +393,7 @@ namespace QLHS
                 }
             }
         }
+
+        
     }
 }

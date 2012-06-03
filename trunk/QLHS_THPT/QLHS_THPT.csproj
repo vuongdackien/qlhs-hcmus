@@ -137,6 +137,12 @@
     <Compile Include="frmGiaoVien.Designer.cs">
       <DependentUpon>frmGiaoVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHocSinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGiaoVien.resx">
       <DependentUpon>frmGiaoVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHocSinh.resx">
       <DependentUpon>frmHocSinh.cs</DependentUpon>
@@ -380,6 +389,13 @@
     <Content Include="Resources\kqcnamtheomon.png" />
     <Content Include="Resources\kqhockytheolop.png" />
     <Content Include="Resources\kqhockytheomon.png" />
+    <None Include="Resources\line.png" />
+    <None Include="Resources\line_bottom.png" />
+    <None Include="Resources\line_horizal.png" />
+    <None Include="Resources\line_left.png" />
+    <None Include="Resources\line_right.png" />
+    <None Include="Resources\line_top.png" />
+    <None Include="Resources\line_vertrical.png" />
     <Content Include="Resources\login.png" />
     <Content Include="Resources\login2.png" />
     <Content Include="Resources\loginimage.png" />
