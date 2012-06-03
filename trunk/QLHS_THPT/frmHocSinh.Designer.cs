@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHocSinh));
             this.panelControlBottom = new DevExpress.XtraEditors.PanelControl();
             this.simpleButtonSXLaiSTT = new DevExpress.XtraEditors.SimpleButton();
@@ -44,7 +43,7 @@
             this.gridColumnMaHocSinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControlTopLeft = new DevExpress.XtraEditors.PanelControl();
             this.checkEditChuaPhanLop = new DevExpress.XtraEditors.CheckEdit();
-            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController();
             this.comboBoxEditNamHoc = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comboBoxEditLop = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comboBoxEditKhoi = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -154,7 +153,7 @@
             // 
             // simpleButtonThemMoi
             // 
-            this.simpleButtonThemMoi.Image = global::QLHS.Properties.Resources.them_small;
+            this.simpleButtonThemMoi.Image = global::QLHS.Properties.Resources.them;
             this.simpleButtonThemMoi.Location = new System.Drawing.Point(290, 11);
             this.simpleButtonThemMoi.Name = "simpleButtonThemMoi";
             this.simpleButtonThemMoi.Size = new System.Drawing.Size(136, 38);
@@ -175,10 +174,10 @@
             // gridControlDSHocSinh
             // 
             this.gridControlDSHocSinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlDSHocSinh.Location = new System.Drawing.Point(2, 183);
+            this.gridControlDSHocSinh.Location = new System.Drawing.Point(3, 184);
             this.gridControlDSHocSinh.MainView = this.gridViewDSHocSinh;
             this.gridControlDSHocSinh.Name = "gridControlDSHocSinh";
-            this.gridControlDSHocSinh.Size = new System.Drawing.Size(243, 271);
+            this.gridControlDSHocSinh.Size = new System.Drawing.Size(241, 269);
             this.gridControlDSHocSinh.TabIndex = 5;
             this.gridControlDSHocSinh.TabStop = false;
             this.gridControlDSHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -239,9 +238,9 @@
             this.panelControlTopLeft.Controls.Add(this.labelControl3);
             this.panelControlTopLeft.Controls.Add(this.labelControl1);
             this.panelControlTopLeft.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlTopLeft.Location = new System.Drawing.Point(2, 2);
+            this.panelControlTopLeft.Location = new System.Drawing.Point(3, 3);
             this.panelControlTopLeft.Name = "panelControlTopLeft";
-            this.panelControlTopLeft.Size = new System.Drawing.Size(243, 181);
+            this.panelControlTopLeft.Size = new System.Drawing.Size(241, 181);
             this.panelControlTopLeft.TabIndex = 1;
             // 
             // checkEditChuaPhanLop
@@ -442,6 +441,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateEditNgaySinh.Size = new System.Drawing.Size(159, 20);
             this.dateEditNgaySinh.TabIndex = 38;
+            this.dateEditNgaySinh.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.dateEditNgaySinh_InvalidValue);
             // 
             // textEditDiaChi
             // 
@@ -482,6 +482,7 @@
             this.textEditEmail.Properties.NullText = "Email có thể bỏ trống";
             this.textEditEmail.Size = new System.Drawing.Size(240, 20);
             this.textEditEmail.TabIndex = 39;
+            this.textEditEmail.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.textEditEmail_InvalidValue);
             // 
             // labelControl12
             // 

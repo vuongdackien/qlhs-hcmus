@@ -102,8 +102,7 @@ namespace QLHS
         private void radioGroupTimTrong_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool enable = (radioGroupTimTrong.SelectedIndex == 0);
-            checkEditTatCaNam.Enabled = enable;
-            comboBoxEditNamHoc.Enabled = enable;
+            checkEditTatCaNam.Enabled = enable;           
         }
         private void checkEditTatCaNam_CheckedChanged(object sender, EventArgs e)
         {   
@@ -146,6 +145,11 @@ namespace QLHS
 
             try
             {
+                if (hsTimKiemDTO.NamSinhDen < hsTimKiemDTO.NamSinhTu)
+                {
+                    Util.MsgboxUtil.Error("Khoảng cách năm sinh không hợp lệ!");
+                    return;
+                }
 
                 if (radioGroupTimTrong.SelectedIndex == 1)  // Chi tim trong ho so hoc sinh 
                 {

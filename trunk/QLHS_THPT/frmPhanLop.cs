@@ -395,9 +395,9 @@ namespace QLHS
                 }
 
                 if (Util.MsgboxUtil.YesNo(
-                        "Lưu ý: Các học sinh đã chọn nếu đã được phân lớp vào khối "+ tenKhoiMoi
+                        "Lưu ý: Các học sinh đã chọn nếu đã được phân lớp vào "+ tenKhoiMoi
                         +" trong năm học "+tenNamHocMoi
-                        +" sẽ được giữ nguyên hồ sơ.\nChương trình chỉ chuyển những học sinh chưa được phân lớp vào khối "+tenKhoiMoi+" năm này."
+                        +" sẽ được giữ nguyên hồ sơ.\nChương trình chỉ chuyển những học sinh chưa được phân lớp vào "+tenKhoiMoi+" năm này."
                         +"\n\nBạn có muốn chuyển các học sinh đã chọn" 
                         +" sang lớp: " + tenLopMoi + " năm học: " +  tenNamHocMoi + " hay không?")  == DialogResult.No)
                 {
