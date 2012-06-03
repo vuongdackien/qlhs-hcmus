@@ -161,7 +161,7 @@
             this.btnHomeNhapDiem.Location = new System.Drawing.Point(375, 376);
             this.btnHomeNhapDiem.Name = "btnHomeNhapDiem";
             this.btnHomeNhapDiem.Size = new System.Drawing.Size(129, 52);
-            this.btnHomeNhapDiem.TabIndex = 22;
+            this.btnHomeNhapDiem.TabIndex = 9;
             this.btnHomeNhapDiem.Text = "NHẬP ĐIỂM\r\nMÔN HỌC";
             this.btnHomeNhapDiem.Click += new System.EventHandler(this.btnHomeNhapDiem_Click);
             // 
@@ -171,7 +171,7 @@
             this.btnHomePhanLop.Location = new System.Drawing.Point(375, 229);
             this.btnHomePhanLop.Name = "btnHomePhanLop";
             this.btnHomePhanLop.Size = new System.Drawing.Size(129, 52);
-            this.btnHomePhanLop.TabIndex = 17;
+            this.btnHomePhanLop.TabIndex = 7;
             this.btnHomePhanLop.Text = "PHÂN LỚP\r\nHỌC SINH";
             this.btnHomePhanLop.Click += new System.EventHandler(this.btnHomePhanLop_Click);
             // 
@@ -181,7 +181,7 @@
             this.btnHomeTKDiemHK.Location = new System.Drawing.Point(621, 376);
             this.btnHomeTKDiemHK.Name = "btnHomeTKDiemHK";
             this.btnHomeTKDiemHK.Size = new System.Drawing.Size(129, 52);
-            this.btnHomeTKDiemHK.TabIndex = 16;
+            this.btnHomeTKDiemHK.TabIndex = 12;
             this.btnHomeTKDiemHK.Text = "TỔNG KẾT \r\nĐIỂM HỌC KỲ";
             this.btnHomeTKDiemHK.Click += new System.EventHandler(this.btnHomeTKDiemHK_Click);
             // 
@@ -191,7 +191,7 @@
             this.btnHomeTKMonHoc.Location = new System.Drawing.Point(623, 191);
             this.btnHomeTKMonHoc.Name = "btnHomeTKMonHoc";
             this.btnHomeTKMonHoc.Size = new System.Drawing.Size(129, 52);
-            this.btnHomeTKMonHoc.TabIndex = 15;
+            this.btnHomeTKMonHoc.TabIndex = 10;
             this.btnHomeTKMonHoc.Text = "TỔNG KẾTĐIỂM \r\nMÔN HỌC KỲ";
             this.btnHomeTKMonHoc.Click += new System.EventHandler(this.btnHomeTKMonHoc_Click);
             // 
@@ -201,7 +201,7 @@
             this.btnHomeXuatBD.Location = new System.Drawing.Point(621, 279);
             this.btnHomeXuatBD.Name = "btnHomeXuatBD";
             this.btnHomeXuatBD.Size = new System.Drawing.Size(129, 52);
-            this.btnHomeXuatBD.TabIndex = 14;
+            this.btnHomeXuatBD.TabIndex = 11;
             this.btnHomeXuatBD.Text = "XUẤT BẢNG ĐIỂM\r\nHỌC SINH";
             this.btnHomeXuatBD.Click += new System.EventHandler(this.btnHomeXuatBD_Click);
             // 
@@ -211,7 +211,7 @@
             this.btnHomeTimKiem.Location = new System.Drawing.Point(375, 78);
             this.btnHomeTimKiem.Name = "btnHomeTimKiem";
             this.btnHomeTimKiem.Size = new System.Drawing.Size(129, 52);
-            this.btnHomeTimKiem.TabIndex = 13;
+            this.btnHomeTimKiem.TabIndex = 8;
             this.btnHomeTimKiem.Text = "TÌM KIẾM\r\nHỒ SƠ SINH";
             this.btnHomeTimKiem.Click += new System.EventHandler(this.btnHomeTimKiem_Click);
             // 
@@ -221,7 +221,7 @@
             this.btnHomeGiaoVien.Location = new System.Drawing.Point(32, 283);
             this.btnHomeGiaoVien.Name = "btnHomeGiaoVien";
             this.btnHomeGiaoVien.Size = new System.Drawing.Size(127, 52);
-            this.btnHomeGiaoVien.TabIndex = 12;
+            this.btnHomeGiaoVien.TabIndex = 3;
             this.btnHomeGiaoVien.Text = "NHẬP HỒ SƠ\r\nGIÁO VIÊN";
             this.btnHomeGiaoVien.Click += new System.EventHandler(this.btnHomeGiaoVien_Click);
             // 
@@ -240,7 +240,7 @@
             this.btnHomeLop.Location = new System.Drawing.Point(223, 283);
             this.btnHomeLop.Name = "btnHomeLop";
             this.btnHomeLop.Size = new System.Drawing.Size(129, 52);
-            this.btnHomeLop.TabIndex = 7;
+            this.btnHomeLop.TabIndex = 6;
             this.btnHomeLop.Text = "NHẬP DANH\r\nSÁCH LỚP";
             this.btnHomeLop.Click += new System.EventHandler(this.btnHomeLop_Click);
             // 
@@ -250,7 +250,7 @@
             this.btnHomeHocSinh.Location = new System.Drawing.Point(223, 181);
             this.btnHomeHocSinh.Name = "btnHomeHocSinh";
             this.btnHomeHocSinh.Size = new System.Drawing.Size(129, 52);
-            this.btnHomeHocSinh.TabIndex = 6;
+            this.btnHomeHocSinh.TabIndex = 5;
             this.btnHomeHocSinh.Text = "TIẾP NHẬN\r\nHỌC SINH";
             this.btnHomeHocSinh.Click += new System.EventHandler(this.btnHomeHocSinh_Click);
             // 
@@ -260,7 +260,7 @@
             this.btnHomeMonHoc.Location = new System.Drawing.Point(32, 376);
             this.btnHomeMonHoc.Name = "btnHomeMonHoc";
             this.btnHomeMonHoc.Size = new System.Drawing.Size(127, 52);
-            this.btnHomeMonHoc.TabIndex = 2;
+            this.btnHomeMonHoc.TabIndex = 4;
             this.btnHomeMonHoc.Text = "TÙY CHỈNH\r\nCÁC MÔN HỌC";
             this.btnHomeMonHoc.Click += new System.EventHandler(this.btnHomeMonHoc_Click);
             // 
@@ -270,7 +270,7 @@
             this.btnHomeKhaiBao.Location = new System.Drawing.Point(30, 181);
             this.btnHomeKhaiBao.Name = "btnHomeKhaiBao";
             this.btnHomeKhaiBao.Size = new System.Drawing.Size(129, 52);
-            this.btnHomeKhaiBao.TabIndex = 1;
+            this.btnHomeKhaiBao.TabIndex = 2;
             this.btnHomeKhaiBao.Text = "KHAI BÁO \r\nNĂM HỌC MỚI";
             this.btnHomeKhaiBao.Click += new System.EventHandler(this.btnHomeKhaiBao_Click);
             // 
@@ -280,7 +280,7 @@
             this.btnHomeNamHoc.Location = new System.Drawing.Point(30, 78);
             this.btnHomeNamHoc.Name = "btnHomeNamHoc";
             this.btnHomeNamHoc.Size = new System.Drawing.Size(129, 52);
-            this.btnHomeNamHoc.TabIndex = 0;
+            this.btnHomeNamHoc.TabIndex = 1;
             this.btnHomeNamHoc.Text = "KHỞI TẠO \r\nNĂM HỌC MỚI";
             this.btnHomeNamHoc.Click += new System.EventHandler(this.btnHomeNamHoc_Click);
             // 

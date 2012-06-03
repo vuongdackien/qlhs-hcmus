@@ -423,7 +423,6 @@
     <Content Include="Resources\quydinh_diemcan.png" />
     <Content Include="Resources\saoluudulieu.png" />
     <Content Include="Resources\sapxep.png" />
-    <None Include="Resources\sua.gif" />
     <None Include="Resources\sua.png" />
     <Content Include="Resources\thangdiem_small.png" />
     <Content Include="Resources\them.png" />
@@ -444,7 +443,6 @@
     <Content Include="Resources\xoa_medium.png" />
     <Content Include="Resources\xoa_small.png" />
     <Content Include="Resources\xuat_bcao.png" />
-    <None Include="Resources\Thumbs.db" />
     <None Include="Resources\timkiem_small.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

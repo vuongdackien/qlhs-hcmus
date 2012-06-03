@@ -20,7 +20,7 @@ namespace QLHS
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
-            //  Login();
+            Login();
             ShowMDIChildForm<frmHome>();
             var frm = openForms[typeof(frmHome)] as frmHome;
             xtraTabbedMdiManager.Pages[frm].ShowCloseButton = DevExpress.Utils.DefaultBoolean.False;
