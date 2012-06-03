@@ -341,7 +341,7 @@ SELECT	'HS00000056',	N'Lê Thị Ngọc',			'thingoc@gmail.com',		1,	'01-01-1996
 SELECT	'HS00000057',	N'Nguyễn Thị Khánh', 	'thikhanh@gmail.com',		1,	'08-07-1995',	N'Bình Dương',	N'Q.9',			'23-5-2012' UNION 
 SELECT	'HS00000058',	N'Trần Khánh Duy ',		'khanhduy@gmail.com',		0,	'01-01-1995',	N'TP.HCM',		N'Q.9',			'23-5-2012' UNION 
 SELECT	'HS00000059',	N'Nguyễn Huỳnh Kim', 	'huynhkim@gmail.com',		1,	'20-09-1996',	N'Lâm Đồng',	N'Vũng Liêm',	'23-5-2012' UNION 
-SELECT	'HS00000060',	N'Huỳnh Ngọc Main',		'ngocmai@gmail.com',		1,	'01-01-1996',	N'Long An',		N'Không Biết',	'23-5-2012' UNION 
+SELECT	'HS00000060',	N'Huỳnh Ngọc Mai',		'ngocmai@gmail.com',		1,	'01-01-1996',	N'Long An',		N'Không Biết',	'23-5-2012' UNION 
 SELECT	'HS00000061',	N'Nguyễn Hoàng Lan',	'hoanglan@gmail.com',		1,	'08-07-1995',	N'TP.HCM',		N'Q.9',			'23-5-2012' UNION
 SELECT	'HS00000062',	N'Lê Ngọc Linh',		'ngoclinh@gmail.com',		1,	'01-01-1996',	N'Hải Dương',	N'Không Biết',	'23-5-2012' UNION
 SELECT	'HS00000063',	N'Nguyễn Văn Mạnh',		'vanmanh@gmail.com',		0,	'01-01-1995',	N'Daklak',		N'Không Biết',	'22-5-2012' UNION

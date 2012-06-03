@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControlLopMoi = new DevExpress.XtraEditors.GroupControl();
             this.comboBoxEditLopMoi = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -60,9 +59,9 @@
             this.comboBoxEditKhoi = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEditNamHoc = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController();
             this.gridControlDSHocSinh = new DevExpress.XtraGrid.GridControl();
-            this.contextMenuStripLopTu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStripLopTu = new System.Windows.Forms.ContextMenuStrip();
             this.chonTatCaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phanLopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridViewDSHocSinh = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -78,7 +77,7 @@
             this.simpleButtonXoaPL = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonPhanLop = new DevExpress.XtraEditors.SimpleButton();
             this.gridControlDSHocSinhMoi = new DevExpress.XtraGrid.GridControl();
-            this.contextMenuStripLopDen = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStripLopDen = new System.Windows.Forms.ContextMenuStrip();
             this.chonTatCaDSLopDenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xoaPhanLopMoiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridViewDSHocSinhMoi = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -230,9 +229,9 @@
             this.groupBoxPhanLop.Controls.Add(this.radioButtonPhanLopHocSinh_NamTruoc);
             this.groupBoxPhanLop.Controls.Add(this.radioButtonPhanLopHoSo_ChuaPhanLop);
             this.groupBoxPhanLop.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBoxPhanLop.Location = new System.Drawing.Point(2, 2);
+            this.groupBoxPhanLop.Location = new System.Drawing.Point(3, 3);
             this.groupBoxPhanLop.Name = "groupBoxPhanLop";
-            this.groupBoxPhanLop.Size = new System.Drawing.Size(329, 208);
+            this.groupBoxPhanLop.Size = new System.Drawing.Size(329, 206);
             this.groupBoxPhanLop.TabIndex = 21;
             this.groupBoxPhanLop.TabStop = false;
             this.groupBoxPhanLop.Text = "Chọn chức năng";
@@ -250,7 +249,7 @@
             this.radioButtonChuyenLopCungKhoi.Text = "Chuyển học sinh cùng khối";
             this.toolTipController1.SetTitle(this.radioButtonChuyenLopCungKhoi, "Hướng dẫn");
             this.toolTipController1.SetToolTip(this.radioButtonChuyenLopCungKhoi, "Click vào radiobutton này nếu bạn muốn chuyển lớp cho 1 học sinh, chỉ chuyển cùng" +
-                    " khối và cùng năm học");
+        " khối và cùng năm học");
             this.radioButtonChuyenLopCungKhoi.UseVisualStyleBackColor = true;
             this.radioButtonChuyenLopCungKhoi.CheckedChanged += new System.EventHandler(this.radioButtonChuyenLop_CheckedChanged);
             // 
@@ -348,7 +347,7 @@
             this.radioButtonPhanLopHocSinh_NamTruoc.Text = "Phân lớp học sinh từ lớp cũ năm trước";
             this.toolTipController1.SetTitle(this.radioButtonPhanLopHocSinh_NamTruoc, "Hướng dẫn");
             this.toolTipController1.SetToolTip(this.radioButtonPhanLopHocSinh_NamTruoc, "Click vào radiobutton này nếu bạn muốn phân học sinh lên lớp(10->11,11->12), và h" +
-                    "ọc sinh không đủ điểm lên lớp (phân cùng khối)");
+        "ọc sinh không đủ điểm lên lớp (phân cùng khối)");
             this.radioButtonPhanLopHocSinh_NamTruoc.UseVisualStyleBackColor = true;
             this.radioButtonPhanLopHocSinh_NamTruoc.CheckedChanged += new System.EventHandler(this.radioButtonPhanLopHocSinhCu_CheckedChanged);
             // 
@@ -366,7 +365,7 @@
             this.radioButtonPhanLopHoSo_ChuaPhanLop.Text = "Phân lớp cho hồ sơ mới nhập, chưa phân lớp";
             this.toolTipController1.SetTitle(this.radioButtonPhanLopHoSo_ChuaPhanLop, "Hướng dẫn");
             this.toolTipController1.SetToolTip(this.radioButtonPhanLopHoSo_ChuaPhanLop, "Click vào radiobutton này nều bạn muốn phân lớp cho những học sinh mới nhập học n" +
-                    "hưng chưa có lớp");
+        "hưng chưa có lớp");
             this.radioButtonPhanLopHoSo_ChuaPhanLop.UseVisualStyleBackColor = true;
             this.radioButtonPhanLopHoSo_ChuaPhanLop.CheckedChanged += new System.EventHandler(this.radioButtonPhanLopHocSinhMoi_CheckedChanged);
             // 
@@ -402,7 +401,7 @@
             this.label1.Size = new System.Drawing.Size(219, 39);
             this.label1.TabIndex = 4;
             this.label1.Text = "Hướng dẫn:\r\nClick chuột lên dòng để chọn từng học sinh\r\nHoặc click chuột phải lên" +
-                " lưới để chọn tất cả.\r\n";
+    " lưới để chọn tất cả.\r\n";
             // 
             // comboBoxEditLop
             // 
