@@ -398,6 +398,8 @@ namespace DatabaseConnectionManagement
                 data = data.Replace("__DBNAME__", dbname);
                 m_Server.Databases[dbname].ExecuteNonQuery(data);
                 MessageBox.Show("Đã tạo dữ liệu mẫu thành công!");
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
             catch (Exception ex)
             {
