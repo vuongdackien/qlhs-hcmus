@@ -1,33 +1,44 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
-using System.Data.Common;
-using System.Threading;
+using Microsoft.VisualBasic.ApplicationServices; 
 
 namespace QLHS
 {
-    static class Program
+    class Program : WindowsFormsApplicationBase
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
-        {  
+        public Program()
+        {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
 
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.Skins.SkinManager.EnableMdiFormSkins();
 
-            bool firstInstance;
-            using (Mutex mutex = new Mutex(true, "Instance Program", out firstInstance))
-            {
-                if (firstInstance)
-                    Application.Run(new frmMain());
-                else
-                     Util.MsgboxUtil.Error("Chương trình đang chạy!");
-            }
+            MainForm = new frmMain();
+            IsSingleInstance = true;
         }
+        [STAThread]
+        public static void Main(string[] args)
+        {
+            Instance = new Program();
+            Instance.Run(args);
+        }
+        /// <summary>
+        /// Nếu chương trình đang chạy, lần khởi động tiếp theo sẽ active lại chương trình
+        /// </summary>
+        /// <param name="eventArgs"></param>
+        protected override void OnStartupNextInstance(StartupNextInstanceEventArgs eventArgs)
+        {
+            Instance.MainForm.Activate();
+        }
+        /// <summary>
+        /// Sử dụng khi ứng dụng restart 
+        /// </summary>
+        public static void Restart()
+        {
+            // Bỏ chế chộ single instance
+            Instance.IsSingleInstance = false;
+            Application.Restart();
+        }
+        private static Program Instance;
     }
 }

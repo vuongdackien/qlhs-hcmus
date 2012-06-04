@@ -73,18 +73,26 @@ namespace QLHS
         /// <param name="EnableAllMenu">True - Hiển thị / False - Ẩn</param>
         private void EnableAllMenu(bool EnableAllMenu)
         {
+            // Quản lý hồ sơ - Hồ sơ năm học
             barBtnKhaiBaoNamHoc.Enabled = EnableAllMenu;
             barBtnQuanLyNamHoc.Enabled = EnableAllMenu;
             barBtnHeSoMonHoc.Enabled = EnableAllMenu;
-
+            barButtonItemDSLop.Enabled = EnableAllMenu;
+            barBtnHoSoGiaoVien.Enabled = EnableAllMenu;
+            // Quản lý hồ sơ - Hồ sơ học sinh
             barBtnTiepNhanHocSinh.Enabled = EnableAllMenu;
             barBtnTimKiemHocSinh.Enabled = EnableAllMenu;
             barBtnPhanLopHocSinh.Enabled = EnableAllMenu;
-
-            barBtnHoSoGiaoVien.Enabled = EnableAllMenu;
-
-            barButtonItemDSLop.Enabled = EnableAllMenu;
+            // Quản lý học tập - Quản lý điểm
+            barButtonItemNhapDiemMonHoc.Enabled = EnableAllMenu;
+            barButtonItemBCBangDiem.Enabled = EnableAllMenu;
+            // Quản lý học tập - Báo cáo tổng kết
+            barButtonItemTongKetMonHoc.Enabled = EnableAllMenu;
+            barButtonItemTongKetHocKy.Enabled = EnableAllMenu;
+            // Hệ thống
             barButtonItemQuanLyNguoiDung.Enabled = EnableAllMenu;
+            barButtonItemCauHinhKetNoi.Enabled = EnableAllMenu;
+
             // menu system
             barButtonItemDangNhap.Enabled = !EnableAllMenu;
             barButtonItemDoiMatKhau.Enabled = EnableAllMenu;
@@ -110,6 +118,9 @@ namespace QLHS
                 // mặc định ẩn hết menu
                 default: EnableAllMenu(false); break;
             }
+            // phân quyền form home
+            var frmHome = openForms[typeof(frmHome)] as frmHome;
+            frmHome.PhanQuyenNguoiDung();
         }
         /// <summary>
         /// Diable menu không thuộc nhóm Administrator
@@ -123,18 +134,24 @@ namespace QLHS
         /// </summary>
         private void NhomGiaoVien()
         {
+            // Quản lý hồ sơ - Hồ sơ năm học
             barBtnKhaiBaoNamHoc.Enabled = false;
             barBtnQuanLyNamHoc.Enabled = false;
             barBtnHeSoMonHoc.Enabled = false;
-
+            barButtonItemDSLop.Enabled = false;
+            barBtnHoSoGiaoVien.Enabled = false;
+            // Quản lý hồ sơ - Hồ sơ học sinh
             barBtnTiepNhanHocSinh.Enabled = false;
             barBtnPhanLopHocSinh.Enabled = false;
-
-            barBtnHoSoGiaoVien.Enabled = false;
-
-            barButtonItemDSLop.Enabled = false;
+            // Quản lý học tập - Quản lý điểm
+            barButtonItemNhapDiemMonHoc.Enabled = false;
+            barButtonItemBCBangDiem.Enabled = false;
+            // Quản lý học tập - Báo cáo tổng kết
+            barButtonItemTongKetMonHoc.Enabled = false;
+            barButtonItemTongKetHocKy.Enabled = false;
+            // Hệ thống
             barButtonItemQuanLyNguoiDung.Enabled = false;
-
+            barButtonItemCauHinhKetNoi.Enabled = false;
         }
         /// <summary>
         /// Diable menu không thuộc nhóm giáo vụ
@@ -142,6 +159,8 @@ namespace QLHS
         private void NhomGiaoVu()
         {
             barBtnKhaiBaoNamHoc.Enabled = false;
+            // Hệ thống
+            barButtonItemCauHinhKetNoi.Enabled = false;
         }
 
        
