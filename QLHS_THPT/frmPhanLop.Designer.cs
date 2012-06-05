@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControlLopMoi = new DevExpress.XtraEditors.GroupControl();
             this.comboBoxEditLopMoi = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -59,9 +60,9 @@
             this.comboBoxEditKhoi = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.comboBoxEditNamHoc = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.toolTipController1 = new DevExpress.Utils.ToolTipController();
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
             this.gridControlDSHocSinh = new DevExpress.XtraGrid.GridControl();
-            this.contextMenuStripLopTu = new System.Windows.Forms.ContextMenuStrip();
+            this.contextMenuStripLopTu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.chonTatCaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.phanLopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridViewDSHocSinh = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -77,7 +78,7 @@
             this.simpleButtonXoaPL = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonPhanLop = new DevExpress.XtraEditors.SimpleButton();
             this.gridControlDSHocSinhMoi = new DevExpress.XtraGrid.GridControl();
-            this.contextMenuStripLopDen = new System.Windows.Forms.ContextMenuStrip();
+            this.contextMenuStripLopDen = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.chonTatCaDSLopDenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xoaPhanLopMoiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridViewDSHocSinhMoi = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -240,7 +241,6 @@
             // 
             this.radioButtonChuyenLopCungKhoi.AutoSize = true;
             this.radioButtonChuyenLopCungKhoi.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.radioButtonChuyenLopCungKhoi.ForeColor = System.Drawing.Color.Red;
             this.radioButtonChuyenLopCungKhoi.Location = new System.Drawing.Point(16, 120);
             this.radioButtonChuyenLopCungKhoi.Name = "radioButtonChuyenLopCungKhoi";
             this.radioButtonChuyenLopCungKhoi.Size = new System.Drawing.Size(173, 17);
@@ -339,7 +339,6 @@
             // 
             this.radioButtonPhanLopHocSinh_NamTruoc.AutoSize = true;
             this.radioButtonPhanLopHocSinh_NamTruoc.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.radioButtonPhanLopHocSinh_NamTruoc.ForeColor = System.Drawing.Color.Red;
             this.radioButtonPhanLopHocSinh_NamTruoc.Location = new System.Drawing.Point(16, 88);
             this.radioButtonPhanLopHocSinh_NamTruoc.Name = "radioButtonPhanLopHocSinh_NamTruoc";
             this.radioButtonPhanLopHocSinh_NamTruoc.Size = new System.Drawing.Size(236, 17);
@@ -356,7 +355,6 @@
             this.radioButtonPhanLopHoSo_ChuaPhanLop.AutoSize = true;
             this.radioButtonPhanLopHoSo_ChuaPhanLop.Checked = true;
             this.radioButtonPhanLopHoSo_ChuaPhanLop.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.radioButtonPhanLopHoSo_ChuaPhanLop.ForeColor = System.Drawing.Color.Red;
             this.radioButtonPhanLopHoSo_ChuaPhanLop.Location = new System.Drawing.Point(16, 20);
             this.radioButtonPhanLopHoSo_ChuaPhanLop.Name = "radioButtonPhanLopHoSo_ChuaPhanLop";
             this.radioButtonPhanLopHoSo_ChuaPhanLop.Size = new System.Drawing.Size(269, 17);
@@ -484,19 +482,19 @@
             this.chonTatCaToolStripMenuItem,
             this.phanLopToolStripMenuItem});
             this.contextMenuStripLopTu.Name = "contextMenuStrip1";
-            this.contextMenuStripLopTu.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStripLopTu.Size = new System.Drawing.Size(136, 48);
             // 
             // chonTatCaToolStripMenuItem
             // 
             this.chonTatCaToolStripMenuItem.Name = "chonTatCaToolStripMenuItem";
-            this.chonTatCaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.chonTatCaToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.chonTatCaToolStripMenuItem.Text = "Chọn tất cả";
             this.chonTatCaToolStripMenuItem.Click += new System.EventHandler(this.chonTatCaToolStripMenuItem_Click);
             // 
             // phanLopToolStripMenuItem
             // 
             this.phanLopToolStripMenuItem.Name = "phanLopToolStripMenuItem";
-            this.phanLopToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.phanLopToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.phanLopToolStripMenuItem.Text = "Phân lớp";
             this.phanLopToolStripMenuItem.Click += new System.EventHandler(this.phanLopToolStripMenuItem_Click);
             // 
