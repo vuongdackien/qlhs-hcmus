@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using Microsoft.VisualBasic.ApplicationServices; 
+using Microsoft.VisualBasic.ApplicationServices;
+using DevExpress.LookAndFeel; 
 
 namespace QLHS
 {
@@ -11,7 +12,8 @@ namespace QLHS
             Application.EnableVisualStyles();
 
             DevExpress.Skins.SkinManager.EnableFormSkins();
-            DevExpress.Skins.SkinManager.EnableMdiFormSkins();
+            DevExpress.UserSkins.OfficeSkins.Register();
+            DevExpress.UserSkins.BonusSkins.Register();
 
             MainForm = new frmMain();
             IsSingleInstance = true;

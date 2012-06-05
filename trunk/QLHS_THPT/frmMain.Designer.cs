@@ -346,9 +346,7 @@
             // barStaticItemTenNguoiDung
             // 
             this.barStaticItemTenNguoiDung.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.barStaticItemTenNguoiDung.Appearance.ForeColor = System.Drawing.Color.Red;
             this.barStaticItemTenNguoiDung.Appearance.Options.UseFont = true;
-            this.barStaticItemTenNguoiDung.Appearance.Options.UseForeColor = true;
             this.barStaticItemTenNguoiDung.Caption = "Tên người dùng";
             this.barStaticItemTenNguoiDung.Id = 40;
             this.barStaticItemTenNguoiDung.Name = "barStaticItemTenNguoiDung";
