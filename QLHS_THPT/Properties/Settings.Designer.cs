@@ -22,5 +22,17 @@ namespace QLHS.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Money Twins")]
+        public string ApplicationSkinName {
+            get {
+                return ((string)(this["ApplicationSkinName"]));
+            }
+            set {
+                this["ApplicationSkinName"] = value;
+            }
+        }
     }
 }

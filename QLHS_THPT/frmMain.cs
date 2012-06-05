@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
 using QLHS.BUS;
+using DevExpress.XtraBars.Helpers;
+using DevExpress.LookAndFeel;
+using DatabaseConnectionManagement.Properties;
 
 namespace QLHS
 {
+
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     { 
         private frmDangNhap _fLogin = null;
@@ -16,6 +20,9 @@ namespace QLHS
         public frmMain()
         {
             InitializeComponent();
+            SkinHelper.InitSkinGallery(ribbonGalleryBarItemGiaoDien, true);
+            UserLookAndFeel.Default.SkinName = Properties.Settings.Default.ApplicationSkinName;
+
             _nguoiDungBUS = new NguoiDungBUS();
         }
         private void frmMain_Load(object sender, EventArgs e)
@@ -411,6 +418,12 @@ namespace QLHS
                     xtraTabbedMdiManager.SelectedPage.MdiChild.Close();
                 }
             }
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.ApplicationSkinName = UserLookAndFeel.Default.SkinName;
+            Properties.Settings.Default.Save();
         }
 
         
