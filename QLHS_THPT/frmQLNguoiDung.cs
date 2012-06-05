@@ -57,7 +57,7 @@ namespace QLHS
             comboBoxEditNguoiDung.SelectedIndex = 0;
             textEditMatKhau.Text = "";
             textEdittenTruyCap.Text = "";
-            radioGroupTrangThai.SelectedIndex = 0;
+            radioGroupTrangThai.SelectedIndex = 1;
         }
 
         public void _Disable_Controls(bool editing)
@@ -119,14 +119,33 @@ namespace QLHS
                 Util.MsgboxUtil.Error("Bạn chưa nhập tên đăng nhập");
                 return;
             }
+            if (!_is_add_button && _nguoiDungBUS.KiemTraTonTai_TaiKhoan(textEdittenTruyCap.Text.Replace("'", "''").Trim()))
+            {
+                 Util.MsgboxUtil.Error("Tài khoản: "+textEdittenTruyCap.Text+" đã tồn tại. Hãy chọn tài khoản khác!");
+                 return;
+            }
+
 
             bool checkExistsUser = _nguoiDungBUS.KiemTraTonTai_NguoiDung(
                       Util.CboUtil.GetValueItem(comboBoxEditNguoiDung));
 
+            // không tồn tại và mk rỗng
             if (!checkExistsUser && textEditMatKhau.Text == "")
             {
                 Util.MsgboxUtil.Error("Bạn chưa nhập mật khẩu!");
                 return;
+            }
+            // nếu đang thêm
+            if (!_is_add_button)
+            {
+                if (checkExistsUser)
+                {
+                    if(Util.MsgboxUtil.YesNo("Giáo viên: " + Util.CboUtil.GetDisplayItem(comboBoxEditNguoiDung)
+                        +" đã được tạo tài khoản.\nBạn có muốn cập nhật lại thông tin tài khoản cho giáo viên này?")
+                        == DialogResult.No
+                     )
+                    return;
+                }
             }
 
             // Lay tt nguoi dung
