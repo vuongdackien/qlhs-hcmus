@@ -58,6 +58,15 @@ namespace QLHS.BUS
             return _nguoiDungDAL.KiemTraTonTai_NguoiDung(MaUser);
         }
         /// <summary>
+        /// Kiểm tra tồn tại tài khoản
+        /// </summary>
+        /// <param name="MaUser">String: tài khoản</param>
+        /// <returns></returns>
+        public bool KiemTraTonTai_TaiKhoan(string TaiKhoan)
+        {
+            return _nguoiDungDAL.KiemTraTonTai_TaiKhoan(TaiKhoan);
+        }
+        /// <summary>
         /// Thêm thông tin người dùng
         /// </summary>
         /// <param name="user">NguoiDungDTO</param>

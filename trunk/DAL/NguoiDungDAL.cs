@@ -78,6 +78,16 @@ namespace QLHS.DAL
             return (ExecuteScalar(sql) == null) ? false : true;
         }
         /// <summary>
+        /// Kiểm tra tồn tại tài khoản
+        /// </summary>
+        /// <param name="MaUser">String: tài khoản</param>
+        /// <returns></returns>
+        public bool KiemTraTonTai_TaiKhoan(string TaiKhoan)
+        {
+            string sql = "SELECT TenDNhap FROM NGUOIDUNG WHERE TenDNhap = '" + TaiKhoan + "'";
+            return (ExecuteScalar(sql) == null) ? false : true;
+        }
+        /// <summary>
         /// Thêm thông tin người dùng
         /// </summary>
         /// <param name="user">NguoiDungDTO</param>
