@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QLHS.DTO
+﻿namespace QLHS.DTO
 {
-    public class  NamHocDTO
+    public class NamHocDTO
     {
         public NamHocDTO()
         {
-
         }
+
         public NamHocDTO(string MaNamHoc, string TenNamHoc)
         {
             this.MaNamHoc = MaNamHoc;
@@ -23,6 +19,5 @@ namespace QLHS.DTO
         {
             return MaNamHoc + " " + TenNamHoc;
         }
-
     }
 }

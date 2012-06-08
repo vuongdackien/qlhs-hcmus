@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QLHS.DTO
+﻿namespace QLHS.DTO
 {
     public class BangDiemDTO
     {
-
         private HocSinhDTO _HocSinhDTO = new HocSinhDTO();
+        private LopDTO _LopDTO = new LopDTO();
+
+        private MonHocDTO _MonHocDTO = new MonHocDTO();
 
         public HocSinhDTO HocSinh
         {
@@ -15,15 +13,11 @@ namespace QLHS.DTO
             set { _HocSinhDTO = value; }
         }
 
-        private MonHocDTO _MonHocDTO = new MonHocDTO();
-
         public MonHocDTO MonHoc
         {
-            get { return _MonHocDTO ; }
+            get { return _MonHocDTO; }
             set { _MonHocDTO = value; }
         }
-
-        private LopDTO _LopDTO = new LopDTO();
 
         public LopDTO LopDTO
         {
@@ -32,7 +26,7 @@ namespace QLHS.DTO
         }
 
         public int MaHocKy { get; set; }
-        
+
         public double DM_1 { get; set; }
         public double DM_2 { get; set; }
         public double D15_1 { get; set; }

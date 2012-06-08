@@ -1,21 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Data;
-using QLHS.DTO;
+﻿using System.Data;
 using QLHS.DAL;
+using QLHS.DTO;
 
 namespace QLHS.BUS
 {
     public class MonHocBUS
     {
-        private MonHocDAL _monHocDAL;
+        private readonly MonHocDAL _monHocDAL;
+
         public MonHocBUS()
         {
             _monHocDAL = new MonHocDAL();
         }
-        
-        
+
+
         /// <summary>
         /// Lấy Datatable danh sách môn học
         /// </summary>
@@ -24,6 +22,7 @@ namespace QLHS.BUS
         {
             return _monHocDAL.LayDT_DanhSach_MonHoc();
         }
+
         /// <summary>
         /// Lấy DataTable môn học đang sử dụng
         /// </summary>
@@ -33,7 +32,7 @@ namespace QLHS.BUS
         {
             return _monHocDAL.LayDT_DanhSach_MonHoc(layDangSuDung);
         }
-       
+
 
         /// <summary>
         /// Xóa môn học
@@ -44,15 +43,17 @@ namespace QLHS.BUS
         {
             return _monHocDAL.Xoa_MonHoc(maMonHoc);
         }
+
         /// <summary>
         /// Thêm môn học
         /// </summary>
         /// <param name="monHoc">MonHocDTO</param>
         /// <returns></returns>
         public bool Them_MonHoc(MonHocDTO monHoc)
-        {            
+        {
             return _monHocDAL.Them_MonHoc(monHoc);
         }
+
         /// <summary>
         /// Cập nhật môn học
         /// </summary>
@@ -62,6 +63,7 @@ namespace QLHS.BUS
         {
             return _monHocDAL.CapNhat_MonHoc(monHoc);
         }
+
         /// <summary>
         /// Kiểm tra tồn tại môn học
         /// </summary>
@@ -71,6 +73,5 @@ namespace QLHS.BUS
         {
             return _monHocDAL.KiemTraTonTai_MonHoc(maMonHoc);
         }
-       
     }
 }

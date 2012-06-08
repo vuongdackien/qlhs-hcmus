@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Data;
+using System.Data.SqlClient;
 using QLHS.DTO;
 
 namespace QLHS.DAL
@@ -11,15 +11,16 @@ namespace QLHS.DAL
         /// <summary>
         /// Thêm môn học
         /// </summary>
-        /// <param name="monHoc">MonHocDTO</param>
+        /// <param name="monHocDTO"></param>
         /// <returns></returns>
-        public bool Them_MonHoc(MonHocDTO _monHocDTO)
+        public bool Them_MonHoc(MonHocDTO monHocDTO)
         {
             string sql = string.Format("INSERT INTO MONHOC VALUES ('{0}',N'{1}',{2},{3},{4})",
-                                        _monHocDTO.MaMonHoc, _monHocDTO.TenMonHoc, _monHocDTO.SoTiet,
-                                        _monHocDTO.HeSo, _monHocDTO.TrangThai);
+                                       monHocDTO.MaMonHoc, monHocDTO.TenMonHoc, monHocDTO.SoTiet,
+                                       monHocDTO.HeSo, monHocDTO.TrangThai);
             return ExecuteQuery(sql) > 0;
         }
+
         /// <summary>
         /// Xóa môn học
         /// </summary>
@@ -27,25 +28,25 @@ namespace QLHS.DAL
         /// <returns></returns>
         public bool Xoa_MonHoc(string maMonHoc)
         {
-            string bd = "SELECT count(*) as SoLuong FROM BANGDIEM WHERE MaMonHoc='"+maMonHoc+"'";
+            string bd = "SELECT count(*) as SoLuong FROM BANGDIEM WHERE MaMonHoc='" + maMonHoc + "'";
             int count = Convert.ToInt32(ExecuteScalar(bd));
-            if(count>0)
+            if (count > 0)
             {
                 return false;
             }
             string sql = "DELETE FROM MONHOC WHERE MaMonHoc ='" + maMonHoc + "'\n";
             return ExecuteQuery(sql) > 0;
         }
+
         /// <summary>
         /// Cập nhật môn học
         /// </summary>
-        /// <param name="monHoc">MonHocDTO</param>
         /// <returns></returns>
-        public bool CapNhat_MonHoc(MonHocDTO _monHocDTO)
+        public bool CapNhat_MonHoc(MonHocDTO monHocDTO)
         {
             string sql = string.Format("UPDATE MONHOC SET TenMonHoc = N'{0}', SoTiet={1}, HeSo={2}, TrangThai={3} "
-                                     + "WHERE MaMonHoc='{4}' ", _monHocDTO.TenMonHoc,_monHocDTO.SoTiet,
-                                     _monHocDTO.HeSo, _monHocDTO.TrangThai, _monHocDTO.MaMonHoc);
+                                       + "WHERE MaMonHoc='{4}' ", monHocDTO.TenMonHoc, monHocDTO.SoTiet,
+                                       monHocDTO.HeSo, monHocDTO.TrangThai, monHocDTO.MaMonHoc);
             return ExecuteQuery(sql) > 0;
         }
 
@@ -68,44 +69,70 @@ namespace QLHS.DAL
         /// <returns>Datatable</returns>
         public DataTable LayDT_DanhSach_MonHoc(bool chiLayCacMonDangHoc = true)
         {
-            string sql = "";
-            if (chiLayCacMonDangHoc)
-                sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo FROM MONHOC WHERE TrangThai = 1 ORDER BY TenMonHoc ASC");
-            else
-                sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo, TrangThai FROM MONHOC ORDER BY TenMonHoc");
+            string sql;
+            sql = string.Format(chiLayCacMonDangHoc
+                                    ? "SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo FROM MONHOC WHERE TrangThai = 1 ORDER BY TenMonHoc ASC"
+                                    : "SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo, TrangThai FROM MONHOC ORDER BY TenMonHoc");
 
             return GetTable(sql);
         }
-      
+
         public MonHoc_HeSoDTO LayDTO_HeSoMonHoc()
         {
             string sql = "SELECT MaMonHoc, HeSo FROM MONHOC WHERE TrangThai = 1";
             OpenConnect();
-            var dr = ExecuteReader(sql);
-            MonHoc_HeSoDTO dsHeSo = new MonHoc_HeSoDTO();
+            SqlDataReader dr = ExecuteReader(sql);
+            var dsHeSo = new MonHoc_HeSoDTO();
             while (dr.Read())
             {
-                double heso = Convert.ToDouble(dr["HeSo"]); 
+                double heso = Convert.ToDouble(dr["HeSo"]);
                 switch (dr["MaMonHoc"].ToString())
                 {
-                    case "toan": dsHeSo.toan = heso; break;
-                    case "ly": dsHeSo.ly = heso; break;
-                    case "hoa": dsHeSo.hoa = heso; break;
-                    case "sinh": dsHeSo.sinh = heso; break;
-                    case "nvan": dsHeSo.nvan = heso; break;
-                    case "su": dsHeSo.su = heso; break;
-                    case "dia": dsHeSo.dia = heso; break;
-                    case "nngu": dsHeSo.nngu = heso; break;
-                    case "tin": dsHeSo.tin = heso; break;
-                    case "tduc": dsHeSo.tduc = heso; break;
-                    case "gdcd": dsHeSo.gdcd = heso; break;
-                    case "qphong": dsHeSo.qphong = heso; break;
-                    case "cnghe": dsHeSo.cnghe = heso; break;
+                    case "toan":
+                        dsHeSo.toan = heso;
+                        break;
+                    case "ly":
+                        dsHeSo.ly = heso;
+                        break;
+                    case "hoa":
+                        dsHeSo.hoa = heso;
+                        break;
+                    case "sinh":
+                        dsHeSo.sinh = heso;
+                        break;
+                    case "nvan":
+                        dsHeSo.nvan = heso;
+                        break;
+                    case "su":
+                        dsHeSo.su = heso;
+                        break;
+                    case "dia":
+                        dsHeSo.dia = heso;
+                        break;
+                    case "nngu":
+                        dsHeSo.nngu = heso;
+                        break;
+                    case "tin":
+                        dsHeSo.tin = heso;
+                        break;
+                    case "tduc":
+                        dsHeSo.tduc = heso;
+                        break;
+                    case "gdcd":
+                        dsHeSo.gdcd = heso;
+                        break;
+                    case "qphong":
+                        dsHeSo.qphong = heso;
+                        break;
+                    case "cnghe":
+                        dsHeSo.cnghe = heso;
+                        break;
                 }
             }
             CloseConnect();
             return dsHeSo;
         }
+
         /// <summary>
         /// Lấy danh sách môn học
         /// </summary>
@@ -113,16 +140,18 @@ namespace QLHS.DAL
         /// <returns>List MonHocDTO</returns>
         public List<MonHocDTO> LayList_MonHoc(bool chiLayCacMonDangHoc = true)
         {
-            string sql = "";
-            if(chiLayCacMonDangHoc)
-                sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo,TrangThai FROM MONHOC WHERE TrangThai = 1 ORDER BY TenMonHoc ASC");
+            string sql;
+            if (chiLayCacMonDangHoc)
+                sql =
+                    string.Format(
+                        "SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo,TrangThai FROM MONHOC WHERE TrangThai = 1 ORDER BY TenMonHoc ASC");
             else
                 sql = string.Format("SELECT MaMonHoc, TenMonHoc, SoTiet, HeSo, TrangThai FROM MONHOC ORDER BY TenMonHoc");
 
             OpenConnect();
-            List<MonHocDTO> listMonHocDTO = new List<MonHocDTO>();
+            var listMonHocDTO = new List<MonHocDTO>();
             MonHocDTO monhocDTO;
-            var dr = ExecuteReader(sql);
+            SqlDataReader dr = ExecuteReader(sql);
             while (dr.Read())
             {
                 monhocDTO = new MonHocDTO();
@@ -130,7 +159,7 @@ namespace QLHS.DAL
                 monhocDTO.TenMonHoc = Convert.ToString(dr["TenMonHoc"]);
                 monhocDTO.SoTiet = Convert.ToInt16(dr["SoTiet"]);
                 monhocDTO.HeSo = Convert.ToInt16(dr["HeSo"]);
-                monhocDTO.TrangThai=Convert.ToInt16(dr["TrangThai"]);
+                monhocDTO.TrangThai = Convert.ToInt16(dr["TrangThai"]);
                 listMonHocDTO.Add(monhocDTO);
             }
             CloseConnect();

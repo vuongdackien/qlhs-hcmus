@@ -1,21 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Data;
-using QLHS.DTO;
 using QLHS.DAL;
+using QLHS.DTO;
 
 namespace QLHS.BUS
 {
     public class QuyDinhBUS
     {
-        private QuyDinhDAL _quyDinhDAL;
+        private readonly QuyDinhDAL _quyDinhDAL;
 
         public QuyDinhBUS()
         {
             _quyDinhDAL = new QuyDinhDAL();
         }
-      
+
         /// <summary>
         /// Lấy danh sách quy định
         /// </summary>
@@ -43,6 +40,7 @@ namespace QLHS.BUS
         {
             return Convert.ToInt32(_quyDinhDAL.LayGiaTri("TuoiCanDuoi"));
         }
+
         /// <summary>
         /// Lấy tuổi cận trên
         /// </summary>
@@ -51,22 +49,25 @@ namespace QLHS.BUS
         {
             return Convert.ToInt32(_quyDinhDAL.LayGiaTri("TuoiCanTren"));
         }
+
         /// <summary>
         /// Lấy năm tuổi cận dưới
         /// </summary>
         /// <returns>Int: Năm</returns>
         public int LayNamTuoi_CanDuoi()
         {
-            return DateTime.Now.Year - this.LayTuoi_CanTren();
+            return DateTime.Now.Year - LayTuoi_CanTren();
         }
+
         /// <summary>
         /// Lấy năm tuổi cận trên
         /// </summary>
         /// <returns>Int: Năm</returns>
         public int LayNamTuoi_CanTren()
         {
-            return DateTime.Now.Year - this.LayTuoi_CanDuoi();
+            return DateTime.Now.Year - LayTuoi_CanDuoi();
         }
+
         /// <summary>
         /// Lấy mã năm học hiện tại
         /// </summary>
@@ -75,6 +76,7 @@ namespace QLHS.BUS
         {
             return Convert.ToString(_quyDinhDAL.LayGiaTri("MaNamHocHT"));
         }
+
         /// <summary>
         /// Lấy sỉ số cận trên
         /// </summary>
@@ -83,6 +85,7 @@ namespace QLHS.BUS
         {
             return Convert.ToInt32(_quyDinhDAL.LayGiaTri("SiSoCanTren"));
         }
+
         /// <summary>
         /// Lấy điểm chuẩn
         /// </summary>
@@ -91,6 +94,7 @@ namespace QLHS.BUS
         {
             return Convert.ToDouble(_quyDinhDAL.LayGiaTri("DiemChuan"));
         }
+
         /// <summary>
         /// Lấy ngày áp dụng
         /// </summary>
@@ -100,6 +104,5 @@ namespace QLHS.BUS
             string ngayQD = _quyDinhDAL.LayGiaTri("NgayApDung").ToString();
             return DateTime.ParseExact(ngayQD, "dd-MM-yyyy", null);
         }
-      
     }
 }

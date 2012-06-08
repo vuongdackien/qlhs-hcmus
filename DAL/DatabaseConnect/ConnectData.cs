@@ -1,61 +1,62 @@
-﻿using System.Data;
-using System.Data.Sql;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+using DatabaseConnectionManagement;
+using DatabaseConnectionManagement.Properties;
+using Util;
 
 namespace QLHS.DAL
 {
     public class ConnectData
     {
-        protected SqlConnection m_Connect = null;
-        protected SqlDataAdapter m_DataApdater = null;
-        protected DataTable m_Table = null;
-        protected SqlCommand m_Command = null;
         private string _strConnect = "";
+        private SqlCommand _mCommand;
+        private SqlConnection _mConnect;
+        private SqlDataAdapter _mDataApdater;
+        private DataTable _mTable;
 
 
-        public ConnectData()
+        protected ConnectData()
         {
-            _strConnect = DatabaseConnectionManagement.Properties.Settings.Default.ConnectString;
+            _strConnect = Settings.Default.ConnectString;
             // Nếu không kết nối được
-            if (!DatabaseConnectionManagement.frmAddConnection.TestConnect())
+            if (!FrmAddConnection.TestConnect())
             {
-                if (DatabaseConnectionManagement.frmAddConnection.Show() == System.Windows.Forms.DialogResult.OK)
-                    _strConnect = DatabaseConnectionManagement.Properties.Settings.Default.ConnectString;
+                if (FrmAddConnection.Show() == DialogResult.OK)
+                    _strConnect = Settings.Default.ConnectString;
                 else
-                    System.Environment.Exit(1);
+                    Environment.Exit(1);
             }
 
             Connect();
         }
 
-        protected ConnectData(bool testConnect)
-        {
-            if (testConnect)
-                TestConnect();
-        }
         #region Thao tác đóng, mở kết nối
+
         /// <summary>
         /// Hàm kết nối CSDL
         /// </summary>
         /// <returns>Bool</returns>
-        protected bool Connect()
+        private bool Connect()
         {
             try
             {
-                m_Connect = new SqlConnection(_strConnect);
-                this.OpenConnect();
+                _mConnect = new SqlConnection(_strConnect);
+                OpenConnect();
                 return true;
             }
             catch (SqlException ex)
             {
-                 Util.ExceptionUtil.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
+                ExceptionUtil.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
                 return false;
             }
             finally
-            { 
-                 this.CloseConnect();
+            {
+                CloseConnect();
             }
         }
+
         /// <summary>
         /// Kiểm tra kết nối với Database
         /// </summary>
@@ -64,8 +65,8 @@ namespace QLHS.DAL
         protected bool TestConnect(string strConnect = "")
         {
             if (strConnect != "")
-                this._strConnect = strConnect;
-            return this.Connect();
+                _strConnect = strConnect;
+            return Connect();
         }
 
 
@@ -76,27 +77,28 @@ namespace QLHS.DAL
         {
             try
             {
-                if (m_Connect != null)
-                    if (m_Connect.State == ConnectionState.Closed)
-                        m_Connect.Open();
+                if (_mConnect != null)
+                    if (_mConnect.State == ConnectionState.Closed)
+                        _mConnect.Open();
             }
             catch
             {
                 return;
             }
         }
+
         /// <summary>
         /// Đóng kết nối
         /// </summary>
         protected void CloseConnect()
         {
-            if (m_Connect != null)
-                if (m_Connect.State == ConnectionState.Open)
-                    m_Connect.Close();
+            if (_mConnect != null)
+                if (_mConnect.State == ConnectionState.Open)
+                    _mConnect.Close();
         }
+
         #endregion
 
-        #region Hàm thao tác tạo ra database, datarow với các câu lệnh select command
         /// <summary>
         /// Hàm lấy DataTable từ 1 chuỗi truy vấn
         /// </summary>
@@ -111,26 +113,24 @@ namespace QLHS.DAL
                 if (setPropertiesDataTable)
                 {
                     // Tạo dataApdapter vai trò như 1 ống hút thực hiện query đổ vào Datatable
-                    m_DataApdater = new SqlDataAdapter(sql, m_Connect);
-                    m_Table = new DataTable();
+                    _mDataApdater = new SqlDataAdapter(sql, _mConnect);
+                    _mTable = new DataTable();
                     // Đổ vào database
-                    m_DataApdater.Fill(m_Table);
-                    return m_Table;
+                    _mDataApdater.Fill(_mTable);
+                    return _mTable;
                 }
-                else
-                {
-                    SqlDataAdapter ap = new SqlDataAdapter(sql, m_Connect);
-                    DataTable tb = new DataTable();
-                    ap.Fill(tb);
-                    return tb;
-                }
+                var ap = new SqlDataAdapter(sql, _mConnect);
+                var tb = new DataTable();
+                ap.Fill(tb);
+                return tb;
             }
             catch (SqlException ex)
             {
-                 Util.ExceptionUtil.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
+                ExceptionUtil.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
                 return null;
             }
         }
+
         /// <summary>
         /// Truy vấn lấy dòng đầu tiên
         /// </summary>
@@ -147,7 +147,7 @@ namespace QLHS.DAL
         /// <returns>Datarow: Dòng mới với kiểu dữ liệu từ DataTable hiện tại</returns>
         protected DataRow GetNewRow()
         {
-            return m_Table.NewRow();
+            return _mTable.NewRow();
         }
 
         /// <summary>
@@ -156,51 +156,12 @@ namespace QLHS.DAL
         /// <param name="dr">Datarow: Dòng mới với kiểu dữ liệu từ DataTable hiện tại được tạo từ hàm GetNewRow()</param>
         protected void AddNewRow(DataRow dr)
         {
-            m_Table.Rows.Add(dr);
+            _mTable.Rows.Add(dr);
         }
-        #endregion
-
-        #region Hàm cập nhật tất cả thay đổi trong dataTable của dataGridview
-        /// <summary>
-        /// Hàm cập nhật tất cả thay đổi trong dataTable được set properties = TRUE (Sử dụng trên DataTable của GridView)
-        /// </summary>
-        /// <returns>Int: Số dòng được thay đổi</returns>
-        protected int UpdateAllDataTable()
-        {
-            int numRecords = 0;
-            // Transaction dùng để rollback data khi gặp lỗi trong quá trình Save
-            SqlTransaction sqlTran = null;
-            try
-            {
-                // Mở kết nối
-                this.OpenConnect();
-                // Mở Transaction
-                sqlTran = m_Connect.BeginTransaction();
-                m_DataApdater.SelectCommand.Transaction = sqlTran;
-                SqlCommandBuilder cbo = new SqlCommandBuilder(m_DataApdater);
-                numRecords = m_DataApdater.Update(m_Table);
-                // Thực thi
-                sqlTran.Commit();
-            }
-            catch (SqlException ex)
-            {
-                // Roolback data
-                if (sqlTran != null)
-                    sqlTran.Rollback();
-                 Util.ExceptionUtil.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
-            }
-            finally
-            { 
-                // Đóng kết nối
-                this.CloseConnect();
-            }
-            // Trả về số record thực thi
-            return numRecords;
-        }
-        #endregion
 
 
         #region Hàm thực thi các câu lệnh sql
+
         /// <summary>
         /// Hàm thực hiện câu query truyền vào
         /// </summary>
@@ -213,11 +174,10 @@ namespace QLHS.DAL
             try
             {
                 // Mở kết nối
-                this.OpenConnect();
+                OpenConnect();
                 // Mở Transaction
-                sqlTran = m_Connect.BeginTransaction();
-                SqlCommand sqlComm = new SqlCommand(sql, m_Connect);
-                sqlComm.Transaction = sqlTran;
+                sqlTran = _mConnect.BeginTransaction();
+                var sqlComm = new SqlCommand(sql, _mConnect) {Transaction = sqlTran};
                 numRecords = sqlComm.ExecuteNonQuery();
                 // Thực thi
                 sqlTran.Commit();
@@ -227,52 +187,27 @@ namespace QLHS.DAL
                 // Roolback data
                 if (sqlTran != null)
                     sqlTran.Rollback();
-                 Util.ExceptionUtil.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
+                ExceptionUtil.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
             }
             finally
-            { 
+            {
                 // Đóng kn
-                this.CloseConnect();
+                CloseConnect();
             }
             // Trả về số record thực thi
             return numRecords;
-        }
-
-        /// <summary>
-        /// Thực hiện SqlCommand truyền vào
-        /// </summary>
-        /// <param name="m_Command">SqlCommand: Giá trị SqlCommand</param>
-        /// <returns>Bool: Thực hiện thành công true/false</returns>
-        protected bool ExecuteCommand(SqlCommand m_Command)
-        {
-            try
-            {
-                this.OpenConnect();
-                m_Command.Connection = m_Connect;
-                m_Command.ExecuteNonQuery();
-                return true;
-            }
-            catch (SqlException ex)
-            {
-                 Util.ExceptionUtil.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
-                return false;
-            }
-            finally
-            {
-                this.CloseConnect();
-            }
         }
 
         protected SqlDataReader ExecuteReader(string sql)
         {
             try
             {
-                SqlCommand command = new SqlCommand(sql, this.m_Connect);
+                var command = new SqlCommand(sql, _mConnect);
                 return command.ExecuteReader();
             }
             catch (SqlException ex)
             {
-                 Util.ExceptionUtil.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
+                ExceptionUtil.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
                 return null;
             }
         }
@@ -283,21 +218,21 @@ namespace QLHS.DAL
         /// <param name="sql">String: Chuỗi truy vấn</param>
         /// <returns>Object: có thể ép kiểu lại.</returns>
         protected object ExecuteScalar(string sql)
-        { 
+        {
             try
             {
-                this.OpenConnect();
-                m_Command = new SqlCommand(sql, m_Connect);
-                return m_Command.ExecuteScalar();
+                OpenConnect();
+                _mCommand = new SqlCommand(sql, _mConnect);
+                return _mCommand.ExecuteScalar();
             }
             catch (SqlException ex)
             {
-                 Util.ExceptionUtil.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
+                ExceptionUtil.ThrowMsgBox(ex.ErrorCode + ": " + ex.Message);
                 return null;
             }
             finally
-            { 
-                 this.CloseConnect();
+            {
+                CloseConnect();
             }
         }
 
@@ -310,11 +245,9 @@ namespace QLHS.DAL
         protected string GetLastID(string nameTable, string nameSelectColumn)
         {
             string sql = "SELECT TOP 1 * FROM " + nameTable + " ORDER BY " + nameSelectColumn + " DESC";
-            return (string)ExecuteScalar(sql);
+            return (string) ExecuteScalar(sql);
         }
 
         #endregion
-
-
     }
 }

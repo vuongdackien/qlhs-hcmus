@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Data;
+using System.Data.SqlClient;
 using QLHS.DTO;
+using Util;
 
 namespace QLHS.DAL
 {
     public class NguoiDungDAL : ConnectData
     {
-        public NguoiDungDAL()
-        {
-
-        }
         /// <summary>
         /// Lấy danh sách người dùng
         /// </summary>
@@ -23,6 +19,7 @@ namespace QLHS.DAL
                          + " WHERE a.MaND = b.MaGiaoVien and a.MaLoaiND = c.MaLoaiND";
             return GetTable(sql);
         }
+
         /// <summary>
         /// Lấy danh sách người dùng đăng nhập
         /// </summary>
@@ -34,15 +31,16 @@ namespace QLHS.DAL
                          + " WHERE a.MaND = b.MaGiaoVien and a.MaLoaiND = c.MaLoaiND AND a.TrangThai = 1";
             return GetTable(sql);
         }
+
         public NguoiDungDTO LayDTO_ThongTin_NguoiDung(string username)
         {
             string sql = "SELECT MaND, a.MaLoaiND, MatKhau, TenLoaiND, TenGiaoVien ,TenDNhap, a.TrangThai "
-                        + " FROM NGUOIDUNG a, GIAOVIEN b, LOAINGUOIDUNG c "
-                        + " WHERE a.MaND = b.MaGiaoVien and a.MaLoaiND = c.MaLoaiND "
-                        + " AND TenDNhap = '" + username + "'";
+                         + " FROM NGUOIDUNG a, GIAOVIEN b, LOAINGUOIDUNG c "
+                         + " WHERE a.MaND = b.MaGiaoVien and a.MaLoaiND = c.MaLoaiND "
+                         + " AND TenDNhap = '" + username + "'";
             NguoiDungDTO nguoiDung = null;
             OpenConnect();
-            var dr = ExecuteReader(sql);
+            SqlDataReader dr = ExecuteReader(sql);
             while (dr.Read())
             {
                 nguoiDung = new NguoiDungDTO();
@@ -57,36 +55,41 @@ namespace QLHS.DAL
             CloseConnect();
             return nguoiDung;
         }
+
         /// <summary>
         /// Đổi mật khẩu người dùng
         /// </summary>
-        /// <param name="TenDangNhap">Tên đăng nhập</param>
-        /// <param name="NewPassword">Mật khẩu mới</param>
-        public bool DoiMatKhauNguoiDung(string TenDangNhap, string NewPassword)
+        /// <param name="tenDangNhap">Tên đăng nhập</param>
+        /// <param name="newPassword">Mật khẩu mới</param>
+        public bool DoiMatKhauNguoiDung(string tenDangNhap, string newPassword)
         {
-            string sql = "UPDATE NGUOIDUNG SET MatKhau = '" + Util.ObjectUtil.MaHoaMD5(NewPassword) + "' WHERE TenDNhap = '" + TenDangNhap + "'";
-            return ExecuteQuery(sql) > 0 ? true : false;
+            string sql = "UPDATE NGUOIDUNG SET MatKhau = '" + ObjectUtil.MaHoaMD5(newPassword) +
+                         "' WHERE TenDNhap = '" + tenDangNhap + "'";
+            return ExecuteQuery(sql) > 0;
         }
+
         /// <summary>
         /// Kiểm tra tồn tại người dùng
         /// </summary>
-        /// <param name="MaUser">String: Mã người dùng</param>
+        /// <param name="maUser">String: Mã người dùng</param>
         /// <returns></returns>
-        public bool KiemTraTonTai_NguoiDung(string MaUser)
+        public bool KiemTraTonTai_NguoiDung(string maUser)
         {
-            string sql = "SELECT MaND FROM NGUOIDUNG WHERE MaND = '" + MaUser + "'";
-            return (ExecuteScalar(sql) == null) ? false : true;
+            string sql = "SELECT MaND FROM NGUOIDUNG WHERE MaND = '" + maUser + "'";
+            return ExecuteScalar(sql) != null;
         }
+
         /// <summary>
         /// Kiểm tra tồn tại tài khoản
         /// </summary>
-        /// <param name="MaUser">String: tài khoản</param>
+        /// <param name="taiKhoan"></param>
         /// <returns></returns>
-        public bool KiemTraTonTai_TaiKhoan(string TaiKhoan)
+        public bool KiemTraTonTai_TaiKhoan(string taiKhoan)
         {
-            string sql = "SELECT TenDNhap FROM NGUOIDUNG WHERE TenDNhap = '" + TaiKhoan + "'";
-            return (ExecuteScalar(sql) == null) ? false : true;
+            string sql = "SELECT TenDNhap FROM NGUOIDUNG WHERE TenDNhap = '" + taiKhoan + "'";
+            return ExecuteScalar(sql) != null;
         }
+
         /// <summary>
         /// Thêm thông tin người dùng
         /// </summary>
@@ -95,12 +98,14 @@ namespace QLHS.DAL
         public bool Them_ThongTin_NguoiDung(NguoiDungDTO user)
         {
             string sql = string.Format("INSERT INTO NGUOIDUNG (MaND, MaLoaiND, TenDNhap, MatKhau, TrangThai ) "
-                        + "VALUES ('{0}','{1}','{2}','{3}','{4}')",
-                        user.MaND, user.LoaiNguoiDung.MaLoai, user.TenDNhap, Util.ObjectUtil.MaHoaMD5(user.MatKhau), user.TrangThai);
+                                       + "VALUES ('{0}','{1}','{2}','{3}','{4}')",
+                                       user.MaND, user.LoaiNguoiDung.MaLoai, user.TenDNhap,
+                                       ObjectUtil.MaHoaMD5(user.MatKhau), user.TrangThai);
             if (ExecuteQuery(sql) > 0)
                 return true;
             return false;
         }
+
         /// <summary>
         /// Sửa thông tin người dùng
         /// </summary>
@@ -108,24 +113,28 @@ namespace QLHS.DAL
         /// <returns></returns>
         public bool Sua_ThongTin_NguoiDung(NguoiDungDTO user)
         {
-            string updatePassword = (user.MatKhau == "") ? "" : "MatKhau = '" + Util.ObjectUtil.MaHoaMD5(user.MatKhau) + "',";
-            string sql = string.Format("UPDATE NGUOIDUNG SET MaLoaiND = '{0}', TenDNhap = '{1}', " + updatePassword + " TrangThai = '{2}' "
-                        + "WHERE MaND = '{3}'",
-                        user.LoaiNguoiDung.MaLoai, user.TenDNhap, user.TrangThai, user.MaND);
+            string updatePassword = (user.MatKhau == "")
+                                        ? ""
+                                        : "MatKhau = '" + ObjectUtil.MaHoaMD5(user.MatKhau) + "',";
+            string sql =
+                string.Format(
+                    "UPDATE NGUOIDUNG SET MaLoaiND = '{0}', TenDNhap = '{1}', " + updatePassword + " TrangThai = '{2}' "
+                    + "WHERE MaND = '{3}'",
+                    user.LoaiNguoiDung.MaLoai, user.TenDNhap, user.TrangThai, user.MaND);
             if (ExecuteQuery(sql) > 0)
                 return true;
             return false;
         }
+
         /// <summary>
         /// Xóa thông tin người dùng
         /// </summary>
-        /// <param name="MaUser">String: Mã user</param>
+        /// <param name="maUser">String: Mã user</param>
         /// <returns></returns>
-        public bool Xoa_ThongTin_NguoiDung(string MaUser)
+        public bool Xoa_ThongTin_NguoiDung(string maUser)
         {
-            string sql = "DELETE FROM NGUOIDUNG WHERE MaND = '" + MaUser + "'";
-            return ExecuteQuery(sql) > 0 ? true : false;
+            string sql = "DELETE FROM NGUOIDUNG WHERE MaND = '" + maUser + "'";
+            return ExecuteQuery(sql) > 0;
         }
-
     }
 }

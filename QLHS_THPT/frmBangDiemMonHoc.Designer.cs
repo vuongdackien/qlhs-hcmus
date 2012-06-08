@@ -1,6 +1,6 @@
 ﻿namespace QLHS
 {
-    partial class frmBangDiemMonHoc
+    partial class FrmBangDiemMonHoc
     {
         /// <summary>
         /// Required designer variable.
@@ -814,7 +814,7 @@
             this.ClientSize = new System.Drawing.Size(1177, 402);
             this.Controls.Add(this.panelControlRight);
             this.Controls.Add(this.panelControlLeft);
-            this.Name = "frmBangDiemMonHoc";
+            this.Name = "FrmBangDiemMonHoc";
             this.ShowIcon = false;
             this.Text = "Bảng điểm môn học";
             this.Load += new System.EventHandler(this.frmBangDiemMonHoc_Load);

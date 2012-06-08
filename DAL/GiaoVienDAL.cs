@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Data;
-using System.Data.SqlClient;
 using QLHS.DTO;
 
-
 namespace QLHS.DAL
-{ 
+{
     public class GiaoVienDAL : ConnectData
     {
         /// <summary>
@@ -19,6 +15,7 @@ namespace QLHS.DAL
             string sql = "SELECT MaGiaoVien, TenGiaoVien FROM GIAOVIEN";
             return GetTable(sql);
         }
+
         /// <summary>
         /// Thêm hồ sơ giáo viên
         /// </summary>
@@ -26,9 +23,11 @@ namespace QLHS.DAL
         /// <returns></returns>
         public bool Them_HoSo_GiaoVien(GiaoVienDTO giaoVien)
         {
-            string sql = string.Format("INSERT INTO GIAOVIEN VALUES ('{0}',N'{1}')", giaoVien.MaGiaoVien, giaoVien.TenGiaoVien);
+            string sql = string.Format("INSERT INTO GIAOVIEN VALUES ('{0}',N'{1}')", giaoVien.MaGiaoVien,
+                                       giaoVien.TenGiaoVien);
             return ExecuteQuery(sql) > 0;
         }
+
         /// <summary>
         /// Xóa hồ sơ giáo viên
         /// </summary>
@@ -36,11 +35,12 @@ namespace QLHS.DAL
         /// <returns></returns>
         public bool Xoa_HoSo_GiaoVien(string maGiaoVien)
         {
-            string sql = "\nDELETE FROM NGUOIDUNG WHERE MaND = '"+maGiaoVien+"'\n";
-            sql += "UPDATE LOP SET MaGiaoVien = NULL WHERE MaGiaoVien = '"+maGiaoVien+"'\n";
+            string sql = "\nDELETE FROM NGUOIDUNG WHERE MaND = '" + maGiaoVien + "'\n";
+            sql += "UPDATE LOP SET MaGiaoVien = NULL WHERE MaGiaoVien = '" + maGiaoVien + "'\n";
             sql += "DELETE FROM GIAOVIEN WHERE MaGiaoVien ='" + maGiaoVien + "'\n";
-           return ExecuteQuery(sql) > 0;
+            return ExecuteQuery(sql) > 0;
         }
+
         /// <summary>
         /// Cập nhật hồ sơ giáo viên
         /// </summary>
@@ -49,9 +49,10 @@ namespace QLHS.DAL
         public bool CapNhat_GiaoVien(GiaoVienDTO giaoVien)
         {
             string sql = string.Format("UPDATE GIAOVIEN SET TenGiaoVien = N'{0}' "
-                                     + "WHERE MaGiaoVien='{1}' ", giaoVien.TenGiaoVien, giaoVien.MaGiaoVien);
+                                       + "WHERE MaGiaoVien='{1}' ", giaoVien.TenGiaoVien, giaoVien.MaGiaoVien);
             return ExecuteQuery(sql) > 0;
         }
+
         /// <summary>
         /// Kiểm tra tồn tại hồ sơ giáo viên
         /// </summary>
@@ -62,6 +63,7 @@ namespace QLHS.DAL
             string sql = string.Format("SELECT COUNT(*) as SoLuong FROM GIAOVIEN WHERE MaGiaoVien = '{0}'", maGiaoVien);
             return Convert.ToInt32(ExecuteScalar(sql)) == 1;
         }
+
         /// <summary>
         /// Lấy mã cuối cùng (MaGiaoVien) - Bảng GiaoVien
         /// </summary>

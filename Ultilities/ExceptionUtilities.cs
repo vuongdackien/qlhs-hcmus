@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Util
 {
@@ -13,7 +11,7 @@ namespace Util
 
         public static void ThrowMsgBox(string msg)
         {
-            Util.MsgboxUtil.Error(msg);
+            MsgboxUtil.Error(msg);
         }
     }
 }
