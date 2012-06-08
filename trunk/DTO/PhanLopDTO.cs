@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QLHS.DTO
+﻿namespace QLHS.DTO
 {
     public class PhanLopDTO
     {
-        public int STT { get; set;}
+        public int STT { get; set; }
         public string MaHocSinh { get; set; }
         public string TenHocSinh { get; set; }
         public string MaLop { get; set; }

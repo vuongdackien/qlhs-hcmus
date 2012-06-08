@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Data;
-using QLHS.DTO;
-using QLHS.DAL;
+﻿using System.Data;
 
 namespace QLHS.BUS
 {
@@ -15,7 +10,7 @@ namespace QLHS.BUS
         /// <returns>DataTable</returns>
         public DataTable LayDT_HocKy()
         {
-            DataTable dataTable = new DataTable();
+            var dataTable = new DataTable();
             dataTable.Columns.Add("MaHocKy");
             dataTable.Columns.Add("TenHocKy");
             for (int hk = 1; hk <= 2; hk++)

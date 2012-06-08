@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Data;
-using DevExpress.XtraEditors;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using DevExpress.XtraTreeList.Nodes;
 
 namespace Util
@@ -23,6 +18,7 @@ namespace Util
                 SetCheckedChildNodes(node.Nodes[i], check);
             }
         }
+
         /// <summary>
         /// Chọn node cha của nó khi 1 trong các node con của nó được check
         /// </summary>
@@ -33,10 +29,9 @@ namespace Util
             if (node.ParentNode != null)
             {
                 bool b = false;
-                CheckState state;
                 for (int i = 0; i < node.ParentNode.Nodes.Count; i++)
                 {
-                    state = (CheckState)node.ParentNode.Nodes[i].CheckState;
+                    CheckState state = node.ParentNode.Nodes[i].CheckState;
                     if (!check.Equals(state))
                     {
                         b = !b;
@@ -48,5 +43,4 @@ namespace Util
             }
         }
     }
-
 }

@@ -1,6 +1,6 @@
 ﻿namespace QLHS
 {
-    partial class frmLapDSLop
+    partial class FrmLapDsLop
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLapDSLop));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLapDsLop));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonThemMoi = new DevExpress.XtraEditors.SimpleButton();
@@ -421,7 +421,7 @@
             this.Controls.Add(this.panelControlTop);
             this.Controls.Add(this.panelControlLeft);
             this.Controls.Add(this.panelControl1);
-            this.Name = "frmLapDSLop";
+            this.Name = "FrmLapDsLop";
             this.ShowIcon = false;
             this.Text = "Lập danh sách lớp";
             this.Load += new System.EventHandler(this.frmLapDSLop_Load);

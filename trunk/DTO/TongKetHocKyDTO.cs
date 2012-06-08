@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QLHS
+﻿namespace QLHS
 {
     public class TongKetHocKyDTO
     {

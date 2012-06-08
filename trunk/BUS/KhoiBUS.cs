@@ -1,27 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Data;
-using QLHS.DTO;
 using QLHS.DAL;
 
 namespace QLHS.BUS
 {
     public class KhoiBUS
     {
-        private KhoiDAL _khoiDAL;
+        private readonly KhoiDAL _khoiDAL;
+
         public KhoiBUS()
         {
             _khoiDAL = new KhoiDAL();
         }
+
         /// <summary>
         /// Lấy DataTable Khối
         /// </summary>
         /// <returns>DataTable</returns>
         public DataTable LayDT_Khoi()
         {
-           
-            DataTable dataTable = new DataTable();
+            var dataTable = new DataTable();
             dataTable.Columns.Add("MaKhoi");
             dataTable.Columns.Add("TenKhoi");
             for (int khoi = 10; khoi <= 12; khoi++)
@@ -32,15 +30,15 @@ namespace QLHS.BUS
                 dataTable.Rows.Add(dr);
             }
             return dataTable;
-        
         }
+
         public DataTable LayDT_Khoi_PhanLop(string MaKhoi)
         {
             int ma = Convert.ToInt32(MaKhoi);
-            DataTable dataTable = new DataTable();
+            var dataTable = new DataTable();
             dataTable.Columns.Add("MaKhoi");
             dataTable.Columns.Add("TenKhoi");
-            int gioihan = ma+1;
+            int gioihan = ma + 1;
             if (ma == 12)
                 gioihan = ma;
             for (int khoi = gioihan; khoi >= ma; khoi--)
@@ -57,14 +55,17 @@ namespace QLHS.BUS
         {
             return _khoiDAL.LayDT_Khoi(MaNamHoc);
         }
+
         public DataTable LayDT_Khoi10(string MaNamHoc)
         {
             return _khoiDAL.LayDT_Khoi10(MaNamHoc);
         }
+
         public DataTable LayDT_Khoi_PhanLopCu(string MaNamHoc)
         {
             return _khoiDAL.LayDT_Khoi_PhanLopCu(MaNamHoc);
         }
+
         public DataTable LayDT_Khoi_ChuyenLop(string MaNamHoc, string MaKhoi)
         {
             return _khoiDAL.LayDT_Khoi_Chuyen(MaNamHoc, MaKhoi);

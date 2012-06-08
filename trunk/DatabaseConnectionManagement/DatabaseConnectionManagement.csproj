@@ -80,16 +80,16 @@
     <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseConnection.cs">
+    <Compile Include="FrmAddConnection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DatabaseConnection.Designer.cs">
-      <DependentUpon>DatabaseConnection.cs</DependentUpon>
+    <Compile Include="FrmAddConnection.Designer.cs">
+      <DependentUpon>FrmAddConnection.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DatabaseConnection.resx">
+    <EmbeddedResource Include="FrmAddConnection.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>DatabaseConnection.cs</DependentUpon>
+      <DependentUpon>FrmAddConnection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

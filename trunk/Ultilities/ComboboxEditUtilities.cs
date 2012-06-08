@@ -1,27 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Data;
+﻿using System.Data;
 using DevExpress.XtraEditors;
 
 namespace Util
 {
     public class CboUtil
     {
-        private string sValue;
-        private string sDisplay;
+        private readonly string _sDisplay;
+        private readonly string _sValue;
 
-        public CboUtil(string svalue, string sdisplay)
+        private CboUtil(string svalue, string sdisplay)
         {
-            sValue = svalue;
-            sDisplay = sdisplay;
+            _sValue = svalue;
+            _sDisplay = sdisplay;
         }
-        
-        public override string ToString() { return sDisplay; }
- 
-        public string Value
+
+        private string Value
         {
-            get { return sValue; }
+            get { return _sValue; }
+        }
+
+        public override string ToString()
+        {
+            return _sDisplay;
         }
 
         /// <summary>
@@ -31,9 +31,9 @@ namespace Util
         /// <param name="dt">DataTable</param>
         /// <param name="value">String: Value member</param>
         /// <param name="display">String: Display member</param>
-        /// <param name="selected_index">Int: Chọn dòng</param>
+        /// <param name="selectedIndex">Int: Chọn dòng</param>
         public static void SetDataSource(ComboBoxEdit comb, DataTable dt, string value, string display,
-            int selected_index = 0)
+                                         int selectedIndex = 0)
         {
             if (dt == null)
                 return;
@@ -41,11 +41,10 @@ namespace Util
             foreach (DataRow dr in dt.Rows)
             {
                 comb.Properties.Items.Add(
-                      new CboUtil(dr[value].ToString(), dr[display].ToString())
-                );
-
+                    new CboUtil(dr[value].ToString(), dr[display].ToString())
+                    );
             }
-            comb.SelectedIndex = selected_index;
+            comb.SelectedIndex = selectedIndex;
         }
 
         /// <summary>
@@ -55,26 +54,25 @@ namespace Util
         /// <param name="dt">DataTable</param>
         /// <param name="value">String: Value member</param>
         /// <param name="display">String: Display member</param>
-        /// <param name="value_all">String: Display member dòng đầu tiên</param>
-        /// <param name="display_all">String: Value member dòng đầu tiên</param>
-        /// <param name="selected_index">Int: Chọn dòng</param>
-        public static void SetDataSource(ComboBoxEdit comb, DataTable dt, string value, string display, 
-                string value_all = "all", string display_all = "Tất cả", int selected_index = 0)
+        /// <param name="valueAll">String: Display member dòng đầu tiên</param>
+        /// <param name="displayAll">String: Value member dòng đầu tiên</param>
+        /// <param name="selectedIndex">Int: Chọn dòng</param>
+        public static void SetDataSource(ComboBoxEdit comb, DataTable dt, string value, string display,
+                                         string valueAll = "all", string displayAll = "Tất cả", int selectedIndex = 0)
         {
-           if (dt == null)
+            if (dt == null)
                 return;
-           comb.Properties.Items.Clear();
+            comb.Properties.Items.Clear();
 
-           comb.Properties.Items.Add(new CboUtil(value_all, display_all));
-         
+            comb.Properties.Items.Add(new CboUtil(valueAll, displayAll));
+
             foreach (DataRow dr in dt.Rows)
             {
                 comb.Properties.Items.Add(
-                      new CboUtil(dr[value].ToString(), dr[display].ToString())
-                );
+                    new CboUtil(dr[value].ToString(), dr[display].ToString())
+                    );
             }
-            comb.SelectedIndex = selected_index;
-
+            comb.SelectedIndex = selectedIndex;
         }
 
         /// <summary>
@@ -82,12 +80,13 @@ namespace Util
         /// </summary>
         /// <param name="comb">ComboBoxEdit</param>
         /// <returns>string: giá trị valuemember</returns>
-        public static string GetValueItem(ComboBoxEdit comb) 
+        public static string GetValueItem(ComboBoxEdit comb)
         {
             if (comb.SelectedItem == null)
                 return null;
-            return ((CboUtil)comb.SelectedItem).Value;
+            return ((CboUtil) comb.SelectedItem).Value;
         }
+
         /// <summary>
         /// Lấy giá trị hiển thị selected của ComboboxEdit
         /// </summary>
@@ -97,7 +96,7 @@ namespace Util
         {
             if (comb.SelectedItem == null)
                 return null;
-            return ((CboUtil)comb.SelectedItem).sDisplay;
+            return ((CboUtil) comb.SelectedItem)._sDisplay;
         }
 
         /// <summary>
@@ -105,14 +104,13 @@ namespace Util
         /// </summary>
         /// <param name="comb">ComboBoxEdit</param>
         /// <param name="svalue">String: Giá trị chọn valuemember</param>
-        public static void SelectedItem(ComboBoxEdit comb, string svalue) 
+        public static void SelectedItem(ComboBoxEdit comb, string svalue)
         {
-            foreach (var item in comb.Properties.Items)
+            foreach (object item in comb.Properties.Items)
             {
-                if (((CboUtil)item).Value == svalue)
+                if (((CboUtil) item).Value == svalue)
                     comb.SelectedItem = item;
             }
-            
         }
 
         public static bool CheckSelectedNull(ComboBoxEdit comb)
@@ -120,5 +118,4 @@ namespace Util
             return comb.SelectedItem == null;
         }
     }
-
 }

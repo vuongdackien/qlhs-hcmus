@@ -1,32 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QLHS
+﻿namespace QLHS.DTO
 {
     public class BangDiemHocKyDTO
     {
-        public BangDiemHocKyDTO()
-        {
-          
-        }
         public int STT { get; set; }
-        public string  MaHocSinh { get; set; }
+        public string MaHocSinh { get; set; }
         public string TenHocSinh { get; set; }
 
-        public object dtoan { get; set; }
-        public object dly { get; set; }
-        public object dhoa { get; set; }
-        public object dsinh { get; set; }
-        public object dngvan { get; set; }
-        public object dsu { get; set; }
-        public object ddia { get; set; }
-        public object dnngu { get; set; }
-        public object dtin { get; set; }
-        public object dtduc { get; set; }
-        public object dqphong { get; set; }
-        public object dcnghe { get; set; }
-        public object dgdcd { get; set; }
+        public object Dtoan { get; set; }
+        public object Dly { get; set; }
+        public object Dhoa { get; set; }
+        public object Dsinh { get; set; }
+        public object Dngvan { get; set; }
+        public object Dsu { get; set; }
+        public object Ddia { get; set; }
+        public object Dnngu { get; set; }
+        public object Dtin { get; set; }
+        public object Dtduc { get; set; }
+        public object Dqphong { get; set; }
+        public object Dcnghe { get; set; }
+        public object Dgdcd { get; set; }
 
 
         public object DTB { get; set; }

@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Data;
-using QLHS.DTO;
+﻿using System.Data;
 using QLHS.DAL;
+using QLHS.DTO;
+using Util;
 
 namespace QLHS.BUS
 {
     public class GiaoVienBUS
     {
-        GiaoVienDAL _giaoVienDAL;
+        private readonly GiaoVienDAL _giaoVienDAL;
 
         public GiaoVienBUS()
         {
@@ -24,6 +22,7 @@ namespace QLHS.BUS
         {
             return _giaoVienDAL.LayDT_DanhSach_GiaoVien();
         }
+
         /// <summary>
         /// Xóa hồ sơ giáo viên
         /// </summary>
@@ -33,6 +32,7 @@ namespace QLHS.BUS
         {
             return _giaoVienDAL.Xoa_HoSo_GiaoVien(maGiaoVien);
         }
+
         /// <summary>
         /// Thêm hồ sơ giáo viên
         /// </summary>
@@ -40,9 +40,10 @@ namespace QLHS.BUS
         /// <returns></returns>
         public bool Them_HoSo_GiaoVien(GiaoVienDTO giaoVien)
         {
-            giaoVien.MaGiaoVien = Util.ObjectUtil.NextID(_giaoVienDAL.Lay_MaCuoiCung(), "GV", 3);
+            giaoVien.MaGiaoVien = ObjectUtil.NextID(_giaoVienDAL.Lay_MaCuoiCung(), "GV", 3);
             return _giaoVienDAL.Them_HoSo_GiaoVien(giaoVien);
         }
+
         /// <summary>
         /// Cập nhật hồ sơ giáo viên
         /// </summary>
@@ -52,6 +53,7 @@ namespace QLHS.BUS
         {
             return _giaoVienDAL.CapNhat_GiaoVien(giaoVien);
         }
+
         /// <summary>
         /// Kiểm tra tồn tại hồ sơ giáo viên
         /// </summary>
@@ -61,6 +63,5 @@ namespace QLHS.BUS
         {
             return _giaoVienDAL.KiemTonTai_GiaoVien(maGiaoVien);
         }
-
     }
 }

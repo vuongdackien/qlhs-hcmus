@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using QLHS.DTO;
-
-namespace QLHS
+﻿namespace QLHS
 {
     public class TongKetMonDTO
     {
@@ -27,10 +22,10 @@ namespace QLHS
 
         public string MaMonHoc { get; set; }
 
-        public string TenMonHoc  { get; set; }
+        public string TenMonHoc { get; set; }
 
-        public int STT { get; set; } 
-       
+        public int STT { get; set; }
+
         public object SoLuongDat { get; set; }
 
         public object TyLe { get; set; }

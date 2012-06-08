@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Data;
+using System.Data.SqlClient;
 using QLHS.DTO;
-using System.Data.OleDb;
 
 namespace QLHS.DAL
 {
@@ -16,11 +15,11 @@ namespace QLHS.DAL
         public List<NamHocDTO> LayList_NamHoc()
         {
             string sql = "SELECT MaNamHoc, TenNamHoc FROM NAMHOC";
-            List<NamHocDTO> listNamHoc = new List<NamHocDTO>();
+            var listNamHoc = new List<NamHocDTO>();
             NamHocDTO namHoc;
 
             OpenConnect();
-            var dr = ExecuteReader(sql);
+            SqlDataReader dr = ExecuteReader(sql);
             while (dr.Read())
             {
                 namHoc = new NamHocDTO(Convert.ToString(dr["MaNamHoc"]),
@@ -31,19 +30,21 @@ namespace QLHS.DAL
 
             return listNamHoc;
         }
+
         /// <summary>
         /// Lấy DataTable năm học
         /// </summary>
         /// <returns>DataTable</returns>
         public DataTable LayDT_NamHoc()
         {
-            DataTable dbNamHoc = 
-                        GetTable( "Select MaNamHoc, TenNamHoc FROM NAMHOC "
-                        + "WHERE MaNamHoc NOT IN (SELECT GiaTri FROM QUYDINH WHERE Khoa = 'MaNamHocHT') "
-                        + "ORDER BY MaNamHoc ASC ");
+            DataTable dbNamHoc =
+                GetTable("Select MaNamHoc, TenNamHoc FROM NAMHOC "
+                         + "WHERE MaNamHoc NOT IN (SELECT GiaTri FROM QUYDINH WHERE Khoa = 'MaNamHocHT') "
+                         + "ORDER BY MaNamHoc ASC ");
 
             DataRow drNamHocHienTai = GetFirstDataRow("SELECT MaNamHoc, TenNamHoc FROM NAMHOC "
-                 + "WHERE MaNamHoc IN (SELECT GiaTri FROM QUYDINH WHERE Khoa = 'MaNamHocHT') ");
+                                                      +
+                                                      "WHERE MaNamHoc IN (SELECT GiaTri FROM QUYDINH WHERE Khoa = 'MaNamHocHT') ");
 
             DataRow drAdd = dbNamHoc.NewRow();
             drAdd["MaNamHoc"] = drNamHocHienTai["MaNamHoc"];
@@ -53,33 +54,39 @@ namespace QLHS.DAL
 
             return dbNamHoc;
         }
+
         /// <summary>
         /// Lấy DataTable năm học có mã năm học là tham  số truyền vào
         /// </summary>
         /// <returns>DataTable</returns>
-        public DataTable LayDT_NamHoc(string MaNamHoc)
+        public DataTable LayDT_NamHoc(string maNamHoc)
         {
-            string sql = string.Format("SELECT MaNamHoc, TenNamHoc FROM NAMHOC WHERE MaNamHoc='{0}'",MaNamHoc);
+            string sql = string.Format("SELECT MaNamHoc, TenNamHoc FROM NAMHOC WHERE MaNamHoc='{0}'", maNamHoc);
             return GetTable(sql);
         }
+
         /// <summary>
         /// Lấy DataTable năm học làm năm hiện tại=năm học mới
         /// </summary>
         /// <returns>DataTable</returns>
         public DataTable LayDTNamHocHienTai()
         {
-            string sql = "SELECT MaNamHoc,TenNamHoc FROM NAMHOC WHERE MaNamHoc in (select GiaTri from QUYDINH where Khoa='MaNamHocHT') ";
+            string sql =
+                "SELECT MaNamHoc,TenNamHoc FROM NAMHOC WHERE MaNamHoc in (select GiaTri from QUYDINH where Khoa='MaNamHocHT') ";
             return GetTable(sql);
         }
+
         /// <summary>
         /// Lấy DataTable năm học cần chuyển lên lớp khi kết thúc năm học
         /// </summary>
         /// <returns>DataTable</returns>
         public DataTable LayDT_NamHocTruoc()
         {
-            string sql = "SELECT MaNamHoc,TenNamHoc FROM NAMHOC WHERE substring(TenNamHoc,8,4) = (select substring(TenNamHoc,1,4) as TenNamHoc from NAMHOC WHERE MaNamHoc in (select GiaTri from QUYDINH where Khoa='MaNamHocHT')) ";
+            string sql =
+                "SELECT MaNamHoc,TenNamHoc FROM NAMHOC WHERE substring(TenNamHoc,8,4) = (select substring(TenNamHoc,1,4) as TenNamHoc from NAMHOC WHERE MaNamHoc in (select GiaTri from QUYDINH where Khoa='MaNamHocHT')) ";
             return GetTable(sql);
         }
+
         /// <summary>
         /// Kiểm tra tồn tại 1 năm học
         /// </summary>
@@ -87,9 +94,10 @@ namespace QLHS.DAL
         /// <returns></returns>
         public bool KiemTraTonTai_MaNamHoc(string maNamHoc)
         {
-            string sql = "SELECT * FROM NAMHOC WHERE MaNamHoc = '"+maNamHoc+"'";
+            string sql = "SELECT * FROM NAMHOC WHERE MaNamHoc = '" + maNamHoc + "'";
             return GetTable(sql).Rows.Count > 0;
         }
+
         /// <summary>
         /// Thêm 1 năm học mới (không kiểm tra trùng mã năm học cũ)
         /// </summary>
@@ -97,9 +105,11 @@ namespace QLHS.DAL
         /// <returns></returns>
         public bool Them_NamHoc(NamHocDTO namHoc)
         {
-            string sql = "INSERT INTO NAMHOC (MaNamHoc,TenNamHoc) VALUES ('"+namHoc.MaNamHoc+"','"+namHoc.TenNamHoc+"')";
+            string sql = "INSERT INTO NAMHOC (MaNamHoc,TenNamHoc) VALUES ('" + namHoc.MaNamHoc + "','" +
+                         namHoc.TenNamHoc + "')";
             return ExecuteQuery(sql) > 0;
         }
+
         /// <summary>
         /// Xóa 1 năm học (xóa toàn bộ thông tin liên quan đến năm học đó)
         /// </summary>
@@ -107,18 +117,19 @@ namespace QLHS.DAL
         /// <returns></returns>
         public bool Xoa_NamHoc(string maNamHoc)
         {
-            LopDAL lopDAL = new LopDAL();
+            var lopDAL = new LopDAL();
             lopDAL.Xoa_HoSo_Lop_Nam(maNamHoc);
-            return ExecuteQuery("DELETE FROM NAMHOC WHERE MaNamHoc = '"+maNamHoc+"'") > 0;
+            return ExecuteQuery("DELETE FROM NAMHOC WHERE MaNamHoc = '" + maNamHoc + "'") > 0;
         }
+
         /// <summary>
         /// Lấy tên năm học
         /// </summary>
-        /// <param name="MaNamHoc">String: Mã năm học</param>
+        /// <param name="maNamHoc">String: Mã năm học</param>
         /// <returns></returns>
-        public string LayTenNamHoc(string MaNamHoc)
+        public string LayTenNamHoc(string maNamHoc)
         {
-            return Convert.ToString(ExecuteScalar("SELECT TenNamHoc FROM NAMHOC WHERE MaNamHoc = '"+MaNamHoc+"'"));
+            return Convert.ToString(ExecuteScalar("SELECT TenNamHoc FROM NAMHOC WHERE MaNamHoc = '" + maNamHoc + "'"));
         }
     }
 }

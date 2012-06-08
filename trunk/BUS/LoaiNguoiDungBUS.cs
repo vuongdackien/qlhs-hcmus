@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Data;
-using QLHS.DTO;
+﻿using System.Data;
 using QLHS.DAL;
 
 namespace QLHS.BUS
 {
     public class LoaiNguoiDungBUS
     {
-        private LoaiNguoiDungDAL _loaiNguoiDungDAL;
+        private  LoaiNguoiDungDAL _loaiNguoiDungDAL;
 
         public LoaiNguoiDungBUS()
         {
             _loaiNguoiDungDAL = new LoaiNguoiDungDAL();
         }
+
         /// <summary>
         /// Lấy datatable loại người dùng
         /// </summary>
