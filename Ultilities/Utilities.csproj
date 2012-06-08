@@ -44,7 +44,6 @@
     <Compile Include="ControlUtilities.cs" />
     <Compile Include="TreeListUtilities.cs" />
     <Compile Include="ExceptionUtilities.cs" />
-    <Compile Include="LookUpEditUtilities.cs" />
     <Compile Include="MessageboxUtilities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities.cs" />

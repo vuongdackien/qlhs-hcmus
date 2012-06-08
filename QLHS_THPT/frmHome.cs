@@ -11,7 +11,7 @@ namespace QLHS
 {
     public partial class frmHome : DevExpress.XtraEditors.XtraForm
     {
-        private frmMain frmMainInstance;
+        private FrmMain frmMainInstance;
         public frmHome()
         {
             InitializeComponent();
@@ -24,7 +24,7 @@ namespace QLHS
         }
         private void frmHome_Load(object sender, EventArgs e)
         {
-            frmMainInstance = this.ParentForm as frmMain;
+            frmMainInstance = this.ParentForm as FrmMain;
         }
 
         #region Phân quyền, ẩn hiện các button
@@ -114,62 +114,62 @@ namespace QLHS
 
         private void btnHomeNamHoc_Click(object sender, EventArgs e)
         {
-            frmMainInstance.ShowMDIChildForm<frmNamHoc>();
+            frmMainInstance.ShowMdiChildForm<frmNamHoc>();
         }
 
         private void btnHomeGiaoVien_Click(object sender, EventArgs e)
         {
-            frmMainInstance.ShowMDIChildForm<frmGiaoVien>();
+            frmMainInstance.ShowMdiChildForm<frmGiaoVien>();
         }
 
         private void btnHomeKhaiBao_Click(object sender, EventArgs e)
         {
-            frmMainInstance.ShowMDIChildForm<frmQuyDinhDauNam>();
+            frmMainInstance.ShowMdiChildForm<frmQuyDinhDauNam>();
         }
 
         private void btnHomeHocSinh_Click(object sender, EventArgs e)
         {
-            frmMainInstance.ShowMDIChildForm<frmHocSinh>();
+            frmMainInstance.ShowMdiChildForm<FrmHocSinh>();
         }
 
         private void btnHomeLop_Click(object sender, EventArgs e)
         {
-            frmMainInstance.ShowMDIChildForm<frmLapDSLop>();
+            frmMainInstance.ShowMdiChildForm<frmLapDSLop>();
         }
 
         private void btnHomePhanLop_Click(object sender, EventArgs e)
         {
-            frmMainInstance.ShowMDIChildForm<frmPhanLop>();
+            frmMainInstance.ShowMdiChildForm<frmPhanLop>();
         }
 
         private void btnHomeTimKiem_Click(object sender, EventArgs e)
         {
-            frmMainInstance.ShowMDIChildForm<frmTimHocSinh>();
+            frmMainInstance.ShowMdiChildForm<frmTimHocSinh>();
         }
 
         private void btnHomeNhapDiem_Click(object sender, EventArgs e)
         {
-            frmMainInstance.ShowMDIChildForm<frmBangDiemMonHoc>();
+            frmMainInstance.ShowMdiChildForm<frmBangDiemMonHoc>();
         }
 
         private void btnHomeMonHoc_Click(object sender, EventArgs e)
         {
-            frmMainInstance.ShowMDIChildForm<frmMonHoc>();
+            frmMainInstance.ShowMdiChildForm<frmMonHoc>();
         }
 
         private void btnHomeTKDiemHK_Click(object sender, EventArgs e)
         {
-            frmMainInstance.ShowMDIChildForm<frmBC_TongKetHocKy>();
+            frmMainInstance.ShowMdiChildForm<frmBC_TongKetHocKy>();
         }
 
         private void btnHomeXuatBD_Click(object sender, EventArgs e)
         {
-            frmMainInstance.ShowMDIChildForm<frmBC_BangDiemHocKy>();
+            frmMainInstance.ShowMdiChildForm<frmBC_BangDiemHocKy>();
         }
 
         private void btnHomeTKMonHoc_Click(object sender, EventArgs e)
         {
-            frmMainInstance.ShowMDIChildForm<frmBC_TongKetMon>();
+            frmMainInstance.ShowMdiChildForm<frmBC_TongKetMon>();
         }
         #endregion
 

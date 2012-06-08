@@ -5,21 +5,21 @@ using DevExpress.XtraBars;
 using QLHS.BUS;
 using DevExpress.XtraBars.Helpers;
 using DevExpress.LookAndFeel;
-using DatabaseConnectionManagement.Properties;
 
 namespace QLHS
 {
 
-    public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class FrmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     { 
-        private frmDangNhap _fLogin = null;
-        private NguoiDungBUS _nguoiDungBUS;
-        private frmDoiMatKhau _frmDoiMK = null;
-        public Dictionary<Type, Form> openForms = new Dictionary<Type, Form>();
+        private frmDangNhap _fLogin;
+        private readonly NguoiDungBUS _nguoiDungBUS;
+        private frmDoiMatKhau _frmDoiMK;
+        public Dictionary<Type, Form> OpenForms = new Dictionary<Type, Form>();
 
-        public frmMain()
+        public FrmMain()
         {
             InitializeComponent();
+            _nguoiDungBUS = new NguoiDungBUS();
             SkinHelper.InitSkinGallery(ribbonGalleryBarItemGiaoDien, true);
             UserLookAndFeel.Default.SkinName = Properties.Settings.Default.ApplicationSkinName;
 
@@ -28,8 +28,8 @@ namespace QLHS
         private void frmMain_Load(object sender, EventArgs e)
         {
             Login();
-            ShowMDIChildForm<frmHome>();
-            var frm = openForms[typeof(frmHome)] as frmHome;
+            ShowMdiChildForm<frmHome>();
+            var frm = OpenForms[typeof(frmHome)] as frmHome;
             xtraTabbedMdiManager.Pages[frm].ShowCloseButton = DevExpress.Utils.DefaultBoolean.False;
           
         }
@@ -39,14 +39,14 @@ namespace QLHS
         /// Sử dụng để hiển thị MDI Children form
         /// </summary>
         /// <typeparam name="T">Tên form</typeparam>
-        public void ShowMDIChildForm<T>() where T : Form, new()
+        public void ShowMdiChildForm<T>() where T : Form, new()
         {
             Form instance;
-            openForms.TryGetValue(typeof(T), out instance);
+            OpenForms.TryGetValue(typeof(T), out instance);
             if (instance == null || instance.IsDisposed)
             {
                 instance = new T();
-                openForms[typeof(T)] = instance;
+                OpenForms[typeof(T)] = instance;
                 instance.MdiParent = this;
                 instance.Show();
             }
@@ -55,14 +55,14 @@ namespace QLHS
                 instance.Activate();
             }
         }
-        public void ShowMDIChildForm<T>(object obj) where T : Form, new()
+        public void ShowMdiChildForm<T>(object obj) where T : Form, new()
         {
             Form instance;
-            openForms.TryGetValue(typeof(T), out instance);
+            OpenForms.TryGetValue(typeof(T), out instance);
             if (instance == null || instance.IsDisposed)
             {
                 instance = new T();
-                openForms[typeof(T)] = instance;
+                OpenForms[typeof(T)] = instance;
                 instance.MdiParent = this;
                 instance.Show();
             }
@@ -77,33 +77,33 @@ namespace QLHS
         /// <summary>
         /// Ẩn hiện tất cả menu cần thiết
         /// </summary>
-        /// <param name="EnableAllMenu">True - Hiển thị / False - Ẩn</param>
-        private void EnableAllMenu(bool EnableAllMenu)
+        /// <param name="enableAllMenu">True - Hiển thị / False - Ẩn</param>
+        private void EnableAllMenu(bool enableAllMenu)
         {
             // Quản lý hồ sơ - Hồ sơ năm học
-            barBtnKhaiBaoNamHoc.Enabled = EnableAllMenu;
-            barBtnQuanLyNamHoc.Enabled = EnableAllMenu;
-            barBtnHeSoMonHoc.Enabled = EnableAllMenu;
-            barButtonItemDSLop.Enabled = EnableAllMenu;
-            barBtnHoSoGiaoVien.Enabled = EnableAllMenu;
+            barBtnKhaiBaoNamHoc.Enabled = enableAllMenu;
+            barBtnQuanLyNamHoc.Enabled = enableAllMenu;
+            barBtnHeSoMonHoc.Enabled = enableAllMenu;
+            barButtonItemDSLop.Enabled = enableAllMenu;
+            barBtnHoSoGiaoVien.Enabled = enableAllMenu;
             // Quản lý hồ sơ - Hồ sơ học sinh
-            barBtnTiepNhanHocSinh.Enabled = EnableAllMenu;
-            barBtnTimKiemHocSinh.Enabled = EnableAllMenu;
-            barBtnPhanLopHocSinh.Enabled = EnableAllMenu;
+            barBtnTiepNhanHocSinh.Enabled = enableAllMenu;
+            barBtnTimKiemHocSinh.Enabled = enableAllMenu;
+            barBtnPhanLopHocSinh.Enabled = enableAllMenu;
             // Quản lý học tập - Quản lý điểm
-            barButtonItemNhapDiemMonHoc.Enabled = EnableAllMenu;
-            barButtonItemBCBangDiem.Enabled = EnableAllMenu;
+            barButtonItemNhapDiemMonHoc.Enabled = enableAllMenu;
+            barButtonItemBCBangDiem.Enabled = enableAllMenu;
             // Quản lý học tập - Báo cáo tổng kết
-            barButtonItemTongKetMonHoc.Enabled = EnableAllMenu;
-            barButtonItemTongKetHocKy.Enabled = EnableAllMenu;
+            barButtonItemTongKetMonHoc.Enabled = enableAllMenu;
+            barButtonItemTongKetHocKy.Enabled = enableAllMenu;
             // Hệ thống
-            barButtonItemQuanLyNguoiDung.Enabled = EnableAllMenu;
-            barButtonItemCauHinhKetNoi.Enabled = EnableAllMenu;
+            barButtonItemQuanLyNguoiDung.Enabled = enableAllMenu;
+            barButtonItemCauHinhKetNoi.Enabled = enableAllMenu;
 
             // menu system
-            barButtonItemDangNhap.Enabled = !EnableAllMenu;
-            barButtonItemDoiMatKhau.Enabled = EnableAllMenu;
-            barButtonItemDangXuat.Enabled = EnableAllMenu;
+            barButtonItemDangNhap.Enabled = !enableAllMenu;
+            barButtonItemDoiMatKhau.Enabled = enableAllMenu;
+            barButtonItemDangXuat.Enabled = enableAllMenu;
             
         }
         /// <summary>
@@ -126,7 +126,8 @@ namespace QLHS
                 default: EnableAllMenu(false); break;
             }
             // phân quyền form home
-            var frmHome = openForms[typeof(frmHome)] as frmHome;
+            var frmHome = OpenForms[typeof(frmHome)] as frmHome;
+            if(frmHome != null)
             frmHome.PhanQuyenNguoiDung();
         }
         /// <summary>
@@ -173,7 +174,7 @@ namespace QLHS
        
         private void Login()
         {
-            this.Hide();
+            Hide();
             EnableAllMenu(false);
 
             if(_fLogin == null || _fLogin.IsDisposed)
@@ -184,8 +185,8 @@ namespace QLHS
             _fLogin.listBoxControlNguoiDung.ValueMember = "TenDNhap";
             _fLogin.Show();
             // Khi người dùng click Đăng nhập, ta new event handler Click
-            _fLogin.simpleButtonDangNhap.Click += new EventHandler(btn_Login_DangNhap_Click);
-            _fLogin.simpleButtonThoat.Click += new EventHandler(btn_Login_Thoat_Click);
+            _fLogin.simpleButtonDangNhap.Click += btn_Login_DangNhap_Click;
+            _fLogin.simpleButtonThoat.Click += btn_Login_Thoat_Click;
         }
         void btn_Login_DangNhap_Click(object sender, EventArgs e)
         {
@@ -197,25 +198,25 @@ namespace QLHS
                 Util.MsgboxUtil.Error("Bạn chưa chọn tên người dùng đăng nhập!");
                 return; // trả về đăng nhập tiếp
             }
-            string PassWord = _fLogin.textEditMatKhau.Text;
-            string UserName = (_fLogin.textEditTenNguoiDung.Text != "") ? 
+            string passWord = _fLogin.textEditMatKhau.Text;
+            string userName = (_fLogin.textEditTenNguoiDung.Text != "") ? 
                     _fLogin.textEditTenNguoiDung.Text : _fLogin.listBoxControlNguoiDung.SelectedValue.ToString();
             // Kiểm tra password bỏ trống
-            if (PassWord.Equals(""))
+            if (passWord.Equals(""))
             {
                 Util.MsgboxUtil.Error("Bạn chưa nhập password!");
                 _fLogin.textEditMatKhau.Focus();
                 return;
             }
             // Tạo biến lấy thông tin user đăng nhập hiện tại
-            Util.ObjectUtil.user = _nguoiDungBUS.LayThongTin_NguoiDung(UserName);
+            Util.ObjectUtil.user = _nguoiDungBUS.LayThongTin_NguoiDung(userName);
             if (Util.ObjectUtil.user == null)
             {
                 Util.MsgboxUtil.Error("Tài khoản này không tồn tại!");
                 return;
             }
             // Kiểm tra password nhập có chính xác hay không
-            if (Util.ObjectUtil.user.MatKhau != Util.ObjectUtil.MaHoaMD5(PassWord))
+            if (Util.ObjectUtil.user.MatKhau != Util.ObjectUtil.MaHoaMD5(passWord))
             {
                 Util.MsgboxUtil.Error("Mật khẩu không chính xác!");
                 _fLogin.textEditMatKhau.Focus();
@@ -232,7 +233,7 @@ namespace QLHS
             barStaticItemLoaiNguoiDung.Caption = Util.ObjectUtil.user.LoaiNguoiDung.TenLoaiND;
             barStaticItemTenNguoiDung.Caption = Util.ObjectUtil.user.TenND;
             // hiển thị lại form main
-            this.Show();
+            Show();
             // Enable all menu
             EnableAllMenu(true);
             // Phân quyền người dùng
@@ -260,8 +261,8 @@ namespace QLHS
         {
             if (_frmDoiMK == null || _frmDoiMK.IsDisposed)
                 _frmDoiMK = new frmDoiMatKhau();
-            _frmDoiMK.simpleButtonDoiMatKau.Click += new EventHandler(btnDoiMatKhau_Click);
-            _frmDoiMK.simpleButtonThoat.Click += new EventHandler(btnThoatChangePass_Click);
+            _frmDoiMK.simpleButtonDoiMatKau.Click += btnDoiMatKhau_Click;
+            _frmDoiMK.simpleButtonThoat.Click += btnThoatChangePass_Click;
             _frmDoiMK.Show();
         }
 
@@ -322,51 +323,51 @@ namespace QLHS
         
         private void barBtnHoSoHocSinh_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmHocSinh>();
+            ShowMdiChildForm<FrmHocSinh>();
         }
 
         private void barBtnTimKiemHocSinh_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmTimHocSinh>();
+            ShowMdiChildForm<frmTimHocSinh>();
         }
 
         private void barBtnHoSoGiaoVien_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmGiaoVien>();
+            ShowMdiChildForm<frmGiaoVien>();
         }
    
         private void barBtnPhanLopHocSinh_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmPhanLop>();
+            ShowMdiChildForm<frmPhanLop>();
         }
 
         private void barButtonItemDSLop_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmLapDSLop>();
+            ShowMdiChildForm<frmLapDSLop>();
         }
         private void barButtonItemBCBangDiem_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmBC_BangDiemHocKy>();
+            ShowMdiChildForm<frmBC_BangDiemHocKy>();
         }
 
         private void barButtonItemTongKetMonHoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmBC_TongKetMon>();
+            ShowMdiChildForm<frmBC_TongKetMon>();
         }
         private void barButtonItemNhapDiemMonHoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmBangDiemMonHoc>();
+            ShowMdiChildForm<frmBangDiemMonHoc>();
         }
         private void barButtonItemTongKetHocKy_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmBC_TongKetHocKy>();
+            ShowMdiChildForm<frmBC_TongKetHocKy>();
         }
 
         private void barBtnQuanLyNamHoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmNamHoc>();
+            ShowMdiChildForm<frmNamHoc>();
         }
-        private frmQLNguoiDung _frmQLNguoiDung = null;
+        private frmQLNguoiDung _frmQLNguoiDung;
         private void barButtonItemQuanLyNguoiDung_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (_frmQLNguoiDung == null || _frmQLNguoiDung.IsDisposed)
@@ -376,13 +377,13 @@ namespace QLHS
 
         private void barBtnKhaiBaoNamHoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmQuyDinhDauNam>();
+            ShowMdiChildForm<frmQuyDinhDauNam>();
         }
 
         private void barButtonItemCauHinhKetNoi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            DatabaseConnectionManagement.frmAddConnection frm = new DatabaseConnectionManagement.frmAddConnection();
-            if (frm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            var frm = new DatabaseConnectionManagement.frmAddConnection();
+            if (frm.ShowDialog() == DialogResult.OK)
             {
                 Util.MsgboxUtil.Success("Đã lưu cấu hình của chương trình!"
                        +"\nChương trình sẽ khởi động lại để cập nhật dữ liệu!");
@@ -392,7 +393,7 @@ namespace QLHS
 
         private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmThongTinChuongTrinh frmThongTin = new frmThongTinChuongTrinh();
+            var frmThongTin = new frmThongTinChuongTrinh();
             frmThongTin.ShowDialog();
         }
 
@@ -403,7 +404,7 @@ namespace QLHS
 
         private void barBtnHeSoMonHoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ShowMDIChildForm<frmMonHoc>();
+            ShowMdiChildForm<frmMonHoc>();
         }
 
         private void frmMain_KeyDown(object sender, KeyEventArgs e)
