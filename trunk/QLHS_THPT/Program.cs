@@ -15,7 +15,7 @@ namespace QLHS
             DevExpress.UserSkins.OfficeSkins.Register();
             DevExpress.UserSkins.BonusSkins.Register();
 
-            MainForm = new frmMain();
+            MainForm = new FrmMain();
             IsSingleInstance = true;
         }
         [STAThread]

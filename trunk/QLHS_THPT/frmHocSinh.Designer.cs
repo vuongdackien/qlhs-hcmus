@@ -1,6 +1,6 @@
 ﻿namespace QLHS
 {
-    partial class frmHocSinh
+    partial class FrmHocSinh
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHocSinh));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHocSinh));
             this.panelControlBottom = new DevExpress.XtraEditors.PanelControl();
             this.simpleButtonSXLaiSTT = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButtonDong = new DevExpress.XtraEditors.SimpleButton();
@@ -43,7 +44,7 @@
             this.gridColumnMaHocSinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControlTopLeft = new DevExpress.XtraEditors.PanelControl();
             this.checkEditChuaPhanLop = new DevExpress.XtraEditors.CheckEdit();
-            this.toolTipController1 = new DevExpress.Utils.ToolTipController();
+            this.toolTipController1 = new DevExpress.Utils.ToolTipController(this.components);
             this.comboBoxEditNamHoc = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comboBoxEditLop = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comboBoxEditKhoi = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -174,10 +175,10 @@
             // gridControlDSHocSinh
             // 
             this.gridControlDSHocSinh.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlDSHocSinh.Location = new System.Drawing.Point(3, 184);
+            this.gridControlDSHocSinh.Location = new System.Drawing.Point(2, 183);
             this.gridControlDSHocSinh.MainView = this.gridViewDSHocSinh;
             this.gridControlDSHocSinh.Name = "gridControlDSHocSinh";
-            this.gridControlDSHocSinh.Size = new System.Drawing.Size(241, 269);
+            this.gridControlDSHocSinh.Size = new System.Drawing.Size(243, 271);
             this.gridControlDSHocSinh.TabIndex = 5;
             this.gridControlDSHocSinh.TabStop = false;
             this.gridControlDSHocSinh.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -238,9 +239,9 @@
             this.panelControlTopLeft.Controls.Add(this.labelControl3);
             this.panelControlTopLeft.Controls.Add(this.labelControl1);
             this.panelControlTopLeft.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlTopLeft.Location = new System.Drawing.Point(3, 3);
+            this.panelControlTopLeft.Location = new System.Drawing.Point(2, 2);
             this.panelControlTopLeft.Name = "panelControlTopLeft";
-            this.panelControlTopLeft.Size = new System.Drawing.Size(241, 181);
+            this.panelControlTopLeft.Size = new System.Drawing.Size(243, 181);
             this.panelControlTopLeft.TabIndex = 1;
             // 
             // checkEditChuaPhanLop
@@ -567,7 +568,7 @@
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.panelControlBottom);
             this.LookAndFeel.UseWindowsXPTheme = true;
-            this.Name = "frmHocSinh";
+            this.Name = "FrmHocSinh";
             this.ShowIcon = false;
             this.Text = "Tiếp nhận học sinh";
             this.Load += new System.EventHandler(this.frmHocSinh_Load);

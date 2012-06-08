@@ -291,11 +291,11 @@ namespace QLHS
             if (gridViewSearch.FocusedRowHandle < 0)
                 return;
             // Lấy form Main
-            var frmMainInstance = this.ParentForm as frmMain;
+            var frmMainInstance = this.ParentForm as FrmMain;
             // Hiển thị frmHocSinh
-            frmMainInstance.ShowMDIChildForm<frmHocSinh>();
+            frmMainInstance.ShowMdiChildForm<FrmHocSinh>();
             // Lấy instance formHocSinh
-            var frmHocSinhInstance = frmMainInstance.openForms[typeof(frmHocSinh)] as frmHocSinh;
+            var frmHocSinhInstance = frmMainInstance.OpenForms[typeof(FrmHocSinh)] as FrmHocSinh;
             // Gắn các properties chuẩn bị hiển thị chi tiết hồ sơ học sinh
             frmHocSinhInstance.MaHocSinh = gridViewSearch.GetFocusedRowCellValue("MaHocSinh").ToString();
             if (radioGroupTimTrong.SelectedIndex == 1)

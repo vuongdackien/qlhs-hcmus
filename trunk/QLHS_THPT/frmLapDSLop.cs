@@ -210,7 +210,7 @@ namespace QLHS
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             // Hiển thị frmNamHoc
-            (this.ParentForm as frmMain).ShowMDIChildForm<frmNamHoc>();
+            (this.ParentForm as FrmMain).ShowMdiChildForm<frmNamHoc>();
         }
 
  
