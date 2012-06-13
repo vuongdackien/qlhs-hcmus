@@ -1,17 +1,18 @@
 ﻿using System;
-using System.Security.Cryptography;
 using System.Text;
+using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using QLHS.DTO;
 
 namespace Util
 {
-    public static class ObjectUtil
+    public static partial class ObjectUtil
     {
-        public static NguoiDungDTO User;
+
+        public static NguoiDungDTO User { get; set; }
+
 
         #region Hàm lấy mã kế tiếp
-
         /// <summary>
         /// Lấy mã kế tiếp từ chuỗi mã cuối cùng
         /// </summary>
@@ -21,7 +22,7 @@ namespace Util
         /// <returns></returns>
         public static string NextID(string lastID, string prefixID, int lengthNumerID = 5)
         {
-            if (string.IsNullOrEmpty(lastID))
+            if (lastID == "" || lastID == null)
                 lastID = prefixID + new String('0', lengthNumerID);
 
             int nextID = int.Parse(lastID.Remove(0, prefixID.Length)) + 1;
@@ -30,8 +31,7 @@ namespace Util
             {
                 if (nextID < Math.Pow(10, i))
                 {
-                    int j = 1;
-                    for (; j <= lengthNumerID - i; i++)
+                    for (int j = 1; j <= lengthNumerID - i; i++)
                     {
                         zeroNumber += "0";
                     }
@@ -39,9 +39,10 @@ namespace Util
                 }
             }
             return prefixID + nextID;
-        }
 
+        }
         #endregion
+
 
         #region Các hàm lấy mã năm học, mã khối từ mã lớp, kiểm tra mã khối, mã lớp
 
@@ -78,7 +79,7 @@ namespace Util
             if (maLop.Equals(""))
                 return false;
 
-            var myRegex = new Regex(@"\d{2}\w{1}d{1,2}NH\d{4}");
+            Regex myRegex = new Regex(@"\d{2}\w{1}d{1,2}NH\d{4}");
             Match m = myRegex.Match(maLop);
             return m.Success;
         }
@@ -92,17 +93,16 @@ namespace Util
         {
             return (maKhoi.Equals("10") || maKhoi.Equals("11") || maKhoi.Equals("12"));
         }
-
         /// <summary>
         /// Hàm lấy mã năm học tiếp theo từ mã năm học cũ
         /// </summary>
-        /// <param name="maNamHocHienTai">String: Mã năm học cũ</param>
+        /// <param name="MaNamHocHienTai">String: Mã năm học cũ</param>
         /// <returns>String: Mã năm học tiếp theo</returns>
-        public static string MaNamHocKeTiep(string maNamHocHienTai)
+        public static string MaNamHocKeTiep(string MaNamHocHienTai)
         {
             // NH1011
-            int lastYear = int.Parse(maNamHocHienTai.Substring(2, 2)) + 1;
-            int nextYear = int.Parse(maNamHocHienTai.Substring(4, 2)) + 1;
+            int lastYear = int.Parse(MaNamHocHienTai.Substring(2, 2)) + 1;
+            int nextYear = int.Parse(MaNamHocHienTai.Substring(4, 2)) + 1;
             string lastY = lastYear.ToString();
             string nextY = nextYear.ToString();
             if (lastYear < 10)
@@ -111,31 +111,28 @@ namespace Util
                 nextY = "0" + nextY;
             return "NH" + lastY + nextY;
         }
-
         #endregion
 
         /// <summary>
         /// Hàm chuyển đổi chuỗi có dấu thành không dấu
         /// </summary>
         /// <param name="text"></param>
-        /// <param name="replaceSpecialChar"></param>
         /// <returns></returns>
-        public static string ConvertToUnSign(string text, char replaceSpecialChar)
+        public static string ConvertToUnSign(string text, char ReplaceSpecialChar)
         {
             for (int i = 32; i < 48; i++)
             {
-                text = text.Replace(((char) i).ToString(), replaceSpecialChar.ToString());
+                text = text.Replace(((char)i).ToString(), ReplaceSpecialChar.ToString());
             }
-            text = text.Replace(".", replaceSpecialChar.ToString());
-            text = text.Replace(" ", replaceSpecialChar.ToString());
-            text = text.Replace(",", replaceSpecialChar.ToString());
-            text = text.Replace(";", replaceSpecialChar.ToString());
-            text = text.Replace(":", replaceSpecialChar.ToString());
-            var regex = new Regex(@"\p{IsCombiningDiacriticalMarks}+");
-            string strFormD = text.Normalize(NormalizationForm.FormD);
+            text = text.Replace(".", ReplaceSpecialChar.ToString());
+            text = text.Replace(" ", ReplaceSpecialChar.ToString());
+            text = text.Replace(",", ReplaceSpecialChar.ToString());
+            text = text.Replace(";", ReplaceSpecialChar.ToString());
+            text = text.Replace(":", ReplaceSpecialChar.ToString());
+            Regex regex = new Regex(@"\p{IsCombiningDiacriticalMarks}+");
+            string strFormD = text.Normalize(System.Text.NormalizationForm.FormD);
             return regex.Replace(strFormD, String.Empty).Replace('\u0111', 'd').Replace('\u0110', 'D');
         }
-
         /// <summary>
         /// Tách họ tên
         /// </summary>
@@ -167,9 +164,9 @@ namespace Util
                 j++;
             }
             midname = midname.TrimEnd();
-            return new[] {firstname, midname, lastname};
+            return new string[] { firstname, midname, lastname };
         }
-
+  
         /// <summary>
         /// Mã hóa 1 chuỗi text bằng MD5
         /// </summary>
@@ -177,17 +174,16 @@ namespace Util
         /// <returns>String: Chuỗi đã mã hóa</returns>
         public static string MaHoaMD5(string text)
         {
-            var md5Hasher = new MD5CryptoServiceProvider();
+            MD5CryptoServiceProvider _md5Hasher = new MD5CryptoServiceProvider();
             byte[] bs = Encoding.UTF8.GetBytes(text);
-            bs = md5Hasher.ComputeHash(bs);
-            var s = new StringBuilder();
+            bs = _md5Hasher.ComputeHash(bs);
+            StringBuilder s = new StringBuilder();
             foreach (byte b in bs)
             {
                 s.Append(b.ToString("x2"));
             }
             return s.ToString();
         }
-
         /// <summary>
         /// Hàm làm tròn 
         /// </summary>

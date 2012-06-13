@@ -55,22 +55,6 @@ namespace QLHS
                 instance.Activate();
             }
         }
-        public void ShowMdiChildForm<T>(object obj) where T : Form, new()
-        {
-            Form instance;
-            OpenForms.TryGetValue(typeof(T), out instance);
-            if (instance == null || instance.IsDisposed)
-            {
-                instance = new T();
-                OpenForms[typeof(T)] = instance;
-                instance.MdiParent = this;
-                instance.Show();
-            }
-            else
-            {
-                instance.Activate();
-            }
-        }
         #endregion
 
         #region Tác vụ đăng nhập
