@@ -132,7 +132,7 @@ namespace QLHS
         private void textEditTenLop_InvalidValue(object sender,
                                                  InvalidValueExceptionEventArgs e)
         {
-            var maKhoi = CboUtil.GetValueItem(comboBoxEditKhoi);
+            string maKhoi = CboUtil.GetValueItem(comboBoxEditKhoi);
             e.ErrorText = "Tên lớp không hợp lệ. Tên lớp có dạng " + maKhoi + "[A-H][0-9][0-9]. VD: " + maKhoi + "B02";
         }
 
@@ -151,9 +151,9 @@ namespace QLHS
             var lopDTO = new LopDTO();
             lopDTO.GiaoVien.MaGiaoVien = CboUtil.GetValueItem(comboBoxEditGVCN);
 
-            var tenLop = textEditTenLop.Text;
-            var tTenLop = tenLop.Substring(0, 3); // 10A
-            var hTenLop = Convert.ToInt32(tenLop.Substring(3, tenLop.Length - 3)); // 1
+            string tenLop = textEditTenLop.Text;
+            string tTenLop = tenLop.Substring(0, 3); // 10A
+            int hTenLop = Convert.ToInt32(tenLop.Substring(3, tenLop.Length - 3)); // 1
             tenLop = tTenLop + ((hTenLop < 10) ? "0" + hTenLop.ToString() : hTenLop.ToString()); // 10A01
 
             lopDTO.MaNamHoc = CboUtil.GetValueItem(comboBoxEditNamHoc);

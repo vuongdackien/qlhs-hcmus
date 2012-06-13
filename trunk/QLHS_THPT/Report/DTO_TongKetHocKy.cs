@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using QLHS.DTO;
-
-namespace QLHS.Report
+﻿namespace QLHS.Report
 {
     public class DTO_TongKetHocKy
     {
@@ -25,10 +19,10 @@ namespace QLHS.Report
         public string TenGiaoVien { get; set; }
 
         public string MaMonHoc { get; set; }
-        public string TenMonHoc  { get; set; }
+        public string TenMonHoc { get; set; }
 
-        public int STT { get; set; }        
+        public int STT { get; set; }
         public int SoLuongDat { get; set; }
-        public double TyLe { get; set; }   
+        public double TyLe { get; set; }
     }
 }

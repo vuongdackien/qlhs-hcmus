@@ -36,7 +36,7 @@ namespace QLHS
             foreach (TreeListNode item in treeListSearch.Nodes)
             {
                 item.Nodes.Clear();
-                var listLopNode = _lopBUS.LayListLop_MaNam_MaKhoi(
+                IEnumerable<LopDTO> listLopNode = _lopBUS.LayListLop_MaNam_MaKhoi(
                     CboUtil.GetValueItem(comboBoxEditNamHoc),
                     item.GetValue("MaKhoi").ToString()
                     );
@@ -202,16 +202,17 @@ namespace QLHS
             var frmMainInstance = ParentForm as FrmMain;
             // Hiển thị frmHocSinh
             if (frmMainInstance == null)
-                 return;
+                return;
             frmMainInstance.ShowMdiChildForm<FrmHocSinh>();
             // Lấy instance formHocSinh
             var frmHocSinhInstance = frmMainInstance.OpenForms[typeof (FrmHocSinh)] as FrmHocSinh;
             if (frmHocSinhInstance == null)
-                return; 
+                return;
             // Gắn các properties chuẩn bị hiển thị chi tiết hồ sơ học sinh
             frmHocSinhInstance.MaHocSinh = gridViewSearch.GetFocusedRowCellValue("MaHocSinh").ToString();
-            frmHocSinhInstance.MaLop = radioGroupTimTrong.SelectedIndex == 1 ? 
-                null : gridViewSearch.GetFocusedRowCellValue("MaLop").ToString();
+            frmHocSinhInstance.MaLop = radioGroupTimTrong.SelectedIndex == 1
+                                           ? null
+                                           : gridViewSearch.GetFocusedRowCellValue("MaLop").ToString();
             // Hiển thị lại thông tin học sinh
             frmHocSinhInstance.HienThiLai_FrmHocSinh_TuFormTimKiem();
         }

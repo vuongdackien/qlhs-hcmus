@@ -8,157 +8,148 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QLHS.Report {
-    using System;
-    using System.ComponentModel;
-    using CrystalDecisions.Shared;
-    using CrystalDecisions.ReportSource;
-    using CrystalDecisions.CrystalReports.Engine;
-    
-    
-    public class rptTongKetHocKy : ReportClass {
-        
-        public rptTongKetHocKy() {
-        }
-        
-        public override string ResourceName {
-            get {
-                return "rptTongKetHocKy.rpt";
-            }
-            set {
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.ReportSource;
+using CrystalDecisions.Shared;
+
+namespace QLHS.Report
+{
+    public class rptTongKetHocKy : ReportClass
+    {
+        public override string ResourceName
+        {
+            get { return "rptTongKetHocKy.rpt"; }
+            set
+            {
                 // Do nothing
             }
         }
-        
-        public override bool NewGenerator {
-            get {
-                return true;
-            }
-            set {
+
+        public override bool NewGenerator
+        {
+            get { return true; }
+            set
+            {
                 // Do nothing
             }
         }
-        
-        public override string FullResourceName {
-            get {
-                return "QLHS.Report.rptTongKetHocKy.rpt";
-            }
-            set {
+
+        public override string FullResourceName
+        {
+            get { return "QLHS.Report.rptTongKetHocKy.rpt"; }
+            set
+            {
                 // Do nothing
             }
         }
-        
+
         [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section1 {
-            get {
-                return this.ReportDefinition.Sections[0];
-            }
+        [DesignerSerializationVisibilityAttribute(DesignerSerializationVisibility.Hidden)]
+        public Section Section1
+        {
+            get { return ReportDefinition.Sections[0]; }
         }
-        
+
         [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section2 {
-            get {
-                return this.ReportDefinition.Sections[1];
-            }
+        [DesignerSerializationVisibilityAttribute(DesignerSerializationVisibility.Hidden)]
+        public Section Section2
+        {
+            get { return ReportDefinition.Sections[1]; }
         }
-        
+
         [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
-            get {
-                return this.ReportDefinition.Sections[2];
-            }
+        [DesignerSerializationVisibilityAttribute(DesignerSerializationVisibility.Hidden)]
+        public Section Section3
+        {
+            get { return ReportDefinition.Sections[2]; }
         }
-        
+
         [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[3];
-            }
+        [DesignerSerializationVisibilityAttribute(DesignerSerializationVisibility.Hidden)]
+        public Section Section4
+        {
+            get { return ReportDefinition.Sections[3]; }
         }
-        
+
         [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
+        [DesignerSerializationVisibilityAttribute(DesignerSerializationVisibility.Hidden)]
+        public Section Section5
+        {
+            get { return ReportDefinition.Sections[4]; }
         }
-        
+
         [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_paramTenNamHoc {
-            get {
-                return this.DataDefinition.ParameterFields[0];
-            }
+        [DesignerSerializationVisibilityAttribute(DesignerSerializationVisibility.Hidden)]
+        public IParameterField Parameter_paramTenNamHoc
+        {
+            get { return DataDefinition.ParameterFields[0]; }
         }
-        
+
         [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_paramMaHocKy {
-            get {
-                return this.DataDefinition.ParameterFields[1];
-            }
+        [DesignerSerializationVisibilityAttribute(DesignerSerializationVisibility.Hidden)]
+        public IParameterField Parameter_paramMaHocKy
+        {
+            get { return DataDefinition.ParameterFields[1]; }
         }
-        
+
         [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_paramMaKhoi {
-            get {
-                return this.DataDefinition.ParameterFields[2];
-            }
+        [DesignerSerializationVisibilityAttribute(DesignerSerializationVisibility.Hidden)]
+        public IParameterField Parameter_paramMaKhoi
+        {
+            get { return DataDefinition.ParameterFields[2]; }
         }
     }
-    
-    [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptTongKetHocKy : Component, ICachedReport {
-        
-        public CachedrptTongKetHocKy() {
-        }
-        
+
+    [ToolboxBitmap(typeof (ExportOptions), "report.bmp")]
+    public class CachedrptTongKetHocKy : Component, ICachedReport
+    {
+        #region ICachedReport Members
+
         [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public virtual bool IsCacheable {
-            get {
-                return true;
-            }
-            set {
+        [DesignerSerializationVisibilityAttribute(DesignerSerializationVisibility.Hidden)]
+        public virtual bool IsCacheable
+        {
+            get { return true; }
+            set
+            {
                 // 
             }
         }
-        
+
         [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public virtual bool ShareDBLogonInfo {
-            get {
-                return false;
-            }
-            set {
+        [DesignerSerializationVisibilityAttribute(DesignerSerializationVisibility.Hidden)]
+        public virtual bool ShareDBLogonInfo
+        {
+            get { return false; }
+            set
+            {
                 // 
             }
         }
-        
+
         [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public virtual System.TimeSpan CacheTimeOut {
-            get {
-                return CachedReportConstants.DEFAULT_TIMEOUT;
-            }
-            set {
+        [DesignerSerializationVisibilityAttribute(DesignerSerializationVisibility.Hidden)]
+        public virtual TimeSpan CacheTimeOut
+        {
+            get { return CachedReportConstants.DEFAULT_TIMEOUT; }
+            set
+            {
                 // 
             }
         }
-        
-        public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptTongKetHocKy rpt = new rptTongKetHocKy();
-            rpt.Site = this.Site;
+
+        public virtual ReportDocument CreateReport()
+        {
+            var rpt = new rptTongKetHocKy();
+            rpt.Site = Site;
             return rpt;
         }
-        
-        public virtual string GetCustomizedCacheKey(RequestContext request) {
+
+        public virtual string GetCustomizedCacheKey(RequestContext request)
+        {
             String key = null;
             // // The following is the code used to generate the default
             // // cache key for caching report jobs in the ASP.NET Cache.
@@ -173,5 +164,7 @@ namespace QLHS.Report {
             //     this.ShareDBLogonInfo );
             return key;
         }
+
+        #endregion
     }
 }

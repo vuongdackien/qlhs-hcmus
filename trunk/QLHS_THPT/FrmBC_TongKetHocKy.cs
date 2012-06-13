@@ -32,9 +32,9 @@ namespace QLHS
         /// </summary>
         private void HienThi_Bang_TongKetHocKy()
         {
-            var maKhoi = CboUtil.GetValueItem(comboBoxEditKhoiLop);
-            var maHocKy = CboUtil.GetValueItem(comboBoxEditHocKy);
-            var maNamHoc = CboUtil.GetValueItem(comboBoxEditNamHoc);
+            string maKhoi = CboUtil.GetValueItem(comboBoxEditKhoiLop);
+            string maHocKy = CboUtil.GetValueItem(comboBoxEditHocKy);
+            string maNamHoc = CboUtil.GetValueItem(comboBoxEditNamHoc);
 
             _dsBaocaoTongKetHocKy = _bangDiemBUS.LayList_BangTongKet_Khoi_HocKy(maKhoi, maHocKy, maNamHoc);
 

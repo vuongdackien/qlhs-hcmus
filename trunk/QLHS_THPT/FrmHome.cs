@@ -1,26 +1,32 @@
 ﻿using System;
+using System.Drawing;
+using DevExpress.XtraEditors;
+using Util;
 
 namespace QLHS
 {
-    public partial class FrmHome : DevExpress.XtraEditors.XtraForm
+    public partial class FrmHome : XtraForm
     {
         private FrmMain _frmMainInstance;
+
         public FrmHome()
         {
             InitializeComponent();
         }
-        
+
         private void frmGUIDE_Resize(object sender, EventArgs e)
         {
-            panelControl1.Location = new System.Drawing.Point(Size.Width / 2
-              - panelControl1.Size.Width / 2, panelControl1.Location.Y);
+            panelControl1.Location = new Point(Size.Width/2
+                                               - panelControl1.Size.Width/2, panelControl1.Location.Y);
         }
+
         private void frmHome_Load(object sender, EventArgs e)
         {
             _frmMainInstance = ParentForm as FrmMain;
         }
 
         #region Phân quyền, ẩn hiện các button
+
         /// <summary>
         /// Ẩn hiện tất cả menu cần thiết
         /// </summary>
@@ -43,29 +49,38 @@ namespace QLHS
             // Quản lý học tập - Báo cáo tổng kết
             btnHomeTKDiemHK.Enabled = enableAllMenu;
             btnHomeTKMonHoc.Enabled = enableAllMenu;
-
         }
+
         /// <summary>
         /// Phân quyền người dùng, tùy thuộc từng quyền mà có những chức năng khác nhau
         /// </summary>
         public void PhanQuyenNguoiDung()
         {
             EnableAllMenu(true);
-            switch (Util.ObjectUtil.User.LoaiNguoiDung.MaLoai)
+            switch (ObjectUtil.User.LoaiNguoiDung.MaLoai)
             {
-                // Administrator
+                    // Administrator
                 case "quantri":
-                // Ban giám hiệu
+                    // Ban giám hiệu
                 case "hieutruong":
-                case "phohieutruong": NhomAdministrator(); break;
-                // Giáo viên
-                case "giaovien": NhomGiaoVien(); break;
-                // Giáo vụ
-                case "giaovu": NhomGiaoVu(); break;
-                // mặc định ẩn hết menu
-                default: EnableAllMenu(false); break;
+                case "phohieutruong":
+                    NhomAdministrator();
+                    break;
+                    // Giáo viên
+                case "giaovien":
+                    NhomGiaoVien();
+                    break;
+                    // Giáo vụ
+                case "giaovu":
+                    NhomGiaoVu();
+                    break;
+                    // mặc định ẩn hết menu
+                default:
+                    EnableAllMenu(false);
+                    break;
             }
         }
+
         /// <summary>
         /// Diable menu không thuộc nhóm Administrator
         /// </summary>
@@ -73,6 +88,7 @@ namespace QLHS
         {
             // nhóm administrator toàn quyền
         }
+
         /// <summary>
         /// Diable menu không thuộc nhóm giáo viên
         /// </summary>
@@ -94,6 +110,7 @@ namespace QLHS
             btnHomeTKDiemHK.Enabled = false;
             btnHomeTKMonHoc.Enabled = false;
         }
+
         /// <summary>
         /// Diable menu không thuộc nhóm giáo vụ
         /// </summary>
@@ -101,6 +118,7 @@ namespace QLHS
         {
             btnHomeKhaiBao.Enabled = false;
         }
+
         #endregion
 
         #region Home introduce button
@@ -164,8 +182,7 @@ namespace QLHS
         {
             _frmMainInstance.ShowMdiChildForm<FrmBcTongKetMon>();
         }
-        #endregion
 
-     
+        #endregion
     }
 }

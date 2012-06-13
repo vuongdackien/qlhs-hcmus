@@ -352,7 +352,7 @@ namespace QLHS.BUS
                 {
                     return 0;
                 }
-                var heSo = Convert.ToDouble(bdmon["HeSo"]);
+                double heSo = Convert.ToDouble(bdmon["HeSo"]);
                 tongHeSo += heSo;
                 tongDiem += Convert.ToDouble(bdmon["DTB"])*heSo;
             }

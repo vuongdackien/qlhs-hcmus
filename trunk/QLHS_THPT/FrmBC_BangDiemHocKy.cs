@@ -58,7 +58,7 @@ namespace QLHS
             foreach (TreeListNode item in treeListLopHoc.Nodes)
             {
                 item.Nodes.Clear();
-                var listLopNode = _lopBUS.LayListLop_MaNam_MaKhoi(
+                IEnumerable<LopDTO> listLopNode = _lopBUS.LayListLop_MaNam_MaKhoi(
                     CboUtil.GetValueItem(comboBoxEditNamHoc),
                     item.GetValue("MaKhoi").ToString()
                     );
