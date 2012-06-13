@@ -13,11 +13,11 @@ namespace QLHS
     public partial class FrmPhanLop : XtraForm
     {
         private readonly ChuyenLopBUS _chuyenLopBUS;
+        private readonly HocSinhBUS _hocSinhBUS;
         private readonly KhoiBUS _khoiBUS;
         private readonly LopBUS _lopBUS;
-        private readonly NamHocBUS _namHocBUS;
-        private readonly HocSinhBUS _hocSinhBUS;
         private readonly string _maNamHocHienTai;
+        private readonly NamHocBUS _namHocBUS;
         private readonly PhanLopBUS _phanLopBUS;
         private readonly QuyDinhBUS _quyDinhBUS;
 
@@ -305,12 +305,12 @@ namespace QLHS
             }
 
             var dsHocSinhChon = new Dictionary<string, string>();
-            for (var i = 0; i < gridViewDSHocSinh.RowCount; i++)
+            for (int i = 0; i < gridViewDSHocSinh.RowCount; i++)
             {
                 if (Convert.ToBoolean(gridViewDSHocSinh.GetRowCellValue(i, "Check")))
                 {
                     dsHocSinhChon.Add(gridViewDSHocSinh.GetRowCellValue(i, "MaHocSinh").ToString(),
-                                       gridViewDSHocSinh.GetRowCellValue(i, "TenHocSinh").ToString());
+                                      gridViewDSHocSinh.GetRowCellValue(i, "TenHocSinh").ToString());
                 }
             }
             if (dsHocSinhChon.Count == 0)
@@ -367,7 +367,7 @@ namespace QLHS
 
 
                 siSoLopMoi = _phanLopBUS.Dem_SiSo_Lop(maLopMoi);
-                var siSoDSChuyen = dsHocSinhChon.Count;
+                int siSoDSChuyen = dsHocSinhChon.Count;
                 if ((siSoDSChuyen + siSoLopMoi) >= siSoToiDa)
                 {
                     MsgboxUtil.Error("Không thể thực hiện vì sau khi chuyển học sinh đến lớp " +
@@ -397,8 +397,8 @@ namespace QLHS
                     foreach (PhanLopDTO item in dsHsTonTai)
                     {
                         dsHocsinhTonTai = "\n" + item.STT + ". "
-                                           + item.TenHocSinh + " (" + item.MaHocSinh + ") lớp: " + item.TenLop
-                                           + dsHocsinhTonTai;
+                                          + item.TenHocSinh + " (" + item.MaHocSinh + ") lớp: " + item.TenLop
+                                          + dsHocsinhTonTai;
                     }
                     MsgboxUtil.Info("Các học sinh sau đã tồn tại trong năm " + tenNamHocMoi + ":"
                                     + dsHocsinhTonTai);
@@ -440,7 +440,7 @@ namespace QLHS
                 if (Convert.ToBoolean(gridViewDSHocSinhMoi.GetRowCellValue(i, "Check")))
                 {
                     dsHocSinhChon.Add(gridViewDSHocSinhMoi.GetRowCellValue(i, "MaHocSinh").ToString(),
-                                       gridViewDSHocSinhMoi.GetRowCellValue(i, "TenHocSinh").ToString());
+                                      gridViewDSHocSinhMoi.GetRowCellValue(i, "TenHocSinh").ToString());
                 }
             }
             if (dsHocSinhChon.Count == 0)

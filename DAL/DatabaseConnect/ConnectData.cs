@@ -10,11 +10,11 @@ namespace QLHS.DAL
 {
     public class ConnectData
     {
-        private string _strConnect = "";
         private SqlCommand _mCommand;
         private SqlConnection _mConnect;
         private SqlDataAdapter _mDataApdater;
         private DataTable _mTable;
+        private string _strConnect = "";
 
 
         protected ConnectData()
@@ -158,7 +158,6 @@ namespace QLHS.DAL
         {
             _mTable.Rows.Add(dr);
         }
-
 
         #region Hàm thực thi các câu lệnh sql
 

@@ -5,7 +5,7 @@ namespace QLHS.BUS
 {
     public class LoaiNguoiDungBUS
     {
-        private  LoaiNguoiDungDAL _loaiNguoiDungDAL;
+        private readonly LoaiNguoiDungDAL _loaiNguoiDungDAL;
 
         public LoaiNguoiDungBUS()
         {

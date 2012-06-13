@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace QLHS.Report
+﻿namespace QLHS.Report
 {
     public class DTO_BangDiemHocKy
     {
         public int STT { get; set; }
-        public string  MaHocSinh { get; set; }
+        public string MaHocSinh { get; set; }
         public string TenHocSinh { get; set; }
 
         public double dtoan { get; set; }

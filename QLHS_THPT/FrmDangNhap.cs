@@ -1,6 +1,8 @@
-﻿namespace QLHS
+﻿using DevExpress.XtraEditors;
+
+namespace QLHS
 {
-    public partial class FrmDangNhap : DevExpress.XtraEditors.XtraForm
+    public partial class FrmDangNhap : XtraForm
     {
         public FrmDangNhap()
         {

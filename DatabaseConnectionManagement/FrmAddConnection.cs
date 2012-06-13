@@ -304,13 +304,13 @@ namespace DatabaseConnectionManagement
             if (!Settings.Default.SQLAuthenticationMode)
             {
                 connectStr = @"Server=" + Settings.Default.Server + ";Database=" + Settings.Default.DatabaseName +
-                              ";Trusted_Connection=True;";
+                             ";Trusted_Connection=True;";
             }
             else
             {
                 connectStr = @"Server=" + Settings.Default.Server + ";Database=" + Settings.Default.DatabaseName +
-                              ";Integrated Security=SSPI;User ID=" + Settings.Default.UserName + ";Password=" +
-                              Settings.Default.Password + ";";
+                             ";Integrated Security=SSPI;User ID=" + Settings.Default.UserName + ";Password=" +
+                             Settings.Default.Password + ";";
             }
             return connectStr;
         }

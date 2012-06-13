@@ -1,8 +1,9 @@
 ﻿using System;
+using DevExpress.XtraEditors;
 
 namespace QLHS
 {
-    public partial class FrmThongTinChuongTrinh : DevExpress.XtraEditors.XtraForm
+    public partial class FrmThongTinChuongTrinh : XtraForm
     {
         public FrmThongTinChuongTrinh()
         {

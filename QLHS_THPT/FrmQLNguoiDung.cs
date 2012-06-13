@@ -190,7 +190,7 @@ namespace QLHS
                     _Reset_Control();
                     return;
                 }
-                var tenNguoiDung = CboUtil.GetDisplayItem(comboBoxEditNguoiDung);
+                string tenNguoiDung = CboUtil.GetDisplayItem(comboBoxEditNguoiDung);
                 if (MsgboxUtil.YesNo("Bạn có muốn xóa người dùng "
                                      + tenNguoiDung + " hay không?") == DialogResult.Yes)
                 {

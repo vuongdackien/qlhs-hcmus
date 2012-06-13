@@ -110,13 +110,13 @@ namespace QLHS
             }
 
             var monHocDTO = new MonHocDTO
-                                 {
-                                     MaMonHoc = textEditMaMonHoc.Text,
-                                     TenMonHoc = textEditTenMonHoc.Text.Replace("'", "''"),
-                                     SoTiet = Convert.ToInt32(spinEditSoTiet.Value),
-                                     HeSo = Convert.ToInt32(spinEditHeSo.Value),
-                                     TrangThai = Convert.ToInt32(radioGroupTrangThai.SelectedIndex)
-                                 };
+                                {
+                                    MaMonHoc = textEditMaMonHoc.Text,
+                                    TenMonHoc = textEditTenMonHoc.Text.Replace("'", "''"),
+                                    SoTiet = Convert.ToInt32(spinEditSoTiet.Value),
+                                    HeSo = Convert.ToInt32(spinEditHeSo.Value),
+                                    TrangThai = Convert.ToInt32(radioGroupTrangThai.SelectedIndex)
+                                };
 
             _monHocBUS.CapNhat_MonHoc(monHocDTO);
             MsgboxUtil.Success("Đã cập nhật môn học: " + monHocDTO.TenMonHoc + " thành công!");

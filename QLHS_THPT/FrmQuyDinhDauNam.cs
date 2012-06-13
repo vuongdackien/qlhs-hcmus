@@ -103,7 +103,7 @@ namespace QLHS
                 if (ddat < 0 || ddat > 10)
                     e.Cancel = true;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return;
             }

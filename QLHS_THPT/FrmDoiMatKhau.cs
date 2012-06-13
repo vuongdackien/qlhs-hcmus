@@ -1,6 +1,8 @@
-﻿namespace QLHS
+﻿using DevExpress.XtraEditors;
+
+namespace QLHS
 {
-    public partial class FrmDoiMatKhau : DevExpress.XtraEditors.XtraForm
+    public partial class FrmDoiMatKhau : XtraForm
     {
         public FrmDoiMatKhau()
         {
