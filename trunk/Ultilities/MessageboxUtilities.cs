@@ -1,75 +1,61 @@
-﻿using DevExpress.XtraEditors;
-using System.Data.OleDb;
+﻿using System;
 using System.Windows.Forms;
-using System;
 using DevExpress.Utils;
+using DevExpress.XtraEditors;
 
 namespace Util
 {
-
-    class CustomErrorSQL
-    {
-        public static string GetMessageError(OleDbException ex)
-        {
-            string error = "Mã lỗi: " + ex.ErrorCode + " : ";
-            switch (ex.ErrorCode)
-            {
-                case 208: error += "Lỗi dữ liệu database đã thay đổi hoặc không tồn tại trigger và storeprocedure";
-
-                    break;
-                case 515: error += "Không thể bỏ trống dữ liệu! " + ex.Message; break;
-                case 2627: error += "Mã thêm đã tồn tại (trùng khóa chính). Hãy kiểm tra lại mã trước khi lưu!"; break;
-                case 3201: error += "Đường dẫn không phù hợp. Hãy chọn ổ đĩa khác để lưu!"; break;
-
-                default: error += ex.Message + "\n"; break;
-            }
-            return error;
-        }
-    }
-
-    public class MsgboxUtil
+    public static class MsgboxUtil
     {
         public static DialogResult Error(Exception ex)
         {
             return XtraMessageBox.Show(ex.Message,
-                "LỖI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                       "LỖI", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        public static DialogResult Error(string Message)
+
+        public static DialogResult Error(string message)
         {
-            return XtraMessageBox.Show("Lỗi: " + Message, "LỖI",
-                                           MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return XtraMessageBox.Show("Lỗi: " + message, "LỖI",
+                                       MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-        public static DialogResult Success(string Message)
+
+        public static DialogResult Success(string message)
         {
-            return XtraMessageBox.Show(Message, "THÀNH CÔNG",
+            return XtraMessageBox.Show(message, "THÀNH CÔNG",
                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        public static DialogResult Info(string Message)
+
+        public static DialogResult Info(string message)
         {
-            return XtraMessageBox.Show(Message, "THÔNG TIN",
+            return XtraMessageBox.Show(message, "THÔNG TIN",
                                        MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        public static DialogResult YesNo(string Message)
+
+        public static DialogResult YesNo(string message)
         {
-            return XtraMessageBox.Show(Message, "HỎI",
+            return XtraMessageBox.Show(message, "HỎI",
                                        MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
-        public static DialogResult OkCancel(string Message)
+
+        public static DialogResult OkCancel(string message)
         {
-            return XtraMessageBox.Show(Message, "HỎI",
+            return XtraMessageBox.Show(message, "HỎI",
                                        MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
         }
+
         public static void ShowTooltip(ToolTipController tooltip, string msg, string title = "<b>Hướng dẫn</b>")
-        { 
-            ToolTipControllerShowEventArgs targ = new ToolTipControllerShowEventArgs();
-            targ.Title = title;
-            targ.ToolTip = msg;
-            targ.ShowBeak = true;
-            targ.Rounded = true;
-            targ.RoundRadius = 7;
-            targ.ToolTipType = ToolTipType.SuperTip;
-            targ.IconType = ToolTipIconType.Information;
-            targ.IconSize = ToolTipIconSize.Small;
+        {
+            var targ = new ToolTipControllerShowEventArgs
+                           {
+                               Title = title,
+                               ToolTip = msg,
+                               ShowBeak = true,
+                               Rounded = true,
+                               RoundRadius = 7,
+                               ToolTipType = ToolTipType.SuperTip,
+                               IconType = ToolTipIconType.Information,
+                               IconSize = ToolTipIconSize.Small
+                           };
             tooltip.ShowHint(targ);
         }
     }
