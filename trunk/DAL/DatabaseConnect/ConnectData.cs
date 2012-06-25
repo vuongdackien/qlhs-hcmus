@@ -2,8 +2,8 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using DatabaseConnectionManagement;
-using DatabaseConnectionManagement.Properties;
+using FirstConnectDB;
+using FirstConnectDB.Properties;
 using Util;
 
 namespace QLHS.DAL

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using DatabaseConnectionManagement;
+using FirstConnectDB;
 using DevExpress.LookAndFeel;
 using DevExpress.Utils;
 using DevExpress.XtraBars;
@@ -33,8 +33,8 @@ namespace QLHS
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            Login();
-            ShowMdiChildForm<FrmHome>();
+            //Login();
+            ShowMdiChildForm<FrmHome>(false);
             var frm = OpenForms[typeof (FrmHome)] as FrmHome;
             xtraTabbedMdiManager.Pages[frm].ShowCloseButton = DefaultBoolean.False;
         }
@@ -91,6 +91,7 @@ namespace QLHS
 
         private void barButtonItemQuanLyNguoiDung_ItemClick(object sender, ItemClickEventArgs e)
         {
+           
             if (_frmQLNguoiDung == null || _frmQLNguoiDung.IsDisposed)
                 _frmQLNguoiDung = new FrmQLNguoiDung();
             _frmQLNguoiDung.ShowDialog();
@@ -103,6 +104,7 @@ namespace QLHS
 
         private void barButtonItemCauHinhKetNoi_ItemClick(object sender, ItemClickEventArgs e)
         {
+            CloseAll_TabPages();
             var frm = new FrmAddConnection();
             if (frm.ShowDialog() == DialogResult.OK)
             {
@@ -154,12 +156,16 @@ namespace QLHS
         /// Sử dụng để hiển thị MDI Children form
         /// </summary>
         /// <typeparam name="T">Tên form</typeparam>
-        public void ShowMdiChildForm<T>() where T : Form, new()
+        public void ShowMdiChildForm<T>(bool closeOpentabs = true) where T : Form, new()
         {
             Form instance;
             OpenForms.TryGetValue(typeof (T), out instance);
             if (instance == null || instance.IsDisposed)
             {
+                if (closeOpentabs)
+                {
+                    CloseAll_TabPages();
+                }
                 instance = new T();
                 OpenForms[typeof (T)] = instance;
                 instance.MdiParent = this;
@@ -437,5 +443,22 @@ namespace QLHS
         }
 
         #endregion
+
+        /// <summary>
+        /// Đóng tất cả các tab pages
+        /// </summary>
+        private  void CloseAll_TabPages()
+        {
+            foreach (var item in MdiChildren)
+            {
+                if (item is FrmHome) continue;
+                item.Close();
+            }
+            
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            barStaticItemDateTime.Caption = DateTime.Now.ToString("dd-MM-yyyy mm:ss");
+        }
     }
 }

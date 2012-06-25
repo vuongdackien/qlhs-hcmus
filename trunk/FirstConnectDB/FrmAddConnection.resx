@@ -119,11 +119,12 @@
   </resheader>
   <data name="lblDataSource.Text" xml:space="preserve">
     <value>Cấu hình kết nối đến Microsoft SQL Server (SqlClient):
-- Chọn tên Server hoặc gõ tên Server (VD: HCMUS\SQLEXPRESS)
-- Chọn kiểu chứng thực bằng tài khoản Window hoặc tài khoản 
+1. Chọn tên Server hoặc gõ tên Server (VD: HCMUS\SQLEXPRESS)
+2. Chọn kiểu chứng thực bằng tài khoản Window hoặc tài khoản 
 Server (nhập tài khoản và mật khẩu đăng nhập Server)
-- Click Connect
-- Chọn Database làm việc
+3. Click Kết nối
+4. Chọn Database làm việc (Gõ tên Database và click tạo mới khởi tạo)
+5. Nhấn tạo dữ liệu mẫu cho ứng dụng
 </value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />

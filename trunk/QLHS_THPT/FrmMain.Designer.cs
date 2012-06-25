@@ -45,7 +45,7 @@
             DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.applicationMenu1 = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.applicationMenuRibbon = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.barButtonItemDangNhap = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemDangXuat = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
@@ -77,6 +77,7 @@
             this.barButtonItemCauHinhKetNoi = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonGalleryBarItemGiaoDien = new DevExpress.XtraBars.RibbonGalleryBarItem();
+            this.barStaticItemDateTime = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonPageQuanLyHoSo = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupHoSoNamHoc = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupHoSoHocSinh = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -88,16 +89,16 @@
             this.ribbonPageGroupQuanLyND = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroupThongTinChuognTrinh = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.defaultLookAndFeel = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.timerStatusDateTime = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.applicationMenuRibbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
             // 
-            this.ribbon.ApplicationButtonDropDownControl = this.applicationMenu1;
+            this.ribbon.ApplicationButtonDropDownControl = this.applicationMenuRibbon;
             this.ribbon.ApplicationButtonText = null;
             this.ribbon.ApplicationIcon = global::QLHS.Properties.Resources.home;
             // 
@@ -137,9 +138,10 @@
             this.barButtonItemQuanLyNguoiDung,
             this.barButtonItemCauHinhKetNoi,
             this.barButtonItem6,
-            this.ribbonGalleryBarItemGiaoDien});
+            this.ribbonGalleryBarItemGiaoDien,
+            this.barStaticItemDateTime});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 50;
+            this.ribbon.MaxItemId = 51;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageQuanLyHoSo,
@@ -150,14 +152,14 @@
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ShowCustomizeItem = false;
             // 
-            // applicationMenu1
+            // applicationMenuRibbon
             // 
-            this.applicationMenu1.ItemLinks.Add(this.barButtonItemDangNhap);
-            this.applicationMenu1.ItemLinks.Add(this.barButtonItemDangXuat);
-            this.applicationMenu1.ItemLinks.Add(this.barButtonItemDoiMatKhau, true);
-            this.applicationMenu1.ItemLinks.Add(this.barButtonItemThoat, true);
-            this.applicationMenu1.Name = "applicationMenu1";
-            this.applicationMenu1.Ribbon = this.ribbon;
+            this.applicationMenuRibbon.ItemLinks.Add(this.barButtonItemDangNhap);
+            this.applicationMenuRibbon.ItemLinks.Add(this.barButtonItemDangXuat);
+            this.applicationMenuRibbon.ItemLinks.Add(this.barButtonItemDoiMatKhau, true);
+            this.applicationMenuRibbon.ItemLinks.Add(this.barButtonItemThoat, true);
+            this.applicationMenuRibbon.Name = "applicationMenuRibbon";
+            this.applicationMenuRibbon.Ribbon = this.ribbon;
             // 
             // barButtonItemDangNhap
             // 
@@ -414,6 +416,16 @@
             this.ribbonGalleryBarItemGiaoDien.Id = 48;
             this.ribbonGalleryBarItemGiaoDien.Name = "ribbonGalleryBarItemGiaoDien";
             // 
+            // barStaticItemDateTime
+            // 
+            this.barStaticItemDateTime.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.barStaticItemDateTime.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.barStaticItemDateTime.Appearance.Options.UseFont = true;
+            this.barStaticItemDateTime.Caption = "Timer";
+            this.barStaticItemDateTime.Id = 50;
+            this.barStaticItemDateTime.Name = "barStaticItemDateTime";
+            this.barStaticItemDateTime.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
             // ribbonPageQuanLyHoSo
             // 
             this.ribbonPageQuanLyHoSo.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -492,21 +504,24 @@
             // 
             this.ribbonStatusBar.ItemLinks.Add(this.barStaticItemLoaiNguoiDung);
             this.ribbonStatusBar.ItemLinks.Add(this.barStaticItemTenNguoiDung);
+            this.ribbonStatusBar.ItemLinks.Add(this.barStaticItemDateTime);
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 645);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(1220, 23);
-            // 
-            // defaultLookAndFeel
-            // 
-            this.defaultLookAndFeel.LookAndFeel.SkinName = "Money Twins";
             // 
             // xtraTabbedMdiManager
             // 
             this.xtraTabbedMdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager.MdiParent = this;
             // 
-            // frmMain
+            // timerStatusDateTime
+            // 
+            this.timerStatusDateTime.Enabled = true;
+            this.timerStatusDateTime.Interval = 1000;
+            this.timerStatusDateTime.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // FrmMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -526,7 +541,7 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmMain_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.applicationMenu1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.applicationMenuRibbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).EndInit();
             this.ResumeLayout(false);
 
@@ -538,7 +553,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageQuanLyHoSo;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupHoSoNamHoc;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar;
-        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barBtnTiepNhanHocSinh;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupHoSoHocSinh;
@@ -561,7 +575,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupNhapDiemMonHoc;
         private DevExpress.XtraBars.BarButtonItem barBtnTongKetMonHoc;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
-        private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenu1;
+        private DevExpress.XtraBars.Ribbon.ApplicationMenu applicationMenuRibbon;
         private DevExpress.XtraBars.BarButtonItem barButtonItemDangNhap;
         private DevExpress.XtraBars.BarButtonItem barButtonItemDangXuat;
         private DevExpress.XtraBars.BarButtonItem barButtonItemThoat;
@@ -580,5 +594,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupThongTinChuognTrinh;
         private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItemGiaoDien;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.BarStaticItem barStaticItemDateTime;
+        private System.Windows.Forms.Timer timerStatusDateTime;
     }
 }

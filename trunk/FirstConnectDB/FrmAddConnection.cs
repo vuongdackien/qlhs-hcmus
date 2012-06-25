@@ -7,9 +7,9 @@ using System.Windows.Forms;
 using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
 using Microsoft.Win32;
-using Settings = DatabaseConnectionManagement.Properties.Settings;
+using Settings = FirstConnectDB.Properties.Settings;
 
-namespace DatabaseConnectionManagement
+namespace FirstConnectDB
 {
     public partial class FrmAddConnection : Form
     {
@@ -30,7 +30,7 @@ namespace DatabaseConnectionManagement
 
         public new static DialogResult Show()
         {
-            var frm = new FrmAddConnection();
+            var frm = new FrmAddConnection {TopMost = true};
             return frm.ShowDialog();
         }
 
@@ -353,6 +353,10 @@ namespace DatabaseConnectionManagement
                     MessageBox.Show("Chưa chọn được cơ sở dữ liệu để lưu cấu hình!");
                     return;
                 }
+
+                if (!CheckExists_Tables(Settings.Default.DatabaseName))
+                    InitStruct_DB(Settings.Default.DatabaseName);
+
                 Settings.Default.ConnectString = BuildConnectString();
                 Settings.Default.Save();
                 DialogResult = DialogResult.OK;
@@ -371,7 +375,7 @@ namespace DatabaseConnectionManagement
                 mConnect = new SqlConnection(strConnect);
                 mConnect.Open();
                 mConnect.Close();
-                return true;
+                return CheckExists_Tables(mConnect, Settings.Default.DatabaseName);
             }
             catch
             {
@@ -396,18 +400,79 @@ namespace DatabaseConnectionManagement
         {
             try
             {
-                string dataFile = Application.StartupPath + @"/scripts/QLHS.sql";
-                var sr = new StreamReader(dataFile);
-                string data = sr.ReadToEnd();
-                string dbname = cmbDbName.SelectedItem.ToString();
-                data = data.Replace("__DBNAME__", dbname);
-                _mServer.Databases[dbname].ExecuteNonQuery(data);
+                var dbName = cmbDbName.SelectedItem.ToString();
+                if(!CheckExists_Tables(dbName))
+                    InitStruct_DB(dbName);
+                InitData_DB(dbName);
                 MessageBox.Show("Đã tạo dữ liệu mẫu thành công!");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Có lỗi trong quá trình tạo cơ sở dữ liệu mẫu: " + ex.Message);
             }
+        }
+        /// <summary>
+        /// Khởi tạo struct database
+        /// </summary>
+        /// <param name="dbname"></param>
+        private  void InitStruct_DB(string dbname)
+        {
+            string data;
+            using (var sr = new StreamReader(Application.StartupPath + @"/scripts/script_db_struct.sql"))
+            {
+                data = sr.ReadToEnd();
+            }
+            data = data.Replace("QLHS_HCMUS", dbname);
+            _mServer.Databases[dbname].ExecuteNonQuery(data);
+        }
+        /// <summary>
+        /// Kiểm tra đủ các tables hay không
+        /// </summary>
+        /// <param name="dbname"></param>
+        /// <returns></returns>
+        private bool CheckExists_Tables(string dbname)
+        {
+            string data;
+            using (var sr = new StreamReader(Application.StartupPath + @"/scripts/script_check_tables.sql"))
+            {
+                data = sr.ReadToEnd();
+            }
+            var dsTables = _mServer.Databases[dbname].ExecuteWithResults(data);
+            return dsTables.Tables[0].Rows.Count > 0;
+        }
+
+        /// <summary>
+        /// Kiểm tra đủ các tables hay không
+        /// </summary>
+        /// <param name="dbname"></param>
+        /// <returns></returns>
+        private static bool CheckExists_Tables(SqlConnection connect,string dbname)
+        {
+            string data;
+            using (var sr = new StreamReader(Application.StartupPath + @"/scripts/script_check_tables.sql"))
+            {
+                data = sr.ReadToEnd();
+            }
+            var sqlDataAdapter = new SqlDataAdapter(data, connect);
+            using (var tbResult = new DataTable())
+            {
+                sqlDataAdapter.Fill(tbResult);
+                return (tbResult.Rows.Count > 0);
+            }
+        }
+        
+        /// <summary>
+        /// Khởi tạo dữ liệu mẫu
+        /// </summary>
+        /// <param name="dbname"></param>
+        private void InitData_DB(string dbname)
+        {
+            string data;
+            using (var sr = new StreamReader(Application.StartupPath + @"/scripts/script_db_data.sql"))
+            {
+                data = sr.ReadToEnd();
+            }
+            _mServer.Databases[dbname].ExecuteNonQuery(data);
         }
 
         private void btnTaoMoi_Click(object sender, EventArgs e)

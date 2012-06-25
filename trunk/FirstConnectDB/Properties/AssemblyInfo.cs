@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("DatabaseConnectionManagement")]
+[assembly: AssemblyTitle("FirstConnectDB")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("FMV Software Pvt Ltd")]
-[assembly: AssemblyProduct("DatabaseConnectionManagement")]
-[assembly: AssemblyCopyright("Copyright © FMV Software Pvt Ltd 2007")]
+[assembly: AssemblyProduct("FirstConnectDB")]
+[assembly: AssemblyCopyright("Copyright © PDDH HCMUS")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

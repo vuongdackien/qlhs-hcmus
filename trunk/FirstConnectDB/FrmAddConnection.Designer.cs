@@ -1,4 +1,4 @@
-﻿namespace DatabaseConnectionManagement
+﻿namespace FirstConnectDB
 {
     partial class FrmAddConnection
     {
@@ -64,7 +64,7 @@
             this.lblDataSource.AutoSize = true;
             this.lblDataSource.Location = new System.Drawing.Point(15, 8);
             this.lblDataSource.Name = "lblDataSource";
-            this.lblDataSource.Size = new System.Drawing.Size(329, 78);
+            this.lblDataSource.Size = new System.Drawing.Size(343, 91);
             this.lblDataSource.TabIndex = 0;
             this.lblDataSource.Text = resources.GetString("lblDataSource.Text");
             // 
@@ -80,19 +80,19 @@
             // cmbServerName
             // 
             this.cmbServerName.FormattingEnabled = true;
-            this.cmbServerName.Location = new System.Drawing.Point(18, 98);
+            this.cmbServerName.Location = new System.Drawing.Point(18, 108);
             this.cmbServerName.Name = "cmbServerName";
-            this.cmbServerName.Size = new System.Drawing.Size(268, 21);
+            this.cmbServerName.Size = new System.Drawing.Size(236, 21);
             this.cmbServerName.TabIndex = 2;
             this.cmbServerName.SelectedIndexChanged += new System.EventHandler(this.cmbServerName_SelectedIndexChanged);
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(311, 98);
+            this.btnRefresh.Location = new System.Drawing.Point(278, 102);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 21);
+            this.btnRefresh.Size = new System.Drawing.Size(108, 30);
             this.btnRefresh.TabIndex = 3;
-            this.btnRefresh.Text = "Tìm Network";
+            this.btnRefresh.Text = "Tìm trong mạng";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
@@ -105,9 +105,9 @@
             this.grbLogOn.Controls.Add(this.lblUserName);
             this.grbLogOn.Controls.Add(this.rdbServerAuthentication);
             this.grbLogOn.Controls.Add(this.rdbWindowsAuthentication);
-            this.grbLogOn.Location = new System.Drawing.Point(8, 123);
+            this.grbLogOn.Location = new System.Drawing.Point(8, 136);
             this.grbLogOn.Name = "grbLogOn";
-            this.grbLogOn.Size = new System.Drawing.Size(378, 147);
+            this.grbLogOn.Size = new System.Drawing.Size(378, 153);
             this.grbLogOn.TabIndex = 4;
             this.grbLogOn.TabStop = false;
             this.grbLogOn.Text = "Đăng nhập vào Server";
@@ -122,9 +122,9 @@
             // 
             // btnTestConnection
             // 
-            this.btnTestConnection.Location = new System.Drawing.Point(293, 118);
+            this.btnTestConnection.Location = new System.Drawing.Point(282, 118);
             this.btnTestConnection.Name = "btnTestConnection";
-            this.btnTestConnection.Size = new System.Drawing.Size(75, 23);
+            this.btnTestConnection.Size = new System.Drawing.Size(86, 30);
             this.btnTestConnection.TabIndex = 6;
             this.btnTestConnection.Text = "Kết nối";
             this.btnTestConnection.UseVisualStyleBackColor = true;
@@ -186,7 +186,7 @@
             this.grbDatabaseConnection.Controls.Add(this.txtNewDB);
             this.grbDatabaseConnection.Controls.Add(this.cmbDbName);
             this.grbDatabaseConnection.Controls.Add(this.lblSelectDbName);
-            this.grbDatabaseConnection.Location = new System.Drawing.Point(8, 273);
+            this.grbDatabaseConnection.Location = new System.Drawing.Point(8, 295);
             this.grbDatabaseConnection.Name = "grbDatabaseConnection";
             this.grbDatabaseConnection.Size = new System.Drawing.Size(378, 78);
             this.grbDatabaseConnection.TabIndex = 5;
@@ -196,9 +196,9 @@
             // btnTaoMoi
             // 
             this.btnTaoMoi.Enabled = false;
-            this.btnTaoMoi.Location = new System.Drawing.Point(303, 35);
+            this.btnTaoMoi.Location = new System.Drawing.Point(299, 31);
             this.btnTaoMoi.Name = "btnTaoMoi";
-            this.btnTaoMoi.Size = new System.Drawing.Size(65, 23);
+            this.btnTaoMoi.Size = new System.Drawing.Size(69, 30);
             this.btnTaoMoi.TabIndex = 8;
             this.btnTaoMoi.Text = "Tạo mới";
             this.btnTaoMoi.UseVisualStyleBackColor = true;
@@ -243,9 +243,9 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(188, 424);
+            this.btnOK.Location = new System.Drawing.Point(163, 436);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(98, 23);
+            this.btnOK.Size = new System.Drawing.Size(108, 30);
             this.btnOK.TabIndex = 7;
             this.btnOK.Text = "Lưu cấu hình";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -253,9 +253,9 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(292, 424);
+            this.btnCancel.Location = new System.Drawing.Point(278, 436);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(85, 23);
+            this.btnCancel.Size = new System.Drawing.Size(108, 30);
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Đóng";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -274,15 +274,15 @@
             this.pnlConnectionInfo.Controls.Add(this.grbLogOn);
             this.pnlConnectionInfo.Location = new System.Drawing.Point(8, 8);
             this.pnlConnectionInfo.Name = "pnlConnectionInfo";
-            this.pnlConnectionInfo.Size = new System.Drawing.Size(406, 456);
+            this.pnlConnectionInfo.Size = new System.Drawing.Size(406, 471);
             this.pnlConnectionInfo.TabIndex = 15;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnTaoMoiDuLieuMau);
-            this.groupBox1.Location = new System.Drawing.Point(8, 373);
+            this.groupBox1.Location = new System.Drawing.Point(8, 379);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(378, 45);
+            this.groupBox1.Size = new System.Drawing.Size(378, 51);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dữ liệu mẫu";
@@ -313,11 +313,11 @@
             this.lblSyncStatus.Text = "Đang tìm máy chủ...";
             this.lblSyncStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // frmAddConnection
+            // FrmAddConnection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 476);
+            this.ClientSize = new System.Drawing.Size(428, 491);
             this.ControlBox = false;
             this.Controls.Add(this.lblSyncStatus);
             this.Controls.Add(this.pnlConnectionInfo);
