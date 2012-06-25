@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLHS.BUS", "BUS\QLHS.BUS.cs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Ultilities\Utilities.csproj", "{5CD784F5-349E-4732-B31A-E68500B85C5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseConnectionManagement", "DatabaseConnectionManagement\DatabaseConnectionManagement.csproj", "{82C3749C-81E4-4B71-AED0-523D2A08D8D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstConnectDB", "FirstConnectDB\FirstConnectDB.csproj", "{82C3749C-81E4-4B71-AED0-523D2A08D8D4}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupProject", "SetupProject\SetupProject.vdproj", "{23906B99-7C1E-4FBF-893A-F023C35753C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +85,12 @@ Global
 		{82C3749C-81E4-4B71-AED0-523D2A08D8D4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{82C3749C-81E4-4B71-AED0-523D2A08D8D4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{82C3749C-81E4-4B71-AED0-523D2A08D8D4}.Release|x86.ActiveCfg = Release|Any CPU
+		{23906B99-7C1E-4FBF-893A-F023C35753C2}.Debug|Any CPU.ActiveCfg = Debug
+		{23906B99-7C1E-4FBF-893A-F023C35753C2}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{23906B99-7C1E-4FBF-893A-F023C35753C2}.Debug|x86.ActiveCfg = Debug
+		{23906B99-7C1E-4FBF-893A-F023C35753C2}.Release|Any CPU.ActiveCfg = Release
+		{23906B99-7C1E-4FBF-893A-F023C35753C2}.Release|Mixed Platforms.ActiveCfg = Release
+		{23906B99-7C1E-4FBF-893A-F023C35753C2}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

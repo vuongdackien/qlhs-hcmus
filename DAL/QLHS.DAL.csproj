@@ -54,9 +54,9 @@
     <Compile Include="QuyDinhDAL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DatabaseConnectionManagement\DatabaseConnectionManagement.csproj">
+    <ProjectReference Include="..\FirstConnectDB\FirstConnectDB.csproj">
       <Project>{82C3749C-81E4-4B71-AED0-523D2A08D8D4}</Project>
-      <Name>DatabaseConnectionManagement</Name>
+      <Name>FirstConnectDB</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\QLHS.DTO.csproj">
       <Project>{051D3B9C-A8C0-40E3-B5B3-F33D4789F859}</Project>

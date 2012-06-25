@@ -203,7 +203,7 @@ namespace QLHS
             // Hiển thị frmHocSinh
             if (frmMainInstance == null)
                 return;
-            frmMainInstance.ShowMdiChildForm<FrmHocSinh>();
+            frmMainInstance.ShowMdiChildForm<FrmHocSinh>(false);
             // Lấy instance formHocSinh
             var frmHocSinhInstance = frmMainInstance.OpenForms[typeof (FrmHocSinh)] as FrmHocSinh;
             if (frmHocSinhInstance == null)
