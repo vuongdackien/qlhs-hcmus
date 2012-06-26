@@ -33,7 +33,7 @@ namespace QLHS
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            //Login();
+            Login();
             ShowMdiChildForm<FrmHome>(false);
             var frm = OpenForms[typeof (FrmHome)] as FrmHome;
             xtraTabbedMdiManager.Pages[frm].ShowCloseButton = DefaultBoolean.False;
@@ -106,12 +106,14 @@ namespace QLHS
         {
             CloseAll_TabPages();
             var frm = new FrmAddConnection();
+   
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                MsgboxUtil.Success("Đã lưu cấu hình của chương trình!"
-                                   + "\nChương trình sẽ khởi động lại để cập nhật dữ liệu!");
-                Application.Restart();
+                MsgboxUtil.Success("Đã lưu cấu hình của chương trình!");
+                                 //  + "\nChương trình sẽ khởi động lại để cập nhật dữ liệu!");
+               // Application.Restart();
             }
+     
         }
 
         private void barButtonItem6_ItemClick(object sender, ItemClickEventArgs e)
@@ -206,7 +208,7 @@ namespace QLHS
             // Hệ thống
             barButtonItemQuanLyNguoiDung.Enabled = enableAllMenu;
             barButtonItemCauHinhKetNoi.Enabled = enableAllMenu;
-
+          
             // menu system
             barButtonItemDangNhap.Enabled = !enableAllMenu;
             barButtonItemDoiMatKhau.Enabled = enableAllMenu;

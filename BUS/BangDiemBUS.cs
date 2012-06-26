@@ -268,7 +268,7 @@ namespace QLHS.BUS
                 }
                 if (soMonDuDiem == soMonHoc)
                 {
-                    bangDiemCaNhan.DTB = ObjectUtil.LamTron(tongDiem/tongHeSo, 4);
+                    bangDiemCaNhan.DTB = ObjectUtil.LamTron(tongDiem/tongHeSo, 2);
                 }
                 else
                     bangDiemCaNhan.DTB = "_";
