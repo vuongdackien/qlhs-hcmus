@@ -88,7 +88,7 @@
             this.coldGDQP.AppearanceHeader.Options.UseTextOptions = true;
             this.coldGDQP.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldGDQP.Caption = "GDQP";
-            this.coldGDQP.FieldName = "dqphong";
+            this.coldGDQP.FieldName = "Dqphong";
             this.coldGDQP.Name = "coldGDQP";
             this.coldGDQP.OptionsColumn.AllowEdit = false;
             this.coldGDQP.OptionsColumn.AllowFocus = false;
@@ -146,12 +146,12 @@
             // treeListLopHoc
             // 
             this.treeListLopHoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeListLopHoc.Location = new System.Drawing.Point(3, 109);
+            this.treeListLopHoc.Location = new System.Drawing.Point(2, 108);
             this.treeListLopHoc.Name = "treeListLopHoc";
             this.treeListLopHoc.OptionsBehavior.Editable = false;
             this.treeListLopHoc.OptionsView.ShowColumns = false;
             this.treeListLopHoc.OptionsView.ShowIndicator = false;
-            this.treeListLopHoc.Size = new System.Drawing.Size(176, 290);
+            this.treeListLopHoc.Size = new System.Drawing.Size(178, 292);
             this.treeListLopHoc.TabIndex = 3;
             this.treeListLopHoc.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeListLopHoc_FocusedNodeChanged);
             // 
@@ -162,9 +162,9 @@
             this.panelControlChooseYear.Controls.Add(this.labelControl3);
             this.panelControlChooseYear.Controls.Add(this.labelControl1);
             this.panelControlChooseYear.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlChooseYear.Location = new System.Drawing.Point(3, 3);
+            this.panelControlChooseYear.Location = new System.Drawing.Point(2, 2);
             this.panelControlChooseYear.Name = "panelControlChooseYear";
-            this.panelControlChooseYear.Size = new System.Drawing.Size(176, 106);
+            this.panelControlChooseYear.Size = new System.Drawing.Size(178, 106);
             this.panelControlChooseYear.TabIndex = 0;
             // 
             // comboBoxEditNamHoc
@@ -218,10 +218,10 @@
             // gridControlBangDiemHocKy
             // 
             this.gridControlBangDiemHocKy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControlBangDiemHocKy.Location = new System.Drawing.Point(3, 83);
+            this.gridControlBangDiemHocKy.Location = new System.Drawing.Point(2, 82);
             this.gridControlBangDiemHocKy.MainView = this.gridViewBangDiemHocKy;
             this.gridControlBangDiemHocKy.Name = "gridControlBangDiemHocKy";
-            this.gridControlBangDiemHocKy.Size = new System.Drawing.Size(989, 316);
+            this.gridControlBangDiemHocKy.Size = new System.Drawing.Size(991, 318);
             this.gridControlBangDiemHocKy.TabIndex = 6;
             this.gridControlBangDiemHocKy.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewBangDiemHocKy});
@@ -443,7 +443,7 @@
             this.coldToan.AppearanceHeader.Options.UseTextOptions = true;
             this.coldToan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldToan.Caption = "Toán";
-            this.coldToan.FieldName = "dtoan";
+            this.coldToan.FieldName = "Dtoan";
             this.coldToan.Name = "coldToan";
             this.coldToan.OptionsColumn.AllowEdit = false;
             this.coldToan.OptionsColumn.AllowFocus = false;
@@ -468,7 +468,7 @@
             this.coldLy.AppearanceHeader.Options.UseTextOptions = true;
             this.coldLy.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldLy.Caption = "Lý";
-            this.coldLy.FieldName = "dly";
+            this.coldLy.FieldName = "Dly";
             this.coldLy.Name = "coldLy";
             this.coldLy.OptionsColumn.AllowEdit = false;
             this.coldLy.OptionsColumn.AllowFocus = false;
@@ -493,7 +493,7 @@
             this.coldHoa.AppearanceHeader.Options.UseTextOptions = true;
             this.coldHoa.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldHoa.Caption = "Hóa";
-            this.coldHoa.FieldName = "dhoa";
+            this.coldHoa.FieldName = "Dhoa";
             this.coldHoa.Name = "coldHoa";
             this.coldHoa.OptionsColumn.AllowEdit = false;
             this.coldHoa.OptionsColumn.AllowFocus = false;
@@ -518,7 +518,7 @@
             this.coldsinh.AppearanceHeader.Options.UseTextOptions = true;
             this.coldsinh.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldsinh.Caption = "Sinh";
-            this.coldsinh.FieldName = "dsinh";
+            this.coldsinh.FieldName = "Dsinh";
             this.coldsinh.Name = "coldsinh";
             this.coldsinh.OptionsColumn.AllowEdit = false;
             this.coldsinh.OptionsColumn.AllowFocus = false;
@@ -543,7 +543,7 @@
             this.coldVan.AppearanceHeader.Options.UseTextOptions = true;
             this.coldVan.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldVan.Caption = "Văn";
-            this.coldVan.FieldName = "dngvan";
+            this.coldVan.FieldName = "Dngvan";
             this.coldVan.Name = "coldVan";
             this.coldVan.OptionsColumn.AllowEdit = false;
             this.coldVan.OptionsColumn.AllowFocus = false;
@@ -568,7 +568,7 @@
             this.coldSu.AppearanceHeader.Options.UseTextOptions = true;
             this.coldSu.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldSu.Caption = "Sử";
-            this.coldSu.FieldName = "dsu";
+            this.coldSu.FieldName = "Dsu";
             this.coldSu.Name = "coldSu";
             this.coldSu.OptionsColumn.AllowEdit = false;
             this.coldSu.OptionsColumn.AllowFocus = false;
@@ -593,7 +593,7 @@
             this.coldDia.AppearanceHeader.Options.UseTextOptions = true;
             this.coldDia.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldDia.Caption = "Địa";
-            this.coldDia.FieldName = "ddia";
+            this.coldDia.FieldName = "Ddia";
             this.coldDia.Name = "coldDia";
             this.coldDia.OptionsColumn.AllowEdit = false;
             this.coldDia.OptionsColumn.AllowFocus = false;
@@ -618,7 +618,7 @@
             this.coldNNgu.AppearanceHeader.Options.UseTextOptions = true;
             this.coldNNgu.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldNNgu.Caption = "N.Ngữ";
-            this.coldNNgu.FieldName = "dnngu";
+            this.coldNNgu.FieldName = "Dnngu";
             this.coldNNgu.Name = "coldNNgu";
             this.coldNNgu.OptionsColumn.AllowEdit = false;
             this.coldNNgu.OptionsColumn.AllowFocus = false;
@@ -643,7 +643,7 @@
             this.coldGDCD.AppearanceHeader.Options.UseTextOptions = true;
             this.coldGDCD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldGDCD.Caption = "GDCD";
-            this.coldGDCD.FieldName = "dgdcd";
+            this.coldGDCD.FieldName = "Dgdcd";
             this.coldGDCD.Name = "coldGDCD";
             this.coldGDCD.OptionsColumn.AllowEdit = false;
             this.coldGDCD.OptionsColumn.AllowFocus = false;
@@ -668,7 +668,7 @@
             this.coldTinHoc.AppearanceHeader.Options.UseTextOptions = true;
             this.coldTinHoc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldTinHoc.Caption = "T.Học";
-            this.coldTinHoc.FieldName = "dtin";
+            this.coldTinHoc.FieldName = "Dtin";
             this.coldTinHoc.Name = "coldTinHoc";
             this.coldTinHoc.OptionsColumn.AllowEdit = false;
             this.coldTinHoc.OptionsColumn.AllowFocus = false;
@@ -693,7 +693,7 @@
             this.coldtduc.AppearanceHeader.Options.UseTextOptions = true;
             this.coldtduc.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldtduc.Caption = "T.Dục";
-            this.coldtduc.FieldName = "dtduc";
+            this.coldtduc.FieldName = "Dtduc";
             this.coldtduc.Name = "coldtduc";
             this.coldtduc.OptionsColumn.AllowEdit = false;
             this.coldtduc.OptionsColumn.AllowFocus = false;
@@ -718,7 +718,7 @@
             this.coldCN.AppearanceHeader.Options.UseTextOptions = true;
             this.coldCN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.coldCN.Caption = "CN";
-            this.coldCN.FieldName = "dcnghe";
+            this.coldCN.FieldName = "Dcnghe";
             this.coldCN.Name = "coldCN";
             this.coldCN.OptionsColumn.AllowEdit = false;
             this.coldCN.OptionsColumn.AllowFocus = false;
@@ -749,9 +749,9 @@
             this.panelControlTopRight.Controls.Add(this.labelControlNamHocTT);
             this.panelControlTopRight.Controls.Add(this.labelControlTitle);
             this.panelControlTopRight.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControlTopRight.Location = new System.Drawing.Point(3, 3);
+            this.panelControlTopRight.Location = new System.Drawing.Point(2, 2);
             this.panelControlTopRight.Name = "panelControlTopRight";
-            this.panelControlTopRight.Size = new System.Drawing.Size(989, 80);
+            this.panelControlTopRight.Size = new System.Drawing.Size(991, 80);
             this.panelControlTopRight.TabIndex = 0;
             // 
             // simpleButtonXuatBD
@@ -842,7 +842,7 @@
             this.labelControlTitle.TabIndex = 0;
             this.labelControlTitle.Text = "BẢNG ĐIỂM HỌC KỲ";
             // 
-            // frmBC_BangDiemHocKy
+            // FrmBcBangDiemHocKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
